@@ -149,7 +149,7 @@
   }
 
   .container {
-    @apply !w-full !max-w-[1248px] !mx-auto !px-4;
+    @apply !mx-auto !w-full !max-w-[1248px] px-4;
   }
 
   .display {
@@ -178,5 +178,9 @@
 
   .h6 {
     @apply text-[22px] leading-[130%] font-bold;
+  }
+
+  .overlay {
+    @apply from-brand-main-green/0 to-brand-dark-green absolute top-0 left-0 h-full w-full bg-gradient-to-b;
   }
 }

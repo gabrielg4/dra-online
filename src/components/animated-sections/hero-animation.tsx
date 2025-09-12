@@ -3,6 +3,7 @@ import gsap from "gsap";
 import React, { useEffect, useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
+import { HeroMetricsCarousel } from "../mobile/hero-metrics-carousel";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -25,7 +26,7 @@ export const HeroAnimation = () => {
         start: "top 40%",
         end: "top: 40%",
         scrub: 2,
-        markers: true,
+        // markers: true,
       },
     });
 
@@ -35,7 +36,7 @@ export const HeroAnimation = () => {
         opacity: 0.5,
         x: -150,
       },
-      0
+      0,
     )
       .to(
         card1.current,
@@ -43,7 +44,7 @@ export const HeroAnimation = () => {
           y: -120,
           skewY: -20,
         },
-        0
+        0,
       )
       .to(
         card2.current,
@@ -52,7 +53,7 @@ export const HeroAnimation = () => {
           y: -90,
           skewY: -15,
         },
-        0
+        0,
       )
       .to(
         midContainer.current,
@@ -60,7 +61,7 @@ export const HeroAnimation = () => {
           opacity: 0,
           y: -300,
         },
-        0
+        0,
       )
       .to(
         rightContainer.current,
@@ -68,7 +69,7 @@ export const HeroAnimation = () => {
           opacity: 0.5,
           x: 315,
         },
-        0
+        0,
       )
       .to(
         card3.current,
@@ -76,7 +77,7 @@ export const HeroAnimation = () => {
           y: -90,
           skewY: 20,
         },
-        0
+        0,
       )
       .to(
         card4.current,
@@ -85,7 +86,7 @@ export const HeroAnimation = () => {
           y: -120,
           skewY: 15,
         },
-        0
+        0,
       )
       .to(
         metricsRef.current,
@@ -93,7 +94,7 @@ export const HeroAnimation = () => {
           y: -200,
           opacity: 1,
         },
-        0
+        0,
       );
 
     return () => {
@@ -103,12 +104,12 @@ export const HeroAnimation = () => {
   }, []);
 
   return (
-    <div className="mt-40 w-full relative">
+    <div className="relative mt-40 hidden md:block">
       {/* CARDS */}
       <div ref={sectionRef} className="flex justify-center gap-8">
         <div
           ref={leftContainer}
-          className="w-full max-w-[calc(100%-217px)] flex gap-8"
+          className="flex w-full max-w-[calc(100%-217px)] gap-4 lg:gap-8"
         >
           <div ref={card1} className="w-full max-w-[230px] -translate-y-24">
             <Image
@@ -120,9 +121,9 @@ export const HeroAnimation = () => {
           </div>
           <div
             ref={card2}
-            className="w-full max-w-[216px] h-[400px] p-5 rounded-xl bg-brand-main-green"
+            className="bg-brand-main-green h-[300px] w-full max-w-[216px] rounded-xl p-5 lg:h-[400px]"
           >
-            <p className="text-2xl font-bold text-white">
+            <p className="text-xl font-bold text-white lg:text-2xl">
               <span className="text-brand-dark-green">Tecnologia</span> própria
             </p>
           </div>
@@ -140,13 +141,13 @@ export const HeroAnimation = () => {
         </div>
         <div
           ref={rightContainer}
-          className="w-full max-w-[calc(100%-217px)] flex gap-8"
+          className="flex w-full max-w-[calc(100%-217px)] gap-8"
         >
           <div
             ref={card3}
-            className="relative z-10 w-full max-w-[216px] h-[400px] p-5 rounded-xl bg-brand-light-green"
+            className="bg-brand-light-green relative z-10 h-[300px] w-full max-w-[216px] rounded-xl p-5 lg:h-[400px]"
           >
-            <p className="text-2xl font-bold text-white">
+            <p className="text-xl font-bold text-white lg:text-2xl">
               <span className="text-brand-dark-green">Implantação ágil,</span>
               escalável e com ROI comprovado.
             </p>
@@ -164,15 +165,15 @@ export const HeroAnimation = () => {
       {/* Metricas */}
       <div
         ref={metricsRef}
-        className="opacity-0 translate-y-20 absolute left-1/2 -translate-x-1/2"
+        className="absolute left-1/2 -translate-x-1/2 translate-y-20 opacity-0"
       >
         <div className="flex items-center justify-center gap-16">
           <div className="flex items-center gap-4">
-            <p className="text-[70px] font-bold text-brand-light-green leading-[110%]">
+            <p className="text-brand-light-green text-[70px] leading-[110%] font-bold">
               7,5
             </p>
             <span className="text-md leading-normal text-white">
-              <span className="text-2xl inline-block -mb-2 font-bold bg-gradient-to-r from-brand-main-green to-brand-light-green bg-clip-text text-transparent">
+              <span className="from-brand-main-green to-brand-light-green -mb-2 inline-block bg-gradient-to-r bg-clip-text text-2xl font-bold text-transparent">
                 +
               </span>
               <br />
@@ -182,11 +183,11 @@ export const HeroAnimation = () => {
           </div>
 
           <div className="flex items-center gap-4">
-            <p className="text-[70px] font-bold text-brand-light-green leading-[110%]">
+            <p className="text-brand-light-green text-[70px] leading-[110%] font-bold">
               950
             </p>
             <span className="text-md leading-normal text-white">
-              <span className="text-2xl inline-block -mb-2 font-bold bg-gradient-to-r from-brand-main-green to-brand-light-green bg-clip-text text-transparent">
+              <span className="from-brand-main-green to-brand-light-green -mb-2 inline-block bg-gradient-to-r bg-clip-text text-2xl font-bold text-transparent">
                 +
               </span>
               <br />
@@ -196,11 +197,11 @@ export const HeroAnimation = () => {
           </div>
 
           <div className="flex items-center gap-4">
-            <p className="text-[70px] font-bold text-brand-light-green leading-[110%]">
+            <p className="text-brand-light-green text-[70px] leading-[110%] font-bold">
               79
             </p>
             <span className="text-md leading-normal text-white">
-              <span className="text-2xl inline-block -mb-2 font-bold bg-gradient-to-r from-brand-main-green to-brand-light-green bg-clip-text text-transparent">
+              <span className="from-brand-main-green to-brand-light-green -mb-2 inline-block bg-gradient-to-r bg-clip-text text-2xl font-bold text-transparent">
                 +
               </span>
               <br />

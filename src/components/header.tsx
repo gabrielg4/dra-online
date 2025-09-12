@@ -6,6 +6,7 @@ import React, { useEffect, useState } from "react";
 import { Navigation } from "./navigation";
 import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
+import { MobileMenu } from "./mobile/mobile-menu";
 
 export const Header = () => {
   const [headerScrolled, setHeaderScrolled] = useState(false);
@@ -27,17 +28,17 @@ export const Header = () => {
   return (
     <div
       className={cn(
-        "z-50 fixed top-0 left-0 w-full duration-500",
+        "fixed top-0 z-50 w-full duration-500",
         !headerScrolled && "pt-5",
-        headerScrolled && "pt-0 bg-brand-dark-green"
+        headerScrolled && "bg-brand-dark-green pt-0",
       )}
     >
       <div className="container">
         <header
           className={cn(
-            "flex items-center justify-between gap-5 py-4  duration-500 border border-transparent",
+            "flex w-full items-center justify-between gap-5 border border-transparent py-2 duration-500 md:py-4",
             !headerScrolled &&
-              "rounded-full  border-brand-light-green px-6 py-6"
+              "border-brand-light-green rounded-full px-6 py-6",
           )}
         >
           <Link href="/">
@@ -49,19 +50,19 @@ export const Header = () => {
             />
           </Link>
           <Navigation />
-          <div className="flex items-center gap-5">
-            {/* MENU MOBILE */}
+          <div className="flex w-fit items-center gap-2">
             <Button
               variant={"outline"}
-              className="rounded-full py-2 px-6 bg-transparent border-white group hover:bg-white duration-300"
+              className="group hidden rounded-full border-white bg-transparent px-6 py-2 duration-300 hover:bg-white md:flex"
             >
               <Link
                 href="/"
-                className="text-white font-medium text-md group-hover:text-brand-main-green"
+                className="text-md group-hover:text-brand-main-green font-medium text-white"
               >
                 Área do cliente
               </Link>
             </Button>
+            <MobileMenu />
           </div>
         </header>
       </div>

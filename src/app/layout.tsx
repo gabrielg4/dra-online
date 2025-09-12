@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 
 import "./globals.css";
 import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
 
 const mainFont = localFont({
   src: [
@@ -50,6 +51,7 @@ export default function RootLayout({
       <body className={`${mainFont.variable} antialiased`}>
         <Header />
         <main className="bg-brand-dark-green">{children}</main>
+        <Footer />
       </body>
     </html>
   );

@@ -1,0 +1,368 @@
+import React from "react";
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { Button } from "../ui/button";
+import { ChevronDown, MenuIcon, XIcon } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+
+export const MobileMenu = () => {
+  return (
+    <div className="md:hidden">
+      <Sheet>
+        <SheetTrigger asChild>
+          <Button size="icon" variant="ghost">
+            <MenuIcon className="text-brand-light-green size-8 cursor-pointer" />
+          </Button>
+        </SheetTrigger>
+        <SheetContent
+          hideDefaultCloseBtn
+          className="w-full bg-white/10 pt-4 backdrop-blur-2xl"
+        >
+          <SheetClose asChild className="absolute top-5 right-5">
+            <Button size="icon" variant="ghost">
+              <XIcon className="size-8 cursor-pointer text-white" />
+            </Button>
+          </SheetClose>
+          <SheetHeader>
+            <SheetTitle>
+              <Image
+                src="/images/logo.svg"
+                alt="Logo Dr.Online"
+                width={117}
+                height={22}
+              />
+            </SheetTitle>
+            <nav className="mt-10">
+              <ul className="mb-8 flex flex-col items-start justify-center gap-6">
+                <li>
+                  <Link
+                    href="/sobre"
+                    className="hover:text-brand-light-green text-lg font-semibold text-white duration-200"
+                  >
+                    Sobre
+                  </Link>
+                </li>
+                <li>
+                  <Accordion type="single" collapsible>
+                    <AccordionItem value="item-1">
+                      <AccordionTrigger
+                        hasChevron={false}
+                        className="text-md hover:text-brand-light-green group flex cursor-pointer items-center justify-start gap-2 p-0 font-semibold text-white duration-200"
+                      >
+                        Soluções
+                        <ChevronDown className="size-6 text-white" />
+                      </AccordionTrigger>
+                      <AccordionContent>
+                        <div className="my-6 grid grid-cols-1 gap-5">
+                          <Link
+                            href="/solucoes/saude-mental"
+                            className="group flex items-start"
+                          >
+                            <Image
+                              src="/images/ic-saude-mental.svg"
+                              alt="ícone - Saúde mental"
+                              width={32}
+                              height={32}
+                            />
+                            <div className="ml-2 w-[calc(100%-32px)]">
+                              <p className="text-md group-hover:text-brand-light-green font-semibold text-white duration-300">
+                                Saúde Mental
+                              </p>
+                              <p className="text-sm text-white">
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit.
+                              </p>
+                            </div>
+                          </Link>
+                          <Link
+                            href="/solucoes/entrevista-qualificada"
+                            className="group flex items-start"
+                          >
+                            <Image
+                              src="/images/ic-entrevista-qualificada.svg"
+                              alt="ícone - Saúde mental"
+                              width={32}
+                              height={32}
+                            />
+                            <div className="ml-2 w-[calc(100%-32px)]">
+                              <p className="text-md group-hover:text-brand-light-green font-semibold text-white duration-300">
+                                Entrevista Qualificada
+                              </p>
+                              <p className="text-sm text-white">
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit.
+                              </p>
+                            </div>
+                          </Link>
+                          <Link
+                            href="/solucoes/atecao-integrada-a-saude"
+                            className="group flex items-start"
+                          >
+                            <Image
+                              src="/images/ic-atecao-integrada.svg"
+                              alt="ícone - Atenção Integrada à Saúde"
+                              width={32}
+                              height={32}
+                            />
+                            <div className="ml-2 w-[calc(100%-32px)]">
+                              <p className="text-md group-hover:text-brand-light-green font-semibold text-white duration-300">
+                                Atenção Integrada à Saúde
+                              </p>
+                              <p className="text-sm text-white">
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit.
+                              </p>
+                            </div>
+                          </Link>
+                          <Link
+                            href="/solucoes/pronto-atendimento"
+                            className="group flex items-start"
+                          >
+                            <Image
+                              src="/images/ic-pronto-atendimento.svg"
+                              alt="ícone - Pronto Atendimento 24h"
+                              width={32}
+                              height={32}
+                            />
+                            <div className="ml-2 w-[calc(100%-32px)]">
+                              <p className="text-md group-hover:text-brand-light-green font-semibold text-white duration-300">
+                                Pronto Atendimento 24h
+                              </p>
+                              <p className="text-sm text-white">
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit.
+                              </p>
+                            </div>
+                          </Link>
+                          <Link
+                            href="/solucoes/consulta-online"
+                            className="group flex items-start"
+                          >
+                            <Image
+                              src="/images/ic-consulta-online.svg"
+                              alt="ícone - Consulta Online com Especialistas"
+                              width={32}
+                              height={32}
+                            />
+                            <div className="ml-2 w-[calc(100%-32px)]">
+                              <p className="text-md group-hover:text-brand-light-green font-semibold text-white duration-300">
+                                Consulta Online com Especialistas
+                              </p>
+                              <p className="text-sm text-white">
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit.
+                              </p>
+                            </div>
+                          </Link>
+                          <Link
+                            href="/solucoes/consultorio-digital"
+                            className="group flex items-start"
+                          >
+                            <Image
+                              src="/images/ic-consultorio-digital.svg"
+                              alt="ícone - Consultório Digital"
+                              width={32}
+                              height={32}
+                            />
+                            <div className="ml-2 w-[calc(100%-32px)]">
+                              <p className="text-md group-hover:text-brand-light-green font-semibold text-white duration-300">
+                                Consultório Digital
+                              </p>
+                              <p className="text-sm text-white">
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit.
+                              </p>
+                            </div>
+                          </Link>
+                        </div>
+                      </AccordionContent>
+                    </AccordionItem>
+                  </Accordion>
+                </li>
+                <li>
+                  <Link
+                    href="/saude-digital"
+                    className="hover:text-brand-light-green text-lg font-semibold text-white duration-200"
+                  >
+                    Saúde digital
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/beneficios"
+                    className="hover:text-brand-light-green text-lg font-semibold text-white duration-200"
+                  >
+                    Benefícios
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/blog"
+                    className="hover:text-brand-light-green text-lg font-semibold text-white duration-200"
+                  >
+                    Blog
+                  </Link>
+                </li>
+                <li>
+                  <Accordion type="single" collapsible>
+                    <AccordionItem value="item-1">
+                      <AccordionTrigger
+                        hasChevron={false}
+                        className="text-md hover:text-brand-light-green group flex cursor-pointer items-center justify-start gap-2 p-0 font-semibold text-white duration-200"
+                      >
+                        FAQ
+                        <ChevronDown className="size-6 text-white" />
+                      </AccordionTrigger>
+                      <AccordionContent>
+                        <div className="my-6 grid grid-cols-1 gap-5">
+                          <Link
+                            href="/faq/dr-online"
+                            className="group flex items-start"
+                          >
+                            <Image
+                              src="/images/ic-faq-dronline.svg"
+                              alt="ícone - dr.online"
+                              width={32}
+                              height={32}
+                            />
+                            <div className="ml-2 w-[calc(100%-32px)]">
+                              <p className="text-md group-hover:text-brand-light-green font-semibold text-white duration-300">
+                                dr.online
+                              </p>
+                              <p className="text-sm text-white">
+                                Perguntas e respostas sobre a empresa.
+                              </p>
+                            </div>
+                          </Link>
+                          <Link
+                            href="/faq/pacientes"
+                            className="group flex items-start"
+                          >
+                            <Image
+                              src="/images/ic-faq-pacientes.svg"
+                              alt="ícone - Pacientes"
+                              width={32}
+                              height={32}
+                            />
+                            <div className="ml-2 w-[calc(100%-32px)]">
+                              <p className="text-md group-hover:text-brand-light-green font-semibold text-white duration-300">
+                                Pacientes
+                              </p>
+                              <p className="text-sm text-white">
+                                Dúvidas frequentes de pacientes.
+                              </p>
+                            </div>
+                          </Link>
+                          <Link
+                            href="/faq/profissionais-da-saude"
+                            className="group flex items-start"
+                          >
+                            <Image
+                              src="/images/ic-faq-profissionais.svg"
+                              alt="ícone - Profissionais da saúde"
+                              width={32}
+                              height={32}
+                            />
+                            <div className="ml-2 w-[calc(100%-32px)]">
+                              <p className="text-md group-hover:text-brand-light-green font-semibold text-white duration-300">
+                                Profissionais da saúde
+                              </p>
+                              <p className="text-sm text-white">
+                                Informações relevantes sobre o uso da
+                                plataforma.
+                              </p>
+                            </div>
+                          </Link>
+                        </div>
+                      </AccordionContent>
+                    </AccordionItem>
+                  </Accordion>
+                </li>
+                <li>
+                  <Accordion type="single" collapsible>
+                    <AccordionItem value="item-1">
+                      <AccordionTrigger
+                        hasChevron={false}
+                        className="text-md hover:text-brand-light-green group flex cursor-pointer items-center justify-start gap-2 p-0 font-semibold text-white duration-200"
+                      >
+                        Trabalhe conosco
+                        <ChevronDown className="size-6 text-white" />
+                      </AccordionTrigger>
+                      <AccordionContent>
+                        <div className="my-6 grid grid-cols-1 gap-5">
+                          <Link
+                            href="/faq/dr-online"
+                            className="group flex items-start"
+                          >
+                            <Image
+                              src="/images/ic-medicos.svg"
+                              alt="ícone - trabalhe conosco médicos"
+                              width={32}
+                              height={32}
+                            />
+                            <div className="ml-2 w-[calc(100%-32px)]">
+                              <p className="text-md group-hover:text-brand-light-green font-semibold text-white duration-300">
+                                Médicos
+                              </p>
+                              <p className="text-sm text-white">
+                                Lorem ipsum dolor sit.
+                              </p>
+                            </div>
+                          </Link>
+                          <Link
+                            href="/faq/pacientes"
+                            className="group flex items-start"
+                          >
+                            <Image
+                              src="/images/ic-demais-profissionais.svg"
+                              alt="ícone - demais profissionais"
+                              width={32}
+                              height={32}
+                            />
+                            <div className="ml-2 w-[calc(100%-32px)]">
+                              <p className="text-md group-hover:text-brand-light-green font-semibold text-white duration-300">
+                                Demais profissionais
+                              </p>
+                              <p className="text-sm text-white">
+                                Lorem ipsum dolor sit.
+                              </p>
+                            </div>
+                          </Link>
+                        </div>
+                      </AccordionContent>
+                    </AccordionItem>
+                  </Accordion>
+                </li>
+              </ul>
+              <Button
+                variant={"outline"}
+                className="group flex rounded-full border-white bg-transparent px-6 py-2 duration-300 hover:bg-white"
+              >
+                <Link
+                  href="/"
+                  className="text-md group-hover:text-brand-main-green font-medium text-white"
+                >
+                  Área do cliente
+                </Link>
+              </Button>
+            </nav>
+          </SheetHeader>
+        </SheetContent>
+      </Sheet>
+    </div>
+  );
+};
