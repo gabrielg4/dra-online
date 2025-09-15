@@ -41,8 +41,7 @@ export const WheelCarousel = () => {
 
     // mantém o Draggable “em sincronia”
     if (draggableRef.current) {
-      // @ts-ignore - Draggable instancia adiciona props dinamicamente
-      draggableRef.current.rotation = rotation;
+      (draggableRef.current.rotation as number) = rotation;
     }
   };
 
@@ -75,7 +74,6 @@ export const WheelCarousel = () => {
       },
       onThrowComplete: function () {
         // garante estado correto ao final da inércia
-        // @ts-ignore
         const rot = this.rotation as number;
         const idx = clamp(Math.round(-rot / STEP), 0, MAX_INDEX);
         setActiveIndex(idx);

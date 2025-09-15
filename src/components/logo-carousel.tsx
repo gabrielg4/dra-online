@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React from "react";
 
 export const LogoCarousel = () => {
@@ -19,20 +20,22 @@ export const LogoCarousel = () => {
     <>
       <div className="relative overflow-hidden">
         {/* Gradiente para suavizar as bordas */}
-        <div className="absolute left-0 top-0 w-20 h-full bg-gradient-to-r from-brand-dark-green to-transparent z-10"></div>
-        <div className="absolute right-0 top-0 w-20 h-full bg-gradient-to-l from-brand-dark-green to-transparent z-10"></div>
+        <div className="from-brand-dark-green absolute top-0 left-0 z-10 h-full w-20 bg-gradient-to-r to-transparent"></div>
+        <div className="from-brand-dark-green absolute top-0 right-0 z-10 h-full w-20 bg-gradient-to-l to-transparent"></div>
 
         {/* Carrossel animado */}
-        <div className="flex animate-scroll">
+        <div className="animate-scroll flex">
           {duplicatedLogos.map((logo, index) => (
             <div
               key={index}
-              className="flex-shrink-0 mx-8 w-32 h-16 flex items-center justify-center  transition-all duration-300 hover:scale-110"
+              className="mx-8 flex h-16 w-32 flex-shrink-0 items-center justify-center transition-all duration-300 hover:scale-110"
             >
-              <img
+              <Image
                 src={logo}
                 alt={logo}
-                className="max-w-full max-h-full object-contain filter hover:filter-none transition-all duration-300"
+                width={0}
+                height={0}
+                className="h-[40px] max-h-full w-[150px] max-w-full object-contain filter transition-all duration-300 hover:filter-none"
               />
             </div>
           ))}

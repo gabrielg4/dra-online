@@ -20,16 +20,18 @@ const formSchema = z.object({
   name: z.string().trim().min(1, "Campo obrigatório"),
   email: z.email("E-mail inválido"),
   phone: z.string().trim().min(1, "Campo obrigatório"),
+  company: z.string().trim(),
   message: z.string(),
 });
 
-export const ContactForm = () => {
+export const ContactForm2 = () => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
       email: "",
       phone: "",
+      company: "",
       message: "",
     },
   });
@@ -50,7 +52,7 @@ export const ContactForm = () => {
                 <Input
                   placeholder="Nome"
                   {...field}
-                  className="border-b-brand-light-green rounded-none border-0 border-b p-0 px-1 py-2 text-sm font-normal text-white placeholder:text-white"
+                  className="border-b-brand-white rounded-none border-0 border-b p-0 px-1 py-2 text-sm font-normal text-white placeholder:text-white"
                 />
               </FormControl>
               <FormMessage />
@@ -66,7 +68,7 @@ export const ContactForm = () => {
                 <Input
                   placeholder="E-mail"
                   {...field}
-                  className="border-b-brand-light-green rounded-none border-0 border-b p-0 px-1 py-2 text-sm font-normal text-white placeholder:text-white"
+                  className="border-b-brand-white rounded-none border-0 border-b p-0 px-1 py-2 text-sm font-normal text-white placeholder:text-white"
                 />
               </FormControl>
               <FormMessage />
@@ -82,7 +84,23 @@ export const ContactForm = () => {
                 <Input
                   placeholder="Telefone/WhatsApp"
                   {...field}
-                  className="border-b-brand-light-green rounded-none border-0 border-b p-0 px-1 py-2 text-sm font-normal text-white placeholder:text-white"
+                  className="border-b-brand-white rounded-none border-0 border-b p-0 px-1 py-2 text-sm font-normal text-white placeholder:text-white"
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="company"
+          render={({ field }) => (
+            <FormItem>
+              <FormControl>
+                <Input
+                  placeholder="Nome da sua empresa"
+                  {...field}
+                  className="border-b-brand-white rounded-none border-0 border-b p-0 px-1 py-2 text-sm font-normal text-white placeholder:text-white"
                 />
               </FormControl>
               <FormMessage />
@@ -98,7 +116,7 @@ export const ContactForm = () => {
                 <Textarea
                   placeholder="Deixe sua mensagem"
                   {...field}
-                  className="border-b-brand-light-green h-[100px] rounded-none border-0 border-b p-0 px-1 py-2 text-sm font-normal text-white placeholder:text-white"
+                  className="border-b-brand-white h-[100px] rounded-none border-0 border-b p-0 px-1 py-2 text-sm font-normal text-white placeholder:text-white"
                 />
               </FormControl>
               <FormMessage />
@@ -109,7 +127,7 @@ export const ContactForm = () => {
           type="submit"
           className="bg-brand-light-green hover:bg-brand-light-green2 group text-brand-dark-green mt-2 h-auto w-full cursor-pointer rounded-full px-6 py-3 font-medium"
         >
-          Falar com especialista
+          Enviar informações
           <ArrowUpRight className="size-4 duration-300 group-hover:rotate-45" />
         </Button>
       </form>

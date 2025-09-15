@@ -3,7 +3,6 @@ import gsap from "gsap";
 import React, { useEffect, useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
-import { HeroMetricsCarousel } from "../mobile/hero-metrics-carousel";
 
 gsap.registerPlugin(ScrollTrigger);
 

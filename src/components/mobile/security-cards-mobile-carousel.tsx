@@ -3,7 +3,7 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 import {
   Carousel,
@@ -37,10 +37,6 @@ export const SecurityCardsMobileCarousel = () => {
     // setCurrent(slide)
     api.scrollTo(slide);
   };
-
-  const card1 = useRef(null);
-  const card2 = useRef(null);
-  const card3 = useRef(null);
 
   useEffect(() => {
     const tl = gsap.timeline({
