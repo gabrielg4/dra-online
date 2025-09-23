@@ -19,7 +19,7 @@ export default function Home() {
     <>
       <section className="overflow-hidden bg-[url('/images/img-bg_hero.webp')] bg-cover bg-center pt-40 pb-10 md:pb-20 lg:pb-40">
         <div className="container flex flex-col items-center justify-center">
-          <h1 className="h3 md:h2 mb-6 text-center text-white">
+          <h1 className="h4 md:h2 mb-6 text-center text-white">
             Somos a principal empresa <br className="hidden md:inline-block" />
             de Telemedicina do país!
           </h1>
@@ -70,7 +70,7 @@ export default function Home() {
         id="metrics"
         className="overflow-hidden bg-[url('/images/img-bg-beneficios.webp')] bg-cover bg-center py-14"
       >
-        <div className="container flex flex-col items-center gap-14 md:flex-row">
+        <div className="container flex flex-col items-center gap-8 md:flex-row md:gap-10 lg:gap-14">
           <div className="w-full md:max-w-[373px]">
             <p className="mb-1 text-center font-semibold text-white md:text-start">
               <span className="text-brand-light-green">O impacto da</span> dr.
@@ -146,7 +146,7 @@ export default function Home() {
       >
         <div className="absolute top-[calc(50%+40px)] left-1/2 h-[340px] w-[340px] -translate-x-1/2 bg-[url('/images/ic-circle-blur-overlay.svg')] bg-contain bg-center md:h-[529px] md:w-[529px]" />
         <div className="relative z-10 container">
-          <h2 className="display text-center font-normal text-white">
+          <h2 className="max-[767px]:h3 display text-center font-normal text-white">
             <span className="font-semibold">
               dr<span className="text-brand-light-green">.</span>
             </span>
@@ -165,7 +165,7 @@ export default function Home() {
             </span>{" "}
             online
           </p>
-          <h2 className="h5 md:h3 mb-12 text-center text-white">
+          <h2 className="h5 md:h3 mb-8 text-center text-white lg:mb-12">
             <span className="font-normal">Tudo sobre</span> saúde digital,
             inovação e telemedicina
           </h2>

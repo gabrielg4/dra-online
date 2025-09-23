@@ -71,7 +71,7 @@ export const DiferentialsTabs = () => {
               className="rounded-2xl object-cover"
             />
           </div>
-          <div>
+          <div className="w-full p-5">
             <h3 className="h5 text-brand-black mb-6">Pronto Atendimento 24h</h3>
             <p className="text-brand-dark-gray mb-14 text-lg font-normal">
               Atendimento médico online rápido, humanizado e com resolutividade
@@ -97,7 +97,7 @@ export const DiferentialsTabs = () => {
                   width={95}
                   height={95}
                 />
-                <p className="text-brand-dark-gray mt-2 ml-3 text-lg font-semibold">
+                <p className="text-brand-dark-gray mt-2 ml-3 text-center text-lg font-semibold">
                   Lorem ipsum
                 </p>
               </div>
@@ -108,7 +108,7 @@ export const DiferentialsTabs = () => {
                   width={95}
                   height={95}
                 />
-                <p className="text-brand-dark-gray mt-2 ml-3 text-lg font-semibold">
+                <p className="text-brand-dark-gray mt-2 ml-3 text-center text-lg font-semibold">
                   Lorem ipsum
                 </p>
               </div>
@@ -119,7 +119,7 @@ export const DiferentialsTabs = () => {
                   width={95}
                   height={95}
                 />
-                <p className="text-brand-dark-gray mt-2 ml-3 text-lg font-semibold">
+                <p className="text-brand-dark-gray mt-2 ml-3 text-center text-lg font-semibold">
                   Lorem ipsum
                 </p>
               </div>
@@ -138,7 +138,7 @@ export const DiferentialsTabs = () => {
               className="rounded-2xl object-cover"
             />
           </div>
-          <div>
+          <div className="w-full p-5">
             <h3 className="h5 text-brand-black mb-6">Pronto Atendimento 24h</h3>
             <p className="text-brand-dark-gray mb-14 text-lg font-normal">
               Atendimento médico online rápido, humanizado e com resolutividade
@@ -164,7 +164,7 @@ export const DiferentialsTabs = () => {
                   width={95}
                   height={95}
                 />
-                <p className="text-brand-dark-gray mt-2 ml-3 text-lg font-semibold">
+                <p className="text-brand-dark-gray mt-2 ml-3 text-center text-lg font-semibold">
                   Lorem ipsum
                 </p>
               </div>
@@ -175,7 +175,7 @@ export const DiferentialsTabs = () => {
                   width={95}
                   height={95}
                 />
-                <p className="text-brand-dark-gray mt-2 ml-3 text-lg font-semibold">
+                <p className="text-brand-dark-gray mt-2 ml-3 text-center text-lg font-semibold">
                   Lorem ipsum
                 </p>
               </div>
@@ -186,7 +186,7 @@ export const DiferentialsTabs = () => {
                   width={95}
                   height={95}
                 />
-                <p className="text-brand-dark-gray mt-2 ml-3 text-lg font-semibold">
+                <p className="text-brand-dark-gray mt-2 ml-3 text-center text-lg font-semibold">
                   Lorem ipsum
                 </p>
               </div>
@@ -205,7 +205,7 @@ export const DiferentialsTabs = () => {
               className="rounded-2xl object-cover"
             />
           </div>
-          <div>
+          <div className="w-full p-5">
             <h3 className="h5 text-brand-black mb-6">Pronto Atendimento 24h</h3>
             <p className="text-brand-dark-gray mb-14 text-lg font-normal">
               Atendimento médico online rápido, humanizado e com resolutividade
@@ -231,7 +231,7 @@ export const DiferentialsTabs = () => {
                   width={95}
                   height={95}
                 />
-                <p className="text-brand-dark-gray mt-2 ml-3 text-lg font-semibold">
+                <p className="text-brand-dark-gray mt-2 ml-3 text-center text-lg font-semibold">
                   Lorem ipsum
                 </p>
               </div>
@@ -242,7 +242,7 @@ export const DiferentialsTabs = () => {
                   width={95}
                   height={95}
                 />
-                <p className="text-brand-dark-gray mt-2 ml-3 text-lg font-semibold">
+                <p className="text-brand-dark-gray mt-2 ml-3 text-center text-lg font-semibold">
                   Lorem ipsum
                 </p>
               </div>
@@ -253,7 +253,7 @@ export const DiferentialsTabs = () => {
                   width={95}
                   height={95}
                 />
-                <p className="text-brand-dark-gray mt-2 ml-3 text-lg font-semibold">
+                <p className="text-brand-dark-gray mt-2 ml-3 text-center text-lg font-semibold">
                   Lorem ipsum
                 </p>
               </div>
@@ -272,7 +272,7 @@ export const DiferentialsTabs = () => {
               className="rounded-2xl object-cover"
             />
           </div>
-          <div>
+          <div className="w-full p-5">
             <h3 className="h5 text-brand-black mb-6">Pronto Atendimento 24h</h3>
             <p className="text-brand-dark-gray mb-14 text-lg font-normal">
               Atendimento médico online rápido, humanizado e com resolutividade
@@ -298,7 +298,7 @@ export const DiferentialsTabs = () => {
                   width={95}
                   height={95}
                 />
-                <p className="text-brand-dark-gray mt-2 ml-3 text-lg font-semibold">
+                <p className="text-brand-dark-gray mt-2 ml-3 text-center text-lg font-semibold">
                   Lorem ipsum
                 </p>
               </div>
@@ -309,7 +309,7 @@ export const DiferentialsTabs = () => {
                   width={95}
                   height={95}
                 />
-                <p className="text-brand-dark-gray mt-2 ml-3 text-lg font-semibold">
+                <p className="text-brand-dark-gray mt-2 ml-3 text-center text-lg font-semibold">
                   Lorem ipsum
                 </p>
               </div>
@@ -320,7 +320,7 @@ export const DiferentialsTabs = () => {
                   width={95}
                   height={95}
                 />
-                <p className="text-brand-dark-gray mt-2 ml-3 text-lg font-semibold">
+                <p className="text-brand-dark-gray mt-2 ml-3 text-center text-lg font-semibold">
                   Lorem ipsum
                 </p>
               </div>
@@ -339,7 +339,7 @@ export const DiferentialsTabs = () => {
               className="rounded-2xl object-cover"
             />
           </div>
-          <div>
+          <div className="w-full p-5">
             <h3 className="h5 text-brand-black mb-6">Pronto Atendimento 24h</h3>
             <p className="text-brand-dark-gray mb-14 text-lg font-normal">
               Atendimento médico online rápido, humanizado e com resolutividade
@@ -365,7 +365,7 @@ export const DiferentialsTabs = () => {
                   width={95}
                   height={95}
                 />
-                <p className="text-brand-dark-gray mt-2 ml-3 text-lg font-semibold">
+                <p className="text-brand-dark-gray mt-2 ml-3 text-center text-lg font-semibold">
                   Lorem ipsum
                 </p>
               </div>
@@ -376,7 +376,7 @@ export const DiferentialsTabs = () => {
                   width={95}
                   height={95}
                 />
-                <p className="text-brand-dark-gray mt-2 ml-3 text-lg font-semibold">
+                <p className="text-brand-dark-gray mt-2 ml-3 text-center text-lg font-semibold">
                   Lorem ipsum
                 </p>
               </div>
@@ -387,7 +387,7 @@ export const DiferentialsTabs = () => {
                   width={95}
                   height={95}
                 />
-                <p className="text-brand-dark-gray mt-2 ml-3 text-lg font-semibold">
+                <p className="text-brand-dark-gray mt-2 ml-3 text-center text-lg font-semibold">
                   Lorem ipsum
                 </p>
               </div>
@@ -406,7 +406,7 @@ export const DiferentialsTabs = () => {
               className="rounded-2xl object-cover"
             />
           </div>
-          <div>
+          <div className="w-full p-5">
             <h3 className="h5 text-brand-black mb-6">Pronto Atendimento 24h</h3>
             <p className="text-brand-dark-gray mb-14 text-lg font-normal">
               Atendimento médico online rápido, humanizado e com resolutividade
@@ -432,7 +432,7 @@ export const DiferentialsTabs = () => {
                   width={95}
                   height={95}
                 />
-                <p className="text-brand-dark-gray mt-2 ml-3 text-lg font-semibold">
+                <p className="text-brand-dark-gray mt-2 ml-3 text-center text-lg font-semibold">
                   Lorem ipsum
                 </p>
               </div>
@@ -443,7 +443,7 @@ export const DiferentialsTabs = () => {
                   width={95}
                   height={95}
                 />
-                <p className="text-brand-dark-gray mt-2 ml-3 text-lg font-semibold">
+                <p className="text-brand-dark-gray mt-2 ml-3 text-center text-lg font-semibold">
                   Lorem ipsum
                 </p>
               </div>
@@ -454,7 +454,7 @@ export const DiferentialsTabs = () => {
                   width={95}
                   height={95}
                 />
-                <p className="text-brand-dark-gray mt-2 ml-3 text-lg font-semibold">
+                <p className="text-brand-dark-gray mt-2 ml-3 text-center text-lg font-semibold">
                   Lorem ipsum
                 </p>
               </div>

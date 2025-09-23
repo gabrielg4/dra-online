@@ -93,7 +93,7 @@ export const WheelCarousel = () => {
   }, [MAX_INDEX]);
 
   return (
-    <section className="relative mt-5 h-[500px] w-full overflow-hidden md:mt-10 lg:mt-16">
+    <section className="relative h-[500px] w-full overflow-hidden md:mt-10 lg:mt-16">
       <div
         ref={curvedCarouselRef}
         className="carousel absolute top-10 left-[calc(50%-150px)] origin-[150px_2500px] will-change-transform"
