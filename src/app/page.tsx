@@ -50,7 +50,7 @@ export default function Home() {
           <LogoCarousel />
         </div>
       </section>
-      <ChallengersAnimation debug={false} pinScroll={900} />
+      <ChallengersAnimation pinScroll={900} />
 
       <section className="overflow-hidden bg-white bg-[url('/images/bg-diferenciais.webp')] bg-cover bg-center py-14">
         <div className="container">

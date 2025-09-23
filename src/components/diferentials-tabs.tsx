@@ -10,10 +10,10 @@ export const DiferentialsTabs = () => {
       defaultValue="tab1"
       className="w-full items-center gap-14 p-0 md:justify-center"
     >
-      <TabsList className="shadow-brand-main-green flex h-auto w-full max-w-full flex-nowrap gap-0 overflow-x-auto bg-transparent p-0 shadow-2xl/20 md:justify-center [&::-webkit-scrollbar]:hidden">
+      <TabsList className="shadow-brand-main-green flex h-auto w-full max-w-full flex-nowrap gap-0 overflow-x-auto !bg-transparent p-0 shadow-2xl/20 md:justify-center [&::-webkit-scrollbar]:hidden">
         <TabsTrigger
           value="tab1"
-          className="text-brand-dark-gray data-[state=active]:bg-brand-main-green hover:bg-brand-main-green z-[9] shrink-0 rounded-2xl bg-white px-6 py-4 text-center text-xl font-semibold duration-300 hover:text-white data-[state=active]:text-white"
+          className="text-brand-dark-gray data-[state=active]:bg-brand-main-green hover:bg-brand-main-green z-[9] shrink-0 rounded-2xl bg-white py-4 pr-6 pl-8 text-center text-xl font-semibold duration-300 hover:text-white data-[state=active]:text-white"
         >
           Entrevista
           <br /> Qualificada
@@ -21,7 +21,7 @@ export const DiferentialsTabs = () => {
 
         <TabsTrigger
           value="tab2"
-          className="text-brand-dark-gray data-[state=active]:bg-brand-main-green hover:bg-brand-main-green z-[8] -ml-2 shrink-0 rounded-2xl bg-white px-6 py-4 text-center text-xl font-semibold duration-300 hover:text-white data-[state=active]:text-white"
+          className="text-brand-dark-gray data-[state=active]:bg-brand-main-green hover:bg-brand-main-green z-[8] -ml-4 shrink-0 rounded-2xl bg-white py-4 pr-6 pl-8 text-center text-xl font-semibold duration-300 hover:text-white data-[state=active]:text-white"
         >
           Pronto
           <br /> Atendimento 24h
@@ -29,7 +29,7 @@ export const DiferentialsTabs = () => {
 
         <TabsTrigger
           value="tab3"
-          className="text-brand-dark-gray data-[state=active]:bg-brand-main-green hover:bg-brand-main-green z-[7] -ml-2 shrink-0 rounded-2xl bg-white px-6 py-4 text-center text-xl font-semibold duration-300 hover:text-white data-[state=active]:text-white"
+          className="text-brand-dark-gray data-[state=active]:bg-brand-main-green hover:bg-brand-main-green z-[7] -ml-4 shrink-0 rounded-2xl bg-white py-4 pr-6 pl-8 text-center text-xl font-semibold duration-300 hover:text-white data-[state=active]:text-white"
         >
           Consulta Online
           <br /> com Especialistas
@@ -37,7 +37,7 @@ export const DiferentialsTabs = () => {
 
         <TabsTrigger
           value="tab4"
-          className="text-brand-dark-gray data-[state=active]:bg-brand-main-green hover:bg-brand-main-green z-[6] -ml-2 shrink-0 rounded-2xl bg-white px-6 py-4 text-center text-xl font-semibold duration-300 hover:text-white data-[state=active]:text-white"
+          className="text-brand-dark-gray data-[state=active]:bg-brand-main-green hover:bg-brand-main-green z-[6] -ml-4 shrink-0 rounded-2xl bg-white py-4 pr-6 pl-8 text-center text-xl font-semibold duration-300 hover:text-white data-[state=active]:text-white"
         >
           Consultório
           <br /> Digital
@@ -45,7 +45,7 @@ export const DiferentialsTabs = () => {
 
         <TabsTrigger
           value="tab5"
-          className="text-brand-dark-gray data-[state=active]:bg-brand-main-green hover:bg-brand-main-green z-[5] -ml-2 shrink-0 rounded-2xl bg-white px-6 py-4 text-center text-xl font-semibold duration-300 hover:text-white data-[state=active]:text-white"
+          className="text-brand-dark-gray data-[state=active]:bg-brand-main-green hover:bg-brand-main-green z-[5] -ml-4 shrink-0 rounded-2xl bg-white py-4 pr-6 pl-8 text-center text-xl font-semibold duration-300 hover:text-white data-[state=active]:text-white"
         >
           Atenção Integrada
           <br /> à Saúde
@@ -53,14 +53,14 @@ export const DiferentialsTabs = () => {
 
         <TabsTrigger
           value="tab6"
-          className="text-brand-dark-gray data-[state=active]:bg-brand-main-green hover:bg-brand-main-green z-[4] -ml-2 shrink-0 rounded-2xl bg-white px-6 py-4 text-center text-xl font-semibold duration-300 hover:text-white data-[state=active]:text-white"
+          className="text-brand-dark-gray data-[state=active]:bg-brand-main-green hover:bg-brand-main-green z-[4] -ml-4 shrink-0 rounded-2xl bg-white py-4 pr-6 pl-8 text-center text-xl font-semibold duration-300 hover:text-white data-[state=active]:text-white"
         >
           Saúde
           <br /> Mental
         </TabsTrigger>
       </TabsList>
 
-      <TabsContent value="tab1">
+      <TabsContent value="tab1" className="group">
         <div className="flex flex-col items-center gap-5 bg-white md:flex-row md:gap-10 lg:gap-20">
           <div className="w-full md:w-1/2">
             <Image

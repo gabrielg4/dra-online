@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { SmoothScrolling } from "@/components/smooth-scrolling";
 
 const mainFont = localFont({
   src: [
@@ -50,7 +51,9 @@ export default function RootLayout({
     <html lang="pt-br">
       <body className={`${mainFont.variable} antialiased`}>
         <Header />
-        <main className="bg-brand-dark-green">{children}</main>
+        <SmoothScrolling>
+          <main className="bg-brand-dark-green">{children}</main>
+        </SmoothScrolling>
         <Footer />
       </body>
     </html>

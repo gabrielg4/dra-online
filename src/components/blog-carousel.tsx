@@ -52,7 +52,7 @@ export const BlogCarousel = () => {
         align: "start",
       }}
     >
-      <CarouselContent className="-ml-8">
+      <CarouselContent className="-ml-8 pt-3">
         {placeholderBlogposts.map((BlogpostCard, index) => (
           <CarouselItem
             key={index + 1}

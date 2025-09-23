@@ -8,8 +8,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 type Props = {
-  /** Ativa os markers do ScrollTrigger para depuração. */
-  debug?: boolean;
   /** Distância de rolagem (e pin) em px. */
   pinScroll?: number;
 };
@@ -18,7 +16,6 @@ const SECTION_HEIGHT = 900; // altura do “fundo verde”
 const DEFAULT_PIN_SCROLL = 900; // quanto o usuário rola com a seção pinada
 
 export function ChallengersAnimation({
-  debug = false,
   pinScroll = DEFAULT_PIN_SCROLL,
 }: Props) {
   const wrapperRef = useRef<HTMLDivElement | null>(null);
@@ -51,13 +48,12 @@ export function ChallengersAnimation({
           defaults: { ease: "none" },
           scrollTrigger: {
             trigger: wrapper,
-            start: "top 10%",
-            end: `+=200%`,
+            start: "top top",
+            end: `+=250%`,
             pin: true,
             pinSpacing: true,
             scrub: 3,
-            markers: debug,
-            anticipatePin: 1,
+            // markers: true,
             invalidateOnRefresh: true,
             onRefreshInit: () => gsap.set(cardsLayer, { y: 0 }),
           },
@@ -69,9 +65,9 @@ export function ChallengersAnimation({
             // distância do parallax: ajuste conforme desejar (<= SECTION_HEIGHT para evitar overflow)
             // usamos clamp pra garantir que não passe da borda do wrapper
             y: () => {
-              const desired = -SECTION_HEIGHT * 1; // 65% da altura (efeito suave)
+              const desired = -SECTION_HEIGHT * 1.3; // 65% da altura (efeito suave)
               // limite seguro: nunca ultrapassar a própria altura da seção
-              const min = -SECTION_HEIGHT + 16; // leve folga pra não “colar” completamente
+              const min = -SECTION_HEIGHT - 90; // leve folga pra não “colar” completamente
               const max = 0;
               return gsap.utils.clamp(min, max, desired);
             },
@@ -81,13 +77,13 @@ export function ChallengersAnimation({
     }, wrapper);
 
     return () => ctx.revert();
-  }, [debug, pinScroll]);
+  }, [pinScroll]);
 
   return (
     <section
       ref={wrapperRef}
       aria-label="Desafios enfrentados"
-      className="relative mx-auto w-full"
+      className="relative mx-auto min-h-screen w-full"
       style={{ height: SECTION_HEIGHT }}
     >
       {/* Fundo verde com pattern — troque a imagem se quiser */}
@@ -101,7 +97,7 @@ export function ChallengersAnimation({
 
       {/* Título fixo (não é animado) */}
       <div className="relative z-10 container mx-auto px-4">
-        <h2 className="h5 md:!h3 pt-8 text-center text-white md:pt-10 lg:pt-12">
+        <h2 className="h5 md:!h3 pt-8 text-center text-white md:pt-10 lg:pt-20">
           Sua empresa enfrenta esses desafios?
         </h2>
       </div>
@@ -109,7 +105,7 @@ export function ChallengersAnimation({
       {/* Camada que será transladada (parallax) */}
       <div
         ref={cardsLayerRef}
-        className="absolute inset-0 top-36 z-10 md:!top-32"
+        className="absolute inset-0 top-36 z-10 md:!top-52"
       >
         <div
           className="from-brand-main-green to-brand-light-green absolute top-[0px] left-1/2 w-full max-w-[320px] -translate-x-1/2 cursor-pointer rounded-2xl bg-gradient-to-b p-[6px]"

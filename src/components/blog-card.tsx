@@ -5,7 +5,7 @@ export const BlogCard = () => {
   return (
     <Link
       href="/"
-      className="group flex h-[422px] w-full items-end justify-end rounded-2xl bg-[url('/images/card-blog.webp')] bg-cover bg-center p-4"
+      className="group flex h-[422px] w-full items-end justify-end rounded-2xl bg-[url('/images/card-blog.webp')] bg-cover bg-center p-4 duration-300 hover:-translate-y-3"
     >
       <div className="rounded-2xl bg-white/10 p-4 shadow-2xl/10 backdrop-blur-2xl">
         <h3 className="mb-3 text-lg font-bold text-white">
