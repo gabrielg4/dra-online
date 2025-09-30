@@ -35,7 +35,7 @@ export const LogoCarousel = () => {
                 alt={logo}
                 width={0}
                 height={0}
-                className="h-[40px] max-h-full w-[150px] max-w-full object-contain filter transition-all duration-300 hover:filter-none"
+                className="h-[60px] max-h-full w-[180px] max-w-full object-contain filter transition-all duration-300 hover:filter-none"
               />
             </div>
           ))}

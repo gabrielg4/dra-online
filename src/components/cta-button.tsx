@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { Button } from "./ui/button";
 import Link from "next/link";
@@ -10,13 +12,13 @@ interface CtaButtonProps {
 
 export const CtaButton = ({ url, title }: CtaButtonProps) => {
   return (
-    <Button className="p-0 h-auto rounded-full bg-brand-light-green group hover:bg-brand-main-green duration-300">
+    <Button className="bg-brand-light-green group hover:bg-brand-main-green h-auto rounded-full p-0 duration-300">
       <Link
         href={url}
-        className="py-2 px-6 flex items-center gap-2 text-brand-dark-green text-lg font-medium group-hover:text-white duration-300"
+        className="text-brand-dark-green flex items-center gap-2 px-6 py-3 text-lg font-medium duration-300 group-hover:text-white"
       >
         {title}
-        <ArrowUpRight className="size-6 group-hover:rotate-45 duration-300" />
+        <ArrowUpRight className="size-6 duration-300 group-hover:rotate-45" />
       </Link>
     </Button>
   );

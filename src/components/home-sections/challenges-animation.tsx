@@ -1,90 +1,99 @@
 "use client";
 
-import { useLayoutEffect, useRef } from "react";
+import { useRef } from "react";
 import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
+import { useGSAP } from "@gsap/react";
+import { SplitText } from "gsap/all";
+import { useMediaQuery } from "react-responsive";
 gsap.registerPlugin(ScrollTrigger);
 
-type Props = {
-  /** Distância de rolagem (e pin) em px. */
-  pinScroll?: number;
-};
-
-const SECTION_HEIGHT = 900; // altura do “fundo verde”
-const DEFAULT_PIN_SCROLL = 900; // quanto o usuário rola com a seção pinada
-
-export function ChallengersAnimation({
-  pinScroll = DEFAULT_PIN_SCROLL,
-}: Props) {
+export function ChallengersAnimation() {
+  const isSmallLaptop = useMediaQuery({
+    query: "(max-width: 1024px)",
+  });
   const wrapperRef = useRef<HTMLDivElement | null>(null);
   const cardsLayerRef = useRef<HTMLDivElement | null>(null);
 
-  useLayoutEffect(() => {
-    const wrapper = wrapperRef.current;
-    const cardsLayer = cardsLayerRef.current;
-    if (!wrapper || !cardsLayer) return;
+  useGSAP(() => {
+    const titleSplit = new SplitText(".title-section-challenges", {
+      type: "chars, words",
+    });
 
-    // respeita usuários com motion reduzido
-    const reduce = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
-    if (reduce) return;
+    gsap.from(titleSplit.chars, {
+      yPercent: 100,
+      opacity: 0,
+      duration: 0.7,
+      ease: "expo.out",
+      stagger: 0.05,
+      scrollTrigger: {
+        trigger: wrapperRef.current,
+        start: "top 70%",
+        // markers: true,
+      },
+    });
 
-    // garante que nada “vaze” visualmente
-    wrapper.style.overflow = "hidden";
-    if (getComputedStyle(wrapper).position === "static") {
-      wrapper.style.position = "relative";
-    }
+    const cardsTimeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: wrapperRef.current,
+        start: isSmallLaptop ? "top 20%" : "top top",
+        end: isSmallLaptop ? "+=180%" : `+=250%`,
+        pin: true,
+        // pinSpacing: true,
+        scrub: 3,
+        // markers: true,
+        invalidateOnRefresh: true,
+        onRefreshInit: () => gsap.set(cardsLayerRef.current, { y: 0 }),
+      },
+    });
 
-    const ctx = gsap.context(() => {
-      // Melhor perf. no container que vai transladar
-      gsap.set(cardsLayer, { willChange: "transform", y: 0 });
+    cardsTimeline.to(cardsLayerRef.current, {
+      y: "-=150%",
+    });
 
-      // timeline única com pin no wrapper
-      gsap
-        .timeline({
-          defaults: { ease: "none" },
-          scrollTrigger: {
-            trigger: wrapper,
-            start: "top top",
-            end: `+=250%`,
-            pin: true,
-            pinSpacing: true,
-            scrub: 3,
-            // markers: true,
-            invalidateOnRefresh: true,
-            onRefreshInit: () => gsap.set(cardsLayer, { y: 0 }),
-          },
-        })
-        // move APENAS os cards (o título e o fundo ficam estáticos)
-        .to(
-          cardsLayer,
-          {
-            // distância do parallax: ajuste conforme desejar (<= SECTION_HEIGHT para evitar overflow)
-            // usamos clamp pra garantir que não passe da borda do wrapper
-            y: () => {
-              const desired = -SECTION_HEIGHT * 1.3; // 65% da altura (efeito suave)
-              // limite seguro: nunca ultrapassar a própria altura da seção
-              const min = -SECTION_HEIGHT - 90; // leve folga pra não “colar” completamente
-              const max = 0;
-              return gsap.utils.clamp(min, max, desired);
+    if (cardsLayerRef.current) {
+      const cards = gsap.utils.toArray(
+        cardsLayerRef.current?.childNodes,
+      ) as Element[];
+
+      cards.forEach((card) => {
+        if (card.tagName === "IMG") {
+          gsap.from(card, {
+            opacity: 0,
+            scale: 0,
+            rotate: 360,
+            scrollTrigger: {
+              trigger: card,
+              start: "top 80%",
+              end: `-=100%`,
+              scrub: true, // anima ao acompanhar o scroll
             },
+            duration: 1.5,
+          });
+          return;
+        }
+        gsap.from(card, {
+          opacity: 0,
+          scale: 0,
+          scrollTrigger: {
+            trigger: card,
+            start: "top 80%",
+            end: `-=100%`,
+            scrub: true,
           },
-          0,
-        );
-    }, wrapper);
-
-    return () => ctx.revert();
-  }, [pinScroll]);
+          duration: 1,
+        });
+      });
+    }
+  }, []);
 
   return (
     <section
       ref={wrapperRef}
       aria-label="Desafios enfrentados"
-      className="relative mx-auto min-h-screen w-full"
-      style={{ height: SECTION_HEIGHT }}
+      className="relative mx-auto min-h-screen w-full overflow-hidden"
+      style={{ height: 900 }}
     >
       {/* Fundo verde com pattern — troque a imagem se quiser */}
       <div
@@ -97,7 +106,7 @@ export function ChallengersAnimation({
 
       {/* Título fixo (não é animado) */}
       <div className="relative z-10 container mx-auto px-4">
-        <h2 className="h5 md:!h3 pt-8 text-center text-white md:pt-10 lg:pt-20">
+        <h2 className="title-section-challenges pt-8 text-center text-[32px] leading-[130%] font-bold text-white md:pt-10 lg:pt-20 lg:text-[40px]">
           Sua empresa enfrenta esses desafios?
         </h2>
       </div>
@@ -105,10 +114,10 @@ export function ChallengersAnimation({
       {/* Camada que será transladada (parallax) */}
       <div
         ref={cardsLayerRef}
-        className="absolute inset-0 top-36 z-10 md:!top-52"
+        className="absolute inset-0 top-36 z-10 flex flex-col items-center gap-6 md:!top-52"
       >
         <div
-          className="from-brand-main-green to-brand-light-green absolute top-[0px] left-1/2 w-full max-w-[320px] -translate-x-1/2 cursor-pointer rounded-2xl bg-gradient-to-b p-[6px]"
+          className="from-brand-main-green to-brand-light-green w-full max-w-[320px] cursor-pointer rounded-2xl bg-gradient-to-b p-[6px] sm:absolute sm:top-[0px] sm:left-1/2 sm:-translate-x-1/2"
           data-speed="0.8"
         >
           <div className="bg-brand-black flex flex-col items-center justify-center gap-5 rounded-2xl p-6">
@@ -124,7 +133,7 @@ export function ChallengersAnimation({
           </div>
         </div>
         <div
-          className="from-brand-main-green to-brand-light-green absolute top-[300px] left-[calc(50%-550px)] w-full max-w-[320px] cursor-pointer rounded-2xl bg-gradient-to-b p-[6px]"
+          className="from-brand-main-green to-brand-light-green top-[300px] left-[calc(50%-550px)] w-full max-w-[320px] cursor-pointer rounded-2xl bg-gradient-to-b p-[6px] sm:absolute"
           data-speed="0.9"
         >
           <div className="bg-brand-black flex flex-col items-center justify-center gap-5 rounded-2xl p-6">
@@ -145,12 +154,12 @@ export function ChallengersAnimation({
           alt="Imagem 1"
           width={160}
           height={160}
-          className="absolute top-[280px] left-1/2 hidden -translate-x-1/2 -rotate-45 md:block"
+          className="-rotate-45 sm:absolute sm:top-[280px] sm:left-1/2 sm:-translate-x-1/2"
           data-speed="0.5"
         />
 
         <div
-          className="from-brand-main-green to-brand-light-green absolute top-[230px] left-1/2 w-full max-w-[320px] cursor-pointer rounded-2xl bg-gradient-to-b p-[6px] max-[640px]:-translate-x-1/2 md:left-[calc(50%+200px)]"
+          className="from-brand-main-green to-brand-light-green w-full max-w-[320px] cursor-pointer rounded-2xl bg-gradient-to-b p-[6px] sm:absolute sm:top-[230px] sm:left-1/2 md:left-[calc(50%+200px)]"
           data-speed="0.85"
         >
           <div className="bg-brand-black flex flex-col items-center justify-center gap-5 rounded-2xl p-6">
@@ -176,7 +185,7 @@ export function ChallengersAnimation({
         />
 
         <div
-          className="from-brand-main-green to-brand-light-green absolute top-[460px] left-1/2 w-full max-w-[320px] -translate-x-1/2 cursor-pointer rounded-2xl bg-gradient-to-b p-[6px] md:top-[640px]"
+          className="from-brand-main-green to-brand-light-green w-full max-w-[320px] cursor-pointer rounded-2xl bg-gradient-to-b p-[6px] sm:absolute sm:top-[460px] sm:left-1/2 sm:-translate-x-1/2 md:top-[640px]"
           data-speed="0.8"
         >
           <div className="bg-brand-black flex flex-col items-center justify-center gap-5 rounded-2xl p-6">
@@ -194,7 +203,7 @@ export function ChallengersAnimation({
         </div>
 
         <div
-          className="from-brand-main-green to-brand-light-green absolute top-[720px] left-1/2 w-full max-w-[320px] cursor-pointer rounded-2xl bg-gradient-to-b p-[6px] max-[640px]:-translate-x-1/2 md:top-[1100px] md:left-[calc(50%-540px)]"
+          className="from-brand-main-green to-brand-light-green w-full max-w-[320px] cursor-pointer rounded-2xl bg-gradient-to-b p-[6px] sm:absolute sm:top-[720px] sm:left-1/2 md:top-[1100px] md:left-[calc(50%-540px)]"
           data-speed="0.9"
         >
           <div className="bg-brand-black flex flex-col items-center justify-center gap-5 rounded-2xl p-6">
@@ -215,12 +224,12 @@ export function ChallengersAnimation({
           alt="Imagem 3"
           width={160}
           height={160}
-          className="absolute top-[1050px] left-1/2 hidden -translate-x-1/2 md:block"
+          className="top-[1050px] sm:absolute sm:left-1/2 sm:-translate-x-1/2"
           data-speed="0.5"
         />
 
         <div
-          className="from-brand-main-green to-brand-light-green absolute top-[980px] left-1/2 w-full max-w-[320px] cursor-pointer rounded-2xl bg-gradient-to-b p-[6px] max-[640px]:-translate-x-1/2 md:top-[980px] md:left-[calc(50%+200px)]"
+          className="from-brand-main-green to-brand-light-green w-full max-w-[320px] cursor-pointer rounded-2xl bg-gradient-to-b p-[6px] sm:absolute sm:top-[980px] sm:left-1/2 md:top-[980px] md:left-[calc(50%+200px)]"
           data-speed="0.85"
         >
           <div className="bg-brand-black flex flex-col items-center justify-center gap-5 rounded-2xl p-6">
@@ -237,7 +246,7 @@ export function ChallengersAnimation({
         </div>
 
         <div
-          className="from-brand-main-green to-brand-light-green absolute top-[1200px] left-1/2 w-full max-w-[320px] -translate-x-1/2 cursor-pointer rounded-2xl bg-gradient-to-b p-[6px] max-[640px]:-translate-x-1/2 md:top-[1400px]"
+          className="from-brand-main-green to-brand-light-green w-full max-w-[320px] cursor-pointer rounded-2xl bg-gradient-to-b p-[6px] sm:absolute sm:top-[1200px] sm:left-1/2 sm:-translate-x-1/2 md:top-[1400px]"
           data-speed="0.9"
         >
           <div className="bg-brand-black flex flex-col items-center justify-center gap-5 rounded-2xl p-6">

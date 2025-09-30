@@ -43,7 +43,7 @@ export const HeroMetricsCarousel = () => {
         <CarouselItem className={cn("basis-full pl-4")}>
           <div className="flex items-center justify-center gap-4">
             <p className="text-brand-light-green text-[70px] leading-[110%] font-bold">
-              7,5
+              10
             </p>
             <span className="text-lg leading-normal text-white">
               <span className="from-brand-main-green to-brand-light-green -mb-2 inline-block bg-gradient-to-r bg-clip-text text-2xl font-bold text-transparent">
@@ -51,14 +51,14 @@ export const HeroMetricsCarousel = () => {
               </span>
               <br />
               milhões de
-              <br /> clientes ativos
+              <br /> vidas expostas
             </span>
           </div>
         </CarouselItem>
         <CarouselItem className={cn("basis-full pl-4")}>
           <div className="flex items-center justify-center gap-4">
             <p className="text-brand-light-green text-[70px] leading-[110%] font-bold">
-              950
+              1
             </p>
             <span className="text-lg leading-normal text-white">
               <span className="from-brand-main-green to-brand-light-green -mb-2 inline-block bg-gradient-to-r bg-clip-text text-2xl font-bold text-transparent">
@@ -73,7 +73,7 @@ export const HeroMetricsCarousel = () => {
         <CarouselItem className={cn("basis-full pl-4")}>
           <div className="flex items-center justify-center gap-4">
             <p className="text-brand-light-green text-[70px] leading-[110%] font-bold">
-              79
+              80
             </p>
             <span className="text-lg leading-normal text-white">
               <span className="from-brand-main-green to-brand-light-green -mb-2 inline-block bg-gradient-to-r bg-clip-text text-2xl font-bold text-transparent">
@@ -82,6 +82,21 @@ export const HeroMetricsCarousel = () => {
               <br />
               mil consultas
               <br /> por mês
+            </span>
+          </div>
+        </CarouselItem>
+        <CarouselItem className={cn("basis-full pl-4")}>
+          <div className="flex items-center justify-center gap-4">
+            <p className="text-brand-light-green text-[70px] leading-[110%] font-bold">
+              35
+            </p>
+            <span className="text-lg leading-normal text-white">
+              <span className="from-brand-main-green to-brand-light-green -mb-2 inline-block bg-gradient-to-r bg-clip-text text-2xl font-bold text-transparent">
+                +
+              </span>
+              <br />
+              consultórios
+              <br /> digitais
             </span>
           </div>
         </CarouselItem>
@@ -107,6 +122,13 @@ export const HeroMetricsCarousel = () => {
             current === 2 && "bg-brand-light-green",
           )}
           onClick={() => handleGoToSlide({ slide: 2 })}
+        />
+        <div
+          className={cn(
+            "h-3 w-3 cursor-pointer rounded-full bg-white/50 hover:bg-white/100",
+            current === 3 && "bg-brand-light-green",
+          )}
+          onClick={() => handleGoToSlide({ slide: 3 })}
         />
       </div>
     </Carousel>

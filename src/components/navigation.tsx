@@ -11,7 +11,7 @@ import Image from "next/image";
 
 export const Navigation = () => {
   return (
-    <nav className="hidden w-fit md:block">
+    <nav className="hidden w-fit lg:block">
       <ul className="flex items-center justify-center gap-6">
         <li>
           <Link

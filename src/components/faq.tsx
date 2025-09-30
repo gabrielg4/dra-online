@@ -1,6 +1,9 @@
+"use client";
 import React from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { FAQContainer } from "./faq-container";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 const faqItems: { question: string; answer: string }[] = [
   {
     question: "Lorem ipsum dolor sit amet?",
@@ -45,13 +48,41 @@ const faqItems: { question: string; answer: string }[] = [
 ];
 
 export const FAQ = () => {
+  useGSAP(() => {
+    gsap.from(".title-section-faq", {
+      scale: 0,
+      opacity: 0,
+      duration: 1.2,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: "#faq",
+        start: "top 80%",
+        end: "top 10%",
+        scrub: 3,
+        // markers: true,
+      },
+    });
+
+    gsap.from(".faq-btn-wrapper", {
+      xPercent: 100,
+      opacity: 0,
+      ease: "expo.out",
+      scrollTrigger: {
+        trigger: "#faq",
+        start: "top 80%",
+        end: "top 10%",
+        scrub: 2,
+      },
+    });
+  }, []);
+
   return (
-    <Tabs defaultValue="dr-online" className="w-full">
+    <Tabs defaultValue="dr-online" className="w-full overflow-hidden pr-0.5">
       <div className="mb-8 flex flex-col items-center justify-between gap-5 md:mb-14 md:flex-row md:gap-10">
-        <h2 className="h5 md:h4 text-center font-normal text-white md:text-start">
+        <h2 className="title-section-faq text-center text-[24px] leading-[120%] font-normal text-white md:text-start md:text-[32px]">
           Ficou com <span className="font-semibold">alguma dúvida?</span>
         </h2>
-        <TabsList className="border-brand-light-green ::-webkit-scrollbar]:hidden h-auto w-full max-w-full flex-nowrap overflow-x-auto rounded-2xl border bg-transparent p-0 md:max-w-[698px]">
+        <TabsList className="faq-btn-wrapper border-brand-light-green ::-webkit-scrollbar]:hidden h-auto w-full max-w-full flex-nowrap overflow-x-auto rounded-2xl border bg-transparent p-0 md:max-w-[698px]">
           <TabsTrigger
             value="dr-online"
             className="data-[state=active]:bg-brand-main-green w-full max-w-[232px] rounded-l-2xl rounded-r-none bg-transparent p-5 text-center text-lg font-semibold text-white"

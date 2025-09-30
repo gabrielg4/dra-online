@@ -3,17 +3,36 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Image from "next/image";
 import { Button } from "./ui/button";
 import Link from "next/link";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 export const DiferentialsTabs = () => {
+  useGSAP(() => {
+    const tabButtons = gsap.utils.toArray(".tab-button");
+
+    gsap.from(tabButtons, {
+      x: -40,
+      opacity: 0,
+      ease: "expo.out",
+      duration: 2,
+      stagger: 0.1,
+      scrollTrigger: {
+        trigger: "#diferentials",
+        start: "top 70%",
+        // markers: true,
+      },
+    });
+  }, []);
+
   return (
     <Tabs
       defaultValue="tab1"
       className="w-full items-center gap-14 p-0 md:justify-center"
     >
-      <TabsList className="shadow-brand-main-green flex h-auto w-full max-w-full flex-nowrap gap-0 overflow-x-auto !bg-transparent p-0 shadow-2xl/20 md:justify-center [&::-webkit-scrollbar]:hidden">
+      <TabsList className="shadow-brand-main-green flex h-auto w-full max-w-full flex-nowrap gap-0 overflow-x-auto !bg-transparent p-0 shadow-2xl/20 sm:!justify-start lg:justify-center [&::-webkit-scrollbar]:hidden">
         <TabsTrigger
           value="tab1"
-          className="text-brand-dark-gray data-[state=active]:bg-brand-main-green hover:bg-brand-main-green z-[9] shrink-0 rounded-2xl bg-white py-4 pr-6 pl-8 text-center text-xl font-semibold duration-300 hover:text-white data-[state=active]:text-white"
+          className="tab-button text-brand-dark-gray data-[state=active]:bg-brand-main-green hover:bg-brand-main-green z-[9] shrink-0 rounded-2xl bg-white py-4 pr-6 pl-8 text-center text-xl font-semibold duration-300 hover:text-white data-[state=active]:text-white"
         >
           Entrevista
           <br /> Qualificada
@@ -21,7 +40,7 @@ export const DiferentialsTabs = () => {
 
         <TabsTrigger
           value="tab2"
-          className="text-brand-dark-gray data-[state=active]:bg-brand-main-green hover:bg-brand-main-green z-[8] -ml-4 shrink-0 rounded-2xl bg-white py-4 pr-6 pl-8 text-center text-xl font-semibold duration-300 hover:text-white data-[state=active]:text-white"
+          className="tab-button text-brand-dark-gray data-[state=active]:bg-brand-main-green hover:bg-brand-main-green z-[8] -ml-6 shrink-0 rounded-2xl bg-white py-4 pr-6 pl-8 text-center text-xl font-semibold duration-300 hover:text-white data-[state=active]:text-white"
         >
           Pronto
           <br /> Atendimento 24h
@@ -29,7 +48,7 @@ export const DiferentialsTabs = () => {
 
         <TabsTrigger
           value="tab3"
-          className="text-brand-dark-gray data-[state=active]:bg-brand-main-green hover:bg-brand-main-green z-[7] -ml-4 shrink-0 rounded-2xl bg-white py-4 pr-6 pl-8 text-center text-xl font-semibold duration-300 hover:text-white data-[state=active]:text-white"
+          className="tab-button text-brand-dark-gray data-[state=active]:bg-brand-main-green hover:bg-brand-main-green z-[7] -ml-6 shrink-0 rounded-2xl bg-white py-4 pr-6 pl-8 text-center text-xl font-semibold duration-300 hover:text-white data-[state=active]:text-white"
         >
           Consulta Online
           <br /> com Especialistas
@@ -37,7 +56,7 @@ export const DiferentialsTabs = () => {
 
         <TabsTrigger
           value="tab4"
-          className="text-brand-dark-gray data-[state=active]:bg-brand-main-green hover:bg-brand-main-green z-[6] -ml-4 shrink-0 rounded-2xl bg-white py-4 pr-6 pl-8 text-center text-xl font-semibold duration-300 hover:text-white data-[state=active]:text-white"
+          className="tab-button text-brand-dark-gray data-[state=active]:bg-brand-main-green hover:bg-brand-main-green z-[6] -ml-6 shrink-0 rounded-2xl bg-white py-4 pr-6 pl-8 text-center text-xl font-semibold duration-300 hover:text-white data-[state=active]:text-white"
         >
           Consultório
           <br /> Digital
@@ -45,7 +64,7 @@ export const DiferentialsTabs = () => {
 
         <TabsTrigger
           value="tab5"
-          className="text-brand-dark-gray data-[state=active]:bg-brand-main-green hover:bg-brand-main-green z-[5] -ml-4 shrink-0 rounded-2xl bg-white py-4 pr-6 pl-8 text-center text-xl font-semibold duration-300 hover:text-white data-[state=active]:text-white"
+          className="tab-button text-brand-dark-gray data-[state=active]:bg-brand-main-green hover:bg-brand-main-green z-[5] -ml-6 shrink-0 rounded-2xl bg-white py-4 pr-6 pl-8 text-center text-xl font-semibold duration-300 hover:text-white data-[state=active]:text-white"
         >
           Atenção Integrada
           <br /> à Saúde
@@ -53,15 +72,15 @@ export const DiferentialsTabs = () => {
 
         <TabsTrigger
           value="tab6"
-          className="text-brand-dark-gray data-[state=active]:bg-brand-main-green hover:bg-brand-main-green z-[4] -ml-4 shrink-0 rounded-2xl bg-white py-4 pr-6 pl-8 text-center text-xl font-semibold duration-300 hover:text-white data-[state=active]:text-white"
+          className="tab-button text-brand-dark-gray data-[state=active]:bg-brand-main-green hover:bg-brand-main-green z-[4] -ml-6 shrink-0 rounded-2xl bg-white py-4 pr-6 pl-8 text-center text-xl font-semibold duration-300 hover:text-white data-[state=active]:text-white"
         >
           Saúde
           <br /> Mental
         </TabsTrigger>
       </TabsList>
 
-      <TabsContent value="tab1" className="group">
-        <div className="flex flex-col items-center gap-5 bg-white md:flex-row md:gap-10 lg:gap-20">
+      <TabsContent value="tab1">
+        <div className="flex flex-col items-center gap-5 bg-white md:flex-row md:gap-8 lg:gap-20">
           <div className="w-full md:w-1/2">
             <Image
               src="/images/img-pronto-atendimento.webp"
@@ -71,11 +90,16 @@ export const DiferentialsTabs = () => {
               className="rounded-2xl object-cover"
             />
           </div>
-          <div className="w-full p-5">
-            <h3 className="h5 text-brand-black mb-6">Pronto Atendimento 24h</h3>
-            <p className="text-brand-dark-gray mb-14 text-lg font-normal">
-              Atendimento médico online rápido, humanizado e com resolutividade
-              clínica.
+          <div className="w-full py-8 md:w-1/2">
+            <p className="text-brand-main-green mb-3 text-sm font-bold">
+              Entrevista Qualificada
+            </p>
+            <h3 className="text-brand-black mb-4 text-2xl leading-[130%] font-bold lg:mb-6 lg:text-[32px]">
+              Mais segurança, menos riscos.
+            </h3>
+            <p className="text-brand-dark-gray text-md mb-6 font-normal lg:mb-14 lg:text-lg">
+              Transformamos dados em decisões assertivas, reduzindo riscos
+              jurídicos, desperdícios e garantindo conformidade regulatória.
             </p>
             <Button
               variant="outline"
@@ -83,13 +107,13 @@ export const DiferentialsTabs = () => {
             >
               <Link
                 href="/"
-                className="text-brand-main-green px-4 py-2 font-medium duration-300 hover:text-white"
+                className="text-brand-main-green text-md px-4 py-3 font-medium duration-300 hover:text-white"
               >
                 Conheça mais
               </Link>
             </Button>
 
-            <div className="mt-12 flex w-full justify-between gap-4 overflow-x-auto [&::-webkit-scrollbar]:hidden">
+            <div className="mt-6 flex w-full flex-nowrap justify-between gap-4 overflow-x-auto lg:mt-12 [&::-webkit-scrollbar]:hidden">
               <div className="flex flex-col justify-start">
                 <Image
                   src="/images/ic-shield-check.svg"
@@ -97,8 +121,9 @@ export const DiferentialsTabs = () => {
                   width={95}
                   height={95}
                 />
-                <p className="text-brand-dark-gray mt-2 ml-3 text-center text-lg font-semibold">
-                  Lorem ipsum
+                <p className="text-brand-dark-gray text-md mt-2 ml-3 font-semibold lg:text-lg">
+                  Conformidade
+                  <br className="hidden lg:inline-block" /> garantida
                 </p>
               </div>
               <div className="flex flex-col justify-start">
@@ -108,8 +133,9 @@ export const DiferentialsTabs = () => {
                   width={95}
                   height={95}
                 />
-                <p className="text-brand-dark-gray mt-2 ml-3 text-center text-lg font-semibold">
-                  Lorem ipsum
+                <p className="text-brand-dark-gray text-md mt-2 ml-3 font-semibold lg:text-lg">
+                  Decisões com
+                  <br className="hidden lg:inline-block" /> base em dados
                 </p>
               </div>
               <div className="flex flex-col justify-start">
@@ -119,8 +145,9 @@ export const DiferentialsTabs = () => {
                   width={95}
                   height={95}
                 />
-                <p className="text-brand-dark-gray mt-2 ml-3 text-center text-lg font-semibold">
-                  Lorem ipsum
+                <p className="text-brand-dark-gray text-md mt-2 ml-3 font-semibold lg:text-lg">
+                  Prevenção de
+                  <br className="hidden lg:inline-block" /> riscos assistenciais
                 </p>
               </div>
             </div>
@@ -128,7 +155,7 @@ export const DiferentialsTabs = () => {
         </div>
       </TabsContent>
       <TabsContent value="tab2">
-        <div className="flex flex-col items-center gap-5 bg-white md:flex-row md:gap-10 lg:gap-20">
+        <div className="flex flex-col items-center gap-5 bg-white md:flex-row md:gap-8 lg:gap-20">
           <div className="w-full md:w-1/2">
             <Image
               src="/images/img-pronto-atendimento.webp"
@@ -138,11 +165,17 @@ export const DiferentialsTabs = () => {
               className="rounded-2xl object-cover"
             />
           </div>
-          <div className="w-full p-5">
-            <h3 className="h5 text-brand-black mb-6">Pronto Atendimento 24h</h3>
-            <p className="text-brand-dark-gray mb-14 text-lg font-normal">
-              Atendimento médico online rápido, humanizado e com resolutividade
-              clínica.
+          <div className="w-full py-8 md:w-1/2">
+            <p className="text-brand-main-green mb-3 text-sm font-bold">
+              Pronto Atendimento Médico 24h
+            </p>
+            <h3 className="text-brand-black mb-4 text-2xl leading-[130%] font-bold lg:mb-6 lg:text-[32px]">
+              O cuidado certo, na hora que seu beneficiário mais precisa.
+            </h3>
+            <p className="text-brand-dark-gray text-md mb-6 font-normal lg:mb-14 lg:text-lg">
+              Tecnologia responsiva que permite incluir o acesso do seu cliente
+              direto ao seu App, Site ou WhatsApp com mais de 92% de
+              resolutividade.
             </p>
             <Button
               variant="outline"
@@ -150,44 +183,48 @@ export const DiferentialsTabs = () => {
             >
               <Link
                 href="/"
-                className="text-brand-main-green px-4 py-2 font-medium duration-300 hover:text-white"
+                className="text-brand-main-green text-md px-4 py-3 font-medium duration-300 hover:text-white"
               >
                 Conheça mais
               </Link>
             </Button>
 
-            <div className="mt-12 flex w-full justify-between gap-4 overflow-x-auto [&::-webkit-scrollbar]:hidden">
-              <div className="flex flex-col justify-start">
+            <div className="lgmt-12 mt-6 flex w-full flex-nowrap justify-between gap-4 overflow-x-auto [&::-webkit-scrollbar]:hidden">
+              <div className="flex w-1/3 flex-col justify-start">
                 <Image
                   src="/images/ic-shield-check.svg"
                   alt="Ícone check"
                   width={95}
                   height={95}
                 />
-                <p className="text-brand-dark-gray mt-2 ml-3 text-center text-lg font-semibold">
-                  Lorem ipsum
+                <p className="text-brand-dark-gray text-md mt-2 ml-3 font-semibold lg:text-lg">
+                  Controle sobre
+                  <br className="hidden lg:inline-block" /> custos assistenciais
                 </p>
               </div>
-              <div className="flex flex-col justify-start">
+              <div className="flex w-1/3 flex-col justify-start">
                 <Image
                   src="/images/ic-shield-check.svg"
                   alt="Ícone check"
                   width={95}
                   height={95}
                 />
-                <p className="text-brand-dark-gray mt-2 ml-3 text-center text-lg font-semibold">
-                  Lorem ipsum
+                <p className="text-brand-dark-gray text-md mt-2 ml-3 font-semibold lg:text-lg">
+                  Beneficiários mais
+                  <br className="hidden lg:inline-block" /> satisfeitos e fiéis
                 </p>
               </div>
-              <div className="flex flex-col justify-start">
+              <div className="flex w-1/3 flex-col justify-start">
                 <Image
                   src="/images/ic-shield-check.svg"
                   alt="Ícone check"
                   width={95}
                   height={95}
                 />
-                <p className="text-brand-dark-gray mt-2 ml-3 text-center text-lg font-semibold">
-                  Lorem ipsum
+                <p className="text-brand-dark-gray text-md mt-2 ml-3 font-semibold lg:text-lg">
+                  Dados estratégicos
+                  <br className="hidden lg:inline-block" /> para tomada de
+                  decisão
                 </p>
               </div>
             </div>
@@ -195,7 +232,7 @@ export const DiferentialsTabs = () => {
         </div>
       </TabsContent>
       <TabsContent value="tab3">
-        <div className="flex flex-col items-center gap-5 bg-white md:flex-row md:gap-10 lg:gap-20">
+        <div className="flex flex-col items-center gap-5 bg-white md:flex-row md:gap-8 lg:gap-20">
           <div className="w-full md:w-1/2">
             <Image
               src="/images/img-pronto-atendimento.webp"
@@ -205,11 +242,16 @@ export const DiferentialsTabs = () => {
               className="rounded-2xl object-cover"
             />
           </div>
-          <div className="w-full p-5">
-            <h3 className="h5 text-brand-black mb-6">Pronto Atendimento 24h</h3>
-            <p className="text-brand-dark-gray mb-14 text-lg font-normal">
-              Atendimento médico online rápido, humanizado e com resolutividade
-              clínica.
+          <div className="w-full py-8 md:w-1/2">
+            <p className="text-brand-main-green mb-3 text-sm font-bold">
+              Consulta Online com Especialistas
+            </p>
+            <h3 className="text-brand-black mb-4 text-2xl leading-[130%] font-bold lg:mb-6 lg:text-[32px]">
+              Lorem Ipsum
+            </h3>
+            <p className="text-brand-dark-gray text-md mb-6 font-normal lg:mb-14 lg:text-lg">
+              Atendimento especializado mesmo em locais com baixa cobertura
+              assistencial para o cuidado integral.
             </p>
             <Button
               variant="outline"
@@ -223,7 +265,7 @@ export const DiferentialsTabs = () => {
               </Link>
             </Button>
 
-            <div className="mt-12 flex w-full justify-between gap-4 overflow-x-auto [&::-webkit-scrollbar]:hidden">
+            <div className="mb-6 flex w-full flex-nowrap justify-between gap-4 overflow-x-auto lg:mt-12 [&::-webkit-scrollbar]:hidden">
               <div className="flex flex-col justify-start">
                 <Image
                   src="/images/ic-shield-check.svg"
@@ -231,7 +273,7 @@ export const DiferentialsTabs = () => {
                   width={95}
                   height={95}
                 />
-                <p className="text-brand-dark-gray mt-2 ml-3 text-center text-lg font-semibold">
+                <p className="text-brand-dark-gray text-md mt-2 ml-3 text-center font-semibold lg:text-lg">
                   Lorem ipsum
                 </p>
               </div>
@@ -242,7 +284,7 @@ export const DiferentialsTabs = () => {
                   width={95}
                   height={95}
                 />
-                <p className="text-brand-dark-gray mt-2 ml-3 text-center text-lg font-semibold">
+                <p className="text-brand-dark-gray text-md mt-2 ml-3 text-center font-semibold lg:text-lg">
                   Lorem ipsum
                 </p>
               </div>
@@ -253,7 +295,7 @@ export const DiferentialsTabs = () => {
                   width={95}
                   height={95}
                 />
-                <p className="text-brand-dark-gray mt-2 ml-3 text-center text-lg font-semibold">
+                <p className="text-brand-dark-gray text-md mt-2 ml-3 text-center font-semibold lg:text-lg">
                   Lorem ipsum
                 </p>
               </div>
@@ -262,7 +304,7 @@ export const DiferentialsTabs = () => {
         </div>
       </TabsContent>
       <TabsContent value="tab4">
-        <div className="flex flex-col items-center gap-5 bg-white md:flex-row md:gap-10 lg:gap-20">
+        <div className="flex flex-col items-center gap-5 bg-white md:flex-row md:gap-8 lg:gap-20">
           <div className="w-full md:w-1/2">
             <Image
               src="/images/img-pronto-atendimento.webp"
@@ -272,11 +314,18 @@ export const DiferentialsTabs = () => {
               className="rounded-2xl object-cover"
             />
           </div>
-          <div className="w-full p-5">
-            <h3 className="h5 text-brand-black mb-6">Pronto Atendimento 24h</h3>
-            <p className="text-brand-dark-gray mb-14 text-lg font-normal">
-              Atendimento médico online rápido, humanizado e com resolutividade
-              clínica.
+          <div className="w-full py-8 md:w-1/2">
+            <p className="text-brand-main-green mb-3 text-sm font-bold">
+              Saúde Mental - Teleacolhimento Psicológico 24h
+            </p>
+            <h3 className="text-brand-black mb-4 text-2xl leading-[130%] font-bold lg:mb-6 lg:text-[32px]">
+              Apoio imediato para quem precisa, resultados estratégicos para
+              quem cuida.
+            </h3>
+            <p className="text-brand-dark-gray text-md mb-6 font-normal lg:mb-10 lg:text-lg">
+              Conectamos beneficiários a profissionais especializados em poucos
+              minutos, oferecendo escuta qualificada, orientação segura e
+              direcionamento adequado em qualquer dia e a qualquer hora.
             </p>
             <Button
               variant="outline"
@@ -290,7 +339,7 @@ export const DiferentialsTabs = () => {
               </Link>
             </Button>
 
-            <div className="mt-12 flex w-full justify-between gap-4 overflow-x-auto [&::-webkit-scrollbar]:hidden">
+            <div className="mt-6 flex w-full flex-nowrap justify-between gap-4 overflow-x-auto lg:mt-12 [&::-webkit-scrollbar]:hidden">
               <div className="flex flex-col justify-start">
                 <Image
                   src="/images/ic-shield-check.svg"
@@ -298,8 +347,9 @@ export const DiferentialsTabs = () => {
                   width={95}
                   height={95}
                 />
-                <p className="text-brand-dark-gray mt-2 ml-3 text-center text-lg font-semibold">
-                  Lorem ipsum
+                <p className="text-brand-dark-gray text-md mt-2 ml-3 font-semibold lg:text-lg">
+                  Redução de custos
+                  <br className="hidden lg:inline-block" /> indiretos
                 </p>
               </div>
               <div className="flex flex-col justify-start">
@@ -309,8 +359,9 @@ export const DiferentialsTabs = () => {
                   width={95}
                   height={95}
                 />
-                <p className="text-brand-dark-gray mt-2 ml-3 text-center text-lg font-semibold">
-                  Lorem ipsum
+                <p className="text-brand-dark-gray text-md mt-2 ml-3 font-semibold lg:text-lg">
+                  Apoio estruturado
+                  <br className="hidden lg:inline-block" /> em ESG
                 </p>
               </div>
               <div className="flex flex-col justify-start">
@@ -320,8 +371,9 @@ export const DiferentialsTabs = () => {
                   width={95}
                   height={95}
                 />
-                <p className="text-brand-dark-gray mt-2 ml-3 text-center text-lg font-semibold">
-                  Lorem ipsum
+                <p className="text-brand-dark-gray text-md mt-2 ml-3 font-semibold lg:text-lg">
+                  Gera valor para o<br className="hidden lg:inline-block" />{" "}
+                  plano de saúde
                 </p>
               </div>
             </div>
@@ -329,7 +381,7 @@ export const DiferentialsTabs = () => {
         </div>
       </TabsContent>
       <TabsContent value="tab5">
-        <div className="flex flex-col items-center gap-5 bg-white md:flex-row md:gap-10 lg:gap-20">
+        <div className="flex flex-col items-center gap-5 bg-white md:flex-row md:gap-8 lg:gap-20">
           <div className="w-full md:w-1/2">
             <Image
               src="/images/img-pronto-atendimento.webp"
@@ -339,11 +391,17 @@ export const DiferentialsTabs = () => {
               className="rounded-2xl object-cover"
             />
           </div>
-          <div className="w-full p-5">
-            <h3 className="h5 text-brand-black mb-6">Pronto Atendimento 24h</h3>
-            <p className="text-brand-dark-gray mb-14 text-lg font-normal">
-              Atendimento médico online rápido, humanizado e com resolutividade
-              clínica.
+          <div className="w-full py-8 md:w-1/2">
+            <p className="text-brand-main-green mb-3 text-sm font-bold">
+              Atenção Integrada do Cuidado
+            </p>
+            <h3 className="text-brand-black mb-4 text-2xl leading-[130%] font-bold lg:mb-6 lg:text-[32px]">
+              Mais que cuidado, gestão inteligente em saúde.
+            </h3>
+            <p className="text-brand-dark-gray text-md mb-6 font-normal lg:mb-10 lg:text-lg">
+              Combinamos tecnologia, protocolos clínicos e equipe altamente
+              qualificada para garantir resolutividade, continuidade e
+              personalização do atendimento.
             </p>
             <Button
               variant="outline"
@@ -357,7 +415,7 @@ export const DiferentialsTabs = () => {
               </Link>
             </Button>
 
-            <div className="mt-12 flex w-full justify-between gap-4 overflow-x-auto [&::-webkit-scrollbar]:hidden">
+            <div className="mt-6 flex w-full flex-nowrap justify-between gap-4 overflow-x-auto lg:mt-12 [&::-webkit-scrollbar]:hidden">
               <div className="flex flex-col justify-start">
                 <Image
                   src="/images/ic-shield-check.svg"
@@ -365,8 +423,9 @@ export const DiferentialsTabs = () => {
                   width={95}
                   height={95}
                 />
-                <p className="text-brand-dark-gray mt-2 ml-3 text-center text-lg font-semibold">
-                  Lorem ipsum
+                <p className="text-brand-dark-gray text-md mt-2 ml-3 font-semibold lg:text-lg">
+                  Visão 360° do
+                  <br className="hidden lg:inline-block" /> paciente
                 </p>
               </div>
               <div className="flex flex-col justify-start">
@@ -376,8 +435,9 @@ export const DiferentialsTabs = () => {
                   width={95}
                   height={95}
                 />
-                <p className="text-brand-dark-gray mt-2 ml-3 text-center text-lg font-semibold">
-                  Lorem ipsum
+                <p className="text-brand-dark-gray text-md mt-2 ml-3 font-semibold lg:text-lg">
+                  Uso racional dos
+                  <br className="hidden lg:inline-block" /> recursos
                 </p>
               </div>
               <div className="flex flex-col justify-start">
@@ -387,8 +447,9 @@ export const DiferentialsTabs = () => {
                   width={95}
                   height={95}
                 />
-                <p className="text-brand-dark-gray mt-2 ml-3 text-center text-lg font-semibold">
-                  Lorem ipsum
+                <p className="text-brand-dark-gray text-md mt-2 ml-3 font-semibold lg:text-lg">
+                  Redução de custos
+                  <br className="hidden lg:inline-block" /> evitáveis
                 </p>
               </div>
             </div>
@@ -396,7 +457,7 @@ export const DiferentialsTabs = () => {
         </div>
       </TabsContent>
       <TabsContent value="tab6">
-        <div className="flex flex-col items-center gap-5 bg-white md:flex-row md:gap-10 lg:gap-20">
+        <div className="flex flex-col items-center gap-5 bg-white md:flex-row md:gap-8 lg:gap-20">
           <div className="w-full md:w-1/2">
             <Image
               src="/images/img-pronto-atendimento.webp"
@@ -406,11 +467,19 @@ export const DiferentialsTabs = () => {
               className="rounded-2xl object-cover"
             />
           </div>
-          <div className="w-full p-5">
-            <h3 className="h5 text-brand-black mb-6">Pronto Atendimento 24h</h3>
-            <p className="text-brand-dark-gray mb-14 text-lg font-normal">
-              Atendimento médico online rápido, humanizado e com resolutividade
-              clínica.
+          <div className="w-full py-8 md:w-1/2">
+            <p className="text-brand-main-green mb-3 text-sm font-bold">
+              Consultório Digital
+            </p>
+            <h3 className="text-brand-black mb-4 text-2xl leading-[130%] font-bold lg:mb-6 lg:text-[32px]">
+              Uma nova forma de entregar saúde: acessível, segura, integrada e
+              altamente escalável.
+            </h3>
+            <p className="text-brand-dark-gray text-md mb-6 font-normal lg:mb-8 lg:text-lg">
+              Equipado com dispositivos médicos multiparamétricos e suporte de
+              enfermagem, possibilita consultas clínicas e especializadas com
+              alto nível de resolutividade e precisão diagnóstica, mesmo à
+              distância.
             </p>
             <Button
               variant="outline"
@@ -424,7 +493,7 @@ export const DiferentialsTabs = () => {
               </Link>
             </Button>
 
-            <div className="mt-12 flex w-full justify-between gap-4 overflow-x-auto [&::-webkit-scrollbar]:hidden">
+            <div className="mt-6 flex w-full flex-nowrap justify-between gap-4 overflow-x-auto lg:mt-12 [&::-webkit-scrollbar]:hidden">
               <div className="flex flex-col justify-start">
                 <Image
                   src="/images/ic-shield-check.svg"
@@ -432,8 +501,9 @@ export const DiferentialsTabs = () => {
                   width={95}
                   height={95}
                 />
-                <p className="text-brand-dark-gray mt-2 ml-3 text-center text-lg font-semibold">
-                  Lorem ipsum
+                <p className="text-brand-dark-gray text-md mt-2 ml-3 font-semibold lg:text-lg">
+                  Expansão de rede
+                  <br className="hidden lg:inline-block" /> sem altos custos
                 </p>
               </div>
               <div className="flex flex-col justify-start">
@@ -443,8 +513,9 @@ export const DiferentialsTabs = () => {
                   width={95}
                   height={95}
                 />
-                <p className="text-brand-dark-gray mt-2 ml-3 text-center text-lg font-semibold">
-                  Lorem ipsum
+                <p className="text-brand-dark-gray text-md mt-2 ml-3 font-semibold lg:text-lg">
+                  Valor agregado ao
+                  <br className="hidden lg:inline-block" /> plano de saúde
                 </p>
               </div>
               <div className="flex flex-col justify-start">
@@ -454,8 +525,9 @@ export const DiferentialsTabs = () => {
                   width={95}
                   height={95}
                 />
-                <p className="text-brand-dark-gray mt-2 ml-3 text-center text-lg font-semibold">
-                  Lorem ipsum
+                <p className="text-brand-dark-gray text-md mt-2 ml-3 font-semibold lg:text-lg">
+                  Experiência
+                  <br className="hidden lg:inline-block" /> humanizada
                 </p>
               </div>
             </div>

@@ -1,9 +1,10 @@
 "use client";
 
+import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -12,47 +13,32 @@ export const SecurityCards = () => {
   const card2 = useRef(null);
   const card3 = useRef(null);
 
-  useEffect(() => {
-    const tl = gsap.timeline({
+  useGSAP(() => {
+    const securityCards = gsap.utils.toArray(".security-card");
+    gsap.from(securityCards, {
+      yPercent: 100,
+      opacity: 0,
+      duration: 4,
+      stagger: 1,
+      ease: "expo.out",
       scrollTrigger: {
-        trigger: "#security",
-        start: "top 80%",
-        end: "top: 60%",
-        scrub: 5,
+        trigger: ".content-wrapper",
+        start: "top 40%",
+        end: "top 10%",
+        scrub: 3,
         // markers: true,
       },
     });
-
-    tl.to(card1.current, {
-      y: 0,
-      opacity: 1,
-      duration: 4,
-    })
-      .to(card2.current, {
-        y: 0,
-        opacity: 1,
-        duration: 4,
-      })
-      .to(card3.current, {
-        y: 0,
-        opacity: 1,
-        duration: 4,
-      });
-
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-      tl.kill();
-    };
   }, []);
 
   return (
     <div
       id="security"
-      className="mt-20 hidden w-full items-end justify-center gap-8 px-20 md:flex"
+      className="mt-10 hidden w-full items-end justify-center gap-8 md:flex lg:px-20"
     >
       <div
         ref={card2}
-        className="w-full max-w-[332px] translate-y-10 opacity-0"
+        className="security-card w-full max-w-[332px] translate-y-10"
       >
         <Image
           src="/images/ic-shield-check.svg"
@@ -61,14 +47,14 @@ export const SecurityCards = () => {
           height={72}
           className="mx-auto"
         />
-        <p className="text-center text-lg font-bold text-white">
+        <p className="text-md text-center font-bold text-white lg:text-lg">
           Adequação total
           <br /> à LGPD
         </p>
       </div>
       <div
         ref={card1}
-        className="w-full max-w-[332px] translate-y-10 opacity-0"
+        className="security-card w-full max-w-[332px] translate-y-10"
       >
         <Image
           src="/images/ic-shield-check.svg"
@@ -77,15 +63,16 @@ export const SecurityCards = () => {
           height={72}
           className="mx-auto"
         />
-        <p className="text-center text-lg font-bold text-white">
+        <p className="text-md text-center font-bold text-white lg:text-lg">
           Arquitetura em nuvem (AWS) que
-          <br /> garante segurança, estabilidade e<br />
+          <br className="hidden lg:inline-block" /> garante segurança,
+          estabilidade e<br className="hidden lg:inline-block" />
           rastreabilidade
         </p>
       </div>
       <div
         ref={card3}
-        className="w-full max-w-[332px] translate-y-10 opacity-0"
+        className="security-card w-full max-w-[332px] translate-y-10"
       >
         <Image
           src="/images/ic-shield-check.svg"
@@ -94,7 +81,7 @@ export const SecurityCards = () => {
           height={72}
           className="mx-auto"
         />
-        <p className="text-center text-lg font-bold text-white">
+        <p className="text-md text-center font-bold text-white lg:text-lg">
           Conformidade com
           <br />
           normas da Anvisa

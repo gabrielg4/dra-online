@@ -15,6 +15,8 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "./ui/textarea";
 import { ArrowUpRight } from "lucide-react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 const formSchema = z.object({
   name: z.string().trim().min(1, "Campo obrigatório"),
@@ -34,6 +36,21 @@ export const ContactForm = () => {
     },
   });
 
+  useGSAP(() => {
+    const inputs = gsap.utils.toArray(".input-contact");
+    gsap.from(inputs, {
+      xPercent: 100,
+      opacity: 0,
+      duration: 1,
+      ease: "expo.out",
+      stagger: 0.7,
+      scrollTrigger: {
+        trigger: "#get-in-touch",
+        start: "top 80%",
+      },
+    });
+  }, []);
+
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
   }
@@ -45,12 +62,12 @@ export const ContactForm = () => {
           control={form.control}
           name="name"
           render={({ field }) => (
-            <FormItem>
+            <FormItem className="input-contact">
               <FormControl>
                 <Input
                   placeholder="Nome"
                   {...field}
-                  className="border-b-brand-light-green rounded-none border-0 border-b p-0 px-1 py-2 text-sm font-normal text-white placeholder:text-white"
+                  className="border-b-brand-light-green h-auto rounded-none border-0 border-b px-1 !py-3 !text-[16px] font-normal text-white placeholder:text-white"
                 />
               </FormControl>
               <FormMessage />
@@ -61,12 +78,12 @@ export const ContactForm = () => {
           control={form.control}
           name="email"
           render={({ field }) => (
-            <FormItem>
+            <FormItem className="input-contact">
               <FormControl>
                 <Input
                   placeholder="E-mail"
                   {...field}
-                  className="border-b-brand-light-green rounded-none border-0 border-b p-0 px-1 py-2 text-sm font-normal text-white placeholder:text-white"
+                  className="border-b-brand-light-green h-auto rounded-none border-0 border-b px-1 !py-3 !text-[16px] font-normal text-white placeholder:text-white"
                 />
               </FormControl>
               <FormMessage />
@@ -77,12 +94,12 @@ export const ContactForm = () => {
           control={form.control}
           name="phone"
           render={({ field }) => (
-            <FormItem>
+            <FormItem className="input-contact">
               <FormControl>
                 <Input
                   placeholder="Telefone/WhatsApp"
                   {...field}
-                  className="border-b-brand-light-green rounded-none border-0 border-b p-0 px-1 py-2 text-sm font-normal text-white placeholder:text-white"
+                  className="border-b-brand-light-green h-auto rounded-none border-0 border-b px-1 !py-3 !text-[16px] font-normal text-white placeholder:text-white"
                 />
               </FormControl>
               <FormMessage />
@@ -93,12 +110,12 @@ export const ContactForm = () => {
           control={form.control}
           name="message"
           render={({ field }) => (
-            <FormItem>
+            <FormItem className="input-contact">
               <FormControl>
                 <Textarea
                   placeholder="Deixe sua mensagem"
                   {...field}
-                  className="border-b-brand-light-green h-[100px] rounded-none border-0 border-b p-0 px-1 py-2 text-sm font-normal text-white placeholder:text-white"
+                  className="border-b-brand-light-green h-[100px] rounded-none border-0 border-b px-1 !py-3 !text-[16px] font-normal text-white placeholder:text-white"
                 />
               </FormControl>
               <FormMessage />
@@ -107,7 +124,7 @@ export const ContactForm = () => {
         />
         <Button
           type="submit"
-          className="bg-brand-light-green hover:bg-brand-light-green2 group text-brand-dark-green mt-2 h-auto w-full cursor-pointer rounded-full px-6 py-3 font-medium"
+          className="bg-brand-light-green hover:bg-brand-light-green2 group text-brand-dark-green mt-2 h-auto w-full cursor-pointer rounded-full px-6 !py-3 !text-[16px] font-medium"
         >
           Falar com especialista
           <ArrowUpRight className="size-4 duration-300 group-hover:rotate-45" />

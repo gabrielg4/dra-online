@@ -181,7 +181,7 @@
   }
 
   .overlay {
-    @apply from-brand-main-green/0 to-brand-dark-green absolute top-0 left-0 h-full w-full bg-gradient-to-b;
+    @apply from-brand-main-green/0 to-brand-dark-green absolute bottom-0 left-0 h-full w-full bg-gradient-to-b;
   }
 }
 
@@ -208,4 +208,14 @@
   border-radius: 50%;
   pointer-events: none; /* Evita interferência no mouse */
   transition: transform 0.1s ease; /* Suaviza o movimento */
+}
+
+.blur-1 {
+  width: 1078.815px;
+  height: 565.501px;
+  transform: rotate(37.104deg);
+  border-radius: 400px;
+  opacity: 0.5;
+  background: var(--Degrad, linear-gradient(180deg, #1ba068 0%, #a6d05d 100%));
+  filter: blur(100px);
 }

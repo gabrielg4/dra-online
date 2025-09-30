@@ -86,11 +86,26 @@ export const HeroAnimationMobile = () => {
         >
           <div
             ref={card2}
-            className="bg-brand-main-green h-[200px] w-full rounded-xl p-5"
+            className="bg-brand-main-green h-[200px] w-full rounded-xl p-2"
           >
-            <p className="text-sm font-bold text-white">
-              <span className="text-brand-dark-green">Tecnologia</span> própria
+            <p className="text-brand-light-green mb-3 text-sm font-bold">
+              <span className="text-brand-dark-green">Tecnologia</span> própria,
+              segura e escalável
             </p>
+            <ul className="list-inside list-disc">
+              <li className="text-[10px] font-bold text-white">
+                Integração Total
+              </li>
+              <li className="text-[10px] font-bold text-white">
+                Prescrição Digital
+              </li>
+              <li className="text-[10px] font-bold text-white">
+                Dashboards Inteligentes
+              </li>
+              <li className="text-[10px] font-bold text-white">
+                Compliance e Segurança da informação
+              </li>
+            </ul>
           </div>
         </div>
         <div ref={midContainer} className="w-[340px] -translate-y-16">
@@ -108,11 +123,14 @@ export const HeroAnimationMobile = () => {
         >
           <div
             ref={card3}
-            className="bg-brand-light-green relative z-10 h-[200px] w-full rounded-xl p-5"
+            className="bg-brand-light-green relative z-10 h-[200px] w-full rounded-xl p-2"
           >
             <p className="text-sm font-bold text-white">
-              <span className="text-brand-dark-green">Implantação ágil,</span>
-              escalável e com ROI comprovado.
+              <span className="text-brand-dark-green">
+                Segurança, rastreabilidade e confiabilidade
+              </span>
+              <br />
+              para decisões estratégicas
             </p>
           </div>
         </div>
