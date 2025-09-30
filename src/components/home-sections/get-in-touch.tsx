@@ -38,10 +38,11 @@ export const GetInTouch = () => {
             <br className="hidden lg:inline-block" /> empresa?
           </h2>
           <Image
-            src="/images/mascote.webp"
+            src="/images/mascote.gif"
             alt="Mascote"
             width={154}
             height={154}
+            unoptimized
             className="hidden md:block"
           />
         </div>
