@@ -219,3 +219,7 @@
   background: var(--Degrad, linear-gradient(180deg, #1ba068 0%, #a6d05d 100%));
   filter: blur(100px);
 }
+
+.tab-button-blur {
+  box-shadow: 6px 0 20px 0 rgba(27, 160, 104, 0.2);
+}

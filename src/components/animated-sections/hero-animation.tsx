@@ -112,7 +112,7 @@ export const HeroAnimation = () => {
         >
           <div
             ref={card1}
-            className="hidden w-full max-w-[230px] -translate-y-24 lg:block"
+            className="relative hidden w-full max-w-[230px] -translate-y-24 lg:block"
           >
             <Image
               src="/images/img-placeholder-hero-1.webp"
@@ -120,6 +120,13 @@ export const HeroAnimation = () => {
               width={230}
               height={417}
             />
+            <div className="absolute top-0 left-0 z-10 flex h-full w-full flex-col justify-end p-6 pb-20">
+              <p className="text-2xl font-bold text-white">
+                Modelo assistencial
+                <br />
+                <span className="text-brand-light-green">100% digital</span>
+              </p>
+            </div>
           </div>
           <div
             ref={card2}
@@ -172,7 +179,7 @@ export const HeroAnimation = () => {
           </div>
           <div
             ref={card4}
-            className="hidden w-full max-w-[230px] -translate-y-24 lg:block"
+            className="relative hidden w-full max-w-[230px] -translate-y-24 lg:block"
           >
             <Image
               src="/images/img-placeholder-hero-2.webp"
@@ -180,6 +187,16 @@ export const HeroAnimation = () => {
               width={230}
               height={417}
             />
+            <div className="absolute top-0 left-0 z-10 flex h-full w-full flex-col justify-end p-3 pb-12">
+              <p className="text-[17px] font-bold text-white">
+                <span className="text-brand-light-green text-2xl">
+                  White Label
+                </span>
+                <br />
+                A tecnologia é nossa.
+                <br />O protagonismo é todo da sua marca.
+              </p>
+            </div>
           </div>
         </div>
       </div>

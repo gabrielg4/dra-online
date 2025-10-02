@@ -48,8 +48,8 @@ export const SecurityCards = () => {
           className="mx-auto"
         />
         <p className="text-md text-center font-bold text-white lg:text-lg">
-          Adequação total
-          <br /> à LGPD
+          Adequação a<br />
+          Portaria 467/2020
         </p>
       </div>
       <div
@@ -64,10 +64,8 @@ export const SecurityCards = () => {
           className="mx-auto"
         />
         <p className="text-md text-center font-bold text-white lg:text-lg">
-          Arquitetura em nuvem (AWS) que
-          <br className="hidden lg:inline-block" /> garante segurança,
-          estabilidade e<br className="hidden lg:inline-block" />
-          rastreabilidade
+          Adequação total
+          <br /> à LGPD
         </p>
       </div>
       <div
@@ -82,9 +80,9 @@ export const SecurityCards = () => {
           className="mx-auto"
         />
         <p className="text-md text-center font-bold text-white lg:text-lg">
-          Conformidade com
+          Conformidade com as
           <br />
-          normas da Anvisa
+          normativas do CFM
         </p>
       </div>
     </div>

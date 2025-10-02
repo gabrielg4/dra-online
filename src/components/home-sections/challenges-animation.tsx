@@ -120,7 +120,7 @@ export function ChallengersAnimation() {
           className="from-brand-main-green to-brand-light-green w-full max-w-[320px] cursor-pointer rounded-2xl bg-gradient-to-b p-[6px] sm:absolute sm:top-[0px] sm:left-1/2 sm:-translate-x-1/2"
           data-speed="0.8"
         >
-          <div className="bg-brand-black flex flex-col items-center justify-center gap-5 rounded-2xl p-6">
+          <div className="flex flex-col items-center justify-center gap-5 rounded-2xl bg-[#195952] p-6">
             <Image
               src="/images/ic-relogio.svg"
               alt="Icone relógio"
@@ -136,7 +136,7 @@ export function ChallengersAnimation() {
           className="from-brand-main-green to-brand-light-green top-[300px] left-[calc(50%-550px)] w-full max-w-[320px] cursor-pointer rounded-2xl bg-gradient-to-b p-[6px] sm:absolute"
           data-speed="0.9"
         >
-          <div className="bg-brand-black flex flex-col items-center justify-center gap-5 rounded-2xl p-6">
+          <div className="flex flex-col items-center justify-center gap-5 rounded-2xl bg-[#195952] p-6">
             <Image
               src="/images/ic-no-signal.svg"
               alt="Icone sem sinal"
@@ -162,7 +162,7 @@ export function ChallengersAnimation() {
           className="from-brand-main-green to-brand-light-green w-full max-w-[320px] cursor-pointer rounded-2xl bg-gradient-to-b p-[6px] sm:absolute sm:top-[230px] sm:left-1/2 md:left-[calc(50%+200px)]"
           data-speed="0.85"
         >
-          <div className="bg-brand-black flex flex-col items-center justify-center gap-5 rounded-2xl p-6">
+          <div className="flex flex-col items-center justify-center gap-5 rounded-2xl bg-[#195952] p-6">
             <Image
               src="/images/ic-no-signal.svg"
               alt="Icone saúde mental"
@@ -188,7 +188,7 @@ export function ChallengersAnimation() {
           className="from-brand-main-green to-brand-light-green w-full max-w-[320px] cursor-pointer rounded-2xl bg-gradient-to-b p-[6px] sm:absolute sm:top-[460px] sm:left-1/2 sm:-translate-x-1/2 md:top-[640px]"
           data-speed="0.8"
         >
-          <div className="bg-brand-black flex flex-col items-center justify-center gap-5 rounded-2xl p-6">
+          <div className="flex flex-col items-center justify-center gap-5 rounded-2xl bg-[#195952] p-6">
             <Image
               src="/images/ic-structure.svg"
               alt="Icone Atendimento"
@@ -206,7 +206,7 @@ export function ChallengersAnimation() {
           className="from-brand-main-green to-brand-light-green w-full max-w-[320px] cursor-pointer rounded-2xl bg-gradient-to-b p-[6px] sm:absolute sm:top-[720px] sm:left-1/2 md:top-[1100px] md:left-[calc(50%-540px)]"
           data-speed="0.9"
         >
-          <div className="bg-brand-black flex flex-col items-center justify-center gap-5 rounded-2xl p-6">
+          <div className="flex flex-col items-center justify-center gap-5 rounded-2xl bg-[#195952] p-6">
             <Image
               src="/images/ic-tv-chart.svg"
               alt="Icone gráfico"
@@ -232,7 +232,7 @@ export function ChallengersAnimation() {
           className="from-brand-main-green to-brand-light-green w-full max-w-[320px] cursor-pointer rounded-2xl bg-gradient-to-b p-[6px] sm:absolute sm:top-[980px] sm:left-1/2 md:top-[980px] md:left-[calc(50%+200px)]"
           data-speed="0.85"
         >
-          <div className="bg-brand-black flex flex-col items-center justify-center gap-5 rounded-2xl p-6">
+          <div className="flex flex-col items-center justify-center gap-5 rounded-2xl bg-[#195952] p-6">
             <Image
               src="/images/ic-file.svg"
               alt="Icone Arquivo"
@@ -249,7 +249,7 @@ export function ChallengersAnimation() {
           className="from-brand-main-green to-brand-light-green w-full max-w-[320px] cursor-pointer rounded-2xl bg-gradient-to-b p-[6px] sm:absolute sm:top-[1200px] sm:left-1/2 sm:-translate-x-1/2 md:top-[1400px]"
           data-speed="0.9"
         >
-          <div className="bg-brand-black flex flex-col items-center justify-center gap-5 rounded-2xl p-6">
+          <div className="flex flex-col items-center justify-center gap-5 rounded-2xl bg-[#195952] p-6">
             <Image
               src="/images/ic-tv-chart.svg"
               alt="Icone gráfico"

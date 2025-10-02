@@ -80,6 +80,21 @@ export const SecurityCardsMobileCarousel = () => {
                 className="mx-auto"
               />
               <p className="text-center text-lg font-bold text-white">
+                Adequação a<br />
+                Portaria 467/2020
+              </p>
+            </div>
+          </CarouselItem>
+          <CarouselItem className={"basis-full pl-4"}>
+            <div className="w-full">
+              <Image
+                src="/images/ic-shield-check.svg"
+                alt="Ícone check"
+                width={72}
+                height={72}
+                className="mx-auto"
+              />
+              <p className="text-center text-lg font-bold text-white">
                 Adequação total
                 <br /> à LGPD
               </p>
@@ -95,25 +110,9 @@ export const SecurityCardsMobileCarousel = () => {
                 className="mx-auto"
               />
               <p className="text-center text-lg font-bold text-white">
-                Arquitetura em nuvem (AWS) que
-                <br /> garante segurança, estabilidade e<br />
-                rastreabilidade
-              </p>
-            </div>
-          </CarouselItem>
-          <CarouselItem className={"basis-full pl-4"}>
-            <div className="w-full">
-              <Image
-                src="/images/ic-shield-check.svg"
-                alt="Ícone check"
-                width={72}
-                height={72}
-                className="mx-auto"
-              />
-              <p className="text-center text-lg font-bold text-white">
-                Conformidade com
+                Conformidade com as
                 <br />
-                normas da Anvisa
+                normativas do CFM
               </p>
             </div>
           </CarouselItem>

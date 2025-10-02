@@ -31,7 +31,7 @@ export const Navigation = () => {
             </PopoverTrigger>
             <PopoverContent
               align="start"
-              className="mt-8 w-full -translate-x-[16%] border-0 bg-white/10 p-6 shadow-2xl/10 backdrop-blur-2xl min-[1600px]:-translate-x-[25%]"
+              className="mt-8 w-full -translate-x-[16%] border-0 bg-black/10 p-6 shadow-2xl/10 backdrop-blur-2xl min-[1600px]:-translate-x-[25%]"
             >
               <div className="mx-auto flex w-full items-stretch gap-8 rounded-2xl">
                 <div className="w-fit border-r border-r-white pr-8">
@@ -191,7 +191,7 @@ export const Navigation = () => {
                 <ChevronDown className="group-hover:text-brand-light-green size-4 duration-200" />
               </button>
             </PopoverTrigger>
-            <PopoverContent className="mt-8 w-full border-0 bg-white/10 p-6 shadow-2xl/10 backdrop-blur-2xl">
+            <PopoverContent className="mt-8 w-full border-0 bg-black/10 p-6 shadow-2xl/10 backdrop-blur-2xl">
               <div className="mx-auto flex w-full items-stretch gap-8 rounded-2xl">
                 <div className="w-fit border-r border-r-white pr-8">
                   <p className="md:h6 text-xl font-semibold text-white">FAQ</p>
@@ -267,7 +267,7 @@ export const Navigation = () => {
                 <ChevronDown className="group-hover:text-brand-light-green size-4 duration-200" />
               </button>
             </PopoverTrigger>
-            <PopoverContent className="mt-8 w-full border-0 bg-white/10 p-6 shadow-2xl/10 backdrop-blur-2xl">
+            <PopoverContent className="mt-8 w-full border-0 bg-black/10 p-6 shadow-2xl/10 backdrop-blur-2xl">
               <div className="mx-auto flex w-full items-stretch gap-8 rounded-2xl">
                 <div className="w-fit border-r border-r-white pr-8">
                   <p className="md:h6 text-xl font-semibold text-white">
