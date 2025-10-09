@@ -14,7 +14,7 @@ interface FAQContainerProps {
 }
 
 export const FAQContainer = ({ faqItems }: FAQContainerProps) => {
-  const midPoint = Math.floor(faqItems.length / 2);
+  const midPoint = Math.ceil(faqItems.length / 2);
   const firstSplit = faqItems.slice(0, midPoint);
   const secondSplit = faqItems.slice(midPoint);
   return (
@@ -29,7 +29,7 @@ export const FAQContainer = ({ faqItems }: FAQContainerProps) => {
             <AccordionTrigger className="cursor-pointer p-4 text-lg font-medium text-white no-underline">
               {item.question}
             </AccordionTrigger>
-            <AccordionContent className="text-md px-4 text-white">
+            <AccordionContent className="text-[16px] leading-normal px-4 text-white">
               {item.answer}
             </AccordionContent>
           </AccordionItem>

@@ -117,10 +117,10 @@ export const SecurityInformation = () => {
           />
         </div>
         <div className="content-wrapper relative z-10 -mt-20 flex flex-col items-center justify-center px-4">
-          <h2 className="title-section-security mb-5 text-center text-[24px] leading-[110%] font-bold text-white sm:text-[32px] lg:text-[40px]">
+          <h2 className="title-section-security mb-5 text-center text-[24px] leading-[110%] text-white sm:text-[32px] lg:text-[40px]">
             Segurança da informação
             <br />{" "}
-            <span className="text-brand-light-green">de ponta a ponta</span>
+            <span className="text-brand-light-green font-bold">de ponta a ponta</span>
           </h2>
           <p className="security-content mb-8 text-center text-lg font-normal text-white">
             A saúde digital só faz sentido quando respeita a privacidade, a

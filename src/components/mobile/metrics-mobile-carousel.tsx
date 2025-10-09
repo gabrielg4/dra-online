@@ -44,7 +44,7 @@ export const MetricsMobileCarousel = () => {
                 </p>
               </div>
               <p className="text-lg text-white">
-                de NPS que representa o nível de satisfação dos beneficiários.
+                de NPS que representa o nível de satisfação dos beneficiários com os atendimentos.
               </p>
             </div>
           </CarouselItem>
@@ -56,7 +56,7 @@ export const MetricsMobileCarousel = () => {
                 </p>
               </div>
               <p className="text-lg text-white">
-                de NPS que representa o nível de satisfação dos beneficiários.
+                de resolutividade nos atendimentos, com casos solucionados sem a necessidade de encaminhamento para consulta presencial.
               </p>
             </div>
           </CarouselItem>
@@ -68,7 +68,8 @@ export const MetricsMobileCarousel = () => {
                 </p>
               </div>
               <p className="text-lg text-white">
-                de NPS que representa o nível de satisfação dos beneficiários.
+                protocolos médicos
+                para garantir segurança e cuidado.
               </p>
             </div>
           </CarouselItem>

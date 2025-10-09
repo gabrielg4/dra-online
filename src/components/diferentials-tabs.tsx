@@ -50,7 +50,7 @@ export const DiferentialsTabs = () => {
           value="tab3"
           className="tab-button tab-button-blur text-brand-dark-gray data-[state=active]:bg-brand-main-green hover:bg-brand-main-green z-[7] -ml-6 shrink-0 rounded-2xl bg-white py-4 pr-6 pl-8 text-center text-xl font-semibold duration-300 hover:text-white data-[state=active]:text-white"
         >
-          Consulta Online
+          Consultas Eletivas
           <br /> com Especialistas
         </TabsTrigger>
 
@@ -58,24 +58,24 @@ export const DiferentialsTabs = () => {
           value="tab4"
           className="tab-button tab-button-blur text-brand-dark-gray data-[state=active]:bg-brand-main-green hover:bg-brand-main-green z-[6] -ml-6 shrink-0 rounded-2xl bg-white py-4 pr-6 pl-8 text-center text-xl font-semibold duration-300 hover:text-white data-[state=active]:text-white"
         >
-          Consultório
-          <br /> Digital
+          Saúde
+          <br /> Mental
         </TabsTrigger>
 
         <TabsTrigger
           value="tab5"
           className="tab-button tab-button-blur text-brand-dark-gray data-[state=active]:bg-brand-main-green hover:bg-brand-main-green z-[5] -ml-6 shrink-0 rounded-2xl bg-white py-4 pr-6 pl-8 text-center text-xl font-semibold duration-300 hover:text-white data-[state=active]:text-white"
         >
-          Atenção Integrada
-          <br /> à Saúde
+          Gestão Integrada
+          <br /> do Cuidado
         </TabsTrigger>
 
         <TabsTrigger
           value="tab6"
           className="tab-button tab-button-blur text-brand-dark-gray data-[state=active]:bg-brand-main-green hover:bg-brand-main-green z-[4] -ml-6 shrink-0 rounded-2xl bg-white py-4 pr-6 pl-8 text-center text-xl font-semibold duration-300 hover:text-white data-[state=active]:text-white"
         >
-          Saúde
-          <br /> Mental
+          Consultoria
+          <br /> Digital
         </TabsTrigger>
       </TabsList>
 
@@ -83,7 +83,7 @@ export const DiferentialsTabs = () => {
         <div className="flex flex-col items-center gap-5 bg-white md:flex-row md:gap-8 lg:gap-20">
           <div className="w-full md:w-1/2">
             <Image
-              src="/images/img-pronto-atendimento.webp"
+              src="/images/img-entrevista-qualificada.webp"
               alt="Pronto Atendimento 24h"
               width={568}
               height={474}
@@ -98,8 +98,7 @@ export const DiferentialsTabs = () => {
               Mais segurança, menos riscos.
             </h3>
             <p className="text-brand-dark-gray text-md mb-6 font-normal lg:mb-14 lg:text-lg">
-              Transformamos dados em decisões assertivas, reduzindo riscos
-              jurídicos, desperdícios e garantindo conformidade regulatória.
+              Na saúde suplementar, cada detalhe faz diferença. Transforma dados em decisões assertivas, reduzindo riscos jurídicos, desperdícios e garantindo conformidade regulatória.
             </p>
             <Button
               variant="outline"
@@ -173,9 +172,7 @@ export const DiferentialsTabs = () => {
               O cuidado certo, na hora que seu beneficiário mais precisa.
             </h3>
             <p className="text-brand-dark-gray text-md mb-6 font-normal lg:mb-14 lg:text-lg">
-              Tecnologia responsiva que permite incluir o acesso do seu cliente
-              direto ao seu App, Site ou WhatsApp com mais de 92% de
-              resolutividade.
+              Imprevistos não têm hora marcada. Por isso, a Dr. Online garante que o acesso a um médico nunca esteja fora de alcance. Nosso <strong>Pronto Atendimento 24h</strong> conecta pacientes a clínicos e pediatras em poucos minutos, sem filas, sem burocracia e com <strong>mais de 92% de resolutividade.</strong>
             </p>
             <Button
               variant="outline"
@@ -244,14 +241,15 @@ export const DiferentialsTabs = () => {
           </div>
           <div className="w-full py-8 md:w-1/2">
             <p className="text-brand-main-green mb-3 text-sm font-bold">
-              Consulta Online com Especialistas
+              Consulta Eletivas com Especialistas
             </p>
             <h3 className="text-brand-black mb-4 text-2xl leading-[130%] font-bold lg:mb-6 lg:text-[32px]">
-              Lorem Ipsum
+              Transforme o acesso em cuidado.
+              E o cuidado em resultado.
             </h3>
             <p className="text-brand-dark-gray text-md mb-6 font-normal lg:mb-14 lg:text-lg">
-              Atendimento especializado mesmo em locais com baixa cobertura
-              assistencial para o cuidado integral.
+              Com apenas um clique garanta acesso rápido e qualificado há mais de
+              <strong>30 especialistas</strong>, sem comprometer custos, estrutura ou qualidade.
             </p>
             <Button
               variant="outline"
@@ -259,7 +257,7 @@ export const DiferentialsTabs = () => {
             >
               <Link
                 href="/"
-                className="text-brand-main-green px-4 py-2 font-medium duration-300 hover:text-white"
+                className="text-brand-main-green px-4 py-2 font-medium duration-300 hover:text-white text-[16px] leading-normal"
               >
                 Conheça mais
               </Link>
@@ -274,7 +272,7 @@ export const DiferentialsTabs = () => {
                   height={95}
                 />
                 <p className="text-brand-dark-gray text-md mt-2 ml-3 text-center font-semibold lg:text-lg">
-                  Lorem ipsum
+                  Garantia de acesso a especialistas em todo o país
                 </p>
               </div>
               <div className="flex flex-col justify-start">
@@ -285,7 +283,7 @@ export const DiferentialsTabs = () => {
                   height={95}
                 />
                 <p className="text-brand-dark-gray text-md mt-2 ml-3 text-center font-semibold lg:text-lg">
-                  Lorem ipsum
+                  Gestão inteligente do cuidado
                 </p>
               </div>
               <div className="flex flex-col justify-start">
@@ -296,7 +294,7 @@ export const DiferentialsTabs = () => {
                   height={95}
                 />
                 <p className="text-brand-dark-gray text-md mt-2 ml-3 text-center font-semibold lg:text-lg">
-                  Lorem ipsum
+                  Agendamento em menos de 24h
                 </p>
               </div>
             </div>
@@ -316,28 +314,39 @@ export const DiferentialsTabs = () => {
           </div>
           <div className="w-full py-8 md:w-1/2">
             <p className="text-brand-main-green mb-3 text-sm font-bold">
-              Saúde Mental - Teleacolhimento Psicológico 24h
+              Saúde Mental
             </p>
             <h3 className="text-brand-black mb-4 text-2xl leading-[130%] font-bold lg:mb-6 lg:text-[32px]">
-              Apoio imediato para quem precisa, resultados estratégicos para
-              quem cuida.
+              Apoio imediato para quem precisa, resultados estratégicos para quem cuida.
             </h3>
             <p className="text-brand-dark-gray text-md mb-6 font-normal lg:mb-10 lg:text-lg">
-              Conectamos beneficiários a profissionais especializados em poucos
-              minutos, oferecendo escuta qualificada, orientação segura e
-              direcionamento adequado em qualquer dia e a qualquer hora.
+              Oferecemos um ecossistema completo de <strong>saúde mental digital</strong>, através do <strong>Teleacolhimento Psicológico 24h</strong> e do <strong>Integralmente</strong>, que conectam ciência, tecnologia e cuidado humano para gerar impacto real.
             </p>
-            <Button
-              variant="outline"
-              className="border-brand-main-green group hover:bg-brand-main-green rounded-full p-0 duration-300"
-            >
-              <Link
-                href="/"
-                className="text-brand-main-green px-4 py-2 font-medium duration-300 hover:text-white"
+            <div className="flex flex-col md:flex-row gap-4 justify-between items-center">
+              <Button
+                variant="outline"
+                className="border-brand-main-green group hover:bg-brand-main-green rounded-full p-0 duration-300"
               >
-                Conheça mais
-              </Link>
-            </Button>
+                <Link
+                  href="/"
+                  className="text-brand-main-green px-4 py-2 font-medium duration-300 hover:text-white text-[16px] leading-normal"
+                >
+                  Conheça mais o <strong>Teleacolhimento</strong>
+                </Link>
+              </Button>
+
+              <Button
+                variant="outline"
+                className="border-brand-main-green group hover:bg-brand-main-green rounded-full p-0 duration-300"
+              >
+                <Link
+                  href="/"
+                  className="text-brand-main-green px-4 py-2 font-medium duration-300 hover:text-white text-[16px] leading-normal"
+                >
+                  Conheça mais o <strong>Integralmente</strong>
+                </Link>
+              </Button>
+            </div>
 
             <div className="mt-6 flex w-full flex-nowrap justify-between gap-4 overflow-x-auto lg:mt-12 [&::-webkit-scrollbar]:hidden">
               <div className="flex flex-col justify-start">
@@ -393,15 +402,14 @@ export const DiferentialsTabs = () => {
           </div>
           <div className="w-full py-8 md:w-1/2">
             <p className="text-brand-main-green mb-3 text-sm font-bold">
-              Atenção Integrada do Cuidado
+              Gestão Integrada do Cuidado
             </p>
             <h3 className="text-brand-black mb-4 text-2xl leading-[130%] font-bold lg:mb-6 lg:text-[32px]">
-              Mais que cuidado, gestão inteligente em saúde.
+              Mais que cuidado, gestão inteligente
+              em saúde.
             </h3>
             <p className="text-brand-dark-gray text-md mb-6 font-normal lg:mb-10 lg:text-lg">
-              Combinamos tecnologia, protocolos clínicos e equipe altamente
-              qualificada para garantir resolutividade, continuidade e
-              personalização do atendimento.
+              Combinamos tecnologia, protocolos clínicos e equipe altamente qualificada para garantir resolutividade, continuidade e personalização do atendimento.
             </p>
             <Button
               variant="outline"
@@ -409,7 +417,7 @@ export const DiferentialsTabs = () => {
             >
               <Link
                 href="/"
-                className="text-brand-main-green px-4 py-2 font-medium duration-300 hover:text-white"
+                className="text-brand-main-green px-4 py-2 font-medium duration-300 hover:text-white text-[16px] leading-normal"
               >
                 Conheça mais
               </Link>
@@ -472,14 +480,10 @@ export const DiferentialsTabs = () => {
               Consultório Digital
             </p>
             <h3 className="text-brand-black mb-4 text-2xl leading-[130%] font-bold lg:mb-6 lg:text-[32px]">
-              Uma nova forma de entregar saúde: acessível, segura, integrada e
-              altamente escalável.
+              Uma nova forma de entregar saúde: acessível, segura, integrada e altamente escalável.
             </h3>
             <p className="text-brand-dark-gray text-md mb-6 font-normal lg:mb-8 lg:text-lg">
-              Equipado com dispositivos médicos multiparamétricos e suporte de
-              enfermagem, possibilita consultas clínicas e especializadas com
-              alto nível de resolutividade e precisão diagnóstica, mesmo à
-              distância.
+              Equipado com dispositivos médicos multiparamétricos e suporte de enfermagem, possibilita consultas clínicas e especializadas com alto nível de resolutividade e precisão diagnóstica, mesmo à distância.
             </p>
             <Button
               variant="outline"
@@ -487,7 +491,7 @@ export const DiferentialsTabs = () => {
             >
               <Link
                 href="/"
-                className="text-brand-main-green px-4 py-2 font-medium duration-300 hover:text-white"
+                className="text-brand-main-green px-4 py-2 font-medium duration-300 hover:text-white text-[16px] leading-normal"
               >
                 Conheça mais
               </Link>
@@ -514,8 +518,8 @@ export const DiferentialsTabs = () => {
                   height={95}
                 />
                 <p className="text-brand-dark-gray text-md mt-2 ml-3 font-semibold lg:text-lg">
-                  Valor agregado ao
-                  <br className="hidden lg:inline-block" /> plano de saúde
+                  Qualidade
+                  <br className="hidden lg:inline-block" /> diagnóstica
                 </p>
               </div>
               <div className="flex flex-col justify-start">

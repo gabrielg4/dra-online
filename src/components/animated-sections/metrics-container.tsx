@@ -24,34 +24,35 @@ export const MetricsContainer = () => {
 
   return (
     <div className="hidden w-full items-start justify-between gap-8 md:flex">
-      <div className="metric-card translate-y-7 rounded-2xl bg-white/10 p-4 shadow-2xl/10">
+      <div className="metric-card max-w-[250px] translate-y-7 rounded-2xl bg-white/10 p-4 shadow-2xl/10">
         <div className="bg-brand-dark-green mb-5 w-fit rounded-2xl p-3">
           <p className="text-brand-light-green text-[64px] leading-none font-bold">
             93
           </p>
         </div>
         <p className="text-lg text-white">
-          de NPS que representa o nível de satisfação dos beneficiários.
+          de NPS que representa o nível de satisfação dos beneficiários com os atendimentos.
         </p>
       </div>
-      <div className="metric-card rounded-2xl bg-white/10 p-4 shadow-2xl/10">
+      <div className="metric-card max-w-[250px] rounded-2xl bg-white/10 p-4 shadow-2xl/10">
         <div className="bg-brand-dark-green mb-5 w-fit rounded-2xl p-3">
           <p className="text-brand-light-green text-[64px] leading-none font-bold">
             92<span className="text-[32px]">%</span>
           </p>
         </div>
         <p className="text-lg text-white">
-          de NPS que representa o nível de satisfação dos beneficiários.
+          de resolutividade nos atendimentos, com casos solucionados sem a necessidade de encaminhamento para consulta presencial.
         </p>
       </div>
-      <div className="metric-card translate-y-7 rounded-2xl bg-white/10 p-4 shadow-2xl/10">
+      <div className="metric-card max-w-[250px] translate-y-7 rounded-2xl bg-white/10 p-4 shadow-2xl/10">
         <div className="bg-brand-dark-green mb-5 w-fit rounded-2xl p-3">
           <p className="text-brand-light-green text-[64px] leading-none font-bold">
             94
           </p>
         </div>
         <p className="text-lg text-white">
-          de NPS que representa o nível de satisfação dos beneficiários.
+          protocolos médicos
+          para garantir segurança e cuidado.
         </p>
       </div>
     </div>

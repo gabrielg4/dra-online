@@ -43,11 +43,11 @@ export const SecurityCards = () => {
         <Image
           src="/images/ic-shield-check.svg"
           alt="Ícone check"
-          width={72}
-          height={72}
+          width={100}
+          height={100}
           className="mx-auto"
         />
-        <p className="text-md text-center font-bold text-white lg:text-lg">
+        <p className="text-center font-bold text-white text-lg md:text-xl">
           Adequação a<br />
           Portaria 467/2020
         </p>
@@ -59,11 +59,11 @@ export const SecurityCards = () => {
         <Image
           src="/images/ic-shield-check.svg"
           alt="Ícone check"
-          width={72}
-          height={72}
+          width={100}
+          height={100}
           className="mx-auto"
         />
-        <p className="text-md text-center font-bold text-white lg:text-lg">
+        <p className="text-center font-bold text-white  text-lg md:text-xl">
           Adequação total
           <br /> à LGPD
         </p>
@@ -75,11 +75,11 @@ export const SecurityCards = () => {
         <Image
           src="/images/ic-shield-check.svg"
           alt="Ícone check"
-          width={72}
-          height={72}
+          width={100}
+          height={100}
           className="mx-auto"
         />
-        <p className="text-md text-center font-bold text-white lg:text-lg">
+        <p className="text-center font-bold text-white  text-lg md:text-xl">
           Conformidade com as
           <br />
           normativas do CFM
