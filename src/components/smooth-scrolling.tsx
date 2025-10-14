@@ -21,7 +21,7 @@ export const SmoothScrolling = ({ children }: SmoothScrollingProps) => {
     lenis.on("scroll", ScrollTrigger.update);
 
     const tickerFunction = (time: number) => {
-      lenis.raf(time * 1000);
+      lenis.raf(time * 500);
     };
 
     gsap.ticker.add(tickerFunction);

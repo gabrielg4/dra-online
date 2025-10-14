@@ -6,7 +6,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { BlogCard } from "./blog-card";
+import { BlogCard } from "./cards/blog-card";
 import { useEffect, useState } from "react";
 
 import { type CarouselApi } from "@/components/ui/carousel";

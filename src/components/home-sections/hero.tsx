@@ -49,7 +49,7 @@ export const Hero = () => {
           id="title"
           className="mb-6 text-center text-[32px] leading-[110%] font-bold text-white md:text-[40px] lg:text-[48px]"
         >
-          Somos a principal referência <br className="hidden md:inline-block" />
+          Somos a maior referência <br className="hidden md:inline-block" />
           de Saúde Digital no Brasil!
         </h1>
         <div className="relative mb-8 sm:mb-12">

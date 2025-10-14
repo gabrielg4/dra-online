@@ -37,39 +37,40 @@ export const MetricsMobileCarousel = () => {
       <Carousel setApi={setApi}>
         <CarouselContent className="-ml-4">
           <CarouselItem className={cn("basis-full pl-4")}>
-            <div className="rounded-2xl bg-white/10 p-4 shadow-2xl/10">
+            <div className="h-full rounded-2xl bg-white/10 p-4 shadow-2xl/10">
               <div className="bg-brand-dark-green mb-5 w-fit rounded-2xl p-3">
                 <p className="text-brand-light-green text-[64px] leading-none font-bold">
                   93
                 </p>
               </div>
               <p className="text-lg text-white">
-                de NPS que representa o nível de satisfação dos beneficiários com os atendimentos.
+                de NPS que representa o nível de satisfação dos beneficiários
+                com os atendimentos.
               </p>
             </div>
           </CarouselItem>
           <CarouselItem className={cn("basis-full pl-4")}>
-            <div className="rounded-2xl bg-white/10 p-4 shadow-2xl/10">
+            <div className="h-full rounded-2xl bg-white/10 p-4 shadow-2xl/10">
               <div className="bg-brand-dark-green mb-5 w-fit rounded-2xl p-3">
                 <p className="text-brand-light-green text-[64px] leading-none font-bold">
                   92<span className="text-[32px]">%</span>
                 </p>
               </div>
               <p className="text-lg text-white">
-                de resolutividade nos atendimentos, com casos solucionados sem a necessidade de encaminhamento para consulta presencial.
+                de resolutividade nos atendimentos, com casos solucionados sem a
+                necessidade de encaminhamento para consulta presencial.
               </p>
             </div>
           </CarouselItem>
           <CarouselItem className={cn("basis-full pl-4")}>
-            <div className="rounded-2xl bg-white/10 p-4 shadow-2xl/10">
+            <div className="h-full rounded-2xl bg-white/10 p-4 shadow-2xl/10">
               <div className="bg-brand-dark-green mb-5 w-fit rounded-2xl p-3">
                 <p className="text-brand-light-green text-[64px] leading-none font-bold">
                   94
                 </p>
               </div>
               <p className="text-lg text-white">
-                protocolos médicos
-                para garantir segurança e cuidado.
+                protocolos médicos para garantir segurança e cuidado.
               </p>
             </div>
           </CarouselItem>

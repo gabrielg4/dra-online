@@ -57,7 +57,10 @@ export const ContactForm = () => {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="space-y-4 rounded-lg bg-transparent p-6 max-[600px]:bg-white/10"
+      >
         <FormField
           control={form.control}
           name="name"

@@ -31,7 +31,8 @@ export const MetricsContainer = () => {
           </p>
         </div>
         <p className="text-lg text-white">
-          de NPS que representa o nível de satisfação dos beneficiários com os atendimentos.
+          de NPS que representa o nível de satisfação dos beneficiários com os
+          atendimentos.
         </p>
       </div>
       <div className="metric-card max-w-[250px] rounded-2xl bg-white/10 p-4 shadow-2xl/10">
@@ -41,7 +42,8 @@ export const MetricsContainer = () => {
           </p>
         </div>
         <p className="text-lg text-white">
-          de resolutividade nos atendimentos, com casos solucionados sem a necessidade de encaminhamento para consulta presencial.
+          de resolutividade nos atendimentos, com casos solucionados sem a
+          necessidade de encaminhamento para consulta presencial.
         </p>
       </div>
       <div className="metric-card max-w-[250px] translate-y-7 rounded-2xl bg-white/10 p-4 shadow-2xl/10">
@@ -51,8 +53,7 @@ export const MetricsContainer = () => {
           </p>
         </div>
         <p className="text-lg text-white">
-          protocolos médicos
-          para garantir segurança e cuidado.
+          protocolos médicos para garantir segurança e cuidado.
         </p>
       </div>
     </div>

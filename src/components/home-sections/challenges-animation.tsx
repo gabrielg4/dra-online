@@ -41,7 +41,7 @@ export function ChallengersAnimation() {
         end: isSmallLaptop ? "+=180%" : `+=250%`,
         pin: true,
         // pinSpacing: true,
-        scrub: 3,
+        scrub: 2,
         // markers: true,
         invalidateOnRefresh: true,
         onRefreshInit: () => gsap.set(cardsLayerRef.current, { y: 0 }),
@@ -49,43 +49,43 @@ export function ChallengersAnimation() {
     });
 
     cardsTimeline.to(cardsLayerRef.current, {
-      y: "-=150%",
+      y: "-=170%",
     });
 
-    if (cardsLayerRef.current) {
-      const cards = gsap.utils.toArray(
-        cardsLayerRef.current?.childNodes,
-      ) as Element[];
+    // if (cardsLayerRef.current) {
+    //   const cards = gsap.utils.toArray(
+    //     cardsLayerRef.current?.childNodes,
+    //   ) as Element[];
 
-      cards.forEach((card) => {
-        if (card.tagName === "IMG") {
-          gsap.from(card, {
-            opacity: 0,
-            scale: 0,
-            rotate: 360,
-            scrollTrigger: {
-              trigger: card,
-              start: "top 80%",
-              end: `-=100%`,
-              scrub: true, // anima ao acompanhar o scroll
-            },
-            duration: 1.5,
-          });
-          return;
-        }
-        gsap.from(card, {
-          opacity: 0,
-          scale: 0,
-          scrollTrigger: {
-            trigger: card,
-            start: "top 80%",
-            end: `-=100%`,
-            scrub: true,
-          },
-          duration: 1,
-        });
-      });
-    }
+    //   cards.forEach((card) => {
+    //     if (card.tagName === "IMG") {
+    //       gsap.from(card, {
+    //         opacity: 0,
+    //         scale: 0,
+    //         rotate: 360,
+    //         scrollTrigger: {
+    //           trigger: card,
+    //           start: "top 80%",
+    //           end: `-=100%`,
+    //           scrub: true, // anima ao acompanhar o scroll
+    //         },
+    //         duration: 1.5,
+    //       });
+    //       return;
+    //     }
+    //     gsap.from(card, {
+    //       opacity: 0,
+    //       scale: 0,
+    //       scrollTrigger: {
+    //         trigger: card,
+    //         start: "top 80%",
+    //         end: `-=100%`,
+    //         scrub: true,
+    //       },
+    //       duration: 1,
+    //     });
+    //   });
+    // }
   }, []);
 
   return (
@@ -114,7 +114,7 @@ export function ChallengersAnimation() {
       {/* Camada que será transladada (parallax) */}
       <div
         ref={cardsLayerRef}
-        className="absolute inset-0 top-36 z-10 flex flex-col items-center gap-6 md:!top-52"
+        className="absolute inset-0 top-36 z-10 flex flex-col items-center gap-6 md:!top-64"
       >
         <div
           className="from-brand-main-green to-brand-light-green w-full max-w-[320px] cursor-pointer rounded-2xl bg-gradient-to-b p-[6px] sm:absolute sm:top-[0px] sm:left-1/2 sm:-translate-x-1/2"

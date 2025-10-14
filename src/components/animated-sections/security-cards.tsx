@@ -34,7 +34,7 @@ export const SecurityCards = () => {
   return (
     <div
       id="security"
-      className="mt-10 hidden w-full items-end justify-center gap-8 md:flex lg:px-20"
+      className="flex w-full flex-col items-center justify-center gap-8 sm:mt-10 md:flex-row md:items-end lg:px-20"
     >
       <div
         ref={card2}
@@ -47,7 +47,7 @@ export const SecurityCards = () => {
           height={100}
           className="mx-auto"
         />
-        <p className="text-center font-bold text-white text-lg md:text-xl">
+        <p className="text-center text-lg font-bold text-white md:text-xl">
           Adequação a<br />
           Portaria 467/2020
         </p>
@@ -63,7 +63,7 @@ export const SecurityCards = () => {
           height={100}
           className="mx-auto"
         />
-        <p className="text-center font-bold text-white  text-lg md:text-xl">
+        <p className="text-center text-lg font-bold text-white md:text-xl">
           Adequação total
           <br /> à LGPD
         </p>
@@ -79,7 +79,7 @@ export const SecurityCards = () => {
           height={100}
           className="mx-auto"
         />
-        <p className="text-center font-bold text-white  text-lg md:text-xl">
+        <p className="text-center text-lg font-bold text-white md:text-xl">
           Conformidade com as
           <br />
           normativas do CFM

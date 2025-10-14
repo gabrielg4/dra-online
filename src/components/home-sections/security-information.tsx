@@ -2,7 +2,6 @@
 import React from "react";
 import { CtaButton } from "../cta-button";
 import { SecurityCards } from "../animated-sections/security-cards";
-import { SecurityCardsMobileCarousel } from "../mobile/security-cards-mobile-carousel";
 import Image from "next/image";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -120,13 +119,16 @@ export const SecurityInformation = () => {
           <h2 className="title-section-security mb-5 text-center text-[24px] leading-[110%] text-white sm:text-[32px] lg:text-[40px]">
             Segurança da informação
             <br />{" "}
-            <span className="text-brand-light-green font-bold">de ponta a ponta</span>
+            <span className="text-brand-light-green font-bold">
+              de ponta a ponta
+            </span>
           </h2>
           <p className="security-content mb-8 text-center text-lg font-normal text-white">
             A saúde digital só faz sentido quando respeita a privacidade, a
             legislação e a segurança dos dados
-            <br /> de quem mais importa: os seus beneficiários.{" "}
-            <span className="font-semibold">Na dr.</span>online,{" "}
+            <br className="hidden sm:inline-block" /> de quem mais importa: os
+            seus beneficiários. <span className="font-semibold">Na dr.</span>
+            online,{" "}
             <span className="font-semibold">
               isso não é diferencial. É padrão.
             </span>
@@ -135,7 +137,7 @@ export const SecurityInformation = () => {
             <CtaButton title="Saiba mais" url="/" />
           </div>
           <SecurityCards />
-          <SecurityCardsMobileCarousel />
+          {/* <SecurityCardsMobileCarousel /> */}
         </div>
       </div>
     </section>

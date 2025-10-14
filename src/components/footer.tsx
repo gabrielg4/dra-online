@@ -5,7 +5,7 @@ import Link from "next/link";
 export const Footer = () => {
   return (
     <footer className="bg-brand-dark-green pt-10 pb-6 lg:pt-14">
-      <div className="container">
+      <div className="relative z-20 container">
         <div className="flex flex-col items-start justify-between gap-10 md:flex-row">
           <div className="w-full max-w-[237px]">
             <Image
