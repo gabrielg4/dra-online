@@ -54,7 +54,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
-      <body className={`${mainFont.variable} overflow-hidden antialiased`}>
+      <body className={`${mainFont.variable} antialiased`}>
         <Header />
         <SmoothScrolling>
           <main className="bg-brand-dark-green overflow-hidden">
