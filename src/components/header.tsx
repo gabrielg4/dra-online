@@ -12,28 +12,19 @@ import { ScrollTrigger } from "gsap/all";
 
 export const Header = () => {
   const [headerScrolled, setHeaderScrolled] = useState(false);
-  // const [isOnBgWhite, setIsOnBgWhite] = useState(false);
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     if (window.scrollY > 50 && !headerScrolled) {
-  //       setHeaderScrolled(true);
-  //     } else if (window.scrollY <= 50) {
-  //       setHeaderScrolled(false);
-  //     }
-  //   };
-  //   window.addEventListener("scroll", handleScroll);
-
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, [headerScrolled]);
 
   useGSAP(() => {
-    new ScrollTrigger({
+    const st = ScrollTrigger.create({
       trigger: "header",
-      start: "top 50px",
-      toggleClass: "bg-black/10 backdrop-blur-3xl",
+      start: "top 20%",
+      onToggle: (self) => {
+        setHeaderScrolled(!self.isActive);
+      },
     });
+
+    return () => {
+      st.kill();
+    };
   }, []);
 
   return (
@@ -41,7 +32,7 @@ export const Header = () => {
       <div className="container">
         <header
           className={cn(
-            "border-brand-light-green flex w-full items-center justify-between gap-5 rounded-full border px-6 py-6 duration-500 md:py-4",
+            "border-brand-light-green flex w-full items-center justify-between gap-5 rounded-full border px-6 py-4 duration-500 md:py-4",
             headerScrolled && "bg-black/10 backdrop-blur-3xl",
           )}
         >
