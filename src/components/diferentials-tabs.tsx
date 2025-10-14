@@ -82,13 +82,14 @@ export const DiferentialsTabs = () => {
       <TabsContent value="tab1">
         <div className="flex flex-col items-center gap-5 bg-white md:flex-row md:gap-8 lg:gap-20">
           <div className="w-full md:w-1/2">
-            <Image
-              src="/images/img-entrevista-qualificada.webp"
-              alt="Pronto Atendimento 24h"
-              width={568}
-              height={474}
-              className="rounded-2xl object-cover"
-            />
+            <video
+              src="/videos/video1.mp4"
+              autoPlay
+              controls={false}
+              muted
+              loop
+              className="h-[300px] w-full rounded-lg object-cover md:h-[370px] lg:h-[477px]"
+            ></video>
           </div>
           <div className="w-full py-8 md:w-1/2">
             <p className="text-brand-main-green mb-3 text-[28px] font-bold">
@@ -158,13 +159,14 @@ export const DiferentialsTabs = () => {
       <TabsContent value="tab2">
         <div className="flex flex-col items-center gap-5 bg-white md:flex-row md:gap-8 lg:gap-20">
           <div className="w-full md:w-1/2">
-            <Image
-              src="/images/img-pronto-atendimento.webp"
-              alt="Pronto Atendimento 24h"
-              width={568}
-              height={474}
-              className="rounded-2xl object-cover"
-            />
+            <video
+              src="/videos/video2.mp4"
+              autoPlay
+              controls={false}
+              muted
+              loop
+              className="h-[300px] w-full rounded-lg object-cover md:h-[370px] lg:h-[477px]"
+            ></video>
           </div>
           <div className="w-full py-8 md:w-1/2">
             <p className="text-brand-main-green mb-3 text-[28px] font-bold">
@@ -237,13 +239,14 @@ export const DiferentialsTabs = () => {
       <TabsContent value="tab3">
         <div className="flex flex-col items-center gap-5 bg-white md:flex-row md:gap-8 lg:gap-20">
           <div className="w-full md:w-1/2">
-            <Image
-              src="/images/img-consultas-eletivas.webp"
-              alt="Pronto Atendimento 24h"
-              width={568}
-              height={474}
-              className="rounded-2xl object-cover"
-            />
+            <video
+              src="/videos/video3.mp4"
+              autoPlay
+              controls={false}
+              muted
+              loop
+              className="h-[300px] w-full rounded-lg object-cover md:h-[370px] lg:h-[477px]"
+            ></video>
           </div>
           <div className="w-full py-8 md:w-1/2">
             <p className="text-brand-main-green mb-3 text-[28px] font-bold">
@@ -311,13 +314,14 @@ export const DiferentialsTabs = () => {
       <TabsContent value="tab4">
         <div className="flex flex-col items-center gap-5 bg-white md:flex-row md:gap-8 lg:gap-20">
           <div className="w-full md:w-1/2">
-            <Image
-              src="/images/img-saude-mental.webp"
-              alt="Pronto Atendimento 24h"
-              width={568}
-              height={474}
-              className="rounded-2xl object-cover"
-            />
+            <video
+              src="/videos/video4.mp4"
+              autoPlay
+              controls={false}
+              muted
+              loop
+              className="h-[300px] w-full rounded-lg object-cover md:h-[370px] lg:h-[477px]"
+            ></video>
           </div>
           <div className="w-full py-8 md:w-1/2">
             <p className="text-brand-main-green mb-3 text-[28px] font-bold">
@@ -404,13 +408,14 @@ export const DiferentialsTabs = () => {
       <TabsContent value="tab5">
         <div className="flex flex-col items-center gap-5 bg-white md:flex-row md:gap-8 lg:gap-20">
           <div className="w-full md:w-1/2">
-            <Image
-              src="/images/img-gestao-integrada.webp"
-              alt="Pronto Atendimento 24h"
-              width={568}
-              height={474}
-              className="rounded-2xl object-cover"
-            />
+            <video
+              src="/videos/video5.mp4"
+              autoPlay
+              controls={false}
+              muted
+              loop
+              className="h-[300px] w-full rounded-lg object-cover md:h-[370px] lg:h-[477px]"
+            ></video>
           </div>
           <div className="w-full py-8 md:w-1/2">
             <p className="text-brand-main-green mb-3 text-[28px] font-bold">
@@ -480,13 +485,14 @@ export const DiferentialsTabs = () => {
       <TabsContent value="tab6">
         <div className="flex flex-col items-center gap-5 bg-white md:flex-row md:gap-8 lg:gap-20">
           <div className="w-full md:w-1/2">
-            <Image
-              src="/images/img-pronto-atendimento.webp"
-              alt="Pronto Atendimento 24h"
-              width={568}
-              height={474}
-              className="rounded-2xl object-cover"
-            />
+            <video
+              src="/videos/video6.mp4"
+              autoPlay
+              controls={false}
+              muted
+              loop
+              className="h-[300px] w-full rounded-lg object-cover md:h-[370px] lg:h-[477px]"
+            ></video>
           </div>
           <div className="w-full py-8 md:w-1/2">
             <p className="text-brand-main-green mb-3 text-[28px] font-bold">

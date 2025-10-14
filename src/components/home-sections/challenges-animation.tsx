@@ -37,7 +37,7 @@ export function ChallengersAnimation() {
     const cardsTimeline = gsap.timeline({
       scrollTrigger: {
         trigger: wrapperRef.current,
-        start: isSmallLaptop ? "top top" : "top top",
+        start: isSmallLaptop ? "top 20%" : "top top",
         end: isSmallLaptop ? "+=180%" : `+=250%`,
         pin: true,
         // pinSpacing: true,
