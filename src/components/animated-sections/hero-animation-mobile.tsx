@@ -88,21 +88,21 @@ export const HeroAnimationMobile = () => {
             ref={card2}
             className="bg-brand-main-green h-[200px] w-full rounded-xl p-2"
           >
-            <p className="text-brand-light-green mb-3 text-sm font-bold">
+            <p className="text-brand-light-green mb-3 text-xs font-bold sm:text-sm">
               <span className="text-brand-dark-green">Tecnologia</span> própria,
               segura e escalável
             </p>
             <ul className="list-inside list-disc">
-              <li className="text-[10px] font-bold text-white">
+              <li className="text-[8px] font-bold text-white sm:text-[10px]">
                 Integração Total
               </li>
-              <li className="text-[10px] font-bold text-white">
+              <li className="text-[8px] font-bold text-white sm:text-[10px]">
                 Prescrição Digital
               </li>
-              <li className="text-[10px] font-bold text-white">
+              <li className="text-[8px] font-bold text-white sm:text-[10px]">
                 Dashboards Inteligentes
               </li>
-              <li className="text-[10px] font-bold text-white">
+              <li className="text-[8px] font-bold text-white sm:text-[10px]">
                 Compliance e Segurança da informação
               </li>
             </ul>
@@ -125,7 +125,7 @@ export const HeroAnimationMobile = () => {
             ref={card3}
             className="bg-brand-light-green relative z-10 h-[200px] w-full rounded-xl p-2"
           >
-            <p className="text-sm font-bold text-white">
+            <p className="text-xs font-bold text-white sm:text-sm">
               <span className="text-brand-dark-green">
                 Segurança, rastreabilidade e confiabilidade
               </span>

@@ -2,43 +2,39 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Navigation } from "./navigation";
 import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
 import { MobileMenu } from "./mobile/mobile-menu";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/all";
 
 export const Header = () => {
   const [headerScrolled, setHeaderScrolled] = useState(false);
   // const [isOnBgWhite, setIsOnBgWhite] = useState(false);
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50 && !headerScrolled) {
-        setHeaderScrolled(true);
-      } else if (window.scrollY <= 50) {
-        setHeaderScrolled(false);
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (window.scrollY > 50 && !headerScrolled) {
+  //       setHeaderScrolled(true);
+  //     } else if (window.scrollY <= 50) {
+  //       setHeaderScrolled(false);
+  //     }
+  //   };
+  //   window.addEventListener("scroll", handleScroll);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [headerScrolled]);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, [headerScrolled]);
 
-  // useGSAP(() => {
-  //   gsap.to("header", {
-  //     scrollTrigger: {
-  //       trigger: ".has-bg-white",
-  //       start: "top top",
-  //       end: "bottom bottom",
-  //       markers: true,
-  //       onToggle: (self) => {
-  //         setIsOnBgWhite(self.isActive);
-  //       },
-  //     },
-  //   });
-  // }, []);
+  useGSAP(() => {
+    new ScrollTrigger({
+      trigger: "header",
+      start: "top 50px",
+      toggleClass: "bg-black/10 backdrop-blur-3xl",
+    });
+  }, []);
 
   return (
     <div className={cn("fixed top-0 z-50 w-full pt-5 duration-500")}>
