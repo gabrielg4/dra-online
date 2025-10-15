@@ -75,7 +75,7 @@ export const ImpactsCarousel = ({ customClassNames }: ImpactsCarouselProps) => {
           <div
             key={index}
             className={cn(
-              "bg-brand-dark-gray/30 hover:bg-brand-light-green h-3 w-3 cursor-pointer rounded-full",
+              "hover:bg-brand-light-green h-3 w-3 cursor-pointer rounded-full bg-white/30",
               current === index && "bg-brand-light-green",
             )}
             onClick={() => handleGoToSlide({ slide: index })}

@@ -14,7 +14,7 @@ export const CardSolucaoImpacto = ({
   content,
 }: CardSolucaoImpactoProps) => {
   return (
-    <div className="flex items-center gap-4 rounded-lg border border-white/20 bg-white/10 px-6 py-10 shadow-2xl/20">
+    <div className="flex items-center gap-4 rounded-lg border border-white/20 bg-white/10 px-2 py-3 shadow-2xl/20 lg:px-6 lg:py-10">
       <Image
         src={src}
         alt={alt}
@@ -22,7 +22,9 @@ export const CardSolucaoImpacto = ({
         height={56}
         className="object-contain"
       />
-      <p className="text-lg leading-normal font-bold text-white">{content}</p>
+      <p className="text-[14px] leading-normal font-bold text-white lg:text-lg">
+        {content}
+      </p>
     </div>
   );
 };

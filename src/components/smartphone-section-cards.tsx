@@ -4,8 +4,20 @@ import Image from "next/image";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { CtaButton } from "./cta-button";
+import { useMediaQuery } from "react-responsive";
 
 export const SmartphoneSectionCards = () => {
+  const isTablet = useMediaQuery({
+    minWidth: 768,
+    maxWidth: 1023,
+  });
+
+  const isSmartphone = useMediaQuery({
+    maxWidth: 767,
+  });
+
+  const startPhones = `top ${isTablet ? "80%" : isSmartphone ? "50%" : "50%"}`;
+
   useGSAP(() => {
     gsap.from(".title-section-security", {
       scale: 0,
@@ -42,7 +54,7 @@ export const SmartphoneSectionCards = () => {
       ease: "expo.out",
       scrollTrigger: {
         trigger: ".image-wrapper",
-        start: "top 50%",
+        start: startPhones,
         end: "bottom bottom",
         scrub: 3,
         // markers: true,
@@ -56,9 +68,10 @@ export const SmartphoneSectionCards = () => {
       ease: "expo.out",
       scrollTrigger: {
         trigger: "#security-information",
-        start: "top 50%",
+        start: startPhones,
         end: "top top",
         scrub: 3,
+        // markers: true,
       },
     });
     gsap.from(".mobile-fone-right", {
@@ -68,7 +81,7 @@ export const SmartphoneSectionCards = () => {
       ease: "expo.out",
       scrollTrigger: {
         trigger: "#security-information",
-        start: "top 50%",
+        start: startPhones,
         end: "top top",
         scrub: 3,
       },

@@ -3,20 +3,54 @@ import { GetInTouch } from "@/components/home-sections/get-in-touch";
 import { ImpactsCarousel } from "@/components/impacts-carousel";
 import { TestimonialsSection } from "@/components/shared-sections/testimonials";
 import { SmartphoneSectionCards } from "@/components/smartphone-section-cards";
+import { Diferentials } from "@/components/solucoes-section/diferentials";
 import { Hero } from "@/components/solucoes-section/hero";
+import { Impacts } from "@/components/solucoes-section/impacts";
 import React from "react";
 
 export default function EntrevistaQualificadaPage() {
   return (
     <>
-      <Hero />
-      <div className="pt-10">
-        <CompaniesLogos />
-      </div>
-
-      <section className="py-10 lg:py-14">
-        <div className="container">
-          <p className="mb-2 text-center text-[16px] leading-normal text-white">
+      <Hero
+        title={
+          <>
+            Entrevista <br /> Qualificada{" "}
+          </>
+        }
+        description={
+          <>
+            Decisões regulatórias seguras,
+            <br /> baseadas em dados.{" "}
+          </>
+        }
+      />
+      <Diferentials
+        title={
+          <>
+            Na saúde suplementar,
+            <br className="hidden lg:inline-block" />
+            <span className="text-brand-light-green">
+              cada detalhe faz diferença.
+            </span>
+          </>
+        }
+        description={
+          <>
+            A Entrevista Qualificada da dr.online transforma dados em decisões
+            assertivas, reduzindo riscos jurídicos, desperdícios e garantindo
+            conformidade regulatória. Conduzida por uma equipe multidisciplinar,
+            ela valida informações clínicas, comportamentais e documentais de
+            forma rápida, segura e personalizada.
+          </>
+        }
+        image={{
+          src: "/images/img-secao-solucao-1.webp",
+          alt: "",
+        }}
+      />
+      <Impacts
+        subtitle={
+          <>
             <span className="text-brand-light-green font-bold">
               O impacto da
             </span>{" "}
@@ -25,20 +59,21 @@ export default function EntrevistaQualificadaPage() {
               <span className="text-brand-light-green">.</span>
             </span>{" "}
             online
-          </p>
-          <h2 className="md-6 md:10 text-center text-[32px] leading-[110%] font-bold text-white md:text-[40px] lg:mb-14">
+          </>
+        }
+        title={
+          <>
             Como grandes empresas têm usado a nossa
-            <br />
+            <br className="hidden lg:inline-block" />
             solução de entrevista qualificada
-          </h2>
-          <ImpactsCarousel customClassNames="sm:basis-1/2 md:basis-1/2" />
-        </div>
-      </section>
+          </>
+        }
+      />
       <SmartphoneSectionCards />
       <TestimonialsSection>
-        <h2 className="mb-10 text-center text-[32px] leading-[110%] font-bold text-white md:text-start lg:text-[40px]">
+        <h2 className="section-title mb-10 text-center text-[32px] leading-[110%] font-bold text-white lg:text-start lg:text-[40px]">
           O que diz quem
-          <br className="hidden md:inline-block" /> já usa dr
+          <br className="hidden lg:inline-block" /> já usa dr
           <span className="text-brand-light-green">.</span>
           <span className="font-normal">online</span>
         </h2>
