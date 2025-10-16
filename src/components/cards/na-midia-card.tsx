@@ -10,7 +10,9 @@ interface NaMidiaCardProps {
 
 export const NaMidiaCard = ({ isActive }: NaMidiaCardProps) => {
   return (
-    <div className="wheel-card border-brand-light-green h-[343px] w-full max-w-[290px] rounded-2xl border bg-white/10 backdrop-blur-[12px]">
+    <div
+      className={`wheel-card border-brand-light-green h-[343px] w-full max-w-[290px] rounded-2xl border bg-white/10 backdrop-blur-[12px]`}
+    >
       <div
         className={cn(
           "border-b-brand-light-green h-fit rounded-t-2xl border-b p-6",

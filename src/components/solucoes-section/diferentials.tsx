@@ -8,18 +8,28 @@ import gsap from "gsap";
 import { useMediaQuery } from "react-responsive";
 
 interface DiferentialsSolutionProps {
+  noImage?: boolean;
   title: ReactElement;
   description: ReactElement;
-  image: {
+  image?: {
     src: string;
     alt?: string;
   };
+  differentials: {
+    title: React.JSX.Element;
+    icon: {
+      alt: string;
+      src: string;
+    };
+  }[];
 }
 
 export const Diferentials = ({
   description,
   image,
   title,
+  differentials,
+  noImage,
 }: DiferentialsSolutionProps) => {
   const isTablet = useMediaQuery({
     minWidth: 768,
@@ -82,74 +92,71 @@ export const Diferentials = ({
           <p className="section-description mb-0 text-lg leading-normal font-normal text-white md:mb-10 lg:mb-14">
             {description}
           </p>
-          <Image
-            src={image.src}
-            alt={image.alt || ""}
-            width={580}
-            height={337}
-            quality={100}
-            className="hidden h-full w-full object-cover md:block"
-          />
+          {noImage ? (
+            <>
+              <div className="grid grid-cols-1 gap-x-6 gap-y-6 md:grid-cols-2">
+                <p className="text-brand-light-green w-full rounded-lg border border-white bg-white/10 px-4 py-3 text-center text-lg leading-[150%] font-bold backdrop-blur-2xl">
+                  Dermatologia
+                </p>
+                <p className="text-brand-light-green w-full rounded-lg border border-white bg-white/10 px-4 py-3 text-center text-lg leading-[150%] font-bold backdrop-blur-2xl">
+                  Neurologia
+                </p>
+                <p className="text-brand-light-green w-full rounded-lg border border-white bg-white/10 px-4 py-3 text-center text-lg leading-[150%] font-bold backdrop-blur-2xl">
+                  Endocrinologia
+                </p>
+                <p className="text-brand-light-green w-full rounded-lg border border-white bg-white/10 px-4 py-3 text-center text-lg leading-[150%] font-bold backdrop-blur-2xl">
+                  Neurologia Pediátrica
+                </p>
+                <p className="text-brand-light-green w-full rounded-lg border border-white bg-white/10 px-4 py-3 text-center text-lg leading-[150%] font-bold backdrop-blur-2xl">
+                  Endocrinologia pediátrica
+                </p>
+                <p className="text-brand-light-green w-full rounded-lg border border-white bg-white/10 px-4 py-3 text-center text-lg leading-[150%] font-bold backdrop-blur-2xl">
+                  Psiquiatria
+                </p>
+                <p className="text-brand-light-green w-full rounded-lg border border-white bg-white/10 px-4 py-3 text-center text-lg leading-[150%] font-bold backdrop-blur-2xl">
+                  Ginecologia
+                </p>
+                <p className="text-brand-light-green w-full rounded-lg border border-white bg-white/10 px-4 py-3 text-center text-lg leading-[150%] font-bold backdrop-blur-2xl">
+                  Reumatologia
+                </p>
+              </div>
+              <p className="text-brand-light-green mt-8 text-center text-[40px] font-bold">
+                + 30 Especialidades
+              </p>
+            </>
+          ) : (
+            <Image
+              src={image!.src}
+              alt={image!.alt || ""}
+              width={580}
+              height={337}
+              quality={100}
+              className="hidden h-full w-full object-cover md:block"
+            />
+          )}
         </div>
         <div className="cards-diferentials flex w-full flex-col gap-8 md:w-1/2">
-          <CardSolucaoDiferencial
-            image={{
-              alt: "ícone escudo com um check no meio",
-              src: "/images/ic-shield.svg",
-            }}
-          >
-            <strong>Conformidade garantida</strong> com a ANS e órgãos
-            reguladores.
-          </CardSolucaoDiferencial>
-
-          <CardSolucaoDiferencial
-            image={{
-              alt: "ícone gráfico de linhas",
-              src: "/images/ic-chart.svg",
-            }}
-          >
-            <strong>Decisões baseadas em dados confiáveis,</strong> reduzindo
-            contestações jurídicas.
-          </CardSolucaoDiferencial>
-
-          <CardSolucaoDiferencial
-            image={{
-              alt: "ícone escudo com um check no meio",
-              src: "/images/ic-heart.svg",
-            }}
-          >
-            <strong>Prevenção de riscos assistenciais,</strong> antecipando
-            condições clínicas.
-          </CardSolucaoDiferencial>
-
-          <CardSolucaoDiferencial
-            image={{
-              alt: "ícone escudo com um check no meio",
-              src: "/images/ic-gear.svg",
-            }}
-          >
-            <strong>Eficiência operacional,</strong> com menos retrabalho e mais
-            produtividade.
-          </CardSolucaoDiferencial>
-
-          <CardSolucaoDiferencial
-            image={{
-              alt: "ícone escudo com um check no meio",
-              src: "/images/ic-handshake.svg",
-            }}
-          >
-            <strong>Melhor experiência para o beneficiário,</strong> que recebe
-            acolhimento desde o primeiro contato.
-          </CardSolucaoDiferencial>
-
-          <Image
-            src={image.src}
-            alt={image.alt || ""}
-            width={580}
-            height={337}
-            quality={100}
-            className="block h-full w-full object-cover md:hidden"
-          />
+          {differentials.map(({ icon: { alt, src }, title }, index) => (
+            <CardSolucaoDiferencial
+              key={index}
+              image={{
+                alt,
+                src,
+              }}
+            >
+              {title}
+            </CardSolucaoDiferencial>
+          ))}
+          {!noImage && (
+            <Image
+              src={image!.src}
+              alt={image!.alt || ""}
+              width={580}
+              height={337}
+              quality={100}
+              className="block h-full w-full object-cover md:hidden"
+            />
+          )}
         </div>
       </div>
     </section>

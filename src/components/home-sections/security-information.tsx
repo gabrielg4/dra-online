@@ -5,14 +5,19 @@ import { SecurityCards } from "../animated-sections/security-cards";
 import Image from "next/image";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { SplitText } from "gsap/all";
 
 export const SecurityInformation = () => {
   useGSAP(() => {
-    gsap.from(".title-section-security", {
-      scale: 0,
+    const titleSplit = new SplitText(".title-section-security", {
+      type: "chars, words",
+    });
+    gsap.from(titleSplit.chars, {
+      yPercent: 100,
       opacity: 0,
-      duration: 1.2,
-      ease: "power2.out",
+      duration: 2,
+      ease: "expo.out",
+      stagger: 0.05,
       scrollTrigger: {
         trigger: "#security-information",
         start: "center 80%",

@@ -12,9 +12,19 @@ import { CardSolucaoImpacto } from "./cards/card-solucao-impacto";
 
 interface ImpactsCarouselProps {
   customClassNames?: string;
+  impacts: {
+    title: string;
+    icon: {
+      src: string;
+      alt: string;
+    };
+  }[];
 }
 
-export const ImpactsCarousel = ({ customClassNames }: ImpactsCarouselProps) => {
+export const ImpactsCarousel = ({
+  customClassNames,
+  impacts,
+}: ImpactsCarouselProps) => {
   const isSmartphone = useMediaQuery({
     query: "(max-width: 640px)",
   });
@@ -47,28 +57,20 @@ export const ImpactsCarousel = ({ customClassNames }: ImpactsCarouselProps) => {
       }}
     >
       <CarouselContent>
-        <CarouselItem
-          className={cn("flex items-center justify-center", customClassNames)}
-        >
-          <CardSolucaoImpacto
-            content="Para o beneficiário, é acolhimento, clareza e confiança logo na entrada do plano de saúde."
-            image={{
-              alt: "ícone pessoas",
-              src: "/images/ic-pessoas.svg",
-            }}
-          />
-        </CarouselItem>
-        <CarouselItem
-          className={cn("flex items-center justify-center", customClassNames)}
-        >
-          <CardSolucaoImpacto
-            content="Para a operadora, isso significa previsibilidade, redução de sinistralidade e aderência às normas da ANS."
-            image={{
-              alt: "ícone hospital",
-              src: "/images/ic-hospital.svg",
-            }}
-          />
-        </CarouselItem>
+        {impacts.map((impact, index) => (
+          <CarouselItem
+            key={index}
+            className={cn("flex items-center justify-center", customClassNames)}
+          >
+            <CardSolucaoImpacto
+              content={impact.title}
+              image={{
+                alt: impact.icon.alt,
+                src: impact.icon.src,
+              }}
+            />
+          </CarouselItem>
+        ))}
       </CarouselContent>
       <div className="mt-8 flex items-center justify-center gap-3 lg:hidden">
         {Array.from({ length: isSmartphone ? 2 : 0 }).map((item, index) => (

@@ -2,6 +2,7 @@
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import Counter from "../counter";
 
 export const MetricsContainer = () => {
   useGSAP(() => {
@@ -27,7 +28,14 @@ export const MetricsContainer = () => {
       <div className="metric-card max-w-[250px] translate-y-7 rounded-2xl bg-white/10 p-4 shadow-2xl/10">
         <div className="bg-brand-dark-green mb-5 w-fit rounded-2xl p-3">
           <p className="text-brand-light-green text-[64px] leading-none font-bold">
-            93
+            <Counter
+              scroll={{
+                trigger: "#metrics",
+                start: "top 80%",
+              }}
+              from={0}
+              to={93}
+            />
           </p>
         </div>
         <p className="text-lg text-white">
@@ -38,7 +46,15 @@ export const MetricsContainer = () => {
       <div className="metric-card max-w-[250px] rounded-2xl bg-white/10 p-4 shadow-2xl/10">
         <div className="bg-brand-dark-green mb-5 w-fit rounded-2xl p-3">
           <p className="text-brand-light-green text-[64px] leading-none font-bold">
-            92<span className="text-[32px]">%</span>
+            <Counter
+              scroll={{
+                trigger: "#metrics",
+                start: "top 80%",
+              }}
+              from={0}
+              to={92}
+            />
+            <span className="text-[32px]">%</span>
           </p>
         </div>
         <p className="text-lg text-white">
@@ -49,7 +65,14 @@ export const MetricsContainer = () => {
       <div className="metric-card max-w-[250px] translate-y-7 rounded-2xl bg-white/10 p-4 shadow-2xl/10">
         <div className="bg-brand-dark-green mb-5 w-fit rounded-2xl p-3">
           <p className="text-brand-light-green text-[64px] leading-none font-bold">
-            94
+            <Counter
+              scroll={{
+                trigger: "#metrics",
+                start: "top 80%",
+              }}
+              from={0}
+              to={90}
+            />
           </p>
         </div>
         <p className="text-lg text-white">

@@ -6,7 +6,21 @@ import gsap from "gsap";
 import { CtaButton } from "./cta-button";
 import { useMediaQuery } from "react-responsive";
 
-export const SmartphoneSectionCards = () => {
+interface SmartphoneSectionCardsProps {
+  cardsBigger?: boolean;
+  leftPhoneImg: string;
+  middlePhoneImg: string;
+  rightPhoneImg: string;
+  subtitle: string;
+}
+
+export const SmartphoneSectionCards = ({
+  leftPhoneImg,
+  middlePhoneImg,
+  rightPhoneImg,
+  subtitle,
+  cardsBigger = false,
+}: SmartphoneSectionCardsProps) => {
   const isTablet = useMediaQuery({
     minWidth: 768,
     maxWidth: 1023,
@@ -102,29 +116,29 @@ export const SmartphoneSectionCards = () => {
     <section id="security-information" className="overflow-hidden pb-20">
       <div className="container !px-0">
         <div className="image-wrapper relative flex items-end justify-center gap-8 overflow-hidden bg-[url('/images/bg-security.webp')] bg-cover bg-center pt-20">
-          <div className="overlay z-10"></div>
+          <div className="to-brand-dark-green absolute -bottom-2 left-0 z-10 h-[400px] w-full bg-gradient-to-b from-transparent"></div>
           <Image
-            src={"/images/img-phone-left-sol-1.webp"}
+            src={leftPhoneImg}
             alt=""
-            className="mobile-fone-left"
+            className={`mobile-fone-left h-full ${cardsBigger ? "w-[340px]" : "w-[280px]"}`}
             width={256}
             height={510}
             quality={100}
           />
 
           <Image
-            src={"/images/img-phone-middle-sol-1.webp"}
+            src={middlePhoneImg}
             alt=""
-            className="mobile-fone-middle"
+            className="mobile-fone-middle h-full w-[370px]"
             width={311}
             height={581}
             quality={100}
           />
 
           <Image
-            src={"/images/img-phone-right-sol-1.webp"}
+            src={rightPhoneImg}
             alt=""
-            className="mobile-fone-right"
+            className={`mobile-fone-right h-full ${cardsBigger ? "w-[340px]" : "w-[280px]"}`}
             width={256}
             height={510}
             quality={100}
@@ -133,14 +147,15 @@ export const SmartphoneSectionCards = () => {
         <div className="content-wrapper relative z-10 -mt-20 flex flex-col items-center justify-center px-4">
           <h2 className="title-section-security mb-5 text-center text-[24px] leading-[110%] text-white sm:text-[32px] lg:text-[40px]">
             Melhor que ler,
-            <span className="text-brand-light-green font-bold">é ver!</span>
+            <span className="text-brand-light-green font-bold">
+              é conhecer!
+            </span>
           </h2>
           <p className="security-content mb-8 text-center text-lg font-normal text-white">
-            Veja como funciona nossa solução de entrevista qualificada na
-            prática.
+            {subtitle}
           </p>
           <div className="cta-button-section">
-            <CtaButton title="Falar com especialista" url="#contato" />
+            <CtaButton title="Falar com nosso time" url="#contato" />
           </div>
         </div>
       </div>

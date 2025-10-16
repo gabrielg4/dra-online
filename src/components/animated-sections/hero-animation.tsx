@@ -3,6 +3,7 @@ import gsap from "gsap";
 import React, { useEffect, useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
+import Counter from "../counter";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -105,7 +106,7 @@ export const HeroAnimation = () => {
   return (
     <div className="relative mt-40 hidden md:block">
       {/* CARDS */}
-      <div ref={sectionRef} className="flex justify-center gap-8">
+      <div ref={sectionRef} className="hero-metrics flex justify-center gap-8">
         <div
           ref={leftContainer}
           className="flex w-full max-w-[calc(100%-217px)] gap-4 lg:gap-8"
@@ -208,7 +209,16 @@ export const HeroAnimation = () => {
         <div className="flex items-center justify-center gap-10">
           <div className="flex items-center gap-4">
             <p className="text-brand-light-green text-[52px] leading-[110%] font-bold lg:text-[70px]">
-              10
+              <Counter
+                scroll={{
+                  trigger: ".hero-metrics",
+                  start: "top 40%",
+                  end: "top: 40%",
+                }}
+                from={0}
+                to={1}
+                duration={2}
+              />
             </p>
             <span className="text-md leading-normal text-white">
               <span className="from-brand-main-green to-brand-light-green -mb-2 inline-block bg-gradient-to-r bg-clip-text text-xl font-bold text-transparent lg:text-2xl">
@@ -222,21 +232,39 @@ export const HeroAnimation = () => {
 
           <div className="flex items-center gap-4">
             <p className="text-brand-light-green text-[52px] leading-[110%] font-bold lg:text-[70px]">
-              1
+              <Counter
+                scroll={{
+                  trigger: ".hero-metrics",
+                  start: "top 40%",
+                  end: "top: 40%",
+                }}
+                from={0}
+                to={1}
+                duration={2}
+              />
             </p>
             <span className="text-md leading-normal text-white">
               <span className="from-brand-main-green to-brand-light-green -mb-2 inline-block bg-gradient-to-r bg-clip-text text-xl font-bold text-transparent lg:text-2xl">
                 +
               </span>
               <br />
-              mil consultas
+              milhão consultas
               <br /> por ano
             </span>
           </div>
 
           <div className="flex items-center gap-4">
             <p className="text-brand-light-green text-[52px] leading-[110%] font-bold lg:text-[70px]">
-              80
+              <Counter
+                scroll={{
+                  trigger: ".hero-metrics",
+                  start: "top 40%",
+                  end: "top: 40%",
+                }}
+                from={0}
+                to={80}
+                duration={2}
+              />
             </p>
             <span className="text-md leading-normal text-white">
               <span className="from-brand-main-green to-brand-light-green -mb-2 inline-block bg-gradient-to-r bg-clip-text text-xl font-bold text-transparent lg:text-2xl">
@@ -250,7 +278,16 @@ export const HeroAnimation = () => {
 
           <div className="flex items-center gap-4">
             <p className="text-brand-light-green text-[52px] leading-[110%] font-bold lg:text-[70px]">
-              35
+              <Counter
+                scroll={{
+                  trigger: ".hero-metrics",
+                  start: "top 40%",
+                  end: "top: 40%",
+                }}
+                from={0}
+                to={35}
+                duration={2}
+              />
             </p>
             <span className="text-md leading-normal text-white">
               <span className="from-brand-main-green to-brand-light-green -mb-2 inline-block bg-gradient-to-r bg-clip-text text-xl font-bold text-transparent lg:text-2xl">

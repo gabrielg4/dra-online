@@ -3,18 +3,10 @@ import Image from "next/image";
 import React from "react";
 
 export const LogoCarousel = () => {
+  const arrImages = Array.from({ length: 58 });
   // Logos de exemplo - substitua pelos seus logos reais
-  const logos = [
-    "/images/customers-logos/Logo.svg",
-    "/images/customers-logos/Logo-1.svg",
-    "/images/customers-logos/Logo-2.svg",
-    "/images/customers-logos/Logo-3.svg",
-    "/images/customers-logos/Logo-4.svg",
-    "/images/customers-logos/Logo-5.svg",
-  ];
-
   // Duplicamos os logos para criar o efeito infinito
-  const duplicatedLogos = [...logos, ...logos];
+  const duplicatedLogos = [...arrImages, ...arrImages];
 
   return (
     <>
@@ -25,20 +17,23 @@ export const LogoCarousel = () => {
 
         {/* Carrossel animado */}
         <div className="animate-scroll flex">
-          {duplicatedLogos.map((logo, index) => (
-            <div
-              key={index}
-              className="mx-8 flex h-16 w-32 flex-shrink-0 items-center justify-center transition-all duration-300 hover:scale-110"
-            >
-              <Image
-                src={logo}
-                alt={logo}
-                width={0}
-                height={0}
-                className="h-[60px] max-h-full w-[180px] max-w-full object-contain filter transition-all duration-300 hover:filter-none"
-              />
-            </div>
-          ))}
+          {duplicatedLogos.map((_, index) => {
+            const imageIndex = index > 57 ? 1 : index;
+            return (
+              <div
+                key={index}
+                className="mx-8 flex h-16 w-32 flex-shrink-0 items-center justify-center transition-all duration-300 hover:scale-110"
+              >
+                <Image
+                  src={`/images/customers-logos/logo-${imageIndex + 1}.svg`}
+                  alt={"Imagem Logo"}
+                  width={0}
+                  height={0}
+                  className="h-[60px] max-h-full w-[180px] max-w-full object-contain filter transition-all duration-300 hover:filter-none"
+                />
+              </div>
+            );
+          })}
         </div>
       </div>
 

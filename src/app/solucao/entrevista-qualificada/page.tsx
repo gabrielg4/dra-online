@@ -1,6 +1,4 @@
-import { CompaniesLogos } from "@/components/home-sections/companies-logos";
 import { GetInTouch } from "@/components/home-sections/get-in-touch";
-import { ImpactsCarousel } from "@/components/impacts-carousel";
 import { TestimonialsSection } from "@/components/shared-sections/testimonials";
 import { SmartphoneSectionCards } from "@/components/smartphone-section-cards";
 import { Diferentials } from "@/components/solucoes-section/diferentials";
@@ -8,10 +6,92 @@ import { Hero } from "@/components/solucoes-section/hero";
 import { Impacts } from "@/components/solucoes-section/impacts";
 import React from "react";
 
+const differentialsData = [
+  {
+    title: (
+      <>
+        <strong>Conformidade garantida</strong> com a ANS e órgãos reguladores.
+      </>
+    ),
+    icon: {
+      src: "/images/ic-shield.svg",
+      alt: "ícone escudo com um check no meio",
+    },
+  },
+  {
+    title: (
+      <>
+        <strong>Decisões baseadas em dados confiáveis,</strong> reduzindo
+        contestações jurídicas.
+      </>
+    ),
+    icon: {
+      alt: "ícone gráfico de linhas",
+      src: "/images/ic-chart.svg",
+    },
+  },
+  {
+    title: (
+      <>
+        <strong>Prevenção de riscos assistenciais,</strong> antecipando
+        condições clínicas.
+      </>
+    ),
+    icon: {
+      alt: "ícone escudo com um check no meio",
+      src: "/images/ic-heart.svg",
+    },
+  },
+  {
+    title: (
+      <>
+        <strong>Eficiência operacional,</strong> com menos retrabalho e mais
+        produtividade.
+      </>
+    ),
+    icon: {
+      alt: "ícone escudo com um check no meio",
+      src: "/images/ic-gear.svg",
+    },
+  },
+  {
+    title: (
+      <>
+        <strong>Melhor experiência para o beneficiário,</strong> que recebe
+        acolhimento desde o primeiro contato.
+      </>
+    ),
+    icon: {
+      alt: "ícone escudo com um check no meio",
+      src: "/images/ic-handshake.svg",
+    },
+  },
+];
+
+const impactsData = [
+  {
+    title:
+      "Para o beneficiário, é acolhimento imediato, orientação segura e a confiança de estar cuidado em qualquer lugar, a qualquer hora e com os melhores profissionais.",
+    icon: {
+      src: "/images/ic-pessoas.svg",
+      alt: "",
+    },
+  },
+  {
+    title:
+      "Para a operadora, isso significa menos idas desnecessárias ao pronto-socorro, menos custos com internações e mais eficiência assistencial.",
+    icon: {
+      src: "/images/ic-hospital.svg",
+      alt: "",
+    },
+  },
+];
+
 export default function EntrevistaQualificadaPage() {
   return (
     <>
       <Hero
+        classHeroImage="solution-entrevista-qualificada"
         title={
           <>
             Entrevista <br /> Qualificada{" "}
@@ -25,6 +105,7 @@ export default function EntrevistaQualificadaPage() {
         }
       />
       <Diferentials
+        differentials={differentialsData}
         title={
           <>
             Na saúde suplementar,
@@ -49,6 +130,7 @@ export default function EntrevistaQualificadaPage() {
         }}
       />
       <Impacts
+        impacts={impactsData}
         subtitle={
           <>
             <span className="text-brand-light-green font-bold">
@@ -69,7 +151,12 @@ export default function EntrevistaQualificadaPage() {
           </>
         }
       />
-      <SmartphoneSectionCards />
+      <SmartphoneSectionCards
+        leftPhoneImg="/images/img-phone-left-sol-1.webp"
+        middlePhoneImg="/images/img-phone-middle-sol-1.webp"
+        rightPhoneImg="/images/img-phone-right-sol-1.webp"
+        subtitle="Veja como funciona nossa solução de entrevista qualificada."
+      />
       <TestimonialsSection>
         <h2 className="section-title mb-10 text-center text-[32px] leading-[110%] font-bold text-white lg:text-start lg:text-[40px]">
           O que diz quem

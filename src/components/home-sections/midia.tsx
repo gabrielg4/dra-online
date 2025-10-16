@@ -2,14 +2,19 @@
 import { useGSAP } from "@gsap/react";
 import { WheelCarousel } from "../animated-sections/wheel-carousel";
 import gsap from "gsap";
+import { SplitText } from "gsap/all";
 
 export const Midia = () => {
   useGSAP(() => {
-    gsap.from(".title-section-midia", {
-      scale: 0,
+    const titleSplit = new SplitText(".title-section-midia", {
+      type: "chars, words",
+    });
+    gsap.from(titleSplit.chars, {
+      yPercent: 100,
       opacity: 0,
       duration: 1.2,
-      ease: "power2.out",
+      ease: "expo.out",
+      stagger: 0.05,
       scrollTrigger: {
         trigger: "#midia",
         start: "top 80%",
@@ -18,6 +23,19 @@ export const Midia = () => {
         // markers: true,
       },
     });
+    // gsap.from(".title-section-midia", {
+    //   scale: 0,
+    //   opacity: 0,
+    //   duration: 1.2,
+    //   ease: "power2.out",
+    //   scrollTrigger: {
+    //     trigger: "#midia",
+    //     start: "top 80%",
+    //     end: "top top",
+    //     scrub: 3,
+    //     // markers: true,
+    //   },
+    // });
   }, []);
 
   return (

@@ -262,3 +262,14 @@
 .tab-button-blur {
   box-shadow: 6px 0 20px 0 rgba(27, 160, 104, 0.2);
 }
+
+.solution-entrevista-qualificada {
+  background-image: url("/images/img-bg-hero-solucao-1.webp");
+}
+.solution-pronto-atendimento {
+  background-image: url("/images/img-bg-hero-solucao-2.webp");
+}
+
+.solution-consulta-eletiva {
+  background-image: url("/images/img-bg-hero-solucao-2.webp");
+}

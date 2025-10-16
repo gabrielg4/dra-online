@@ -7,11 +7,18 @@ import { SplitText } from "gsap/all";
 import { useMediaQuery } from "react-responsive";
 
 interface ImpactsSectionProps {
+  impacts: {
+    title: string;
+    icon: {
+      src: string;
+      alt: string;
+    };
+  }[];
   title: ReactElement;
   subtitle: ReactElement;
 }
 
-export const Impacts = ({ subtitle, title }: ImpactsSectionProps) => {
+export const Impacts = ({ subtitle, title, impacts }: ImpactsSectionProps) => {
   const isTablet = useMediaQuery({
     minWidth: 768,
     maxWidth: 1023,
@@ -59,7 +66,10 @@ export const Impacts = ({ subtitle, title }: ImpactsSectionProps) => {
         <h2 className="md:10 mb-6 text-center text-[28px] leading-[110%] font-bold text-white md:text-[32px] lg:mb-14 lg:text-[40px]">
           {title}
         </h2>
-        <ImpactsCarousel customClassNames="sm:basis-1/2 md:basis-1/2" />
+        <ImpactsCarousel
+          impacts={impacts}
+          customClassNames="sm:basis-1/2 md:basis-1/2"
+        />
       </div>
     </section>
   );

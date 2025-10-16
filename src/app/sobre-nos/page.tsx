@@ -29,7 +29,20 @@ export default function SobreNosPage() {
           </div>
         </div>
         <div className="to-brand-dark-green absolute -bottom-2 left-0 z-20 h-full w-full bg-gradient-to-b from-transparent sm:h-32" />
-        <VerticalCarouselAboutUs />
+        <VerticalCarouselAboutUs
+          imagesColumn1={[
+            "/images/img-carousel-vertical-1.webp",
+            "/images/img-carousel-vertical-2.webp",
+          ]}
+          imagesColumn2={[
+            "/images/img-carousel-vertical-3.webp",
+            "/images/img-carousel-vertical-4.webp",
+          ]}
+          imagesColumn3={[
+            "/images/img-carousel-vertical-5.webp",
+            "/images/img-carousel-vertical-6.webp",
+          ]}
+        />
       </section>
       <CompaniesLogos />
       <section className="bg-[url(/images/img-bg-secao-sobre.webp)] bg-cover bg-no-repeat py-10 lg:py-20">

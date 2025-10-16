@@ -9,8 +9,8 @@ import gsap from "gsap";
 import { SplitText } from "gsap/all";
 export const Hero = () => {
   useGSAP(() => {
-    const titleSplit = new SplitText("#title", { type: "chars, words" });
     const descriptionSplit = new SplitText(".description", { type: "lines" });
+    const titleSplit = new SplitText("#title", { type: "chars, words" });
 
     gsap.from(titleSplit.chars, {
       yPercent: 100,

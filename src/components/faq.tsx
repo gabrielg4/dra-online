@@ -4,6 +4,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { FAQContainer } from "./faq-container";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { SplitText } from "gsap/all";
 const faqItems: { question: string; answer: string }[] = [
   {
     question: "O que é telemedicina?",
@@ -44,11 +45,15 @@ const faqItems: { question: string; answer: string }[] = [
 
 export const FAQ = () => {
   useGSAP(() => {
-    gsap.from(".title-section-faq", {
-      scale: 0,
+    const titleSplit = new SplitText(".title-section-faq", {
+      type: "chars, words",
+    });
+    gsap.from(titleSplit.chars, {
+      yPercent: 100,
       opacity: 0,
-      duration: 1.2,
-      ease: "power2.out",
+      duration: 1,
+      ease: "expo.out",
+      stagger: 0.05,
       scrollTrigger: {
         trigger: "#faq",
         start: "top 80%",
