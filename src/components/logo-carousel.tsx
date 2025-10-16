@@ -1,13 +1,13 @@
 "use client";
+import { customerLogos } from "@/utils/customers-logos";
 import Image from "next/image";
 import React from "react";
 
 export const LogoCarousel = () => {
-  const arrImages = Array.from({ length: 58 });
+  // const arrImages = Array.from({ length: 58 });
   // Logos de exemplo - substitua pelos seus logos reais
   // Duplicamos os logos para criar o efeito infinito
-  const duplicatedLogos = [...arrImages, ...arrImages];
-
+  const duplicatedLogos = [...customerLogos, ...customerLogos];
   return (
     <>
       <div className="relative overflow-hidden">
@@ -17,15 +17,14 @@ export const LogoCarousel = () => {
 
         {/* Carrossel animado */}
         <div className="animate-scroll flex">
-          {duplicatedLogos.map((_, index) => {
-            const imageIndex = index > 57 ? 1 : index;
+          {duplicatedLogos.map((logo, index) => {
             return (
               <div
                 key={index}
                 className="mx-8 flex h-16 w-32 flex-shrink-0 items-center justify-center transition-all duration-300 hover:scale-110"
               >
                 <Image
-                  src={`/images/customers-logos/logo-${imageIndex + 1}.svg`}
+                  src={logo}
                   alt={"Imagem Logo"}
                   width={0}
                   height={0}
