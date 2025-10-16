@@ -4,18 +4,14 @@ import Image from "next/image";
 import React from "react";
 
 export const LogoCarousel = () => {
-  // const arrImages = Array.from({ length: 58 });
-  // Logos de exemplo - substitua pelos seus logos reais
-  // Duplicamos os logos para criar o efeito infinito
   const duplicatedLogos = [...customerLogos, ...customerLogos];
+
   return (
     <>
       <div className="relative overflow-hidden">
-        {/* Gradiente para suavizar as bordas */}
         <div className="from-brand-dark-green absolute top-0 left-0 z-10 h-full w-20 bg-gradient-to-r to-transparent"></div>
         <div className="from-brand-dark-green absolute top-0 right-0 z-10 h-full w-20 bg-gradient-to-l to-transparent"></div>
 
-        {/* Carrossel animado */}
         <div className="animate-scroll flex">
           {duplicatedLogos.map((logo, index) => {
             return (
@@ -56,7 +52,7 @@ export const LogoCarousel = () => {
         }
 
         .animate-scroll {
-          animation: scroll 30s linear infinite;
+          animation: scroll 20s linear infinite;
         }
 
         .animate-scroll-slow {
