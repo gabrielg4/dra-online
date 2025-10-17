@@ -263,13 +263,39 @@
   box-shadow: 6px 0 20px 0 rgba(27, 160, 104, 0.2);
 }
 
-.solution-entrevista-qualificada {
-  background-image: url("/images/img-bg-hero-solucao-1.webp");
+.video-masked {
+  /* suporte amplo (inclui WebKit) */
+  -webkit-mask-image: url("/images/subtract.png");
+  mask-image: url("/images/subtract.png");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain; /* ou cover, conforme sua necessidade */
+  mask-size: contain;
+  width: 100%; /* ajuste conforme o tamanho do mockup */
+  max-width: 280px;
+  height: 402px; /* combine com o aspect da máscara */
+  border-radius: 24px;
+  background: #000;
 }
-.solution-pronto-atendimento {
-  background-image: url("/images/img-bg-hero-solucao-2.webp");
+.video-masked video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.solution-consulta-eletiva {
-  background-image: url("/images/img-bg-hero-solucao-2.webp");
+.video-blur {
+  border-radius: 16px;
+  background:
+    linear-gradient(0deg, rgba(7, 95, 85, 0) 68.17%, #075f55 100%),
+    linear-gradient(270deg, rgba(7, 95, 85, 0) 83.53%, #075f55 100%),
+    linear-gradient(91deg, rgba(7, 95, 85, 0) 66.53%, #075f55 99.48%),
+    linear-gradient(180deg, rgba(7, 95, 85, 0) 69.03%, #075f55 100%);
+}
+
+.gradient-work-with-us-form {
+  background:
+    linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%),
+    rgba(255, 255, 255, 0.1);
 }

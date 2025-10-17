@@ -1,98 +1,196 @@
 "use client";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  type CarouselApi,
-} from "@/components/ui/carousel";
-import { TimelineCard } from "./cards/timeline-card";
-import { useEffect, useState } from "react";
+
 import { cn } from "@/lib/utils";
+import { useState } from "react";
+import { TimelineContent } from "./timeline-content";
+
+const historyData = [
+  {
+    imageUrl: "/images/img-timeline-2022.webp",
+    title: "Um desafio sem precedentes",
+    content: (
+      <>
+        <p className="mb-2 text-lg text-white">
+          A pandemia da COVID-19 mudou o mundo. Em meio ao medo, ao isolamento e
+          às incertezas, surgiu uma necessidade urgente: garantir acesso à saúde
+          com segurança e agilidade. Foi nesse cenário que nasceu a dr.online:
+          como uma resposta rápida, inovadora e visionária para conectar pessoas
+          e profissionais de saúde à distância.
+        </p>
+        <p className="text-[16px] leading-normal text-white">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </>
+    ),
+  },
+  {
+    imageUrl: "/images/img-timeline-2022.webp",
+    title: "Um desafio sem precedentes 2",
+    content: (
+      <>
+        <p className="mb-2 text-lg text-white">
+          A pandemia da COVID-19 mudou o mundo. Em meio ao medo, ao isolamento e
+          às incertezas, surgiu uma necessidade urgente: garantir acesso à saúde
+          com segurança e agilidade. Foi nesse cenário que nasceu a dr.online:
+          como uma resposta rápida, inovadora e visionária para conectar pessoas
+          e profissionais de saúde à distância.
+        </p>
+        <p className="text-[16px] leading-normal text-white">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </>
+    ),
+  },
+  {
+    imageUrl: "/images/img-timeline-2022.webp",
+    title: "Um desafio sem precedentes 3",
+    content: (
+      <>
+        <p className="mb-2 text-lg text-white">
+          A pandemia da COVID-19 mudou o mundo. Em meio ao medo, ao isolamento e
+          às incertezas, surgiu uma necessidade urgente: garantir acesso à saúde
+          com segurança e agilidade. Foi nesse cenário que nasceu a dr.online:
+          como uma resposta rápida, inovadora e visionária para conectar pessoas
+          e profissionais de saúde à distância.
+        </p>
+        <p className="text-[16px] leading-normal text-white">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </>
+    ),
+  },
+  {
+    imageUrl: "/images/img-timeline-2022.webp",
+    title: "Um desafio sem precedentes 3",
+    content: (
+      <>
+        <p className="mb-2 text-lg text-white">
+          A pandemia da COVID-19 mudou o mundo. Em meio ao medo, ao isolamento e
+          às incertezas, surgiu uma necessidade urgente: garantir acesso à saúde
+          com segurança e agilidade. Foi nesse cenário que nasceu a dr.online:
+          como uma resposta rápida, inovadora e visionária para conectar pessoas
+          e profissionais de saúde à distância.
+        </p>
+        <p className="text-[16px] leading-normal text-white">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </>
+    ),
+  },
+];
 
 export const HistoryTimeline = () => {
-  const [api, setApi] = useState<CarouselApi>();
-  const [current, setCurrent] = useState(0);
-  useEffect(() => {
-    if (!api) {
-      return;
-    }
+  const [activeTime, setActiveTime] = useState(0);
 
-    setCurrent(api.selectedScrollSnap());
-
-    api.on("select", () => {
-      setCurrent(api.selectedScrollSnap());
-    });
-  }, [api]);
-
-  const handleGoToSlide = ({ slide }: { slide: number }) => {
-    if (!api) {
-      return;
-    }
-    // setCurrent(slide)
-    api.scrollTo(slide);
+  const handleSelectTimelineItem = (value: number) => {
+    setActiveTime(value);
   };
 
   return (
-    <Carousel
-      setApi={setApi}
-      opts={{
-        align: "start",
-      }}
-    >
-      <CarouselContent>
-        <CarouselItem className="sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
-          <TimelineCard year={2023} title="Expansão acelerada">
-            Inauguramos nosso novo escritório em São Paulo e ampliamos nossa
-            sede em Brasília. Alcançamos mais de{" "}
-            <strong>3 milhões de vidas expostas</strong> aos nossos produtos,
-            consolidando nossa presença no mercado e{" "}
-            <strong>ampliando o acesso à saúde</strong> digital em todo o
-            Brasil.
-          </TimelineCard>
-        </CarouselItem>
-        <CarouselItem className="sm:basis-1/2 sm:pl-0 md:basis-1/3 lg:basis-1/4">
-          <TimelineCard year={2024} title="Inovação em escala">
-            Chegamos a <strong>mais de 7 milhões de vidas atendidas</strong> e
-            inauguramos mais de <strong>35 Consultórios Digitais</strong>,
-            aproximando ainda mais a tecnologia de quem mais precisa e
-            expandindo a rede de cuidado com qualidade e segurança.
-          </TimelineCard>
-        </CarouselItem>
-        <CarouselItem className="sm:basis-1/2 sm:pl-0 md:basis-1/3 lg:basis-1/4">
-          <TimelineCard year={2025} title="Um marco histórico">
-            Batemos a marca de <strong>10 milhões de vidas alcançadas.</strong>{" "}
-            Esse crescimento reafirma nossa posição como{" "}
-            <strong>referência nacional em saúde digital</strong> e reforça o
-            propósito que nos move desde o início: tornar o cuidado em saúde
-            mais humano, acessível e inteligente.
-          </TimelineCard>
-        </CarouselItem>
-        <CarouselItem className="sm:basis-1/2 sm:pl-0 md:basis-1/3 lg:basis-1/4">
-          <TimelineCard
-            year={2025}
-            title="Seguimos Transformando a saúde no Brasil"
-          >
-            Seguimos impulsionando a transformação digital da saúde, sempre com
-            o mesmo propósito que nos move desde o início:{" "}
-            <strong>
-              tornar o cuidado mais humano, acessível e eficiente.
-            </strong>
-          </TimelineCard>
-        </CarouselItem>
-      </CarouselContent>
-
-      <div className="flex items-center justify-center gap-3 lg:hidden">
-        {Array.from({ length: 4 }).map((item, index) => (
-          <div
+    <div className="rounded-xl bg-white/10 p-5 md:p-10">
+      <div className="mb-8 flex items-center justify-center md:mb-14">
+        <button
+          onClick={() => handleSelectTimelineItem(0)}
+          className={cn(
+            "border-brand-light-green text-brand-light-green cursor-pointer rounded-full border px-4 py-2 text-[20px] leading-[130%] hover:border-white hover:text-white",
+            activeTime >= 0 && "border-white text-white",
+          )}
+        >
+          2022
+        </button>
+        <div
+          className={cn(
+            "bg-brand-light-green h-[0.5px] w-14",
+            activeTime >= 0 && "bg-white",
+          )}
+        />
+        <button
+          onClick={() => handleSelectTimelineItem(1)}
+          className={cn(
+            "border-brand-light-green text-brand-light-green leading-[130%]hover:border-white cursor-pointer rounded-full border px-4 py-2 text-[20px] hover:border-white hover:text-white",
+            activeTime >= 1 && "border-white text-white",
+          )}
+        >
+          2023
+        </button>
+        <div
+          className={cn(
+            "bg-brand-light-green h-[0.5px] w-14",
+            activeTime >= 1 && "bg-white",
+          )}
+        />
+        <button
+          onClick={() => handleSelectTimelineItem(2)}
+          className={cn(
+            "border-brand-light-green text-brand-light-green leading-[130%]hover:border-white cursor-pointer rounded-full border px-4 py-2 text-[20px] hover:border-white hover:text-white",
+            activeTime >= 2 && "border-white text-white",
+          )}
+        >
+          2024
+        </button>
+        <div
+          className={cn(
+            "bg-brand-light-green h-[0.5px] w-14",
+            activeTime >= 2 && "bg-white",
+          )}
+        />
+        <button
+          onClick={() => handleSelectTimelineItem(3)}
+          className={cn(
+            "border-brand-light-green text-brand-light-green leading-[130%]hover:border-white cursor-pointer rounded-full border px-4 py-2 text-[20px] hover:border-white hover:text-white",
+            activeTime >= 3 && "border-white text-white",
+          )}
+        >
+          2025
+        </button>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="57"
+          height="9"
+          viewBox="0 0 57 9"
+          className={cn(
+            "fill-[#A6D05D]", // cor padrão (verde)
+            activeTime >= 3 && "fill-white", // fica branco quando activeTime === 2
+          )}
+        >
+          <path d="M56.853 4.955a.5.5 0 0 0 0-.708l-3.181-3.182a.5.5 0 1 0-.707.708L55.793 4.6l-2.828 2.828a.5.5 0 1 0 .707.707l3.181-3.181ZM.5 4.6v.5h56v-1H.5v.5Z" />
+        </svg>
+      </div>
+      <div>
+        {historyData.map((data, index) => (
+          <TimelineContent
             key={index}
-            className={cn(
-              "h-3 w-3 cursor-pointer rounded-full bg-white/50 hover:bg-white/100",
-              current === index && "bg-brand-light-green",
-            )}
-            onClick={() => handleGoToSlide({ slide: index })}
+            imageUrl={data.imageUrl}
+            title={data.title}
+            content={data.content}
+            isActive={activeTime !== index ? true : false}
           />
         ))}
       </div>
-    </Carousel>
+    </div>
   );
 };

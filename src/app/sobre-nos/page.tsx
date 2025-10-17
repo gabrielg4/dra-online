@@ -28,42 +28,32 @@ export default function SobreNosPage() {
             <CtaButton url="#saiba-mais" title="Saiba mais" />
           </div>
         </div>
-        <div className="to-brand-dark-green absolute -bottom-2 left-0 z-20 h-full w-full bg-gradient-to-b from-transparent sm:h-32" />
+        <div className="to-brand-dark-green absolute -bottom-2 left-0 z-20 h-full w-full bg-gradient-to-b from-transparent sm:h-[500px] md:-bottom-1" />
         <VerticalCarouselAboutUs
-          imagesColumn1={[
-            "/images/img-carousel-vertical-1.webp",
-            "/images/img-carousel-vertical-2.webp",
-          ]}
-          imagesColumn2={[
-            "/images/img-carousel-vertical-3.webp",
-            "/images/img-carousel-vertical-4.webp",
-          ]}
-          imagesColumn3={[
-            "/images/img-carousel-vertical-5.webp",
-            "/images/img-carousel-vertical-6.webp",
-          ]}
+          videosColumn1={["/videos/video7.mp4", "/videos/video8.mp4"]}
+          videosColumn2={["/videos/video9.mp4", "/videos/video10.mp4"]}
+          videosColumn3={["/videos/video5.mp4", "/videos/video6.mp4"]}
         />
       </section>
       <CompaniesLogos />
       <section className="bg-[url(/images/img-bg-secao-sobre.webp)] bg-cover bg-no-repeat py-10 lg:py-20">
         <div className="container flex flex-col-reverse items-center gap-6 md:flex-row lg:gap-14">
-          <div className="relative w-full md:w-1/2">
+          <div className="relative w-full md:max-w-[459px]">
             <Image
-              src="/images/img-secao-sobre.webp"
+              src="/images/gif-sobre.gif"
               alt="Imagem sobre seção online"
               width={629}
               height={504}
-              className="relative z-20 h-full w-full"
+              className="relative z-20 h-[450px] w-[450px] object-cover"
             />
             <div className="from-brand-light-green to-brand-main-green absolute top-0 right-0 h-[380px] w-[380px] rounded-full bg-gradient-to-b blur-[150px]" />
           </div>
-          <div className="relative z-20 w-full md:w-1/2">
+          <div className="relative z-20 w-full md:max-w-[calc(100%-459px)]">
             <h2 className="mb-6 text-[32px] leading-[110%] font-bold text-white lg:text-[40px]">
-              Cuidar bem nunca <br />
-              foi tão{" "}
-              <span className="text-brand-light-green">estratégico</span>
+              Cuidar bem nunca foi tão
+              <span className="text-brand-light-green"> estratégico</span>
             </h2>
-            <p className="text-[16px] leading-normal text-white lg:px-14">
+            <p className="text-[16px] leading-normal text-white">
               A dr.online nasceu com um propósito claro: tornar o acesso à saúde
               mais simples, humano e acessível. Desde o início, unimos inovação
               tecnológica, ciência clínica e acolhimento para criar um
@@ -84,7 +74,7 @@ export default function SobreNosPage() {
           </div>
         </div>
       </section>
-      <section className="py-10 lg:py-20">
+      <section className="pb-10 lg:pt-20 lg:pb-20">
         <div className="container">
           <h2 className="mb-6 text-center text-[32px] leading-[110%] text-white md:mb-10 lg:mb-14 lg:text-[40px]">
             Conheça <strong className="font-bold">nossa trajetória</strong>

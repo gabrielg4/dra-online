@@ -29,23 +29,14 @@ export default function NoticiasPage() {
         </div>
         <div className="to-brand-dark-green absolute -bottom-2 left-0 z-20 h-full w-full bg-gradient-to-b from-transparent sm:h-[500px]" />
         <VerticalCarouselAboutUs
-          imagesColumn1={[
-            "/images/img-midia-1.webp",
-            "/images/img-midia-2.webp",
-          ]}
-          imagesColumn2={[
-            "/images/img-midia-3.webp",
-            "/images/img-midia-4.webp",
-          ]}
-          imagesColumn3={[
-            "/images/img-midia-5.webp",
-            "/images/img-midia-6.webp",
-          ]}
+          videosColumn1={["/videos/video18.mp4", "/videos/video19.mp4"]}
+          videosColumn2={["/videos/video20.mp4", "/videos/video21.mp4"]}
+          videosColumn3={["/videos/video5.mp4", "/videos/video6.mp4"]}
         />
       </section>
       <section
         id="noticias"
-        className="bg-[url(/images/img-bg-noticias.webp)] bg-cover bg-center bg-no-repeat py-10 lg:py-16"
+        className="bg-[url(/videos/video18.mp4)] bg-cover bg-center bg-no-repeat py-10 lg:py-16"
       >
         <div className="container">
           <h2 className="mb-8 text-center text-[32px] leading-[110%] font-bold text-white md:mb-10 lg:mb-14 lg:text-[40px]">

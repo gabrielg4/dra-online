@@ -9,14 +9,14 @@ import { useMediaQuery } from "react-responsive";
 interface SmartphoneSectionCardsProps {
   cardsBigger?: boolean;
   leftPhoneImg: string;
-  middlePhoneImg: string;
+  middlePhoneVideo: string;
   rightPhoneImg: string;
   subtitle: string;
 }
 
 export const SmartphoneSectionCards = ({
   leftPhoneImg,
-  middlePhoneImg,
+  middlePhoneVideo,
   rightPhoneImg,
   subtitle,
   cardsBigger = false,
@@ -39,7 +39,7 @@ export const SmartphoneSectionCards = ({
       duration: 1.2,
       ease: "power2.out",
       scrollTrigger: {
-        trigger: "#security-information",
+        trigger: "#smartphones-section",
         start: "center 80%",
         end: "top top",
         scrub: 3,
@@ -53,7 +53,7 @@ export const SmartphoneSectionCards = ({
       duration: 1,
       ease: "expo.out",
       scrollTrigger: {
-        trigger: "#security-information",
+        trigger: "#smartphones-section",
         start: "center 70%",
         end: "bottom bottom",
         scrub: 3,
@@ -81,7 +81,7 @@ export const SmartphoneSectionCards = ({
       duration: 1,
       ease: "expo.out",
       scrollTrigger: {
-        trigger: "#security-information",
+        trigger: "#smartphones-section",
         start: startPhones,
         end: "top top",
         scrub: 3,
@@ -94,7 +94,7 @@ export const SmartphoneSectionCards = ({
       duration: 2,
       ease: "expo.out",
       scrollTrigger: {
-        trigger: "#security-information",
+        trigger: "#smartphones-section",
         start: startPhones,
         end: "top top",
         scrub: 3,
@@ -113,32 +113,33 @@ export const SmartphoneSectionCards = ({
   }, []);
 
   return (
-    <section id="security-information" className="overflow-hidden pb-20">
+    <section id="smartphones-section" className="overflow-hidden pb-20">
       <div className="container !px-0">
-        <div className="image-wrapper relative flex items-end justify-center gap-8 overflow-hidden bg-[url('/images/bg-security.webp')] bg-cover bg-center pt-20">
+        <div className="image-wrapper relative flex items-end justify-center gap-4 overflow-hidden bg-[url('/images/bg-security.webp')] bg-cover bg-center pt-20 lg:pt-40">
           <div className="to-brand-dark-green absolute -bottom-2 left-0 z-10 h-[400px] w-full bg-gradient-to-b from-transparent"></div>
           <Image
             src={leftPhoneImg}
             alt=""
-            className={`mobile-fone-left h-full ${cardsBigger ? "w-[340px]" : "w-[280px]"}`}
+            className={`mobile-fone-left h-full ${cardsBigger ? "w-[340px]" : "w-[220px]"}`}
             width={256}
             height={510}
             quality={100}
           />
 
-          <Image
-            src={middlePhoneImg}
-            alt=""
-            className="mobile-fone-middle h-full w-[370px]"
-            width={311}
-            height={581}
-            quality={100}
-          />
+          <div className="video-masked mobile-fone-middle !h-full !w-[500px]">
+            <video
+              src={middlePhoneVideo}
+              autoPlay
+              muted
+              loop
+              playsInline
+            ></video>
+          </div>
 
           <Image
             src={rightPhoneImg}
             alt=""
-            className={`mobile-fone-right h-full ${cardsBigger ? "w-[340px]" : "w-[280px]"}`}
+            className={`mobile-fone-right h-full ${cardsBigger ? "w-[340px]" : "w-[220px]"}`}
             width={256}
             height={510}
             quality={100}

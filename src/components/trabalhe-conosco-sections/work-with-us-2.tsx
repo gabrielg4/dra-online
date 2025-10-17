@@ -1,0 +1,62 @@
+"use client";
+
+import Image from "next/image";
+import React from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { SplitText } from "gsap/all";
+import { WorkWithUsForm2 } from "../work-with-us-form-2";
+
+export const WorkWithUsSection2 = () => {
+  useGSAP(() => {
+    const titleSplit = new SplitText(".title-contact-section", {
+      type: "chars, words",
+    });
+    gsap.from(titleSplit.chars, {
+      yPercent: 100,
+      opacity: 0,
+      duration: 1,
+      ease: "expo.out",
+      stagger: 0.05,
+      scrollTrigger: {
+        trigger: "#form-curriculo",
+        start: "top 80%",
+      },
+    });
+  }, []);
+
+  return (
+    <section
+      id="form-curriculo"
+      className="relative bg-[url('/images/bg-contact-section.svg')] bg-cover bg-center bg-no-repeat py-10 md:py-14"
+    >
+      <div className="blur-1 absolute -top-[300px] -left-[846px] md:-left-[536px]"></div>
+      <div className="relative z-10 container flex flex-col items-center justify-between gap-6 md:flex-row md:gap-10">
+        <div className="relative flex w-full flex-col-reverse items-center md:w-1/2 md:flex-col md:items-start lg:w-auto">
+          <h2 className="title-contact-section mb-4 text-center text-[32px] leading-[110%] font-bold text-white md:text-start lg:text-[40px]">
+            Venha fazer parte da
+            <br className="hidden lg:inline-block" />
+            <span className="text-brand-light-green">
+              Saúde Digital do Brasil
+            </span>
+          </h2>
+          <p className="mb-5 text-lg leading-normal font-normal text-white md:mb-10">
+            Preencha seus dados no formulário abaixo para se
+            <br /> inscrever em nosso banco de talentos.
+          </p>
+          <Image
+            src="/images/mascote.gif"
+            alt="Mascote"
+            width={154}
+            height={154}
+            unoptimized
+            className=""
+          />
+        </div>
+        <div className="border-l-brand-light-green relative w-full md:w-1/2 md:border-l md:pl-10 lg:max-w-[543px]">
+          <WorkWithUsForm2 />
+        </div>
+      </div>
+    </section>
+  );
+};

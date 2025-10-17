@@ -45,24 +45,25 @@ export const FeaturedCasesCarousel = () => {
         loop: true,
       }}
     >
-      <CarouselContent className="-ml-14">
-        <CarouselItem className="flex items-center justify-center pl-14">
-          <FeaturedCaseCard />
-        </CarouselItem>
-        <CarouselItem className="flex items-center justify-center pl-14">
-          <FeaturedCaseCard />
-        </CarouselItem>
-        <CarouselItem className="flex items-center justify-center pl-14">
-          <FeaturedCaseCard />
-        </CarouselItem>
+      <CarouselContent className="-ml-8">
+        {Array.from({ length: 3 }).map((_, index) => (
+          <CarouselItem
+            key={index}
+            className={cn(
+              "flex basis-5/6 items-center justify-center pl-8 md:basis-4/5",
+            )}
+          >
+            <FeaturedCaseCard />
+          </CarouselItem>
+        ))}
       </CarouselContent>
       <div className="mt-8 flex items-center justify-center gap-3 lg:hidden">
-        {Array.from({ length: isTablet ? 2 : isSmartphone ? 4 : 5 }).map(
+        {Array.from({ length: isTablet ? 3 : isSmartphone ? 3 : 3 }).map(
           (item, index) => (
             <div
               key={index}
               className={cn(
-                "bg-brand-dark-gray/30 hover:bg-brand-light-green h-3 w-3 cursor-pointer rounded-full",
+                "hover:bg-brand-light-green h-3 w-3 cursor-pointer rounded-full bg-white/30",
                 current === index && "bg-brand-light-green",
               )}
               onClick={() => handleGoToSlide({ slide: index })}

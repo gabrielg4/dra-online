@@ -58,7 +58,7 @@ export const Blog = () => {
   return (
     <section id="blog" className="py-10 lg:py-14">
       <div className="relative z-10 container">
-        <p className="subtitle-blog text-center font-normal text-white">
+        <p className="subtitle-blog text-center text-xl font-normal text-white">
           <span className="font-semibold">
             Blog dr<span className="text-brand-light-green">.</span>
           </span>{" "}

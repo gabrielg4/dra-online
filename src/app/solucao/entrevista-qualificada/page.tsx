@@ -91,7 +91,7 @@ export default function EntrevistaQualificadaPage() {
   return (
     <>
       <Hero
-        classHeroImage="solution-entrevista-qualificada"
+        classHeroVideo="/videos/video-solucao-1.mp4"
         title={
           <>
             Entrevista <br /> Qualificada{" "}
@@ -124,10 +124,7 @@ export default function EntrevistaQualificadaPage() {
             forma rápida, segura e personalizada.
           </>
         }
-        image={{
-          src: "/images/img-secao-solucao-1.webp",
-          alt: "",
-        }}
+        videoUrl="/videos/video-secao-solucao-1.mp4"
       />
       <Impacts
         impacts={impactsData}
@@ -153,7 +150,7 @@ export default function EntrevistaQualificadaPage() {
       />
       <SmartphoneSectionCards
         leftPhoneImg="/images/img-phone-left-sol-1.webp"
-        middlePhoneImg="/images/img-phone-middle-sol-1.webp"
+        middlePhoneVideo="/videos/video-middle-phone-solucao-1.mp4"
         rightPhoneImg="/images/img-phone-right-sol-1.webp"
         subtitle="Veja como funciona nossa solução de entrevista qualificada."
       />

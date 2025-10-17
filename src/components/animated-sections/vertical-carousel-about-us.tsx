@@ -1,20 +1,19 @@
 "use client";
 
 import React, { useRef } from "react";
-import Image from "next/image";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 
 interface VerticalCarouselAboutUsProps {
-  imagesColumn1: string[];
-  imagesColumn2: string[];
-  imagesColumn3: string[];
+  videosColumn1: string[];
+  videosColumn2: string[];
+  videosColumn3: string[];
 }
 
 export const VerticalCarouselAboutUs = ({
-  imagesColumn1,
-  imagesColumn2,
-  imagesColumn3,
+  videosColumn1,
+  videosColumn2,
+  videosColumn3,
 }: VerticalCarouselAboutUsProps) => {
   const scope = useRef<HTMLDivElement | null>(null);
 
@@ -66,44 +65,29 @@ export const VerticalCarouselAboutUs = ({
   return (
     <div
       ref={scope}
-      className="animation-columns absolute top-0 -right-24 z-10 grid w-full max-w-[500px] grid-cols-2 gap-4 overflow-hidden lg:right-0 lg:max-w-[728px] lg:grid-cols-3 lg:gap-10"
+      className="animation-columns absolute top-0 -right-24 z-10 grid w-full max-w-[500px] grid-cols-2 gap-4 overflow-hidden lg:right-0 lg:max-w-[728px] lg:grid-cols-3 lg:gap-5"
     >
-      <div className="coluna coluna1 flex flex-col gap-10 will-change-transform">
-        {imagesColumn1.map((image, index) => (
-          <Image
-            key={index}
-            src={image}
-            alt={`Imagem ${index++}`}
-            width={223}
-            height={400}
-            className="object-contain"
-          />
+      <div className="coluna coluna1 flex flex-col gap-8 will-change-transform">
+        {videosColumn1.map((video, index) => (
+          <div key={index} className="video-masked">
+            <video src={video} autoPlay muted loop playsInline></video>
+          </div>
         ))}
       </div>
 
-      <div className="coluna coluna2 flex flex-col gap-10 will-change-transform">
-        {imagesColumn2.map((image, index) => (
-          <Image
-            key={index}
-            src={image}
-            alt={`Imagem ${index++}`}
-            width={223}
-            height={400}
-            className="object-contain"
-          />
+      <div className="coluna coluna2 flex flex-col gap-8 will-change-transform">
+        {videosColumn2.map((video, index) => (
+          <div key={index} className="video-masked">
+            <video src={video} autoPlay muted loop playsInline></video>
+          </div>
         ))}
       </div>
 
-      <div className="coluna coluna3 hidden flex-col gap-10 will-change-transform lg:flex">
-        {imagesColumn3.map((image, index) => (
-          <Image
-            key={index}
-            src={image}
-            alt={`Imagem ${index++}`}
-            width={223}
-            height={400}
-            className="object-contain"
-          />
+      <div className="coluna coluna3 hidden flex-col gap-8 will-change-transform lg:flex">
+        {videosColumn3.map((video, index) => (
+          <div key={index} className="video-masked">
+            <video src={video} autoPlay muted loop playsInline></video>
+          </div>
         ))}
       </div>
     </div>

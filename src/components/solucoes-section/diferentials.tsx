@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import React, { type ReactElement } from "react";
 import { CardSolucaoDiferencial } from "../cards/card-solucao-diferencial";
 import { useGSAP } from "@gsap/react";
@@ -11,10 +10,7 @@ interface DiferentialsSolutionProps {
   noImage?: boolean;
   title: ReactElement;
   description: ReactElement;
-  image?: {
-    src: string;
-    alt?: string;
-  };
+  videoUrl?: string;
   differentials: {
     title: React.JSX.Element;
     icon: {
@@ -26,7 +22,7 @@ interface DiferentialsSolutionProps {
 
 export const Diferentials = ({
   description,
-  image,
+  videoUrl,
   title,
   differentials,
   noImage,
@@ -125,14 +121,17 @@ export const Diferentials = ({
               </p>
             </>
           ) : (
-            <Image
-              src={image!.src}
-              alt={image!.alt || ""}
-              width={580}
-              height={337}
-              quality={100}
-              className="hidden h-full w-full object-cover md:block"
-            />
+            <div className="relative hidden h-[337px] w-full rounded-lg md:block">
+              <div className="video-blur absolute top-0 left-0 h-full w-full" />
+              <video
+                src={videoUrl}
+                className="h-full w-full rounded-2xl object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+              ></video>
+            </div>
           )}
         </div>
         <div className="cards-diferentials flex w-full flex-col gap-8 md:w-1/2">
@@ -147,15 +146,18 @@ export const Diferentials = ({
               {title}
             </CardSolucaoDiferencial>
           ))}
-          {!noImage && (
-            <Image
-              src={image!.src}
-              alt={image!.alt || ""}
-              width={580}
-              height={337}
-              quality={100}
-              className="block h-full w-full object-cover md:hidden"
-            />
+          {noImage && (
+            <div className="relative block h-[337px] w-full rounded-lg md:hidden">
+              <div className="video-blur absolute top-0 left-0 h-full w-full" />
+              <video
+                src={videoUrl}
+                className="h-full w-full rounded-2xl object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+              ></video>
+            </div>
           )}
         </div>
       </div>
