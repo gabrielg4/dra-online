@@ -41,7 +41,7 @@ export const Hero = ({
     <section
       className={`solution-hero h-[500px] bg-[url(/images/bg-hero-solucao.svg)] bg-cover bg-bottom-left bg-no-repeat md:h-[650px]`}
     >
-      <div className="relative mx-auto h-full w-full max-w-[1440px]">
+      <div className="relative mx-auto h-full w-full max-w-[1600px]">
         <div className="relative h-full w-full">
           <div className="absolute right-0 bottom-0 z-0 h-full max-h-[500px] w-full max-w-[900px] rounded-3xl">
             <video
@@ -269,7 +269,7 @@ export const Hero = ({
               <p className="mb-10 text-center text-lg leading-normal font-normal text-white md:mb-14 md:text-start md:text-2xl">
                 {description}
               </p>
-              <CtaButton url="#get-in-touch" title="Falar com especialista" />
+              <CtaButton url="#contato" title="Falar com especialista" />
             </div>
           </div>
         </div>

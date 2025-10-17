@@ -9,16 +9,17 @@ import { useMediaQuery } from "react-responsive";
 interface ImpactsSectionProps {
   impacts: {
     title: string;
+    description: string;
+    isColumn?: boolean;
     icon: {
       src: string;
       alt: string;
     };
   }[];
   title: ReactElement;
-  subtitle: ReactElement;
 }
 
-export const Impacts = ({ subtitle, title, impacts }: ImpactsSectionProps) => {
+export const Impacts = ({ title, impacts }: ImpactsSectionProps) => {
   const isTablet = useMediaQuery({
     minWidth: 768,
     maxWidth: 1023,
@@ -60,10 +61,7 @@ export const Impacts = ({ subtitle, title, impacts }: ImpactsSectionProps) => {
   return (
     <section className="impacts-section py-10 lg:py-14">
       <div className="container">
-        <p className="section-subtitle mb-2 text-center text-[16px] leading-normal text-white">
-          {subtitle}
-        </p>
-        <h2 className="md:10 mb-6 text-center text-[28px] leading-[110%] font-bold text-white md:text-[32px] lg:mb-14 lg:text-[40px]">
+        <h2 className="md:10 mb-6 text-center text-[28px] leading-[110%] text-white md:text-[32px] lg:mb-14 lg:text-[40px]">
           {title}
         </h2>
         <ImpactsCarousel

@@ -14,6 +14,8 @@ interface ImpactsCarouselProps {
   customClassNames?: string;
   impacts: {
     title: string;
+    description: string;
+    isColumn?: boolean;
     icon: {
       src: string;
       alt: string;
@@ -58,12 +60,11 @@ export const ImpactsCarousel = ({
     >
       <CarouselContent>
         {impacts.map((impact, index) => (
-          <CarouselItem
-            key={index}
-            className={cn("flex items-center justify-center", customClassNames)}
-          >
+          <CarouselItem key={index} className={cn("flex", customClassNames)}>
             <CardSolucaoImpacto
-              content={impact.title}
+              title={impact.title}
+              description={impact.description}
+              isColumn={impact.isColumn}
               image={{
                 alt: impact.icon.alt,
                 src: impact.icon.src,
@@ -72,7 +73,7 @@ export const ImpactsCarousel = ({
           </CarouselItem>
         ))}
       </CarouselContent>
-      <div className="mt-8 flex items-center justify-center gap-3 lg:hidden">
+      {/* <div className="mt-8 flex items-center justify-center gap-3 lg:hidden">
         {Array.from({ length: isSmartphone ? 2 : 0 }).map((item, index) => (
           <div
             key={index}
@@ -83,7 +84,7 @@ export const ImpactsCarousel = ({
             onClick={() => handleGoToSlide({ slide: index })}
           />
         ))}
-      </div>
+      </div> */}
     </Carousel>
   );
 };

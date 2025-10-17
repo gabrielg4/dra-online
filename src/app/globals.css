@@ -185,6 +185,11 @@
   }
 }
 
+html,
+body {
+  scroll-behavior: smooth;
+}
+
 .hiddenImage {
   position: absolute;
   top: 0;
@@ -298,4 +303,17 @@
   background:
     linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%),
     rgba(255, 255, 255, 0.1);
+}
+
+.blur-contact-solution {
+  width: 1078.815px;
+  height: 565.501px;
+  transform: rotate(-37.104deg);
+  position: absolute;
+  left: -626.031px;
+  bottom: -500.468px;
+  border-radius: 400px;
+  opacity: 0.5;
+  background: var(--Degrad, linear-gradient(180deg, #1ba068 0%, #a6d05d 100%));
+  filter: blur(100px);
 }

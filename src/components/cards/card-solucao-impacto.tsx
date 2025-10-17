@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 import React from "react";
 
@@ -6,15 +7,24 @@ interface CardSolucaoImpactoProps {
     src: string;
     alt: string;
   };
-  content: string;
+  title: string;
+  description: string;
+  isColumn?: boolean;
 }
 
 export const CardSolucaoImpacto = ({
   image: { alt, src },
-  content,
+  title,
+  description,
+  isColumn = false,
 }: CardSolucaoImpactoProps) => {
   return (
-    <div className="flex items-center gap-4 rounded-lg border border-white/20 bg-white/10 px-2 py-3 shadow-2xl/20 lg:px-6 lg:py-10">
+    <div
+      className={cn(
+        "flex h-full flex-col items-start gap-4 rounded-lg border border-white/20 bg-white/10 p-5 shadow-2xl/20 md:flex-row lg:p-8",
+        isColumn && "md:flex-col",
+      )}
+    >
       <Image
         src={src}
         alt={alt}
@@ -22,9 +32,14 @@ export const CardSolucaoImpacto = ({
         height={56}
         className="object-contain"
       />
-      <p className="text-[14px] leading-normal font-bold text-white lg:text-lg">
-        {content}
-      </p>
+      <div className="w-full md:max-w-[calc(100%-56px)]">
+        <p className="text-[14px] leading-normal font-bold text-white lg:text-lg">
+          {title}
+        </p>
+        <p className="text-[16px] leading-normal font-light text-white">
+          {description}
+        </p>
+      </div>
     </div>
   );
 };

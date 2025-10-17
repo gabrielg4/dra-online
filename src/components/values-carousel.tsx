@@ -58,7 +58,7 @@ export const ValuesCarousel = () => {
               height={80}
               className="object-contain"
             />
-            <h3 className="font-vold text-center text-2xl text-white">
+            <h3 className="text-center text-2xl font-bold text-white">
               Missão
             </h3>
             <p className="text-center text-[16px] leading-normal text-white">
@@ -77,7 +77,7 @@ export const ValuesCarousel = () => {
               height={80}
               className="object-contain"
             />
-            <h3 className="font-vold text-center text-2xl text-white">
+            <h3 className="text-center text-2xl font-bold text-white">
               Missão
             </h3>
             <p className="text-center text-[16px] leading-normal text-white">
@@ -96,7 +96,7 @@ export const ValuesCarousel = () => {
               height={80}
               className="object-contain"
             />
-            <h3 className="font-vold text-center text-2xl text-white">
+            <h3 className="text-center text-2xl font-bold text-white">
               Valores
             </h3>
             <p className="text-center text-[16px] leading-normal font-bold text-white">
