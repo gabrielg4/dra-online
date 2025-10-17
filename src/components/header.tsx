@@ -2,16 +2,19 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Navigation } from "./navigation";
 import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
 import { MobileMenu } from "./mobile/mobile-menu";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
+import { usePathname } from "next/navigation";
 
 export const Header = () => {
+  const [hideMenu, setHiddeMenu] = useState(false);
   const [headerScrolled, setHeaderScrolled] = useState(false);
+  const pathname = usePathname();
 
   useGSAP(() => {
     const st = ScrollTrigger.create({
@@ -27,8 +30,21 @@ export const Header = () => {
     };
   }, []);
 
+  useEffect(() => {
+    if (pathname.includes("/blog/")) {
+      setHiddeMenu(true);
+    } else {
+      setHiddeMenu(false);
+    }
+  }, [pathname]);
+
   return (
-    <div className={cn("fixed top-0 z-50 w-full pt-5 duration-500")}>
+    <div
+      className={cn(
+        "fixed top-0 z-50 w-full pt-5 duration-500",
+        hideMenu && "hidden",
+      )}
+    >
       <div className="container">
         <header
           className={cn(

@@ -21,7 +21,7 @@ export const CardSolucaoImpacto = ({
   return (
     <div
       className={cn(
-        "flex h-full flex-col items-start gap-4 rounded-lg border border-white/20 bg-white/10 p-5 shadow-2xl/20 md:flex-row lg:p-8",
+        "flex h-full w-full flex-col items-start gap-4 rounded-lg border border-white/20 bg-white/10 p-5 shadow-2xl/20 md:flex-row lg:p-8",
         isColumn && "md:flex-col",
       )}
     >

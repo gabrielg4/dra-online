@@ -73,7 +73,7 @@ export const ImpactsCarousel = ({
           </CarouselItem>
         ))}
       </CarouselContent>
-      {/* <div className="mt-8 flex items-center justify-center gap-3 lg:hidden">
+      <div className="mt-8 flex items-center justify-center gap-3 lg:hidden">
         {Array.from({ length: isSmartphone ? 2 : 0 }).map((item, index) => (
           <div
             key={index}
@@ -84,7 +84,7 @@ export const ImpactsCarousel = ({
             onClick={() => handleGoToSlide({ slide: index })}
           />
         ))}
-      </div> */}
+      </div>
     </Carousel>
   );
 };

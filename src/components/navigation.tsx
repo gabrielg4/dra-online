@@ -9,14 +9,18 @@ import Link from "next/link";
 import { ChevronDown } from "lucide-react";
 import Image from "next/image";
 
-export const Navigation = () => {
+interface NavigationProps {
+  textColor?: string;
+}
+
+export const Navigation = ({ textColor = "text-white" }: NavigationProps) => {
   return (
     <nav className="hidden w-fit lg:block">
       <ul className="flex items-center justify-center gap-6">
         <li>
           <Link
             href="/sobre"
-            className="text-md hover:text-brand-light-green font-semibold text-white duration-200"
+            className={`text-md hover:text-brand-light-green font-semibold ${textColor} duration-200`}
           >
             Sobre
           </Link>
@@ -24,7 +28,9 @@ export const Navigation = () => {
         <li>
           <Popover>
             <PopoverTrigger asChild>
-              <button className="text-md hover:text-brand-light-green group flex cursor-pointer items-center gap-2 font-semibold text-white duration-200">
+              <button
+                className={`text-md hover:text-brand-light-green group flex cursor-pointer items-center gap-2 font-semibold ${textColor} duration-200`}
+              >
                 Soluções
                 <ChevronDown className="group-hover:text-brand-light-green size-4 duration-200" />
               </button>
@@ -162,7 +168,7 @@ export const Navigation = () => {
         <li>
           <Link
             href="/saude-digital"
-            className="text-md hover:text-brand-light-green font-semibold text-white duration-200"
+            className={`text-md hover:text-brand-light-green font-semibold ${textColor} duration-200`}
           >
             Saúde digital
           </Link>
@@ -170,7 +176,7 @@ export const Navigation = () => {
         <li>
           <Link
             href="/beneficios"
-            className="text-md hover:text-brand-light-green font-semibold text-white duration-200"
+            className={`text-md hover:text-brand-light-green font-semibold ${textColor} duration-200`}
           >
             Benefícios
           </Link>
@@ -178,7 +184,7 @@ export const Navigation = () => {
         <li>
           <Link
             href="/blog"
-            className="text-md hover:text-brand-light-green font-semibold text-white duration-200"
+            className={`text-md hover:text-brand-light-green font-semibold ${textColor} duration-200`}
           >
             Blog
           </Link>
@@ -186,7 +192,9 @@ export const Navigation = () => {
         <li>
           <Popover>
             <PopoverTrigger asChild>
-              <button className="text-md hover:text-brand-light-green group flex cursor-pointer items-center gap-2 font-semibold text-white duration-200">
+              <button
+                className={`"text-md hover:text-brand-light-green group flex cursor-pointer items-center gap-2 font-semibold ${textColor} duration-200`}
+              >
                 FAQ
                 <ChevronDown className="group-hover:text-brand-light-green size-4 duration-200" />
               </button>
@@ -262,7 +270,9 @@ export const Navigation = () => {
         <li>
           <Popover>
             <PopoverTrigger asChild>
-              <button className="text-md hover:text-brand-light-green group flex cursor-pointer items-center gap-2 font-semibold text-white duration-200">
+              <button
+                className={`"text-md hover:text-brand-light-green group flex cursor-pointer items-center gap-2 font-semibold ${textColor} duration-200`}
+              >
                 Trabalhe conosco
                 <ChevronDown className="group-hover:text-brand-light-green size-4 duration-200" />
               </button>
