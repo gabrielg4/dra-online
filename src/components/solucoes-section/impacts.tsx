@@ -17,9 +17,14 @@ interface ImpactsSectionProps {
     };
   }[];
   title: ReactElement;
+  customClassNames?: string;
 }
 
-export const Impacts = ({ title, impacts }: ImpactsSectionProps) => {
+export const Impacts = ({
+  title,
+  impacts,
+  customClassNames = "sm:basis-1/2 md:basis-1/2",
+}: ImpactsSectionProps) => {
   const isTablet = useMediaQuery({
     minWidth: 768,
     maxWidth: 1023,
@@ -66,7 +71,7 @@ export const Impacts = ({ title, impacts }: ImpactsSectionProps) => {
         </h2>
         <ImpactsCarousel
           impacts={impacts}
-          customClassNames="sm:basis-1/2 md:basis-1/2"
+          customClassNames={customClassNames}
         />
       </div>
     </section>

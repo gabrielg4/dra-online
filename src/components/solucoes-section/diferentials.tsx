@@ -90,7 +90,7 @@ export const Diferentials = ({
           </p>
           {noImage ? (
             <>
-              <div className="grid grid-cols-1 gap-x-6 gap-y-6 md:grid-cols-2">
+              <div className="grid grid-cols-1 gap-x-6 gap-y-6 max-[767px]:mt-10 md:grid-cols-2">
                 <p className="text-brand-light-green border-brand-light-green w-full rounded-lg border bg-white/10 px-4 py-3 text-center text-lg leading-[150%] font-bold backdrop-blur-2xl">
                   Dermatologia
                 </p>

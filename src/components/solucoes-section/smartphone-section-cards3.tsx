@@ -113,23 +113,23 @@ export const SmartphoneSectionCards3 = ({
           <Image
             src={firstImage}
             alt=""
-            className={`mobile-phone-image h-full w-[130px] object-contain md:w-[230px]`}
-            width={230}
-            height={400}
+            className={`mobile-phone-image h-full w-[130px] object-contain md:w-[202px]`}
+            width={202}
+            height={326}
           />
           <Image
             src={secondImage}
             alt=""
-            className={`mobile-phone-image h-full w-[130px] object-contain md:w-[230px]`}
-            width={230}
-            height={400}
+            className={`mobile-phone-image h-full w-[130px] object-contain md:w-[208px]`}
+            width={238}
+            height={391}
           />
           <Image
             src={thirdImage}
             alt=""
             className={`mobile-phone-image h-full w-[130px] object-contain md:w-[230px]`}
             width={230}
-            height={400}
+            height={447}
           />
 
           <div className="mobile-phone-video h-[220px] w-[130px] rounded-xl border-[7px] border-white/20 md:h-[544px] md:!w-[290px] md:rounded-3xl md:border-[9px]">
@@ -145,14 +145,14 @@ export const SmartphoneSectionCards3 = ({
           <Image
             src={fourthImage}
             alt=""
-            className={`mobile-phone-video absolute top-80 right-5 h-[150px] w-[100px] object-contain shadow-2xl/10 md:top-56 md:h-[230px] md:!w-[180px]`}
+            className={`mobile-phone-video absolute top-80 right-5 w-[100px] object-contain shadow-2xl/10 md:top-56 md:!w-[180px]`}
             width={230}
             height={400}
           />
         </div>
         <div className="content-wrapper relative z-10 -mt-20 flex flex-col items-center justify-center px-4">
           <h2 className="title-section-security mb-5 text-center text-[24px] leading-[110%] text-white sm:text-[32px] lg:text-[40px]">
-            Melhor que ler,
+            Melhor que ler,{" "}
             <span className="text-brand-light-green font-bold">
               é conhecer!
             </span>

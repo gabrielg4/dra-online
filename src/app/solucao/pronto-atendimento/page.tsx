@@ -136,7 +136,7 @@ export default function ProntoAtendimentoPage() {
         impacts={impactsData}
         title={
           <>
-            O impacto da{" "}
+            <span className="">O impacto da</span>{" "}
             <span className="font-bold text-white">
               dr
               <span className="text-brand-light-green">.</span>
@@ -146,7 +146,7 @@ export default function ProntoAtendimentoPage() {
         }
       />
       <SmartphoneSectionCards2
-        firstImage="/images/img-phone-2-sol-2.svg"
+        firstImage="/images/img-phone-1-sol-2.svg"
         secondImage="/images/img-phone-2-sol-2.svg"
         thirdImage="/images/img-phone-3-sol-2.svg"
         firstVideo="/videos/video22.mp4"

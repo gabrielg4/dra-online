@@ -156,7 +156,7 @@ export const SmartphoneSectionCards2 = ({
         </div>
         <div className="content-wrapper relative z-10 -mt-20 flex flex-col items-center justify-center px-4">
           <h2 className="title-section-security mb-5 text-center text-[24px] leading-[110%] text-white sm:text-[32px] lg:text-[40px]">
-            Melhor que ler,
+            Melhor que ler,{" "}
             <span className="text-brand-light-green font-bold">
               é conhecer!
             </span>

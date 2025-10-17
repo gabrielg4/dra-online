@@ -1,9 +1,9 @@
-import { SmartphoneSectionCards } from "@/components/solucoes-section/smartphone-section-cards";
 import { Diferentials } from "@/components/solucoes-section/diferentials";
 import { Hero } from "@/components/solucoes-section/hero";
 import { Impacts } from "@/components/solucoes-section/impacts";
 import React from "react";
 import { ContactSolution } from "@/components/solucoes-section/contact-solution";
+import { SmartphoneSectionCards3 } from "@/components/solucoes-section/smartphone-section-cards3";
 
 const differentialsData = [
   {
@@ -163,11 +163,13 @@ export default function EntrevistaQualificadaPage() {
           </>
         }
       />
-      <SmartphoneSectionCards
-        leftPhoneImg="/images/img-phone-left-sol-1.webp"
-        middlePhoneVideo="/videos/video-middle-phone-solucao-1.mp4"
-        rightPhoneImg="/images/img-phone-right-sol-1.webp"
-        subtitle="Veja como funciona nossa solução de entrevista qualificada."
+      <SmartphoneSectionCards3
+        firstImage="/images/img-phone-1-sol-4.svg"
+        secondImage="/images/img-phone-2-sol-4.svg"
+        thirdImage="/images/img-phone-3-sol-4.svg"
+        fourthImage="/images/img-phone-4-sol-4.svg"
+        firstVideo="/videos/video24.mp4"
+        subtitle="Veja como funciona nossa solução de consulta online."
       />
       <ContactSolution />
     </>

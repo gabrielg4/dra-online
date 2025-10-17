@@ -133,9 +133,7 @@ export default function EntrevistaQualificadaPage() {
         impacts={impactsData}
         title={
           <>
-            <span className="text-brand-light-green font-bold">
-              O impacto da
-            </span>{" "}
+            <span className="">O impacto da</span>{" "}
             <span className="font-bold text-white">
               dr
               <span className="text-brand-light-green">.</span>
