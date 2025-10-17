@@ -94,9 +94,9 @@ export const SecurityInformation = () => {
   return (
     <section id="security-information" className="overflow-hidden pb-20">
       <div className="container !px-0">
-        <div className="image-wrapper relative flex items-end justify-center gap-8 overflow-hidden bg-[url('/images/bg-security.webp')] bg-cover bg-center pt-20">
+        <div className="image-wrapper relative flex items-end justify-center gap-4 overflow-hidden bg-[url('/images/bg-security.webp')] bg-cover bg-center pt-20">
           <div className="overlay z-10"></div>
-          <Image
+          {/* <Image
             src={"/images/img_phone_left.webp"}
             alt=""
             className="mobile-fone-left"
@@ -118,6 +118,34 @@ export const SecurityInformation = () => {
             className="mobile-fone-right"
             width={256}
             height={510}
+          /> */}
+
+          <Image
+            src={"/images/img_phone_left.webp"}
+            alt=""
+            className={`mobile-fone-left h-full w-[180px] object-contain`}
+            width={200}
+            height={400}
+            quality={100}
+          />
+
+          <div className="video-masked mobile-fone-middle !w-[500px]">
+            <video
+              src={"/videos/video25.mp4"}
+              autoPlay
+              muted
+              loop
+              playsInline
+            ></video>
+          </div>
+
+          <Image
+            src={"/images/img_phone_right.webp"}
+            alt=""
+            className={`mobile-fone-right h-full w-[180px] object-contain`}
+            width={200}
+            height={400}
+            quality={100}
           />
         </div>
         <div className="content-wrapper relative z-10 -mt-20 flex flex-col items-center justify-center px-4">

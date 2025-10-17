@@ -121,6 +121,16 @@ export const HeroAnimation = () => {
               width={230}
               height={417}
             />
+            {/* <div className="video-masked mobile-fone-middle !h-[400px] !w-[220px] translate-z-0 !will-change-transform">
+              <video
+                src={"/videos/video26.mp4"}
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="translate-z-0"
+              ></video>
+            </div> */}
             <div className="absolute top-0 left-0 z-10 flex h-full w-full flex-col justify-end p-6 pb-20">
               <p className="text-2xl font-bold text-white">
                 Modelo assistencial
@@ -161,6 +171,16 @@ export const HeroAnimation = () => {
             width={217}
             height={417}
           />
+          {/* <div className="video-masked mobile-fone-middle !h-[417px] !w-[217px] translate-z-0 !will-change-transform">
+            <video
+              src={"/videos/video27.mp4"}
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="!translate-z-0 !backface-hidden"
+            ></video>
+          </div> */}
         </div>
         <div
           ref={rightContainer}
@@ -188,6 +208,16 @@ export const HeroAnimation = () => {
               width={230}
               height={417}
             />
+            {/* <div className="video-masked mobile-fone-middle z-10 !h-[400px] !w-[220px] translate-z-0 !will-change-transform">
+              <video
+                src={"/videos/video28.mp4"}
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="!translate-z-0 !backface-hidden"
+              ></video>
+            </div> */}
             <div className="absolute top-0 left-0 z-10 flex h-full w-full flex-col justify-end p-3 pb-12">
               <p className="text-[17px] font-bold text-white">
                 <span className="text-brand-light-green text-2xl">
