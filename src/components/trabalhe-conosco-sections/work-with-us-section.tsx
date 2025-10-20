@@ -25,16 +25,19 @@ export const WorkWithUsSection = () => {
   }, []);
 
   return (
-    <section
-      id="form-curriculo-medico"
-      className="bg-[url(/images/img-work-with-us.webp)] bg-right py-14"
-    >
-      <div className="container flex items-center justify-center lg:justify-end">
-        <div className="w-full max-w-[584px]">
-          <h2 className="text-brand-dark-green mb-8 text-center text-[32px] leading-[110%] font-bold md:text-[40px]">
-            Faça seu credenciamento
-          </h2>
-          <WorkWithUsForm />
+    <section className="relative">
+      <h2 className="relative z-10 mb-8 pt-10 pb-0 text-center text-[32px] leading-[110%] font-bold text-white md:pt-14 md:pb-14 md:text-[40px]">
+        Faça seu <span className="text-brand-light-green">credenciamento</span>
+      </h2>
+      <div className="from-brand-main-green/60 to-brand-light-green/60 absolute -top-20 -right-48 h-[340px] w-[550px] rounded-full bg-gradient-to-b blur-3xl" />
+      <div
+        id="form-curriculo-medico"
+        className="relative z-10 bg-[url(/images/img-work-with-us.webp)] bg-right py-14"
+      >
+        <div className="container flex items-center justify-center lg:justify-end">
+          <div className="w-full max-w-[584px]">
+            <WorkWithUsForm />
+          </div>
         </div>
       </div>
     </section>

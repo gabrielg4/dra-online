@@ -2,7 +2,6 @@
 import gsap from "gsap";
 import React, { useEffect, useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Image from "next/image";
 import { HeroMetricsCarousel } from "../mobile/hero-metrics-carousel";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -109,13 +108,23 @@ export const HeroAnimationMobile = () => {
           </div>
         </div>
         <div ref={midContainer} className="w-[340px] -translate-y-16">
-          <Image
+          {/* <Image
             src="/images/img-placeholder-hero-3.webp"
             alt=""
             width={340}
             height={417}
             className="h-full w-full"
-          />
+          /> */}
+          <div className="video-masked !h-full !w-full">
+            <video
+              src={"/videos/video27.mp4"}
+              autoPlay
+              muted
+              loop
+              playsInline
+              className=""
+            ></video>
+          </div>
         </div>
         <div
           ref={rightContainer}

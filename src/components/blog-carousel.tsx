@@ -1,95 +1,69 @@
 "use client";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import { BlogCard } from "./cards/blog-card";
-import { useEffect, useState } from "react";
 
-import { type CarouselApi } from "@/components/ui/carousel";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+import { BlogCard } from "./cards/blog-card";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import { useState } from "react";
 import { cn } from "@/lib/utils";
 
 export const BlogCarousel = () => {
-  const [api, setApi] = useState<CarouselApi>();
-  const [current, setCurrent] = useState(0);
-  useEffect(() => {
-    if (!api) {
-      return;
-    }
-
-    setCurrent(api.selectedScrollSnap());
-
-    api.on("select", () => {
-      setCurrent(api.selectedScrollSnap());
-    });
-  }, [api]);
-
-  const handleGoToSlide = ({ slide }: { slide: number }) => {
-    if (!api) {
-      return;
-    }
-    // setCurrent(slide)
-    api.scrollTo(slide);
-  };
-
-  const placeholderBlogposts = [
-    BlogCard,
-    BlogCard,
-    BlogCard,
-    BlogCard,
-    BlogCard,
-    BlogCard,
-  ];
+  const [currentActive, setCurrentActive] = useState(0);
+  const blogPosts = [0, 1, 2, 3, 4]; // placeholders, depois você pode substituir pelos dados reais
 
   return (
-    <Carousel
-      setApi={setApi}
-      className="sm:px-10"
-      opts={{
-        align: "start",
-      }}
-    >
-      <CarouselContent className="-ml-8 pt-3">
-        {placeholderBlogposts.map((BlogpostCard, index) => (
-          <CarouselItem
-            key={index + 1}
-            className={cn(
-              "basis-full pl-8 transition-transform duration-300 sm:basis-1/2 lg:basis-1/3",
-              // index + 1 !== current && "scale-90 opacity-70",
-            )}
-          >
-            <BlogpostCard />
-          </CarouselItem>
+    <div className="relative w-full sm:px-14">
+      <Swiper
+        modules={[Navigation, Pagination]}
+        loop={true}
+        centeredSlides
+        onSlideChange={(e) => setCurrentActive(e.realIndex)}
+        navigation={{
+          nextEl: ".swiper-next",
+          prevEl: ".swiper-prev",
+        }}
+        pagination={{
+          clickable: true,
+          bulletClass: "swiper-bullet",
+          bulletActiveClass: "swiper-bullet-active",
+          el: ".swiper-pagination",
+        }}
+        spaceBetween={24}
+        slidesPerView={1}
+        breakpoints={{
+          640: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 },
+        }}
+        wrapperClass="pb-12 lg:pb-0"
+      >
+        {blogPosts.map((i) => (
+          <SwiperSlide key={i}>
+            <div
+              className={cn(
+                "h-full w-full pt-3 transition-transform duration-300",
+                currentActive !== i && "scale-90 opacity-80",
+              )}
+            >
+              <BlogCard />
+            </div>
+          </SwiperSlide>
         ))}
-      </CarouselContent>
-      <CarouselNext className="hover:text-brand-light-green hidden h-10 w-10 cursor-pointer border-0 bg-transparent text-white hover:bg-transparent sm:-right-2 sm:flex lg:-right-12" />
-      <CarouselPrevious className="hover:text-brand-light-green hidden h-10 w-10 cursor-pointer border-0 bg-transparent text-white hover:bg-transparent sm:-left-2 sm:flex lg:-left-12" />
-      <div className="mt-8 flex items-center justify-center gap-3">
-        <div
-          className={cn(
-            "h-3 w-3 cursor-pointer rounded-full bg-white/50 hover:bg-white/100",
-            current === 0 && "bg-brand-light-green",
-          )}
-          onClick={() => handleGoToSlide({ slide: 0 })}
-        />
-        <div
-          className={cn(
-            "h-3 w-3 cursor-pointer rounded-full bg-white/50 hover:bg-white/100",
-            current === 1 && "bg-brand-light-green",
-          )}
-          onClick={() => handleGoToSlide({ slide: 1 })}
-        />
-        <div
-          className={cn(
-            "h-3 w-3 cursor-pointer rounded-full bg-white/50 hover:bg-white/100",
-            current === 2 && "bg-brand-light-green",
-          )}
-          onClick={() => handleGoToSlide({ slide: 2 })}
-        />
-      </div>
-    </Carousel>
+
+        {/* Paginação (pontinhos visíveis no mobile) */}
+        <div className="swiper-pagination-blog-carousel swiper-pagination mt-8 flex items-center justify-center gap-3 lg:hidden"></div>
+      </Swiper>
+      {/* Navegação */}
+      <button className="swiper-prev hover:text-brand-light-green absolute top-1/2 left-0 z-20 hidden h-10 w-10 -translate-y-1/2 transform cursor-pointer items-center justify-center border-0 bg-transparent text-white sm:flex lg:-left-0">
+        <ArrowLeft className="size-6" />
+      </button>
+
+      <button className="swiper-next hover:text-brand-light-green absolute top-1/2 right-0 z-10 hidden h-10 w-10 -translate-y-1/2 transform cursor-pointer items-center justify-center border-0 bg-transparent text-white sm:flex lg:-right-0">
+        <ArrowRight className="size-6" />
+      </button>
+    </div>
   );
 };

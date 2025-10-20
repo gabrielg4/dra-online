@@ -60,7 +60,13 @@ export const ImpactsCarousel = ({
     >
       <CarouselContent>
         {impacts.map((impact, index) => (
-          <CarouselItem key={index} className={cn("flex", customClassNames)}>
+          <CarouselItem
+            key={index}
+            className={cn(
+              "group flex pt-3 shadow-2xl/20 transition-all duration-300",
+              customClassNames,
+            )}
+          >
             <CardSolucaoImpacto
               title={impact.title}
               description={impact.description}

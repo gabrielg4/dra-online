@@ -2,7 +2,6 @@
 import gsap from "gsap";
 import React, { useEffect, useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Image from "next/image";
 import Counter from "../counter";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -115,22 +114,22 @@ export const HeroAnimation = () => {
             ref={card1}
             className="relative hidden w-full max-w-[230px] -translate-y-24 lg:block"
           >
-            <Image
+            {/* <Image
               src="/images/img-placeholder-hero-1.webp"
               alt=""
               width={230}
               height={417}
-            />
-            {/* <div className="video-masked mobile-fone-middle !h-[400px] !w-[220px] translate-z-0 !will-change-transform">
+            /> */}
+            <div className="video-masked">
               <video
                 src={"/videos/video26.mp4"}
                 autoPlay
                 muted
                 loop
                 playsInline
-                className="translate-z-0"
               ></video>
-            </div> */}
+            </div>
+            {/* <div className="mobile-fone-left "></div> */}
             <div className="absolute top-0 left-0 z-10 flex h-full w-full flex-col justify-end p-6 pb-20">
               <p className="text-2xl font-bold text-white">
                 Modelo assistencial
@@ -165,22 +164,22 @@ export const HeroAnimation = () => {
           ref={midContainer}
           className="w-full max-w-[217px] -translate-y-16"
         >
-          <Image
+          {/* <Image
             src="/images/img-placeholder-hero-3.webp"
             alt=""
             width={217}
             height={417}
-          />
-          {/* <div className="video-masked mobile-fone-middle !h-[417px] !w-[217px] translate-z-0 !will-change-transform">
+          /> */}
+          <div className="video-masked">
             <video
               src={"/videos/video27.mp4"}
               autoPlay
               muted
               loop
               playsInline
-              className="!translate-z-0 !backface-hidden"
+              className=""
             ></video>
-          </div> */}
+          </div>
         </div>
         <div
           ref={rightContainer}
@@ -202,22 +201,21 @@ export const HeroAnimation = () => {
             ref={card4}
             className="relative hidden w-full max-w-[230px] -translate-y-24 lg:block"
           >
-            <Image
+            {/* <Image
               src="/images/img-placeholder-hero-2.webp"
               alt=""
               width={230}
               height={417}
-            />
-            {/* <div className="video-masked mobile-fone-middle z-10 !h-[400px] !w-[220px] translate-z-0 !will-change-transform">
+            /> */}
+            <div className="video-masked">
               <video
                 src={"/videos/video28.mp4"}
                 autoPlay
                 muted
                 loop
                 playsInline
-                className="!translate-z-0 !backface-hidden"
               ></video>
-            </div> */}
+            </div>
             <div className="absolute top-0 left-0 z-10 flex h-full w-full flex-col justify-end p-3 pb-12">
               <p className="text-[17px] font-bold text-white">
                 <span className="text-brand-light-green text-2xl">

@@ -108,7 +108,7 @@ export const DiferentialsTabs = () => {
               className="border-brand-main-green group hover:bg-brand-main-green rounded-full p-0 duration-300"
             >
               <Link
-                href="/"
+                href="/solucao/entrevista-qualificada"
                 className="text-brand-main-green text-md px-4 py-3 font-medium duration-300 hover:text-white"
               >
                 Conheça mais
@@ -187,7 +187,7 @@ export const DiferentialsTabs = () => {
               className="border-brand-main-green group hover:bg-brand-main-green rounded-full p-0 duration-300"
             >
               <Link
-                href="/"
+                href="/solucao/pronto-atendimento"
                 className="text-brand-main-green text-md px-4 py-3 font-medium duration-300 hover:text-white"
               >
                 Conheça mais
@@ -266,7 +266,7 @@ export const DiferentialsTabs = () => {
               className="border-brand-main-green group hover:bg-brand-main-green rounded-full p-0 duration-300"
             >
               <Link
-                href="/"
+                href="/solucao/consulta-eletiva-com-especialistas"
                 className="text-brand-main-green px-4 py-2 text-[16px] leading-normal font-medium duration-300 hover:text-white"
               >
                 Conheça mais
@@ -344,7 +344,7 @@ export const DiferentialsTabs = () => {
                 className="border-brand-main-green group hover:bg-brand-main-green rounded-full p-0 duration-300"
               >
                 <Link
-                  href="/"
+                  href="/solucao/saude-mental"
                   className="text-brand-main-green px-4 py-2 text-[16px] leading-normal font-medium duration-300 hover:text-white"
                 >
                   Conheça mais o <strong>Teleacolhimento</strong>
@@ -434,7 +434,7 @@ export const DiferentialsTabs = () => {
               className="border-brand-main-green group hover:bg-brand-main-green rounded-full p-0 duration-300"
             >
               <Link
-                href="/"
+                href="/solucao/gestao-integrada-ao-cuidado"
                 className="text-brand-main-green px-4 py-2 text-[16px] leading-normal font-medium duration-300 hover:text-white"
               >
                 Conheça mais
@@ -513,7 +513,7 @@ export const DiferentialsTabs = () => {
               className="border-brand-main-green group hover:bg-brand-main-green rounded-full p-0 duration-300"
             >
               <Link
-                href="/"
+                href="/solucao/consultorio"
                 className="text-brand-main-green px-4 py-2 text-[16px] leading-normal font-medium duration-300 hover:text-white"
               >
                 Conheça mais

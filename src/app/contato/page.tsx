@@ -58,7 +58,7 @@ function ContactPage() {
               </div>
             </div>
           </div>
-          <div className="bg-brand-dark-green w-full rounded-xl p-10 shadow-2xl/30">
+          <div className="bg-brand-dark-green relative z-20 w-full rounded-xl p-10 shadow-2xl/30">
             <ContactForm2 />
           </div>
         </div>
@@ -106,10 +106,10 @@ function ContactPage() {
                 alt="Imagem mascote dr. online"
                 width={110}
                 height={110}
-                className=""
+                className="/trabalhe-conosco"
               />
               <p className="text-brand-dark-green text-[28px] leading-[130%] font-bold">
-                Solicite um orçamento
+                Trabalhe conosco
               </p>
               <Image
                 src="/images/ic-arrow-up-right.svg"

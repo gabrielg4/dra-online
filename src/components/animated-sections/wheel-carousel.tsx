@@ -6,28 +6,26 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Draggable } from "gsap/Draggable";
 import { NaMidiaCard } from "@/components/cards/na-midia-card";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger, Draggable);
 
 export const WheelCarousel = () => {
+  const sectionRef = useRef<HTMLElement | null>(null);
   const curvedCarouselRef = useRef<HTMLDivElement | null>(null);
   const draggableRef = useRef<Draggable | null>(null);
 
-  // ajuste conforme sua lista real (aqui só crio 5 cards iguais)
   const cardsArr = Array.from({ length: 5 }, () => NaMidiaCard);
 
-  // Ângulo entre cards (use o mesmo passo do seu layout)
-  const STEP = 9; // graus
+  const STEP = 9;
   const MAX_INDEX = cardsArr.length - 1;
 
   const [activeIndex, setActiveIndex] = useState(0);
 
-  // função auxiliar
   const clamp = (n: number, min: number, max: number) =>
     Math.min(Math.max(n, min), max);
-  const idxToRotation = (idx: number) => -idx * STEP; // rotação do container para centralizar idx
+  const idxToRotation = (idx: number) => -idx * STEP;
 
-  // Ir para um índice específico (com animação)
   const goTo = (nextIndex: number) => {
     const idx = clamp(nextIndex, 0, MAX_INDEX);
     const rotation = idxToRotation(idx);
@@ -39,9 +37,8 @@ export const WheelCarousel = () => {
       onComplete: () => setActiveIndex(idx),
     });
 
-    // mantém o Draggable “em sincronia”
     if (draggableRef.current) {
-      (draggableRef.current.rotation as number) = rotation;
+      draggableRef.current.update();
     }
   };
 
@@ -49,85 +46,116 @@ export const WheelCarousel = () => {
   const next = () => goTo(activeIndex + 1);
 
   useEffect(() => {
-    if (!curvedCarouselRef.current) return;
+    if (!curvedCarouselRef.current || !sectionRef.current) return;
 
-    // valor mínimo/máximo de rotação em graus
-    const minRotation = idxToRotation(MAX_INDEX); // negativo
-    const maxRotation = idxToRotation(0); // 0
+    const minRotation = idxToRotation(MAX_INDEX);
+    const maxRotation = idxToRotation(0);
 
-    // cria draggable com snap "ao vivo" e limites
+    // Draggable para controle manual (opcional, mantém a funcionalidade de arrastar)
     const [instance] = Draggable.create(curvedCarouselRef.current, {
       type: "rotation",
       inertia: true,
       minimumMovement: 0,
-      liveSnap: (value) => {
-        // snap para múltiplos de STEP
+      bounds: { minRotation, maxRotation },
+      snap: (value) => {
         const snapped = Math.round(value / STEP) * STEP;
-        // clamp para não passar do primeiro/último
-        const clamped = clamp(snapped, minRotation, maxRotation);
-
-        // calcula índice ativo a partir da rotação clampada
-        const idx = clamp(Math.round(-clamped / STEP), 0, MAX_INDEX);
-        setActiveIndex(idx);
-
-        return clamped;
+        return clamp(snapped, minRotation, maxRotation);
       },
-      onThrowComplete: function () {
-        // garante estado correto ao final da inércia
+      onDragEnd: function () {
         const rot = this.rotation as number;
         const idx = clamp(Math.round(-rot / STEP), 0, MAX_INDEX);
         setActiveIndex(idx);
-        gsap.set(curvedCarouselRef.current, { rotation: idxToRotation(idx) });
+      },
+      onThrowComplete: function () {
+        const rot = this.rotation as number;
+        const idx = clamp(Math.round(-rot / STEP), 0, MAX_INDEX);
+        setActiveIndex(idx);
       },
     });
 
     draggableRef.current = instance;
-
-    // inicia alinhado no índice 0
     gsap.set(curvedCarouselRef.current, { rotation: idxToRotation(0) });
+
+    // ScrollTrigger para controlar com scroll
+    const scrollTrigger = ScrollTrigger.create({
+      trigger: sectionRef.current,
+      // markers: true,
+      start: "top 10%",
+      end: `+=${window.innerHeight * MAX_INDEX - 1}`, // altura proporcional ao número de cards
+      pin: true, // trava a seção
+      scrub: 1, // suaviza o scroll
+      onUpdate: (self) => {
+        // converte o progresso (0 a 1) em rotação
+        const progress = self.progress;
+        const rotation = maxRotation + (minRotation - maxRotation) * progress;
+
+        gsap.set(curvedCarouselRef.current, { rotation });
+
+        // atualiza o índice ativo
+        const idx = clamp(Math.round(-rotation / STEP), 0, MAX_INDEX);
+        setActiveIndex(idx);
+
+        // sincroniza com o Draggable
+        if (draggableRef.current) {
+          draggableRef.current.update();
+        }
+      },
+    });
 
     return () => {
       instance?.kill();
+      scrollTrigger?.kill();
       draggableRef.current = null;
     };
   }, [MAX_INDEX]);
 
   return (
-    <section className="relative h-[500px] w-full overflow-hidden md:mt-10 lg:mt-16">
-      <div
-        ref={curvedCarouselRef}
-        className="carousel absolute top-10 left-[calc(50%-150px)] origin-[150px_2500px] will-change-transform"
-      >
-        {cardsArr.map((Card, i) => (
-          <div
-            key={i}
-            data-wheel-card
-            className={`absolute h-full w-[290px] origin-[150px_2500px]`}
-            style={{ transform: `rotate(${i * STEP}deg)` }}
-          >
-            <Card isActive={i === activeIndex} />
-          </div>
-        ))}
-      </div>
+    <section ref={sectionRef} className="relative h-screen w-full">
+      {/* bg-[url('/images/img-bg-midia.svg')] bg-cover bg-top bg-no-repeat */}
+      <Image
+        src={"/images/img-bg-midia.svg"}
+        alt=""
+        width={1440}
+        height={600}
+        className="absolute bottom-20 left-1/2 z-0 h-full w-full -translate-x-1/2 object-cover"
+      />
+      <div className="na-midia-blur absolute top-[calc(50%+40px)] left-1/2 h-[340px] -translate-x-1/2" />
 
-      {/* Controles */}
-      <div className="pointer-events-auto absolute bottom-8 left-1/2 flex -translate-x-1/2 items-center gap-4">
-        <button
-          aria-label="Anterior"
-          onClick={prev}
-          disabled={activeIndex === 0}
-          className="grid h-10 w-10 cursor-pointer place-items-center rounded-full disabled:cursor-not-allowed disabled:opacity-40"
+      <div className="relative h-[500px] w-full md:mt-10 lg:mt-16">
+        <div
+          ref={curvedCarouselRef}
+          className="carousel absolute top-10 left-[calc(50%-150px)] origin-[150px_2500px] will-change-transform"
         >
-          <ArrowLeft className="size-6 text-white" />
-        </button>
-        <button
-          aria-label="Próximo"
-          onClick={next}
-          disabled={activeIndex === MAX_INDEX}
-          className="grid h-10 w-10 cursor-pointer place-items-center rounded-full disabled:cursor-not-allowed disabled:opacity-40"
-        >
-          <ArrowRight className="size-6 text-white" />
-        </button>
+          {cardsArr.map((Card, i) => (
+            <div
+              key={i}
+              data-wheel-card
+              className={`absolute h-full w-[290px] origin-[150px_2500px]`}
+              style={{ transform: `rotate(${i * STEP}deg)` }}
+            >
+              <Card isActive={i === activeIndex} />
+            </div>
+          ))}
+        </div>
+
+        <div className="pointer-events-auto absolute bottom-8 left-1/2 flex -translate-x-1/2 items-center gap-4">
+          <button
+            aria-label="Anterior"
+            onClick={prev}
+            disabled={activeIndex === 0}
+            className="grid h-10 w-10 cursor-pointer place-items-center rounded-full disabled:cursor-not-allowed disabled:opacity-40"
+          >
+            <ArrowLeft className="size-6 text-white" />
+          </button>
+          <button
+            aria-label="Próximo"
+            onClick={next}
+            disabled={activeIndex === MAX_INDEX}
+            className="grid h-10 w-10 cursor-pointer place-items-center rounded-full disabled:cursor-not-allowed disabled:opacity-40"
+          >
+            <ArrowRight className="size-6 text-white" />
+          </button>
+        </div>
       </div>
     </section>
   );

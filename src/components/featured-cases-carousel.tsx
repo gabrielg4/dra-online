@@ -34,7 +34,7 @@ export const FeaturedCasesCarousel = () => {
     if (!api) {
       return;
     }
-    // setCurrent(slide)
+    setCurrent(slide);
     api.scrollTo(slide);
   };
   return (
@@ -53,7 +53,11 @@ export const FeaturedCasesCarousel = () => {
               "flex basis-5/6 items-center justify-center pl-8 md:basis-4/5",
             )}
           >
-            <FeaturedCaseCard />
+            <div
+              className={cn("h-full w-full", current !== index && "scale-90")}
+            >
+              <FeaturedCaseCard />
+            </div>
           </CarouselItem>
         ))}
       </CarouselContent>

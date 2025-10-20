@@ -7,17 +7,17 @@ export const VideosTrabalheConosco = () => {
         <div className="flex flex-col items-center justify-center gap-8">
           <video
             src="/videos/video12.mp4"
-            className="hidden h-[300px] w-full rounded-lg border-8 border-white/20 object-cover lg:block"
+            className="hidden h-[300px] w-full !rounded-2xl border-[6px] border-white/20 object-cover lg:block"
             autoPlay
             muted
             loop
             playsInline
           ></video>
         </div>
-        <div className="flex flex-col items-center justify-center gap-8">
+        <div className="flex flex-col items-center justify-center gap-8 pt-24">
           <video
             src="/videos/video11.mp4"
-            className="h-[300px] w-full rounded-lg border-8 border-white/20 object-cover"
+            className="h-[300px] w-full !rounded-2xl border-[6px] border-white/20 object-cover"
             autoPlay
             muted
             loop
@@ -26,17 +26,17 @@ export const VideosTrabalheConosco = () => {
 
           <video
             src="/videos/video13.mp4"
-            className="h-[300px] w-full rounded-lg border-8 border-white/20 object-cover"
+            className="h-[300px] w-full !rounded-2xl border-[6px] border-white/20 object-cover"
             autoPlay
             muted
             loop
             playsInline
           ></video>
         </div>
-        <div className="flex flex-col items-center justify-center gap-8">
+        <div className="-mt-10 flex flex-col items-center justify-center gap-8">
           <video
             src="/videos/video14.mp4"
-            className="h-[300px] w-full rounded-lg border-8 border-white/20 object-cover"
+            className="h-[300px] w-full !rounded-2xl border-[6px] border-white/20 object-cover"
             autoPlay
             muted
             loop
@@ -44,7 +44,7 @@ export const VideosTrabalheConosco = () => {
           ></video>
           <video
             src="/videos/video15.mp4"
-            className="h-[300px] w-full rounded-lg border-8 border-white/20 object-cover"
+            className="h-[300px] w-full !rounded-2xl border-[6px] border-white/20 object-cover"
             autoPlay
             muted
             loop

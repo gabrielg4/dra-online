@@ -98,7 +98,7 @@ export const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="/"
+                    href="/sobre-nos"
                     className="text-md font-normal text-white hover:underline"
                   >
                     Sobre
@@ -122,7 +122,7 @@ export const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="/"
+                    href="/trabalhe-conosco"
                     className="text-md font-normal text-white hover:underline"
                   >
                     Trabalhe conosco
@@ -136,7 +136,7 @@ export const Footer = () => {
               <ul className="flex flex-col gap-2">
                 <li>
                   <Link
-                    href="/"
+                    href="/solucao/saude-mental"
                     className="text-md font-normal text-white hover:underline"
                   >
                     Saúde Mental
@@ -144,7 +144,7 @@ export const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="/"
+                    href="/solucao/entrevista-qualificada"
                     className="text-md font-normal text-white hover:underline"
                   >
                     Entrevista Qualificada
@@ -152,15 +152,15 @@ export const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="/"
+                    href="/solucao/gestao-intregrado-ao-cuidado"
                     className="text-md font-normal text-white hover:underline"
                   >
-                    Atenção Integrada à Saúde
+                    Gestão Integrada do Cuidado
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="/"
+                    href="/solucao/pronto-atendimento"
                     className="text-md font-normal text-white hover:underline"
                   >
                     Pronto Atendimento 24h
@@ -168,7 +168,7 @@ export const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="/"
+                    href="/solucao/"
                     className="text-md font-normal text-white hover:underline"
                   >
                     Consulta Online
@@ -176,7 +176,7 @@ export const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="/"
+                    href="/solucao/consultorio"
                     className="text-md font-normal text-white hover:underline"
                   >
                     Consultório Digital
@@ -218,7 +218,7 @@ export const Footer = () => {
             <div className="w-[calc(50%-16px)] md:w-auto">
               <p className="mb-2 text-lg font-semibold text-white">Conteúdos</p>
               <Link
-                href="/"
+                href="/blog"
                 className="text-md mb-4 font-normal text-white hover:underline"
               >
                 Blog
@@ -251,7 +251,7 @@ export const Footer = () => {
         </div>
         <div className="border-t-brand-light-green mt-12 flex flex-col items-center justify-between gap-5 border-t pt-6 md:flex-row">
           <p className="text-md text-white">
-            © 2025 Dr. Online | todos os direitos reservados
+            © 2025 dr. online | todos os direitos reservados
           </p>
 
           <p className="text-md text-white">

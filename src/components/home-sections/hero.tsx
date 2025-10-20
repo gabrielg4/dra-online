@@ -69,7 +69,7 @@ export const Hero = () => {
           </p>
         </div>
         <div className="cta-button">
-          <CtaButton title="Agende uma demonstração" url="/" />
+          <CtaButton title="Agende uma demonstração" url="/contato" />
         </div>
         <HeroAnimation />
         <HeroAnimationMobile />

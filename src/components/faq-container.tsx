@@ -24,12 +24,12 @@ export const FAQContainer = ({ faqItems }: FAQContainerProps) => {
           <AccordionItem
             key={index}
             value={item.question}
-            className="border-brand-light-green rounded-2xl border bg-white/10 shadow-2xl/10 not-last:mb-4"
+            className="border-brand-light-green items-center rounded-2xl border bg-white/10 shadow-2xl/10 not-last:mb-4"
           >
-            <AccordionTrigger className="cursor-pointer p-4 text-lg font-medium text-white no-underline">
+            <AccordionTrigger className="min-h-[90px] cursor-pointer items-center p-4 text-lg font-medium text-white no-underline">
               {item.question}
             </AccordionTrigger>
-            <AccordionContent className="text-[16px] leading-normal px-4 text-white">
+            <AccordionContent className="px-4 text-[16px] leading-normal text-white">
               {item.answer}
             </AccordionContent>
           </AccordionItem>
@@ -42,7 +42,7 @@ export const FAQContainer = ({ faqItems }: FAQContainerProps) => {
             value={item.question}
             className="border-brand-light-green rounded-2xl border bg-white/10 shadow-2xl/10 not-last:mb-4"
           >
-            <AccordionTrigger className="cursor-pointer p-4 text-lg font-medium text-white no-underline">
+            <AccordionTrigger className="min-h-[90px] cursor-pointer items-center p-4 text-lg font-medium text-white no-underline">
               {item.question}
             </AccordionTrigger>
             <AccordionContent className="text-md px-4 text-white">

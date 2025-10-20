@@ -50,7 +50,7 @@ export const MobileMenu = () => {
               <ul className="mb-8 flex flex-col items-start justify-center gap-6">
                 <li>
                   <Link
-                    href="/sobre"
+                    href="/sobre-nos"
                     className="hover:text-brand-light-green text-lg font-semibold text-white duration-200"
                   >
                     Sobre
@@ -67,30 +67,10 @@ export const MobileMenu = () => {
                         <ChevronDown className="size-6 text-white" />
                       </AccordionTrigger>
                       <AccordionContent>
-                        <div className="my-6 grid grid-cols-1 gap-5">
+                        <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-3">
                           <Link
-                            href="/solucoes/saude-mental"
-                            className="group flex items-start"
-                          >
-                            <Image
-                              src="/images/ic-saude-mental.svg"
-                              alt="ícone - Saúde mental"
-                              width={32}
-                              height={32}
-                            />
-                            <div className="ml-2 w-[calc(100%-32px)]">
-                              <p className="text-md group-hover:text-brand-light-green font-semibold text-white duration-300">
-                                Saúde Mental
-                              </p>
-                              <p className="text-sm text-white">
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit.
-                              </p>
-                            </div>
-                          </Link>
-                          <Link
-                            href="/solucoes/entrevista-qualificada"
-                            className="group flex items-start"
+                            href="/solucao/entrevista-qualificada"
+                            className="group/nav-link flex items-start"
                           >
                             <Image
                               src="/images/ic-entrevista-qualificada.svg"
@@ -98,39 +78,57 @@ export const MobileMenu = () => {
                               width={32}
                               height={32}
                             />
-                            <div className="ml-2 w-[calc(100%-32px)]">
-                              <p className="text-md group-hover:text-brand-light-green font-semibold text-white duration-300">
+                            <div className="ml-2">
+                              <p className="text-md group-hover/nav-link:text-brand-light-green font-semibold text-white duration-300">
                                 Entrevista Qualificada
                               </p>
                               <p className="text-sm text-white">
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit.
+                                Resultados que fortalecem sua operação.
                               </p>
                             </div>
                           </Link>
                           <Link
-                            href="/solucoes/atecao-integrada-a-saude"
-                            className="group flex items-start"
+                            href="/solucao/consultorio"
+                            className="group/nav-link flex items-start"
                           >
                             <Image
-                              src="/images/ic-atecao-integrada.svg"
-                              alt="ícone - Atenção Integrada à Saúde"
+                              src="/images/ic-consulta-online.svg"
+                              alt="ícone - Consultório Digital"
                               width={32}
                               height={32}
                             />
-                            <div className="ml-2 w-[calc(100%-32px)]">
-                              <p className="text-md group-hover:text-brand-light-green font-semibold text-white duration-300">
-                                Atenção Integrada à Saúde
+                            <div className="ml-2">
+                              <p className="text-md group-hover/nav-link:text-brand-light-green font-semibold text-white duration-300">
+                                Consultas Online com Especialista
                               </p>
                               <p className="text-sm text-white">
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit.
+                                Inovação que transforma um espaço em ponto de
+                                cuidado de alta qualidade.
                               </p>
                             </div>
                           </Link>
                           <Link
-                            href="/solucoes/pronto-atendimento"
-                            className="group flex items-start"
+                            href="/solucao/gestao-integrada-ao-cuidado"
+                            className="group/nav-link flex items-start"
+                          >
+                            <Image
+                              src="/images/ic-atecao-integrada.svg"
+                              alt="ícone - Gestão Integrada do Cuidado"
+                              width={32}
+                              height={32}
+                            />
+                            <div className="ml-2">
+                              <p className="text-md group-hover/nav-link:text-brand-light-green font-semibold text-white duration-300">
+                                Gestão Integrada do Cuidado
+                              </p>
+                              <p className="text-sm text-white">
+                                Mais que cuidado, gestão inteligente em saúde.
+                              </p>
+                            </div>
+                          </Link>
+                          <Link
+                            href="/solucao/pronto-atendimento"
+                            className="group/nav-link flex items-start"
                           >
                             <Image
                               src="/images/ic-pronto-atendimento.svg"
@@ -138,39 +136,40 @@ export const MobileMenu = () => {
                               width={32}
                               height={32}
                             />
-                            <div className="ml-2 w-[calc(100%-32px)]">
-                              <p className="text-md group-hover:text-brand-light-green font-semibold text-white duration-300">
+                            <div className="ml-2">
+                              <p className="text-md group-hover/nav-link:text-brand-light-green font-semibold text-white duration-300">
                                 Pronto Atendimento 24h
                               </p>
                               <p className="text-sm text-white">
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit.
+                                O cuidado certo, na hora que seu beneficiário
+                                mais precisa.
                               </p>
                             </div>
                           </Link>
                           <Link
-                            href="/solucoes/consulta-online"
-                            className="group flex items-start"
+                            href="/solucao/saude-mental"
+                            className="group/nav-link flex items-start"
                           >
                             <Image
-                              src="/images/ic-consulta-online.svg"
-                              alt="ícone - Consulta Online com Especialistas"
+                              src="/images/ic-saude-mental.svg"
+                              alt="ícone - Saúde mental"
                               width={32}
                               height={32}
                             />
-                            <div className="ml-2 w-[calc(100%-32px)]">
-                              <p className="text-md group-hover:text-brand-light-green font-semibold text-white duration-300">
-                                Consulta Online com Especialistas
+                            <div className="ml-2">
+                              <p className="text-md group-hover/nav-link:text-brand-light-green font-semibold text-white duration-300">
+                                Saúde Mental
                               </p>
                               <p className="text-sm text-white">
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit.
+                                Apoio imediato para quem precisa, resultados
+                                estratégicos para quem cuida.
                               </p>
                             </div>
                           </Link>
+
                           <Link
                             href="/solucoes/consultorio-digital"
-                            className="group flex items-start"
+                            className="group/nav-link flex items-start"
                           >
                             <Image
                               src="/images/ic-consultorio-digital.svg"
@@ -178,13 +177,13 @@ export const MobileMenu = () => {
                               width={32}
                               height={32}
                             />
-                            <div className="ml-2 w-[calc(100%-32px)]">
-                              <p className="text-md group-hover:text-brand-light-green font-semibold text-white duration-300">
+                            <div className="ml-2">
+                              <p className="text-md group-hover/nav-link:text-brand-light-green font-semibold text-white duration-300">
                                 Consultório Digital
                               </p>
                               <p className="text-sm text-white">
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit.
+                                Inovação que transforma um espaço em ponto de
+                                cuidado de alta qualidade.
                               </p>
                             </div>
                           </Link>
@@ -228,10 +227,10 @@ export const MobileMenu = () => {
                         <ChevronDown className="size-6 text-white" />
                       </AccordionTrigger>
                       <AccordionContent>
-                        <div className="my-6 grid grid-cols-1 gap-5">
+                        <div className="mt-8 grid grid-cols-1 gap-8">
                           <Link
                             href="/faq/dr-online"
-                            className="group flex items-start"
+                            className="group/nav-link flex items-start"
                           >
                             <Image
                               src="/images/ic-faq-dronline.svg"
@@ -239,8 +238,8 @@ export const MobileMenu = () => {
                               width={32}
                               height={32}
                             />
-                            <div className="ml-2 w-[calc(100%-32px)]">
-                              <p className="text-md group-hover:text-brand-light-green font-semibold text-white duration-300">
+                            <div className="ml-2 max-w-[180px]">
+                              <p className="text-md group-hover/nav-link:text-brand-light-green font-semibold text-white duration-300">
                                 dr.online
                               </p>
                               <p className="text-sm text-white">
@@ -250,7 +249,7 @@ export const MobileMenu = () => {
                           </Link>
                           <Link
                             href="/faq/pacientes"
-                            className="group flex items-start"
+                            className="group/nav-link flex items-start"
                           >
                             <Image
                               src="/images/ic-faq-pacientes.svg"
@@ -258,8 +257,8 @@ export const MobileMenu = () => {
                               width={32}
                               height={32}
                             />
-                            <div className="ml-2 w-[calc(100%-32px)]">
-                              <p className="text-md group-hover:text-brand-light-green font-semibold text-white duration-300">
+                            <div className="ml-2 max-w-[180px]">
+                              <p className="text-md group-hover/nav-link:text-brand-light-green font-semibold text-white duration-300">
                                 Pacientes
                               </p>
                               <p className="text-sm text-white">
@@ -269,7 +268,7 @@ export const MobileMenu = () => {
                           </Link>
                           <Link
                             href="/faq/profissionais-da-saude"
-                            className="group flex items-start"
+                            className="group/nav-link flex items-start"
                           >
                             <Image
                               src="/images/ic-faq-profissionais.svg"
@@ -277,8 +276,8 @@ export const MobileMenu = () => {
                               width={32}
                               height={32}
                             />
-                            <div className="ml-2 w-[calc(100%-32px)]">
-                              <p className="text-md group-hover:text-brand-light-green font-semibold text-white duration-300">
+                            <div className="ml-2 max-w-[180px]">
+                              <p className="text-md group-hover/nav-link:text-brand-light-green font-semibold text-white duration-300">
                                 Profissionais da saúde
                               </p>
                               <p className="text-sm text-white">
@@ -303,10 +302,10 @@ export const MobileMenu = () => {
                         <ChevronDown className="size-6 text-white" />
                       </AccordionTrigger>
                       <AccordionContent>
-                        <div className="my-6 grid grid-cols-1 gap-5">
+                        <div className="mt-8 grid grid-cols-1 gap-8">
                           <Link
-                            href="/faq/dr-online"
-                            className="group flex items-start"
+                            href="/trabalhe-conosco"
+                            className="group/nav-link flex items-start"
                           >
                             <Image
                               src="/images/ic-medicos.svg"
@@ -314,8 +313,8 @@ export const MobileMenu = () => {
                               width={32}
                               height={32}
                             />
-                            <div className="ml-2 w-[calc(100%-32px)]">
-                              <p className="text-md group-hover:text-brand-light-green font-semibold text-white duration-300">
+                            <div className="ml-2 max-w-[180px]">
+                              <p className="text-md group-hover/nav-link:text-brand-light-green font-semibold text-white duration-300">
                                 Médicos
                               </p>
                               <p className="text-sm text-white">
@@ -324,8 +323,8 @@ export const MobileMenu = () => {
                             </div>
                           </Link>
                           <Link
-                            href="/faq/pacientes"
-                            className="group flex items-start"
+                            href="/trabalhe-conosco"
+                            className="group/nav-link flex items-start"
                           >
                             <Image
                               src="/images/ic-demais-profissionais.svg"
@@ -333,8 +332,8 @@ export const MobileMenu = () => {
                               width={32}
                               height={32}
                             />
-                            <div className="ml-2 w-[calc(100%-32px)]">
-                              <p className="text-md group-hover:text-brand-light-green font-semibold text-white duration-300">
+                            <div className="ml-2 max-w-[180px]">
+                              <p className="text-md group-hover/nav-link:text-brand-light-green font-semibold text-white duration-300">
                                 Demais profissionais
                               </p>
                               <p className="text-sm text-white">
@@ -343,6 +342,7 @@ export const MobileMenu = () => {
                             </div>
                           </Link>
                         </div>
+                        s
                       </AccordionContent>
                     </AccordionItem>
                   </Accordion>

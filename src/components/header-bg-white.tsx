@@ -2,19 +2,16 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Navigation } from "./navigation";
 import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
 import { MobileMenu } from "./mobile/mobile-menu";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
-import { usePathname } from "next/navigation";
 
 export const HeaderBgWhite = () => {
   const [headerScrolled, setHeaderScrolled] = useState(false);
-  const pathname = usePathname();
-
   useGSAP(() => {
     const st = ScrollTrigger.create({
       trigger: "header",

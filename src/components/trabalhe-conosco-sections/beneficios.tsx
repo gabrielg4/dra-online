@@ -80,7 +80,7 @@ export const Beneficios = () => {
             ></video>
           </div>
         </div>
-        <div className="cards-diferentials flex w-full flex-col gap-8 md:w-1/2">
+        <div className="cards-diferentials relative z-10 flex w-full flex-col gap-8 md:w-1/2">
           <CardSolucaoDiferencial
             image={{
               alt: "ícone line chart",

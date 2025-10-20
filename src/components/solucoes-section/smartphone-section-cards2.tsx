@@ -143,14 +143,14 @@ export const SmartphoneSectionCards2 = ({
             ></video>
           </div>
 
-          <div className="mobile-phone-video absolute top-80 right-5 h-[150px] w-[100px] rounded-lg border-[7px] border-white/20 shadow-2xl/10 md:top-56 md:h-[230px] md:!w-[180px] md:border-[9px]">
+          <div className="mobile-phone-video absolute top-80 right-5 h-[150px] w-[100px] rounded-3xl border-[7px] border-white/20 shadow-2xl/10 md:top-56 md:h-[230px] md:!w-[180px] md:border-[9px]">
             <video
               src={secondVideo}
               autoPlay
               muted
               loop
               playsInline
-              className="h-full w-full rounded-xs object-cover md:rounded-lg"
+              className="h-full w-full rounded-2xl object-cover md:rounded-lg"
             ></video>
           </div>
         </div>

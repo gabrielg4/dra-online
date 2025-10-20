@@ -2,7 +2,6 @@ import { VerticalCarouselAboutUs } from "@/components/animated-sections/vertical
 import { CtaButton } from "@/components/cta-button";
 import { HistoryTimeline } from "@/components/history-timeline";
 import { CompaniesLogos } from "@/components/home-sections/companies-logos";
-import { RecognitionsCarousel } from "@/components/recognitions-carousel";
 import { TestimonialsSection } from "@/components/shared-sections/testimonials";
 import { ValuesCarousel } from "@/components/values-carousel";
 import Image from "next/image";
@@ -11,12 +10,15 @@ import React from "react";
 export default function SobreNosPage() {
   return (
     <>
-      <section className="relative overflow-hidden bg-[url(/images/img-bg-sobre-nos.svg)] bg-cover bg-center bg-no-repeat pt-48 pb-16 sm:pt-32 sm:pb-32">
+      <section className="relative overflow-hidden bg-[url(/images/img-bg-sobre-nos.svg)] bg-cover bg-center bg-no-repeat pt-48 pb-16 sm:pt-32 sm:pb-32 lg:pt-40">
         <div className="relative z-30 container">
           <div className="w-full max-w-[450px] lg:max-w-[510px]">
             <h1 className="text-[32px] leading-[110%] font-bold text-white md:text-[40px] lg:text-[48px]">
-              Transformamos saúde <br />
-              digital em valor real
+              <span className="text-brand-light-green">
+                Transformamos saúde <br />
+                digital
+              </span>{" "}
+              em valor real
             </h1>
             <p className="mt-6 mb-10 text-xl leading-normal font-normal text-white">
               A <strong>dr.</strong>online é um ecossistema que combina
@@ -30,8 +32,8 @@ export default function SobreNosPage() {
         </div>
         <div className="to-brand-dark-green absolute -bottom-2 left-0 z-20 h-full w-full bg-gradient-to-b from-transparent sm:h-[500px] md:-bottom-1" />
         <VerticalCarouselAboutUs
-          videosColumn1={["/videos/video7.mp4", "/videos/video8.mp4"]}
-          videosColumn2={["/videos/video9.mp4", "/videos/video10.mp4"]}
+          videosColumn1={["/videos/video7.mp4", "/videos/video9.mp4"]}
+          videosColumn2={["/videos/video10.mp4", "/videos/video8.mp4"]}
           videosColumn3={["/videos/video5.mp4", "/videos/video6.mp4"]}
         />
       </section>
@@ -99,7 +101,7 @@ export default function SobreNosPage() {
           </div>
         </div>
       </section>
-      <section className="bg-white py-14">
+      {/* <section className="bg-white py-14">
         <div className="container">
           <h2 className="text-brand-dark-green mb-10 text-center text-[32px] leading-[110%] font-normal lg:text-[40px]">
             <strong>Reconhecimento</strong> pelo que importa
@@ -109,7 +111,7 @@ export default function SobreNosPage() {
             <RecognitionsCarousel />
           </div>
         </div>
-      </section>
+      </section> */}
       <TestimonialsSection hasBlur>
         <h2 className="mb-10 text-center text-[32px] leading-[110%] font-bold text-white md:text-start lg:text-[40px]">
           A dr<span className="text-brand-light-green">.</span>

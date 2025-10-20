@@ -5,7 +5,6 @@ import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/all";
 import gsap from "gsap";
 import { useMediaQuery } from "react-responsive";
-import Image from "next/image";
 
 interface DiferentialsSolutionProps {
   noImage?: boolean;
@@ -21,7 +20,7 @@ interface DiferentialsSolutionProps {
   }[];
 }
 
-export const Diferentials = ({
+export const DiferentialsV2 = ({
   description,
   videoUrl,
   title,
@@ -80,18 +79,19 @@ export const Diferentials = ({
     });
   }, []);
   return (
-    <section className="diferential-section bg-[url(/images/img-bg-secao-pattern.webp)] bg-cover bg-center bg-no-repeat py-10 lg:py-20">
-      <div className="container flex flex-col items-center gap-8 md:flex-row md:gap-14">
+    <section className="diferential-section bg-cover bg-center bg-no-repeat py-10 lg:py-20">
+      <div className="relative container flex flex-col items-center gap-8 md:flex-row md:gap-14">
+        <div className="from-brand-dark-green absolute top-1/2 left-1/2 z-10 h-full w-full -translate-x-1/2 -translate-y-1/2 bg-gradient-to-b from-20% to-transparent" />
         <div className="w-full md:w-1/2">
-          <h2 className="mb-6 text-[32px] leading-[120%] font-bold text-white lg:text-[40px]">
+          <h2 className="relative z-20 mb-6 text-[32px] leading-[120%] font-bold text-white lg:text-[40px]">
             {title}
           </h2>
-          <p className="section-description mb-0 text-lg leading-normal font-normal text-white md:mb-10 lg:mb-14">
+          <p className="section-description relative z-20 mb-0 text-lg leading-normal font-normal text-white md:mb-10 lg:mb-14">
             {description}
           </p>
           {noImage ? (
             <>
-              <div className="grid grid-cols-1 gap-x-6 gap-y-6 max-[767px]:mt-10 md:grid-cols-2">
+              <div className="relative z-20 grid grid-cols-1 gap-x-6 gap-y-6 max-[767px]:mt-10 md:grid-cols-2">
                 <p className="text-brand-light-green border-brand-light-green w-full rounded-lg border bg-white/10 px-4 py-3 text-center text-lg leading-[150%] font-bold backdrop-blur-2xl">
                   Dermatologia
                 </p>
@@ -128,8 +128,8 @@ export const Diferentials = ({
               </p>
             </>
           ) : (
-            <div className="relative hidden h-[337px] w-full rounded-lg md:block">
-              <div className="video-blur absolute top-0 left-0 z-20 h-full w-full" />
+            <div className="relative z-0 hidden h-[337px] w-full rounded-lg md:block">
+              <div className="video-blur absolute top-0 left-0 h-full w-full" />
               <video
                 src={videoUrl}
                 className="h-full w-full rounded-2xl object-cover"
@@ -138,17 +138,10 @@ export const Diferentials = ({
                 loop
                 playsInline
               ></video>
-              <Image
-                src="/images/img-pattern-video-solucao.svg"
-                alt=""
-                width={580}
-                height={337}
-                className="absolute top-0 left-0 z-10 object-contain"
-              />
             </div>
           )}
         </div>
-        <div className="cards-diferentials flex w-full flex-col gap-8 md:w-1/2">
+        <div className="cards-diferentials relative z-20 flex w-full flex-col gap-8 md:w-1/2">
           {differentials.map(({ icon: { alt, src }, title }, index) => (
             <CardSolucaoDiferencial
               key={index}
@@ -162,7 +155,7 @@ export const Diferentials = ({
           ))}
           {noImage && (
             <div className="relative block h-[337px] w-full rounded-lg md:hidden">
-              <div className="video-blur absolute top-0 left-0 z-20 h-full w-full" />
+              <div className="video-blur absolute top-0 left-0 h-full w-full" />
               <video
                 src={videoUrl}
                 className="h-full w-full rounded-2xl object-cover"
@@ -171,13 +164,6 @@ export const Diferentials = ({
                 loop
                 playsInline
               ></video>
-              <Image
-                src="/images/img-pattern-video-solucao.svg"
-                alt=""
-                width={580}
-                height={337}
-                className="absolute top-0 left-0 z-10 object-contain"
-              />
             </div>
           )}
         </div>

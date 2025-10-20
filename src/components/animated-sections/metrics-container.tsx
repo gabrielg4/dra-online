@@ -71,7 +71,7 @@ export const MetricsContainer = () => {
                 start: "top 80%",
               }}
               from={0}
-              to={90}
+              to={94}
             />
           </p>
         </div>

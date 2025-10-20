@@ -50,7 +50,7 @@ export const ValuesCarousel = () => {
     >
       <CarouselContent className="pb-16">
         <CarouselItem className="pl-8 md:basis-1/2 lg:basis-1/3">
-          <div className="flex h-full flex-col items-center justify-center gap-4 rounded-lg bg-white/10 p-6 shadow-2xl/10">
+          <div className="flex h-fit flex-col items-center justify-center gap-4 rounded-lg bg-white/10 p-6 shadow-2xl/10">
             <Image
               src="/images/ic-missao.svg"
               alt="Ícone missão"
@@ -69,7 +69,7 @@ export const ValuesCarousel = () => {
           </div>
         </CarouselItem>
         <CarouselItem className="pl-8 md:basis-1/2 md:pt-14 lg:basis-1/3">
-          <div className="flex h-full flex-col items-center justify-center gap-4 rounded-lg bg-white/10 p-6 shadow-2xl/10">
+          <div className="flex h-fit flex-col items-center justify-center gap-4 rounded-lg bg-white/10 p-6 shadow-2xl/10">
             <Image
               src="/images/ic-missao.svg"
               alt="Ícone missão"
@@ -88,7 +88,7 @@ export const ValuesCarousel = () => {
           </div>
         </CarouselItem>
         <CarouselItem className="pl-8 md:basis-1/2 lg:basis-1/3">
-          <div className="flex h-full flex-col items-center justify-center gap-4 rounded-lg bg-white/10 p-6 shadow-2xl/10">
+          <div className="flex h-fit flex-col items-center justify-center gap-4 rounded-lg bg-white/10 p-6 shadow-2xl/10 lg:h-[350px]">
             <Image
               src="/images/ic-valores.svg"
               alt="Ícone valores"

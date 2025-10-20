@@ -6,16 +6,15 @@ import { TimelineContent } from "./timeline-content";
 
 const historyData = [
   {
-    imageUrl: "/images/img-timeline-2022.webp",
-    title: "Um desafio sem precedentes",
+    imageUrl: "/images/img-2022-timeline.webp",
+    title: "Telemedicina como protagonista",
     content: (
       <>
-        <p className="mb-2 text-lg text-white">
-          A pandemia da COVID-19 mudou o mundo. Em meio ao medo, ao isolamento e
-          às incertezas, surgiu uma necessidade urgente: garantir acesso à saúde
-          com segurança e agilidade. Foi nesse cenário que nasceu a dr.online:
-          como uma resposta rápida, inovadora e visionária para conectar pessoas
-          e profissionais de saúde à distância.
+        <p className="text-lg text-white">
+          A telemedicina deixou de ser tendência e se tornou realidade. A Dr.
+          Online assumiu papel de destaque, levando médicos e especialistas para
+          dentro das casas dos pacientes, com atendimento seguro, resolutivo e
+          humanizado.
         </p>
         <p className="text-[16px] leading-normal text-white">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -30,49 +29,30 @@ const historyData = [
     ),
   },
   {
-    imageUrl: "/images/img-timeline-2022.webp",
-    title: "Um desafio sem precedentes 2",
+    imageUrl: "/images/img-2023-timeline.webp",
+    title: "De telemedicina a ecossistema de saúde digital",
     content: (
       <>
-        <p className="mb-2 text-lg text-white">
-          A pandemia da COVID-19 mudou o mundo. Em meio ao medo, ao isolamento e
-          às incertezas, surgiu uma necessidade urgente: garantir acesso à saúde
-          com segurança e agilidade. Foi nesse cenário que nasceu a dr.online:
-          como uma resposta rápida, inovadora e visionária para conectar pessoas
-          e profissionais de saúde à distância.
-        </p>
-        <p className="text-[16px] leading-normal text-white">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+        <p className="text-lg text-white">
+          A Dr. Online cresceu, evoluiu e deixou de ser apenas uma solução de
+          telemedicina. Tornou-se um{" "}
+          <strong> ecossistema completo de saúde</strong> digital, oferecendo
+          não só pronto atendimento médico, mas também saúde mental, consultas
+          eletivas, coordenação do cuidado e inovação em modelos como o{" "}
+          <strong>Consultório Digital</strong>.
         </p>
       </>
     ),
   },
   {
-    imageUrl: "/images/img-timeline-2022.webp",
-    title: "Um desafio sem precedentes 3",
+    imageUrl: "/images/img-2024-timeline.webp",
+    title: "Expansão acelerada",
     content: (
       <>
-        <p className="mb-2 text-lg text-white">
-          A pandemia da COVID-19 mudou o mundo. Em meio ao medo, ao isolamento e
-          às incertezas, surgiu uma necessidade urgente: garantir acesso à saúde
-          com segurança e agilidade. Foi nesse cenário que nasceu a dr.online:
-          como uma resposta rápida, inovadora e visionária para conectar pessoas
-          e profissionais de saúde à distância.
-        </p>
-        <p className="text-[16px] leading-normal text-white">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+        <p className="text-lg text-white">
+          Alcançamos mais de <strong>3 milhões de vidas expostas</strong> aos
+          nossos produtos, consolidando nossa presença no mercado e{" "}
+          <strong>ampliando o acesso à saúde</strong> digital em todo o Brasil.
         </p>
       </>
     ),
@@ -82,7 +62,7 @@ const historyData = [
     title: "Um desafio sem precedentes 3",
     content: (
       <>
-        <p className="mb-2 text-lg text-white">
+        <p className="text-lg text-white">
           A pandemia da COVID-19 mudou o mundo. Em meio ao medo, ao isolamento e
           às incertezas, surgiu uma necessidade urgente: garantir acesso à saúde
           com segurança e agilidade. Foi nesse cenário que nasceu a dr.online:
@@ -169,12 +149,12 @@ export const HistoryTimeline = () => {
         </button>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="57"
-          height="9"
+          width={57}
+          height={9}
           viewBox="0 0 57 9"
           className={cn(
-            "fill-[#A6D05D]", // cor padrão (verde)
-            activeTime >= 3 && "fill-white", // fica branco quando activeTime === 2
+            "fill-[#A6D05D] transition-all duration-200",
+            activeTime >= 3 && "fill-white",
           )}
         >
           <path d="M56.853 4.955a.5.5 0 0 0 0-.708l-3.181-3.182a.5.5 0 1 0-.707.708L55.793 4.6l-2.828 2.828a.5.5 0 1 0 .707.707l3.181-3.181ZM.5 4.6v.5h56v-1H.5v.5Z" />

@@ -8,7 +8,6 @@ import {
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
 import Image from "next/image";
-
 interface NavigationProps {
   textColor?: string;
 }
@@ -36,8 +35,8 @@ export const Navigation = ({ textColor = "text-white" }: NavigationProps) => {
               </button>
             </PopoverTrigger>
             <PopoverContent
-              align="start"
-              className="mt-8 w-full -translate-x-[16%] border-0 bg-black/10 p-6 shadow-2xl/10 backdrop-blur-2xl min-[1600px]:-translate-x-[25%]"
+              align="center"
+              className="mt-8 w-full max-w-[1216px] min-w-[1216px] translate-x-0 border-0 bg-black/10 p-6 shadow-2xl/10 backdrop-blur-2xl"
             >
               <div className="mx-auto flex w-full items-stretch gap-8 rounded-2xl">
                 <div className="w-fit border-r border-r-white pr-8">

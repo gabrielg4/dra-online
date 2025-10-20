@@ -282,7 +282,7 @@ body {
   max-width: 280px;
   height: 402px; /* combine com o aspect da máscara */
   border-radius: 24px;
-  background: #000;
+  background: #fff;
 }
 .video-masked video {
   width: 100%;
@@ -315,5 +315,66 @@ body {
   border-radius: 400px;
   opacity: 0.5;
   background: var(--Degrad, linear-gradient(180deg, #1ba068 0%, #a6d05d 100%));
+  filter: blur(100px);
+}
+
+.swiper-pagination-blog-carousel .swiper-bullet {
+  @apply h-3 w-3 cursor-pointer rounded-full bg-white/50 transition-all duration-300;
+}
+.swiper-pagination-blog-carousel .swiper-bullet:hover {
+  @apply bg-white/100;
+}
+.swiper-pagination-blog-carousel .swiper-bullet-active {
+  @apply bg-brand-light-green;
+}
+
+.submenu-blur::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(40px) !important;
+  /* -webkit-backdrop-filter: blur(100px) !important; */
+}
+
+header.scrolled {
+  @apply before:absolute before:top-0 before:left-0 before:h-full before:w-full before:backdrop-blur-3xl before:transition-all before:duration-300;
+}
+
+header.scrolled::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 0.4s ease !important;
+  border-radius: 40px;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(40px) !important;
+  -webkit-backdrop-filter: blur(40px) !important;
+}
+
+.gradiente-radial {
+  background: radial-gradient(
+    41.03% 24.79% at 53.61% 58.79%,
+    rgba(7, 95, 85, 0) 0%,
+    #075f55 100%
+  );
+}
+
+.na-midia-blur {
+  width: 529px;
+  height: 529px;
+  flex-shrink: 0;
+  border-radius: 400px;
+  opacity: 0.7;
+  background: linear-gradient(8deg, #1ba068 -31.88%, #a6d05d 117.1%);
   filter: blur(100px);
 }

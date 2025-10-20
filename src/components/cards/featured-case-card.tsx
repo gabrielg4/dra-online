@@ -10,7 +10,7 @@ export const FeaturedCaseCard = () => {
         backgroundImage: `url(/images/img-placeholder-case.webp)`,
       }}
     >
-      <div className="backdrop-blur-2xl/30 flex h-full w-full max-w-[464px] flex-col justify-between rounded-lg border border-white/30 bg-black/10 px-10 py-6">
+      <div className="backdrop-blur-2xl/30 flex h-full w-full max-w-[464px] flex-col justify-between rounded-lg border border-white/30 bg-black/10 px-10 py-6 backdrop-blur-2xl">
         <div className="flex flex-col gap-3">
           <h3 className="mb-3 text-[24px] leading-[130%] font-bold text-white">
             Lorem ipsum dolor aumentou 32% em atendimentos com o dr.online sit
@@ -22,7 +22,7 @@ export const FeaturedCaseCard = () => {
           </p>
         </div>
 
-        <p className="border-brand-light-green text-brand-light-green group-hover:bg-brand-light-green w-fit rounded-full border px-3 py-2 text-center text-[16px] leading-normal duration-300 group-hover:text-white">
+        <p className="border-brand-light-green text-brand-light-green group-hover:bg-brand-light-green group-hover:text-brand-dark-green w-fit rounded-full border px-3 py-2 text-center text-[16px] leading-normal font-medium duration-300">
           Leia mais
         </p>
       </div>

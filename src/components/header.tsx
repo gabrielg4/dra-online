@@ -3,53 +3,45 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import { Navigation } from "./navigation";
 import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
 import { MobileMenu } from "./mobile/mobile-menu";
-import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/all";
-import { usePathname } from "next/navigation";
+import { NavigationV2 } from "./navigationV2";
 
-export const Header = () => {
-  const [hideMenu, setHiddeMenu] = useState(false);
+interface HeaderProps {
+  startWithBlur?: boolean;
+}
+
+export const Header = ({ startWithBlur }: HeaderProps) => {
   const [headerScrolled, setHeaderScrolled] = useState(false);
-  const pathname = usePathname();
 
-  useGSAP(() => {
-    const st = ScrollTrigger.create({
-      trigger: "header",
-      start: "top 20%",
-      onToggle: (self) => {
-        setHeaderScrolled(!self.isActive);
-      },
-    });
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 30) {
+        setHeaderScrolled(true);
+      } else {
+        setHeaderScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Executa uma vez ao montar para aplicar o estado correto
+    handleScroll();
 
     return () => {
-      st.kill();
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
-  useEffect(() => {
-    if (pathname.includes("/blog/")) {
-      setHiddeMenu(true);
-    } else {
-      setHiddeMenu(false);
-    }
-  }, [pathname]);
-
   return (
-    <div
-      className={cn(
-        "fixed top-0 z-50 w-full pt-5 duration-500",
-        hideMenu && "hidden",
-      )}
-    >
+    <div className={cn("fixed top-0 z-50 w-full pt-5 duration-500")}>
       <div className="container">
         <header
           className={cn(
-            "border-brand-light-green flex w-full items-center justify-between gap-5 rounded-full border px-6 py-4 duration-500 md:py-4",
-            headerScrolled && "bg-black/10 backdrop-blur-3xl",
+            "border-brand-light-green relative flex w-full items-center justify-between gap-5 rounded-full border px-6 py-4 duration-500 md:py-4",
+            headerScrolled && "scrolled",
+            startWithBlur && "scrolled",
           )}
         >
           <Link href="/">
@@ -60,7 +52,8 @@ export const Header = () => {
               height={25}
             />
           </Link>
-          <Navigation />
+          {/* <Navigation /> */}
+          <NavigationV2 />
           <div className="flex w-fit items-center gap-2">
             <Button
               variant={"outline"}
