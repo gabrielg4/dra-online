@@ -63,26 +63,27 @@ export const SmartphoneSectionCards3 = ({
       },
     });
 
-    gsap.from(".mobile-phone-video", {
+    // gsap.from(".mobile-phone-video", {
+    //   yPercent: 100,
+    //   opacity: 0,
+    //   duration: 1,
+    //   ease: "expo.out",
+    //   stagger: 0.5,
+    //   scrollTrigger: {
+    //     trigger: ".image-wrapper",
+    //     start: startPhones,
+    //     end: "bottom bottom",
+    //     scrub: 3,
+    //     // markers: true,
+    //   },
+    // });
+
+    gsap.from(".mobile-phone-image", {
       yPercent: 100,
       opacity: 0,
       duration: 1,
-      ease: "expo.out",
       stagger: 0.5,
-      scrollTrigger: {
-        trigger: ".image-wrapper",
-        start: startPhones,
-        end: "bottom bottom",
-        scrub: 3,
-        // markers: true,
-      },
-    });
-
-    gsap.from(".mobile-phone-image", {
-      xPercent: -100,
-      opacity: 0,
-      duration: 1,
-      stagger: 0.7,
+      delay: 0,
       ease: "expo.out",
       scrollTrigger: {
         trigger: "#smartphones-section",
@@ -132,7 +133,7 @@ export const SmartphoneSectionCards3 = ({
             height={447}
           />
 
-          <div className="mobile-phone-video h-[220px] w-[130px] rounded-xl border-[7px] border-white/20 md:h-[544px] md:!w-[290px] md:rounded-3xl md:border-[9px]">
+          <div className="mobile-phone-image h-[220px] w-[130px] rounded-xl border-[7px] border-white/20 md:h-[544px] md:!w-[290px] md:rounded-3xl md:border-[9px]">
             <video
               src={firstVideo}
               autoPlay
@@ -145,7 +146,7 @@ export const SmartphoneSectionCards3 = ({
           <Image
             src={fourthImage}
             alt=""
-            className={`mobile-phone-video absolute top-80 right-5 w-[100px] object-contain shadow-2xl/10 md:top-56 md:!w-[180px]`}
+            className={`mobile-phone-image absolute top-80 right-5 w-[100px] object-contain shadow-2xl/10 md:top-56 md:!w-[180px]`}
             width={230}
             height={400}
           />

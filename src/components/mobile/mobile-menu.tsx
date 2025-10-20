@@ -88,7 +88,7 @@ export const MobileMenu = () => {
                             </div>
                           </Link>
                           <Link
-                            href="/solucao/consultorio"
+                            href="/solucao/consulta-eletiva-com-especialistas"
                             className="group/nav-link flex items-start"
                           >
                             <Image
@@ -168,7 +168,7 @@ export const MobileMenu = () => {
                           </Link>
 
                           <Link
-                            href="/solucoes/consultorio-digital"
+                            href="/solucoes/consultorio"
                             className="group/nav-link flex items-start"
                           >
                             <Image

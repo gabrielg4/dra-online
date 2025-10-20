@@ -1,39 +1,11 @@
-import { VerticalCarouselAboutUs } from "@/components/animated-sections/vertical-carousel-about-us";
 import { NaMidiaCard2 } from "@/components/cards/na-midia-card-2";
-import { CtaButton } from "@/components/cta-button";
+import { NaMidiaHero } from "@/components/na-midia-hero";
 import React from "react";
 
 export default function NoticiasPage() {
   return (
     <>
-      <section className="relative overflow-hidden bg-[url(/images/img-bg-midia.webp)] bg-cover bg-center bg-no-repeat pt-48 pb-16 sm:pt-32 sm:pb-32">
-        <div className="relative z-30 container">
-          <div className="flex w-full max-w-[450px] flex-col items-center lg:max-w-[510px]">
-            <h1 className="text-center text-white">
-              <span className="text-[72px]">
-                <span className="font-bold">dr</span>
-                <span className="text-brand-light-green leading-[100%]">.</span>
-                online <br />
-              </span>
-              <span className="-mt-8 inline-block text-[92px] font-bold">
-                na Mídia
-              </span>
-            </h1>
-            <p className="mb-6 text-center text-xl leading-normal font-normal text-white md:mb-10 lg:mb-14">
-              Veja o que os grandes portais <br />
-              estão falando sobre a dr.online
-            </p>
-
-            <CtaButton url="#noticias" title="Ver notícias" />
-          </div>
-        </div>
-        <div className="to-brand-dark-green absolute -bottom-2 left-0 z-20 h-full w-full bg-gradient-to-b from-transparent sm:h-[500px]" />
-        <VerticalCarouselAboutUs
-          videosColumn1={["/videos/video18.mp4", "/videos/video19.mp4"]}
-          videosColumn2={["/videos/video20.mp4", "/videos/video21.mp4"]}
-          videosColumn3={["/videos/video5.mp4", "/videos/video6.mp4"]}
-        />
-      </section>
+      <NaMidiaHero />
       <section
         id="noticias"
         className="bg-[url(/videos/video18.mp4)] bg-cover bg-center bg-no-repeat py-10 lg:py-16"

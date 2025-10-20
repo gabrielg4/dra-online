@@ -4,85 +4,108 @@ import { cn } from "@/lib/utils";
 import { useState } from "react";
 import { TimelineContent } from "./timeline-content";
 
-const historyData = [
-  {
-    imageUrl: "/images/img-2022-timeline.webp",
-    title: "Telemedicina como protagonista",
-    content: (
-      <>
-        <p className="text-lg text-white">
-          A telemedicina deixou de ser tendência e se tornou realidade. A Dr.
-          Online assumiu papel de destaque, levando médicos e especialistas para
-          dentro das casas dos pacientes, com atendimento seguro, resolutivo e
-          humanizado.
-        </p>
-        <p className="text-[16px] leading-normal text-white">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-      </>
-    ),
-  },
-  {
-    imageUrl: "/images/img-2023-timeline.webp",
-    title: "De telemedicina a ecossistema de saúde digital",
-    content: (
-      <>
-        <p className="text-lg text-white">
-          A Dr. Online cresceu, evoluiu e deixou de ser apenas uma solução de
-          telemedicina. Tornou-se um{" "}
-          <strong> ecossistema completo de saúde</strong> digital, oferecendo
-          não só pronto atendimento médico, mas também saúde mental, consultas
-          eletivas, coordenação do cuidado e inovação em modelos como o{" "}
-          <strong>Consultório Digital</strong>.
-        </p>
-      </>
-    ),
-  },
-  {
-    imageUrl: "/images/img-2024-timeline.webp",
-    title: "Expansão acelerada",
-    content: (
-      <>
-        <p className="text-lg text-white">
-          Alcançamos mais de <strong>3 milhões de vidas expostas</strong> aos
-          nossos produtos, consolidando nossa presença no mercado e{" "}
-          <strong>ampliando o acesso à saúde</strong> digital em todo o Brasil.
-        </p>
-      </>
-    ),
-  },
-  {
-    imageUrl: "/images/img-timeline-2022.webp",
-    title: "Um desafio sem precedentes 3",
-    content: (
-      <>
-        <p className="text-lg text-white">
-          A pandemia da COVID-19 mudou o mundo. Em meio ao medo, ao isolamento e
-          às incertezas, surgiu uma necessidade urgente: garantir acesso à saúde
-          com segurança e agilidade. Foi nesse cenário que nasceu a dr.online:
-          como uma resposta rápida, inovadora e visionária para conectar pessoas
-          e profissionais de saúde à distância.
-        </p>
-        <p className="text-[16px] leading-normal text-white">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-      </>
-    ),
-  },
-];
-
+const historyData = {
+  "2022": [
+    {
+      imageUrl: "/images/img-2022-timeline.webp",
+      title: "Um desafio sem precedentes",
+      content: (
+        <>
+          <p className="text-lg text-white">
+            A pandemia da COVID-19 mudou o mundo. Em meio ao medo, ao isolamento
+            e às incertezas, surgiu uma necessidade urgente: garantir acesso à
+            saúde com segurança e agilidade. Foi nesse cenário que nasceu a Dr.
+            Online: como uma resposta rápida, inovadora e visionária para
+            conectar pessoas e profissionais de saúde à distância.
+          </p>
+        </>
+      ),
+    },
+  ],
+  "2023": [
+    {
+      imageUrl: "/images/img-timeline-2023-1.webp",
+      title: "De telemedicina a ecossistema de saúde digital",
+      content: (
+        <>
+          <p className="text-lg text-white">
+            A Dr. Online cresceu, evoluiu e deixou de ser apenas uma solução de
+            telemedicina. Tornou-se um{" "}
+            <strong>ecossistema completo de saúde</strong> digital, oferecendo
+            não só pronto atendimento médico, mas também saúde mental, consultas
+            eletivas, coordenação do cuidado e inovação em modelos como o{" "}
+            <strong>Consultório Digital</strong>.
+          </p>
+        </>
+      ),
+    },
+    {
+      imageUrl: "/images/img-timeline-2023-2.webp",
+      title: "Expansão acelerada",
+      content: (
+        <>
+          <p className="text-lg text-white">
+            Alcançamos mais de <strong>3 milhões de vidas expostas</strong> aos
+            nossos produtos, consolidando nossa presença no mercado e{" "}
+            <strong> ampliando o acesso à saúde</strong>
+            digital em todo o Brasil.
+          </p>
+        </>
+      ),
+    },
+  ],
+  "2024": [
+    {
+      imageUrl: "/images/img-timeline-2024.webp",
+      title: "Inovação em escala",
+      content: (
+        <>
+          <p className="text-lg text-white">
+            <strong>Digitais</strong>, aproximando ainda mais a tecnologia de
+            quem mais precisa e expandindo a rede de cuidado com qualidade e
+            segurança.
+          </p>
+        </>
+      ),
+    },
+  ],
+  "2025": [
+    {
+      imageUrl: "/images/img-timeline-2025-1.webp",
+      title: "Um marco histórico",
+      content: (
+        <>
+          <p className="text-lg text-white">
+            Batemos a marca de <strong>10 milhões de vidas alcançadas</strong>.
+            Esse crescimento reafirma nossa posição como{" "}
+            <strong>referência nacional em saúde digital</strong> e reforça o
+            propósito que nos move desde o início: tornar o cuidado em saúde
+            mais humano, acessível e inteligente.
+          </p>
+        </>
+      ),
+    },
+    {
+      imageUrl: "/images/img-timeline-2025-2.webp",
+      title: "Seguimos Transformando a saúde no Brasil",
+      content: (
+        <>
+          <p className="text-lg text-white">
+            Hoje, a Dr. Online é parceira estratégica de{" "}
+            <strong>
+              operadoras, empresas e milhões de pessoas em todo o país
+            </strong>
+            . Seguimos impulsionando a transformação digital da saúde, sempre
+            com o mesmo propósito que nos move desde o início:{" "}
+            <strong>
+              tornar o cuidado mais humano, acessível e eficiente.
+            </strong>
+          </p>
+        </>
+      ),
+    },
+  ],
+};
 export const HistoryTimeline = () => {
   const [activeTime, setActiveTime] = useState(0);
 
@@ -161,15 +184,22 @@ export const HistoryTimeline = () => {
         </svg>
       </div>
       <div>
-        {historyData.map((data, index) => (
-          <TimelineContent
-            key={index}
-            imageUrl={data.imageUrl}
-            title={data.title}
-            content={data.content}
-            isActive={activeTime !== index ? true : false}
-          />
-        ))}
+        <TimelineContent
+          historyData={historyData["2022"]}
+          isActive={activeTime !== 0 ? true : false}
+        />
+        <TimelineContent
+          historyData={historyData["2023"]}
+          isActive={activeTime !== 1 ? true : false}
+        />
+        <TimelineContent
+          historyData={historyData["2024"]}
+          isActive={activeTime !== 2 ? true : false}
+        />
+        <TimelineContent
+          historyData={historyData["2025"]}
+          isActive={activeTime !== 3 ? true : false}
+        />
       </div>
     </div>
   );

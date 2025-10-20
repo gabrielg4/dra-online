@@ -49,7 +49,7 @@ export const SmartphoneSectionCards2 = ({
       },
     });
 
-    gsap.from(".security-content", {
+    gsap.from(".subtitle-content", {
       yPercent: 100,
       opacity: 0,
       duration: 1,
@@ -63,26 +63,27 @@ export const SmartphoneSectionCards2 = ({
       },
     });
 
-    gsap.from(".mobile-phone-video", {
+    // gsap.from(".mobile-phone-video", {
+    //   yPercent: 100,
+    //   opacity: 0,
+    //   duration: 1,
+    //   ease: "expo.out",
+    //   stagger: 0.5,
+    //   scrollTrigger: {
+    //     trigger: ".image-wrapper",
+    //     start: startPhones,
+    //     end: "bottom bottom",
+    //     scrub: 3,
+    //     // markers: true,
+    //   },
+    // });
+
+    gsap.from(".mobile-phone-image", {
       yPercent: 100,
       opacity: 0,
       duration: 1,
-      ease: "expo.out",
       stagger: 0.5,
-      scrollTrigger: {
-        trigger: ".image-wrapper",
-        start: startPhones,
-        end: "bottom bottom",
-        scrub: 3,
-        // markers: true,
-      },
-    });
-
-    gsap.from(".mobile-phone-image", {
-      xPercent: -100,
-      opacity: 0,
-      duration: 1,
-      stagger: 0.7,
+      delay: 0,
       ease: "expo.out",
       scrollTrigger: {
         trigger: "#smartphones-section",
@@ -132,7 +133,7 @@ export const SmartphoneSectionCards2 = ({
             height={400}
           />
 
-          <div className="mobile-phone-video h-[220px] w-[130px] rounded-xl border-[7px] border-white/20 md:h-[544px] md:!w-[290px] md:rounded-3xl md:border-[9px]">
+          <div className="mobile-phone-image h-[220px] w-[130px] rounded-xl border-[7px] border-white/20 md:h-[544px] md:!w-[290px] md:rounded-3xl md:border-[9px]">
             <video
               src={firstVideo}
               autoPlay
@@ -143,7 +144,7 @@ export const SmartphoneSectionCards2 = ({
             ></video>
           </div>
 
-          <div className="mobile-phone-video absolute top-80 right-5 h-[150px] w-[100px] rounded-3xl border-[7px] border-white/20 shadow-2xl/10 md:top-56 md:h-[230px] md:!w-[180px] md:border-[9px]">
+          <div className="mobile-phone-image absolute top-80 right-5 h-[150px] w-[100px] rounded-3xl border-[7px] border-white/20 shadow-2xl/10 md:top-56 md:h-[230px] md:!w-[180px] md:border-[9px]">
             <video
               src={secondVideo}
               autoPlay
@@ -161,7 +162,7 @@ export const SmartphoneSectionCards2 = ({
               é conhecer!
             </span>
           </h2>
-          <p className="security-content mb-8 text-center text-lg font-normal text-white">
+          <p className="subtitle-content mb-8 text-center text-lg font-normal text-white">
             {subtitle}
           </p>
           <div className="cta-button-section">
