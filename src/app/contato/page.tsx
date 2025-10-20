@@ -102,7 +102,7 @@ function ContactPage() {
               className="group bg-brand-light-green relative flex items-center gap-8 rounded-2xl p-6 shadow-2xl/20"
             >
               <Image
-                src="/images/ic-mascot-dr-online3.webp"
+                src="/images/ic-mascot-dr-online3.svg"
                 alt="Imagem mascote dr. online"
                 width={110}
                 height={110}
