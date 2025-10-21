@@ -70,7 +70,13 @@ export const VerticalCarouselAboutUs = ({
       <div className="coluna coluna1 flex flex-col gap-8 will-change-transform">
         {videosColumn1.map((video, index) => (
           <div key={index} className="video-masked">
-            <video src={video} autoPlay muted loop playsInline></video>
+            <video
+              src={video}
+              autoPlay={true}
+              muted={true}
+              loop={true}
+              playsInline
+            ></video>
           </div>
         ))}
       </div>
@@ -78,7 +84,13 @@ export const VerticalCarouselAboutUs = ({
       <div className="coluna coluna2 flex flex-col gap-8 will-change-transform">
         {videosColumn2.map((video, index) => (
           <div key={index} className="video-masked">
-            <video src={video} autoPlay muted loop playsInline></video>
+            <video
+              src={video}
+              autoPlay={true}
+              muted={true}
+              loop={true}
+              playsInline
+            ></video>
           </div>
         ))}
       </div>
@@ -86,7 +98,13 @@ export const VerticalCarouselAboutUs = ({
       <div className="coluna coluna3 hidden flex-col gap-8 will-change-transform lg:flex">
         {videosColumn3.map((video, index) => (
           <div key={index} className="video-masked">
-            <video src={video} autoPlay muted loop playsInline></video>
+            <video
+              src={video}
+              autoPlay={true}
+              muted={true}
+              loop={true}
+              playsInline
+            ></video>
           </div>
         ))}
       </div>
