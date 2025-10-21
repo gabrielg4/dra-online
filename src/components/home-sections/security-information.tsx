@@ -157,11 +157,15 @@ export const SecurityInformation = () => {
             </span>
           </h2>
           <p className="security-content mb-8 text-center text-lg font-normal text-white">
-            A saúde digital só faz sentido quando respeita a privacidade, a
-            legislação e a segurança dos dados
-            <br className="hidden sm:inline-block" /> de quem mais importa: os
-            seus beneficiários. <span className="font-semibold">Na dr.</span>
-            online,{" "}
+            Nosso propósito é transformar a jornada de saúde em valor real:
+            dados em decisões, cuidado
+            <br className="hidden sm:inline-block" /> em resultados e tecnologia
+            em acessibilidade.A saúde digital só faz sentido quando respeita a
+            <br className="hidden sm:inline-block" /> privacidade, a legislação
+            e a segurança dos dados de quem mais importa: os seus
+            <br className="hidden sm:inline-block" /> beneficiários. Na{" "}
+            <span className="font-semibold">dr</span>{" "}
+            <span className="text-brand-light-green">.</span> online,{" "}
             <span className="font-semibold">
               isso não é diferencial. É padrão.
             </span>
