@@ -27,7 +27,7 @@ export function ChallengersAnimationV2() {
       scrollTrigger: {
         trigger: wrapperRef.current,
         start: isSmallLaptop ? "top top" : "top top",
-        end: isSmallLaptop ? "+=400%" : "+=500%",
+        end: isSmallLaptop ? "+=300%" : "+=230%",
         pin: true,
         scrub: 1,
         anticipatePin: 1,
@@ -39,14 +39,13 @@ export function ChallengersAnimationV2() {
             ".card-challenge",
           ) as HTMLDivElement[];
           const totalCards = cards.length;
-
           cards.forEach((card, index) => {
             // Cada card aparece em um intervalo específico do scroll
             // Usar uma curva não-linear para distribuir melhor os cards
             const normalizedIndex = index / (totalCards - 1);
-            const easedIndex = Math.pow(normalizedIndex, 0.7); // Curva ease-out para os últimos cards aparecerem mais cedo
-            const startProgress = 0.15 + easedIndex * 0.7; // Começa após 15% e distribui nos próximos 70%
-            const endProgress = startProgress + 0.08; // Duração da animação de cada card
+            const easedIndex = Math.pow(normalizedIndex, 0.7);
+            const startProgress = 0.13 + easedIndex * 0.7; // Começa após 15% e distribui nos próximos 70%
+            const endProgress = startProgress + 0.08;
 
             if (progress >= startProgress && progress <= endProgress) {
               // Card está na zona de animação
