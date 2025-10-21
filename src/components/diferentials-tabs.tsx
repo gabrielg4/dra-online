@@ -184,7 +184,7 @@ export const DiferentialsTabs = () => {
           </div>
           <div className="w-full py-8 md:w-1/2">
             <p className="text-brand-main-green mb-3 text-[28px] font-bold">
-              Pronto Atendimento 24h
+              Pronto Atendimento 24hs
             </p>
             <h3 className="text-brand-black mb-4 text-lg leading-[150%] font-bold lg:mb-6">
               O cuidado certo, na hora que seu beneficiário mais precisa.
