@@ -25,7 +25,7 @@ export const MetricsContainer = () => {
 
   return (
     <div className="hidden w-full items-start justify-between gap-8 md:flex">
-      <div className="metric-card max-w-[250px] translate-y-7 rounded-2xl bg-white/10 p-4 shadow-2xl/10">
+      <div className="metric-card max-w-[250px] translate-y-9 rounded-2xl bg-white/10 p-4 shadow-2xl/10">
         <div className="bg-brand-dark-green mb-5 w-fit rounded-2xl p-3">
           <p className="text-brand-light-green text-[64px] leading-none font-bold">
             <Counter

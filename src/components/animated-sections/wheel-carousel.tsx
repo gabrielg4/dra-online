@@ -7,10 +7,14 @@ import { Draggable } from "gsap/Draggable";
 import { NaMidiaCard } from "@/components/cards/na-midia-card";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Image from "next/image";
+import { useMediaQuery } from "react-responsive";
 
 gsap.registerPlugin(ScrollTrigger, Draggable);
 
 export const WheelCarousel = () => {
+  const isMobile = useMediaQuery({
+    maxWidth: 640,
+  });
   const sectionRef = useRef<HTMLElement | null>(null);
   const curvedCarouselRef = useRef<HTMLDivElement | null>(null);
   const draggableRef = useRef<Draggable | null>(null);
@@ -80,8 +84,8 @@ export const WheelCarousel = () => {
     const scrollTrigger = ScrollTrigger.create({
       trigger: sectionRef.current,
       // markers: true,
-      start: "top 10%",
-      end: `+=${window.innerHeight * MAX_INDEX - 1}`, // altura proporcional ao número de cards
+      start: isMobile ? "center 50%" : "top 10%",
+      end: `+=${window.innerHeight * MAX_INDEX}`, // altura proporcional ao número de cards
       pin: true, // trava a seção
       scrub: 1, // suaviza o scroll
       onUpdate: (self) => {
@@ -110,7 +114,7 @@ export const WheelCarousel = () => {
   }, [MAX_INDEX]);
 
   return (
-    <section ref={sectionRef} className="relative h-screen w-full">
+    <section ref={sectionRef} className="relative h-auto w-full md:h-screen">
       {/* bg-[url('/images/img-bg-midia.svg')] bg-cover bg-top bg-no-repeat */}
       <Image
         src={"/images/img-bg-midia.svg"}

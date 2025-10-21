@@ -74,14 +74,21 @@ export const DiferentialsTabs = () => {
           value="tab6"
           className="tab-button tab-button-blur text-brand-dark-gray data-[state=active]:bg-brand-main-green hover:bg-brand-main-green z-[4] -ml-6 shrink-0 rounded-2xl bg-white py-4 pr-6 pl-8 text-center text-xl font-semibold duration-300 hover:text-white data-[state=active]:text-white"
         >
-          Consultoria
+          Consultório
           <br /> Digital
         </TabsTrigger>
       </TabsList>
 
       <TabsContent value="tab1">
         <div className="flex flex-col items-center gap-5 bg-white md:flex-row md:gap-8 lg:gap-20">
-          <div className="w-full md:w-1/2">
+          <div className="relative w-full md:w-1/2">
+            <Image
+              src={"/images/ic-arrow-up.svg"}
+              alt=""
+              width={48}
+              height={48}
+              className="absolute top-4 right-4"
+            />
             <video
               src="/videos/video1.mp4"
               autoPlay
@@ -116,7 +123,7 @@ export const DiferentialsTabs = () => {
             </Button>
 
             <div className="mt-6 flex w-full flex-col flex-nowrap justify-between gap-4 md:flex-row lg:mt-12">
-              <div className="flex flex-row items-center justify-start md:flex-col">
+              <div className="flex flex-row justify-start max-[640]:items-center md:flex-col">
                 <Image
                   src="/images/ic-shield-check.svg"
                   alt="Ícone check"
@@ -128,7 +135,7 @@ export const DiferentialsTabs = () => {
                   <br className="hidden lg:inline-block" /> garantida
                 </p>
               </div>
-              <div className="flex flex-row items-center justify-start md:flex-col">
+              <div className="flex flex-row justify-start max-[640px]:items-center md:flex-col">
                 <Image
                   src="/images/ic-shield-check.svg"
                   alt="Ícone check"
@@ -140,7 +147,7 @@ export const DiferentialsTabs = () => {
                   <br className="hidden lg:inline-block" /> base em dados
                 </p>
               </div>
-              <div className="flex flex-row items-center justify-start md:flex-col">
+              <div className="flex flex-row justify-start max-[640px]:items-center md:flex-col">
                 <Image
                   src="/images/ic-shield-check.svg"
                   alt="Ícone check"
@@ -158,7 +165,14 @@ export const DiferentialsTabs = () => {
       </TabsContent>
       <TabsContent value="tab2">
         <div className="flex flex-col items-center gap-5 bg-white md:flex-row md:gap-8 lg:gap-20">
-          <div className="w-full md:w-1/2">
+          <div className="relative w-full md:w-1/2">
+            <Image
+              src={"/images/ic-arrow-up.svg"}
+              alt=""
+              width={48}
+              height={48}
+              className="absolute top-4 right-4"
+            />
             <video
               src="/videos/video2.mp4"
               autoPlay
@@ -195,7 +209,7 @@ export const DiferentialsTabs = () => {
             </Button>
 
             <div className="mt-6 flex w-full flex-col flex-nowrap justify-between gap-4 md:flex-row lg:mt-12">
-              <div className="flex flex-row items-center justify-start md:w-1/3 md:flex-col">
+              <div className="flex flex-row justify-start max-[640px]:items-center md:w-1/3 md:flex-col">
                 <Image
                   src="/images/ic-shield-check.svg"
                   alt="Ícone check"
@@ -207,7 +221,7 @@ export const DiferentialsTabs = () => {
                   <br className="hidden lg:inline-block" /> custos assistenciais
                 </p>
               </div>
-              <div className="flex flex-row items-center justify-start md:w-1/3 md:flex-col">
+              <div className="flex flex-row justify-start max-[640px]:items-center md:w-1/3 md:flex-col">
                 <Image
                   src="/images/ic-shield-check.svg"
                   alt="Ícone check"
@@ -219,7 +233,7 @@ export const DiferentialsTabs = () => {
                   <br className="hidden lg:inline-block" /> satisfeitos e fiéis
                 </p>
               </div>
-              <div className="flex flex-row items-center justify-start md:w-1/3 md:flex-col">
+              <div className="flex flex-row justify-start max-[640px]:items-center md:w-1/3 md:flex-col">
                 <Image
                   src="/images/ic-shield-check.svg"
                   alt="Ícone check"
@@ -238,7 +252,14 @@ export const DiferentialsTabs = () => {
       </TabsContent>
       <TabsContent value="tab3">
         <div className="flex flex-col items-center gap-5 bg-white md:flex-row md:gap-8 lg:gap-20">
-          <div className="w-full md:w-1/2">
+          <div className="relative w-full md:w-1/2">
+            <Image
+              src={"/images/ic-arrow-up.svg"}
+              alt=""
+              width={48}
+              height={48}
+              className="absolute top-4 right-4"
+            />
             <video
               src="/videos/video3.mp4"
               autoPlay
@@ -273,37 +294,37 @@ export const DiferentialsTabs = () => {
               </Link>
             </Button>
 
-            <div className="mt-6 flex w-full flex-col flex-nowrap justify-between gap-4 md:flex-row lg:mt-12">
-              <div className="flex flex-row items-center justify-start md:flex-col">
+            <div className="mt-6 flex w-full flex-col flex-nowrap gap-2 md:flex-row lg:mt-12">
+              <div className="flex flex-row justify-start max-[640px]:items-center min-[768]:max-w-[190px] md:flex-col">
                 <Image
                   src="/images/ic-shield-check.svg"
                   alt="Ícone check"
                   width={95}
                   height={95}
                 />
-                <p className="text-brand-dark-gray text-md text-center font-semibold md:mt-2 md:ml-3 lg:text-lg">
+                <p className="text-brand-dark-gray text-md font-semibold md:mt-2 md:ml-3 lg:text-lg">
                   Garantia de acesso a especialistas em todo o país
                 </p>
               </div>
-              <div className="flex flex-row items-center justify-start md:flex-col">
+              <div className="flex flex-row justify-start max-[640px]:items-center min-[768]:max-w-[168px] md:flex-col">
                 <Image
                   src="/images/ic-shield-check.svg"
                   alt="Ícone check"
                   width={95}
                   height={95}
                 />
-                <p className="text-brand-dark-gray text-md text-center font-semibold md:mt-2 md:ml-3 lg:text-lg">
+                <p className="text-brand-dark-gray text-md font-semibold md:mt-2 md:ml-3 lg:text-lg">
                   Gestão inteligente do cuidado
                 </p>
               </div>
-              <div className="flex flex-row items-center justify-start md:flex-col">
+              <div className="flex flex-row justify-start max-[640px]:items-center min-[768]:max-w-[168px] md:flex-col">
                 <Image
                   src="/images/ic-shield-check.svg"
                   alt="Ícone check"
                   width={95}
                   height={95}
                 />
-                <p className="text-brand-dark-gray text-md text-center font-semibold md:mt-2 md:ml-3 lg:text-lg">
+                <p className="text-brand-dark-gray text-md font-semibold md:mt-2 md:ml-3 lg:text-lg">
                   Agendamento em menos de 24h
                 </p>
               </div>
@@ -313,7 +334,14 @@ export const DiferentialsTabs = () => {
       </TabsContent>
       <TabsContent value="tab4">
         <div className="flex flex-col items-center gap-5 bg-white md:flex-row md:gap-8 lg:gap-20">
-          <div className="w-full md:w-1/2">
+          <div className="relative w-full md:w-1/2">
+            <Image
+              src={"/images/ic-arrow-up.svg"}
+              alt=""
+              width={48}
+              height={48}
+              className="absolute top-4 right-4"
+            />
             <video
               src="/videos/video4.mp4"
               autoPlay
@@ -365,7 +393,7 @@ export const DiferentialsTabs = () => {
             </div>
 
             <div className="mt-6 flex w-full flex-col flex-nowrap justify-between gap-4 md:flex-row lg:mt-12">
-              <div className="flex flex-row items-center justify-start md:flex-col">
+              <div className="flex flex-row justify-start max-[640px]:items-center md:flex-col">
                 <Image
                   src="/images/ic-shield-check.svg"
                   alt="Ícone check"
@@ -377,7 +405,7 @@ export const DiferentialsTabs = () => {
                   <br className="hidden lg:inline-block" /> indiretos
                 </p>
               </div>
-              <div className="flex flex-row items-center justify-start md:flex-col">
+              <div className="flex flex-row justify-start max-[640px]:items-center md:flex-col">
                 <Image
                   src="/images/ic-shield-check.svg"
                   alt="Ícone check"
@@ -389,7 +417,7 @@ export const DiferentialsTabs = () => {
                   <br className="hidden lg:inline-block" /> em ESG
                 </p>
               </div>
-              <div className="flex flex-row items-center justify-start md:flex-col">
+              <div className="flex flex-row justify-start max-[640px]:items-center md:flex-col">
                 <Image
                   src="/images/ic-shield-check.svg"
                   alt="Ícone check"
@@ -407,7 +435,14 @@ export const DiferentialsTabs = () => {
       </TabsContent>
       <TabsContent value="tab5">
         <div className="flex flex-col items-center gap-5 bg-white md:flex-row md:gap-8 lg:gap-20">
-          <div className="w-full md:w-1/2">
+          <div className="relative w-full md:w-1/2">
+            <Image
+              src={"/images/ic-arrow-up.svg"}
+              alt=""
+              width={48}
+              height={48}
+              className="absolute top-4 right-4"
+            />
             <video
               src="/videos/video5.mp4"
               autoPlay
@@ -442,7 +477,7 @@ export const DiferentialsTabs = () => {
             </Button>
 
             <div className="mt-6 flex w-full flex-col flex-nowrap justify-between gap-4 md:flex-row lg:mt-12">
-              <div className="flex flex-row items-center justify-start md:flex-col">
+              <div className="flex flex-row justify-start max-[640px]:items-center md:flex-col">
                 <Image
                   src="/images/ic-shield-check.svg"
                   alt="Ícone check"
@@ -454,7 +489,7 @@ export const DiferentialsTabs = () => {
                   <br className="hidden lg:inline-block" /> paciente
                 </p>
               </div>
-              <div className="flex flex-row items-center justify-start md:flex-col">
+              <div className="flex flex-row justify-start max-[640px]:items-center md:flex-col">
                 <Image
                   src="/images/ic-shield-check.svg"
                   alt="Ícone check"
@@ -466,7 +501,7 @@ export const DiferentialsTabs = () => {
                   <br className="hidden lg:inline-block" /> recursos
                 </p>
               </div>
-              <div className="flex flex-row items-center justify-start md:flex-col">
+              <div className="flex flex-row justify-start max-[640px]:items-center md:flex-col">
                 <Image
                   src="/images/ic-shield-check.svg"
                   alt="Ícone check"
@@ -484,7 +519,14 @@ export const DiferentialsTabs = () => {
       </TabsContent>
       <TabsContent value="tab6">
         <div className="flex flex-col items-center gap-5 bg-white md:flex-row md:gap-8 lg:gap-20">
-          <div className="w-full md:w-1/2">
+          <div className="relative w-full md:w-1/2">
+            <Image
+              src={"/images/ic-arrow-up.svg"}
+              alt=""
+              width={48}
+              height={48}
+              className="absolute top-4 right-4"
+            />
             <video
               src="/videos/video6.mp4"
               autoPlay
@@ -521,7 +563,7 @@ export const DiferentialsTabs = () => {
             </Button>
 
             <div className="mt-6 flex w-full flex-col flex-nowrap justify-between gap-4 md:flex-row lg:mt-12">
-              <div className="flex flex-row items-center justify-start md:flex-col">
+              <div className="flex flex-row justify-start max-[640px]:items-center md:flex-col">
                 <Image
                   src="/images/ic-shield-check.svg"
                   alt="Ícone check"
@@ -533,7 +575,7 @@ export const DiferentialsTabs = () => {
                   <br className="hidden lg:inline-block" /> sem altos custos
                 </p>
               </div>
-              <div className="flex flex-row items-center justify-start md:flex-col">
+              <div className="flex flex-row justify-start max-[640px]:items-center md:flex-col">
                 <Image
                   src="/images/ic-shield-check.svg"
                   alt="Ícone check"
@@ -545,7 +587,7 @@ export const DiferentialsTabs = () => {
                   <br className="hidden lg:inline-block" /> diagnóstica
                 </p>
               </div>
-              <div className="flex flex-row items-center justify-start md:flex-col">
+              <div className="flex flex-row justify-start max-[640px]:items-center md:flex-col">
                 <Image
                   src="/images/ic-shield-check.svg"
                   alt="Ícone check"

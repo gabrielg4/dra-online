@@ -112,7 +112,7 @@ export const HeroAnimation = () => {
         >
           <div
             ref={card1}
-            className="relative hidden w-full max-w-[230px] -translate-y-24 lg:block"
+            className="max-w relative hidden w-[250px] -translate-y-24 lg:block"
           >
             {/* <Image
               src="/images/img-placeholder-hero-1.webp"
@@ -130,8 +130,8 @@ export const HeroAnimation = () => {
               ></video>
             </div>
             {/* <div className="mobile-fone-left "></div> */}
-            <div className="absolute top-0 left-0 z-10 flex h-full w-full flex-col justify-end p-6 pb-20">
-              <p className="text-2xl font-bold text-white">
+            <div className="absolute top-0 left-0 z-10 flex h-full w-full flex-col justify-end px-9 pb-6">
+              <p className="text-[28px] leading-[130%] font-bold text-white">
                 Modelo assistencial
                 <br />
                 <span className="text-brand-light-green">100% digital</span>
@@ -140,7 +140,7 @@ export const HeroAnimation = () => {
           </div>
           <div
             ref={card2}
-            className="bg-brand-main-green h-[300px] w-full max-w-[216px] rounded-xl p-5 lg:h-[350px]"
+            className="bg-brand-main-green h-[300px] w-[220px] rounded-xl p-5 lg:h-[350px]"
           >
             <p className="text-brand-light-green mb-3 text-xl font-bold lg:text-2xl">
               <span className="text-brand-dark-green">Tecnologia</span> própria,
@@ -187,7 +187,7 @@ export const HeroAnimation = () => {
         >
           <div
             ref={card3}
-            className="bg-brand-light-green relative z-10 h-[300px] w-full max-w-[216px] rounded-xl p-5 lg:h-[350px]"
+            className="bg-brand-light-green relative z-10 h-[300px] w-[220px] rounded-xl p-5 lg:h-[350px]"
           >
             <p className="text-xl font-bold text-white lg:text-xl">
               <span className="text-brand-dark-green">
@@ -199,7 +199,7 @@ export const HeroAnimation = () => {
           </div>
           <div
             ref={card4}
-            className="relative hidden w-full max-w-[230px] -translate-y-24 lg:block"
+            className="relative hidden w-[250px] -translate-y-24 lg:block"
           >
             {/* <Image
               src="/images/img-placeholder-hero-2.webp"
@@ -216,7 +216,7 @@ export const HeroAnimation = () => {
                 playsInline
               ></video>
             </div>
-            <div className="absolute top-0 left-0 z-10 flex h-full w-full flex-col justify-end p-3 pb-12">
+            <div className="absolute top-0 left-0 z-10 flex h-full w-full flex-col justify-end px-9 pb-6">
               <p className="text-[17px] font-bold text-white">
                 <span className="text-brand-light-green text-2xl">
                   White Label

@@ -44,7 +44,7 @@ export const Hero = () => {
 
   return (
     <section className="overflow-hidden bg-[url('/images/img-bg_hero.webp')] bg-cover bg-center pt-40 pb-10 md:pb-20">
-      <div className="container flex flex-col items-center justify-center">
+      <div className="mx-auto flex w-full max-w-[1280px] flex-col items-center justify-center px-4">
         <h1
           id="title"
           className="mb-6 text-center text-[32px] leading-[110%] font-bold text-white md:text-[40px] lg:text-[48px]"
