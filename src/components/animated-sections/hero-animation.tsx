@@ -160,17 +160,14 @@ export const HeroAnimation = () => {
             </ul>
           </div>
         </div>
-        <div
-          ref={midContainer}
-          className="w-full max-w-[217px] -translate-y-16"
-        >
+        <div ref={midContainer} className="w-full -translate-y-16">
           {/* <Image
             src="/images/img-placeholder-hero-3.webp"
             alt=""
             width={217}
             height={417}
           /> */}
-          <div className="video-masked">
+          <div className="video-masked !h-full !w-full">
             <video
               src={"/videos/video27.mp4"}
               autoPlay

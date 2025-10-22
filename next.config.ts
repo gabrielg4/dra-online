@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
     reactCompiler: false,
   },
   images: {
+    domains: ["localhost"],
     remotePatterns: [
       {
         protocol: "https",
@@ -12,6 +13,10 @@ const nextConfig: NextConfig = {
         port: "",
         pathname: "/dronline/**", // cobre /dronline/Scene-1.mov
         // search: '' // opcional (para controlar querystring)
+      },
+      {
+        protocol: "http",
+        hostname: "localhost:3000",
       },
     ],
   },

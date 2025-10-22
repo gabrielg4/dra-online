@@ -1,8 +1,30 @@
-import { NaMidiaCard2 } from "@/components/cards/na-midia-card-2";
 import { NaMidiaHero } from "@/components/na-midia-hero";
+import { getPayload } from "payload";
+import config from "@payload-config";
 import React from "react";
+import type { NaMidia } from "../../../../payload-types";
+import { NaMidiaGrid } from "@/components/na-midia-grid";
 
-export default function NoticiasPage() {
+export default async function NoticiasPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ proxima_pagina?: string }>;
+}) {
+  const { proxima_pagina = 1 } = (await searchParams) || {};
+  const payload = await getPayload({ config });
+
+  const articles = await payload.find({
+    collection: "na-midia",
+    depth: 3,
+    limit: Number(9 * Number(proxima_pagina) || 1),
+    pagination: true,
+  });
+
+  const columns: NaMidia[][] = [[], [], []];
+  articles.docs.forEach((article: NaMidia, index) => {
+    columns[index % 3].push(article);
+  });
+
   return (
     <>
       <NaMidiaHero />
@@ -14,23 +36,12 @@ export default function NoticiasPage() {
           <h2 className="mb-8 text-center text-[32px] leading-[110%] font-bold text-white md:mb-10 lg:mb-14 lg:text-[40px]">
             Veja mais notícias aqui
           </h2>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-            <div className="grid gap-8 md:pt-20">
-              <NaMidiaCard2 />
-              <NaMidiaCard2 />
-              <NaMidiaCard2 />
-            </div>
-            <div className="grid gap-8 md:pb-20">
-              <NaMidiaCard2 />
-              <NaMidiaCard2 />
-              <NaMidiaCard2 />
-            </div>
-            <div className="grid gap-8 md:pt-20">
-              <NaMidiaCard2 />
-              <NaMidiaCard2 />
-              <NaMidiaCard2 />
-            </div>
-          </div>
+          <NaMidiaGrid
+            nextPage={articles.nextPage}
+            column1={columns[0]}
+            column2={columns[1]}
+            column3={columns[2]}
+          />
         </div>
       </section>
     </>

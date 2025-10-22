@@ -3,8 +3,13 @@ import { useGSAP } from "@gsap/react";
 import { WheelCarousel } from "../animated-sections/wheel-carousel";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
+import type { NaMidia } from "../../../payload-types";
 
-export const Midia = () => {
+interface MidiaProps {
+  articles: NaMidia[];
+}
+
+export const Midia = ({ articles }: MidiaProps) => {
   useGSAP(() => {
     const titleSplit = new SplitText(".title-section-midia", {
       type: "chars, words",
@@ -37,7 +42,7 @@ export const Midia = () => {
           <span className="font-semibold">na mídia</span>
         </h2>
       </div>
-      <WheelCarousel />
+      <WheelCarousel articles={articles} />
     </section>
   );
 };

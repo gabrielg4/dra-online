@@ -1,6 +1,5 @@
 "use client";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 import React, { type ReactElement } from "react";
 import {
   Carousel,
@@ -16,7 +15,7 @@ interface TimelineContentProps {
   historyData: {
     title: string;
     content: ReactElement;
-    imageUrl: string;
+    videoUrl: string;
   }[];
 }
 
@@ -41,27 +40,31 @@ export const TimelineContent = ({
         }}
       >
         <CarouselContent>
-          {historyData.map(({ content, imageUrl, title }, index) => (
+          {historyData.map(({ content, videoUrl, title }, index) => (
             <CarouselItem
               key={index}
               className={cn("flex justify-center md:items-center")}
             >
               <div className={"flex flex-col gap-5 lg:flex-row lg:gap-10"}>
                 <div className="flex w-full items-center lg:w-1/2">
-                  <Image
-                    src={imageUrl}
-                    alt={title}
+                  <video
+                    src={videoUrl}
                     width={540}
                     height={330}
-                    quality={100}
-                    className="mx-auto lg:mx-0"
-                  />
+                    className="mx-auto h-full w-full rounded-lg object-cover lg:mx-0"
+                    autoPlay={true}
+                    muted={true}
+                    loop={true}
+                    playsInline={true}
+                  ></video>
                 </div>
-                <div className="flex w-full flex-col justify-center lg:w-1/2">
-                  <h2 className="text-brand-light-green mb-5 text-2xl font-bold md:text-[28px] lg:mb-6">
-                    {title}
-                  </h2>
-                  {content}
+                <div className="flex w-full flex-col justify-between lg:w-1/2">
+                  <div>
+                    <h2 className="text-brand-light-green mb-5 text-2xl font-bold md:text-[28px] lg:mb-6">
+                      {title}
+                    </h2>
+                    {content}
+                  </div>
 
                   {historyData.length > 1 && (
                     <div className="relative mt-6 flex items-center gap-3">

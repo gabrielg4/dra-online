@@ -8,10 +8,15 @@ import { NaMidiaCard } from "@/components/cards/na-midia-card";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { useMediaQuery } from "react-responsive";
+import type { NaMidia } from "../../../payload-types";
 
 gsap.registerPlugin(ScrollTrigger, Draggable);
 
-export const WheelCarousel = () => {
+interface WheelCarouselProps {
+  articles: NaMidia[];
+}
+
+export const WheelCarousel = ({ articles }: WheelCarouselProps) => {
   const isMobile = useMediaQuery({
     maxWidth: 640,
   });
@@ -19,10 +24,8 @@ export const WheelCarousel = () => {
   const curvedCarouselRef = useRef<HTMLDivElement | null>(null);
   const draggableRef = useRef<Draggable | null>(null);
 
-  const cardsArr = Array.from({ length: 5 }, () => NaMidiaCard);
-
   const STEP = 9;
-  const MAX_INDEX = cardsArr.length - 1;
+  const MAX_INDEX = articles.length - 1;
 
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -111,7 +114,7 @@ export const WheelCarousel = () => {
       scrollTrigger?.kill();
       draggableRef.current = null;
     };
-  }, [MAX_INDEX]);
+  }, [MAX_INDEX, isMobile]);
 
   return (
     <section ref={sectionRef} className="relative h-auto w-full md:h-screen">
@@ -130,14 +133,14 @@ export const WheelCarousel = () => {
           ref={curvedCarouselRef}
           className="carousel absolute top-10 left-[calc(50%-150px)] origin-[150px_2500px] will-change-transform"
         >
-          {cardsArr.map((Card, i) => (
+          {articles.map((article, i) => (
             <div
               key={i}
               data-wheel-card
               className={`absolute h-full w-[290px] origin-[150px_2500px]`}
               style={{ transform: `rotate(${i * STEP}deg)` }}
             >
-              <Card isActive={i === activeIndex} />
+              <NaMidiaCard article={article} isActive={i === activeIndex} />
             </div>
           ))}
         </div>

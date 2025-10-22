@@ -5,8 +5,13 @@ import { BlogCarousel } from "../blog-carousel";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
+import type { Blog as BlogCMS } from "../../../payload-types";
 
-export const Blog = () => {
+interface BlogProps {
+  featuredPosts: BlogCMS[];
+}
+
+export const Blog = ({ featuredPosts }: BlogProps) => {
   useGSAP(() => {
     const titleSplit = new SplitText(".title-section-blog", {
       type: "chars, words",
@@ -71,7 +76,7 @@ export const Blog = () => {
           inovação e telemedicina
         </h2>
         <div className="blog-wrapper">
-          <BlogCarousel />
+          <BlogCarousel featuredPosts={featuredPosts} />
         </div>
       </div>
     </section>

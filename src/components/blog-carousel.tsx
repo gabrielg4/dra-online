@@ -10,10 +10,14 @@ import { BlogCard } from "./cards/blog-card";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import type { Blog } from "../../payload-types";
 
-export const BlogCarousel = () => {
+interface BlogCarouselProps {
+  featuredPosts: Blog[];
+}
+
+export const BlogCarousel = ({ featuredPosts }: BlogCarouselProps) => {
   const [currentActive, setCurrentActive] = useState(0);
-  const blogPosts = [0, 1, 2, 3, 4]; // placeholders, depois você pode substituir pelos dados reais
 
   return (
     <div className="relative w-full sm:px-14">
@@ -40,7 +44,7 @@ export const BlogCarousel = () => {
         }}
         wrapperClass="pb-12 lg:pb-0"
       >
-        {blogPosts.map((i) => (
+        {[...featuredPosts, ...featuredPosts].map((blogpost, i) => (
           <SwiperSlide key={i}>
             <div
               className={cn(
@@ -48,7 +52,7 @@ export const BlogCarousel = () => {
                 currentActive !== i && "scale-90 opacity-80",
               )}
             >
-              <BlogCard />
+              <BlogCard blogpostData={blogpost} />
             </div>
           </SwiperSlide>
         ))}

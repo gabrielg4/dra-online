@@ -99,7 +99,7 @@ export default function ObrigadoPage() {
             Explore nosso blog para conteúdos exclusivos sobre saúde digital e
             telemedicina.
           </p>
-          <BlogCarousel />
+          {/* <BlogCarousel /> */}
         </div>
       </section>
     </>

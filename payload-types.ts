@@ -68,6 +68,12 @@ export interface Config {
   blocks: {};
   collections: {
     users: User;
+    media: Media;
+    blog: Blog;
+    categorias: Categoria;
+    'na-midia': NaMidia;
+    'case-de-sucesso': CaseDeSucesso;
+    depoimentos: Depoimento;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -75,6 +81,12 @@ export interface Config {
   collectionsJoins: {};
   collectionsSelect: {
     users: UsersSelect<false> | UsersSelect<true>;
+    media: MediaSelect<false> | MediaSelect<true>;
+    blog: BlogSelect<false> | BlogSelect<true>;
+    categorias: CategoriasSelect<false> | CategoriasSelect<true>;
+    'na-midia': NaMidiaSelect<false> | NaMidiaSelect<true>;
+    'case-de-sucesso': CaseDeSucessoSelect<false> | CaseDeSucessoSelect<true>;
+    depoimentos: DepoimentosSelect<false> | DepoimentosSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -117,6 +129,8 @@ export interface UserAuthOperations {
  */
 export interface User {
   id: number;
+  foto?: (number | null) | Media;
+  nome?: string | null;
   updatedAt: string;
   createdAt: string;
   email: string;
@@ -137,14 +151,163 @@ export interface User {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "media".
+ */
+export interface Media {
+  id: number;
+  alt: string;
+  updatedAt: string;
+  createdAt: string;
+  url?: string | null;
+  thumbnailURL?: string | null;
+  filename?: string | null;
+  mimeType?: string | null;
+  filesize?: number | null;
+  width?: number | null;
+  height?: number | null;
+  focalX?: number | null;
+  focalY?: number | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "blog".
+ */
+export interface Blog {
+  id: number;
+  imagem_de_destaque: number | Media;
+  titulo: string;
+  slug?: string | null;
+  descricao: string;
+  conteudo: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  categoria: number | Categoria;
+  autor: number | User;
+  e_destaque?: ('Sim' | 'Não') | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "categorias".
+ */
+export interface Categoria {
+  id: number;
+  titulo: string;
+  slug?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "na-midia".
+ */
+export interface NaMidia {
+  id: number;
+  logo: number | Media;
+  titulo: string;
+  link_artigo: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "case-de-sucesso".
+ */
+export interface CaseDeSucesso {
+  id: number;
+  imagem_de_destaque: number | Media;
+  nome_da_empresa: string;
+  titulo: string;
+  slug?: string | null;
+  descricao: string;
+  melhorias?:
+    | {
+        porcentagem_melhoria?: number | null;
+        descricao_melhoria?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  conteudo: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  autor: number | User;
+  e_destaque?: ('Sim' | 'Não') | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "depoimentos".
+ */
+export interface Depoimento {
+  id: number;
+  foto?: (number | null) | Media;
+  nome: string;
+  especialidade?: string | null;
+  depoimento: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
   id: number;
-  document?: {
-    relationTo: 'users';
-    value: number | User;
-  } | null;
+  document?:
+    | ({
+        relationTo: 'users';
+        value: number | User;
+      } | null)
+    | ({
+        relationTo: 'media';
+        value: number | Media;
+      } | null)
+    | ({
+        relationTo: 'blog';
+        value: number | Blog;
+      } | null)
+    | ({
+        relationTo: 'categorias';
+        value: number | Categoria;
+      } | null)
+    | ({
+        relationTo: 'na-midia';
+        value: number | NaMidia;
+      } | null)
+    | ({
+        relationTo: 'case-de-sucesso';
+        value: number | CaseDeSucesso;
+      } | null)
+    | ({
+        relationTo: 'depoimentos';
+        value: number | Depoimento;
+      } | null);
   globalSlug?: string | null;
   user: {
     relationTo: 'users';
@@ -192,6 +355,8 @@ export interface PayloadMigration {
  * via the `definition` "users_select".
  */
 export interface UsersSelect<T extends boolean = true> {
+  foto?: T;
+  nome?: T;
   updatedAt?: T;
   createdAt?: T;
   email?: T;
@@ -208,6 +373,96 @@ export interface UsersSelect<T extends boolean = true> {
         createdAt?: T;
         expiresAt?: T;
       };
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "media_select".
+ */
+export interface MediaSelect<T extends boolean = true> {
+  alt?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  url?: T;
+  thumbnailURL?: T;
+  filename?: T;
+  mimeType?: T;
+  filesize?: T;
+  width?: T;
+  height?: T;
+  focalX?: T;
+  focalY?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "blog_select".
+ */
+export interface BlogSelect<T extends boolean = true> {
+  imagem_de_destaque?: T;
+  titulo?: T;
+  slug?: T;
+  descricao?: T;
+  conteudo?: T;
+  categoria?: T;
+  autor?: T;
+  e_destaque?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "categorias_select".
+ */
+export interface CategoriasSelect<T extends boolean = true> {
+  titulo?: T;
+  slug?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "na-midia_select".
+ */
+export interface NaMidiaSelect<T extends boolean = true> {
+  logo?: T;
+  titulo?: T;
+  link_artigo?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "case-de-sucesso_select".
+ */
+export interface CaseDeSucessoSelect<T extends boolean = true> {
+  imagem_de_destaque?: T;
+  nome_da_empresa?: T;
+  titulo?: T;
+  slug?: T;
+  descricao?: T;
+  melhorias?:
+    | T
+    | {
+        porcentagem_melhoria?: T;
+        descricao_melhoria?: T;
+        id?: T;
+      };
+  conteudo?: T;
+  autor?: T;
+  e_destaque?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "depoimentos_select".
+ */
+export interface DepoimentosSelect<T extends boolean = true> {
+  foto?: T;
+  nome?: T;
+  especialidade?: T;
+  depoimento?: T;
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

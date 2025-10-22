@@ -1,4 +1,4 @@
-import { BlogCarousel } from "@/components/blog-carousel";
+// import { BlogCarousel } from "@/components/blog-carousel";
 import { GetInTouch2 } from "@/components/home-sections/get-in-touch2";
 import Image from "next/image";
 import React from "react";
@@ -239,7 +239,7 @@ export default function Blogpage() {
           <h2 className="mb-8 text-center text-[28px] leading-[110%] font-bold text-white md:mb-14 md:text-[32px] lg:text-[40px]">
             Outras <span className="font-bold">Histórias de Sucesso</span>
           </h2>
-          <BlogCarousel />
+          {/* <BlogCarousel /> */}
         </div>
       </section>
       <GetInTouch2 />

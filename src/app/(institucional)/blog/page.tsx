@@ -1,9 +1,40 @@
+import { getPayload } from "payload";
+import config from "@payload-config";
+
 import { BlogGrid } from "@/components/blog-grid";
 import { FeaturedPostsCarousel } from "@/components/featured-posts-carousel";
 import { SearchInput } from "@/components/search-input";
 import React from "react";
+import { buildWhereClause } from "@/utils/build-where-clause";
 
-export default function BlogPage() {
+export default async function BlogPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ categoria?: string; search?: string }>;
+}) {
+  const { categoria = "", search = "" } = (await searchParams) || {};
+  const payload = await getPayload({ config });
+  const whereClause = buildWhereClause({ categoria, search });
+
+  const [posts, featuredPosts] = await Promise.all([
+    await payload.find({
+      collection: "blog",
+      depth: 3,
+      limit: 9,
+      page: 1,
+      pagination: true,
+      ...whereClause,
+    }),
+    await payload.find({
+      collection: "blog",
+      limit: 3,
+      where: {
+        e_destaque: {
+          equals: "Sim",
+        },
+      },
+    }),
+  ]);
   return (
     <>
       <section className="mb:pb-14 bg-[url(/images/img-bg-blog.svg)] bg-cover bg-bottom bg-no-repeat pt-40 pb-10 md:h-[580px] md:pt-20">
@@ -24,13 +55,15 @@ export default function BlogPage() {
             <SearchInput />
           </div>
           <div className="w-full md:w-1/2">
-            <FeaturedPostsCarousel />
+            {featuredPosts.totalDocs > 0 && (
+              <FeaturedPostsCarousel featuresPosts={featuredPosts} />
+            )}
           </div>
         </div>
       </section>
-      <section className="md:14 bg-[url(/images/img-bg-section-blog.svg)] bg-cover bg-top bg-no-repeat py-12 lg:py-20">
+      <section className="md:14 bg-[url(/images/img-bg-section-blog.svg)] bg-cover bg-top bg-no-repeat pt-10 pb-20">
         <div className="container">
-          <BlogGrid />
+          <BlogGrid posts={posts} />
         </div>
       </section>
     </>

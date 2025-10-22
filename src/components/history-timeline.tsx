@@ -7,7 +7,7 @@ import { TimelineContent } from "./timeline-content";
 const historyData = {
   "2022": [
     {
-      imageUrl: "/images/img-2022-timeline.webp",
+      videoUrl: "/videos/video-tl-4.mp4",
       title: "Um desafio sem precedentes",
       content: (
         <>
@@ -21,10 +21,24 @@ const historyData = {
         </>
       ),
     },
+    {
+      videoUrl: "/videos/video-tl-3.mp4",
+      title: "Telemedicina como protagonista",
+      content: (
+        <>
+          <p className="text-lg text-white">
+            A telemedicina deixou de ser tendência e se tornou realidade. A Dr.
+            Online assumiu papel de destaque, levando médicos e especialistas
+            para dentro das casas dos pacientes, com atendimento seguro,
+            resolutivo e humanizado.
+          </p>
+        </>
+      ),
+    },
   ],
   "2023": [
     {
-      imageUrl: "/images/img-timeline-2023-1.webp",
+      videoUrl: "/videos/video-tl-6.mp4",
       title: "De telemedicina a ecossistema de saúde digital",
       content: (
         <>
@@ -40,7 +54,7 @@ const historyData = {
       ),
     },
     {
-      imageUrl: "/images/img-timeline-2023-2.webp",
+      videoUrl: "/videos/video-tl-5.mp4",
       title: "Expansão acelerada",
       content: (
         <>
@@ -56,7 +70,7 @@ const historyData = {
   ],
   "2024": [
     {
-      imageUrl: "/images/img-timeline-2024.webp",
+      videoUrl: "/videos/video-tl-2.mp4",
       title: "Inovação em escala",
       content: (
         <>
@@ -71,7 +85,7 @@ const historyData = {
   ],
   "2025": [
     {
-      imageUrl: "/images/img-timeline-2025-1.webp",
+      videoUrl: "/videos/video-tl-7.mp4",
       title: "Um marco histórico",
       content: (
         <>
@@ -86,7 +100,7 @@ const historyData = {
       ),
     },
     {
-      imageUrl: "/images/img-timeline-2025-2.webp",
+      videoUrl: "/videos/video-tl-1.mp4",
       title: "Seguimos Transformando a saúde no Brasil",
       content: (
         <>
@@ -119,53 +133,57 @@ export const HistoryTimeline = () => {
         <button
           onClick={() => handleSelectTimelineItem(0)}
           className={cn(
-            "border-brand-light-green text-brand-light-green cursor-pointer rounded-full border px-4 py-2 text-[20px] leading-[130%] hover:border-white hover:text-white",
-            activeTime >= 0 && "border-white text-white",
+            "hover:border-brand-light-green hover:text-brand-dark-green hover:bg-brand-light-green cursor-pointer rounded-full border border-white px-4 py-2 text-[20px] leading-[130%] font-bold text-white duration-300",
+            activeTime >= 0 &&
+              "border-brand-light-green bg-brand-light-green text-brand-dark-green",
           )}
         >
           2022
         </button>
         <div
           className={cn(
-            "bg-brand-light-green h-[0.5px] w-14",
-            activeTime >= 0 && "bg-white",
+            "h-[0.5px] w-14 bg-white",
+            activeTime >= 0 && "bg-brand-light-green",
           )}
         />
         <button
           onClick={() => handleSelectTimelineItem(1)}
           className={cn(
-            "border-brand-light-green text-brand-light-green leading-[130%]hover:border-white cursor-pointer rounded-full border px-4 py-2 text-[20px] hover:border-white hover:text-white",
-            activeTime >= 1 && "border-white text-white",
+            "hover:border-brand-light-green hover:text-brand-dark-green hover:bg-brand-light-green cursor-pointer rounded-full border border-white px-4 py-2 text-[20px] leading-[130%] font-bold text-white duration-300",
+            activeTime >= 1 &&
+              "border-brand-light-green bg-brand-light-green text-brand-dark-green",
           )}
         >
           2023
         </button>
         <div
           className={cn(
-            "bg-brand-light-green h-[0.5px] w-14",
-            activeTime >= 1 && "bg-white",
+            "h-[0.5px] w-14 bg-white",
+            activeTime >= 1 && "bg-brand-light-green",
           )}
         />
         <button
           onClick={() => handleSelectTimelineItem(2)}
           className={cn(
-            "border-brand-light-green text-brand-light-green leading-[130%]hover:border-white cursor-pointer rounded-full border px-4 py-2 text-[20px] hover:border-white hover:text-white",
-            activeTime >= 2 && "border-white text-white",
+            "hover:border-brand-light-green hover:text-brand-dark-green hover:bg-brand-light-green cursor-pointer rounded-full border border-white px-4 py-2 text-[20px] leading-[130%] font-bold text-white duration-300",
+            activeTime >= 2 &&
+              "border-brand-light-green bg-brand-light-green text-brand-dark-green",
           )}
         >
           2024
         </button>
         <div
           className={cn(
-            "bg-brand-light-green h-[0.5px] w-14",
-            activeTime >= 2 && "bg-white",
+            "h-[0.5px] w-14 bg-white",
+            activeTime >= 2 && "bg-brand-light-green",
           )}
         />
         <button
           onClick={() => handleSelectTimelineItem(3)}
           className={cn(
-            "border-brand-light-green text-brand-light-green leading-[130%]hover:border-white cursor-pointer rounded-full border px-4 py-2 text-[20px] hover:border-white hover:text-white",
-            activeTime >= 3 && "border-white text-white",
+            "hover:border-brand-light-green hover:text-brand-dark-green hover:bg-brand-light-green cursor-pointer rounded-full border border-white px-4 py-2 text-[20px] leading-[130%] font-bold text-white duration-300",
+            activeTime >= 3 &&
+              "border-brand-light-green bg-brand-light-green text-brand-dark-green",
           )}
         >
           2025
@@ -176,8 +194,8 @@ export const HistoryTimeline = () => {
           height={9}
           viewBox="0 0 57 9"
           className={cn(
-            "fill-[#A6D05D] transition-all duration-200",
-            activeTime >= 3 && "fill-white",
+            "fill-white transition-all duration-200",
+            activeTime >= 3 && "fill-[#A6D05D]",
           )}
         >
           <path d="M56.853 4.955a.5.5 0 0 0 0-.708l-3.181-3.182a.5.5 0 1 0-.707.708L55.793 4.6l-2.828 2.828a.5.5 0 1 0 .707.707l3.181-3.181ZM.5 4.6v.5h56v-1H.5v.5Z" />

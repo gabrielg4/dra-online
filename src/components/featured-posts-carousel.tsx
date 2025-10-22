@@ -1,8 +1,16 @@
 "use client";
 import React from "react";
 import { BlogCard } from "./cards/blog-card";
+import type { PaginatedDocs } from "payload";
+import type { Blog } from "../../payload-types";
 
-export const FeaturedPostsCarousel = () => {
+interface FeaturedPostsCarouselProps {
+  featuresPosts?: PaginatedDocs<Blog>;
+}
+
+export const FeaturedPostsCarousel = ({
+  featuresPosts,
+}: FeaturedPostsCarouselProps) => {
   const [activeIndex, setActiveIndex] = React.useState(0);
   const slides = [0, 1, 2];
   const nextSlide = () => {
@@ -47,19 +55,18 @@ export const FeaturedPostsCarousel = () => {
       };
     }
   };
-
   return (
     <div>
       <div className="relative w-full max-w-6xl">
         {/* Carousel Container */}
         <div className="relative flex h-[400px] items-center justify-center">
-          {slides.map((index) => (
+          {featuresPosts?.docs.map((post, index) => (
             <div
               key={index}
               className="absolute w-full max-w-md transition-all duration-500 ease-out"
               style={getSlideStyle(index)}
             >
-              <BlogCard />
+              <BlogCard blogpostData={post} />
             </div>
           ))}
         </div>
