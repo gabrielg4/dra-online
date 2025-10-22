@@ -168,7 +168,7 @@ export const MobileMenu = () => {
                           </Link>
 
                           <Link
-                            href="/solucoes/consultorio"
+                            href="/solucao/consultorio"
                             className="group/nav-link flex items-start"
                           >
                             <Image

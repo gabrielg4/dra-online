@@ -46,7 +46,7 @@ export const Navigation = ({ textColor = "text-white" }: NavigationProps) => {
                 </div>
                 <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
                   <Link
-                    href="/solucoes/saude-mental"
+                    href="/solucao/saude-mental"
                     className="group flex items-start"
                   >
                     <Image
@@ -65,7 +65,7 @@ export const Navigation = ({ textColor = "text-white" }: NavigationProps) => {
                     </div>
                   </Link>
                   <Link
-                    href="/solucoes/entrevista-qualificada"
+                    href="/solucao/entrevista-qualificada"
                     className="group flex items-start"
                   >
                     <Image
@@ -84,7 +84,7 @@ export const Navigation = ({ textColor = "text-white" }: NavigationProps) => {
                     </div>
                   </Link>
                   <Link
-                    href="/solucoes/atecao-integrada-a-saude"
+                    href="/solucao/atecao-integrada-a-saude"
                     className="group flex items-start"
                   >
                     <Image
@@ -103,7 +103,7 @@ export const Navigation = ({ textColor = "text-white" }: NavigationProps) => {
                     </div>
                   </Link>
                   <Link
-                    href="/solucoes/pronto-atendimento"
+                    href="/solucao/pronto-atendimento"
                     className="group flex items-start"
                   >
                     <Image
@@ -122,7 +122,7 @@ export const Navigation = ({ textColor = "text-white" }: NavigationProps) => {
                     </div>
                   </Link>
                   <Link
-                    href="/solucoes/consulta-online"
+                    href="/solucao/consulta-online"
                     className="group flex items-start"
                   >
                     <Image
@@ -141,7 +141,7 @@ export const Navigation = ({ textColor = "text-white" }: NavigationProps) => {
                     </div>
                   </Link>
                   <Link
-                    href="/solucoes/consultorio-digital"
+                    href="/solucao/consultorio"
                     className="group flex items-start"
                   >
                     <Image

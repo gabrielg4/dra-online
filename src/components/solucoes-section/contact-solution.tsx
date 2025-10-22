@@ -12,6 +12,7 @@ export const ContactSolution = () => {
     const titleSplit = new SplitText(".title-contact-section", {
       type: "chars, words",
     });
+
     gsap.from(titleSplit.chars, {
       yPercent: 100,
       opacity: 0,
@@ -19,7 +20,19 @@ export const ContactSolution = () => {
       ease: "expo.out",
       stagger: 0.05,
       scrollTrigger: {
-        trigger: "#get-in-touch",
+        trigger: "#contato",
+        start: "top 80%",
+      },
+    });
+
+    gsap.from(".description-contact", {
+      xPercent: -100,
+      opacity: 0,
+      duration: 1,
+      ease: "expo.out",
+      stagger: 0.05,
+      scrollTrigger: {
+        trigger: "#contato",
         start: "top 80%",
       },
     });
@@ -38,7 +51,7 @@ export const ContactSolution = () => {
               Preencha o formulário <br className="hidden lg:inline-block" />e
               esteja sempre Online!
             </h2>
-            <p className="mb-5 text-center text-lg leading-normal font-normal text-white md:mb-10 md:text-start">
+            <p className="description-contact mb-5 text-center text-lg leading-normal font-normal text-white md:mb-10 md:text-start">
               Agende uma demonstração e descubra como simplificar a
               <br className="hidden lg:inline-block" /> telemedicina na sua
               empresa.

@@ -77,7 +77,7 @@ export const StepsSection = () => {
                   Whatsapp{" "}
                 </>
               }
-              classNames="absolute top-40  md:mt-10 lg:-top-20 left-1/2  -translate-x-1/2 w-full"
+              classNames="absolute md:mt-10 top-2 lg:-top-20 left-1/2  -translate-x-1/2 w-full"
             />
             <StepCard
               stepNumber={2}
@@ -123,7 +123,7 @@ export const StepsSection = () => {
                   evolução dos casos
                 </>
               }
-              classNames="absolute   left-28 top-20 lg:!left-4 lg:top-14"
+              classNames="absolute   left-20 top-20 lg:!left-4 lg:top-14"
             />
 
             <StepCard

@@ -21,7 +21,7 @@ export const CardSolucaoImpacto = ({
   return (
     <div
       className={cn(
-        "flex h-full w-full flex-col items-start gap-4 rounded-lg border border-white/20 bg-white/10 p-5 duration-300 group-hover:-translate-y-3 md:flex-row lg:p-8",
+        "impact-card flex h-full w-full flex-col items-start gap-4 rounded-lg border border-white/20 bg-white/10 p-5 duration-300 group-hover:-translate-y-3 md:flex-row lg:p-8",
         isColumn && "md:flex-col",
       )}
     >

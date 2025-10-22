@@ -89,9 +89,9 @@ export const Diferentials3 = ({
             <Image
               src="/images/gif-mao-segurando-celular.gif"
               alt=""
-              width={726}
+              width={839}
               height={695}
-              className="absolute -bottom-5 -left-32 w-[700px] md:-bottom-28 md:!-left-40 md:h-auto md:w-auto"
+              className="absolute -bottom-5 -left-28 h-[450px] w-full md:-left-20 lg:-bottom-28 lg:!-left-40 lg:h-[630px] lg:w-auto"
             />
           </div>
         </div>
