@@ -73,7 +73,7 @@ export const MetricsSection = () => {
             </h2>
           </div>
           <div className="cta-button-metrics hidden w-fit md:block">
-            <CtaButton title="Fale com um especialista" url="/contato" />
+            <CtaButton title="Fale com um especialista" url="#get-in-touch" />
           </div>
         </div>
         <div className="w-full lg:max-w-[calc(100%-373px)]">

@@ -3,6 +3,8 @@
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 import { TimelineContent } from "./timeline-content";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 const historyData = {
   "2022": [
@@ -127,64 +129,155 @@ export const HistoryTimeline = () => {
     setActiveTime(value);
   };
 
+  useGSAP(() => {
+    const buttons = gsap.utils.toArray<HTMLElement>(".button-tl");
+    const lines = gsap.utils.toArray<HTMLElement>(".line-tl");
+
+    // Anima os botões
+    buttons.forEach((button, index) => {
+      // Cria ou pega o elemento de preenchimento
+      let fill = button.querySelector(".button-fill") as HTMLElement;
+      if (!fill) {
+        fill = document.createElement("div");
+        fill.className = "button-fill";
+        fill.style.cssText = `
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 0%;
+          background-color: #A6D05D;
+          border-radius: 9999px;
+          z-index: 0;
+        `;
+        button.style.position = "relative";
+        button.style.overflow = "hidden";
+        button.insertBefore(fill, button.firstChild);
+
+        // Garante que o texto fique acima do preenchimento
+        const textContent = button.childNodes;
+        textContent.forEach((node) => {
+          if (node.nodeType === Node.TEXT_NODE) {
+            const span = document.createElement("span");
+            span.style.position = "relative";
+            span.style.zIndex = "10";
+            span.textContent = node.textContent;
+            button.replaceChild(span, node);
+          }
+        });
+      }
+
+      if (index < activeTime) {
+        // Botões anteriores: 100% preenchido
+        gsap.to(fill, {
+          width: "100%",
+          duration: 0.4,
+          ease: "power2.out",
+        });
+        gsap.to(button, {
+          borderColor: "#A6D05D",
+          color: "#1A3A1A",
+          duration: 0.4,
+        });
+      } else if (index === activeTime) {
+        // Botão atual: preenche progressivamente de 0 a 100%
+        gsap.fromTo(
+          fill,
+          { width: "0%" },
+          {
+            width: "100%",
+            duration: 0.4,
+            ease: "power2.inOut",
+            // delay: index * 0.1,
+          },
+        );
+        gsap.to(button, {
+          borderColor: "#A6D05D",
+          color: "#1A3A1A",
+          duration: 0.4,
+          // delay: index * 0.1,
+        });
+      } else {
+        // Botões futuros: volta ao estado inicial
+        gsap.to(fill, {
+          width: "0%",
+          duration: 0.3,
+          ease: "power2.out",
+        });
+        gsap.to(button, {
+          borderColor: "white",
+          color: "white",
+          duration: 0.3,
+        });
+      }
+    });
+
+    // Anima as linhas
+    lines.forEach((line, index) => {
+      // Cria ou pega o elemento de preenchimento da linha
+      let lineFill = line.querySelector(".line-fill") as HTMLElement;
+      if (!lineFill) {
+        lineFill = document.createElement("div");
+        lineFill.className = "line-fill";
+        lineFill.style.cssText = `
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 0%;
+          background-color: #A6D05D;
+        `;
+        line.style.position = "relative";
+        line.style.overflow = "hidden";
+        line.appendChild(lineFill);
+      }
+
+      if (index < activeTime) {
+        // Linhas anteriores: preenchidas
+        gsap.to(lineFill, {
+          width: "100%",
+          duration: 0.4,
+          ease: "power2.inOut",
+          // delay: index * 0.1 + 0.3,
+        });
+      } else {
+        // Linhas futuras: vazias
+        gsap.to(lineFill, {
+          width: "0%",
+          duration: 0.3,
+          ease: "power2.out",
+        });
+      }
+    });
+  }, [activeTime]);
+
   return (
     <div className="rounded-xl bg-white/10 p-5 md:p-10">
       <div className="mb-8 flex items-center justify-center md:mb-14">
         <button
           onClick={() => handleSelectTimelineItem(0)}
-          className={cn(
-            "hover:border-brand-light-green hover:text-brand-dark-green hover:bg-brand-light-green cursor-pointer rounded-full border border-white px-4 py-2 text-[20px] leading-[130%] font-bold text-white duration-300",
-            activeTime >= 0 &&
-              "border-brand-light-green bg-brand-light-green text-brand-dark-green",
-          )}
+          className="button-tl hover:border-brand-light-green hover:bg-brand-light-green hover:text-brand-dark-green cursor-pointer rounded-full border border-white px-4 py-2 text-[20px] leading-[130%] font-bold text-white duration-300"
         >
           2022
         </button>
-        <div
-          className={cn(
-            "h-[0.5px] w-14 bg-white",
-            activeTime >= 0 && "bg-brand-light-green",
-          )}
-        />
+        <div className="line-tl h-[0.5px] w-14 bg-white" />
         <button
           onClick={() => handleSelectTimelineItem(1)}
-          className={cn(
-            "hover:border-brand-light-green hover:text-brand-dark-green hover:bg-brand-light-green cursor-pointer rounded-full border border-white px-4 py-2 text-[20px] leading-[130%] font-bold text-white duration-300",
-            activeTime >= 1 &&
-              "border-brand-light-green bg-brand-light-green text-brand-dark-green",
-          )}
+          className="button-tl hover:border-brand-light-green hover:bg-brand-light-green hover:text-brand-dark-green cursor-pointer rounded-full border border-white px-4 py-2 text-[20px] leading-[130%] font-bold text-white duration-300"
         >
           2023
         </button>
-        <div
-          className={cn(
-            "h-[0.5px] w-14 bg-white",
-            activeTime >= 1 && "bg-brand-light-green",
-          )}
-        />
+        <div className="line-tl h-[0.5px] w-14 bg-white" />
         <button
           onClick={() => handleSelectTimelineItem(2)}
-          className={cn(
-            "hover:border-brand-light-green hover:text-brand-dark-green hover:bg-brand-light-green cursor-pointer rounded-full border border-white px-4 py-2 text-[20px] leading-[130%] font-bold text-white duration-300",
-            activeTime >= 2 &&
-              "border-brand-light-green bg-brand-light-green text-brand-dark-green",
-          )}
+          className="button-tl hover:border-brand-light-green hover:bg-brand-light-green hover:text-brand-dark-green cursor-pointer rounded-full border border-white px-4 py-2 text-[20px] leading-[130%] font-bold text-white duration-300"
         >
           2024
         </button>
-        <div
-          className={cn(
-            "h-[0.5px] w-14 bg-white",
-            activeTime >= 2 && "bg-brand-light-green",
-          )}
-        />
+        <div className="line-tl h-[0.5px] w-14 bg-white" />
         <button
           onClick={() => handleSelectTimelineItem(3)}
-          className={cn(
-            "hover:border-brand-light-green hover:text-brand-dark-green hover:bg-brand-light-green cursor-pointer rounded-full border border-white px-4 py-2 text-[20px] leading-[130%] font-bold text-white duration-300",
-            activeTime >= 3 &&
-              "border-brand-light-green bg-brand-light-green text-brand-dark-green",
-          )}
+          className="button-tl hover:border-brand-light-green hover:bg-brand-light-green hover:text-brand-dark-green cursor-pointer rounded-full border border-white px-4 py-2 text-[20px] leading-[130%] font-bold text-white duration-300"
         >
           2025
         </button>
@@ -194,7 +287,7 @@ export const HistoryTimeline = () => {
           height={9}
           viewBox="0 0 57 9"
           className={cn(
-            "fill-white transition-all duration-200",
+            "line-tl fill-white transition-all duration-200",
             activeTime >= 3 && "fill-[#A6D05D]",
           )}
         >

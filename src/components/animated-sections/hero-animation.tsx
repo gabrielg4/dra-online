@@ -29,14 +29,17 @@ export const HeroAnimation = () => {
       },
     });
 
-    tl.to(
-      leftContainer.current,
-      {
-        opacity: 0.5,
-        x: -150,
-      },
-      0,
-    )
+    tl.to(".hero-cards-container", {
+      height: 300,
+    })
+      .to(
+        leftContainer.current,
+        {
+          opacity: 0.5,
+          x: -150,
+        },
+        0,
+      )
       .to(
         card1.current,
         {
@@ -103,7 +106,7 @@ export const HeroAnimation = () => {
   }, []);
 
   return (
-    <div className="relative mt-40 hidden md:block">
+    <div className="hero-cards-container relative mt-40 hidden md:block">
       {/* CARDS */}
       <div ref={sectionRef} className="hero-metrics flex justify-center gap-8">
         <div

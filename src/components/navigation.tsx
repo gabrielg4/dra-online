@@ -141,7 +141,7 @@ export const Navigation = ({ textColor = "text-white" }: NavigationProps) => {
                     </div>
                   </Link>
                   <Link
-                    href="/solucao/consultorio"
+                    href="/solucao/espaco-de-saude-conectada"
                     className="group flex items-start"
                   >
                     <Image

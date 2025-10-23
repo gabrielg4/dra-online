@@ -6,6 +6,9 @@ export const Depoimento: CollectionConfig = {
     singular: "Depoimento",
     plural: "Depoimentos",
   },
+  access: {
+    read: () => true,
+  },
   admin: {
     group: "Depoimentos",
     useAsTitle: "nome",

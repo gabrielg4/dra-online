@@ -53,7 +53,7 @@ export const Hero = () => {
           de Saúde Digital no Brasil!
         </h1>
         <div className="relative mb-8 sm:mb-12">
-          <div className="image-detail from-brand-dark-green to-brand-dark-green/0 absolute -top-1.5 -right-[60px] flex w-[201px] justify-end rounded-full bg-gradient-to-l p-1 sm:-right-[54px]">
+          <div className="image-detail from-brand-dark-green to-brand-dark-green/0 absolute -top-1.5 -right-[48px] flex w-[201px] justify-end rounded-full bg-gradient-to-l p-1 sm:-right-[54px]">
             <Image
               className=""
               src="/images/people.webp"

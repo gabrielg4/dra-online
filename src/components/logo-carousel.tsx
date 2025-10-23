@@ -52,11 +52,11 @@ export const LogoCarousel = () => {
         }
 
         .animate-scroll {
-          animation: scroll 20s linear infinite;
+          animation: scroll 30s linear infinite;
         }
 
         .animate-scroll-slow {
-          animation: scroll-slow 20s linear infinite;
+          animation: scroll-slow 30s linear infinite;
         }
 
         .animate-scroll:hover,

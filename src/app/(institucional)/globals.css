@@ -181,7 +181,7 @@
   }
 
   .overlay {
-    @apply from-brand-main-green/0 to-brand-dark-green absolute bottom-0 left-0 h-full w-full bg-gradient-to-b;
+    @apply from-brand-main-green/0 to-brand-dark-green absolute bottom-0 left-0 h-full w-full bg-gradient-to-b to-55%;
   }
 }
 
@@ -377,4 +377,13 @@ header.scrolled::before {
   opacity: 0.7;
   background: linear-gradient(8deg, #1ba068 -31.88%, #a6d05d 117.1%);
   filter: blur(100px);
+}
+
+.blur-bg-security {
+  width: 289px;
+  height: 851px;
+  transform: rotate(-90deg);
+  border-radius: 851px;
+  background: var(--Degrad, linear-gradient(180deg, #1ba068 0%, #a6d05d 100%));
+  filter: blur(150px);
 }

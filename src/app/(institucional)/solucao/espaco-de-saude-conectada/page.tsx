@@ -92,12 +92,17 @@ const impactsData = [
   },
 ];
 
-export default function ConsultorioDigitalPage() {
+export default function EspacoDeSaudeConectadaPage() {
   return (
     <>
       <Hero
         classHeroVideo="/videos/video-solucao-6.mp4"
-        title={<>Consultório Digital</>}
+        title={
+          <>
+            Espaço de Saúde
+            <br /> Conectada
+          </>
+        }
         description={
           <>
             Telemedicina e dispositivos médicos <br />

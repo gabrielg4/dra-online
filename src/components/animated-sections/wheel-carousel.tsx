@@ -1,41 +1,46 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Draggable } from "gsap/Draggable";
 import { NaMidiaCard } from "@/components/cards/na-midia-card";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Image from "next/image";
-import { useMediaQuery } from "react-responsive";
 import type { NaMidia } from "../../../payload-types";
+import { useGSAP } from "@gsap/react";
+import { useMediaQuery } from "react-responsive";
 
-gsap.registerPlugin(ScrollTrigger, Draggable);
+gsap.registerPlugin(Draggable);
 
 interface WheelCarouselProps {
   articles: NaMidia[];
 }
 
 export const WheelCarousel = ({ articles }: WheelCarouselProps) => {
-  const isMobile = useMediaQuery({
-    maxWidth: 640,
+  const isMinTablet = useMediaQuery({
+    minWidth: 768,
   });
-  const sectionRef = useRef<HTMLElement | null>(null);
   const curvedCarouselRef = useRef<HTMLDivElement | null>(null);
   const draggableRef = useRef<Draggable | null>(null);
 
   const STEP = 9;
   const MAX_INDEX = articles.length - 1;
 
-  const [activeIndex, setActiveIndex] = useState(0);
+  // Calcula o índice da mediana (como sempre é ímpar, é o item do meio)
+  const MEDIAN_INDEX = Math.floor(articles.length / 2);
+
+  // Calcula a rotação inicial para que o item da mediana fique centralizado
+  const INITIAL_ROTATION = MEDIAN_INDEX * STEP;
+
+  const [activeIndex, setActiveIndex] = useState(MEDIAN_INDEX);
 
   const clamp = (n: number, min: number, max: number) =>
     Math.min(Math.max(n, min), max);
-  const idxToRotation = (idx: number) => -idx * STEP;
 
   const goTo = (nextIndex: number) => {
     const idx = clamp(nextIndex, 0, MAX_INDEX);
-    const rotation = idxToRotation(idx);
+    // A rotação necessária para colocar o card no centro
+    const rotation = INITIAL_ROTATION - idx * STEP;
 
     gsap.to(curvedCarouselRef.current, {
       rotation,
@@ -52,73 +57,66 @@ export const WheelCarousel = ({ articles }: WheelCarouselProps) => {
   const prev = () => goTo(activeIndex - 1);
   const next = () => goTo(activeIndex + 1);
 
-  useEffect(() => {
-    if (!curvedCarouselRef.current || !sectionRef.current) return;
+  useGSAP(() => {
+    if (!curvedCarouselRef.current) return;
 
-    const minRotation = idxToRotation(MAX_INDEX);
-    const maxRotation = idxToRotation(0);
+    const maxRotation = INITIAL_ROTATION; // rotação para o primeiro card
+    const minRotation = INITIAL_ROTATION - MAX_INDEX * STEP; // rotação para o último card
 
-    // Draggable para controle manual (opcional, mantém a funcionalidade de arrastar)
+    // Draggable para controle manual
     const [instance] = Draggable.create(curvedCarouselRef.current, {
       type: "rotation",
       inertia: true,
       minimumMovement: 0,
       bounds: { minRotation, maxRotation },
       snap: (value) => {
-        const snapped = Math.round(value / STEP) * STEP;
-        return clamp(snapped, minRotation, maxRotation);
+        // Calcula qual card está mais próximo do centro
+        const offset = INITIAL_ROTATION - value;
+        const idx = Math.round(offset / STEP);
+        return INITIAL_ROTATION - clamp(idx, 0, MAX_INDEX) * STEP;
       },
       onDragEnd: function () {
         const rot = this.rotation as number;
-        const idx = clamp(Math.round(-rot / STEP), 0, MAX_INDEX);
+        const offset = INITIAL_ROTATION - rot;
+        const idx = clamp(Math.round(offset / STEP), 0, MAX_INDEX);
         setActiveIndex(idx);
       },
       onThrowComplete: function () {
         const rot = this.rotation as number;
-        const idx = clamp(Math.round(-rot / STEP), 0, MAX_INDEX);
+        const offset = INITIAL_ROTATION - rot;
+        const idx = clamp(Math.round(offset / STEP), 0, MAX_INDEX);
         setActiveIndex(idx);
       },
     });
 
     draggableRef.current = instance;
-    gsap.set(curvedCarouselRef.current, { rotation: idxToRotation(0) });
 
-    // ScrollTrigger para controlar com scroll
-    const scrollTrigger = ScrollTrigger.create({
-      trigger: sectionRef.current,
-      // markers: true,
-      start: isMobile ? "center 50%" : "top 10%",
-      end: `+=${window.innerHeight * MAX_INDEX}`, // altura proporcional ao número de cards
-      pin: true, // trava a seção
-      scrub: 1, // suaviza o scroll
-      onUpdate: (self) => {
-        // converte o progresso (0 a 1) em rotação
-        const progress = self.progress;
-        const rotation = maxRotation + (minRotation - maxRotation) * progress;
-
-        gsap.set(curvedCarouselRef.current, { rotation });
-
-        // atualiza o índice ativo
-        const idx = clamp(Math.round(-rotation / STEP), 0, MAX_INDEX);
-        setActiveIndex(idx);
-
-        // sincroniza com o Draggable
-        if (draggableRef.current) {
-          draggableRef.current.update();
-        }
-      },
-    });
+    // Inicializa com o item da mediana centralizado (rotação 0 no container)
+    gsap.set(curvedCarouselRef.current, { rotation: 0 });
+    isMinTablet &&
+      gsap.from(".wheel-card", {
+        opacity: 0,
+        scale: 0.8,
+        y: 50,
+        ease: "back.out(1.7)",
+        duration: 0.6,
+        stagger: 0.1,
+        scrollTrigger: {
+          trigger: "#midia",
+          start: "top 100%",
+          // markers: true,
+          scrub: 1,
+        },
+      });
 
     return () => {
       instance?.kill();
-      scrollTrigger?.kill();
       draggableRef.current = null;
     };
-  }, [MAX_INDEX, isMobile]);
+  }, [MAX_INDEX, MEDIAN_INDEX, INITIAL_ROTATION]);
 
   return (
-    <section ref={sectionRef} className="relative h-auto w-full md:h-screen">
-      {/* bg-[url('/images/img-bg-midia.svg')] bg-cover bg-top bg-no-repeat */}
+    <section className="relative flex h-auto w-full items-center justify-center py-20 md:h-screen">
       <Image
         src={"/images/img-bg-midia.svg"}
         alt=""
@@ -128,24 +126,24 @@ export const WheelCarousel = ({ articles }: WheelCarouselProps) => {
       />
       <div className="na-midia-blur absolute top-[calc(50%+40px)] left-1/2 h-[340px] -translate-x-1/2" />
 
-      <div className="relative h-[500px] w-full md:mt-10 lg:mt-16">
+      <div className="relative h-[500px] w-full max-w-[600px]">
         <div
           ref={curvedCarouselRef}
-          className="carousel absolute top-10 left-[calc(50%-150px)] origin-[150px_2500px] will-change-transform"
+          className="carousel absolute top-0 left-1/2 origin-[50%_2500px] -translate-x-1/2 will-change-transform"
         >
           {articles.map((article, i) => (
             <div
               key={i}
               data-wheel-card
-              className={`absolute h-full w-[290px] origin-[150px_2500px]`}
-              style={{ transform: `rotate(${i * STEP}deg)` }}
+              className="absolute top-0 left-1/2 h-full w-[290px] origin-[50%_2500px] -translate-x-1/2"
+              style={{ transform: `rotate(${(i - MEDIAN_INDEX) * STEP}deg)` }}
             >
               <NaMidiaCard article={article} isActive={i === activeIndex} />
             </div>
           ))}
         </div>
 
-        <div className="pointer-events-auto absolute bottom-8 left-1/2 flex -translate-x-1/2 items-center gap-4">
+        <div className="pointer-events-auto absolute bottom-8 left-1/2 z-20 flex -translate-x-1/2 items-center gap-4">
           <button
             aria-label="Anterior"
             onClick={prev}

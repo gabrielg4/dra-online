@@ -92,10 +92,11 @@ export const SecurityInformation = () => {
   }, []);
 
   return (
-    <section id="security-information" className="overflow-hidden pb-20">
+    <section id="security-information" className="relative pb-20">
+      <div className="overlay -bottom-4 z-10"></div>
       <div className="container !px-0">
-        <div className="image-wrapper relative flex items-end justify-center gap-4 overflow-hidden bg-[url('/images/bg-security.webp')] bg-cover bg-center pt-20">
-          <div className="overlay z-10"></div>
+        <div className="image-wrapper relative flex items-end justify-center gap-4 bg-cover bg-center pt-20">
+          <div className="blur-bg-security absolute -top-40 left-1/2 -translate-x-1/2" />
           {/* <Image
             src={"/images/img_phone_left.webp"}
             alt=""
@@ -171,7 +172,7 @@ export const SecurityInformation = () => {
             </span>
           </p>
           <div className="cta-button-security">
-            <CtaButton title="Saiba mais" url="/" />
+            <CtaButton title="Saiba mais" url="#get-in-touch" />
           </div>
           <SecurityCards />
           {/* <SecurityCardsMobileCarousel /> */}

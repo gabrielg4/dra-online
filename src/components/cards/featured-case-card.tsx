@@ -1,24 +1,29 @@
 import Link from "next/link";
 import React from "react";
+import type { CaseDeSucesso, Media } from "../../../payload-types";
 
-export const FeaturedCaseCard = () => {
+interface FeaturedCaseCardProps {
+  successCase: CaseDeSucesso;
+}
+
+export const FeaturedCaseCard = ({ successCase }: FeaturedCaseCardProps) => {
   return (
     <Link
-      href=""
+      href={`/cases/${successCase.slug}`}
       className="group block h-auto w-full max-w-[1216px] rounded-lg bg-cover bg-center bg-no-repeat p-5 lg:h-[474px] lg:p-8"
       style={{
-        backgroundImage: `url(/images/img-placeholder-case.webp)`,
+        backgroundImage: `url('${(successCase.imagem_de_destaque as Media).url!}')`,
       }}
     >
       <div className="backdrop-blur-2xl/30 flex h-full w-full max-w-[464px] flex-col justify-between rounded-lg border border-white/30 bg-black/10 px-10 py-6 backdrop-blur-2xl">
         <div className="flex flex-col gap-3">
           <h3 className="mb-3 text-[24px] leading-[130%] font-bold text-white">
-            Lorem ipsum dolor aumentou 32% em atendimentos com o dr.online sit
-            amet consectetur.{" "}
+            {successCase.titulo}
           </h3>
           <p className="mb-8 text-lg leading-normal font-normal text-white lg:mb-14">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
+            {successCase.descricao.length > 70
+              ? successCase.descricao.substring(0, 65) + "..."
+              : successCase.descricao}
           </p>
         </div>
 

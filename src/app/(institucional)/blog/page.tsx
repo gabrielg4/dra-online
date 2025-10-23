@@ -56,7 +56,7 @@ export default async function BlogPage({
           </div>
           <div className="w-full md:w-1/2">
             {featuredPosts.totalDocs > 0 && (
-              <FeaturedPostsCarousel featuresPosts={featuredPosts} />
+              <FeaturedPostsCarousel featuredPosts={featuredPosts} />
             )}
           </div>
         </div>

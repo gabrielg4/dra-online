@@ -3,7 +3,35 @@ import { FeaturedCasesCarousel } from "@/components/featured-cases-carousel";
 import Image from "next/image";
 import React from "react";
 
-export default function CasesPage() {
+import { getPayload } from "payload";
+import config from "@payload-config";
+
+export default async function CasesPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ proxima_pagina?: string }>;
+}) {
+  const { proxima_pagina = 1 } = (await searchParams) || {};
+  const payload = await getPayload({ config });
+
+  const [cases, featuredCases] = await Promise.all([
+    await payload.find({
+      collection: "case-de-sucesso",
+      depth: 3,
+      limit: Number(9 * Number(proxima_pagina) || 1),
+      pagination: true,
+    }),
+    await payload.find({
+      collection: "case-de-sucesso",
+      limit: 3,
+      where: {
+        e_destaque: {
+          equals: "Sim",
+        },
+      },
+    }),
+  ]);
+
   return (
     <>
       <section className="bg-[url(/images/img-bg-cases.webp)] bg-cover bg-center bg-no-repeat py-14">
@@ -18,13 +46,15 @@ export default function CasesPage() {
             os melhores resultados
           </h2>
         </div>
-        <div className="mx-auto w-full max-w-[1440px]">
-          <FeaturedCasesCarousel />
-        </div>
+        {featuredCases.docs.length > 0 && (
+          <div className="mx-auto w-full max-w-[1440px]">
+            <FeaturedCasesCarousel featuredCases={featuredCases} />
+          </div>
+        )}
       </section>
-      <section className="relative bg-[url('/images/img-bg-case-section.webp')] bg-cover bg-no-repeat py-10 lg:py-14">
+      <section className="relative bg-[url('/images/img-bg-case-section.webp')] bg-cover bg-no-repeat py-10 lg:py-16">
         <div className="relative z-10 container">
-          <CasesGrid />
+          <CasesGrid nextPage={cases.nextPage} cases={cases} />
         </div>
         <Image
           src="/images/img-bg-cases-blur.svg"

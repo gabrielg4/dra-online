@@ -4,7 +4,14 @@ import { EffectCards, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-cards";
 import { TestimonialCard } from "./cards/testimonial-card";
-export const TestimonialsCarousel = () => {
+import type { Depoimento } from "../../payload-types";
+interface TestimonialsCarouselProps {
+  testimonials: Depoimento[];
+}
+
+export const TestimonialsCarousel = ({
+  testimonials,
+}: TestimonialsCarouselProps) => {
   return (
     <Swiper
       effect={"cards"}
@@ -19,27 +26,11 @@ export const TestimonialsCarousel = () => {
       className="mySwiper max-w-[500px]"
       wrapperClass="relative px-10"
     >
-      <SwiperSlide className="mx-auto w-full">
-        <TestimonialCard />
-      </SwiperSlide>
-      <SwiperSlide className="mx-auto w-full">
-        <TestimonialCard />
-      </SwiperSlide>
-      <SwiperSlide className="mx-auto w-full">
-        <TestimonialCard />
-      </SwiperSlide>
-      <SwiperSlide className="mx-auto w-full">
-        <TestimonialCard />
-      </SwiperSlide>
-      <SwiperSlide className="mx-auto w-full">
-        <TestimonialCard />
-      </SwiperSlide>
-      <SwiperSlide className="mx-auto w-full">
-        <TestimonialCard />
-      </SwiperSlide>
-      <SwiperSlide className="mx-auto w-full">
-        <TestimonialCard />
-      </SwiperSlide>
+      {testimonials.map((testimonial, index) => (
+        <SwiperSlide key={index} className="mx-auto w-full">
+          <TestimonialCard testimonial={testimonial} />
+        </SwiperSlide>
+      ))}
 
       <button
         id="next-depoimento"

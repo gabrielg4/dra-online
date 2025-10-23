@@ -5,11 +5,11 @@ import type { PaginatedDocs } from "payload";
 import type { Blog } from "../../payload-types";
 
 interface FeaturedPostsCarouselProps {
-  featuresPosts?: PaginatedDocs<Blog>;
+  featuredPosts?: PaginatedDocs<Blog>;
 }
 
 export const FeaturedPostsCarousel = ({
-  featuresPosts,
+  featuredPosts,
 }: FeaturedPostsCarouselProps) => {
   const [activeIndex, setActiveIndex] = React.useState(0);
   const slides = [0, 1, 2];
@@ -60,7 +60,7 @@ export const FeaturedPostsCarousel = ({
       <div className="relative w-full max-w-6xl">
         {/* Carousel Container */}
         <div className="relative flex h-[400px] items-center justify-center">
-          {featuresPosts?.docs.map((post, index) => (
+          {featuredPosts?.docs.map((post, index) => (
             <div
               key={index}
               className="absolute w-full max-w-md transition-all duration-500 ease-out"

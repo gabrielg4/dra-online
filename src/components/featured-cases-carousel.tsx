@@ -9,7 +9,16 @@ import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import { FeaturedCaseCard } from "./cards/featured-case-card";
-export const FeaturedCasesCarousel = () => {
+import type { PaginatedDocs } from "payload";
+import type { CaseDeSucesso } from "../../payload-types";
+
+interface FeaturedCasesCarouselProps {
+  featuredCases?: PaginatedDocs<CaseDeSucesso>;
+}
+
+export const FeaturedCasesCarousel = ({
+  featuredCases,
+}: FeaturedCasesCarouselProps) => {
   const isTablet = useMediaQuery({
     query: "(max-width: 768px)",
   });
@@ -46,7 +55,7 @@ export const FeaturedCasesCarousel = () => {
       }}
     >
       <CarouselContent className="-ml-8">
-        {Array.from({ length: 3 }).map((_, index) => (
+        {featuredCases?.docs.map((successCase, index) => (
           <CarouselItem
             key={index}
             className={cn(
@@ -56,7 +65,7 @@ export const FeaturedCasesCarousel = () => {
             <div
               className={cn("h-full w-full", current !== index && "scale-90")}
             >
-              <FeaturedCaseCard />
+              <FeaturedCaseCard successCase={successCase} />
             </div>
           </CarouselItem>
         ))}

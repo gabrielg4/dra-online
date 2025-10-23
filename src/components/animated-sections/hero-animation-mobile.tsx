@@ -148,9 +148,61 @@ export const HeroAnimationMobile = () => {
       {/* Metricas */}
       <div
         ref={metricsRef}
-        className="absolute left-1/2 w-full -translate-x-1/2 translate-y-20 opacity-0"
+        className="absolute left-1/2 grid h-full w-full -translate-x-1/2 translate-y-20 grid-cols-2 gap-2 opacity-0"
       >
-        <HeroMetricsCarousel />
+        <div className="col-span-1 flex items-center justify-center gap-4">
+          <p className="text-brand-light-green text-[48px] leading-[110%] font-bold sm:text-[70px]">
+            10
+          </p>
+          <span className="text-[16px] leading-normal text-white sm:text-lg">
+            <span className="from-brand-main-green to-brand-light-green -mb-2 inline-block bg-gradient-to-r bg-clip-text text-2xl font-bold text-transparent">
+              +
+            </span>
+            <br />
+            milhões de
+            <br /> vidas expostas
+          </span>
+        </div>
+        <div className="col-span-1 flex items-center justify-center gap-4">
+          <p className="text-brand-light-green text-[48px] leading-[110%] font-bold sm:text-[70px]">
+            1
+          </p>
+          <span className="text-[16px] leading-normal text-white sm:text-lg">
+            <span className="from-brand-main-green to-brand-light-green -mb-2 inline-block bg-gradient-to-r bg-clip-text text-2xl font-bold text-transparent">
+              +
+            </span>
+            <br />
+            mil consultas
+            <br /> por ano
+          </span>
+        </div>
+        <div className="col-span-1 flex items-center justify-center gap-4">
+          <p className="text-brand-light-green text-[48px] leading-[110%] font-bold sm:text-[70px]">
+            80
+          </p>
+          <span className="text-[16px] leading-normal text-white sm:text-lg">
+            <span className="from-brand-main-green to-brand-light-green -mb-2 inline-block bg-gradient-to-r bg-clip-text text-2xl font-bold text-transparent">
+              +
+            </span>
+            <br />
+            mil consultas
+            <br /> por mês
+          </span>
+        </div>
+        <div className="col-span-1 flex items-center justify-center gap-4">
+          <p className="text-brand-light-green text-[48px] leading-[110%] font-bold sm:text-[70px]">
+            35
+          </p>
+          <span className="text-[16px] leading-normal text-white sm:text-lg">
+            <span className="from-brand-main-green to-brand-light-green -mb-2 inline-block bg-gradient-to-r bg-clip-text text-2xl font-bold text-transparent">
+              +
+            </span>
+            <br />
+            consultórios
+            <br /> digitais
+          </span>
+        </div>
+        {/* <HeroMetricsCarousel /> */}
       </div>
     </div>
   );

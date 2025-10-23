@@ -129,7 +129,7 @@ export const ContactForm = () => {
           type="submit"
           className="bg-brand-light-green hover:bg-brand-light-green2 group text-brand-dark-green mt-2 h-auto w-full cursor-pointer rounded-full px-6 !py-3 !text-[16px] font-medium"
         >
-          Falar com especialista
+          Falar com o nosso time
           <ArrowUpRight className="size-4 duration-300 group-hover:rotate-45" />
         </Button>
       </form>

@@ -74,8 +74,8 @@ export const DiferentialsTabs = () => {
           value="tab6"
           className="tab-button tab-button-blur text-brand-dark-gray data-[state=active]:bg-brand-main-green hover:bg-brand-main-green z-[4] -ml-6 shrink-0 rounded-2xl bg-white py-4 pr-6 pl-8 text-center text-xl font-semibold duration-300 hover:text-white data-[state=active]:text-white"
         >
-          Consultório
-          <br /> Digital
+          Espaço de Saúde
+          <br /> Conectada
         </TabsTrigger>
       </TabsList>
 
@@ -538,7 +538,7 @@ export const DiferentialsTabs = () => {
           </div>
           <div className="w-full py-8 md:w-1/2">
             <p className="text-brand-main-green mb-3 text-[28px] font-bold">
-              Consultório Digital
+              Espaço de Saúde Conectada
             </p>
             <h3 className="text-brand-black mb-4 text-lg leading-[150%] font-bold lg:mb-6">
               Uma nova forma de entregar saúde: acessível, segura, integrada e
@@ -555,7 +555,7 @@ export const DiferentialsTabs = () => {
               className="border-brand-main-green group hover:bg-brand-main-green rounded-full p-0 duration-300"
             >
               <Link
-                href="/solucao/consultorio"
+                href="/solucao/espaco-de-saude-conectada"
                 className="text-brand-main-green px-4 py-2 text-[16px] leading-normal font-medium duration-300 hover:text-white"
               >
                 Conheça mais
