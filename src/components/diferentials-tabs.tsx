@@ -16,8 +16,9 @@ export const DiferentialsTabs = () => {
       ? gsap.from(".tab-button", {
           y: -40,
           opacity: 0,
+          transition: "all",
           ease: "expo.out",
-          duration: 2,
+          duration: 1,
           stagger: 0.1,
           scrollTrigger: {
             trigger: "#diferentials",
@@ -44,10 +45,10 @@ export const DiferentialsTabs = () => {
       defaultValue="tab1"
       className="w-full items-center gap-14 p-0 md:justify-center"
     >
-      <TabsList className="shadow-brand-main-green group flex h-auto w-full max-w-full gap-5 overflow-x-auto !bg-transparent p-0 shadow-2xl/20 max-[639px]:grid max-[639px]:grid-cols-2 sm:!justify-start sm:gap-0 lg:justify-center">
+      <TabsList className="shadow-brand-main-green group flex h-auto w-full max-w-full flex-nowrap gap-5 overflow-x-auto !bg-transparent p-0 shadow-2xl/20 max-[639px]:grid max-[639px]:grid-cols-2 sm:!justify-start sm:gap-0 lg:justify-center">
         <TabsTrigger
           value="tab1"
-          className="tab-button tab-button-blur text-brand-dark-gray data-[state=active]:bg-brand-main-green hover:bg-brand-main-green group-has-[:not([data-state=active]):hover]:data-[state=active]:text-brand-dark-gray z-[9] shrink-0 rounded-2xl bg-white py-4 pr-6 pl-8 text-center text-[16px] font-semibold transition-all duration-300 ease-in-out hover:text-white data-[state=active]:text-white group-has-[:not([data-state=active]):hover]:data-[state=active]:bg-white max-[639px]:p-4 sm:text-xl"
+          className="tab-button text-brand-dark-gray data-[state=active]:bg-brand-main-green hover:bg-brand-main-green group-has-[:not([data-state=active]):hover]:data-[state=active]:text-brand-dark-gray z-[9] shrink-0 rounded-2xl bg-white py-4 pr-6 pl-8 text-center text-[16px] font-semibold duration-300 ease-in-out hover:text-white data-[state=active]:text-white group-has-[:not([data-state=active]):hover]:data-[state=active]:bg-white max-[639px]:p-4 sm:text-xl"
         >
           Entrevista
           <br /> Qualificada
@@ -55,7 +56,7 @@ export const DiferentialsTabs = () => {
 
         <TabsTrigger
           value="tab2"
-          className="tab-button tab-button-blur text-brand-dark-gray data-[state=active]:bg-brand-main-green hover:bg-brand-main-green group-has-[:not([data-state=active]):hover]:data-[state=active]:text-brand-dark-gray z-[8] shrink-0 rounded-2xl bg-white py-4 pr-6 pl-8 text-center text-[16px] font-semibold transition-all duration-300 ease-in-out hover:text-white data-[state=active]:text-white group-has-[:not([data-state=active]):hover]:data-[state=active]:bg-white max-[639px]:p-4 sm:-ml-6 sm:text-xl"
+          className="tab-button tab-button-blur text-brand-dark-gray data-[state=active]:bg-brand-main-green hover:bg-brand-main-green group-has-[:not([data-state=active]):hover]:data-[state=active]:text-brand-dark-gray z-[8] shrink-0 rounded-2xl bg-white py-4 pr-6 pl-8 text-center text-[16px] font-semibold duration-300 ease-in-out hover:text-white data-[state=active]:text-white group-has-[:not([data-state=active]):hover]:data-[state=active]:bg-white max-[639px]:p-4 sm:-ml-6 sm:text-xl"
         >
           Pronto
           <br /> Atendimento 24h
@@ -63,7 +64,7 @@ export const DiferentialsTabs = () => {
 
         <TabsTrigger
           value="tab3"
-          className="tab-button tab-button-blur text-brand-dark-gray data-[state=active]:bg-brand-main-green hover:bg-brand-main-green group-has-[:not([data-state=active]):hover]:data-[state=active]:text-brand-dark-gray z-[7] shrink-0 rounded-2xl bg-white py-4 pr-6 pl-8 text-center text-[16px] font-semibold transition-all duration-300 ease-in-out hover:text-white data-[state=active]:text-white group-has-[:not([data-state=active]):hover]:data-[state=active]:bg-white max-[639px]:p-4 sm:-ml-6 sm:text-xl"
+          className="tab-button tab-button-blur text-brand-dark-gray data-[state=active]:bg-brand-main-green hover:bg-brand-main-green group-has-[:not([data-state=active]):hover]:data-[state=active]:text-brand-dark-gray z-[7] shrink-0 rounded-2xl bg-white py-4 pr-6 pl-8 text-center text-[16px] font-semibold duration-300 ease-in-out hover:text-white data-[state=active]:text-white group-has-[:not([data-state=active]):hover]:data-[state=active]:bg-white max-[639px]:p-4 sm:-ml-6 sm:text-xl"
         >
           Consultas Eletivas
           <br /> com Especialistas
@@ -71,7 +72,7 @@ export const DiferentialsTabs = () => {
 
         <TabsTrigger
           value="tab4"
-          className="tab-button tab-button-blur text-brand-dark-gray data-[state=active]:bg-brand-main-green hover:bg-brand-main-green group-has-[:not([data-state=active]):hover]:data-[state=active]:text-brand-dark-gray z-[6] shrink-0 rounded-2xl bg-white py-4 pr-6 pl-8 text-center text-[16px] font-semibold transition-all duration-300 ease-in-out hover:text-white data-[state=active]:text-white group-has-[:not([data-state=active]):hover]:data-[state=active]:bg-white max-[639px]:p-4 sm:-ml-6 sm:text-xl"
+          className="tab-button tab-button-blur text-brand-dark-gray data-[state=active]:bg-brand-main-green hover:bg-brand-main-green group-has-[:not([data-state=active]):hover]:data-[state=active]:text-brand-dark-gray z-[6] shrink-0 rounded-2xl bg-white py-4 pr-6 pl-8 text-center text-[16px] font-semibold duration-300 ease-in-out hover:text-white data-[state=active]:text-white group-has-[:not([data-state=active]):hover]:data-[state=active]:bg-white max-[639px]:p-4 sm:-ml-6 sm:text-xl"
         >
           Saúde
           <br /> Mental
@@ -79,7 +80,7 @@ export const DiferentialsTabs = () => {
 
         <TabsTrigger
           value="tab5"
-          className="tab-button tab-button-blur text-brand-dark-gray data-[state=active]:bg-brand-main-green hover:bg-brand-main-green group-has-[:not([data-state=active]):hover]:data-[state=active]:text-brand-dark-gray z-[5] shrink-0 rounded-2xl bg-white py-4 pr-6 pl-8 text-center text-[16px] font-semibold transition-all duration-300 ease-in-out hover:text-white data-[state=active]:text-white group-has-[:not([data-state=active]):hover]:data-[state=active]:bg-white max-[639px]:p-4 sm:-ml-6 sm:text-xl"
+          className="tab-button tab-button-blur text-brand-dark-gray data-[state=active]:bg-brand-main-green hover:bg-brand-main-green group-has-[:not([data-state=active]):hover]:data-[state=active]:text-brand-dark-gray z-[5] shrink-0 rounded-2xl bg-white py-4 pr-6 pl-8 text-center text-[16px] font-semibold duration-300 ease-in-out hover:text-white data-[state=active]:text-white group-has-[:not([data-state=active]):hover]:data-[state=active]:bg-white max-[639px]:p-4 sm:-ml-6 sm:text-xl"
         >
           Gestão Integrada
           <br /> do Cuidado
@@ -87,7 +88,7 @@ export const DiferentialsTabs = () => {
 
         <TabsTrigger
           value="tab6"
-          className="tab-button tab-button-blur text-brand-dark-gray data-[state=active]:bg-brand-main-green hover:bg-brand-main-green group-has-[:not([data-state=active]):hover]:data-[state=active]:text-brand-dark-gray z-[4] shrink-0 rounded-2xl bg-white py-4 pr-6 pl-8 text-center text-[16px] font-semibold transition-all duration-300 ease-in-out hover:text-white data-[state=active]:text-white group-has-[:not([data-state=active]):hover]:data-[state=active]:bg-white max-[639px]:p-4 sm:-ml-6 sm:text-xl"
+          className="tab-button tab-button-blur text-brand-dark-gray data-[state=active]:bg-brand-main-green hover:bg-brand-main-green group-has-[:not([data-state=active]):hover]:data-[state=active]:text-brand-dark-gray z-[4] shrink-0 rounded-2xl bg-white py-4 pr-6 pl-8 text-center text-[16px] font-semibold duration-300 ease-in-out hover:text-white data-[state=active]:text-white group-has-[:not([data-state=active]):hover]:data-[state=active]:bg-white max-[639px]:p-4 sm:-ml-6 sm:text-xl"
         >
           Espaço de Saúde
           <br /> Conectada

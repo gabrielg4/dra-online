@@ -102,13 +102,13 @@ export const SecurityInformation = () => {
           <Image
             src={"/images/img_phone_left.webp"}
             alt=""
-            className={`mobile-fone-left h-full w-[180px] object-contain`}
+            className={`mobile-fone-left h-full w-[120px] object-contain md:w-[180px]`}
             width={200}
             height={400}
             quality={100}
           />
 
-          <div className="video-masked mobile-fone-middle !w-[500px]">
+          <div className="video-masked mobile-fone-middle w-[200px] md:w-[500px]">
             <video
               src={"/videos/video25.mp4"}
               autoPlay
@@ -121,7 +121,7 @@ export const SecurityInformation = () => {
           <Image
             src={"/images/img_phone_right.webp"}
             alt=""
-            className={`mobile-fone-right h-full w-[180px] object-contain`}
+            className={`mobile-fone-right h-full w-[120px] object-contain md:w-[180px]`}
             width={200}
             height={400}
             quality={100}

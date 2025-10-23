@@ -19,7 +19,7 @@ export const MetricsSection = () => {
     gsap.from(titleSplit.lines, {
       yPercent: 100,
       opacity: 0,
-      duration: 1.8,
+      duration: 1,
       ease: "expo.out",
       stagger: 0.05,
       scrollTrigger: {
@@ -32,7 +32,7 @@ export const MetricsSection = () => {
       opacity: 0,
       duration: 0.4,
       ease: "expo.out",
-      stagger: 0.2,
+      stagger: 0.03,
       scrollTrigger: {
         trigger: "#metrics",
         start: "top 70%",
@@ -63,7 +63,7 @@ export const MetricsSection = () => {
               <span className="text-brand-light-green">O impacto da</span> dr.
               <span className="font-normal">online</span>
             </p>
-            <h2 className="title-section-metrics mb-0 text-center text-sm text-[32px] leading-[120%] font-medium text-white md:text-start lg:mb-4 lg:text-[40px]">
+            <h2 className="title-section-metrics mb-0 text-center text-sm text-[32px] leading-[120%] font-medium text-white md:text-start lg:mb-6 lg:text-[40px]">
               A diferença entre oferecer consulta e
               <br className="hidden lg:inline-block" />
               <span className="inline-block font-semibold">
@@ -73,12 +73,12 @@ export const MetricsSection = () => {
             </h2>
           </div>
           <div className="cta-button-metrics hidden w-fit md:block">
-            <CtaButton title="Fale com um especialista" url="#get-in-touch" />
+            <CtaButton title="Fale com um especialista" url="/get-in-touch" />
           </div>
         </div>
         <div className="w-full lg:max-w-[calc(100%-373px)]">
           <MetricsContainer />
-          <MetricsMobileCarousel />
+          {/* <MetricsMobileCarousel /> */}
           <div className="mx-auto mt-8 block w-fit md:hidden">
             <CtaButton title="Fale com um especialista" url="/" />
           </div>

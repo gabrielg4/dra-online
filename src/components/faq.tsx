@@ -85,7 +85,7 @@ export const FAQ = () => {
   }, []);
 
   return (
-    <Tabs defaultValue="dr-online" className="w-full overflow-hidden pr-0.5">
+    <Tabs defaultValue="pacientes" className="w-full overflow-hidden pr-0.5">
       <div className="mb-8 flex flex-col items-center justify-between gap-5 md:mb-14 md:flex-row md:gap-10">
         <h2 className="title-section-faq text-center text-[24px] leading-[120%] font-normal text-white md:text-start md:text-[32px]">
           Ficou com <span className="font-semibold">alguma dúvida?</span>
@@ -93,13 +93,13 @@ export const FAQ = () => {
         <TabsList className="faq-btn-wrapper border-brand-light-green h-auto w-fit flex-nowrap overflow-x-auto rounded-2xl border bg-transparent p-0 md:max-w-[698px]">
           <TabsTrigger
             value="pacientes"
-            className="data-[state=active]:bg-brand-main-green min-w-[232px] rounded-none bg-transparent p-5 text-center text-lg font-semibold text-white"
+            className="data-[state=active]:bg-brand-main-green w-full rounded-none bg-transparent p-5 text-center text-lg font-semibold text-white md:min-w-[232px]"
           >
             Pacientes
           </TabsTrigger>
           <TabsTrigger
             value="profisionais-de-saude"
-            className="data-[state=active]:bg-brand-main-green w-full min-w-[232px] rounded-l-none rounded-r-2xl bg-transparent p-5 text-center text-lg font-semibold text-white"
+            className="data-[state=active]:bg-brand-main-green w-full rounded-l-none rounded-r-2xl bg-transparent p-5 text-center text-lg font-semibold text-white md:min-w-[232px]"
           >
             Profissionais da saúde
           </TabsTrigger>

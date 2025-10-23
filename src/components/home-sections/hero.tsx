@@ -63,7 +63,7 @@ export const Hero = () => {
             />
           </div>
           <p className="description relative z-10 text-center text-xl font-normal text-white">
-            <span className="mr-8">Cuidamos da sua saúde</span>
+            <span className="mr-10">Cuidamos da sua saúde</span>
             <br />
             <span className="mr-8">quando e onde você estiver.</span>
           </p>

@@ -26,7 +26,7 @@ export const LogoCarousel = () => {
                 alt={`Logo ${index + 1}`}
                 width={180}
                 height={60}
-                className="h-[60px] max-h-full w-[180px] max-w-full object-contain transition-all duration-300"
+                className="h-auto max-h-full w-auto max-w-full object-contain transition-all duration-300"
                 loading="lazy"
               />
             </div>

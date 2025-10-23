@@ -15,7 +15,7 @@ export const MetricsContainer = () => {
       stagger: 0.6,
       scrollTrigger: {
         trigger: "#metrics",
-        start: "top 80%",
+        start: "top 90%",
         // end: "bottom 70%",
         scrub: true,
         // markers: true,
@@ -24,8 +24,8 @@ export const MetricsContainer = () => {
   }, []);
 
   return (
-    <div className="hidden w-full items-start justify-between gap-8 md:flex">
-      <div className="metric-card max-w-[250px] translate-y-9 rounded-2xl bg-white/10 p-4 shadow-2xl/10">
+    <div className="flex w-full flex-col items-start justify-between gap-4 md:flex-row md:gap-8">
+      <div className="metric-card rounded-2xl bg-white/10 p-4 shadow-2xl/10 md:max-w-[250px] md:translate-y-9">
         <div className="bg-brand-dark-green mb-5 w-fit rounded-2xl p-3">
           <p className="text-brand-light-green text-[64px] leading-none font-bold">
             <Counter
@@ -43,7 +43,7 @@ export const MetricsContainer = () => {
           atendimentos.
         </p>
       </div>
-      <div className="metric-card max-w-[250px] rounded-2xl bg-white/10 p-4 shadow-2xl/10">
+      <div className="metric-card rounded-2xl bg-white/10 p-4 shadow-2xl/10 md:max-w-[250px]">
         <div className="bg-brand-dark-green mb-5 w-fit rounded-2xl p-3">
           <p className="text-brand-light-green text-[64px] leading-none font-bold">
             <Counter
@@ -62,7 +62,7 @@ export const MetricsContainer = () => {
           necessidade de encaminhamento para consulta presencial.
         </p>
       </div>
-      <div className="metric-card max-w-[250px] translate-y-7 rounded-2xl bg-white/10 p-4 shadow-2xl/10">
+      <div className="metric-card rounded-2xl bg-white/10 p-4 shadow-2xl/10 md:max-w-[250px] md:translate-y-7">
         <div className="bg-brand-dark-green mb-5 w-fit rounded-2xl p-3">
           <p className="text-brand-light-green text-[64px] leading-none font-bold">
             <Counter
