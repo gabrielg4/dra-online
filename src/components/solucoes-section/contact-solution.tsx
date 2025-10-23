@@ -16,9 +16,9 @@ export const ContactSolution = () => {
     gsap.from(titleSplit.chars, {
       yPercent: 100,
       opacity: 0,
-      duration: 1,
+      duration: 0.8,
       ease: "expo.out",
-      stagger: 0.05,
+      stagger: 0.03,
       scrollTrigger: {
         trigger: "#contato",
         start: "top 80%",

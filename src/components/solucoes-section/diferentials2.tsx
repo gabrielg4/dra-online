@@ -5,6 +5,7 @@ import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/all";
 import gsap from "gsap";
 import { useMediaQuery } from "react-responsive";
+import Image from "next/image";
 
 interface DiferentialsSolutionProps {
   noImage?: boolean;
@@ -45,20 +46,20 @@ export const Diferentials2 = ({
     gsap.from(titleSplit.chars, {
       yPercent: 100,
       opacity: 0,
-      duration: 1,
+      duration: 0.8,
       ease: "expo.out",
-      stagger: 0.05,
+      stagger: 0.03,
       scrollTrigger: {
         trigger: ".integralmente-section",
-        start: "top 30%",
+        start: "top 40%",
       },
     });
     gsap.from(".integralmente-section .section-description ", {
       x: -100,
       opacity: 0,
-      duration: 2,
+      duration: 1,
       ease: "expo.out",
-      delay: 0,
+      delay: 0.3,
       scrollTrigger: {
         trigger: ".integralmente-section",
         start: "top 30%",
@@ -80,14 +81,16 @@ export const Diferentials2 = ({
 
   return (
     <section className="integralmente-section bg-[url(/images/img-bg-secao-pattern.webp)] bg-cover bg-center bg-no-repeat py-10 lg:py-20">
-      <div className="container flex flex-col items-center gap-8 md:flex-row md:gap-14">
-        <div className="w-full md:w-1/2">
-          <h2 className="mb-6 text-[32px] leading-[120%] font-bold text-white lg:text-[40px]">
-            {title}
-          </h2>
-          <p className="section-description mb-0 text-lg leading-normal font-normal text-white md:mb-10 lg:mb-14">
-            {description}
-          </p>
+      <div className="container flex flex-col items-stretch gap-8 md:flex-row md:gap-14">
+        <div className="flex h-full w-full flex-col justify-between md:w-1/2">
+          <div>
+            <h2 className="mb-6 text-[32px] leading-[120%] font-bold text-white lg:text-[40px]">
+              {title}
+            </h2>
+            <p className="section-description mb-0 text-lg leading-normal font-normal text-white md:mb-10 lg:mb-14">
+              {description}
+            </p>
+          </div>
           {noImage ? (
             <>
               <div className="grid grid-cols-1 gap-x-6 gap-y-6 max-[767px]:mt-10 md:grid-cols-2">
@@ -121,7 +124,7 @@ export const Diferentials2 = ({
               </p>
             </>
           ) : (
-            <div className="relative hidden h-[337px] w-full rounded-lg md:block">
+            <div className="relative hidden h-[337px] w-full rounded-lg md:mt-28 md:block">
               <div className="video-blur absolute top-0 left-0 h-full w-full" />
               <video
                 src={videoUrl}
@@ -131,6 +134,13 @@ export const Diferentials2 = ({
                 loop
                 playsInline
               ></video>
+              <Image
+                src="/images/img-pattern-video-solucao.svg"
+                alt=""
+                width={580}
+                height={337}
+                className="absolute top-0 left-0 z-10 object-contain opacity-50"
+              />
             </div>
           )}
         </div>
@@ -142,7 +152,7 @@ export const Diferentials2 = ({
                 alt,
                 src,
               }}
-              cardClass="card-integralmente"
+              cardClass="card-integralmente !p-8"
             >
               {title}
             </CardSolucaoDiferencial>

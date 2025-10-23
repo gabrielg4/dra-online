@@ -6,8 +6,12 @@ import Image from "next/image";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
+import { useMediaQuery } from "react-responsive";
 
 export const SecurityInformation = () => {
+  const isMobile = useMediaQuery({
+    maxWidth: 640,
+  });
   useGSAP(() => {
     const titleSplit = new SplitText(".title-section-security", {
       type: "chars, words",
@@ -20,10 +24,9 @@ export const SecurityInformation = () => {
       stagger: 0.05,
       scrollTrigger: {
         trigger: "#security-information",
-        start: "center 80%",
+        start: `${isMobile ? "top 70%" : "center 80%"}`,
         end: "top top",
         scrub: 3,
-        // markers: true,
       },
     });
 
@@ -34,10 +37,9 @@ export const SecurityInformation = () => {
       ease: "expo.out",
       scrollTrigger: {
         trigger: "#security-information",
-        start: "center 70%",
+        start: `${isMobile ? "top 50%" : "center 70%"}`,
         end: "bottom bottom",
         scrub: 3,
-        // markers: true,
       },
     });
 
@@ -97,30 +99,6 @@ export const SecurityInformation = () => {
       <div className="container !px-0">
         <div className="image-wrapper relative flex items-end justify-center gap-4 bg-cover bg-center pt-20">
           <div className="blur-bg-security absolute -top-40 left-1/2 -translate-x-1/2" />
-          {/* <Image
-            src={"/images/img_phone_left.webp"}
-            alt=""
-            className="mobile-fone-left"
-            width={256}
-            height={510}
-          />
-
-          <Image
-            src={"/images/img_phone_mid.webp"}
-            alt=""
-            className="mobile-fone-middle"
-            width={311}
-            height={581}
-          />
-
-          <Image
-            src={"/images/img_phone_right.webp"}
-            alt=""
-            className="mobile-fone-right"
-            width={256}
-            height={510}
-          /> */}
-
           <Image
             src={"/images/img_phone_left.webp"}
             alt=""

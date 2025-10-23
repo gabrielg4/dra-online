@@ -37,7 +37,7 @@ export const HeroWorkWithUs = () => {
         <div className="relative z-40 w-full md:w-2/3 lg:w-1/2">
           <h1 className="text-center text-[32px] leading-[110%] text-white md:text-start md:text-[40px] lg:text-[48px]">
             Junte-se à <span className="font-bold">dr</span>
-            <span className="text-brand-light-green">.</span> online <br />
+            <span className="text-brand-light-green">.</span>online <br />
             <span className="text-brand-light-green font-bold">
               e transforme o cuidado <br />
               com a saúde no Brasil

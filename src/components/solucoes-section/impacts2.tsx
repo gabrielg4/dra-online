@@ -33,7 +33,7 @@ export const Impacts2 = ({
     maxWidth: 767,
   });
 
-  const start = `top ${isTablet ? "80%" : isSmartphone ? "50%" : "30%"}`;
+  const start = `top ${isTablet ? "80%" : isSmartphone ? "50%" : "50%"}`;
 
   useGSAP(() => {
     const titleSplit = new SplitText(".impacts-section2 h2", {
@@ -66,7 +66,7 @@ export const Impacts2 = ({
   return (
     <section className="impacts-section2 py-10 lg:py-14">
       <div className="container">
-        <h2 className="md:10 mb-6 text-center text-[28px] leading-[110%] text-white md:text-[32px] lg:mb-14 lg:text-[40px]">
+        <h2 className="md:10 mb-6 text-center text-[28px] leading-[110%] font-bold text-white md:text-[32px] lg:mb-14 lg:text-[40px]">
           {title}
         </h2>
         <ImpactsCarousel

@@ -60,8 +60,8 @@ export const Beneficios = () => {
   }, []);
   return (
     <section className="diferential-section bg-[url(/images/img-bg-secao-pattern.webp)] bg-cover bg-center bg-no-repeat py-10 lg:py-20">
-      <div className="container flex flex-col items-center gap-8 md:flex-row lg:gap-14">
-        <div className="w-full md:w-1/2">
+      <div className="container flex flex-col items-stretch gap-8 md:flex-row lg:gap-14">
+        <div className="flex w-full flex-col justify-between md:w-1/2">
           <h2 className="mb-6 text-[32px] leading-[120%] text-white lg:text-[40px]">
             <span className="text-brand-light-green font-bold">
               Cuidar com tecnologia,
@@ -87,7 +87,7 @@ export const Beneficios = () => {
               src: "/images/ic-line-chart.svg",
             }}
           >
-            Ganhos alinhados ao volume de atendimentos
+            <strong>Ganhos alinhados ao volume de atendimentos</strong>
           </CardSolucaoDiferencial>
 
           <CardSolucaoDiferencial
@@ -96,8 +96,10 @@ export const Beneficios = () => {
               src: "/images/ic-handshake.svg",
             }}
           >
-            Suporte técnico e clínico durante toda a jornada de trabalho,
-            contato direto com a gestão clínica
+            <strong>
+              Suporte técnico e clínico durante toda a jornada de trabalho,
+              contato direto com a gestão clínica
+            </strong>
           </CardSolucaoDiferencial>
 
           <CardSolucaoDiferencial
@@ -106,8 +108,10 @@ export const Beneficios = () => {
               src: "/images/ic-credit-card.svg",
             }}
           >
-            Plataforma médica própria fácil de usar, intuitiva, com prontuário,
-            prescrição e teleconsulta integrados
+            <strong>
+              Plataforma médica própria fácil de usar, intuitiva, com
+              prontuário, prescrição e teleconsulta integrados
+            </strong>
           </CardSolucaoDiferencial>
 
           <CardSolucaoDiferencial
@@ -116,7 +120,9 @@ export const Beneficios = () => {
               src: "/images/ic-clock.svg",
             }}
           >
-            Flexibilidade de horários nos atendimentos, onde você estiver
+            <strong>
+              Flexibilidade de horários nos atendimentos, onde você estiver
+            </strong>
           </CardSolucaoDiferencial>
 
           <CardSolucaoDiferencial
@@ -125,7 +131,7 @@ export const Beneficios = () => {
               src: "/images/ic-balance.svg",
             }}
           >
-            Segurança jurídica e contratos transparentes
+            <strong>Segurança jurídica e contratos transparentes</strong>
           </CardSolucaoDiferencial>
         </div>
       </div>

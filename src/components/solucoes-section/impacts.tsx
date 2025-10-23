@@ -1,10 +1,11 @@
 "use client";
 import React, { type ReactElement } from "react";
-import { ImpactsCarousel } from "../impacts-carousel";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
 import { useMediaQuery } from "react-responsive";
+import { CardSolucaoImpacto } from "../cards/card-solucao-impacto";
+import { cn } from "@/lib/utils";
 
 interface ImpactsSectionProps {
   impacts: {
@@ -23,7 +24,7 @@ interface ImpactsSectionProps {
 export const Impacts = ({
   title,
   impacts,
-  customClassNames = "sm:basis-1/2 md:basis-1/2",
+  customClassNames,
 }: ImpactsSectionProps) => {
   const isTablet = useMediaQuery({
     minWidth: 768,
@@ -33,7 +34,7 @@ export const Impacts = ({
     maxWidth: 767,
   });
 
-  const start = `top ${isTablet ? "80%" : isSmartphone ? "50%" : "30%"}`;
+  const start = `top ${isTablet ? "80%" : isSmartphone ? "50%" : "50%"}`;
 
   useGSAP(() => {
     const titleSplit = new SplitText(".impacts-section h2", {
@@ -69,10 +70,29 @@ export const Impacts = ({
         <h2 className="md:10 mb-6 text-center text-[28px] leading-[110%] text-white md:text-[32px] lg:mb-14 lg:text-[40px]">
           {title}
         </h2>
-        <ImpactsCarousel
+        <div
+          className={cn(
+            "grid grid-cols-1 gap-4 md:grid-cols-2",
+            customClassNames,
+          )}
+        >
+          {impacts.map((impact, index) => (
+            <CardSolucaoImpacto
+              key={index}
+              title={impact.title}
+              description={impact.description}
+              isColumn={impact.isColumn}
+              image={{
+                alt: impact.icon.alt,
+                src: impact.icon.src,
+              }}
+            />
+          ))}
+        </div>
+        {/* <ImpactsCarousel
           impacts={impacts}
           customClassNames={customClassNames}
-        />
+        /> */}
       </div>
     </section>
   );

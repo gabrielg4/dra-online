@@ -64,7 +64,8 @@ const differentialsData2 = [
   {
     title: (
       <>
-        <strong>Baseado em protocolos validados</strong> e Terapia
+        <strong>Baseado em protocolos validados</strong> e Terapia{" "}
+        <br className="hidden md:inline-block" />
         Cognitivo-Comportamental (TCC).
       </>
     ),
@@ -76,8 +77,8 @@ const differentialsData2 = [
   {
     title: (
       <>
-        <strong>Triagem estruturada</strong> com instrumentos técnicos (ex:
-        DASS-21)
+        <strong>Triagem estruturada</strong> com instrumentos técnicos{" "}
+        <br className="hidden md:inline-block" /> (ex: DASS-21)
       </>
     ),
     icon: {
@@ -88,7 +89,8 @@ const differentialsData2 = [
   {
     title: (
       <>
-        <strong>Planos terapêuticos customizados,</strong>
+        <strong>Planos terapêuticos customizados,</strong>{" "}
+        <br className="hidden md:inline-block" />
         de 15 a 30 sessões.
       </>
     ),
@@ -100,7 +102,8 @@ const differentialsData2 = [
   {
     title: (
       <>
-        <strong>Acompanhamento integrado</strong> entre psicólogos e
+        <strong>Acompanhamento integrado</strong> entre psicólogos e{" "}
+        <br className="hidden md:inline-block" />
         psiquiatras.
       </>
     ),
@@ -112,8 +115,8 @@ const differentialsData2 = [
   {
     title: (
       <>
-        <strong>Resultados clínicos mensuráveis,</strong> acompanhados em tempo
-        real.
+        <strong>Resultados clínicos mensuráveis,</strong> acompanhados{" "}
+        <br className="hidden md:inline-block" /> em tempo real.
       </>
     ),
     icon: {
@@ -217,6 +220,7 @@ export default function SaudeMentalPage() {
       />
       <Impacts
         impacts={impactsData}
+        customClassNames="lg:grid-cols-3"
         title={
           <>
             <span className="">O impacto da</span>{" "}
@@ -227,7 +231,6 @@ export default function SaudeMentalPage() {
             online
           </>
         }
-        customClassNames="sm:basis-1/2 lg:basis-1/3"
       />
       <SmartphoneSectionCards
         leftPhoneImg="/images/img-phone-left-sol-5.webp"
@@ -259,12 +262,8 @@ export default function SaudeMentalPage() {
         impacts={impactsData2}
         title={
           <>
-            <span className="">O impacto da</span>{" "}
-            <span className="font-bold text-white">
-              dr
-              <span className="text-brand-light-green">.</span>
-            </span>{" "}
-            online
+            Como grandes empresas têm usado o{" "}
+            <span className="text-brand-light-green">Integralmente</span>
           </>
         }
       />

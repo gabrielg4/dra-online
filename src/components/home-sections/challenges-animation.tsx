@@ -21,7 +21,7 @@ export function ChallengersAnimation() {
     const challengesTl = gsap.timeline({
       scrollTrigger: {
         trigger: ".s-challenges",
-        start: `top ${isTablet || isMobile ? "top" : "10%"}`,
+        start: `top ${isTablet || isMobile ? "top" : "top"}`,
         end: "+=310%",
         scrub: 1,
         pin: true,
@@ -58,7 +58,7 @@ export function ChallengersAnimation() {
       },
     });
     challengesTl.from(".s-challenges h2", {
-      y: -90,
+      // y: -90,
       scale: 0.1,
       duration: 1,
     });
@@ -68,7 +68,6 @@ export function ChallengersAnimation() {
       viewportHeight +
       (isTablet || isMobile ? 1150 : 850)
     );
-    console.log(yHeight);
     challengesTl.fromTo(
       ".challenges-cards-container",
       {
@@ -97,49 +96,50 @@ export function ChallengersAnimation() {
       /> */}
 
       {/* Título */}
-      {/* <div className="relative z-10 container mx-auto flex h-full items-center justify-center px-4"></div> */}
-      <h2 className="title-section-challenges absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 text-center text-[32px] leading-[110%] font-bold text-white lg:text-[56px]">
-        Sua empresa enfrenta
-        <br className="hidden sm:inline-block" /> esses desafios?
-      </h2>
-      <div
-        ref={cardsContainerRef}
-        className="challenges-cards-container relative z-30 w-full"
-      >
-        <ChallengeCard
-          label="Longos tempos de espera para atendimento presencial"
-          className="absolute top-20 left-12 lg:top-24 lg:left-[86px]"
-        />
+      <div className="container">
+        <h2 className="title-section-challenges absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 text-center text-[32px] leading-[110%] font-bold text-white lg:text-[56px]">
+          Sua empresa enfrenta
+          <br className="inline-block" /> esses desafios?
+        </h2>
+        <div
+          ref={cardsContainerRef}
+          className="challenges-cards-container relative z-30 w-full"
+        >
+          <ChallengeCard
+            label="Longos tempos de espera para atendimento presencial"
+            className="absolute top-16 left-1/2 max-[640px]:-translate-x-1/2 lg:top-24 lg:left-[86px]"
+          />
 
-        <ChallengeCard
-          label="Afastamentos recorrentes por problemas de saúde mental"
-          className="absolute top-[430px] right-[53px] md:top-[170px] md:mx-0 lg:top-[244px]"
-        />
+          <ChallengeCard
+            label="Afastamentos recorrentes por problemas de saúde mental"
+            className="absolute top-[420px] left-1/2 max-[640px]:-translate-x-1/2 md:top-[170px] md:right-[53px] lg:top-[244px]"
+          />
 
-        <ChallengeCard
-          label="Dificuldade de acesso médico em regiões remotas"
-          className="absolute top-[780px] left-12 md:top-[500px] md:mx-0 lg:top-[630px] lg:left-[286px]"
-        />
+          <ChallengeCard
+            label="Dificuldade de acesso médico em regiões remotas"
+            className="absolute top-[790px] left-1/2 max-[640px]:-translate-x-1/2 md:top-[500px] md:left-[286px] lg:top-[630px]"
+          />
 
-        <ChallengeCard
-          label="Falta de estrutura para atendimento 24h ou saúde primária integrada"
-          className="absolute top-[1140px] left-10 md:top-[900px] md:left-14 md:mx-0 lg:top-[1154px]"
-        />
+          <ChallengeCard
+            label="Falta de estrutura para atendimento 24h ou saúde primária integrada"
+            className="absolute top-[1140px] left-1/2 max-[640px]:-translate-x-1/2 md:top-[900px] md:left-14 lg:top-[1154px]"
+          />
 
-        <ChallengeCard
-          label="Exigências regulatórias da ANS e LGPD sem soluções"
-          className="absolute top-[1500px] right-10 md:top-[600px] md:right-12 md:mx-0 lg:top-[1304px] lg:right-[243px]"
-        />
+          <ChallengeCard
+            label="Exigências regulatórias da ANS e LGPD sem soluções"
+            className="absolute top-[1490px] left-1/2 max-[640px]:-translate-x-1/2 md:top-[600px] md:right-12 lg:top-[1304px] lg:right-[243px]"
+          />
 
-        <ChallengeCard
-          label="Baixo engajamento dos beneficiários com os programas de saúde"
-          className="absolute top-[1870px] right-12 md:top-[1000px] md:right-14 md:mx-0 lg:top-[1884px]"
-        />
+          <ChallengeCard
+            label="Baixo engajamento dos beneficiários com os programas de saúde"
+            className="absolute top-[1850px] left-1/2 max-[640px]:-translate-x-1/2 md:top-[1000px] md:right-14 lg:top-[1884px]"
+          />
 
-        <ChallengeCard
-          label="Impossibilidade de expandir a rede assistencial com qualidade"
-          className="absolute top-[2230px] left-12 md:top-[1320px] md:left-14 md:mx-0 lg:top-[2074px] lg:left-[210px]"
-        />
+          <ChallengeCard
+            label="Impossibilidade de expandir a rede assistencial com qualidade"
+            className="absolute top-[2210px] left-1/2 max-[640px]:-translate-x-1/2 md:top-[1320px] md:left-14 lg:top-[2074px] lg:left-[210px]"
+          />
+        </div>
       </div>
     </section>
   );

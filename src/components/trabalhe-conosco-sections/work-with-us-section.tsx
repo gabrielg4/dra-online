@@ -26,10 +26,10 @@ export const WorkWithUsSection = () => {
 
   return (
     <section className="relative">
-      <h2 className="relative z-10 mb-8 pt-10 pb-0 text-center text-[32px] leading-[110%] font-bold text-white md:pt-14 md:pb-14 md:text-[40px]">
+      <h2 className="relative z-10 bg-[#054740] pt-8 pb-8 text-center text-[32px] leading-[110%] font-bold text-white md:text-[40px]">
         Faça seu <span className="text-brand-light-green">credenciamento</span>
       </h2>
-      <div className="from-brand-main-green/60 to-brand-light-green/60 absolute -top-20 -right-48 h-[340px] w-[550px] rounded-full bg-gradient-to-b blur-3xl" />
+      <div className="from-brand-main-green/60 to-brand-light-green/60 absolute -top-32 -right-48 h-[340px] w-[550px] rounded-full bg-gradient-to-b blur-3xl" />
       <div
         id="form-curriculo-medico"
         className="relative z-10 bg-[url(/images/img-work-with-us.webp)] bg-right py-14"

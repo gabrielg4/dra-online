@@ -5,34 +5,49 @@ import { Button } from "./ui/button";
 import Link from "next/link";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { useMediaQuery } from "react-responsive";
 
 export const DiferentialsTabs = () => {
+  const isMobile = useMediaQuery({
+    maxWidth: 640,
+  });
   useGSAP(() => {
-    const tabButtons = gsap.utils.toArray(".tab-button");
-
-    gsap.from(tabButtons, {
-      x: -40,
-      opacity: 0,
-      ease: "expo.out",
-      duration: 2,
-      stagger: 0.1,
-      scrollTrigger: {
-        trigger: "#diferentials",
-        start: "top 70%",
-        // markers: true,
-      },
-    });
-  }, []);
+    isMobile
+      ? gsap.from(".tab-button", {
+          y: -40,
+          opacity: 0,
+          ease: "expo.out",
+          duration: 2,
+          stagger: 0.1,
+          scrollTrigger: {
+            trigger: "#diferentials",
+            start: "top 70%",
+            // markers: true,
+          },
+        })
+      : gsap.from(".tab-button", {
+          x: -40,
+          opacity: 0,
+          ease: "expo.out",
+          duration: 2,
+          stagger: 0.1,
+          scrollTrigger: {
+            trigger: "#diferentials",
+            start: "top 70%",
+            // markers: true,
+          },
+        });
+  }, [isMobile]);
 
   return (
     <Tabs
       defaultValue="tab1"
       className="w-full items-center gap-14 p-0 md:justify-center"
     >
-      <TabsList className="shadow-brand-main-green flex h-auto w-full max-w-full flex-nowrap gap-0 overflow-x-auto !bg-transparent p-0 shadow-2xl/20 sm:!justify-start lg:justify-center [&::-webkit-scrollbar]:hidden">
+      <TabsList className="shadow-brand-main-green group flex h-auto w-full max-w-full gap-5 overflow-x-auto !bg-transparent p-0 shadow-2xl/20 max-[639px]:grid max-[639px]:grid-cols-2 sm:!justify-start sm:gap-0 lg:justify-center">
         <TabsTrigger
           value="tab1"
-          className="tab-button tab-button-blur text-brand-dark-gray data-[state=active]:bg-brand-main-green hover:bg-brand-main-green z-[9] shrink-0 rounded-2xl bg-white py-4 pr-6 pl-8 text-center text-xl font-semibold duration-300 hover:text-white data-[state=active]:text-white"
+          className="tab-button tab-button-blur text-brand-dark-gray data-[state=active]:bg-brand-main-green hover:bg-brand-main-green group-has-[:not([data-state=active]):hover]:data-[state=active]:text-brand-dark-gray z-[9] shrink-0 rounded-2xl bg-white py-4 pr-6 pl-8 text-center text-[16px] font-semibold transition-all duration-300 ease-in-out hover:text-white data-[state=active]:text-white group-has-[:not([data-state=active]):hover]:data-[state=active]:bg-white max-[639px]:p-4 sm:text-xl"
         >
           Entrevista
           <br /> Qualificada
@@ -40,7 +55,7 @@ export const DiferentialsTabs = () => {
 
         <TabsTrigger
           value="tab2"
-          className="tab-button tab-button-blur text-brand-dark-gray data-[state=active]:bg-brand-main-green hover:bg-brand-main-green z-[8] -ml-6 shrink-0 rounded-2xl bg-white py-4 pr-6 pl-8 text-center text-xl font-semibold duration-300 hover:text-white data-[state=active]:text-white"
+          className="tab-button tab-button-blur text-brand-dark-gray data-[state=active]:bg-brand-main-green hover:bg-brand-main-green group-has-[:not([data-state=active]):hover]:data-[state=active]:text-brand-dark-gray z-[8] shrink-0 rounded-2xl bg-white py-4 pr-6 pl-8 text-center text-[16px] font-semibold transition-all duration-300 ease-in-out hover:text-white data-[state=active]:text-white group-has-[:not([data-state=active]):hover]:data-[state=active]:bg-white max-[639px]:p-4 sm:-ml-6 sm:text-xl"
         >
           Pronto
           <br /> Atendimento 24h
@@ -48,7 +63,7 @@ export const DiferentialsTabs = () => {
 
         <TabsTrigger
           value="tab3"
-          className="tab-button tab-button-blur text-brand-dark-gray data-[state=active]:bg-brand-main-green hover:bg-brand-main-green z-[7] -ml-6 shrink-0 rounded-2xl bg-white py-4 pr-6 pl-8 text-center text-xl font-semibold duration-300 hover:text-white data-[state=active]:text-white"
+          className="tab-button tab-button-blur text-brand-dark-gray data-[state=active]:bg-brand-main-green hover:bg-brand-main-green group-has-[:not([data-state=active]):hover]:data-[state=active]:text-brand-dark-gray z-[7] shrink-0 rounded-2xl bg-white py-4 pr-6 pl-8 text-center text-[16px] font-semibold transition-all duration-300 ease-in-out hover:text-white data-[state=active]:text-white group-has-[:not([data-state=active]):hover]:data-[state=active]:bg-white max-[639px]:p-4 sm:-ml-6 sm:text-xl"
         >
           Consultas Eletivas
           <br /> com Especialistas
@@ -56,7 +71,7 @@ export const DiferentialsTabs = () => {
 
         <TabsTrigger
           value="tab4"
-          className="tab-button tab-button-blur text-brand-dark-gray data-[state=active]:bg-brand-main-green hover:bg-brand-main-green z-[6] -ml-6 shrink-0 rounded-2xl bg-white py-4 pr-6 pl-8 text-center text-xl font-semibold duration-300 hover:text-white data-[state=active]:text-white"
+          className="tab-button tab-button-blur text-brand-dark-gray data-[state=active]:bg-brand-main-green hover:bg-brand-main-green group-has-[:not([data-state=active]):hover]:data-[state=active]:text-brand-dark-gray z-[6] shrink-0 rounded-2xl bg-white py-4 pr-6 pl-8 text-center text-[16px] font-semibold transition-all duration-300 ease-in-out hover:text-white data-[state=active]:text-white group-has-[:not([data-state=active]):hover]:data-[state=active]:bg-white max-[639px]:p-4 sm:-ml-6 sm:text-xl"
         >
           Saúde
           <br /> Mental
@@ -64,7 +79,7 @@ export const DiferentialsTabs = () => {
 
         <TabsTrigger
           value="tab5"
-          className="tab-button tab-button-blur text-brand-dark-gray data-[state=active]:bg-brand-main-green hover:bg-brand-main-green z-[5] -ml-6 shrink-0 rounded-2xl bg-white py-4 pr-6 pl-8 text-center text-xl font-semibold duration-300 hover:text-white data-[state=active]:text-white"
+          className="tab-button tab-button-blur text-brand-dark-gray data-[state=active]:bg-brand-main-green hover:bg-brand-main-green group-has-[:not([data-state=active]):hover]:data-[state=active]:text-brand-dark-gray z-[5] shrink-0 rounded-2xl bg-white py-4 pr-6 pl-8 text-center text-[16px] font-semibold transition-all duration-300 ease-in-out hover:text-white data-[state=active]:text-white group-has-[:not([data-state=active]):hover]:data-[state=active]:bg-white max-[639px]:p-4 sm:-ml-6 sm:text-xl"
         >
           Gestão Integrada
           <br /> do Cuidado
@@ -72,13 +87,12 @@ export const DiferentialsTabs = () => {
 
         <TabsTrigger
           value="tab6"
-          className="tab-button tab-button-blur text-brand-dark-gray data-[state=active]:bg-brand-main-green hover:bg-brand-main-green z-[4] -ml-6 shrink-0 rounded-2xl bg-white py-4 pr-6 pl-8 text-center text-xl font-semibold duration-300 hover:text-white data-[state=active]:text-white"
+          className="tab-button tab-button-blur text-brand-dark-gray data-[state=active]:bg-brand-main-green hover:bg-brand-main-green group-has-[:not([data-state=active]):hover]:data-[state=active]:text-brand-dark-gray z-[4] shrink-0 rounded-2xl bg-white py-4 pr-6 pl-8 text-center text-[16px] font-semibold transition-all duration-300 ease-in-out hover:text-white data-[state=active]:text-white group-has-[:not([data-state=active]):hover]:data-[state=active]:bg-white max-[639px]:p-4 sm:-ml-6 sm:text-xl"
         >
           Espaço de Saúde
           <br /> Conectada
         </TabsTrigger>
       </TabsList>
-
       <TabsContent value="tab1">
         <div className="flex flex-col items-center gap-5 bg-white md:flex-row md:gap-8 lg:gap-20">
           <div className="relative w-full md:w-1/2">
@@ -98,8 +112,8 @@ export const DiferentialsTabs = () => {
               className="h-[300px] w-full rounded-lg object-cover md:h-[370px] lg:h-[477px]"
             ></video>
           </div>
-          <div className="w-full py-8 md:w-1/2">
-            <p className="text-brand-main-green mb-3 text-[28px] font-bold">
+          <div className="w-full px-4 sm:px-0 sm:py-8 md:w-1/2">
+            <p className="text-brand-main-green mb-3 text-[28px] leading-[130%] font-bold">
               Entrevista Qualificada
             </p>
             <h3 className="text-brand-black mb-4 text-lg leading-[150%] font-bold lg:mb-6">
@@ -122,7 +136,7 @@ export const DiferentialsTabs = () => {
               </Link>
             </Button>
 
-            <div className="mt-6 flex w-full flex-col flex-nowrap justify-between gap-4 md:flex-row lg:mt-12">
+            <div className="mt-6 flex w-full flex-col flex-nowrap justify-between gap-0 sm:gap-4 md:flex-row lg:mt-12">
               <div className="flex flex-row justify-start max-[640]:items-center md:flex-col">
                 <Image
                   src="/images/ic-shield-check.svg"
@@ -182,8 +196,8 @@ export const DiferentialsTabs = () => {
               className="h-[300px] w-full rounded-lg object-cover md:h-[370px] lg:h-[477px]"
             ></video>
           </div>
-          <div className="w-full py-8 md:w-1/2">
-            <p className="text-brand-main-green mb-3 text-[28px] font-bold">
+          <div className="w-full px-4 sm:px-0 sm:py-8 md:w-1/2">
+            <p className="text-brand-main-green mb-3 text-[28px] leading-[130%] font-bold">
               Pronto Atendimento 24hs
             </p>
             <h3 className="text-brand-black mb-4 text-lg leading-[150%] font-bold lg:mb-6">
@@ -208,7 +222,7 @@ export const DiferentialsTabs = () => {
               </Link>
             </Button>
 
-            <div className="mt-6 flex w-full flex-col flex-nowrap justify-between gap-4 md:flex-row lg:mt-12">
+            <div className="mt-6 flex w-full flex-col flex-nowrap justify-between gap-0 sm:gap-4 md:flex-row lg:mt-12">
               <div className="flex flex-row justify-start max-[640px]:items-center md:w-1/3 md:flex-col">
                 <Image
                   src="/images/ic-shield-check.svg"
@@ -269,8 +283,8 @@ export const DiferentialsTabs = () => {
               className="h-[300px] w-full rounded-lg object-cover md:h-[370px] lg:h-[477px]"
             ></video>
           </div>
-          <div className="w-full py-8 md:w-1/2">
-            <p className="text-brand-main-green mb-3 text-[28px] font-bold">
+          <div className="w-full px-4 sm:px-0 sm:py-8 md:w-1/2">
+            <p className="text-brand-main-green mb-3 text-[28px] leading-[130%] font-bold">
               Consulta Eletivas com Especialistas
             </p>
             <h3 className="text-brand-black mb-4 text-lg leading-[150%] font-bold lg:mb-6">
@@ -278,8 +292,7 @@ export const DiferentialsTabs = () => {
             </h3>
             <p className="text-brand-dark-gray text-md mb-6 font-normal lg:mb-14 lg:text-lg">
               Com apenas um clique garanta acesso rápido e qualificado há mais
-              de
-              <strong>30 especialistas</strong>, sem comprometer custos,
+              de <strong>30 especialistas</strong>, sem comprometer custos,
               estrutura ou qualidade.
             </p>
             <Button
@@ -351,8 +364,8 @@ export const DiferentialsTabs = () => {
               className="h-[300px] w-full rounded-lg object-cover md:h-[370px] lg:h-[477px]"
             ></video>
           </div>
-          <div className="w-full py-8 md:w-1/2">
-            <p className="text-brand-main-green mb-3 text-[28px] font-bold">
+          <div className="w-full px-4 sm:px-0 sm:py-8 md:w-1/2">
+            <p className="text-brand-main-green mb-3 text-[28px] leading-[130%] font-bold">
               Saúde Mental
             </p>
             <h3 className="text-brand-black mb-4 text-lg leading-[150%] font-bold lg:mb-6">
@@ -392,7 +405,7 @@ export const DiferentialsTabs = () => {
               </Button>
             </div>
 
-            <div className="mt-6 flex w-full flex-col flex-nowrap justify-between gap-4 md:flex-row lg:mt-12">
+            <div className="mt-6 flex w-full flex-col flex-nowrap justify-between gap-0 sm:gap-4 md:flex-row lg:mt-12">
               <div className="flex flex-row justify-start max-[640px]:items-center md:flex-col">
                 <Image
                   src="/images/ic-shield-check.svg"
@@ -452,8 +465,8 @@ export const DiferentialsTabs = () => {
               className="h-[300px] w-full rounded-lg object-cover md:h-[370px] lg:h-[477px]"
             ></video>
           </div>
-          <div className="w-full py-8 md:w-1/2">
-            <p className="text-brand-main-green mb-3 text-[28px] font-bold">
+          <div className="w-full px-4 sm:px-0 sm:py-8 md:w-1/2">
+            <p className="text-brand-main-green mb-3 text-[28px] leading-[130%] font-bold">
               Gestão Integrada do Cuidado
             </p>
             <h3 className="text-brand-black mb-4 text-lg leading-[150%] font-bold lg:mb-6">
@@ -476,7 +489,7 @@ export const DiferentialsTabs = () => {
               </Link>
             </Button>
 
-            <div className="mt-6 flex w-full flex-col flex-nowrap justify-between gap-4 md:flex-row lg:mt-12">
+            <div className="mt-6 flex w-full flex-col flex-nowrap justify-between gap-0 sm:gap-4 md:flex-row lg:mt-12">
               <div className="flex flex-row justify-start max-[640px]:items-center md:flex-col">
                 <Image
                   src="/images/ic-shield-check.svg"
@@ -536,8 +549,8 @@ export const DiferentialsTabs = () => {
               className="h-[300px] w-full rounded-lg object-cover md:h-[370px] lg:h-[477px]"
             ></video>
           </div>
-          <div className="w-full py-8 md:w-1/2">
-            <p className="text-brand-main-green mb-3 text-[28px] font-bold">
+          <div className="w-full px-4 sm:px-0 sm:py-8 md:w-1/2">
+            <p className="text-brand-main-green mb-3 text-[28px] leading-[130%] font-bold">
               Espaço de Saúde Conectada
             </p>
             <h3 className="text-brand-black mb-4 text-lg leading-[150%] font-bold lg:mb-6">
@@ -562,7 +575,7 @@ export const DiferentialsTabs = () => {
               </Link>
             </Button>
 
-            <div className="mt-6 flex w-full flex-col flex-nowrap justify-between gap-4 md:flex-row lg:mt-12">
+            <div className="mt-6 flex w-full flex-col flex-nowrap justify-between gap-0 sm:gap-4 md:flex-row lg:mt-12">
               <div className="flex flex-row justify-start max-[640px]:items-center md:flex-col">
                 <Image
                   src="/images/ic-shield-check.svg"

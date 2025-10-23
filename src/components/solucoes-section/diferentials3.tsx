@@ -44,18 +44,18 @@ export const Diferentials3 = ({
       opacity: 0,
       duration: 1,
       ease: "expo.out",
-      stagger: 0.05,
+      stagger: 0.03,
       scrollTrigger: {
         trigger: ".integralmente-section",
-        start: "top 30%",
+        start: "top 40%",
       },
     });
     gsap.from(".integralmente-section .section-description ", {
       x: -100,
       opacity: 0,
-      duration: 2,
+      duration: 1,
       ease: "expo.out",
-      delay: 0,
+      delay: 0.3,
       scrollTrigger: {
         trigger: ".integralmente-section",
         start: "top 30%",

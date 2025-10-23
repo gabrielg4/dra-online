@@ -47,20 +47,20 @@ export const Diferentials = ({
     gsap.from(titleSplit.chars, {
       yPercent: 100,
       opacity: 0,
-      duration: 1,
+      duration: 0.8,
       ease: "expo.out",
-      stagger: 0.05,
+      stagger: 0.03,
       scrollTrigger: {
         trigger: ".diferential-section",
-        start: "top 30%",
+        start: "top 40%",
       },
     });
     gsap.from(".diferential-section .section-description ", {
       x: -100,
       opacity: 0,
-      duration: 2,
+      duration: 1,
       ease: "expo.out",
-      delay: 0,
+      delay: 0.3,
       scrollTrigger: {
         trigger: ".diferential-section",
         start: "top 30%",

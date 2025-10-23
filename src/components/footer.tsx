@@ -197,7 +197,7 @@ export const Footer = () => {
                       href="/solucao/espaco-de-saude-conectada"
                       className="text-md font-normal text-white hover:underline"
                     >
-                      Consultório Digital
+                      Espaço de Saúde Conectada
                     </Link>
                   </li>
                 </ul>
@@ -206,14 +206,6 @@ export const Footer = () => {
               <div className="w-[calc(50%-16px)] md:w-auto">
                 <p className="mb-2 text-lg font-semibold text-white">FAQ</p>
                 <ul className="flex flex-col gap-2">
-                  <li>
-                    <Link
-                      href="/"
-                      className="text-md font-normal text-white hover:underline"
-                    >
-                      dr.online
-                    </Link>
-                  </li>
                   <li>
                     <Link
                       href="/"

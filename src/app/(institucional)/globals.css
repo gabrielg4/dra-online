@@ -264,6 +264,65 @@ body {
   filter: blur(100px);
 }
 
+.video-solution-blur {
+  border-radius: 16px;
+  background:
+    radial-gradient(
+      50% 50% at 50% 50%,
+      rgba(7, 95, 85, 0) 0%,
+      rgba(7, 95, 85, 0.4) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(7, 95, 85, 0) 64.07%,
+      rgba(7, 95, 85, 0.53) 75%,
+      #075f55 92.64%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(7, 95, 85, 0) 80.05%,
+      rgba(7, 95, 85, 0.53) 90.75%,
+      #075f55 98%
+    ),
+    linear-gradient(
+      320deg,
+      rgba(7, 95, 85, 0) 80.52%,
+      rgba(7, 95, 85, 0.53) 91.91%,
+      #075f55 95.17%
+    ),
+    linear-gradient(
+      61deg,
+      rgba(7, 95, 85, 0) 60.95%,
+      rgba(7, 95, 85, 0.53) 96.21%,
+      #075f55 100%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(7, 95, 85, 0) 86.02%,
+      rgba(7, 95, 85, 0.53) 94.73%,
+      #075f55 100%
+    ),
+    linear-gradient(
+      120deg,
+      rgba(7, 95, 85, 0) 70.42%,
+      rgba(7, 95, 85, 0.53) 90.71%,
+      #075f55 96.73%
+    ),
+    linear-gradient(
+      241deg,
+      rgba(7, 95, 85, 0) 70.39%,
+      rgba(7, 95, 85, 0.53) 91.58%,
+      #075f55 97.41%
+    ),
+    linear-gradient(
+      270deg,
+      rgba(7, 95, 85, 0) 60.83%,
+      rgba(7, 95, 85, 0.53) 70.62%,
+      rgba(7, 95, 85, 0.8) 78.95%,
+      #075f55 98.54%
+    );
+}
+
 .tab-button-blur {
   box-shadow: 6px 0 20px 0 rgba(27, 160, 104, 0.2);
 }

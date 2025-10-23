@@ -30,7 +30,7 @@ export const SmartphoneSectionCards = ({
     maxWidth: 767,
   });
 
-  const startPhones = `top ${isTablet ? "80%" : isSmartphone ? "50%" : "50%"}`;
+  const startPhones = `top ${isTablet ? "80%" : isSmartphone ? "50%" : "60%"}`;
 
   useGSAP(() => {
     gsap.from(".title-section-security", {
