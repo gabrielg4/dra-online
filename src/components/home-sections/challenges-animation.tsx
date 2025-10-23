@@ -26,10 +26,10 @@ export function ChallengersAnimation() {
         scrub: 1,
         pin: true,
         // markers: true,
-        onUpdate: (self) => {
-          const progress = self.progress; // 0 a 1
+        onUpdate: () => {
+          // const progress = self.progress;
 
-          cards.forEach((card, index) => {
+          cards.forEach((card) => {
             // Pega a posição do card no viewport
             const cardRect = card.getBoundingClientRect();
             const cardCenter = cardRect.top + cardRect.height / 2;
@@ -44,7 +44,7 @@ export function ChallengersAnimation() {
 
             // Cria o efeito bounce: quanto mais próximo do centro, maior o scale
             const scale = 1 + (1 - normalizedDistance) * 0.24; // varia de 1 a 1.2
-            const rotation = (normalizedDistance - 0.5) * 1; // rotação sutil
+            // const rotation = (normalizedDistance - 0.5) * 1; // rotação sutil
 
             // Aplica a transformação
             gsap.to(card, {

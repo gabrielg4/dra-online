@@ -1,8 +1,21 @@
 import { BlogCarousel } from "@/components/blog-carousel";
 import Image from "next/image";
 import React from "react";
+import { getPayload } from "payload";
+import config from "@payload-config";
 
-export default function ObrigadoPage() {
+export default async function ObrigadoPage() {
+  const payload = await getPayload({ config });
+  const featuredPosts = await payload.find({
+    collection: "blog",
+    depth: 3,
+    limit: 3,
+    where: {
+      e_destaque: {
+        equals: "Sim",
+      },
+    },
+  });
   return (
     <>
       <section className="h-[500px] w-full overflow-hidden bg-[url(/images/img-bg-obrigado.svg)] bg-cover bg-center pt-20 md:h-[600px]">
@@ -99,7 +112,7 @@ export default function ObrigadoPage() {
             Explore nosso blog para conteúdos exclusivos sobre saúde digital e
             telemedicina.
           </p>
-          {/* <BlogCarousel /> */}
+          <BlogCarousel featuredPosts={featuredPosts.docs} />
         </div>
       </section>
     </>
