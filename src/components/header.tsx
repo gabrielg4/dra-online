@@ -35,7 +35,7 @@ export const Header = ({ startWithBlur }: HeaderProps) => {
   }, []);
 
   return (
-    <div className={cn("fixed top-0 z-50 w-full pt-5 duration-500")}>
+    <div className={cn("fixed top-0 z-[99] w-full pt-5 duration-500")}>
       <div className="container">
         <header
           className={cn(

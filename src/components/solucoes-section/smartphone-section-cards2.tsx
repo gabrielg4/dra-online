@@ -121,19 +121,19 @@ export const SmartphoneSectionCards2 = ({
           <Image
             src={secondImage}
             alt=""
-            className={`mobile-phone-image h-full w-[130px] object-contain md:w-[230px]`}
+            className={`mobile-phone-image h-full w-[140px] object-contain md:w-[230px]`}
             width={230}
             height={400}
           />
           <Image
             src={thirdImage}
             alt=""
-            className={`mobile-phone-image h-full w-[130px] object-contain md:w-[230px]`}
+            className={`mobile-phone-image h-full w-[140px] object-contain md:w-[230px]`}
             width={230}
             height={400}
           />
 
-          <div className="mobile-phone-image h-[220px] w-[130px] rounded-xl border-[7px] border-white/20 md:h-[544px] md:!w-[290px] md:rounded-3xl md:border-[9px]">
+          <div className="mobile-phone-image h-[260px] w-[140px] rounded-xl border-[7px] border-white/20 md:h-[544px] md:!w-[290px] md:rounded-3xl md:border-[9px]">
             <video
               src={firstVideo}
               autoPlay

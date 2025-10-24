@@ -5,6 +5,7 @@ import "swiper/css";
 import "swiper/css/effect-cards";
 import { TestimonialCard } from "./cards/testimonial-card";
 import type { Depoimento } from "../../payload-types";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 interface TestimonialsCarouselProps {
   testimonials: Depoimento[];
 }
@@ -27,52 +28,27 @@ export const TestimonialsCarousel = ({
       wrapperClass="relative px-10"
     >
       {testimonials.map((testimonial, index) => (
-        <SwiperSlide key={index} className="mx-auto w-full">
+        <SwiperSlide
+          key={index}
+          className="mx-auto w-full max-[640px]:max-w-[90%]"
+        >
           <TestimonialCard testimonial={testimonial} />
         </SwiperSlide>
       ))}
-
-      <button
-        id="next-depoimento"
-        className="bg-brand-light-green hover:bg-brand-light-green2 absolute top-1/2 right-0 z-50 flex h-8 w-8 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full duration-200 md:-right-20"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="22"
-          height="22"
-          fill="none"
-          viewBox="0 0 22 22"
+      <div className="just top-1/2 z-50 flex w-full -translate-y-1/2 items-center justify-center gap-5 max-[640px]:pt-20 sm:justify-between md:absolute">
+        <button
+          id="prev-depoimento"
+          className="bg-brand-light-green hover:bg-brand-light-green2 group z-50 flex h-12 w-12 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full duration-200 sm:h-8 sm:w-8 md:-ml-10"
         >
-          <path
-            stroke="#075F55"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="1.731"
-            d="M5.982 11h10.384m0 0L12.04 6.673M16.366 11l-4.326 4.327"
-          />
-        </svg>
-      </button>
-
-      <button
-        id="prev-depoimento"
-        className="bg-brand-light-green hover:bg-brand-light-green2 absolute top-1/2 left-0 z-50 flex h-8 w-8 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full duration-200 md:-left-20"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="19"
-          height="18"
-          fill="none"
-          viewBox="0 0 19 18"
+          <ArrowLeft className="text-brand-dark-green group-hover:text-brand-main-green size-5" />
+        </button>
+        <button
+          id="next-depoimento"
+          className="bg-brand-light-green hover:bg-brand-light-green2 z-50 flex h-12 w-12 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full duration-200 sm:h-8 sm:w-8 md:-mr-14"
         >
-          <path
-            stroke="#075F55"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="1.498"
-            d="M13.8 9H4.814m0 0 3.744 3.744M4.814 9l3.744-3.744"
-          />
-        </svg>
-      </button>
+          <ArrowRight className="text-brand-dark-green group-hover:text-brand-main-green size-5" />
+        </button>
+      </div>
     </Swiper>
   );
 };

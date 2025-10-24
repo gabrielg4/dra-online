@@ -57,7 +57,7 @@ export const HeroWorkWithUs = () => {
           </div>
         </div>
       </div>
-      <div className="to-brand-dark-green absolute -bottom-2 left-0 z-20 h-full w-full bg-gradient-to-b from-transparent md:-bottom-1 lg:h-[500px]" />
+      <div className="to-brand-dark-green absolute -bottom-2 left-0 z-20 h-full w-full bg-gradient-to-b from-transparent max-[640px]:to-50% md:-bottom-1 lg:h-[500px]" />
       {/* <VideosTrabalheConosco /> */}
       <VerticalCarouselAboutUs
         videosColumn1={["/videos/video7.mp4", "/videos/video9.mp4"]}

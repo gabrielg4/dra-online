@@ -113,10 +113,12 @@ export const SmartphoneSectionCards = ({
   }, []);
 
   return (
-    <section id="smartphones-section" className="overflow-hidden pb-20">
+    <section id="smartphones-section" className="relative pb-10 sm:pb-20">
+      <div className="overlay -bottom-4 z-10 !to-75%"></div>
       <div className="container !px-0">
-        <div className="image-wrapper relative flex items-end justify-center gap-4 overflow-hidden bg-[url('/images/bg-security.webp')] bg-cover bg-center pt-20 lg:pt-40">
-          <div className="to-brand-dark-green absolute -bottom-2 left-0 z-10 h-[400px] w-full bg-gradient-to-b from-transparent"></div>
+        <div className="image-wrapper relative flex items-end justify-center gap-4 bg-[url('/images/bg-security.webp')] bg-cover bg-center pt-20 lg:pt-20">
+          <div className="blur-bg-security absolute -top-40 left-1/2 -translate-x-1/2" />
+          {/* <div className="to-brand-dark-green absolute -bottom-2 left-0 z-10 h-[400px] w-full bg-gradient-to-b from-transparent"></div> */}
           <Image
             src={leftPhoneImg}
             alt=""

@@ -1,10 +1,10 @@
 import { Diferentials } from "@/components/solucoes-section/diferentials";
 import { Hero } from "@/components/solucoes-section/hero";
 import { Impacts } from "@/components/solucoes-section/impacts";
-import { CardsCarousel } from "@/components/solucoes-section/pronto-atendimento/cards-carousel";
 import React from "react";
 import { SmartphoneSectionCards2 } from "@/components/solucoes-section/smartphone-section-cards2";
 import { ContactSolution } from "@/components/solucoes-section/contact-solution";
+import { GridCards } from "@/components/solucoes-section/pronto-atendimento/grid-cards";
 
 const differentialsData = [
   {
@@ -72,7 +72,7 @@ const differentialsData = [
 const impactsData = [
   {
     isColumn: false,
-    title: "Benefícios para o beneficiário",
+    title: "Para o Beneficiário",
     description:
       "Acolhimento imediato, orientação segura e a confiança de estar cuidado em qualquer lugar, a qualquer hora e com os melhores profissionais.",
     icon: {
@@ -82,7 +82,7 @@ const impactsData = [
   },
   {
     isColumn: false,
-    title: "Benefícios para a operadora",
+    title: "Para a Operadora",
     description:
       "Menos idas desnecessárias ao pronto-socorro, menos custos com internações e mais eficiência assistencial.",
     icon: {
@@ -109,7 +109,7 @@ export default function ProntoAtendimentoPage() {
           </>
         }
       />
-      <CardsCarousel />
+      <GridCards />
       <Diferentials
         differentials={differentialsData}
         title={

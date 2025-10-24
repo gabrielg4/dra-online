@@ -33,7 +33,7 @@ export const BlogGrid = ({ posts }: BlogGridProps) => {
 
   return (
     <div>
-      <div className="mb-10 flex flex-wrap items-center justify-center gap-4 md:justify-start">
+      <div className="mb-10 flex w-full flex-wrap items-center justify-center gap-4 md:justify-start">
         <Button
           onClick={() => handleFilterByCategory("")}
           className={cn(

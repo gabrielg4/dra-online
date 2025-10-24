@@ -34,7 +34,7 @@ export const Impacts = ({
     maxWidth: 767,
   });
 
-  const start = `top ${isTablet ? "80%" : isSmartphone ? "50%" : "50%"}`;
+  const start = `top ${isTablet ? "80%" : isSmartphone ? "80%" : "50%"}`;
 
   useGSAP(() => {
     const titleSplit = new SplitText(".impacts-section h2", {

@@ -6,6 +6,7 @@ import { SplitText } from "gsap/all";
 import gsap from "gsap";
 import { useMediaQuery } from "react-responsive";
 import Image from "next/image";
+import { SpecialtiesCarousel } from "../specialties-carousel";
 
 interface DiferentialsSolutionProps {
   noImage?: boolean;
@@ -80,7 +81,7 @@ export const Diferentials2 = ({
   }, []);
 
   return (
-    <section className="integralmente-section bg-[url(/images/img-bg-secao-pattern.webp)] bg-cover bg-center bg-no-repeat py-10 lg:py-20">
+    <section className="integralmente-section bg-[url(/images/img-bg-secao-pattern.webp)] bg-cover bg-bottom bg-no-repeat py-14 sm:bg-center lg:py-20">
       <div className="container flex flex-col items-stretch gap-8 md:flex-row md:gap-14">
         <div className="flex h-full w-full flex-col justify-between md:w-1/2">
           <div>
@@ -93,7 +94,8 @@ export const Diferentials2 = ({
           </div>
           {noImage ? (
             <div>
-              <div className="grid grid-cols-1 gap-x-6 gap-y-6 max-[767px]:mt-10 md:grid-cols-2">
+              <SpecialtiesCarousel />
+              <div className="hidden grid-cols-1 gap-x-6 gap-y-6 max-[767px]:mt-10 sm:grid md:grid-cols-2">
                 <p className="text-brand-light-green border-brand-light-green w-full rounded-lg border bg-white/10 px-4 py-3 text-center text-lg leading-[150%] font-bold backdrop-blur-2xl">
                   Dermatologia
                 </p>

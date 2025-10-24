@@ -218,20 +218,6 @@ body {
   mix-blend-mode: soft-light;
 }
 
-/* .blob {
-  width: 280px;
-  height: 280px;
-  border-radius: 9999px;
-  background: radial-gradient(
-    closest-side,
-    rgba(255, 220, 80, 0.85),
-    rgba(255, 220, 80, 0) 70%
-  );
-  filter: blur(20px);
-  will-change: transform, left, top;
-  mix-blend-mode: soft-light;
-} */
-
 /* Variante com máscara na camada escura */
 .reveal-overlay {
   position: absolute;
@@ -292,8 +278,8 @@ body {
     linear-gradient(
       180deg,
       rgba(7, 95, 85, 0) 64.07%,
-      rgba(7, 95, 85, 0.53) 75%,
-      #075f55 92.64%
+      rgba(7, 95, 85, 0.53) 80%,
+      #075f55 90.64%
     ),
     linear-gradient(
       0deg,
@@ -303,9 +289,9 @@ body {
     ),
     linear-gradient(
       320deg,
-      rgba(7, 95, 85, 0) 80.52%,
-      rgba(7, 95, 85, 0.53) 91.91%,
-      #075f55 95.17%
+      rgba(7, 95, 85, 0) 90.52%,
+      rgba(7, 95, 85, 0.53) 98.91%,
+      #075f55 90.17%
     ),
     linear-gradient(
       61deg,
@@ -333,10 +319,10 @@ body {
     ),
     linear-gradient(
       270deg,
-      rgba(7, 95, 85, 0) 60.83%,
-      rgba(7, 95, 85, 0.53) 70.62%,
-      rgba(7, 95, 85, 0.8) 78.95%,
-      #075f55 98.54%
+      rgba(7, 95, 85, 0) 65.83%,
+      rgba(7, 95, 85, 0.53) 80.62%,
+      rgba(7, 95, 85, 0.8) 90.95%,
+      #075f55 93.54%
     );
 }
 
@@ -345,7 +331,6 @@ body {
 }
 
 .video-masked {
-  /* suporte amplo (inclui WebKit) */
   -webkit-mask-image: url("/images/subtract.png");
   mask-image: url("/images/subtract.png");
   -webkit-mask-repeat: no-repeat;

@@ -30,7 +30,7 @@ export const MobileMenu = () => {
         </SheetTrigger>
         <SheetContent
           hideDefaultCloseBtn
-          className="w-full bg-white/10 pt-4 backdrop-blur-2xl"
+          className="z-[100] w-full bg-white/10 pt-4 backdrop-blur-2xl"
         >
           <SheetClose asChild className="absolute top-5 right-5">
             <Button size="icon" variant="ghost">
@@ -46,7 +46,7 @@ export const MobileMenu = () => {
                 height={22}
               />
             </SheetTitle>
-            <nav className="mt-10">
+            <nav className="mt-10 overflow-y-auto">
               <ul className="mb-8 flex flex-col items-start justify-center gap-6">
                 <li>
                   <Link

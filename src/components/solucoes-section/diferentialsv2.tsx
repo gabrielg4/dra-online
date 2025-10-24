@@ -5,6 +5,7 @@ import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/all";
 import gsap from "gsap";
 import { useMediaQuery } from "react-responsive";
+import { SpecialtiesCarousel } from "../specialties-carousel";
 
 interface DiferentialsSolutionProps {
   noImage?: boolean;
@@ -91,7 +92,8 @@ export const DiferentialsV2 = ({
           </p>
           {noImage ? (
             <div>
-              <div className="grid grid-cols-1 gap-x-6 gap-y-6 max-[767px]:mt-10 md:grid-cols-2">
+              <SpecialtiesCarousel />
+              <div className="grid-cols-1 gap-x-6 gap-y-6 max-[767px]:mt-10 sm:grid md:grid-cols-2">
                 <p className="text-brand-light-green border-brand-light-green w-full rounded-lg border bg-white/10 px-4 py-3 text-center text-lg leading-[150%] font-bold backdrop-blur-2xl">
                   Cardiologia
                 </p>

@@ -32,7 +32,7 @@ export const SmartphoneSectionCards3 = ({
     maxWidth: 767,
   });
 
-  const startPhones = `top ${isTablet ? "80%" : isSmartphone ? "50%" : "50%"}`;
+  const startPhones = `top ${isTablet ? "80%" : isSmartphone ? "80%" : "50%"}`;
 
   useGSAP(() => {
     gsap.from(".title-section-security", {
@@ -114,7 +114,7 @@ export const SmartphoneSectionCards3 = ({
           <Image
             src={firstImage}
             alt=""
-            className={`mobile-phone-image h-full w-[130px] object-contain md:w-[202px]`}
+            className={`mobile-phone-image h-full w-[150px] object-contain md:w-[202px]`}
             width={202}
             height={326}
           />
@@ -146,7 +146,7 @@ export const SmartphoneSectionCards3 = ({
           <Image
             src={fourthImage}
             alt=""
-            className={`mobile-phone-image absolute top-80 right-5 w-[100px] object-contain shadow-2xl/10 md:top-56 md:!w-[180px]`}
+            className={`mobile-phone-image absolute top-[350px] right-10 w-[100px] object-contain shadow-2xl/10 md:top-56 md:!w-[180px]`}
             width={230}
             height={400}
           />

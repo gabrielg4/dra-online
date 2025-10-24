@@ -5,7 +5,6 @@ import { useState } from "react";
 import { TimelineContent } from "./timeline-content";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-
 const historyData = {
   "2022": [
     {
@@ -122,6 +121,7 @@ const historyData = {
     },
   ],
 };
+
 export const HistoryTimeline = () => {
   const [activeTime, setActiveTime] = useState(0);
 
@@ -132,30 +132,6 @@ export const HistoryTimeline = () => {
   useGSAP(() => {
     const buttons = gsap.utils.toArray<HTMLElement>(".button-tl");
     const lines = gsap.utils.toArray<HTMLElement>(".line-tl");
-
-    // gsap.from(".button-tl", {
-    //   yPercent: -100,
-    //   opacity: 0,
-    //   duration: 0.6,
-    //   ease: "expo.out",
-
-    //   scrollTrigger: {
-    //     trigger: ".s-timeline",
-    //     start: "top 70%",
-    //     once: true,
-    //   },
-    // });
-    // gsap.from(".line-tl", {
-    //   xPercent: -100,
-    //   opacity: 0,
-    //   duration: 0.6,
-    //   delay: 0.3,
-    //   ease: "expo.out",
-    //   scrollTrigger: {
-    //     trigger: ".s-timeline",
-    //     start: "top 70%",
-    //   },
-    // });
 
     // Anima os botões
     buttons.forEach((button, index) => {
@@ -277,28 +253,28 @@ export const HistoryTimeline = () => {
 
   return (
     <div className="rounded-xl bg-white/10 p-5 md:p-10">
-      <div className="mb-8 flex items-center justify-center md:mb-14">
+      <div className="mb-8 flex items-center justify-between md:mb-14 md:justify-center">
         <button
           onClick={() => handleSelectTimelineItem(0)}
           className="button-tl hover:border-brand-light-green hover:bg-brand-light-green hover:text-brand-dark-green cursor-pointer rounded-full border border-white px-4 py-2 text-[20px] leading-[130%] font-bold text-white duration-300"
         >
           2022
         </button>
-        <div className="line-tl h-[0.5px] w-14 bg-white" />
+        <div className="line-tl hidden h-[0.5px] w-14 bg-white md:block" />
         <button
           onClick={() => handleSelectTimelineItem(1)}
           className="button-tl hover:border-brand-light-green hover:bg-brand-light-green hover:text-brand-dark-green cursor-pointer rounded-full border border-white px-4 py-2 text-[20px] leading-[130%] font-bold text-white duration-300"
         >
           2023
         </button>
-        <div className="line-tl h-[0.5px] w-14 bg-white" />
+        <div className="line-tl hidden h-[0.5px] w-14 bg-white md:block" />
         <button
           onClick={() => handleSelectTimelineItem(2)}
           className="button-tl hover:border-brand-light-green hover:bg-brand-light-green hover:text-brand-dark-green cursor-pointer rounded-full border border-white px-4 py-2 text-[20px] leading-[130%] font-bold text-white duration-300"
         >
           2024
         </button>
-        <div className="line-tl h-[0.5px] w-14 bg-white" />
+        <div className="line-tl hidden h-[0.5px] w-14 bg-white md:block" />
         <button
           onClick={() => handleSelectTimelineItem(3)}
           className="button-tl hover:border-brand-light-green hover:bg-brand-light-green hover:text-brand-dark-green cursor-pointer rounded-full border border-white px-4 py-2 text-[20px] leading-[130%] font-bold text-white duration-300"
@@ -311,7 +287,7 @@ export const HistoryTimeline = () => {
           height={9}
           viewBox="0 0 57 9"
           className={cn(
-            "line-tl fill-white transition-all duration-200",
+            "line-tl hidden fill-white transition-all duration-200 md:block",
             activeTime >= 3 && "fill-[#A6D05D]",
           )}
         >

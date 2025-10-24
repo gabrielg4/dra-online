@@ -8,7 +8,7 @@ interface TestimonialCardProps {
 
 export const TestimonialCard = ({ testimonial }: TestimonialCardProps) => {
   return (
-    <div className="flex min-h-[350px] flex-col justify-between rounded-lg bg-white p-8 shadow-md/20">
+    <div className="flex min-h-[350px] flex-col justify-between rounded-lg bg-white p-5 shadow-md/20 sm:p-8">
       <p className="text-brand-dark-gray mb-5 text-lg leading-normal font-normal">
         {testimonial.depoimento}
       </p>

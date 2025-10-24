@@ -33,7 +33,7 @@ export const Diferentials3 = ({
     maxWidth: 767,
   });
 
-  const start = `top ${isTablet ? "40%" : isSmartphone ? "30%" : "50%"}`;
+  const start = `top ${isTablet ? "40%" : isSmartphone ? "80%" : "50%"}`;
   useGSAP(() => {
     const titleSplit = new SplitText(".integralmente-section h2", {
       type: "chars, words",
@@ -92,7 +92,7 @@ export const Diferentials3 = ({
               alt=""
               width={839}
               height={695}
-              className="absolute -bottom-5 -left-28 h-[450px] w-full md:-left-20 lg:-bottom-28 lg:!-left-40 lg:h-[630px] lg:w-auto"
+              className="absolute -bottom-5 -left-[108px] h-[450px] w-full object-contain md:-left-20 lg:-bottom-28 lg:!-left-40 lg:h-[630px] lg:w-auto"
             />
           </div>
         </div>

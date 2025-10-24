@@ -96,9 +96,7 @@ export const ValuesCarousel = () => {
               height={80}
               className="object-contain"
             />
-            <h3 className="text-center text-2xl font-bold text-white">
-              Missão
-            </h3>
+            <h3 className="text-center text-2xl font-bold text-white">Visão</h3>
             <p className="text-center text-[16px] leading-normal text-white">
               Ser referência nacional em saúde digital, promovendo impacto
               positivo na vida das pessoas por meio de soluções tecnológicas

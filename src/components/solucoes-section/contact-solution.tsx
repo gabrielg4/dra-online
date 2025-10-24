@@ -63,7 +63,7 @@ export const ContactSolution = () => {
             width={154}
             height={154}
             unoptimized
-            className=""
+            className="mb-5"
           />
         </div>
         <div className="border-l-brand-light-green relative w-full md:w-1/2 md:border-l md:pl-10 lg:max-w-[543px]">

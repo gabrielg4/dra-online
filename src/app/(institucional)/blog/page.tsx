@@ -37,7 +37,7 @@ export default async function BlogPage({
   ]);
   return (
     <>
-      <section className="mb:pb-14 bg-[url(/images/img-bg-blog.svg)] bg-cover bg-bottom bg-no-repeat pt-40 pb-10 md:h-[580px] md:pt-20">
+      <section className="mb:pb-14 bg-[url(/images/img-bg-blog.svg)] bg-cover bg-bottom bg-no-repeat pt-40 md:h-[580px] md:pt-20">
         <div className="container flex h-full flex-col items-center justify-between gap-10 md:flex-row">
           <div className="w-full md:w-1/2">
             <h1 className="mb-3 text-center text-lg text-white md:text-start">
@@ -54,14 +54,14 @@ export default async function BlogPage({
 
             <SearchInput />
           </div>
-          <div className="w-full md:w-1/2">
+          <div className="hidden w-full sm:block md:w-1/2">
             {featuredPosts.totalDocs > 0 && (
               <FeaturedPostsCarousel featuredPosts={featuredPosts} />
             )}
           </div>
         </div>
       </section>
-      <section className="md:14 bg-[url(/images/img-bg-section-blog.svg)] bg-cover bg-top bg-no-repeat pt-10 pb-20">
+      <section className="bg-[url(/images/img-bg-section-blog.svg)] bg-cover bg-top bg-no-repeat pt-14 pb-20">
         <div className="container">
           <BlogGrid posts={posts} />
         </div>
