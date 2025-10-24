@@ -96,7 +96,7 @@ export function ChallengersAnimation() {
       /> */}
       {/* Título */}
       <div className="container">
-        <div className="blur-2 absolute -bottom-48 -left-48 z-0 scale-50" />
+        <div className="blur-2 absolute -bottom-48 -left-96 z-0 scale-75 md:-left-48 md:scale-50" />
         <h2 className="title-section-challenges absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 text-center text-[32px] leading-[110%] font-bold text-white lg:text-[56px]">
           Sua empresa enfrenta
           <br className="inline-block" /> esses desafios?
