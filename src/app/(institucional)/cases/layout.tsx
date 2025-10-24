@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function LayoutCases({ children }: PropsWithChildren) {
   return (
     <>
-      <Header />
+      <Header hasBgWhite />
       {children}
     </>
   );

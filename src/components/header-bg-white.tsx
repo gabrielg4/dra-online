@@ -2,14 +2,16 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
 import { MobileMenu } from "./mobile/mobile-menu";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 import { NavigationV2 } from "./navigationV2";
+import { usePathname } from "next/navigation";
 export const HeaderBgWhite = () => {
+  const pathname = usePathname();
   const [headerScrolled, setHeaderScrolled] = useState(false);
   useGSAP(() => {
     const st = ScrollTrigger.create({
@@ -25,13 +27,20 @@ export const HeaderBgWhite = () => {
     };
   }, []);
 
+  // useEffect(() => {
+  //   if (pathname.includes("/blog")) {
+  //     setHiddenHeader(true);
+  //   }
+  //   console.log(pathname);
+  // }, []);
+
   return (
     <div className={cn("fixed top-0 z-50 w-full pt-5 duration-500")}>
       <div className="container">
         <header
           className={cn(
             "border-brand-main-green flex w-full items-center justify-between gap-5 rounded-full border px-6 py-4 duration-500 md:py-4",
-            headerScrolled && "bg-white/10 backdrop-blur-3xl",
+            headerScrolled && "bg-white",
           )}
         >
           <Link href="/">
@@ -43,7 +52,7 @@ export const HeaderBgWhite = () => {
             />
           </Link>
           {/* <Navigation textColor="text-[#282F3B]" /> */}
-          <NavigationV2 />
+          <NavigationV2 textColor="#282F3B" />
           <div className="flex w-fit items-center gap-2">
             <Button
               variant={"outline"}
