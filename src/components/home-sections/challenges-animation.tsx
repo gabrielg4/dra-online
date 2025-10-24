@@ -22,7 +22,7 @@ export function ChallengersAnimation() {
       scrollTrigger: {
         trigger: ".s-challenges",
         start: `top ${isTablet || isMobile ? "top" : "top"}`,
-        end: "+=350%",
+        end: "+=310%",
         scrub: 1,
         pin: true,
         anticipatePin: 1,
@@ -38,7 +38,7 @@ export function ChallengersAnimation() {
 
             const normalizedDistance = Math.min(distance / maxDistance, 1);
 
-            const scale = 1 + (1 - normalizedDistance) * 0.08;
+            const scale = 1 + (1 - normalizedDistance) * 0.1;
 
             gsap.to(card, {
               scaleY: scale,

@@ -18,7 +18,7 @@ export const ChallengeCard = ({
     <div
       {...props}
       className={cn(
-        "challenge-card w-full max-w-[312px] rounded-2xl border border-white/20 bg-white/20 p-4 backdrop-blur-2xl md:min-h-[350px] md:p-6",
+        "challenge-card w-full max-w-[360px] rounded-2xl border border-white/20 bg-white/20 p-4 backdrop-blur-2xl md:min-h-[350px] md:p-6",
         props.className,
       )}
     >
@@ -28,7 +28,7 @@ export const ChallengeCard = ({
           autoPlay
           muted
           playsInline
-          className="mx-auto mb-4 h-[200px] w-[312px] rounded-2xl object-cover md:mb-6"
+          className="mx-auto mb-4 h-[280px] w-[360px] rounded-2xl object-cover md:mb-6"
         />
       )}
       {imageUrl && (
@@ -36,8 +36,8 @@ export const ChallengeCard = ({
           src={imageUrl}
           alt="Placeholder"
           width={312}
-          height={200}
-          className="mx-auto mb-4 h-[200px] rounded-2xl object-cover md:mb-6"
+          height={280}
+          className="mx-auto mb-4 h-[280px] rounded-2xl object-cover md:mb-6"
         />
       )}
       <p className="text-md text-center leading-[130%] font-bold text-white sm:text-xl">

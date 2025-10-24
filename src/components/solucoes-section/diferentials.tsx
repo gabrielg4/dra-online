@@ -96,34 +96,34 @@ export const Diferentials = ({
             <div>
               <SpecialtiesCarousel />
               <div className="hidden grid-cols-2 gap-x-6 gap-y-6 max-[767px]:mt-10 sm:grid md:grid-cols-2">
-                <p className="text-brand-light-green border-brand-light-green flex w-full items-center justify-center rounded-lg border bg-white/10 px-4 py-3 text-center text-lg leading-[150%] font-bold backdrop-blur-2xl">
+                <p className="w-full rounded-2xl border bg-white/40 px-4 py-3 text-center text-lg leading-[150%] font-bold text-white backdrop-blur-2xl">
                   Cardiologia
                 </p>
-                <p className="text-brand-light-green border-brand-light-green flex w-full items-center justify-center rounded-lg border bg-white/10 px-4 py-3 text-center text-lg leading-[150%] font-bold backdrop-blur-2xl">
+                <p className="w-full rounded-2xl border bg-white/40 px-4 py-3 text-center text-lg leading-[150%] font-bold text-white backdrop-blur-2xl">
                   Dermatologia
                 </p>
-                <p className="text-brand-light-green border-brand-light-green flex w-full items-center justify-center rounded-lg border bg-white/10 px-4 py-3 text-center text-lg leading-[150%] font-bold backdrop-blur-2xl">
+                <p className="w-full rounded-2xl border bg-white/40 px-4 py-3 text-center text-lg leading-[150%] font-bold text-white backdrop-blur-2xl">
                   Endocrinologia
                 </p>
-                <p className="text-brand-light-green border-brand-light-green flex w-full items-center justify-center rounded-lg border bg-white/10 px-4 py-3 text-center text-lg leading-[150%] font-bold backdrop-blur-2xl">
+                <p className="w-full rounded-2xl border bg-white/40 px-4 py-3 text-center text-lg leading-[150%] font-bold text-white backdrop-blur-2xl">
                   Endocrinologia Pediátrica
                 </p>
-                <p className="text-brand-light-green border-brand-light-green flex w-full items-center justify-center rounded-lg border bg-white/10 px-4 py-3 text-center text-lg leading-[150%] font-bold backdrop-blur-2xl">
+                <p className="w-full rounded-2xl border bg-white/40 px-4 py-3 text-center text-lg leading-[150%] font-bold text-white backdrop-blur-2xl">
                   Ginecologia
                 </p>
-                <p className="text-brand-light-green border-brand-light-green flex w-full items-center justify-center rounded-lg border bg-white/10 px-4 py-3 text-center text-lg leading-[150%] font-bold backdrop-blur-2xl">
+                <p className="w-full rounded-2xl border bg-white/40 px-4 py-3 text-center text-lg leading-[150%] font-bold text-white backdrop-blur-2xl">
                   Imunologia
                 </p>
-                <p className="text-brand-light-green border-brand-light-green flex w-full items-center justify-center rounded-lg border bg-white/10 px-4 py-3 text-center text-lg leading-[150%] font-bold backdrop-blur-2xl">
+                <p className="w-full rounded-2xl border bg-white/40 px-4 py-3 text-center text-lg leading-[150%] font-bold text-white backdrop-blur-2xl">
                   Neurologia
                 </p>
-                <p className="text-brand-light-green border-brand-light-green flex w-full items-center justify-center rounded-lg border bg-white/10 px-4 py-3 text-center text-lg leading-[150%] font-bold backdrop-blur-2xl">
+                <p className="w-full rounded-2xl border bg-white/40 px-4 py-3 text-center text-lg leading-[150%] font-bold text-white backdrop-blur-2xl">
                   Neurologia Pediátrica
                 </p>
-                <p className="text-brand-light-green border-brand-light-green flex w-full items-center justify-center rounded-lg border bg-white/10 px-4 py-3 text-center text-lg leading-[150%] font-bold backdrop-blur-2xl">
+                <p className="w-full rounded-2xl border bg-white/40 px-4 py-3 text-center text-lg leading-[150%] font-bold text-white backdrop-blur-2xl">
                   Psiquiatria
                 </p>
-                <p className="text-brand-light-green border-brand-light-green flex w-full items-center justify-center rounded-lg border bg-white/10 px-4 py-3 text-center text-lg leading-[150%] font-bold backdrop-blur-2xl">
+                <p className="w-full rounded-2xl border bg-white/40 px-4 py-3 text-center text-lg leading-[150%] font-bold text-white backdrop-blur-2xl">
                   Reumatologia
                 </p>
               </div>
