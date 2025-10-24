@@ -61,7 +61,7 @@ export function ChallengersAnimation() {
       {
         y: 0, // Vai até a posição central (já está centralizado com translate)
         opacity: 1,
-        scale: 1.3,
+        scale: isMobile ? 1 : 1.3,
         duration: 5,
         ease: "power2.out",
       },
@@ -93,7 +93,7 @@ export function ChallengersAnimation() {
     return () => {
       challengesTl.kill();
     };
-  }, []);
+  }, [isMobile]);
 
   return (
     <section className="s-challenges relative min-h-screen w-full overflow-hidden bg-[url(/images/img-bg-problemas.webp)] bg-cover bg-top">
