@@ -352,7 +352,7 @@ body {
 }
 
 .video-blur {
-  border-radius: 16px;
+  /* border-radius: 16px; */
   background:
     linear-gradient(0deg, rgba(7, 95, 85, 0) 68.17%, #075f55 100%),
     linear-gradient(270deg, rgba(7, 95, 85, 0) 83.53%, #075f55 100%),

@@ -39,7 +39,7 @@ export const HeroWorkWithUs = () => {
             Junte-se à <span className="font-bold">dr</span>
             <span className="text-brand-light-green">.</span>online <br />
             <span className="text-brand-light-green font-bold">
-              e transforme o cuidado <br />
+              e transforme o cuidado <br className="hidden md:inline-block" />
               com a saúde no Brasil
             </span>
           </h1>

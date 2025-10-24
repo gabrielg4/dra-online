@@ -61,7 +61,7 @@ export const TestimonialsSection = ({
   }, []);
 
   return (
-    <section className="testimonials-section relative bg-cover bg-center bg-no-repeat pt-0 pb-0 lg:pt-20 lg:pb-20">
+    <section className="testimonials-section relative bg-[url(/images/img-bg-testimonials.svg)] bg-cover bg-center bg-no-repeat pt-0 pb-0 lg:pt-20 lg:pb-20">
       <div className="container flex flex-col items-start justify-between lg:flex-row">
         <div className="w-full lg:max-w-[467px]">
           <p className="section-subtitle text-brand-light-green mb-2 text-center text-[16px] leading-normal font-bold lg:text-start">

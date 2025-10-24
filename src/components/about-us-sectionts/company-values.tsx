@@ -36,7 +36,7 @@ export const CompanyValues = () => {
           </h2>
         </div>
         <div className="relative w-full lg:max-w-[100%-330px]">
-          <div className="from-brand-light-green to-brand-main-green absolute -right-16 bottom-32 h-[250px] w-[250px] rounded-full bg-gradient-to-b blur-3xl md:-right-20 md:-bottom-32 md:h-[380px] md:w-[380px] md:blur-[150px]" />
+          {/* <div className="from-brand-light-green to-brand-main-green absolute -right-16 bottom-32 h-[250px] w-[250px] rounded-full bg-gradient-to-b blur-3xl md:-right-20 md:-bottom-32 md:h-[380px] md:w-[380px] md:blur-[150px]" /> */}
           <ValuesCarousel />
         </div>
       </div>

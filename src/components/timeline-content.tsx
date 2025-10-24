@@ -58,6 +58,11 @@ export const TimelineContent = ({
                 </div>
                 <div className="flex w-full flex-col justify-between lg:w-1/2">
                   <div>
+                    {historyData.length > 1 && (
+                      <span className="text-brand-light-green2/80 text-[16px]">
+                        Parte {(index += 1)}
+                      </span>
+                    )}
                     <h2 className="text-brand-light-green mb-5 text-2xl font-bold md:text-[28px] lg:mb-6">
                       {title}
                     </h2>

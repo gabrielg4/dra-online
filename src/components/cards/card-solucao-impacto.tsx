@@ -33,7 +33,7 @@ export const CardSolucaoImpacto = ({
         className="object-contain"
       />
       <div className={`W-full ${!isColumn && "md:max-w-[calc(100%-56px)]"}`}>
-        <p className="mb-2 text-[14px] leading-normal font-bold text-white lg:text-[22px]">
+        <p className="mb-2 text-xl leading-normal font-bold text-white lg:text-[22px]">
           {title}
         </p>
         <p className="text-[16px] leading-normal font-light text-white">

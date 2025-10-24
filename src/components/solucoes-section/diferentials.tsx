@@ -38,7 +38,7 @@ export const Diferentials = ({
     maxWidth: 767,
   });
 
-  const start = `top ${isTablet ? "40%" : isSmartphone ? "80%" : "50%"}`;
+  const start = `top ${isTablet ? "40%" : isSmartphone ? "30%" : "50%"}`;
 
   useGSAP(() => {
     const titleSplit = new SplitText(".diferential-section h2", {
@@ -155,7 +155,7 @@ export const Diferentials = ({
         <div className="cards-diferentials flex w-full flex-col gap-8 md:w-1/2">
           {differentials.map(({ icon: { alt, src }, title }, index) => (
             <CardSolucaoDiferencial
-              cardClass="p-6"
+              cardClass="p-6 card-diferential"
               key={index}
               image={{
                 alt,
