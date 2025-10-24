@@ -14,7 +14,7 @@ interface FAQContainerProps {
 }
 
 export const FAQContainer = ({ faqItems }: FAQContainerProps) => {
-  const midPoint = Math.ceil(faqItems.length / 2);
+  const midPoint = Math.floor(faqItems.length / 2);
   const firstSplit = faqItems.slice(0, midPoint);
   const secondSplit = faqItems.slice(midPoint);
   return (

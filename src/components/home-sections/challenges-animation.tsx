@@ -86,7 +86,7 @@ export function ChallengersAnimation() {
     };
   }, []);
   return (
-    <section className="s-challenges relative min-h-screen w-full bg-[url(/images/img-bg-problemas.webp)] bg-cover bg-top">
+    <section className="s-challenges relative min-h-screen w-full overflow-hidden bg-[url(/images/img-bg-problemas.webp)] bg-cover bg-top">
       {/* <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
@@ -94,9 +94,9 @@ export function ChallengersAnimation() {
         }}
         aria-hidden
       /> */}
-
       {/* Título */}
       <div className="container">
+        <div className="blur-2 absolute -bottom-48 -left-48 z-0 scale-50" />
         <h2 className="title-section-challenges absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 text-center text-[32px] leading-[110%] font-bold text-white lg:text-[56px]">
           Sua empresa enfrenta
           <br className="inline-block" /> esses desafios?

@@ -264,6 +264,16 @@ body {
   filter: blur(100px);
 }
 
+.blur-2 {
+  width: 1078.815px;
+  height: 565.501px;
+  transform: rotate(-37.104deg);
+  border-radius: 400px;
+  opacity: 0.5;
+  background: var(--Degrad, linear-gradient(180deg, #1ba068 0%, #a6d05d 100%));
+  filter: blur(100px);
+}
+
 .video-solution-blur {
   border-radius: 16px;
   background:
