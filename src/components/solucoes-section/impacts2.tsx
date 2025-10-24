@@ -5,6 +5,8 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
 import { useMediaQuery } from "react-responsive";
+import { CardSolucaoImpacto } from "../cards/card-solucao-impacto";
+import { cn } from "@/lib/utils";
 
 interface ImpactsSectionProps {
   impacts: {
@@ -69,10 +71,29 @@ export const Impacts2 = ({
         <h2 className="md:10 mb-6 text-center text-[28px] leading-[110%] font-bold text-white md:text-[32px] lg:mb-14 lg:text-[40px]">
           {title}
         </h2>
-        <ImpactsCarousel
+        <div
+          className={cn(
+            "grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-8",
+            customClassNames,
+          )}
+        >
+          {impacts.map((impact, index) => (
+            <CardSolucaoImpacto
+              key={index}
+              title={impact.title}
+              description={impact.description}
+              isColumn={impact.isColumn}
+              image={{
+                alt: impact.icon.alt,
+                src: impact.icon.src,
+              }}
+            />
+          ))}
+        </div>
+        {/* <ImpactsCarousel
           impacts={impacts}
           customClassNames={customClassNames}
-        />
+        /> */}
       </div>
     </section>
   );

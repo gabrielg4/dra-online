@@ -75,7 +75,7 @@ export const Hero = ({
               <p className="mb-10 text-center text-lg leading-normal font-normal text-white md:mb-14 md:text-start md:text-2xl">
                 {description}
               </p>
-              <CtaButton url="#contato" title="Falar com especialista" />
+              <CtaButton url="#contato" title="Falar com nosso time" />
             </div>
           </div>
         </div>

@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import React from "react";
+import React, { type ReactElement } from "react";
 
 interface CardSolucaoImpactoProps {
   image: {
@@ -8,7 +8,7 @@ interface CardSolucaoImpactoProps {
     alt: string;
   };
   title: string;
-  description: string;
+  description: ReactElement | string;
   isColumn?: boolean;
 }
 
@@ -21,7 +21,7 @@ export const CardSolucaoImpacto = ({
   return (
     <div
       className={cn(
-        "impact-card col-span-1 flex h-full w-full flex-col items-start gap-4 rounded-lg border border-white/20 bg-white/10 p-5 transition-all duration-300 hover:-translate-y-3 md:flex-row lg:p-8",
+        "impact-card col-span-1 flex h-full w-full flex-col items-start gap-4 rounded-lg bg-white/10 p-5 shadow-2xl/10 transition-all duration-300 hover:-translate-y-3 md:flex-row lg:p-8",
         isColumn && "md:flex-col",
       )}
     >
@@ -32,8 +32,8 @@ export const CardSolucaoImpacto = ({
         height={56}
         className="object-contain"
       />
-      <div className="w-full md:max-w-[calc(100%-56px)]">
-        <p className="text-[14px] leading-normal font-bold text-white lg:text-lg">
+      <div className={`W-full ${!isColumn && "md:max-w-[calc(100%-56px)]"}`}>
+        <p className="mb-2 text-[14px] leading-normal font-bold text-white lg:text-[22px]">
           {title}
         </p>
         <p className="text-[16px] leading-normal font-light text-white">

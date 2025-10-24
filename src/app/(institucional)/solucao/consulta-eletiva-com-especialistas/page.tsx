@@ -85,8 +85,14 @@ const differentialsData = [
 const impactsData = [
   {
     title: "Benefícios para o beneficiário",
-    description:
-      "Para o beneficiário, é autonomia e praticidade: ele agenda com um clique, é atendido em menos de 24h, recebe prescrição digital e vive uma jornada de cuidado contínua, acolhedora e de alta qualidade.",
+    description: (
+      <>
+        Para o <strong>beneficiário</strong>, é{" "}
+        <strong>autonomia e praticidade</strong>: ele agenda com um clique, é
+        atendido em menos de 24h, recebe prescrição digital e vive uma jornada
+        de cuidado contínua, acolhedora e de alta qualidade.
+      </>
+    ),
     isColumn: false,
     icon: {
       src: "/images/ic-pessoas.svg",
@@ -95,8 +101,18 @@ const impactsData = [
   },
   {
     title: "Benefícios para a operadora",
-    description:
-      "Para a operadora, significa ampliar a capacidade assistencial sem investimento em infraestrutura física, reduzir filas e tempos de espera, e elevar o valor percebido pelo beneficiário, com controle total do fluxo clínico e acesso a dados estratégicos para gestão populacional.",
+    description: (
+      <>
+        Para a <strong>operadora</strong>, significa{" "}
+        <strong>
+          ampliar a capacidade assistencial sem investimento em infraestrutura
+          física, reduzir filas e tempos de espera, e elevar o valor percebido
+          pelo beneficiário
+        </strong>
+        , com controle total do fluxo clínico e acesso a{" "}
+        <strong>dados estratégicos para gestão populacional</strong>.
+      </>
+    ),
     isColumn: false,
     icon: {
       src: "/images/ic-hospital.svg",
@@ -105,7 +121,7 @@ const impactsData = [
   },
 ];
 
-export default function EntrevistaQualificadaPage() {
+export default function ConsultaEletivaComEspecialistaPage() {
   return (
     <>
       <Hero
@@ -118,7 +134,8 @@ export default function EntrevistaQualificadaPage() {
         }
         description={
           <>
-            Transforme o acesso em cuidado. <br />E o cuidado em resultado.
+            Transforme o acesso em cuidado. E o cuidado
+            <br /> em resultado.
           </>
         }
       />

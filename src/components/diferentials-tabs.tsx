@@ -389,19 +389,7 @@ export const DiferentialsTabs = () => {
                   href="/solucao/saude-mental"
                   className="text-brand-main-green px-4 py-2 text-[16px] leading-normal font-medium duration-300 hover:text-white"
                 >
-                  Conheça mais o <strong>Teleacolhimento</strong>
-                </Link>
-              </Button>
-
-              <Button
-                variant="outline"
-                className="border-brand-main-green group hover:bg-brand-main-green rounded-full p-0 duration-300"
-              >
-                <Link
-                  href="/"
-                  className="text-brand-main-green px-4 py-2 text-[16px] leading-normal font-medium duration-300 hover:text-white"
-                >
-                  Conheça mais o <strong>Integralmente</strong>
+                  Conheça mais
                 </Link>
               </Button>
             </div>

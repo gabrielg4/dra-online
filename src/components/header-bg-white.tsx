@@ -3,13 +3,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
-import { Navigation } from "./navigation";
 import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
 import { MobileMenu } from "./mobile/mobile-menu";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
-
+import { NavigationV2 } from "./navigationV2";
 export const HeaderBgWhite = () => {
   const [headerScrolled, setHeaderScrolled] = useState(false);
   useGSAP(() => {
@@ -43,7 +42,8 @@ export const HeaderBgWhite = () => {
               height={25}
             />
           </Link>
-          <Navigation textColor="text-[#282F3B]" />
+          {/* <Navigation textColor="text-[#282F3B]" /> */}
+          <NavigationV2 />
           <div className="flex w-fit items-center gap-2">
             <Button
               variant={"outline"}

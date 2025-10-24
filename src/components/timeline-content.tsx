@@ -49,9 +49,7 @@ export const TimelineContent = ({
                 <div className="flex w-full items-center lg:w-1/2">
                   <video
                     src={videoUrl}
-                    width={540}
-                    height={330}
-                    className="mx-auto h-full w-full rounded-lg object-cover lg:mx-0"
+                    className="mx-auto h-[330px] w-[540px] rounded-lg object-cover lg:mx-0"
                     autoPlay={true}
                     muted={true}
                     loop={true}
@@ -68,8 +66,8 @@ export const TimelineContent = ({
 
                   {historyData.length > 1 && (
                     <div className="relative mt-6 flex items-center gap-3">
-                      <CarouselPrevious className="text-brand-dark-green bg-brand-light-green hover:bg-brand-main-green relative left-0 cursor-pointer border-0 duration-300 hover:text-white" />
-                      <CarouselNext className="text-brand-dark-green bg-brand-light-green hover:bg-brand-main-green relative right-0 cursor-pointer border-0 duration-300 hover:text-white" />
+                      <CarouselPrevious className="text-brand-dark-green bg-brand-light-green hover:bg-brand-main-green relative left-0 h-10 w-10 cursor-pointer border-0 duration-300 hover:text-white" />
+                      <CarouselNext className="text-brand-dark-green bg-brand-light-green hover:bg-brand-main-green relative right-0 h-10 w-10 cursor-pointer border-0 duration-300 hover:text-white" />
                     </div>
                   )}
                 </div>

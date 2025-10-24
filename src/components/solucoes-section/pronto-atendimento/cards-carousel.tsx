@@ -73,9 +73,9 @@ export const CardsCarousel = () => {
                 <Image
                   src="/images/ic-shield-check.svg"
                   alt="Ícone missão"
-                  width={80}
-                  height={80}
-                  className="h-[100px] w-[100px] object-contain md:h-auto md:w-auto"
+                  width={90}
+                  height={90}
+                  className="h-[100px] w-[100px] object-contain md:h-[120px] md:w-[120px]"
                 />
                 <p className="text-center text-lg font-bold text-white">
                   Tecnologia responsiva que permite incluir o acesso do seu
@@ -91,7 +91,7 @@ export const CardsCarousel = () => {
                   alt="Ícone missão"
                   width={80}
                   height={80}
-                  className="h-[100px] w-[100px] object-contain md:h-auto md:w-auto"
+                  className="h-[100px] w-[100px] object-contain md:h-[120px] md:w-[120px]"
                 />
                 <p className="text-center text-lg font-bold text-white">
                   Tempo de atendimento médio de no máximo 6 minutos
@@ -106,7 +106,7 @@ export const CardsCarousel = () => {
                   alt="Ícone missão"
                   width={80}
                   height={80}
-                  className="h-[100px] w-[100px] object-contain md:h-auto md:w-auto"
+                  className="h-[100px] w-[100px] object-contain md:h-[120px] md:w-[120px]"
                 />
                 <p className="text-center text-lg font-bold text-white">
                   NPS DE 93 na zona de Excelência por +2 anos consecutivos
@@ -121,7 +121,7 @@ export const CardsCarousel = () => {
                   alt="Ícone missão"
                   width={80}
                   height={80}
-                  className="h-[100px] w-[100px] object-contain md:h-auto md:w-auto"
+                  className="h-[100px] w-[100px] object-contain md:h-[120px] md:w-[120px]"
                 />
                 <p className="text-center text-lg font-bold text-white">
                   Propostas modulares que permite o melhor custo-benefício do

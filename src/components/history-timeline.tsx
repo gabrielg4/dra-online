@@ -133,6 +133,28 @@ export const HistoryTimeline = () => {
     const buttons = gsap.utils.toArray<HTMLElement>(".button-tl");
     const lines = gsap.utils.toArray<HTMLElement>(".line-tl");
 
+    gsap.from(".button-tl", {
+      xPercent: -100,
+      opacity: 0,
+      duration: 0.6,
+      ease: "expo.out",
+      scrollTrigger: {
+        trigger: ".s-timeline",
+        start: "top 70%",
+      },
+    });
+    gsap.from(".line-tl", {
+      xPercent: -100,
+      opacity: 0,
+      duration: 0.6,
+      delay: 0.3,
+      ease: "expo.out",
+      scrollTrigger: {
+        trigger: ".s-timeline",
+        start: "top 70%",
+      },
+    });
+
     // Anima os botões
     buttons.forEach((button, index) => {
       // Cria ou pega o elemento de preenchimento

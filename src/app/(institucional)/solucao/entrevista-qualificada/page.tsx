@@ -100,12 +100,7 @@ export default function EntrevistaQualificadaPage() {
             Entrevista <br /> Qualificada{" "}
           </>
         }
-        description={
-          <>
-            Decisões regulatórias seguras,
-            <br /> baseadas em dados.{" "}
-          </>
-        }
+        description={<>Mais segurança, menos riscos.</>}
       />
       <Diferentials
         differentials={differentialsData}

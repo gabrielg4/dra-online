@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 interface ImpactsSectionProps {
   impacts: {
     title: string;
-    description: string;
+    description: ReactElement | string;
     isColumn?: boolean;
     icon: {
       src: string;
@@ -72,7 +72,7 @@ export const Impacts = ({
         </h2>
         <div
           className={cn(
-            "grid grid-cols-1 gap-4 md:grid-cols-2",
+            "grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-8",
             customClassNames,
           )}
         >

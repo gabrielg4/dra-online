@@ -85,7 +85,8 @@ export const Diferentials3 = ({
           <p className="section-description mb-0 text-lg leading-normal font-normal text-white md:mb-10 lg:mb-14">
             {description}
           </p>
-          <div className="h-[400px] w-full">
+          <div className="relative h-[400px] w-full">
+            <div className="blur-hand-smartphone absolute bottom-16 left-10" />
             <Image
               src="/images/gif-mao-segurando-celular.gif"
               alt=""

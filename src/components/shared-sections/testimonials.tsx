@@ -6,6 +6,7 @@ import { SplitText } from "gsap/all";
 import gsap from "gsap";
 import type { Depoimento } from "../../../payload-types";
 import { baseTestimonials } from "@/utils/base-testimonials";
+import { useMediaQuery } from "react-responsive";
 
 interface TestimonialsSectionProps {
   children: ReactNode;
@@ -16,6 +17,9 @@ export const TestimonialsSection = ({
   children,
   hasBlur = false,
 }: TestimonialsSectionProps) => {
+  const isMobile = useMediaQuery({
+    maxWidth: 640,
+  });
   const [testimonials, setTestimonials] = useState<Depoimento[]>(
     baseTestimonials as Depoimento[],
   );
@@ -32,8 +36,7 @@ export const TestimonialsSection = ({
       stagger: 0.03,
       scrollTrigger: {
         trigger: ".testimonials-section",
-        start: "top 20%",
-        // markers: true,
+        start: `top ${isMobile ? "70%" : "30%"}`,
       },
     });
     gsap.from(".testimonials-section .section-subtitle ", {
@@ -58,7 +61,7 @@ export const TestimonialsSection = ({
   }, []);
 
   return (
-    <section className="testimonials-section relative overflow-hidden bg-[url(/images/img-bg-depoimentos.svg)] bg-cover bg-center bg-no-repeat pt-0 pb-0 lg:pt-20 lg:pb-20">
+    <section className="testimonials-section relative bg-cover bg-center bg-no-repeat pt-0 pb-0 lg:pt-20 lg:pb-20">
       <div className="container flex flex-col items-start justify-between lg:flex-row">
         <div className="w-full lg:max-w-[467px]">
           <p className="section-subtitle text-brand-light-green mb-2 text-center text-[16px] leading-normal font-bold lg:text-start">

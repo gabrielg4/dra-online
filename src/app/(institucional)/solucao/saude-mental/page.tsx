@@ -236,7 +236,7 @@ export default function SaudeMentalPage() {
         leftPhoneImg="/images/img-phone-left-sol-5.webp"
         middlePhoneVideo="/videos/video-middle-phone-solucao-5.mp4"
         rightPhoneImg="/images/img-phone-right-sol-5.webp"
-        subtitle="Veja como funciona nossa solução de entrevista qualificada."
+        subtitle="Veja como funciona nossa solução de saúde mental."
       />
       <Diferentials2
         differentials={differentialsData2}

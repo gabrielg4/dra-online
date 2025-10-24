@@ -6,6 +6,8 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
@@ -40,6 +42,23 @@ export const ValuesCarousel = () => {
     api.scrollTo(slide);
   };
 
+  useGSAP(() => {
+    const metricCards = gsap.utils.toArray(".value-card");
+    gsap.from(metricCards, {
+      yPercent: 100,
+      opacity: 0,
+      duration: 3,
+      ease: "expo.out",
+      stagger: 0.6,
+      scrollTrigger: {
+        trigger: ".s-values",
+        start: "top 90%",
+        // end: "bottom 70%",
+        scrub: true,
+      },
+    });
+  }, []);
+
   return (
     <Carousel
       setApi={setApi}
@@ -50,7 +69,7 @@ export const ValuesCarousel = () => {
     >
       <CarouselContent className="pb-16">
         <CarouselItem className="pl-8 md:basis-1/2 lg:basis-1/3">
-          <div className="flex h-fit flex-col items-center justify-center gap-4 rounded-lg bg-white/10 p-6 shadow-2xl/10">
+          <div className="value-card flex h-fit flex-col items-center justify-center gap-4 rounded-lg bg-white/10 p-6 shadow-2xl/10">
             <Image
               src="/images/ic-missao.svg"
               alt="Ícone missão"
@@ -69,7 +88,7 @@ export const ValuesCarousel = () => {
           </div>
         </CarouselItem>
         <CarouselItem className="pl-8 md:basis-1/2 md:pt-14 lg:basis-1/3">
-          <div className="flex h-fit flex-col items-center justify-center gap-4 rounded-lg bg-white/10 p-6 shadow-2xl/10">
+          <div className="value-card flex h-fit flex-col items-center justify-center gap-4 rounded-lg bg-white/10 p-6 shadow-2xl/10">
             <Image
               src="/images/ic-missao.svg"
               alt="Ícone missão"
@@ -88,7 +107,7 @@ export const ValuesCarousel = () => {
           </div>
         </CarouselItem>
         <CarouselItem className="pl-8 md:basis-1/2 lg:basis-1/3">
-          <div className="flex h-fit flex-col items-center justify-center gap-4 rounded-lg bg-white/10 p-6 shadow-2xl/10 lg:h-[350px]">
+          <div className="value-card flex h-fit flex-col items-center justify-center gap-4 rounded-lg bg-white/10 p-6 shadow-2xl/10 lg:h-[350px]">
             <Image
               src="/images/ic-valores.svg"
               alt="Ícone valores"

@@ -123,11 +123,15 @@ export default function ProntoAtendimentoPage() {
         }
         description={
           <>
-            Imprevistos não têm hora marcada. Por isso, a dr.online garante que
-            o acesso a um médico nunca esteja fora de alcance. Nosso Pronto
-            Atendimento 24h conecta pacientes a clínicos e pediatras em poucos
-            minutos, sem filas, sem burocracia e com mais de 92% de
-            resolutividade.
+            Imprevistos não têm hora marcada. Por isso, a dr.online{" "}
+            <br className="hidden lg:inline-block" /> garante que o acesso a um
+            médico nunca esteja fora
+            <br className="hidden lg:inline-block" /> de alcance. Nosso Pronto
+            Atendimento 24h conecta pacientes
+            <br className="hidden lg:inline-block" /> a clínicos e pediatras em
+            poucos minutos, sem filas, sem
+            <br className="hidden lg:inline-block" /> burocracia e com mais de
+            92% de resolutividade.
           </>
         }
         videoUrl="/videos/video-secao-solucao-2.mp4"

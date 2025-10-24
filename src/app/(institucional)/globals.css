@@ -254,6 +254,13 @@ body {
   );
 }
 
+.text-gradiente {
+  background: linear-gradient(90deg, #1ba068 17.68%, #a6d05d 32.64%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .blur-1 {
   width: 1078.815px;
   height: 565.501px;
@@ -374,13 +381,22 @@ body {
     rgba(255, 255, 255, 0.1);
 }
 
+.blur-hand-smartphone {
+  width: 320px;
+  height: 321px;
+  border-radius: 400px;
+  opacity: 0.7;
+  background: linear-gradient(8deg, #1ba068 -31.88%, #a6d05d 117.1%);
+  filter: blur(50px);
+}
+
 .blur-contact-solution {
   width: 1078.815px;
   height: 565.501px;
   transform: rotate(-37.104deg);
   position: absolute;
-  left: -626.031px;
-  bottom: -500.468px;
+  left: -526.031px;
+  bottom: -300.468px;
   border-radius: 400px;
   opacity: 0.5;
   background: var(--Degrad, linear-gradient(180deg, #1ba068 0%, #a6d05d 100%));
