@@ -207,7 +207,7 @@ export const Footer = () => {
                 </p>
                 <Link
                   href="/blog"
-                  className="text-md mb-4 block font-normal text-white hover:underline"
+                  className="text-md mb-2 block font-normal text-white hover:underline"
                 >
                   Blog
                 </Link>
@@ -215,7 +215,7 @@ export const Footer = () => {
                   href="/noticias"
                   className="text-md mb-4 block font-normal text-white hover:underline"
                 >
-                  NA Mídia
+                  Na Mídia
                 </Link>
                 <p className="mb-2 text-lg font-semibold text-white">Contato</p>
                 <ul className="mb-4 flex flex-col gap-2">
