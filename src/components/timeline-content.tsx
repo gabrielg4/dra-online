@@ -49,7 +49,7 @@ export const TimelineContent = ({
                 <div className="flex w-full items-center lg:w-1/2">
                   <video
                     src={videoUrl}
-                    className="mx-auto h-[330px] w-[540px] rounded-lg object-cover lg:mx-0"
+                    className="mx-auto h-[200px] w-[540px] rounded-lg object-cover sm:h-[330px] lg:mx-0"
                     autoPlay={true}
                     muted={true}
                     loop={true}

@@ -45,7 +45,7 @@ export const Hero = () => {
             em saúde, acessível, confiável e resolutiva.
           </p>
 
-          <CtaButton url="#saiba-mais" title="Conheça" />
+          <CtaButton url="#nossa-historia" title="Conheça" />
         </div>
       </div>
       <div className="to-brand-dark-green absolute -bottom-2 left-0 z-20 h-full w-full bg-gradient-to-b from-transparent to-90% sm:h-[500px] md:-bottom-1" />

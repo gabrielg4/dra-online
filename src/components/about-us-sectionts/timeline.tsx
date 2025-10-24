@@ -19,7 +19,7 @@ export const TimeLine = () => {
       scrollTrigger: {
         trigger: ".s-timeline",
         start: "top 90%",
-        end: "center 70%",
+        end: "center 80%",
         scrub: true,
       },
     });

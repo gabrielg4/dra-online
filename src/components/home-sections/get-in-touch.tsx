@@ -47,7 +47,7 @@ export const GetInTouch = () => {
             className=""
           />
         </div>
-        <div className="border-l-brand-light-green relative w-full md:w-1/2 md:border-l md:pl-10 lg:max-w-[543px]">
+        <div className="border-l-brand-light-green relative w-full max-[640px]:mb-4 md:w-1/2 md:border-l md:pl-10 lg:max-w-[543px]">
           <ContactForm />
         </div>
       </div>

@@ -41,7 +41,10 @@ export const OurHistory = () => {
   }, []);
 
   return (
-    <section className="s-about-us bg-[url(/images/img-bg-secao-sobre.webp)] bg-cover bg-no-repeat py-10 lg:py-20">
+    <section
+      id="nossa-historia"
+      className="s-about-us bg-[url(/images/img-bg-secao-sobre.webp)] bg-cover bg-no-repeat py-10 lg:py-20"
+    >
       <div className="container flex flex-col-reverse items-center gap-6 md:flex-row lg:gap-14">
         <div className="relative hidden w-full md:block md:max-w-[459px]">
           <Image
@@ -58,7 +61,7 @@ export const OurHistory = () => {
             Cuidar bem nunca foi tão
             <span className="text-brand-light-green"> estratégico</span>
           </h2>
-          <div>
+          <div className="grid gap-4">
             <p className="text-[16px] leading-normal text-white">
               A dr.online nasceu com um propósito claro: tornar o acesso à saúde
               mais simples, humano e acessível. Desde o início, unimos inovação
@@ -66,16 +69,12 @@ export const OurHistory = () => {
               ecossistema digital que conecta pessoas, empresas e operadoras em
               uma nova forma de cuidar.
             </p>
-            <br />
-            <br />
             <p className="text-[16px] leading-normal text-white">
               Nossa essência é simples: acreditar que saúde não pode esperar.
               Por isso, unimos acolhimento, inovação e resultado em cada
               atendimento, transformando a experiência do paciente e gerando
               valor estratégico para quem cuida.
             </p>
-            <br />
-            <br />
             <div className="relative -my-16 block w-full md:hidden">
               <Image
                 src="/images/gif-sobre.gif"
@@ -86,8 +85,6 @@ export const OurHistory = () => {
               />
               <div className="from-brand-light-green to-brand-main-green absolute top-1/2 left-1/2 h-[280px] w-[280px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-b blur-[150px]" />
             </div>
-            <br />
-            <br />
             <p className="text-[16px] leading-normal text-white">
               Hoje, oferecemos um ecossistema completo que conecta operadoras,
               empresas e milhões de pessoas a soluções digitais que resolvem de

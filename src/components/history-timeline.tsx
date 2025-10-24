@@ -253,7 +253,7 @@ export const HistoryTimeline = () => {
 
   return (
     <div className="rounded-xl bg-white/10 p-5 md:p-10">
-      <div className="mb-8 flex items-center justify-between md:mb-14 md:justify-center">
+      <div className="mb-8 flex items-center justify-between max-[640px]:grid max-[640px]:grid-cols-2 max-[640px]:gap-5 md:mb-14 md:justify-center">
         <button
           onClick={() => handleSelectTimelineItem(0)}
           className="button-tl hover:border-brand-light-green hover:bg-brand-light-green hover:text-brand-dark-green cursor-pointer rounded-full border border-white px-4 py-2 text-[20px] leading-[130%] font-bold text-white duration-300"
