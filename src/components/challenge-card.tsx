@@ -16,7 +16,7 @@ export const ChallengeCard = ({
     <div
       {...props}
       className={cn(
-        "challenge-card w-full max-w-[312px] rounded-2xl border border-white/20 bg-white/20 p-4 backdrop-blur-2xl md:p-6",
+        "challenge-card w-full max-w-[312px] rounded-2xl border border-white/20 bg-white/20 p-4 backdrop-blur-2xl md:min-h-[350px] md:p-6",
         props.className,
       )}
     >

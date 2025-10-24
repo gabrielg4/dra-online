@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
     reactCompiler: false,
   },
   images: {
-    domains: ["localhost"],
+    domains: ["localhost", "dr-online-rust.vercel.app"],
     remotePatterns: [
       {
         protocol: "https",
@@ -17,6 +17,10 @@ const nextConfig: NextConfig = {
       {
         protocol: "http",
         hostname: "localhost:3000",
+      },
+      {
+        protocol: "https",
+        hostname: "dr-online-rust.vercel.app",
       },
     ],
   },
