@@ -193,62 +193,39 @@ export const MobileMenu = () => {
                   </Accordion>
                 </li>
                 <li>
-                  <Link
-                    href="/saude-digital"
-                    className="hover:text-brand-light-green text-lg font-semibold text-white duration-200"
-                  >
-                    Saúde digital
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/beneficios"
-                    className="hover:text-brand-light-green text-lg font-semibold text-white duration-200"
-                  >
-                    Benefícios
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/blog"
-                    className="hover:text-brand-light-green text-lg font-semibold text-white duration-200"
-                  >
-                    Blog
-                  </Link>
-                </li>
-                <li>
                   <Accordion type="single" collapsible>
                     <AccordionItem value="item-1">
                       <AccordionTrigger
                         hasChevron={false}
                         className="text-md hover:text-brand-light-green group flex cursor-pointer items-center justify-start gap-2 p-0 font-semibold text-white duration-200"
                       >
-                        FAQ
+                        Conteúdos
                         <ChevronDown className="size-6 text-white" />
                       </AccordionTrigger>
                       <AccordionContent>
                         <div className="mt-8 grid grid-cols-1 gap-8">
                           <Link
-                            href="/faq/dr-online"
+                            href="/blog"
                             className="group/nav-link flex items-start"
                           >
                             <Image
-                              src="/images/ic-faq-dronline.svg"
+                              src="/images/ic-blog.svg"
                               alt="ícone - dr.online"
                               width={32}
                               height={32}
                             />
-                            <div className="ml-2 max-w-[180px]">
+                            <div className="ml-2">
                               <p className="text-md group-hover/nav-link:text-brand-light-green font-semibold text-white duration-300">
-                                dr.online
+                                Blog
                               </p>
                               <p className="text-sm text-white">
-                                Perguntas e respostas sobre a empresa.
+                                Artigos e publicações sobre inovação, saúde e o
+                                ecossistema dr.online.
                               </p>
                             </div>
                           </Link>
                           <Link
-                            href="/faq/pacientes"
+                            href="/noticias"
                             className="group/nav-link flex items-start"
                           >
                             <Image
@@ -257,32 +234,13 @@ export const MobileMenu = () => {
                               width={32}
                               height={32}
                             />
-                            <div className="ml-2 max-w-[180px]">
+                            <div className="ml-2">
                               <p className="text-md group-hover/nav-link:text-brand-light-green font-semibold text-white duration-300">
-                                Pacientes
+                                Na Mídia
                               </p>
                               <p className="text-sm text-white">
-                                Dúvidas frequentes de pacientes.
-                              </p>
-                            </div>
-                          </Link>
-                          <Link
-                            href="/faq/profissionais-da-saude"
-                            className="group/nav-link flex items-start"
-                          >
-                            <Image
-                              src="/images/ic-faq-profissionais.svg"
-                              alt="ícone - Profissionais da saúde"
-                              width={32}
-                              height={32}
-                            />
-                            <div className="ml-2 max-w-[180px]">
-                              <p className="text-md group-hover/nav-link:text-brand-light-green font-semibold text-white duration-300">
-                                Profissionais da saúde
-                              </p>
-                              <p className="text-sm text-white">
-                                Informações relevantes sobre o uso da
-                                plataforma.
+                                Notícias e destaques sobre a presença da
+                                dr.online na imprensa.
                               </p>
                             </div>
                           </Link>
@@ -292,60 +250,12 @@ export const MobileMenu = () => {
                   </Accordion>
                 </li>
                 <li>
-                  <Accordion type="single" collapsible>
-                    <AccordionItem value="item-1">
-                      <AccordionTrigger
-                        hasChevron={false}
-                        className="text-md hover:text-brand-light-green group flex cursor-pointer items-center justify-start gap-2 p-0 font-semibold text-white duration-200"
-                      >
-                        Trabalhe conosco
-                        <ChevronDown className="size-6 text-white" />
-                      </AccordionTrigger>
-                      <AccordionContent>
-                        <div className="mt-8 grid grid-cols-1 gap-8">
-                          <Link
-                            href="/trabalhe-conosco"
-                            className="group/nav-link flex items-start"
-                          >
-                            <Image
-                              src="/images/ic-medicos.svg"
-                              alt="ícone - trabalhe conosco médicos"
-                              width={32}
-                              height={32}
-                            />
-                            <div className="ml-2 max-w-[180px]">
-                              <p className="text-md group-hover/nav-link:text-brand-light-green font-semibold text-white duration-300">
-                                Médicos
-                              </p>
-                              <p className="text-sm text-white">
-                                Lorem ipsum dolor sit.
-                              </p>
-                            </div>
-                          </Link>
-                          <Link
-                            href="/trabalhe-conosco"
-                            className="group/nav-link flex items-start"
-                          >
-                            <Image
-                              src="/images/ic-demais-profissionais.svg"
-                              alt="ícone - demais profissionais"
-                              width={32}
-                              height={32}
-                            />
-                            <div className="ml-2 max-w-[180px]">
-                              <p className="text-md group-hover/nav-link:text-brand-light-green font-semibold text-white duration-300">
-                                Demais profissionais
-                              </p>
-                              <p className="text-sm text-white">
-                                Lorem ipsum dolor sit.
-                              </p>
-                            </div>
-                          </Link>
-                        </div>
-                        s
-                      </AccordionContent>
-                    </AccordionItem>
-                  </Accordion>
+                  <Link
+                    href="/trabalhe-conosco"
+                    className="hover:text-brand-light-green text-lg font-semibold text-white duration-200"
+                  >
+                    Seja um credenciado
+                  </Link>
                 </li>
               </ul>
               <Button

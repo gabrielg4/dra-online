@@ -4,12 +4,14 @@ import React, { type ComponentProps } from "react";
 
 interface ChallengeCardProps extends ComponentProps<"div"> {
   imageUrl?: string;
+  videoUrl?: string;
   label: string;
 }
 
 export const ChallengeCard = ({
-  imageUrl = "/images/img-placeholder-card-ch.webp",
+  imageUrl,
   label,
+  videoUrl,
   ...props
 }: ChallengeCardProps) => {
   return (
@@ -20,13 +22,24 @@ export const ChallengeCard = ({
         props.className,
       )}
     >
-      <Image
-        src={imageUrl}
-        alt="Placeholder"
-        width={312}
-        height={200}
-        className="mx-auto mb-4 h-[200px] rounded-2xl object-cover md:mb-6"
-      />
+      {videoUrl && (
+        <video
+          src={videoUrl}
+          autoPlay
+          muted
+          playsInline
+          className="mx-auto mb-4 h-[200px] w-[312px] rounded-2xl object-cover md:mb-6"
+        />
+      )}
+      {imageUrl && (
+        <Image
+          src={imageUrl}
+          alt="Placeholder"
+          width={312}
+          height={200}
+          className="mx-auto mb-4 h-[200px] rounded-2xl object-cover md:mb-6"
+        />
+      )}
       <p className="text-md text-center leading-[130%] font-bold text-white sm:text-xl">
         {label}
       </p>

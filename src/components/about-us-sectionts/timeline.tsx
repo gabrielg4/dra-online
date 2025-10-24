@@ -7,7 +7,7 @@ import gsap from "gsap";
 
 export const TimeLine = () => {
   useGSAP(() => {
-    const titleSplit = new SplitText(".s-timeline h2", {
+    const titleSplit = new SplitText(".s-timeline h2.section-title", {
       type: "chars, words",
     });
     gsap.from(titleSplit.chars, {
@@ -18,8 +18,8 @@ export const TimeLine = () => {
       stagger: 0.5,
       scrollTrigger: {
         trigger: ".s-timeline",
-        start: "top 80%",
-        end: "bottom 50%",
+        start: "top 90%",
+        end: "center 70%",
         scrub: true,
       },
     });
@@ -27,7 +27,7 @@ export const TimeLine = () => {
   return (
     <section className="s-timeline pb-10 lg:pt-20 lg:pb-20">
       <div className="container">
-        <h2 className="mb-6 text-center text-[32px] leading-[110%] text-white md:mb-10 lg:mb-14 lg:text-[40px]">
+        <h2 className="section-title mb-6 text-center text-[32px] leading-[110%] text-white md:mb-10 lg:mb-14 lg:text-[40px]">
           Conheça <strong className="font-bold">nossa trajetória</strong>
         </h2>
         <HistoryTimeline />

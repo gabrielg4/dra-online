@@ -163,6 +163,71 @@ export const NavigationV2 = ({ textColor = "text-white" }: NavigationProps) => {
             </div>
           </div>
         </li>
+        <li className="group">
+          <button
+            className={`text-md hover:text-brand-light-green flex cursor-pointer items-center gap-2 font-semibold ${textColor} duration-200`}
+          >
+            Conteúdos
+            <ChevronDown className="group-hover/nav-link:text-brand-light-green size-4 duration-200" />
+          </button>
+
+          {/* Submenu */}
+          <div className="absolute right-0 z-50 hidden w-full max-w-[678px] pt-8 group-hover:block">
+            <div className="relative">
+              <div className="submenu-blur w-full rounded-lg border-0 p-6 shadow-2xl/10">
+                <div className="mx-auto flex w-full items-stretch gap-8 rounded-2xl">
+                  <div className="w-fit border-r border-r-white pr-8">
+                    <p className="md:h6 text-xl font-semibold text-white">
+                      Conteúdos
+                    </p>
+                  </div>
+                  <div className="grid grid-cols-1 gap-8">
+                    <Link
+                      href="/blog"
+                      className="group/nav-link flex items-start"
+                    >
+                      <Image
+                        src="/images/ic-blog.svg"
+                        alt="ícone - Saúde mental"
+                        width={32}
+                        height={32}
+                      />
+                      <div className="ml-2">
+                        <p className="text-md group-hover/nav-link:text-brand-light-green font-semibold text-white duration-300">
+                          Blog
+                        </p>
+                        <p className="text-sm text-white">
+                          Artigos e publicações sobre inovação, saúde e o
+                          ecossistema dr.online.
+                        </p>
+                      </div>
+                    </Link>
+                    <Link
+                      href="/noticias"
+                      className="group/nav-link flex items-start"
+                    >
+                      <Image
+                        src="/images/ic-dr-online.svg"
+                        alt="ícone - Consultório Digital"
+                        width={32}
+                        height={32}
+                      />
+                      <div className="ml-2">
+                        <p className="text-md group-hover/nav-link:text-brand-light-green font-semibold text-white duration-300">
+                          Na Mídia
+                        </p>
+                        <p className="text-sm text-white">
+                          Notícias e destaques sobre a presença da dr.online na
+                          imprensa.
+                        </p>
+                      </div>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
         <li>
           <Link
             href="/trabalhe-conosco"

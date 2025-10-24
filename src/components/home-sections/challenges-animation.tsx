@@ -25,6 +25,7 @@ export function ChallengersAnimation() {
         end: "+=310%",
         scrub: 1,
         pin: true,
+        anticipatePin: 3,
         // markers: true,
         onUpdate: () => {
           // const progress = self.progress;
@@ -59,8 +60,10 @@ export function ChallengersAnimation() {
     });
     challengesTl.from(".s-challenges h2", {
       // y: -90,
-      scale: 0.1,
-      duration: 1,
+      scale: 0,
+      opacity: 0,
+      duration: 0.6,
+      ease: "power4",
     });
 
     const yHeight = -(
@@ -140,40 +143,30 @@ export function ChallengersAnimation() {
             className="absolute top-[2210px] left-1/2 max-[640px]:-translate-x-1/2 md:top-[1320px] md:left-14 lg:top-[2074px] lg:left-[210px]"
           /> */}
 
-          <ChallengeCard
-            label="Longos tempos de espera para atendimento presencial"
-            className="absolute top-20 left-1/2 max-[640px]:-translate-x-1/2 lg:top-24 lg:left-[86px]"
-          />
+          <div className="absolute top-20 left-1/2 grid items-center justify-center gap-16 max-[640px]:w-full max-[640px]:-translate-x-1/2 lg:top-24 lg:left-[86px]">
+            <ChallengeCard
+              videoUrl="/videos/video-animation-2.mp4"
+              label="Longos tempos de espera para atendimento presencial"
+            />
+            <ChallengeCard
+              videoUrl="/videos/video-animation-4.mp4"
+              label="Afastamentos recorrentes por problemas de saúde mental"
+            />
+            {/* className="absolute top-[420px] left-1/2 max-[640px]:-translate-x-1/2 md:top-[170px] md:left-[86px] lg:top-[500px]" */}
+          </div>
+          <div className="absolute top-[790px] grid items-center justify-center gap-16 max-[640px]:left-1/2 max-[640px]:w-full max-[640px]:-translate-x-1/2 md:pt-80 lg:top-24 lg:right-[86px]">
+            <ChallengeCard
+              videoUrl="/videos/video-animation-3.mp4"
+              label="Dificuldade de acesso médico em regiões remotas"
+              // className="absolute top-[790px] left-1/2 max-[640px]:-translate-x-1/2 md:top-[500px] md:left-[86px] lg:top-[910px]"
+            />
 
-          <ChallengeCard
-            label="Afastamentos recorrentes por problemas de saúde mental"
-            className="absolute top-[420px] left-1/2 max-[640px]:-translate-x-1/2 md:top-[170px] md:left-[86px] lg:top-[500px]"
-          />
-
-          <ChallengeCard
-            label="Dificuldade de acesso médico em regiões remotas"
-            className="absolute top-[790px] left-1/2 max-[640px]:-translate-x-1/2 md:top-[500px] md:left-[86px] lg:top-[910px]"
-          />
-
-          <ChallengeCard
-            label="Falta de estrutura para atendimento 24h ou saúde primária integrada"
-            className="absolute top-[1140px] left-1/2 max-[640px]:-translate-x-1/2 md:top-[900px] md:left-[86px] lg:top-[1300px]"
-          />
-
-          <ChallengeCard
-            label="Exigências regulatórias da ANS e LGPD sem soluções"
-            className="absolute top-20 max-[640px]:left-1/2 max-[640px]:-translate-x-1/2 md:right-12 lg:top-24 lg:right-[86px]"
-          />
-
-          <ChallengeCard
-            label="Baixo engajamento dos beneficiários com os programas de saúde"
-            className="absolute top-[1850px] max-[640px]:left-1/2 max-[640px]:-translate-x-1/2 md:top-[170px] md:right-[86px] lg:top-[500px]"
-          />
-
-          <ChallengeCard
-            label="Impossibilidade de expandir a rede assistencial com qualidade"
-            className="absolute top-[2210px] max-[640px]:left-1/2 max-[640px]:-translate-x-1/2 md:top-[500px] md:right-[86px] lg:top-[900px]"
-          />
+            <ChallengeCard
+              label="Exigências regulatórias da ANS e LGPD sem soluções"
+              videoUrl="/videos/video-animation-1.mp4"
+              // className="absolute top-20 max-[640px]:left-1/2 max-[640px]:-translate-x-1/2 md:right-12 lg:top-24 lg:right-[86px]"
+            />
+          </div>
         </div>
       </div>
     </section>

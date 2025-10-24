@@ -100,10 +100,10 @@ export const WheelCarousel = ({ articles }: WheelCarouselProps) => {
         y: 50,
         ease: "back.out(1.7)",
         duration: 0.6,
-        stagger: 0.1,
+        stagger: 0.01,
         scrollTrigger: {
           trigger: "#midia",
-          start: "top 100%",
+          start: "center 100%",
           // markers: true,
           scrub: 1,
         },
