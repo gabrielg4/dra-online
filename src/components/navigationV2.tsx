@@ -37,7 +37,7 @@ export const NavigationV2 = ({ textColor = "text-white" }: NavigationProps) => {
                       Soluções
                     </p>
                   </div>
-                  <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+                  <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
                     <Link
                       href="/solucao/entrevista-qualificada"
                       className="group/nav-link flex items-start"
@@ -69,7 +69,7 @@ export const NavigationV2 = ({ textColor = "text-white" }: NavigationProps) => {
                       />
                       <div className="ml-2 max-w-[255px]">
                         <p className="text-md group-hover/nav-link:text-brand-light-green font-semibold text-white duration-300">
-                          Consultas Online com Especialista
+                          Consulta Eletiva com Especialistas
                         </p>
                         <p className="text-sm text-white">
                           Inovação que transforma um espaço em ponto de cuidado
@@ -165,7 +165,7 @@ export const NavigationV2 = ({ textColor = "text-white" }: NavigationProps) => {
         </li>
         <li>
           <Link
-            href="/sobre-nos"
+            href="/trabalhe-conosco"
             className={`text-md hover:text-brand-light-green font-semibold ${textColor} duration-200`}
           >
             Seja um credenciado

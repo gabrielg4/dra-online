@@ -1,6 +1,5 @@
 "use client";
 import React, { type ReactElement } from "react";
-import { ImpactsCarousel } from "../impacts-carousel";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";

@@ -72,7 +72,7 @@ const differentialsData = [
 
 const impactsData = [
   {
-    title: "Benefícios para o beneficiário",
+    title: "Para o Beneficiário",
     description: "Acesso rápido, diagnósticos precisos e cuidado humanizado.",
     isColumn: false,
     icon: {
@@ -81,7 +81,7 @@ const impactsData = [
     },
   },
   {
-    title: "Benefícios para a operadora",
+    title: "Para a Operadora",
     description:
       "Facilidade em implantação de consultórios InCompany, ampliando acesso e acolhimento para dentro da empresa parceira.",
     isColumn: false,

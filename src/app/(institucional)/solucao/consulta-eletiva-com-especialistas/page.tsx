@@ -84,7 +84,7 @@ const differentialsData = [
 
 const impactsData = [
   {
-    title: "Benefícios para o beneficiário",
+    title: "Para o Beneficiário",
     description: (
       <>
         Para o <strong>beneficiário</strong>, é{" "}
@@ -100,7 +100,7 @@ const impactsData = [
     },
   },
   {
-    title: "Benefícios para a operadora",
+    title: "Para a Operadora",
     description: (
       <>
         Para a <strong>operadora</strong>, significa{" "}

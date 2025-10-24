@@ -138,7 +138,7 @@ export const WhatWeAreLookingFor = () => {
             marketing, operações, comercial e muito mais.
           </p>
           <div className="cta-button-security">
-            <CtaButton title="Saiba mais" url="#vagas" />
+            <CtaButton title="Saiba mais" url="#form-curriculo" />
           </div>
         </div>
       </div>

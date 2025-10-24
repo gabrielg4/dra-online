@@ -128,7 +128,7 @@ const differentialsData2 = [
 
 const impactsData = [
   {
-    title: "Benefícios para o beneficiário",
+    title: "Para o Beneficiário",
     description:
       "É acolhimento imediato, confiança no cuidado e apoio emocional que faz diferença nos momentos críticos.",
     isColumn: true,
@@ -138,7 +138,7 @@ const impactsData = [
     },
   },
   {
-    title: "Benefícios para a operadora",
+    title: "Para a Operadora",
     description:
       "Menos absenteísmo, menos afastamentos prolongados e mais engajamento em saúde mental.",
     isColumn: true,
@@ -148,7 +148,7 @@ const impactsData = [
     },
   },
   {
-    title: "Benefícios para empresas",
+    title: "Para as Empresas",
     description:
       "Suporte e acesso digital imediato, auxiliando na NR1 como plano de ação.",
     isColumn: true,
@@ -161,7 +161,7 @@ const impactsData = [
 
 const impactsData2 = [
   {
-    title: "Benefícios para o beneficiário",
+    title: "Para o Beneficiário",
     description:
       "Acesso a um plano estruturado de cuidado, com apoio próximo, segurança e acompanhamento que faz diferença na vida.",
     isColumn: false,
@@ -171,7 +171,7 @@ const impactsData2 = [
     },
   },
   {
-    title: "Benefícios para a operadora",
+    title: "Para a Operadora",
     description:
       "Reduzir custos com afastamentos, fortalecer a gestão populacional e entregar valor estratégico em saúde mental.",
     isColumn: false,

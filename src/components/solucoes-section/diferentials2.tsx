@@ -92,7 +92,7 @@ export const Diferentials2 = ({
             </p>
           </div>
           {noImage ? (
-            <>
+            <div>
               <div className="grid grid-cols-1 gap-x-6 gap-y-6 max-[767px]:mt-10 md:grid-cols-2">
                 <p className="text-brand-light-green border-brand-light-green w-full rounded-lg border bg-white/10 px-4 py-3 text-center text-lg leading-[150%] font-bold backdrop-blur-2xl">
                   Dermatologia
@@ -119,10 +119,10 @@ export const Diferentials2 = ({
                   Reumatologia
                 </p>
               </div>
-              <p className="text-brand-light-green mt-8 text-center text-[40px] font-bold">
+              <p className="mt-8 text-center text-[40px] font-bold text-white">
                 + 30 Especialidades
               </p>
-            </>
+            </div>
           ) : (
             <div className="relative hidden h-[337px] w-full rounded-lg md:mt-28 md:block">
               <div className="video-blur absolute top-0 left-0 h-full w-full" />

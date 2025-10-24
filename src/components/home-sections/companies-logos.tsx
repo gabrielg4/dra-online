@@ -5,11 +5,7 @@ import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/all";
 import gsap from "gsap";
 
-interface CompaniesLogosProps {
-  textGradient?: boolean;
-}
-
-export const CompaniesLogos = ({ textGradient }: CompaniesLogosProps) => {
+export const CompaniesLogos = () => {
   useGSAP(() => {
     const titleSplit = new SplitText(".title-section", {
       type: "chars, words",

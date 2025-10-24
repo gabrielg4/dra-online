@@ -69,7 +69,7 @@ const differentialsData = [
 
 const impactsData = [
   {
-    title: "Benefícios para o beneficiário",
+    title: "Para o Beneficiário",
     description: "Acolhimento, continuidade e resolutividade.",
     isColumn: false,
     icon: {
@@ -78,7 +78,7 @@ const impactsData = [
     },
   },
   {
-    title: "Benefícios para a operadora",
+    title: "Para a Operadora",
     description: "Eficiência e consequente redução de custos.",
     isColumn: false,
     icon: {
@@ -112,7 +112,7 @@ export default function GestaoIntegradaPage() {
             Na saúde suplementar,
             <br className="hidden lg:inline-block" />
             <span className="text-brand-light-green">
-              cada detalhe faz diferença.
+              cada detalhe faz diferença
             </span>
           </>
         }

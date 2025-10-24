@@ -111,7 +111,7 @@ export const Diferentials3 = ({
           ))}
         </div>
       </div>
-      <div className="to-brand-dark-green absolute bottom-0 z-20 hidden h-52 w-full bg-gradient-to-b from-transparent leading-0 md:block" />
+      <div className="to-brand-dark-green absolute -bottom-1 z-20 hidden h-52 w-full bg-gradient-to-b from-transparent leading-0 min-[1500px]:to-75% md:block" />
     </section>
   );
 };

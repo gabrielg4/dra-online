@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import { CtaButton } from "../cta-button";
-import { MetricsMobileCarousel } from "../mobile/metrics-mobile-carousel";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/all";
 import gsap from "gsap";

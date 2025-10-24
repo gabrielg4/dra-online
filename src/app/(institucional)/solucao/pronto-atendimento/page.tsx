@@ -117,7 +117,7 @@ export default function ProntoAtendimentoPage() {
             Mais que uma solução de <br className="hidden lg:inline-block" />
             urgência.{" "}
             <span className="text-brand-light-green">
-              Uma estratégia de gestão em saúde.
+              Uma estratégia de gestão em saúde
             </span>
           </>
         }

@@ -24,14 +24,14 @@ export const ExamsSection = () => {
       },
     });
     gsap.from(".card-exams-container", {
-      y: -100,
+      yPercent: 100,
       opacity: 0,
       duration: 1,
       stagger: 0.08,
       ease: "expo.out",
       scrollTrigger: {
         trigger: "#exams",
-        start: "top 70%",
+        start: "top 80%",
         scrub: 2,
       },
     });

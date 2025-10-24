@@ -10,7 +10,7 @@ export default function SobreNosPage() {
   return (
     <>
       <Hero />
-      <CompaniesLogos textGradient />
+      <CompaniesLogos />
       <OurHistory />
       <TimeLine />
       <CompanyValues />

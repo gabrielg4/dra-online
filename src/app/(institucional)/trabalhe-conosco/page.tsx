@@ -1,6 +1,5 @@
 import { Beneficios } from "@/components/trabalhe-conosco-sections/beneficios";
 import { HeroWorkWithUs } from "@/components/trabalhe-conosco-sections/hero";
-import { OpenVacancies } from "@/components/trabalhe-conosco-sections/open-vacancies";
 import { WhatWeAreLookingFor } from "@/components/trabalhe-conosco-sections/what-we-are-looking-for";
 import { WorkWithUsSection2 } from "@/components/trabalhe-conosco-sections/work-with-us-2";
 import { WorkWithUsSection } from "@/components/trabalhe-conosco-sections/work-with-us-section";
@@ -13,7 +12,7 @@ export default function TrabalheConoscoPage() {
       <Beneficios />
       <WorkWithUsSection />
       <WhatWeAreLookingFor />
-      <OpenVacancies />
+      {/* <OpenVacancies /> */}
       <WorkWithUsSection2 />
     </>
   );

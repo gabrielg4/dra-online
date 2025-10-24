@@ -69,7 +69,7 @@ const differentialsData = [
 
 const impactsData = [
   {
-    title: "Benefícios para o beneficiário",
+    title: "Para o Beneficiário",
     description:
       "Acolhimento, clareza e confiança logo na entrada do plano de saúde.",
     isColumn: false,
@@ -79,7 +79,7 @@ const impactsData = [
     },
   },
   {
-    title: "Benefícios para a operadora",
+    title: "Para a Operadora",
     description:
       "Previsibilidade, redução de sinistralidade e aderência às normas da ANS.",
     isColumn: false,
@@ -109,7 +109,7 @@ export default function EntrevistaQualificadaPage() {
             Na saúde suplementar,
             <br className="hidden lg:inline-block" />
             <span className="text-brand-light-green">
-              cada detalhe faz diferença.
+              cada detalhe faz diferença
             </span>
           </>
         }
