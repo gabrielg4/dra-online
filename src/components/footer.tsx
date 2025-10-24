@@ -98,7 +98,7 @@ export const Footer = () => {
                 </Link>
               </div>
             </div>
-            <div className="flex w-full max-w-[769px] flex-row flex-wrap items-start justify-between gap-6 md:gap-12">
+            <div className="flex w-full max-w-[800px] flex-row flex-wrap items-start justify-between gap-6 md:gap-12">
               <div className="w-[calc(50%-16px)] md:w-auto">
                 <p className="mb-2 text-lg font-semibold text-white">
                   Institucional
@@ -122,26 +122,10 @@ export const Footer = () => {
                   </li>
                   <li>
                     <Link
-                      href="/"
-                      className="text-md font-normal text-white hover:underline"
-                    >
-                      Soluções
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/"
-                      className="text-md font-normal text-white hover:underline"
-                    >
-                      Saúde digital
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
                       href="/trabalhe-conosco"
                       className="text-md font-normal text-white hover:underline"
                     >
-                      Trabalhe conosco
+                      Seja um credenciado
                     </Link>
                   </li>
                 </ul>
@@ -186,14 +170,6 @@ export const Footer = () => {
                   </li>
                   <li>
                     <Link
-                      href="/solucao/"
-                      className="text-md font-normal text-white hover:underline"
-                    >
-                      Consulta Online
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
                       href="/solucao/espaco-de-saude-conectada"
                       className="text-md font-normal text-white hover:underline"
                     >
@@ -208,7 +184,7 @@ export const Footer = () => {
                 <ul className="flex flex-col gap-2">
                   <li>
                     <Link
-                      href="/"
+                      href="/#faq"
                       className="text-md font-normal text-white hover:underline"
                     >
                       Pacientes
@@ -216,7 +192,7 @@ export const Footer = () => {
                   </li>
                   <li>
                     <Link
-                      href="/"
+                      href="/#faq"
                       className="text-md font-normal text-white hover:underline"
                     >
                       Profissionais da saúde
@@ -231,9 +207,15 @@ export const Footer = () => {
                 </p>
                 <Link
                   href="/blog"
-                  className="text-md mb-4 font-normal text-white hover:underline"
+                  className="text-md mb-4 block font-normal text-white hover:underline"
                 >
                   Blog
+                </Link>
+                <Link
+                  href="/noticias"
+                  className="text-md mb-4 block font-normal text-white hover:underline"
+                >
+                  NA Mídia
                 </Link>
                 <p className="mb-2 text-lg font-semibold text-white">Contato</p>
                 <ul className="mb-4 flex flex-col gap-2">
