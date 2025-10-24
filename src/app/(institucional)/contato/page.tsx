@@ -9,7 +9,7 @@ function ContactPage() {
     <>
       <section className="relative w-full pt-[168px] pb-14">
         <BackgroundMouseReveal />
-        <div className="container flex items-center gap-14">
+        <div className="container flex flex-col items-center gap-10 md:flex-row md:gap-14">
           <div className="w-full">
             <h1 className="mb-6 text-5xl leading-[110%] font-bold text-white">
               Precisando de ajuda?
@@ -19,7 +19,7 @@ function ContactPage() {
               <br className="hidden md:inline-block" /> ideal com a sua marca e
               a nossa estrutura.
             </p>
-            <div className="mt-32 flex items-center gap-4">
+            <div className="mt-8 flex items-center gap-4 md:mt-32">
               <div className="bg-brand w-full rounded-2xl bg-white/10 p-6 shadow-2xl/10 backdrop-blur-2xl">
                 <Image
                   src="/images/ic-whatsapp-contact.svg"
@@ -63,9 +63,9 @@ function ContactPage() {
           </div>
         </div>
       </section>
-      <section className="pt-14">
+      <section className="max-[640px]:pb-20 md:pt-14">
         <div className="container px-4">
-          <h2 className="mb-10 text-center text-[40px] font-normal text-white">
+          <h2 className="mb-10 text-center text-[32px] leading-[110%] font-normal text-white md:text-[40px]">
             <span className="text-brand-light-green font-bold">
               Outras opções
             </span>{" "}
