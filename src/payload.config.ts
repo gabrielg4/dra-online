@@ -21,6 +21,9 @@ const dirname = path.dirname(filename);
 export default buildConfig({
   serverURL: process.env.SERVER_URL || "http://localhost:3000",
   editor: lexicalEditor(),
+  cors: {
+    origins: [process.env.SERVER_URL || "*"],
+  },
   admin: {
     user: Users.slug,
     importMap: {
