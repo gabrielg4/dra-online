@@ -112,7 +112,7 @@ export function ChallengersAnimationV2() {
   }, [isMobile, isTablet]);
 
   return (
-    <section className={`s-challenges relative h-[250vh] w-full`}>
+    <section className={`s-challenges relative h-[300vh] w-full`}>
       <div className="sticky top-0 z-50 h-screen w-full overflow-hidden bg-[url(/images/img-bg-problemas.webp)] bg-cover bg-top">
         <div
           ref={titleContainerRef}
