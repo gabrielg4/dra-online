@@ -36,11 +36,7 @@ export const Header = ({ startWithBlur, hasBgWhite }: HeaderProps) => {
   }, []);
 
   return (
-    <div
-      className={cn(
-        "fixed top-0 left-1/2 z-[99] w-full max-w-[1216px] -translate-x-1/2 pt-5 duration-500",
-      )}
-    >
+    <div className={cn("sticky top-0 z-[99] w-full pt-5 duration-500")}>
       <div className="container">
         <header
           className={cn(

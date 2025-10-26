@@ -36,7 +36,7 @@ export default async function Home() {
     <>
       <Hero />
       <CompaniesLogos />
-      <ChallengersAnimation />
+      {/* <ChallengersAnimation /> */}
       {/* <div className="bg-white pt-96"></div> */}
       <ChallengersAnimationV2 />
       <Diferentials />
