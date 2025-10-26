@@ -96,7 +96,7 @@ export function ChallengersAnimation() {
   }, [isMobile]);
 
   return (
-    <section className="s-challenges relative min-h-screen w-full overflow-hidden bg-[url(/images/img-bg-problemas.webp)] bg-cover bg-top">
+    <section className="s-challenges relative block min-h-screen w-full overflow-hidden bg-[url(/images/img-bg-problemas.webp)] bg-cover bg-top sm:hidden">
       <div className="container">
         <div className="blur-2 absolute -bottom-48 -left-96 z-0 scale-75 md:-left-48 md:scale-50" />
         <h2 className="title-section-challenges absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 text-center text-[32px] leading-[110%] font-bold text-white lg:text-[56px]">

@@ -10,7 +10,7 @@ import { Midia } from "@/components/home-sections/midia";
 import { Blog } from "@/components/home-sections/blog";
 import { FrequentlyQuestions } from "@/components/home-sections/frequently-questions";
 import { GetInTouch } from "@/components/home-sections/get-in-touch";
-// import { ChallengersAnimation } from "@/components/home-sections/challenges-animation";
+import { ChallengersAnimation } from "@/components/home-sections/challenges-animation";
 import { ChallengersAnimationV2 } from "@/components/home-sections/challenges-animationV2";
 
 export default async function Home() {
@@ -36,7 +36,7 @@ export default async function Home() {
     <>
       <Hero />
       <CompaniesLogos />
-      {/* <ChallengersAnimation /> */}
+      <ChallengersAnimation />
       {/* <div className="bg-white pt-96"></div> */}
       <ChallengersAnimationV2 />
       <Diferentials />
