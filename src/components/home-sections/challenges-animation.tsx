@@ -17,7 +17,9 @@ export function ChallengersAnimation() {
   useGSAP(() => {
     const cardsHeight = cardsContainerRef.current?.scrollHeight;
     const viewportHeight = window.innerHeight;
-    const cards = gsap.utils.toArray<HTMLElement>(".challenge-card");
+    const cards = gsap.utils.toArray<HTMLElement>(
+      ".s-challenges-mobile .challenge-card",
+    );
     const challengesTl = gsap.timeline({
       scrollTrigger: {
         trigger: ".s-challenges-mobile",
@@ -79,7 +81,7 @@ export function ChallengersAnimation() {
       (isTablet || isMobile ? 1150 : 850)
     );
     challengesTl.fromTo(
-      ".challenges-cards-container",
+      ".s-challenges-mobile .challenges-cards-container",
       {
         y: viewportHeight,
       },
