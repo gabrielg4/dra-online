@@ -35,7 +35,7 @@ export function ChallengersAnimationV2() {
       scrollTrigger: {
         trigger: ".s-challenges",
         start: `top ${!isMobile ? "90%" : "40%"}`,
-        end: !isMobile ? "+=290%" : "+=240%",
+        end: !isMobile ? "+=290%" : "+=290%",
         scrub: true,
         markers: true,
         onUpdate: () => {
@@ -112,9 +112,7 @@ export function ChallengersAnimationV2() {
   }, [isMobile, isTablet]);
 
   return (
-    <section
-      className={`"s-challenges w-full" relative ${!isMobile ? "h-[300vh]" : "h-[200vh]"}`}
-    >
+    <section className={`"s-challenges w-full" relative h-[300vh]`}>
       <div className="sticky top-0 z-50 h-screen w-full overflow-hidden bg-[url(/images/img-bg-problemas.webp)] bg-cover bg-top">
         <div
           ref={titleContainerRef}
