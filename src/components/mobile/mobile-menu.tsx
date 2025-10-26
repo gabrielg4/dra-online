@@ -21,7 +21,7 @@ import Link from "next/link";
 
 export const MobileMenu = () => {
   return (
-    <div className="lg:hidden">
+    <div className="inline-flex lg:hidden">
       <Sheet>
         <SheetTrigger asChild>
           <Button size="icon" variant="ghost">
