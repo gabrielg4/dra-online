@@ -35,9 +35,9 @@ export function ChallengersAnimationV2() {
       scrollTrigger: {
         trigger: ".s-challenges",
         start: `top ${!isMobile ? "90%" : "40%"}`,
-        end: !isMobile ? "+=290%" : "+=290%",
+        end: "+=400%",
         scrub: true,
-        markers: true,
+        // markers: true,
         onUpdate: () => {
           cards.forEach((card) => {
             const cardRect = card.getBoundingClientRect();
@@ -86,8 +86,8 @@ export function ChallengersAnimationV2() {
           y: "-50%",
           translateY: "50%",
           opacity: 1,
-          duration: 8,
-          scale: !isMobile ? 1.5 : 1.1,
+          duration: 5,
+          scale: !isMobile ? 1.3 : 1.1,
           ease: "power2.out",
           delay: 1,
         },
@@ -100,10 +100,10 @@ export function ChallengersAnimationV2() {
         },
         {
           y: yHeight - 150,
-          duration: 10,
+          duration: 5,
           ease: "none",
         },
-        "-=1",
+        "-=3",
       );
 
     return () => {
@@ -112,7 +112,7 @@ export function ChallengersAnimationV2() {
   }, [isMobile, isTablet]);
 
   return (
-    <section className={`"s-challenges w-full" relative h-[300vh]`}>
+    <section className={`"s-challenges w-full" relative h-[250vh]`}>
       <div className="sticky top-0 z-50 h-screen w-full overflow-hidden bg-[url(/images/img-bg-problemas.webp)] bg-cover bg-top">
         <div
           ref={titleContainerRef}

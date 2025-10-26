@@ -2,11 +2,15 @@
 import gsap from "gsap";
 import React, { useEffect, useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useMediaQuery } from "react-responsive";
 // import { HeroMetricsCarousel } from "../mobile/hero-metrics-carousel";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export const HeroAnimationMobile = () => {
+  const isMobile = useMediaQuery({
+    maxWidth: 640,
+  });
   const sectionRef = useRef(null);
   const rightContainer = useRef(null);
   const midContainer = useRef(null);
@@ -20,7 +24,7 @@ export const HeroAnimationMobile = () => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: sectionRef.current,
-        start: "top 50%",
+        start: `top ${!isMobile ? "50%" : "70%"}`,
         end: "top: 40%",
         scrub: 2,
         // markers: true,
