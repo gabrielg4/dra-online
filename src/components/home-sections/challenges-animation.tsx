@@ -20,7 +20,7 @@ export function ChallengersAnimation() {
     const cards = gsap.utils.toArray<HTMLElement>(".challenge-card");
     const challengesTl = gsap.timeline({
       scrollTrigger: {
-        trigger: ".s-challenges",
+        trigger: ".s-challenges-mobile",
         start: `top ${isTablet || isMobile ? "top" : "top"}`,
         end: "+=310%",
         scrub: 1,
@@ -52,7 +52,7 @@ export function ChallengersAnimation() {
 
     // H2 sobe de baixo até o centro
     challengesTl.fromTo(
-      ".s-challenges h2",
+      ".s-challenges-mobile h2",
       {
         y: viewportHeight, // Começa abaixo da tela
         scale: 0,
@@ -68,7 +68,7 @@ export function ChallengersAnimation() {
     );
 
     // Pausa no h2 para "travar" um pouco
-    challengesTl.to(".s-challenges h2", {
+    challengesTl.to(".s-challenges-mobile h2", {
       duration: 0.3, // Pequena pausa
     });
 
@@ -96,7 +96,7 @@ export function ChallengersAnimation() {
   }, [isMobile]);
 
   return (
-    <section className="s-challenges relative block min-h-screen w-full overflow-hidden bg-[url(/images/img-bg-problemas.webp)] bg-cover bg-top sm:hidden">
+    <section className="s-challenges-mobile relative block min-h-screen w-full overflow-hidden bg-[url(/images/img-bg-problemas.webp)] bg-cover bg-top sm:hidden">
       <div className="container">
         <div className="blur-2 absolute -bottom-48 -left-96 z-0 scale-75 md:-left-48 md:scale-50" />
         <h2 className="title-section-challenges absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 text-center text-[32px] leading-[110%] font-bold text-white lg:text-[56px]">
