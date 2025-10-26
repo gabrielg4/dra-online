@@ -34,7 +34,7 @@ export function ChallengersAnimationV2() {
     const challengesTl = gsap.timeline({
       scrollTrigger: {
         trigger: ".s-challenges",
-        start: `top ${!isMobile ? "90%" : "40%"}`,
+        start: `top ${!isMobile ? "90%" : "60%"}`,
         end: "+=400%",
         scrub: true,
         // markers: true,
@@ -87,7 +87,7 @@ export function ChallengersAnimationV2() {
           translateY: "50%",
           opacity: 1,
           duration: 5,
-          scale: !isMobile ? 1.3 : 1.1,
+          scale: !isMobile ? 1.3 : 1,
           ease: "power2.out",
           delay: 1,
         },
