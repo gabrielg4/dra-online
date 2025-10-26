@@ -24,7 +24,7 @@ export const HeroAnimationMobile = () => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: sectionRef.current,
-        start: `top ${!isMobile ? "50%" : "70%"}`,
+        start: `top 50%`,
         end: "top: 40%",
         scrub: 2,
         // markers: true,
