@@ -1,280 +1,164 @@
 "use client";
-
-import { useRef } from "react";
-import Image from "next/image";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useMediaQuery } from "react-responsive";
+import { ChallengeCard } from "../challenge-card";
+import { useRef } from "react";
 
 export function ChallengersAnimationV2() {
-  const isSmallLaptop = useMediaQuery({
-    query: "(max-width: 1024px)",
-  });
-  const wrapperRef = useRef<HTMLDivElement | null>(null);
-  const cardsLayerRef = useRef<HTMLDivElement | null>(null);
+  const cardsContainerRef = useRef<HTMLDivElement | null>(null);
+  const titleContainerRef = useRef<HTMLDivElement | null>(null);
   const titleRef = useRef<HTMLHeadingElement | null>(null);
 
+  const isTablet = useMediaQuery({
+    query: "(max-width: 1024px)",
+  });
+  const isMobile = useMediaQuery({
+    query: "(max-width: 640px)",
+  });
+
   useGSAP(() => {
-    if (!wrapperRef.current || !cardsLayerRef.current || !titleRef.current)
-      return;
+    const titleContainer = titleContainerRef.current;
+    const title = titleRef.current;
+    const cardsContainer = cardsContainerRef.current;
 
-    // Calcular a altura total necessária para mostrar todos os cards
-    const cardsHeight = cardsLayerRef.current.scrollHeight;
+    if (!titleContainer || !title || !cardsContainer) return;
+
     const viewportHeight = window.innerHeight;
+    const cardsHeight = cardsContainer.scrollHeight;
+    const cards = gsap.utils.toArray<HTMLElement>(".challenge-card");
 
-    // Timeline principal com pin
-    const mainTimeline = gsap.timeline({
+    // // Calcula quanto o container de cards deve subir
+    // const yHeight = -(cardsHeight - viewportHeight);
+
+    const challengesTl = gsap.timeline({
       scrollTrigger: {
-        trigger: wrapperRef.current,
-        start: isSmallLaptop ? "top top" : "top top",
-        end: isSmallLaptop ? "+=300%" : "+=230%",
-        pin: true,
-        scrub: 1,
-        anticipatePin: 1,
-        invalidateOnRefresh: true,
-        onUpdate: (self) => {
-          // Calcular qual card deve estar visível baseado no progresso
-          const progress = self.progress;
-          const cards = gsap.utils.toArray(
-            ".card-challenge",
-          ) as HTMLDivElement[];
-          const totalCards = cards.length;
-          cards.forEach((card, index) => {
-            // Cada card aparece em um intervalo específico do scroll
-            // Usar uma curva não-linear para distribuir melhor os cards
-            const normalizedIndex = index / (totalCards - 1);
-            const easedIndex = Math.pow(normalizedIndex, 0.7);
-            const startProgress = 0.13 + easedIndex * 0.7; // Começa após 15% e distribui nos próximos 70%
-            const endProgress = startProgress + 0.08;
+        trigger: ".s-challenges",
+        start: `top ${!isMobile ? "90%" : "40%"}`,
+        end: !isMobile ? "+=290%" : "+=240%",
+        scrub: true,
+        markers: true,
+        onUpdate: () => {
+          cards.forEach((card) => {
+            const cardRect = card.getBoundingClientRect();
+            const cardCenter = cardRect.top + cardRect.height / 2;
+            const viewportCenter = viewportHeight / 2;
 
-            if (progress >= startProgress && progress <= endProgress) {
-              // Card está na zona de animação
-              const cardProgress = (progress - startProgress) / 0.08;
-              gsap.to(card, {
-                opacity: cardProgress,
-                scale: 0.8 + cardProgress * 0.2,
-                y: 50 - cardProgress * 50,
-                skewY: 5 - cardProgress * 5,
-                rotationX: 10 - cardProgress * 10,
-                duration: 0.1,
-                overwrite: true,
-              });
-            } else if (progress > endProgress) {
-              // Card já passou, mantém visível
-              gsap.to(card, {
-                opacity: 1,
-                scale: 1,
-                y: 0,
-                skewY: 0,
-                rotationX: 0,
-                duration: 0.1,
-                overwrite: true,
-              });
-            } else {
-              // Card ainda não chegou
-              gsap.to(card, {
-                opacity: 0,
-                scale: 0.8,
-                y: 50,
-                skewY: 5,
-                rotationX: 10,
-                duration: 0.1,
-                overwrite: true,
-              });
-            }
+            const distance = Math.abs(cardCenter - viewportCenter);
+            const maxDistance = viewportHeight / 2;
+
+            const normalizedDistance = Math.min(distance / maxDistance, 1);
+
+            const scale = 1 + (1 - normalizedDistance) * 0.2;
+
+            gsap.to(card, {
+              scaleY: scale,
+              duration: 0.6,
+              ease: "power2.out",
+            });
           });
         },
       },
     });
 
-    // 1. Primeiro anima o título
-    mainTimeline.from(titleRef.current, {
-      opacity: 0,
-      scale: 0.5,
-      y: 50,
-      duration: 0.2,
-      ease: "power2.out",
-    });
+    const yHeight = -(cardsHeight! - viewportHeight + (!isMobile ? 950 : 790));
+    // Etapa 1: title-container vem de fora da tela até y=0 (topo)
+    challengesTl
+      .fromTo(
+        titleContainer,
+        {
+          yPercent: 100,
+        },
+        {
+          yPercent: 0,
+          duration: 2,
+        },
+      )
+      // Etapa 2: Título aparece no centro
+      .fromTo(
+        title,
+        {
+          y: "100vh",
+          opacity: 0,
+          scale: 0,
+        },
+        {
+          y: "-50%",
+          translateY: "50%",
+          opacity: 1,
+          duration: 8,
+          scale: !isMobile ? 1.5 : 1.1,
+          ease: "power2.out",
+          delay: 1,
+        },
+      )
+      // Etapa 3: Cards aparecem de baixo para cima
+      .fromTo(
+        cardsContainer,
+        {
+          y: viewportHeight,
+        },
+        {
+          y: yHeight - 150,
+          duration: 10,
+          ease: "none",
+        },
+        "-=1",
+      );
 
-    // 2. Pausa visual
-    mainTimeline.to({}, { duration: 0.05 });
-
-    mainTimeline.fromTo(
-      cardsLayerRef.current,
-      {
-        y: viewportHeight, // Começa ABAIXO da tela (valor absoluto)
-      },
-      {
-        y: -(cardsHeight - viewportHeight + 200), // Termina mostrando o último card (ajuste o +200 conforme necessário)
-        duration: 2,
-        ease: "none",
-      },
-    );
-  }, [isSmallLaptop]);
+    return () => {
+      challengesTl.kill();
+    };
+  }, [isMobile, isTablet]);
 
   return (
     <section
-      ref={wrapperRef}
-      aria-label="Desafios enfrentados"
-      className="relative mx-auto h-screen w-full overflow-hidden"
-      // style={{ height: 00 }}
+      className={`"s-challenges w-full" relative ${!isMobile ? "h-[300vh]" : "h-[200vh]"}`}
     >
-      {/* Fundo verde com pattern */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage: "url('/images/img-bg_problemas.webp')",
-        }}
-        aria-hidden
-      />
-
-      {/* Título */}
-      <div className="relative z-10 container mx-auto flex h-full items-center justify-center px-4">
-        <h2
-          ref={titleRef}
-          className="title-section-challenges pt-8 text-center text-[32px] leading-[130%] font-bold text-white md:pt-10 lg:pt-20 lg:text-[56px]"
+      <div className="sticky top-0 z-50 h-screen w-full overflow-hidden bg-[url(/images/img-bg-problemas.webp)] bg-cover bg-top">
+        <div
+          ref={titleContainerRef}
+          className="title-container absolute top-0 left-0 z-10 h-screen w-full"
         >
-          Sua empresa enfrenta
-          <br /> esses desafios?
-        </h2>
-      </div>
+          <div className="blur-2 absolute -bottom-48 -left-96 z-0 scale-75 md:-left-48 md:scale-50" />
+          <h2
+            ref={titleRef}
+            className="title-section-challenges absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 text-center text-[32px] leading-[110%] font-bold text-white lg:text-[56px]"
+          >
+            Sua empresa enfrenta
+            <br className="inline-block" /> esses desafios?
+          </h2>
+        </div>
+        {/* <div className="container">
 
-      {/* Camada de cards */}
-      <div
-        ref={cardsLayerRef}
-        className="h-[150vh absolute inset-0 top-0 z-10 flex flex-col items-center gap-6"
-        style={{ perspective: "1000px" }}
-      >
-        <div className="card-challenge from-brand-main-green to-brand-light-green w-full max-w-[320px] cursor-pointer rounded-2xl bg-gradient-to-b p-[6px] sm:absolute sm:top-[0px] sm:left-1/2 sm:-translate-x-1/2">
-          <div className="flex flex-col items-center justify-center gap-5 rounded-2xl bg-[#195952] p-6">
-            <Image
-              src="/images/ic-relogio.svg"
-              alt="Icone relógio"
-              width={56}
-              height={56}
+        </div> */}
+
+        <div
+          ref={cardsContainerRef}
+          className="challenges-cards-container absolute top-0 left-1/2 z-30 container h-full w-full -translate-x-1/2"
+        >
+          <div className="absolute top-20 left-1/2 grid items-center justify-center gap-16 max-[640px]:w-full max-[640px]:-translate-x-1/2 lg:top-24 lg:left-[86px]">
+            <ChallengeCard
+              videoUrl="/videos/video-animation-2.mp4"
+              label="Longos tempos de espera para atendimento presencial"
             />
-            <p className="text-center text-lg font-bold text-white">
-              Longos tempos de espera para atendimento presencial
-            </p>
+            <ChallengeCard
+              videoUrl="/videos/video-animation-4.mp4"
+              label="Afastamentos recorrentes por problemas de saúde mental"
+            />
+          </div>
+          <div className="absolute top-[790px] grid items-center justify-center gap-16 max-[640px]:left-1/2 max-[640px]:w-full max-[640px]:-translate-x-1/2 md:pt-80 lg:top-24 lg:right-[86px]">
+            <ChallengeCard
+              videoUrl="/videos/video-animation-3.mp4"
+              label="Dificuldade de acesso médico em regiões remotas"
+            />
+
+            <ChallengeCard
+              label="Exigências regulatórias da ANS e LGPD sem soluções"
+              videoUrl="/videos/video-animation-1.mp4"
+            />
           </div>
         </div>
-
-        <div className="card-challenge from-brand-main-green to-brand-light-green top-[300px] left-[calc(50%-550px)] w-full max-w-[320px] cursor-pointer rounded-2xl bg-gradient-to-b p-[6px] sm:absolute">
-          <div className="flex flex-col items-center justify-center gap-5 rounded-2xl bg-[#195952] p-6">
-            <Image
-              src="/images/ic-no-signal.svg"
-              alt="Icone sem sinal"
-              width={56}
-              height={56}
-            />
-            <p className="text-center text-lg font-bold text-white">
-              Dificuldade de acesso médico em regiões remotas
-            </p>
-          </div>
-        </div>
-
-        <Image
-          src="/images/img-challenges-1.webp"
-          alt="Imagem 1"
-          width={200}
-          height={200}
-          className="card-challenge -rotate-45 sm:absolute sm:top-[280px] sm:left-1/2 sm:-translate-x-1/2"
-        />
-
-        <div className="card-challenge from-brand-main-green to-brand-light-green w-full max-w-[320px] cursor-pointer rounded-2xl bg-gradient-to-b p-[6px] sm:absolute sm:top-[230px] sm:left-1/2 md:left-[calc(50%+200px)]">
-          <div className="flex flex-col items-center justify-center gap-5 rounded-2xl bg-[#195952] p-6">
-            <Image
-              src="/images/ic-no-signal.svg"
-              alt="Icone saúde mental"
-              width={56}
-              height={56}
-            />
-            <p className="text-center text-lg font-bold text-white">
-              Afastamentos recorrentes por problemas de saúde mental
-            </p>
-          </div>
-        </div>
-
-        <Image
-          src="/images/img-challenges-2.webp"
-          alt="Imagem 2"
-          width={200}
-          height={200}
-          className="card-challenge absolute top-[680px] left-[calc(50%-500px)] hidden rotate-45 md:block"
-        />
-
-        <div className="card-challenge from-brand-main-green to-brand-light-green w-full max-w-[320px] cursor-pointer rounded-2xl bg-gradient-to-b p-[6px] sm:absolute sm:top-[460px] sm:left-1/2 sm:-translate-x-1/2 md:top-[640px]">
-          <div className="flex flex-col items-center justify-center gap-5 rounded-2xl bg-[#195952] p-6">
-            <Image
-              src="/images/ic-structure.svg"
-              alt="Icone Atendimento"
-              width={56}
-              height={56}
-            />
-            <p className="text-center text-lg font-bold text-white">
-              Falta de estrutura para atendimento 24h ou saúde primária
-              integrada
-            </p>
-          </div>
-        </div>
-
-        <div className="card-challenge from-brand-main-green to-brand-light-green w-full max-w-[320px] cursor-pointer rounded-2xl bg-gradient-to-b p-[6px] sm:absolute sm:top-[720px] sm:left-1/2 md:top-[1100px] md:left-[calc(50%-540px)]">
-          <div className="flex flex-col items-center justify-center gap-5 rounded-2xl bg-[#195952] p-6">
-            <Image
-              src="/images/ic-tv-chart.svg"
-              alt="Icone gráfico"
-              width={56}
-              height={56}
-            />
-            <p className="text-center text-lg font-bold text-white">
-              Baixo engajamento dos beneficiários com os programas de saúde
-            </p>
-          </div>
-        </div>
-
-        <Image
-          src="/images/img-challenges-3.webp"
-          alt="Imagem 3"
-          width={200}
-          height={200}
-          className="card-challenge top-[1050px] sm:absolute sm:left-1/2 sm:-translate-x-1/2"
-        />
-
-        <div className="card-challenge from-brand-main-green to-brand-light-green w-full max-w-[320px] cursor-pointer rounded-2xl bg-gradient-to-b p-[6px] sm:absolute sm:top-[980px] sm:left-1/2 md:top-[980px] md:left-[calc(50%+200px)]">
-          <div className="flex flex-col items-center justify-center gap-5 rounded-2xl bg-[#195952] p-6">
-            <Image
-              src="/images/ic-file.svg"
-              alt="Icone Arquivo"
-              width={56}
-              height={56}
-            />
-            <p className="text-center text-lg font-bold text-white">
-              Exigências regulatórias da ANS e LGPD sem soluções
-            </p>
-          </div>
-        </div>
-
-        <div className="card-challenge from-brand-main-green to-brand-light-green w-full max-w-[320px] cursor-pointer rounded-2xl bg-gradient-to-b p-[6px] sm:absolute sm:top-[1200px] sm:left-1/2 sm:-translate-x-1/2 md:top-[1400px]">
-          <div className="flex flex-col items-center justify-center gap-5 rounded-2xl bg-[#195952] p-6">
-            <Image
-              src="/images/ic-network-home.svg"
-              alt="Icone gráfico"
-              width={56}
-              height={56}
-            />
-            <p className="text-center text-lg font-bold text-white">
-              Impossibilidade de expandir a rede assistencial com qualidade
-            </p>
-          </div>
-        </div>
-
-        <Image
-          src="/images/img-challenges-4.webp"
-          alt="Imagem 4"
-          width={180}
-          height={180}
-          className="card-challenge absolute top-[1300px] left-[calc(50%+350px)] hidden -rotate-45 md:block"
-        />
       </div>
     </section>
   );

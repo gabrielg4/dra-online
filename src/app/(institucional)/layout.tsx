@@ -53,13 +53,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-br">
-      <body className={`${mainFont.variable} antialiased`}>
-        {/* <Header /> */}
+    <html lang="pt-br" className="overflow-x-hidden overflow-y-auto">
+      <body className={`${mainFont.variable} bg-brand-dark-green antialiased`}>
         <SmoothScrolling>
-          <main className="bg-brand-dark-green overflow-hidden">
-            {children}
-          </main>
+          <main className="bg-brand-dark-green">{children}</main>
         </SmoothScrolling>
         <Footer />
       </body>

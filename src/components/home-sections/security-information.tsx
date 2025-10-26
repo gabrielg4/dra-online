@@ -94,7 +94,10 @@ export const SecurityInformation = () => {
   }, []);
 
   return (
-    <section id="security-information" className="relative pb-20">
+    <section
+      id="security-information"
+      className="relative pb-20 max-[640]:overflow-hidden"
+    >
       <div className="overlay -bottom-4 z-10"></div>
       <div className="container !px-0">
         <div className="image-wrapper relative flex items-end justify-center gap-4 bg-cover bg-center pt-20">
