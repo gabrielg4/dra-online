@@ -4,8 +4,13 @@ import { VacanciesGrid } from "../vacancies-grid";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/all";
 import gsap from "gsap";
+import type { Vagas } from "../../../payload-types";
 
-export const OpenVacancies = () => {
+interface OpenVacanciesProps {
+  vacancies: Vagas[];
+}
+
+export const OpenVacancies = ({ vacancies }: OpenVacanciesProps) => {
   useGSAP(() => {
     const titleSplit = new SplitText("#vagas h2", {
       type: "chars, words",
@@ -34,7 +39,7 @@ export const OpenVacancies = () => {
           </span>{" "}
           da nossa transformação
         </h2>
-        <VacanciesGrid />
+        <VacanciesGrid vacancies={vacancies} />
       </div>
     </section>
   );

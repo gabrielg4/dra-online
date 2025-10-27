@@ -52,7 +52,7 @@ export const Blog = ({ featuredPosts }: BlogProps) => {
       ease: "power2.out",
       scrollTrigger: {
         trigger: "#blog",
-        start: "center 90%",
+        start: "center 100%",
         end: "top 10%",
         scrub: 5,
         // markers: true,

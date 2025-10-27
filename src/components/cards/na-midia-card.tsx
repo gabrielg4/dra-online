@@ -49,7 +49,7 @@ export const NaMidiaCard = ({ isActive, article }: NaMidiaCardProps) => {
         {isActive && (
           <Button
             variant="outline"
-            className="border-brand-light-green group hover:bg-brand-light-green mt-4 h-auto cursor-pointer rounded-full border bg-transparent px-6 py-2 duration-300"
+            className="border-brand-light-green group hover:bg-brand-light-green h-auto cursor-pointer rounded-full border bg-transparent px-6 py-2 duration-300"
           >
             <Link
               href={article.link_artigo}

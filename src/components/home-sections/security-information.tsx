@@ -142,7 +142,7 @@ export const SecurityInformation = () => {
             Nosso propósito é transformar a jornada de saúde em valor real:
             dados em decisões, cuidado
             <br className="hidden sm:inline-block" /> em resultados e tecnologia
-            em acessibilidade.A saúde digital só faz sentido quando respeita a
+            em acessibilidade. A saúde digital só faz sentido quando respeita a
             <br className="hidden sm:inline-block" /> privacidade, a legislação
             e a segurança dos dados de quem mais importa: os seus
             <br className="hidden sm:inline-block" /> beneficiários. Na{" "}

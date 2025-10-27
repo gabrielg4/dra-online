@@ -8,9 +8,6 @@ import { useMediaQuery } from "react-responsive";
 gsap.registerPlugin(ScrollTrigger);
 
 export const HeroAnimationMobile = () => {
-  const isMobile = useMediaQuery({
-    maxWidth: 640,
-  });
   const sectionRef = useRef(null);
   const rightContainer = useRef(null);
   const midContainer = useRef(null);

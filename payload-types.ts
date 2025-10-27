@@ -74,6 +74,7 @@ export interface Config {
     'na-midia': NaMidia;
     'case-de-sucesso': CaseDeSucesso;
     depoimentos: Depoimento;
+    vagas: Vagas;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -87,6 +88,7 @@ export interface Config {
     'na-midia': NaMidiaSelect<false> | NaMidiaSelect<true>;
     'case-de-sucesso': CaseDeSucessoSelect<false> | CaseDeSucessoSelect<true>;
     depoimentos: DepoimentosSelect<false> | DepoimentosSelect<true>;
+    vagas: VagasSelect<false> | VagasSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -275,6 +277,18 @@ export interface Depoimento {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "vagas".
+ */
+export interface Vagas {
+  id: number;
+  nome_vaga: string;
+  descricao: string;
+  link_inscricao: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
@@ -307,6 +321,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'depoimentos';
         value: number | Depoimento;
+      } | null)
+    | ({
+        relationTo: 'vagas';
+        value: number | Vagas;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -461,6 +479,17 @@ export interface DepoimentosSelect<T extends boolean = true> {
   nome?: T;
   especialidade?: T;
   depoimento?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "vagas_select".
+ */
+export interface VagasSelect<T extends boolean = true> {
+  nome_vaga?: T;
+  descricao?: T;
+  link_inscricao?: T;
   updatedAt?: T;
   createdAt?: T;
 }

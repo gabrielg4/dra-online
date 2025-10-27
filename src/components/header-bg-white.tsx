@@ -2,16 +2,14 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
 import { MobileMenu } from "./mobile/mobile-menu";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 import { NavigationV2 } from "./navigationV2";
-import { usePathname } from "next/navigation";
 export const HeaderBgWhite = () => {
-  const pathname = usePathname();
   const [headerScrolled, setHeaderScrolled] = useState(false);
   useGSAP(() => {
     const st = ScrollTrigger.create({
@@ -26,13 +24,6 @@ export const HeaderBgWhite = () => {
       st.kill();
     };
   }, []);
-
-  // useEffect(() => {
-  //   if (pathname.includes("/blog")) {
-  //     setHiddenHeader(true);
-  //   }
-  //   console.log(pathname);
-  // }, []);
 
   return (
     <div className={cn("fixed top-0 z-50 w-full pt-5 duration-500")}>
@@ -51,21 +42,18 @@ export const HeaderBgWhite = () => {
               height={25}
             />
           </Link>
-          {/* <Navigation textColor="text-[#282F3B]" /> */}
           <NavigationV2 textColor="#282F3B" />
           <div className="flex w-fit items-center gap-2">
             <Button
               variant={"outline"}
               className={cn(
                 "group border-brand-main-green hover:bg-brand-main-green hidden rounded-full bg-transparent px-6 py-2 duration-300 md:flex",
-                // isOnBgWhite && "border-brand-main-green",
               )}
             >
               <Link
                 href="/"
                 className={cn(
                   "text-md text-brand-main-green font-medium group-hover:text-white",
-                  // isOnBgWhite && "text-brand-main-green",
                 )}
               >
                 Área do cliente

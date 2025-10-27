@@ -12,7 +12,7 @@ const differentialsData = [
     title: (
       <>
         <strong>Redução de custos indiretos,</strong> com menos afastamentos e
-        maior, impacto na produtividade.
+        maior impacto na produtividade.
       </>
     ),
     icon: {
@@ -89,7 +89,7 @@ const differentialsData2 = [
   {
     title: (
       <>
-        <strong>Planos terapêuticos customizados,</strong>{" "}
+        <strong>Planos terapêuticos customizados</strong>{" "}
         <br className="hidden md:inline-block" />
         de 15 a 30 sessões.
       </>
@@ -249,7 +249,7 @@ export default function SaudeMentalPage() {
         description={
           <>
             O <strong>Integralmente</strong> da dr.online é um programa completo
-            decuidado psicológico e psiquiátrico, baseado em ciência e alinhado
+            de cuidado psicológico e psiquiátrico, baseado em ciência e alinhado
             às melhores práticas internacionais. Desde a triagem inicial até o
             acompanhamento contínuo, oferecemos planos terapêuticos
             individualizados que garantem previsibilidade, resolutividade e

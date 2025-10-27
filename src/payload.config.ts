@@ -14,6 +14,7 @@ import { Categories } from "./collections/Categories";
 import { NaMidia } from "./collections/NaMidia";
 import { CaseDeSucesso } from "./collections/CaseDeSucesso";
 import { Depoimento } from "./collections/Depoimento";
+import { Vagas } from "./collections/Vagas";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -38,6 +39,7 @@ export default buildConfig({
     NaMidia,
     CaseDeSucesso,
     Depoimento,
+    Vagas,
   ],
   i18n: {
     fallbackLanguage: "pt",

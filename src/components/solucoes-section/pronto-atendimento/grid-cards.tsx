@@ -6,14 +6,6 @@ import React from "react";
 import { useMediaQuery } from "react-responsive";
 
 export const GridCards = () => {
-  const isTablet = useMediaQuery({
-    minWidth: 641,
-    maxWidth: 768,
-  });
-  const isSmartphone = useMediaQuery({
-    maxWidth: 640,
-  });
-
   useGSAP(() => {
     gsap.from(".card-carousel", {
       y: -100,
@@ -24,7 +16,6 @@ export const GridCards = () => {
         start: "top 70%",
         end: "top 50%",
         scrub: 3,
-        // markers: true,
       },
     });
   }, []);

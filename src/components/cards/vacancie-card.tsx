@@ -1,11 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import type { Vagas } from "../../../payload-types";
 
-export const VacancieCard = () => {
+interface VacancieCardProps {
+  vacancie: Vagas;
+}
+
+export const VacancieCard = ({ vacancie }: VacancieCardProps) => {
   return (
     <Link
-      href="/"
+      href={vacancie.link_inscricao}
       target="_blank"
       className="rounded-lg bg-white/10 p-5 shadow-2xl/10 duration-300 hover:bg-white/20 lg:p-8"
     >
@@ -18,10 +23,13 @@ export const VacancieCard = () => {
       />
 
       <div>
-        <h3 className="mb-2 text-lg font-bold text-white">Nome da vaga</h3>
+        <h3 className="mb-2 text-lg font-bold text-white">
+          {vacancie.nome_vaga}
+        </h3>
         <p className="text-[16px] leading-normal text-white">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          {vacancie.descricao.length > 100
+            ? vacancie.descricao.substring(0, 95) + "..."
+            : vacancie.descricao}
         </p>
       </div>
     </Link>

@@ -3,7 +3,7 @@ import { Hero } from "@/components/about-us-sectionts/hero";
 import { OurHistory } from "@/components/about-us-sectionts/our-history";
 import { TimeLine } from "@/components/about-us-sectionts/timeline";
 import { CompaniesLogos } from "@/components/home-sections/companies-logos";
-import { TestimonialsSection } from "@/components/shared-sections/testimonials";
+import { TestimonialsSection } from "@/components/testimonials";
 import React from "react";
 
 export default function SobreNosPage() {
