@@ -65,7 +65,7 @@ export function ChallengersAnimation() {
         y: 0,
         opacity: 1,
         scale: 1,
-        duration: isMobile ? 1.2 : 5, // Um pouco mais de tempo no mobile
+        duration: isMobile ? 1.2 : 5,
         ease: "power2.out",
       },
     );
@@ -85,14 +85,13 @@ export function ChallengersAnimation() {
     challengesTl.fromTo(
       ".s-challenges-mobile .challenges-cards-container",
       {
-        y: viewportHeight * 0.5,
+        y: viewportHeight * 0.9,
       },
       {
         y: yHeight,
         duration: isMobile ? 2.5 : 4,
         ease: "none",
       },
-      // Removido o overlap - agora é sequencial
     );
 
     return () => {
@@ -104,7 +103,7 @@ export function ChallengersAnimation() {
     <section className="s-challenges-mobile relative block min-h-screen w-full overflow-hidden bg-[url(/images/img-bg-problemas.webp)] bg-cover bg-top max-sm:!h-fit sm:hidden">
       <div className="container">
         <div className="blur-2 absolute -bottom-48 -left-96 z-0 scale-75 md:-left-48 md:scale-50" />
-        <h2 className="title-section-challenges absolute left-1/2 w-full -translate-x-1/2 text-center text-[32px] leading-[110%] font-bold text-white max-[640px]:top-24 max-[640px]:translate-y-0 sm:top-1/2 sm:-translate-y-1/2 lg:text-[56px]">
+        <h2 className="title-section-challenges absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 text-center text-[32px] leading-[110%] font-bold text-white lg:text-[56px]">
           Sua empresa enfrenta
           <br className="inline-block" /> esses desafios?
         </h2>
