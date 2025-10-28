@@ -61,7 +61,7 @@ export const Blog = ({ featuredPosts }: BlogProps) => {
   }, []);
 
   return (
-    <section id="blog" className="relative pb-10 lg:pb-14">
+    <section id="blog" className="relative pb-10 max-sm:pt-10 lg:pb-14">
       {/* <div className="na-midia-blur absolute -top-40 left-1/2 h-[340px] -translate-x-1/2" /> */}
 
       <div className="relative z-10 container">

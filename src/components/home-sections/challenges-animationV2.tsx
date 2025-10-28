@@ -34,8 +34,8 @@ export function ChallengersAnimationV2() {
     const challengesTl = gsap.timeline({
       scrollTrigger: {
         trigger: ".s-challenges",
-        start: `top ${!isMobile ? "90%" : "60%"}`,
-        end: "+=400%",
+        start: `top ${!isMobile ? "90%" : "100%"}`,
+        end: "+=300%",
         scrub: true,
         // markers: true,
         onUpdate: () => {
@@ -113,7 +113,7 @@ export function ChallengersAnimationV2() {
 
   return (
     <section
-      className={`s-challenges relative hidden h-[330vh] w-full sm:block`}
+      className={`s-challenges relative hidden h-[330vh] w-full max-sm:h-screen md:block`}
     >
       <div className="sticky top-0 z-50 h-screen w-full overflow-hidden bg-[url(/images/img-bg-problemas.webp)] bg-cover bg-top">
         <div

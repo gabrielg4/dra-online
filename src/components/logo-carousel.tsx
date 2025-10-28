@@ -15,7 +15,7 @@ export const LogoCarousel = () => {
 
       {/* Container do carrossel */}
       <div className="flex">
-        <div className="animate-scroll flex">
+        <div className="animate-scroll logo-grid">
           {duplicatedLogos.map((logo, index) => (
             <div
               key={`logo-${index}`}
@@ -51,6 +51,26 @@ export const LogoCarousel = () => {
 
         .animate-scroll:hover {
           animation-play-state: paused;
+        }
+
+        /* Desktop: Uma linha */
+        .logo-grid {
+          display: flex;
+        }
+
+        /* Mobile: Duas linhas com offset */
+        @media (max-width: 768px) {
+          .logo-grid {
+            display: grid;
+            grid-template-rows: repeat(2, auto);
+            grid-auto-flow: column;
+            grid-auto-columns: max-content;
+            gap: 1rem 0;
+          }
+
+          .logo-grid > div:nth-child(even) {
+            transform: translateX(5rem);
+          }
         }
       `}</style>
     </div>

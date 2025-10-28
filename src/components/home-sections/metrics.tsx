@@ -53,7 +53,7 @@ export const MetricsSection = () => {
   return (
     <section
       id="metrics"
-      className="overflow-hidden bg-[url('/images/img-bg-beneficios.webp')] bg-cover bg-center py-20"
+      className="overflow-hidden bg-[url('/images/img-bg-beneficios.webp')] bg-cover bg-center py-20 max-sm:py-10"
     >
       <div className="container flex flex-col items-center gap-8 md:gap-10 lg:flex-row lg:gap-14">
         <div className="gap- flex w-full max-w-none flex-row items-end lg:max-w-[373px] lg:flex-col lg:items-start lg:gap-0">

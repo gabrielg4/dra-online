@@ -43,11 +43,11 @@ export const Hero = () => {
   }, []);
 
   return (
-    <section className="overflow-hidden bg-[url('/images/img-bg_hero.webp')] bg-cover bg-center pt-20 pb-10 md:pt-32 md:pb-20">
+    <section className="overflow-hidden bg-[url('/images/img-bg_hero.webp')] bg-cover bg-center pt-32 pb-10 md:pb-20">
       <div className="mx-auto flex w-full max-w-[1280px] flex-col items-center justify-center px-4">
         <h1
           id="title"
-          className="mb-6 text-center text-[32px] leading-[110%] font-bold text-white md:text-[40px] lg:text-[48px]"
+          className="mb-6 text-center text-[32px] leading-[110%] font-bold text-white max-sm:text-[26px] md:text-[40px] lg:text-[48px]"
         >
           Somos a maior referência <br className="hidden md:inline-block" />
           de Saúde Digital no Brasil!

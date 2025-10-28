@@ -20,11 +20,12 @@ export function ChallengersAnimation() {
     const cards = gsap.utils.toArray<HTMLElement>(
       ".s-challenges-mobile .challenge-card",
     );
+
     const challengesTl = gsap.timeline({
       scrollTrigger: {
         trigger: ".s-challenges-mobile",
-        start: `top ${isTablet || isMobile ? "top" : "top"}`,
-        end: "+=310%",
+        start: "top top",
+        end: isMobile ? "+=110%" : "+=210%",
         scrub: 1,
         pin: true,
         anticipatePin: 1,
@@ -52,56 +53,58 @@ export function ChallengersAnimation() {
       },
     });
 
-    // H2 sobe de baixo até o centro
+    // H2 aparece primeiro
     challengesTl.fromTo(
       ".s-challenges-mobile h2",
       {
-        y: viewportHeight, // Começa abaixo da tela
+        y: viewportHeight * 0.3,
         scale: 0,
         opacity: 0,
       },
       {
-        y: 0, // Vai até a posição central (já está centralizado com translate)
+        y: 0,
         opacity: 1,
-        scale: isMobile ? 1 : 1.3,
-        duration: 5,
+        scale: 1,
+        duration: isMobile ? 1.2 : 5, // Um pouco mais de tempo no mobile
         ease: "power2.out",
       },
     );
 
-    // Pausa no h2 para "travar" um pouco
+    // Pausa bem curtinha só para o título ser lido
     challengesTl.to(".s-challenges-mobile h2", {
-      duration: 0.3, // Pequena pausa
+      duration: isMobile ? 0.2 : 0.3,
     });
 
-    // Cards começam a subir
+    // Cards sobem logo depois
     const yHeight = -(
       cardsHeight! -
       viewportHeight +
-      (isTablet || isMobile ? 1150 : 850)
+      (isMobile ? 800 : isTablet ? 1150 : 850)
     );
+
     challengesTl.fromTo(
       ".s-challenges-mobile .challenges-cards-container",
       {
-        y: viewportHeight,
+        y: viewportHeight * 0.5,
       },
       {
         y: yHeight,
-        duration: 4,
+        duration: isMobile ? 2.5 : 4,
         ease: "none",
       },
+      // Removido o overlap - agora é sequencial
     );
 
     return () => {
       challengesTl.kill();
     };
-  }, [isMobile]);
+  }, [isMobile, isTablet]);
 
   return (
-    <section className="s-challenges-mobile relative block min-h-screen w-full overflow-hidden bg-[url(/images/img-bg-problemas.webp)] bg-cover bg-top sm:hidden">
+    <section className="s-challenges-mobile relative block min-h-screen w-full overflow-hidden bg-[url(/images/img-bg-problemas.webp)] bg-cover bg-top max-sm:!h-fit sm:hidden">
       <div className="container">
         <div className="blur-2 absolute -bottom-48 -left-96 z-0 scale-75 md:-left-48 md:scale-50" />
-        <h2 className="title-section-challenges absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 text-center text-[32px] leading-[110%] font-bold text-white lg:text-[56px]">
+        <h2 className="title-section-challenges absolute left-1/2 w-full -translate-x-1/2 text-center text-[32px] leading-[110%] font-bold text-white max-[640px]:top-24 max-[640px]:translate-y-0 sm:top-1/2 sm:-translate-y-1/2 lg:text-[56px]">
           Sua empresa enfrenta
           <br className="inline-block" /> esses desafios?
         </h2>

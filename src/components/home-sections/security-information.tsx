@@ -98,9 +98,9 @@ export const SecurityInformation = () => {
       id="security-information"
       className="relative pb-20 max-[640]:overflow-hidden"
     >
-      <div className="overlay -bottom-4 z-10"></div>
+      <div className="overlay -bottom-4 z-10 max-sm:bottom-0"></div>
       <div className="container !px-0">
-        <div className="image-wrapper relative flex items-end justify-center gap-4 bg-cover bg-center pt-20">
+        <div className="image-wrapper relative flex items-end justify-center gap-4 bg-cover bg-center pt-20 max-sm:pt-0">
           <div className="blur-bg-security absolute -top-40 left-1/2 -translate-x-1/2" />
           <Image
             src={"/images/img_phone_left.webp"}

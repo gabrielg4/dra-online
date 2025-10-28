@@ -232,8 +232,8 @@ export const DiferentialsTabs = () => {
                   height={95}
                 />
                 <p className="text-brand-dark-gray text-md font-semibold md:mt-2 md:ml-3 lg:text-lg">
-                  Controle sobre
-                  <br className="hidden lg:inline-block" /> custos assistenciais
+                  Tecnologia responsiva que permite tempo de atendimento médio
+                  de até 6 min
                 </p>
               </div>
               <div className="flex flex-row justify-start max-[640px]:items-center md:w-1/3 md:flex-col">
@@ -244,8 +244,7 @@ export const DiferentialsTabs = () => {
                   height={95}
                 />
                 <p className="text-brand-dark-gray text-md font-semibold md:mt-2 md:ml-3 lg:text-lg">
-                  Beneficiários mais
-                  <br className="hidden lg:inline-block" /> satisfeitos e fiéis
+                  NPS DE 93
                 </p>
               </div>
               <div className="flex flex-row justify-start max-[640px]:items-center md:w-1/3 md:flex-col">
@@ -256,9 +255,7 @@ export const DiferentialsTabs = () => {
                   height={95}
                 />
                 <p className="text-brand-dark-gray text-md font-semibold md:mt-2 md:ml-3 lg:text-lg">
-                  Dados estratégicos
-                  <br className="hidden lg:inline-block" /> para tomada de
-                  decisão
+                  O melhor custo-benefício do mercado
                 </p>
               </div>
             </div>

@@ -117,14 +117,9 @@ export const HeroAnimationMobile = () => {
             className="h-full w-full"
           /> */}
           <div className="video-masked !h-full !w-full">
-            <video
-              src={"/videos/video27.mp4"}
-              autoPlay
-              muted
-              loop
-              playsInline
-              className=""
-            ></video>
+            <video autoPlay muted loop playsInline className="">
+              <source src={"/videos/video27.mp4"} type="video/mp4" />
+            </video>
           </div>
         </div>
         <div

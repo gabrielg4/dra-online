@@ -298,7 +298,7 @@ export const WheelCarousel = ({ articles }: WheelCarouselProps) => {
   }, [MAX_INDEX, MEDIAN_INDEX, INITIAL_ROTATION]);
 
   return (
-    <section className="relative flex h-auto w-full items-center justify-center pt-10 pb-14 sm:pt-20 sm:pb-20 md:h-screen">
+    <section className="relative flex h-auto w-full items-center justify-center pt-10 pb-14 max-sm:pb-4 sm:pt-20 sm:pb-20 md:h-screen">
       <Image
         src={"/images/img-bg-midia.svg"}
         alt=""

@@ -1,10 +1,10 @@
 "use client";
 import React, { useEffect, useState, type ReactNode } from "react";
-import { TestimonialsCarousel } from "../testimonials-carousel";
+import { TestimonialsCarousel } from "@/components/testimonials-carousel";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/all";
 import gsap from "gsap";
-import type { Depoimento } from "../../../payload-types";
+import type { Depoimento } from "../../payload-types";
 import { baseTestimonials } from "@/utils/base-testimonials";
 import { useMediaQuery } from "react-responsive";
 

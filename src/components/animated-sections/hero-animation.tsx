@@ -106,7 +106,7 @@ export const HeroAnimation = () => {
   }, []);
 
   return (
-    <div className="hero-cards-container relative mt-40 hidden md:block">
+    <div className="hero-cards-container relative mt-40 hidden max-sm:mt-20 md:block">
       {/* CARDS */}
       <div ref={sectionRef} className="hero-metrics flex justify-center gap-8">
         <div
@@ -124,13 +124,9 @@ export const HeroAnimation = () => {
               height={417}
             /> */}
             <div className="video-masked">
-              <video
-                src={"/videos/video26.mp4"}
-                autoPlay
-                muted
-                loop
-                playsInline
-              ></video>
+              <video autoPlay muted loop playsInline>
+                <source src={"/videos/video26.mp4"} />
+              </video>
             </div>
             {/* <div className="mobile-fone-left "></div> */}
             <div className="absolute top-0 left-0 z-10 flex h-full w-full flex-col justify-end px-9 pb-6">
@@ -171,14 +167,9 @@ export const HeroAnimation = () => {
             height={417}
           /> */}
           <div className="video-masked !h-full !w-full">
-            <video
-              src={"/videos/video27.mp4"}
-              autoPlay
-              muted
-              loop
-              playsInline
-              className=""
-            ></video>
+            <video autoPlay muted loop playsInline className="">
+              <source src={"/videos/video27.mp4"} />
+            </video>
           </div>
         </div>
         <div
@@ -208,13 +199,9 @@ export const HeroAnimation = () => {
               height={417}
             /> */}
             <div className="video-masked">
-              <video
-                src={"/videos/video28.mp4"}
-                autoPlay
-                muted
-                loop
-                playsInline
-              ></video>
+              <video autoPlay muted loop playsInline>
+                <source src={"/videos/video28.mp4"} />
+              </video>
             </div>
             <div className="absolute top-0 left-0 z-10 flex h-full w-full flex-col justify-end px-9 pb-6">
               <p className="text-[17px] font-bold text-white">

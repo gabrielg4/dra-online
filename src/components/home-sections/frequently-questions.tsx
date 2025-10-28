@@ -3,7 +3,7 @@ import { FAQ } from "../faq";
 
 export const FrequentlyQuestions = () => {
   return (
-    <section id="faq" className="relative py-10 md:py-14">
+    <section id="faq" className="relative py-10 max-sm:pt-4 md:py-14">
       <div className="relative z-10 container">
         <FAQ />
       </div>

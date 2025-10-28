@@ -33,7 +33,7 @@ export const Midia = ({ articles }: MidiaProps) => {
   return (
     <section
       id="midia"
-      className="relative pt-10 max-[640]:overflow-hidden md:pt-10"
+      className="relative pt-10 max-[640px]:overflow-hidden md:pt-10"
     >
       <div className="relative z-10 container">
         <h2 className="title-section-midia md:display h-auto text-center !text-[40px] leading-[110%] font-normal text-white sm:!text-[48px]">

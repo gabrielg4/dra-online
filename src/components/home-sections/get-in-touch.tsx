@@ -28,7 +28,7 @@ export const GetInTouch = () => {
   return (
     <section
       id="get-in-touch"
-      className="relative bg-[url('/images/bg-contact-section.svg')] bg-cover bg-center bg-no-repeat py-10 md:py-14"
+      className="relative bg-[url('/images/bg-contact-section.svg')] bg-cover bg-center bg-no-repeat py-10 max-sm:pb-5 md:py-14"
     >
       <div className="blur-1 absolute -top-[300px] -left-[846px] md:-left-[536px]"></div>
       <div className="relative z-10 container flex flex-col items-center justify-between gap-6 overflow-hidden md:flex-row md:gap-10">
