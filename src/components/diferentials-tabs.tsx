@@ -99,8 +99,8 @@ export const DiferentialsTabs = () => {
         </TabsTrigger>
       </TabsList>
       <div className="stack-area w-full max-sm:relative max-sm:min-h-[780px] sm:min-h-0">
-        <TabsContent value="tab1" className="stack-card">
-          <div className="max-sm:bg-brand-dark-green flex w-full flex-col items-center gap-5 bg-white max-sm:max-w-[350px] max-sm:rounded-2xl max-sm:p-4 md:flex-row md:gap-8 lg:gap-20">
+        <TabsContent value="tab1">
+          <div className="max-sm:bg-brand-dark-green flex w-full flex-col items-center gap-5 bg-white max-sm:max-w-full max-sm:rounded-2xl max-sm:p-4 md:flex-row md:gap-8 lg:gap-20">
             <div className="relative w-full md:w-1/2">
               <Image
                 src={"/images/ic-arrow-up.svg"}
@@ -118,7 +118,7 @@ export const DiferentialsTabs = () => {
                 className="h-[300px] w-full rounded-lg object-cover md:h-[370px] lg:h-[477px]"
               ></video>
             </div>
-            <div className="w-full px-4 max-sm:max-w-[350px] max-sm:px-0 sm:px-0 sm:py-8 md:w-1/2">
+            <div className="w-full px-4 max-sm:max-w-full max-sm:px-0 sm:px-0 sm:py-8 md:w-1/2">
               <p className="text-brand-main-green mb-3 text-[28px] leading-[130%] font-bold max-sm:text-center max-sm:text-[22px] max-sm:text-white">
                 Entrevista Qualificada
               </p>
@@ -149,8 +149,8 @@ export const DiferentialsTabs = () => {
             </div>
           </div>
         </TabsContent>
-        <TabsContent value="tab2" className="stack-card">
-          <div className="max-sm:bg-brand-main-green flex w-full flex-col items-center gap-5 bg-white max-sm:max-w-[350px] max-sm:rounded-2xl max-sm:p-4 md:flex-row md:gap-8 lg:gap-20">
+        <TabsContent value="tab2">
+          <div className="max-sm:bg-brand-main-green flex w-full flex-col items-center gap-5 bg-white max-sm:max-w-full max-sm:rounded-2xl max-sm:p-4 md:flex-row md:gap-8 lg:gap-20">
             <div className="relative w-full md:w-1/2">
               <Image
                 src={"/images/ic-arrow-up.svg"}
@@ -168,7 +168,7 @@ export const DiferentialsTabs = () => {
                 className="h-[300px] w-full rounded-lg object-cover md:h-[370px] lg:h-[477px]"
               ></video>
             </div>
-            <div className="w-full px-4 max-sm:max-w-[350px] max-sm:px-0 sm:px-0 sm:py-8 md:w-1/2">
+            <div className="w-full px-4 max-sm:max-w-full max-sm:px-0 sm:px-0 sm:py-8 md:w-1/2">
               <p className="text-brand-main-green mb-3 text-[28px] leading-[130%] font-bold max-sm:text-center max-sm:text-[22px] max-sm:text-white">
                 Pronto Atendimento 24hs
               </p>
@@ -200,8 +200,8 @@ export const DiferentialsTabs = () => {
             </div>
           </div>
         </TabsContent>
-        <TabsContent value="tab3" className="stack-card">
-          <div className="max-sm:bg-brand-light-green flex w-full flex-col items-center gap-5 bg-white max-sm:max-w-[350px] max-sm:rounded-2xl max-sm:p-4 md:flex-row md:gap-8 lg:gap-20">
+        <TabsContent value="tab3">
+          <div className="max-sm:bg-brand-light-green flex w-full flex-col items-center gap-5 bg-white max-sm:max-w-full max-sm:rounded-2xl max-sm:p-4 md:flex-row md:gap-8 lg:gap-20">
             <div className="relative w-full md:w-1/2">
               <Image
                 src={"/images/ic-arrow-up.svg"}
@@ -219,7 +219,7 @@ export const DiferentialsTabs = () => {
                 className="h-[300px] w-full rounded-lg object-cover md:h-[370px] lg:h-[477px]"
               ></video>
             </div>
-            <div className="w-full px-4 max-sm:max-w-[350px] max-sm:px-0 sm:px-0 sm:py-8 md:w-1/2">
+            <div className="w-full px-4 max-sm:max-w-full max-sm:px-0 sm:px-0 sm:py-8 md:w-1/2">
               <p className="text-brand-main-green mb-3 text-[28px] leading-[130%] font-bold max-sm:text-center max-sm:text-[22px] max-sm:text-white">
                 Consulta Eletivas com Especialistas
               </p>
@@ -249,8 +249,8 @@ export const DiferentialsTabs = () => {
             </div>
           </div>
         </TabsContent>
-        <TabsContent value="tab4" className="stack-card">
-          <div className="max-sm:bg-brand-dark-green flex w-full flex-col items-center gap-5 bg-white max-sm:max-w-[350px] max-sm:rounded-2xl max-sm:p-4 md:flex-row md:gap-8 lg:gap-20">
+        <TabsContent value="tab4">
+          <div className="max-sm:bg-brand-dark-green flex w-full flex-col items-center gap-5 bg-white max-sm:max-w-full max-sm:rounded-2xl max-sm:p-4 md:flex-row md:gap-8 lg:gap-20">
             <div className="relative w-full md:w-1/2">
               <Image
                 src={"/images/ic-arrow-up.svg"}
@@ -268,7 +268,7 @@ export const DiferentialsTabs = () => {
                 className="h-[300px] w-full rounded-lg object-cover md:h-[370px] lg:h-[477px]"
               ></video>
             </div>
-            <div className="w-full px-4 max-sm:max-w-[350px] max-sm:px-0 sm:px-0 sm:py-8 md:w-1/2">
+            <div className="w-full px-4 max-sm:max-w-full max-sm:px-0 sm:px-0 sm:py-8 md:w-1/2">
               <p className="text-brand-main-green mb-3 text-[28px] leading-[130%] font-bold max-sm:text-center max-sm:text-[22px] max-sm:text-white">
                 Saúde Mental
               </p>
@@ -303,8 +303,8 @@ export const DiferentialsTabs = () => {
             </div>
           </div>
         </TabsContent>
-        <TabsContent value="tab5" className="stack-card">
-          <div className="max-sm:bg-brand-main-green flex w-full flex-col items-center gap-5 bg-white max-sm:max-w-[350px] max-sm:rounded-2xl max-sm:p-4 md:flex-row md:gap-8 lg:gap-20">
+        <TabsContent value="tab5">
+          <div className="max-sm:bg-brand-main-green flex w-full flex-col items-center gap-5 bg-white max-sm:max-w-full max-sm:rounded-2xl max-sm:p-4 md:flex-row md:gap-8 lg:gap-20">
             <div className="relative w-full md:w-1/2">
               <Image
                 src={"/images/ic-arrow-up.svg"}
@@ -322,7 +322,7 @@ export const DiferentialsTabs = () => {
                 className="h-[300px] w-full rounded-lg object-cover md:h-[370px] lg:h-[477px]"
               ></video>
             </div>
-            <div className="w-full px-4 max-sm:max-w-[350px] max-sm:px-0 sm:px-0 sm:py-8 md:w-1/2">
+            <div className="w-full px-4 max-sm:max-w-full max-sm:px-0 sm:px-0 sm:py-8 md:w-1/2">
               <p className="text-brand-main-green mb-3 text-[28px] leading-[130%] font-bold max-sm:text-center max-sm:text-[22px] max-sm:text-white">
                 Gestão Integrada do Cuidado
               </p>
@@ -352,8 +352,8 @@ export const DiferentialsTabs = () => {
             </div>
           </div>
         </TabsContent>
-        <TabsContent value="tab6" className="stack-card">
-          <div className="max-sm:bg-brand-light-green flex w-full flex-col items-center gap-5 bg-white max-sm:max-w-[350px] max-sm:rounded-2xl max-sm:p-4 md:flex-row md:gap-8 lg:gap-20">
+        <TabsContent value="tab6">
+          <div className="max-sm:bg-brand-light-green flex w-full flex-col items-center gap-5 bg-white max-sm:max-w-full max-sm:rounded-2xl max-sm:p-4 md:flex-row md:gap-8 lg:gap-20">
             <div className="relative w-full md:w-1/2">
               <Image
                 src={"/images/ic-arrow-up.svg"}
@@ -371,7 +371,7 @@ export const DiferentialsTabs = () => {
                 className="h-[300px] w-full rounded-lg object-cover md:h-[370px] lg:h-[477px]"
               ></video>
             </div>
-            <div className="w-full px-4 max-sm:max-w-[350px] max-sm:px-0 sm:px-0 sm:py-8 md:w-1/2">
+            <div className="w-full px-4 max-sm:max-w-full max-sm:px-0 sm:px-0 sm:py-8 md:w-1/2">
               <p className="text-brand-main-green mb-3 text-[28px] leading-[130%] font-bold max-sm:text-center max-sm:text-[22px] max-sm:text-white">
                 Espaço de Saúde Conectada
               </p>

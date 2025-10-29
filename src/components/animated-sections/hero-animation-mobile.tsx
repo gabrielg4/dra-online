@@ -168,7 +168,7 @@ export const HeroAnimationMobile = () => {
       .to(
         card7.current,
         {
-          x: -125,
+          x: 0,
           y: 310,
           opacity: 1,
         },
@@ -275,7 +275,7 @@ export const HeroAnimationMobile = () => {
 
         <div
           ref={card7}
-          className="card-07 bg-brand-light-green absolute right-0 z-10 h-fit w-full max-w-[110px] rounded-xl p-2 duration-300 ease-linear"
+          className="card-07 bg-brand-light-green absolute right-0 left-0 z-10 mx-auto h-fit w-full max-w-[110px] rounded-xl p-2 duration-300 ease-linear"
         >
           <p className="text-xs font-bold text-white">
             <span className="text-brand-dark-green">
