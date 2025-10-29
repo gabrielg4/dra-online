@@ -29,6 +29,7 @@ export const Footer = () => {
                 alt="Logo Dr. Online"
                 width={237}
                 height={45}
+                className="object-contain max-sm:max-w-[171px]"
               />
               <div className="mt-10 flex items-center gap-4">
                 <Link

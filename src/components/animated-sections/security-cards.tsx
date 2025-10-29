@@ -5,6 +5,9 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import { useRef } from "react";
+import { Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css/pagination";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -32,59 +35,81 @@ export const SecurityCards = () => {
   }, []);
 
   return (
-    <div
-      id="security"
-      className="flex w-full flex-col items-center justify-center gap-8 sm:mt-10 md:flex-row md:items-end lg:px-20"
-    >
-      <div
-        ref={card2}
-        className="security-card w-full max-w-[332px] translate-y-10"
+    <div className="w-full max-w-[1060px]">
+      <Swiper
+        modules={[Pagination]}
+        pagination={{
+          clickable: true,
+          el: ".swiper-pagination-itens-security",
+        }}
+        spaceBetween={24}
+        slidesPerView={1}
+        breakpoints={{
+          640: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 },
+        }}
+        wrapperClass="pb-12"
       >
-        <Image
-          src="/images/ic-shield-check.svg"
-          alt="Ícone check"
-          width={100}
-          height={100}
-          className="mx-auto"
-        />
-        <p className="text-center text-lg font-bold text-white md:text-xl">
-          Adequação a<br />
-          Portaria 467/2020
-        </p>
-      </div>
-      <div
-        ref={card1}
-        className="security-card w-full max-w-[332px] translate-y-10"
-      >
-        <Image
-          src="/images/ic-shield-check.svg"
-          alt="Ícone check"
-          width={100}
-          height={100}
-          className="mx-auto"
-        />
-        <p className="text-center text-lg font-bold text-white md:text-xl">
-          Adequação total
-          <br /> à LGPD
-        </p>
-      </div>
-      <div
-        ref={card3}
-        className="security-card w-full max-w-[332px] translate-y-10"
-      >
-        <Image
-          src="/images/ic-shield-check.svg"
-          alt="Ícone check"
-          width={100}
-          height={100}
-          className="mx-auto"
-        />
-        <p className="text-center text-lg font-bold text-white md:text-xl">
-          Conformidade com as
-          <br />
-          normativas do CFM
-        </p>
-      </div>
+        <SwiperSlide className="!flex items-start justify-center">
+          <div
+            ref={card2}
+            className="security-card w-full max-w-[332px] translate-y-10"
+          >
+            <Image
+              src="/images/ic-shield-check.svg"
+              alt="Ícone check"
+              width={100}
+              height={100}
+              className="mx-auto"
+            />
+            <p className="text-center text-lg font-bold text-white md:text-xl">
+              Adequação a<br />
+              Portaria 467/2020
+            </p>
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide className="!flex items-start justify-center">
+          <div
+            ref={card1}
+            className="security-card w-full max-w-[332px] translate-y-10"
+          >
+            <Image
+              src="/images/ic-shield-check.svg"
+              alt="Ícone check"
+              width={100}
+              height={100}
+              className="mx-auto"
+            />
+            <p className="text-center text-lg font-bold text-white md:text-xl">
+              Adequação total
+              <br /> à LGPD
+            </p>
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide className="!flex items-start justify-center">
+          <div
+            ref={card3}
+            className="security-card w-full max-w-[332px] translate-y-10"
+          >
+            <Image
+              src="/images/ic-shield-check.svg"
+              alt="Ícone check"
+              width={100}
+              height={100}
+              className="mx-auto"
+            />
+            <p className="text-center text-lg font-bold text-white md:text-xl">
+              Conformidade com as
+              <br />
+              normativas do CFM
+            </p>
+          </div>
+        </SwiperSlide>
+      </Swiper>
+
+      <div className="swiper-pagination-itens-security swiper-pagination mt-8 flex items-center justify-center gap-3 lg:hidden"></div>
     </div>
   );
 };

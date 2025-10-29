@@ -111,17 +111,18 @@ export function ChallengersAnimation() {
           ref={cardsContainerRef}
           className="challenges-cards-container relative z-30 w-full"
         >
-          <div className="absolute top-20 left-1/2 grid items-center justify-center gap-16 max-[640px]:w-full max-[640px]:-translate-x-1/2 lg:top-24 lg:left-[86px]">
+          <div className="absolute top-20 left-1/2 flex flex-col items-start justify-start gap-16 max-[640px]:w-full max-[640px]:-translate-x-1/2 lg:top-24 lg:left-[86px]">
             <ChallengeCard
               videoUrl="/videos/video-animation-2.mp4"
               label="Longos tempos de espera para atendimento presencial"
             />
             <ChallengeCard
               videoUrl="/videos/video-animation-4.mp4"
+              className="self-end justify-self-end"
               label="Afastamentos recorrentes por problemas de saúde mental"
             />
           </div>
-          <div className="absolute top-[790px] grid items-center justify-center gap-16 max-[640px]:left-1/2 max-[640px]:w-full max-[640px]:-translate-x-1/2 md:pt-80 lg:top-24 lg:right-[86px]">
+          <div className="absolute top-[790px] flex flex-col items-start justify-center gap-16 max-[640px]:left-1/2 max-[640px]:w-full max-[640px]:-translate-x-1/2 md:pt-80 lg:top-24 lg:right-[86px]">
             <ChallengeCard
               videoUrl="/videos/video-animation-3.mp4"
               label="Dificuldade de acesso médico em regiões remotas"
@@ -130,6 +131,7 @@ export function ChallengersAnimation() {
             <ChallengeCard
               label="Exigências regulatórias da ANS e LGPD sem soluções"
               videoUrl="/videos/video-animation-1.mp4"
+              className="self-end justify-self-end"
             />
           </div>
         </div>

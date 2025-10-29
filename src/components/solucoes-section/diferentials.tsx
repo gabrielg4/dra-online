@@ -8,6 +8,12 @@ import { useMediaQuery } from "react-responsive";
 import Image from "next/image";
 import { SpecialtiesCarousel } from "../specialties-carousel";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Grid, Pagination } from "swiper/modules";
+import "swiper/css/grid";
+import "swiper/css";
+import "swiper/css/pagination";
+
 interface DiferentialsSolutionProps {
   noImage?: boolean;
   title: ReactElement;
@@ -81,7 +87,7 @@ export const Diferentials = ({
     });
   }, []);
   return (
-    <section className="diferential-section bg-[url(/images/img-bg-secao-pattern.webp)] bg-contain bg-center bg-no-repeat py-10 md:bg-cover lg:py-20">
+    <section className="diferential-section bg-[url(/images/img-bg-secao-pattern.webp)] bg-contain bg-center bg-no-repeat py-10 max-sm:pb-4 md:bg-cover lg:py-20">
       <div className="container flex flex-col items-stretch gap-8 md:flex-row md:gap-14">
         <div className="flex w-full flex-col justify-between md:w-1/2">
           <div>
@@ -152,7 +158,7 @@ export const Diferentials = ({
             </div>
           )}
         </div>
-        <div className="cards-diferentials flex w-full flex-col gap-8 md:w-1/2">
+        <div className="cards-diferentials flex w-full flex-col gap-8 max-sm:hidden md:w-1/2">
           {differentials.map(({ icon: { alt, src }, title }, index) => (
             <CardSolucaoDiferencial
               cardClass="p-6 card-diferential"
@@ -166,7 +172,7 @@ export const Diferentials = ({
             </CardSolucaoDiferencial>
           ))}
           {noImage && (
-            <div className="relative block h-[337px] w-full rounded-lg md:hidden">
+            <div className="relative block h-[337px] w-full rounded-lg max-sm:max-w-[356px] md:hidden">
               <div className="video-blur absolute top-0 left-0 z-20 h-full w-full" />
               <video
                 src={videoUrl}
@@ -185,6 +191,53 @@ export const Diferentials = ({
               />
             </div>
           )}
+        </div>
+
+        <div className="hidden max-sm:block">
+          <Swiper
+            modules={[Grid, Pagination]}
+            spaceBetween={16}
+            slidesPerView={1}
+            grid={{
+              rows: 2,
+              fill: "row",
+            }}
+            pagination={{
+              clickable: true,
+              el: ".swiper-pagination-cards-solucoes",
+            }}
+            breakpoints={{
+              0: {
+                slidesPerView: 1,
+                autoHeight: true,
+                grid: {
+                  rows: 1,
+                },
+              },
+              991: {
+                slidesPerView: 2,
+                grid: {
+                  rows: 2,
+                },
+              },
+            }}
+          >
+            {differentials.map(({ icon: { alt, src }, title }, index) => (
+              <SwiperSlide key={index}>
+                <CardSolucaoDiferencial
+                  cardClass="p-6 card-diferential"
+                  image={{
+                    alt,
+                    src,
+                  }}
+                >
+                  {title}
+                </CardSolucaoDiferencial>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+
+          <div className="swiper-pagination-cards-solucoes swiper-pagination mt-8 flex items-center justify-center gap-3 lg:hidden"></div>
         </div>
       </div>
     </section>

@@ -61,7 +61,7 @@ export default async function BlogPage({
           </div>
         </div>
       </section>
-      <section className="bg-[url(/images/img-bg-section-blog.svg)] bg-cover bg-top bg-no-repeat pt-14 pb-20">
+      <section className="bg-[url(/images/img-bg-section-blog.svg)] bg-cover bg-top bg-no-repeat pt-14 pb-20 max-sm:pb-10">
         <div className="container">
           <BlogGrid posts={posts} />
         </div>

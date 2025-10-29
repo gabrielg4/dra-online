@@ -5,6 +5,7 @@ import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/all";
 import gsap from "gsap";
 import { MetricsContainer } from "../animated-sections/metrics-container";
+import { MetricsMobileCarousel } from "../mobile/metrics-mobile-carousel";
 
 export const MetricsSection = () => {
   useGSAP(() => {
@@ -77,7 +78,7 @@ export const MetricsSection = () => {
         </div>
         <div className="w-full lg:max-w-[calc(100%-373px)]">
           <MetricsContainer />
-          {/* <MetricsMobileCarousel /> */}
+          <MetricsMobileCarousel />
           <div className="mx-auto mt-8 block w-fit md:hidden">
             <CtaButton title="Fale com um especialista" url="/" />
           </div>

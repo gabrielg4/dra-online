@@ -69,7 +69,7 @@ export const Hero = ({
         <div className="absolute top-0 left-0 z-40 h-full w-full">
           <div className="container flex h-full flex-col justify-center">
             <div className="flex w-full flex-col items-center md:max-w-[500px] md:items-start">
-              <h1 className="title-hero text-brand-light-green mb-2 text-center text-[32px] leading-[110%] font-bold md:text-start md:text-[40px] lg:text-[48px]">
+              <h1 className="title-hero text-brand-light-green mb-2 text-center text-[48px] leading-[110%] font-bold md:text-start md:text-[40px]">
                 {title}
               </h1>
               <p className="mb-10 text-center text-lg leading-normal font-normal text-white md:mb-14 md:text-start md:text-2xl">

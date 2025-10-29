@@ -28,7 +28,7 @@ export const Diferentials = () => {
   return (
     <section
       id="diferentials"
-      className="has-bg-white overflow-hidden bg-white bg-[url('/images/bg-diferenciais.webp')] bg-cover bg-center py-14"
+      className="has-bg-white overflow-hidden bg-white bg-[url('/images/bg-diferenciais.webp')] bg-cover bg-center py-14 max-sm:pt-28"
     >
       <div className="container">
         <h2 className="title-section-diferentials text-brand-dark-green mb-8 text-center text-[24px] leading-[120%] font-medium sm:text-[32px] md:mb-14">

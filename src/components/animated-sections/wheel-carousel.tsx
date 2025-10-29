@@ -317,7 +317,7 @@ export const WheelCarousel = ({ articles }: WheelCarouselProps) => {
             <div
               key={i}
               data-wheel-card
-              className="absolute top-0 left-1/2 h-full w-[290px] origin-[50%_2500px] -translate-x-1/2"
+              className="absolute top-0 left-1/2 h-full w-[290px] origin-[50%_2500px] -translate-x-1/2 max-sm:w-[340px]"
               style={{ transform: `rotate(${(i - MEDIAN_INDEX) * STEP}deg)` }}
             >
               <NaMidiaCard article={article} isActive={i === activeIndex} />

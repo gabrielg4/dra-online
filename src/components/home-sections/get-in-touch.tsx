@@ -31,8 +31,8 @@ export const GetInTouch = () => {
       className="relative bg-[url('/images/bg-contact-section.svg')] bg-cover bg-center bg-no-repeat py-10 max-sm:pb-5 md:py-14"
     >
       <div className="blur-1 absolute -top-[300px] -left-[846px] md:-left-[536px]"></div>
-      <div className="relative z-10 container flex flex-col items-center justify-between gap-6 overflow-hidden md:flex-row md:gap-10">
-        <div className="relative flex w-full flex-col-reverse items-center md:w-1/2 md:flex-col md:items-start lg:w-auto">
+      <div className="relative z-10 container flex flex-col items-center justify-between overflow-hidden max-sm:gap-6 md:flex-row md:gap-10">
+        <div className="relative flex w-full flex-col-reverse items-center gap-6 md:w-1/2 md:flex-col md:items-start lg:w-auto">
           <h2 className="title-contact-section mb-5 text-center text-[32px] leading-[110%] font-bold text-white md:mb-10 md:text-start lg:text-[40px]">
             Vamos conversar sobre
             <br className="hidden lg:inline-block" /> a saúde digital da sua

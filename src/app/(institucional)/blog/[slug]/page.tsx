@@ -119,7 +119,7 @@ export default async function Blogpage({
           />
 
           <div className="mt-5">
-            <h3 className="text-brand-dark-green text-[16px] leading-[150%] font-bold">
+            <h3 className="text-brand-dark-green text-[16px] leading-[150%] font-bold max-sm:mb-4">
               Compartilhe
             </h3>
             <div className="flex items-center gap-3">

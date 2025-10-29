@@ -35,7 +35,7 @@ export const TestimonialsCarousel = ({
           <TestimonialCard testimonial={testimonial} />
         </SwiperSlide>
       ))}
-      <div className="just top-1/2 z-50 flex w-full -translate-y-1/2 items-center justify-center gap-5 max-[640px]:pt-20 sm:justify-between md:absolute">
+      <div className="just top-1/2 z-50 flex w-full items-center justify-center gap-5 max-[640px]:pt-20 sm:justify-between md:absolute">
         <button
           id="prev-depoimento"
           className="bg-brand-light-green hover:bg-brand-light-green2 group z-50 flex h-12 w-12 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full duration-200 sm:h-8 sm:w-8 md:-ml-10"

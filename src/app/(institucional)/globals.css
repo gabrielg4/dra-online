@@ -457,3 +457,13 @@ header.scrolled::before {
   background: var(--Degrad, linear-gradient(180deg, #1ba068 0%, #a6d05d 100%));
   filter: blur(150px);
 }
+
+.swiper-pagination-itens-security,
+.swiper-pagination-cards-solucoes,
+.swiper-pagination-grid-cards {
+  @apply !relative;
+
+  .swiper-pagination-bullet {
+    @apply h-3 w-3 bg-white duration-300 ease-linear;
+  }
+}

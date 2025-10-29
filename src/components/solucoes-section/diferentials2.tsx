@@ -146,7 +146,7 @@ export const Diferentials2 = ({
             </div>
           )}
         </div>
-        <div className="cards-integralmente flex w-full flex-col gap-8 md:w-1/2">
+        <div className="cards-integralmente flex w-full flex-col gap-8 max-sm:hidden md:w-1/2">
           {differentials.map(({ icon: { alt, src }, title }, index) => (
             <CardSolucaoDiferencial
               key={index}

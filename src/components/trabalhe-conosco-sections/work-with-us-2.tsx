@@ -28,7 +28,7 @@ export const WorkWithUsSection2 = () => {
   return (
     <section
       id="form-curriculo"
-      className="relative bg-[url('/images/bg-contact-section.svg')] bg-cover bg-center bg-no-repeat py-10 md:py-14"
+      className="relative bg-[url('/images/bg-contact-section.svg')] bg-cover bg-center bg-no-repeat py-10 max-sm:pt-4 md:py-14"
     >
       <div className="blur-1 absolute -left-[846px] max-[767]:bottom-0 md:-top-[300px] md:-left-[536px]"></div>
       <div className="relative z-10 container flex flex-col items-center justify-between gap-6 md:flex-row md:gap-10">

@@ -31,7 +31,7 @@ export const HeroWorkWithUs = () => {
   return (
     <section
       id="hero-work-with-us"
-      className="relative w-full overflow-hidden bg-[url(/images/img-bg-trabalhe-conosco.svg)] bg-cover bg-center bg-no-repeat pt-40 pb-20 md:h-[655px]"
+      className="relative w-full overflow-hidden bg-[url(/images/img-bg-trabalhe-conosco.svg)] bg-cover bg-center bg-no-repeat pt-40 pb-20 max-sm:pb-10 md:h-[655px]"
     >
       <div className="relative z-30 container flex items-center justify-between">
         <div className="relative z-40 w-full md:w-2/3 lg:w-1/2">
