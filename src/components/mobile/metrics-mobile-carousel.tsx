@@ -35,9 +35,9 @@ export const MetricsMobileCarousel = () => {
   return (
     <div className="block md:hidden">
       <Carousel setApi={setApi}>
-        <CarouselContent className="-ml-4">
-          <CarouselItem className={cn("basis-full pl-4")}>
-            <div className="h-full rounded-2xl bg-white/10 p-4 shadow-2xl/10">
+        <CarouselContent className="-ml-4 items-center">
+          <CarouselItem className={cn("basis-full pl-4 max-sm:basis-60")}>
+            <div className="rounded-2xl bg-white/10 p-4 shadow-2xl/10">
               <div className="bg-brand-dark-green mb-5 w-fit rounded-2xl p-3">
                 <p className="text-brand-light-green text-[64px] leading-none font-bold">
                   93
@@ -49,12 +49,17 @@ export const MetricsMobileCarousel = () => {
               </p>
             </div>
           </CarouselItem>
-          <CarouselItem className={cn("basis-full pl-4")}>
-            <div className="h-full rounded-2xl bg-white/10 p-4 shadow-2xl/10">
-              <div className="bg-brand-dark-green mb-5 w-fit rounded-2xl p-3">
-                <p className="text-brand-light-green text-[64px] leading-none font-bold">
-                  92<span className="text-[32px]">%</span>
-                </p>
+          <CarouselItem className={cn("basis-full pl-4 max-sm:basis-60")}>
+            <div className="rounded-2xl bg-white/10 p-4 shadow-2xl/10">
+              <div className="flex items-center justify-between">
+                <div className="bg-brand-dark-green mb-5 w-fit rounded-2xl p-3">
+                  <p className="text-brand-light-green text-[64px] leading-none font-bold">
+                    92<span className="text-[32px] max-sm:hidden">%</span>
+                  </p>
+                </div>
+                <span className="text-brand-light-green hidden w-full max-w-24 text-[32px] font-bold max-sm:block">
+                  %
+                </span>
               </div>
               <p className="text-lg text-white">
                 de resolutividade nos atendimentos, com casos solucionados sem a
@@ -62,8 +67,8 @@ export const MetricsMobileCarousel = () => {
               </p>
             </div>
           </CarouselItem>
-          <CarouselItem className={cn("basis-full pl-4")}>
-            <div className="h-full rounded-2xl bg-white/10 p-4 shadow-2xl/10">
+          <CarouselItem className={cn("basis-full pl-4 max-sm:basis-60")}>
+            <div className="rounded-2xl bg-white/10 p-4 shadow-2xl/10">
               <div className="bg-brand-dark-green mb-5 w-fit rounded-2xl p-3">
                 <p className="text-brand-light-green text-[64px] leading-none font-bold">
                   94

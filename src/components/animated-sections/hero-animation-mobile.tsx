@@ -2,14 +2,14 @@
 import gsap from "gsap";
 import React, { useEffect, useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useMediaQuery } from "react-responsive";
-// import { HeroMetricsCarousel } from "../mobile/hero-metrics-carousel";
+import Counter from "../counter";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export const HeroAnimationMobile = () => {
   const sectionRef = useRef(null);
   const leftContainer = useRef(null);
+  const metricsRef = useRef(null);
 
   const card1 = useRef(null);
   const card2 = useRef(null);
@@ -165,11 +165,28 @@ export const HeroAnimationMobile = () => {
         },
         0,
       )
+
       .to(
         card7.current,
         {
           x: 0,
           y: 310,
+          opacity: 1,
+        },
+        0,
+      )
+      .from(
+        metricsRef.current,
+        {
+          y: -50,
+          opacity: 0,
+        },
+        0,
+      )
+      .to(
+        metricsRef.current,
+        {
+          y: 0,
           opacity: 1,
         },
         0,
@@ -182,7 +199,7 @@ export const HeroAnimationMobile = () => {
   }, []);
 
   return (
-    <div className="relative mt-20 block h-[400px] w-full md:hidden">
+    <div className="relative mt-20 block h-[740px] w-full md:hidden">
       {/* CARDS */}
       <div ref={sectionRef} className="flex w-[800px] justify-center gap-4">
         <div
@@ -283,6 +300,97 @@ export const HeroAnimationMobile = () => {
             </span>{" "}
             para decisões estratégicas
           </p>
+        </div>
+      </div>
+
+      {/* Metricas */}
+      <div ref={metricsRef} className="absolute bottom-0 w-full">
+        <div className="mx-auto grid w-full max-w-[304px] grid-cols-2 items-center justify-center justify-items-center gap-4">
+          <div className="border-brand-main-green flex w-full max-w-[144px] flex-col items-start gap-2 rounded-2xl border p-3">
+            <p className="text-brand-light-green flex items-start text-[52px] leading-[110%] font-bold lg:text-[70px]">
+              <Counter
+                scroll={{
+                  trigger: ".hero-metrics",
+                  start: "top 40%",
+                  end: "top: 40%",
+                }}
+                from={0}
+                to={10}
+                duration={2}
+              />
+              <span className="from-brand-main-green to-brand-light-green -mb-2 inline-block bg-gradient-to-r bg-clip-text text-3xl font-bold text-transparent">
+                +
+              </span>
+            </p>
+            <span className="text-md text-sm text-white">
+              milhões de
+              <br /> vidas expostas
+            </span>
+          </div>
+
+          <div className="border-brand-main-green flex w-full max-w-[144px] flex-col items-start gap-2 rounded-2xl border p-3">
+            <p className="text-brand-light-green flex items-start text-[52px] leading-[110%] font-bold lg:text-[70px]">
+              <Counter
+                scroll={{
+                  trigger: ".hero-metrics",
+                  start: "top 40%",
+                  end: "top: 40%",
+                }}
+                from={0}
+                to={1}
+                duration={2}
+              />
+              <span className="from-brand-main-green to-brand-light-green -mb-2 inline-block bg-gradient-to-r bg-clip-text text-3xl font-bold text-transparent">
+                +
+              </span>
+            </p>
+            <span className="text-md text-sm leading-normal text-white">
+              milhão consultas por ano
+            </span>
+          </div>
+
+          <div className="border-brand-main-green flex w-full max-w-[144px] flex-col items-start gap-2 rounded-2xl border p-3">
+            <p className="text-brand-light-green flex items-start text-[52px] leading-[110%] font-bold lg:text-[70px]">
+              <Counter
+                scroll={{
+                  trigger: ".hero-metrics",
+                  start: "top 40%",
+                  end: "top: 40%",
+                }}
+                from={0}
+                to={80}
+                duration={2}
+              />
+              <span className="from-brand-main-green to-brand-light-green -mb-2 inline-block bg-gradient-to-r bg-clip-text text-3xl font-bold text-transparent">
+                +
+              </span>
+            </p>
+            <span className="text-md text-sm leading-normal text-white">
+              mil consultas <br />
+              por mês
+            </span>
+          </div>
+
+          <div className="border-brand-main-green flex w-full max-w-[144px] flex-col items-start gap-2 rounded-2xl border p-3">
+            <p className="text-brand-light-green flex items-start text-[52px] leading-[110%] font-bold lg:text-[70px]">
+              <Counter
+                scroll={{
+                  trigger: ".hero-metrics",
+                  start: "top 40%",
+                  end: "top: 40%",
+                }}
+                from={0}
+                to={35}
+                duration={2}
+              />
+              <span className="from-brand-main-green to-brand-light-green -mb-2 inline-block bg-gradient-to-r bg-clip-text text-3xl font-bold text-transparent">
+                +
+              </span>
+            </p>
+            <span className="text-md text-sm leading-normal text-white">
+              consultórios digitais
+            </span>
+          </div>
         </div>
       </div>
     </div>

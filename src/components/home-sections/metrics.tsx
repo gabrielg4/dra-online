@@ -56,8 +56,8 @@ export const MetricsSection = () => {
       id="metrics"
       className="overflow-hidden bg-[url('/images/img-bg-beneficios.webp')] bg-cover bg-center py-20 max-sm:py-10"
     >
-      <div className="container flex flex-col items-center gap-8 md:gap-10 lg:flex-row lg:gap-14">
-        <div className="gap- flex w-full max-w-none flex-row items-end lg:max-w-[373px] lg:flex-col lg:items-start lg:gap-0">
+      <div className="container flex flex-col items-center gap-8 max-sm:px-0 md:gap-10 lg:flex-row lg:gap-14">
+        <div className="flex w-full max-w-none flex-row items-end max-sm:px-4 lg:max-w-[373px] lg:flex-col lg:items-start lg:gap-0">
           <div className="w-full">
             <p className="subtitle-metrics mb-1 text-center font-semibold text-white md:text-start">
               <span className="text-brand-light-green">O impacto da</span> dr.
