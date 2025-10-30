@@ -65,7 +65,7 @@ export function ChallengersAnimation() {
         y: isMobile ? "-10%" : "-15%", // Para mais alto, não vai tanto ao centro (era 0)
         opacity: 1,
         scale: isMobile ? 1 : 2,
-        duration: isMobile ? 0.5 : 2, // Reduzido a duration também
+        duration: isMobile ? 2 : 2, // Reduzido a duration também
         ease: "power2.out",
       },
     );
