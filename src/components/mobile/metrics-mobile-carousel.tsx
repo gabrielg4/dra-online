@@ -35,7 +35,7 @@ export const MetricsMobileCarousel = () => {
   return (
     <div className="block md:hidden">
       <Carousel setApi={setApi}>
-        <CarouselContent className="-ml-4 items-center">
+        <CarouselContent className="-ml-4 items-center justify-center">
           <CarouselItem className={cn("basis-full pl-4 max-sm:basis-60")}>
             <div className="rounded-2xl bg-white/10 p-4 shadow-2xl/10">
               <div className="bg-brand-dark-green mb-5 w-fit rounded-2xl p-3">

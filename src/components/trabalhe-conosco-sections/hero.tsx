@@ -36,19 +36,21 @@ export const HeroWorkWithUs = () => {
       <div className="relative z-30 container flex items-center justify-between">
         <div className="relative z-40 w-full md:w-2/3 lg:w-1/2">
           <h1 className="text-center text-[32px] leading-[110%] text-white md:text-start md:text-[40px] lg:text-[48px]">
-            Junte-se à <span className="font-bold">dr</span>
-            <span className="text-brand-light-green">.</span>online <br />
+            Junte-se à <br className="hidden max-sm:block" />
+            <span className="font-bold">dr</span>
+            <span className="text-brand-light-green">.</span>online{" "}
+            <br className="block max-sm:hidden" />
             <span className="text-brand-light-green font-bold">
               e transforme o cuidado <br className="hidden md:inline-block" />
               com a saúde no Brasil
             </span>
           </h1>
-          <p className="description mt-4 mb-5 text-center text-xl font-normal text-white md:mt-6 md:mb-10 md:text-start lg:mb-14">
+          <p className="description mt-4 mb-5 text-center text-xl font-normal text-white max-sm:mb-8 md:mt-6 md:mb-10 md:text-start lg:mb-14">
             Aqui, você pode fazer a diferença na vida de milhares de pessoas
             como médico credenciado ou fazendo parte da equipe.
           </p>
 
-          <div className="buttons-work-with-us flex flex-col items-center gap-6 md:flex-row">
+          <div className="buttons-work-with-us flex flex-col items-center gap-6 max-sm:items-stretch md:flex-row">
             <CtaButton title="Enviar currículo" url="#form-curriculo" />
             <CtaButton
               title="Quero ser médico credenciado"
