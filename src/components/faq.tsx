@@ -86,7 +86,7 @@ export const FAQ = () => {
 
   return (
     <Tabs defaultValue="pacientes" className="w-full overflow-hidden pr-0.5">
-      <div className="mb-8 flex flex-col items-center justify-between gap-5 md:mb-14 md:flex-row md:gap-10">
+      <div className="mb-8 flex flex-col items-center justify-around gap-5 md:mb-14 md:flex-row md:gap-10">
         <h2 className="title-section-faq text-center text-[24px] leading-[120%] font-normal text-white md:text-start md:text-[32px]">
           Ficou com <span className="font-semibold">alguma dúvida?</span>
         </h2>

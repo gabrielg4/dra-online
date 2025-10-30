@@ -133,10 +133,7 @@ export default function ConsultaEletivaComEspecialistaPage() {
           </>
         }
         description={
-          <>
-            Transforme o acesso em cuidado. E o cuidado
-            <br className="max-sm:hidden" /> em resultado.
-          </>
+          <>Transforme o acesso em cuidado. E o cuidado em resultado.</>
         }
       />
       <Diferentials

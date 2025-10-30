@@ -101,7 +101,8 @@ export default function GestaoIntegradaPage() {
         }
         description={
           <>
-            Mais que cuidado, gestão inteligente <br /> em saúde.
+            Mais que cuidado, <br className="hidden max-sm:block" />
+            gestão inteligente <br className="block max-sm:hidden" /> em saúde.
           </>
         }
       />

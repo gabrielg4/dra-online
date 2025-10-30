@@ -102,34 +102,34 @@ export const Diferentials = ({
             <div>
               <SpecialtiesCarousel />
               <div className="hidden grid-cols-2 gap-x-6 gap-y-6 max-[767px]:mt-10 sm:grid md:grid-cols-2">
-                <p className="bg-linear-cards border-brand-light-green w-full rounded-2xl border bg-white/40 px-4 py-3 text-center text-lg leading-[150%] font-bold text-white backdrop-blur-2xl">
+                <p className="border-brand-light-green w-full rounded-2xl border bg-white/40 px-4 py-3 text-center text-lg leading-[150%] font-bold text-white backdrop-blur-2xl">
                   Cardiologia
                 </p>
-                <p className="bg-linear-cards border-brand-light-green w-full rounded-2xl border bg-white/40 px-4 py-3 text-center text-lg leading-[150%] font-bold text-white backdrop-blur-2xl">
+                <p className="border-brand-light-green w-full rounded-2xl border bg-white/40 px-4 py-3 text-center text-lg leading-[150%] font-bold text-white backdrop-blur-2xl">
                   Dermatologia
                 </p>
-                <p className="bg-linear-cards border-brand-light-green w-full rounded-2xl border bg-white/40 px-4 py-3 text-center text-lg leading-[150%] font-bold text-white backdrop-blur-2xl">
+                <p className="border-brand-light-green w-full rounded-2xl border bg-white/40 px-4 py-3 text-center text-lg leading-[150%] font-bold text-white backdrop-blur-2xl">
                   Endocrinologia
                 </p>
-                <p className="bg-linear-cards border-brand-light-green w-full rounded-2xl border bg-white/40 px-4 py-3 text-center text-lg leading-[150%] font-bold text-white backdrop-blur-2xl">
+                <p className="border-brand-light-green w-full rounded-2xl border bg-white/40 px-4 py-3 text-center text-lg leading-[150%] font-bold text-white backdrop-blur-2xl">
                   Endocrinologia Pediátrica
                 </p>
-                <p className="bg-linear-cards border-brand-light-green w-full rounded-2xl border bg-white/40 px-4 py-3 text-center text-lg leading-[150%] font-bold text-white backdrop-blur-2xl">
+                <p className="border-brand-light-green w-full rounded-2xl border bg-white/40 px-4 py-3 text-center text-lg leading-[150%] font-bold text-white backdrop-blur-2xl">
                   Ginecologia
                 </p>
-                <p className="bg-linear-cards border-brand-light-green w-full rounded-2xl border bg-white/40 px-4 py-3 text-center text-lg leading-[150%] font-bold text-white backdrop-blur-2xl">
+                <p className="border-brand-light-green w-full rounded-2xl border bg-white/40 px-4 py-3 text-center text-lg leading-[150%] font-bold text-white backdrop-blur-2xl">
                   Imunologia
                 </p>
-                <p className="bg-linear-cards border-brand-light-green w-full rounded-2xl border bg-white/40 px-4 py-3 text-center text-lg leading-[150%] font-bold text-white backdrop-blur-2xl">
+                <p className="border-brand-light-green w-full rounded-2xl border bg-white/40 px-4 py-3 text-center text-lg leading-[150%] font-bold text-white backdrop-blur-2xl">
                   Neurologia
                 </p>
-                <p className="bg-linear-cards border-brand-light-green w-full rounded-2xl border bg-white/40 px-4 py-3 text-center text-lg leading-[150%] font-bold text-white backdrop-blur-2xl">
+                <p className="border-brand-light-green w-full rounded-2xl border bg-white/40 px-4 py-3 text-center text-lg leading-[150%] font-bold text-white backdrop-blur-2xl">
                   Neurologia Pediátrica
                 </p>
-                <p className="bg-linear-cards border-brand-light-green w-full rounded-2xl border bg-white/40 px-4 py-3 text-center text-lg leading-[150%] font-bold text-white backdrop-blur-2xl">
+                <p className="border-brand-light-green w-full rounded-2xl border bg-white/40 px-4 py-3 text-center text-lg leading-[150%] font-bold text-white backdrop-blur-2xl">
                   Psiquiatria
                 </p>
-                <p className="bg-linear-cards border-brand-light-green w-full rounded-2xl border bg-white/40 px-4 py-3 text-center text-lg leading-[150%] font-bold text-white backdrop-blur-2xl">
+                <p className="border-brand-light-green w-full rounded-2xl border bg-white/40 px-4 py-3 text-center text-lg leading-[150%] font-bold text-white backdrop-blur-2xl">
                   Reumatologia
                 </p>
               </div>

@@ -31,8 +31,8 @@ export function ChallengersAnimationV2() {
     const challengesTl = gsap.timeline({
       scrollTrigger: {
         trigger: ".s-challenges",
-        start: `top ${!isMobile ? "90%" : "100%"}`,
-        end: "+=300%",
+        start: `top ${!isMobile ? "100%" : "100%"}`,
+        end: "+=150%",
         scrub: true,
         // markers: true,
         onUpdate: () => {
@@ -76,32 +76,32 @@ export function ChallengersAnimationV2() {
       .fromTo(
         title,
         {
-          y: "-50vh",
+          y: "0vh",
           opacity: 0,
-          scale: 1, // Começa menor para crescer mais
+          scale: 0.6,
         },
         {
-          y: "-20%",
-          translateY: "20%",
+          y: "-50%",
+          translateY: "50%",
           opacity: 1,
-          duration: 5,
-          scale: !isMobile ? 2 : 1.3, // Cresce mais (era 1.3 no desktop)
+          duration: 15,
+          scale: !isMobile ? 1.5 : 1.1,
           ease: "power2.out",
           delay: 0.1,
         },
       )
-      // Etapa 3: Cards aparecem de baixo para cima
+      // Etapa 3: Cards aparecem de baixo para cima (começando quase junto com o título)
       .fromTo(
         cardsContainer,
         {
-          y: viewportHeight,
+          y: viewportHeight * 1,
         },
         {
-          y: yHeight - 150,
-          duration: 6,
+          y: yHeight - 100,
+          duration: 4,
           ease: "none",
         },
-        "-=5",
+        "-=8", // Começa praticamente junto com o título
       );
 
     return () => {
@@ -111,12 +111,12 @@ export function ChallengersAnimationV2() {
 
   return (
     <section
-      className={`s-challenges relative hidden h-[200vh] w-full max-sm:h-screen md:block`}
+      className={`s-challenges relative h-[110vh] w-full max-sm:h-screen`}
     >
       <div className="sticky top-0 z-50 h-screen w-full overflow-hidden bg-[url(/images/img-bg-problemas.webp)] bg-cover bg-top">
         <div
           ref={titleContainerRef}
-          className="title-container absolute top-0 left-0 z-10 h-screen w-full"
+          className="title-container absolute top-0 left-0 z-10 flex h-screen w-full items-center justify-center"
         >
           <div className="blur-2 absolute -bottom-48 -left-96 z-0 scale-75 md:-left-48 md:scale-50" />
           <h2
@@ -132,7 +132,7 @@ export function ChallengersAnimationV2() {
           ref={cardsContainerRef}
           className="challenges-cards-container absolute top-0 left-1/2 z-30 container h-full w-full -translate-x-1/2"
         >
-          <div className="absolute top-20 left-1/2 grid items-center justify-center gap-16 max-[640px]:w-full max-[640px]:-translate-x-1/2 lg:top-24 lg:left-[86px]">
+          <div className="absolute top-20 left-1/2 grid items-center justify-center gap-16 max-[640px]:w-full max-[640px]:-translate-x-1/2 max-sm:flex max-sm:flex-col max-sm:items-start max-sm:justify-start max-sm:px-4 lg:top-24 lg:left-[86px]">
             <ChallengeCard
               videoUrl="/videos/video-animation-2.mp4"
               label="Longos tempos de espera para atendimento presencial"
@@ -140,9 +140,10 @@ export function ChallengersAnimationV2() {
             <ChallengeCard
               videoUrl="/videos/video-animation-4.mp4"
               label="Afastamentos recorrentes por problemas de saúde mental"
+              className="max-sm:self-end max-sm:justify-self-end"
             />
           </div>
-          <div className="absolute top-[790px] grid items-center justify-center gap-16 max-[640px]:left-1/2 max-[640px]:w-full max-[640px]:-translate-x-1/2 md:pt-80 lg:top-24 lg:right-[86px]">
+          <div className="absolute top-[790px] grid items-center justify-center gap-16 max-[640px]:left-1/2 max-[640px]:w-full max-[640px]:-translate-x-1/2 max-sm:flex max-sm:flex-col max-sm:items-start max-sm:justify-start max-sm:px-4 md:pt-80 lg:top-24 lg:right-[86px]">
             <ChallengeCard
               videoUrl="/videos/video-animation-3.mp4"
               label="Dificuldade de acesso médico em regiões remotas"
@@ -151,6 +152,7 @@ export function ChallengersAnimationV2() {
             <ChallengeCard
               label="Exigências regulatórias da ANS e LGPD sem soluções"
               videoUrl="/videos/video-animation-1.mp4"
+              className="max-sm:self-end max-sm:justify-self-end"
             />
           </div>
         </div>

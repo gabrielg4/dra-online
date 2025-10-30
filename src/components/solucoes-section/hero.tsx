@@ -39,7 +39,7 @@ export const Hero = ({
 
   return (
     <section
-      className={`solution-hero max-sm:[420px] h-[600px] bg-[url(/images/bg-hero-solucao.svg)] bg-cover bg-bottom-left bg-no-repeat`}
+      className={`solution-hero h-[600px] bg-[url(/images/bg-hero-solucao.svg)] bg-cover bg-bottom-left bg-no-repeat max-sm:h-[420px]`}
     >
       <div className="relative mx-auto h-full w-full max-w-[1600px]">
         <div className="relative h-full w-full">
@@ -67,8 +67,8 @@ export const Hero = ({
           </div>
         </div>
         <div className="absolute top-0 left-0 z-40 h-full w-full">
-          <div className="container flex h-full flex-col justify-center">
-            <div className="flex w-full flex-col items-center md:max-w-[500px] md:items-start">
+          <div className="container flex h-full flex-col justify-center max-sm:justify-end max-sm:pb-14">
+            <div className="flex w-full flex-col items-center md:max-w-[510px] md:items-start">
               <h1 className="title-hero text-brand-light-green mb-2 text-center leading-[110%] font-bold max-sm:text-4xl md:text-start md:text-[40px]">
                 {title}
               </h1>

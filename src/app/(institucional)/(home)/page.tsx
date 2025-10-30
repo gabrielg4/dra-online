@@ -36,7 +36,6 @@ export default async function Home() {
     <>
       <Hero />
       <CompaniesLogos />
-      <ChallengersAnimation />
       <ChallengersAnimationV2 />
       <Diferentials />
       <MetricsSection />

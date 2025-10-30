@@ -73,14 +73,14 @@ export const MetricsSection = () => {
             </h2>
           </div>
           <div className="cta-button-metrics hidden w-fit md:block">
-            <CtaButton title="Fale com um especialista" url="/get-in-touch" />
+            <CtaButton title="Fale com o nosso time" url="/get-in-touch" />
           </div>
         </div>
         <div className="w-full lg:max-w-[calc(100%-373px)]">
           <MetricsContainer />
           <MetricsMobileCarousel />
           <div className="mx-auto mt-8 block w-fit md:hidden">
-            <CtaButton title="Fale com um especialista" url="/" />
+            <CtaButton title="Fale com o nosso time" url="/" />
           </div>
         </div>
       </div>

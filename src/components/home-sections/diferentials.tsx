@@ -37,6 +37,7 @@ export const Diferentials = () => {
           um
           <br className="hidden md:inline-block" />
           <strong className="font-semibold">
+            {" "}
             ecossistema completo de soluções digitais
           </strong>
         </h2>
