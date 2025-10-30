@@ -17,7 +17,7 @@ export const CardSolucaoDiferencial = ({
 }: CardSolucaoDiferencialProps) => {
   return (
     <div
-      className={`${cardClass} flex items-center gap-6 rounded-lg border border-white/20 bg-white/10 p-4 shadow-2xl/20 backdrop-blur-sm`}
+      className={`${cardClass} flex items-center gap-6 rounded-lg border border-white/20 bg-white/10 p-4 shadow-2xl/20 backdrop-blur-sm max-sm:gap-4 max-sm:p-4`}
     >
       <Image
         src={src}

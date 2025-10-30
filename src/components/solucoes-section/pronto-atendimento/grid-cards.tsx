@@ -28,8 +28,8 @@ export const GridCards = () => {
 
   return (
     <div className="pb-10 max-sm:pb-2 md:pt-16 md:pb-0">
-      <div className="container grid grid-cols-2 gap-5 max-sm:hidden sm:grid-cols-2 sm:gap-8 lg:grid-cols-4">
-        <div className="card-carousel flex h-full flex-col items-center gap-4">
+      <div className="container grid grid-cols-2 items-center gap-5 max-sm:hidden sm:grid-cols-2 lg:grid-cols-4">
+        <div className="card-carousel flex h-full w-full max-w-64 flex-col items-center gap-4">
           <Image
             src="/images/ic-shield-check.svg"
             alt="Ícone missão"
@@ -42,7 +42,7 @@ export const GridCards = () => {
             direto ao seu App, Site ou WhatsApp.
           </p>
         </div>
-        <div className="card-carousel flex h-full flex-col items-center gap-4">
+        <div className="card-carousel flex h-full w-full max-w-64 flex-col items-center gap-4">
           <Image
             src="/images/ic-shield-check.svg"
             alt="Ícone missão"
@@ -54,7 +54,7 @@ export const GridCards = () => {
             Tempo de atendimento médio de no máximo 6 minutos
           </p>
         </div>
-        <div className="card-carousel flex h-full flex-col items-center gap-4">
+        <div className="card-carousel flex h-full w-full max-w-64 flex-col items-center gap-4">
           <Image
             src="/images/ic-shield-check.svg"
             alt="Ícone missão"
@@ -66,7 +66,7 @@ export const GridCards = () => {
             NPS DE 93 na zona de Excelência por +2 anos consecutivos
           </p>
         </div>
-        <div className="card-carousel flex h-full flex-col items-center gap-4">
+        <div className="card-carousel flex h-full w-full max-w-64 flex-col items-center gap-4">
           <Image
             src="/images/ic-shield-check.svg"
             alt="Ícone missão"

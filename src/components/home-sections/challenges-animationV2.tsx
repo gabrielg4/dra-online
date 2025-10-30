@@ -28,9 +28,6 @@ export function ChallengersAnimationV2() {
     const cardsHeight = cardsContainer.scrollHeight;
     const cards = gsap.utils.toArray<HTMLElement>(".challenge-card");
 
-    // // Calcula quanto o container de cards deve subir
-    // const yHeight = -(cardsHeight - viewportHeight);
-
     const challengesTl = gsap.timeline({
       scrollTrigger: {
         trigger: ".s-challenges",
@@ -62,34 +59,35 @@ export function ChallengersAnimationV2() {
     });
 
     const yHeight = -(cardsHeight! - viewportHeight + (!isMobile ? 950 : 790));
+
     // Etapa 1: title-container vem de fora da tela até y=0 (topo)
     challengesTl
       .fromTo(
         titleContainer,
         {
-          yPercent: 100,
+          yPercent: 50,
         },
         {
           yPercent: 0,
           duration: 2,
         },
       )
-      // Etapa 2: Título aparece no centro
+      // Etapa 2: Título aparece vindo de baixo e cresce mais
       .fromTo(
         title,
         {
-          y: "100vh",
+          y: "-50vh",
           opacity: 0,
-          scale: 0,
+          scale: 1, // Começa menor para crescer mais
         },
         {
-          y: "-50%",
-          translateY: "50%",
+          y: "-20%",
+          translateY: "20%",
           opacity: 1,
           duration: 5,
-          scale: !isMobile ? 1.3 : 1,
+          scale: !isMobile ? 2 : 1.3, // Cresce mais (era 1.3 no desktop)
           ease: "power2.out",
-          delay: 1,
+          delay: 0.1,
         },
       )
       // Etapa 3: Cards aparecem de baixo para cima
@@ -100,10 +98,10 @@ export function ChallengersAnimationV2() {
         },
         {
           y: yHeight - 150,
-          duration: 5,
+          duration: 6,
           ease: "none",
         },
-        "-=3",
+        "-=5",
       );
 
     return () => {
@@ -113,7 +111,7 @@ export function ChallengersAnimationV2() {
 
   return (
     <section
-      className={`s-challenges relative hidden h-[330vh] w-full max-sm:h-screen md:block`}
+      className={`s-challenges relative hidden h-[200vh] w-full max-sm:h-screen md:block`}
     >
       <div className="sticky top-0 z-50 h-screen w-full overflow-hidden bg-[url(/images/img-bg-problemas.webp)] bg-cover bg-top">
         <div
@@ -129,9 +127,6 @@ export function ChallengersAnimationV2() {
             <br className="inline-block" /> esses desafios?
           </h2>
         </div>
-        {/* <div className="container">
-
-        </div> */}
 
         <div
           ref={cardsContainerRef}

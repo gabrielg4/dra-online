@@ -102,34 +102,34 @@ export const Diferentials = ({
             <div>
               <SpecialtiesCarousel />
               <div className="hidden grid-cols-2 gap-x-6 gap-y-6 max-[767px]:mt-10 sm:grid md:grid-cols-2">
-                <p className="w-full rounded-2xl border bg-white/40 px-4 py-3 text-center text-lg leading-[150%] font-bold text-white backdrop-blur-2xl">
+                <p className="bg-linear-cards border-brand-light-green w-full rounded-2xl border bg-white/40 px-4 py-3 text-center text-lg leading-[150%] font-bold text-white backdrop-blur-2xl">
                   Cardiologia
                 </p>
-                <p className="w-full rounded-2xl border bg-white/40 px-4 py-3 text-center text-lg leading-[150%] font-bold text-white backdrop-blur-2xl">
+                <p className="bg-linear-cards border-brand-light-green w-full rounded-2xl border bg-white/40 px-4 py-3 text-center text-lg leading-[150%] font-bold text-white backdrop-blur-2xl">
                   Dermatologia
                 </p>
-                <p className="w-full rounded-2xl border bg-white/40 px-4 py-3 text-center text-lg leading-[150%] font-bold text-white backdrop-blur-2xl">
+                <p className="bg-linear-cards border-brand-light-green w-full rounded-2xl border bg-white/40 px-4 py-3 text-center text-lg leading-[150%] font-bold text-white backdrop-blur-2xl">
                   Endocrinologia
                 </p>
-                <p className="w-full rounded-2xl border bg-white/40 px-4 py-3 text-center text-lg leading-[150%] font-bold text-white backdrop-blur-2xl">
+                <p className="bg-linear-cards border-brand-light-green w-full rounded-2xl border bg-white/40 px-4 py-3 text-center text-lg leading-[150%] font-bold text-white backdrop-blur-2xl">
                   Endocrinologia Pediátrica
                 </p>
-                <p className="w-full rounded-2xl border bg-white/40 px-4 py-3 text-center text-lg leading-[150%] font-bold text-white backdrop-blur-2xl">
+                <p className="bg-linear-cards border-brand-light-green w-full rounded-2xl border bg-white/40 px-4 py-3 text-center text-lg leading-[150%] font-bold text-white backdrop-blur-2xl">
                   Ginecologia
                 </p>
-                <p className="w-full rounded-2xl border bg-white/40 px-4 py-3 text-center text-lg leading-[150%] font-bold text-white backdrop-blur-2xl">
+                <p className="bg-linear-cards border-brand-light-green w-full rounded-2xl border bg-white/40 px-4 py-3 text-center text-lg leading-[150%] font-bold text-white backdrop-blur-2xl">
                   Imunologia
                 </p>
-                <p className="w-full rounded-2xl border bg-white/40 px-4 py-3 text-center text-lg leading-[150%] font-bold text-white backdrop-blur-2xl">
+                <p className="bg-linear-cards border-brand-light-green w-full rounded-2xl border bg-white/40 px-4 py-3 text-center text-lg leading-[150%] font-bold text-white backdrop-blur-2xl">
                   Neurologia
                 </p>
-                <p className="w-full rounded-2xl border bg-white/40 px-4 py-3 text-center text-lg leading-[150%] font-bold text-white backdrop-blur-2xl">
+                <p className="bg-linear-cards border-brand-light-green w-full rounded-2xl border bg-white/40 px-4 py-3 text-center text-lg leading-[150%] font-bold text-white backdrop-blur-2xl">
                   Neurologia Pediátrica
                 </p>
-                <p className="w-full rounded-2xl border bg-white/40 px-4 py-3 text-center text-lg leading-[150%] font-bold text-white backdrop-blur-2xl">
+                <p className="bg-linear-cards border-brand-light-green w-full rounded-2xl border bg-white/40 px-4 py-3 text-center text-lg leading-[150%] font-bold text-white backdrop-blur-2xl">
                   Psiquiatria
                 </p>
-                <p className="w-full rounded-2xl border bg-white/40 px-4 py-3 text-center text-lg leading-[150%] font-bold text-white backdrop-blur-2xl">
+                <p className="bg-linear-cards border-brand-light-green w-full rounded-2xl border bg-white/40 px-4 py-3 text-center text-lg leading-[150%] font-bold text-white backdrop-blur-2xl">
                   Reumatologia
                 </p>
               </div>
@@ -198,28 +198,14 @@ export const Diferentials = ({
             modules={[Grid, Pagination]}
             spaceBetween={16}
             slidesPerView={1}
+            autoHeight={true}
             grid={{
-              rows: 2,
+              rows: 1,
               fill: "row",
             }}
             pagination={{
               clickable: true,
               el: ".swiper-pagination-cards-solucoes",
-            }}
-            breakpoints={{
-              0: {
-                slidesPerView: 1,
-                autoHeight: true,
-                grid: {
-                  rows: 1,
-                },
-              },
-              991: {
-                slidesPerView: 2,
-                grid: {
-                  rows: 2,
-                },
-              },
             }}
           >
             {differentials.map(({ icon: { alt, src }, title }, index) => (

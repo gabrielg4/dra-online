@@ -61,15 +61,7 @@ export const LogoCarousel = () => {
         /* Mobile: Duas linhas com offset */
         @media (max-width: 768px) {
           .logo-grid {
-            display: grid;
-            grid-template-rows: repeat(2, auto);
-            grid-auto-flow: column;
-            grid-auto-columns: max-content;
             gap: 1rem 0;
-          }
-
-          .logo-grid > div:nth-child(even) {
-            transform: translateX(5rem);
           }
         }
       `}</style>

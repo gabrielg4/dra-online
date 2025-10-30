@@ -231,7 +231,7 @@ export const HeroAnimation = () => {
                   end: "top: 40%",
                 }}
                 from={0}
-                to={1}
+                to={10}
                 duration={2}
               />
             </p>

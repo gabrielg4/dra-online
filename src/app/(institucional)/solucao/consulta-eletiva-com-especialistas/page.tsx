@@ -21,7 +21,7 @@ const differentialsData = [
   {
     title: (
       <>
-        <strong>Gestão inteligente do cuidadol,</strong> com encaminhamentos
+        <strong>Gestão inteligente do cuidado,</strong> com encaminhamentos
         resolutivos e visão completa do percurso assistencial com prescrição e
         documentos 100% digitais.
       </>
@@ -135,7 +135,7 @@ export default function ConsultaEletivaComEspecialistaPage() {
         description={
           <>
             Transforme o acesso em cuidado. E o cuidado
-            <br /> em resultado.
+            <br className="max-sm:hidden" /> em resultado.
           </>
         }
       />
@@ -145,7 +145,7 @@ export default function ConsultaEletivaComEspecialistaPage() {
         title={
           <>
             <span className="text-brand-light-green">
-              Saúde completa precisa
+              Saúde completa precisa{" "}
             </span>
             <br className="hidden lg:inline-block" />
             de acesso especializado
@@ -169,9 +169,7 @@ export default function ConsultaEletivaComEspecialistaPage() {
         impacts={impactsData}
         title={
           <>
-            <span className="text-brand-light-green font-bold">
-              O impacto da
-            </span>{" "}
+            <span className="font-medium text-white">O impacto da</span>{" "}
             <span className="font-bold text-white">
               dr
               <span className="text-brand-light-green">.</span>

@@ -107,9 +107,12 @@ export const SmartphoneSectionCards3 = ({
   }, []);
 
   return (
-    <section id="smartphones-section" className="overflow-hidden pb-20">
+    <section
+      id="smartphones-section"
+      className="overflow-hidden pb-20 max-sm:pb-10"
+    >
       <div className="container !px-0">
-        <div className="image-wrapper relative flex flex-wrap items-center justify-center gap-4 overflow-hidden bg-[url('/images/bg-security.webp')] bg-cover bg-center pt-20 md:flex-nowrap lg:pt-40">
+        <div className="image-wrapper relative flex flex-wrap items-center justify-center gap-4 overflow-hidden bg-[url('/images/bg-security.webp')] bg-cover bg-center pt-20 max-sm:py-10 md:flex-nowrap lg:pt-40">
           <div className="to-brand-dark-green absolute -bottom-2 left-0 z-10 h-[400px] w-full bg-gradient-to-b from-transparent"></div>
           <Image
             src={firstImage}

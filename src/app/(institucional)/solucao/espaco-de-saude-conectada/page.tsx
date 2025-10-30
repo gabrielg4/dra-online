@@ -116,18 +116,19 @@ export default function EspacoDeSaudeConectadaPage() {
           <>
             <span className="text-brand-light-green">
               Uma nova forma de <br className="hidden lg:inline-block" />
-              entregar saúde
+              entregar saúde{" "}
             </span>
             acessível, segura, integrada e altamente escalável
           </>
         }
         description={
           <>
-            Nosso Consultório Digital é uma solução híbrida que une o melhor da
-            estrutura física com os recursos avançados da telemedicina. Equipado
-            com dispositivos médicos multiparamétricos e suporte de enfermagem,
-            possibilita consultas clínicas e especializadas com alto nível de
-            resolutividade e precisão diagnóstica, mesmo à distância.
+            Nosso Espaço de Saúde Conectada é uma solução híbrida que une o
+            melhor da estrutura física com os recursos avançados da
+            telemedicina. Equipado com dispositivos médicos multiparamétricos e
+            suporte de enfermagem, possibilita consultas clínicas e
+            especializadas com alto nível de resolutividade e precisão
+            diagnóstica, mesmo à distância.
           </>
         }
         videoUrl="/videos/video-secao-solucao-6.mp4"

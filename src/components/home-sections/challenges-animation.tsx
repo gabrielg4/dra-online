@@ -25,7 +25,7 @@ export function ChallengersAnimation() {
       scrollTrigger: {
         trigger: ".s-challenges-mobile",
         start: "top top",
-        end: isMobile ? "+=110%" : "+=210%",
+        end: isMobile ? "+=60%" : "+=120%", // Reduzido ainda mais (era +=80% e +=150%)
         scrub: 1,
         pin: true,
         anticipatePin: 1,
@@ -53,29 +53,29 @@ export function ChallengersAnimation() {
       },
     });
 
-    // H2 aparece primeiro
+    // H2 aparece primeiro - começa mais alto e não vai tanto para o centro
     challengesTl.fromTo(
       ".s-challenges-mobile h2",
       {
-        y: viewportHeight * 0.3,
-        scale: 0,
+        y: isMobile ? "-80vh" : "-100vh", // Começa MUITO mais alto
+        scale: isMobile ? 0.8 : 1,
         opacity: 0,
       },
       {
-        y: 0,
+        y: isMobile ? "-10%" : "-15%", // Para mais alto, não vai tanto ao centro (era 0)
         opacity: 1,
-        scale: 1,
-        duration: isMobile ? 1.2 : 5,
+        scale: isMobile ? 1 : 2,
+        duration: isMobile ? 0.5 : 2, // Reduzido a duration também
         ease: "power2.out",
       },
     );
 
-    // Pausa bem curtinha só para o título ser lido
+    // Pausa menor
     challengesTl.to(".s-challenges-mobile h2", {
-      duration: isMobile ? 0.2 : 0.3,
+      duration: 0.05, // Pausa mínima
     });
 
-    // Cards sobem logo depois
+    // Cards sobem mais rápido e começam mais cedo
     const yHeight = -(
       cardsHeight! -
       viewportHeight +
@@ -89,9 +89,10 @@ export function ChallengersAnimation() {
       },
       {
         y: yHeight,
-        duration: isMobile ? 2.5 : 4,
+        duration: isMobile ? 1.5 : 2.5, // Mais rápido (era 2 e 3)
         ease: "none",
       },
+      "-=0.3", // Cards começam quase junto com o título
     );
 
     return () => {

@@ -90,7 +90,7 @@ export const ValuesCarousel = () => {
         <CarouselItem className="pl-8 md:basis-1/2 md:pt-14 lg:basis-1/3">
           <div className="value-card flex h-fit flex-col items-center justify-center gap-4 rounded-lg bg-white/10 p-6 shadow-2xl/10">
             <Image
-              src="/images/ic-missao.svg"
+              src="/images/icon-visao-2.svg"
               alt="Ícone missão"
               width={80}
               height={80}
@@ -107,7 +107,7 @@ export const ValuesCarousel = () => {
         <CarouselItem className="pl-8 md:basis-1/2 lg:basis-1/3">
           <div className="value-card flex h-fit flex-col items-center justify-center gap-4 rounded-lg bg-white/10 p-6 shadow-2xl/10 lg:h-[350px]">
             <Image
-              src="/images/ic-valores.svg"
+              src="/images/icon-valores2.svg"
               alt="Ícone valores"
               width={80}
               height={80}

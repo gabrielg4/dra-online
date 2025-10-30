@@ -140,6 +140,10 @@
   --brand-black: #282f3b;
 }
 
+.bg-linear-cards {
+  @apply bg-[linear-gradient(180deg,_rgba(27,_160,_104,_0.60)_0%,_rgba(166,_208,_93,_0.60)_100%)];
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50 font-main;
