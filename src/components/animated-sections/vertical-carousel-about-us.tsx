@@ -65,7 +65,7 @@ export const VerticalCarouselAboutUs = ({
   return (
     <div
       ref={scope}
-      className="animation-columns absolute top-0 -right-24 z-10 grid w-full max-w-[500px] grid-cols-2 gap-4 overflow-hidden lg:right-0 lg:max-w-[728px] lg:grid-cols-3 lg:gap-5"
+      className="animation-columns absolute top-0 -right-24 z-10 grid w-full max-w-[500px] grid-cols-2 gap-4 overflow-hidden max-sm:-right-0 max-sm:max-w-[360px] lg:right-0 lg:max-w-[728px] lg:grid-cols-3 lg:gap-5"
     >
       <div className="coluna coluna1 flex flex-col gap-8 will-change-transform">
         {videosColumn1.map((video, index) => (

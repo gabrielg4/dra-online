@@ -97,7 +97,7 @@ export const SecurityInformation = () => {
   return (
     <section
       id="security-information"
-      className="relative pb-20 max-[640]:overflow-hidden max-sm:pb-10"
+      className="relative pb-20 max-[640]:overflow-hidden max-sm:pb-4"
     >
       <div className="overlay -bottom-4 z-10 max-sm:bottom-0"></div>
       <div className="container !px-0">

@@ -42,12 +42,8 @@ export const SecurityCards = () => {
           clickable: true,
           el: ".swiper-pagination-itens-security",
         }}
-        spaceBetween={24}
-        slidesPerView={1}
-        breakpoints={{
-          640: { slidesPerView: 2 },
-          1024: { slidesPerView: 3 },
-        }}
+        spaceBetween={16}
+        slidesPerView={3}
         wrapperClass="pb-12"
       >
         <SwiperSlide className="!flex items-start justify-center">
@@ -62,7 +58,7 @@ export const SecurityCards = () => {
               height={100}
               className="mx-auto"
             />
-            <p className="text-center text-lg font-bold text-white md:text-xl">
+            <p className="text-center text-lg font-bold text-white max-sm:text-sm md:text-xl">
               Adequação a<br />
               Portaria 467/2020
             </p>
@@ -81,7 +77,7 @@ export const SecurityCards = () => {
               height={100}
               className="mx-auto"
             />
-            <p className="text-center text-lg font-bold text-white md:text-xl">
+            <p className="text-center text-lg font-bold text-white max-sm:text-sm md:text-xl">
               Adequação total
               <br /> à LGPD
             </p>
@@ -100,7 +96,7 @@ export const SecurityCards = () => {
               height={100}
               className="mx-auto"
             />
-            <p className="text-center text-lg font-bold text-white md:text-xl">
+            <p className="text-center text-lg font-bold text-white max-sm:text-sm md:text-xl">
               Conformidade com as
               <br />
               normativas do CFM
@@ -109,7 +105,7 @@ export const SecurityCards = () => {
         </SwiperSlide>
       </Swiper>
 
-      <div className="swiper-pagination-itens-security swiper-pagination mt-8 flex items-center justify-center gap-3 lg:hidden"></div>
+      {/* <div className="swiper-pagination-itens-security swiper-pagination mt-8 flex items-center justify-center gap-3 lg:hidden"></div> */}
     </div>
   );
 };

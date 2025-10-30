@@ -66,6 +66,8 @@ export const HeroWorkWithUs = () => {
         videosColumn2={["/videos/video10.mp4", "/videos/video8.mp4"]}
         videosColumn3={["/videos/video5.mp4", "/videos/video6.mp4"]}
       />
+
+      <div className="absolute right-0 bottom-20 left-0 z-20 mx-auto h-[150px] w-[260px] rounded-[268px] bg-[linear-gradient(180deg,_#1BA068_0%,_#A6D05D_100%)] blur-[50px] filter"></div>
     </section>
   );
 };
