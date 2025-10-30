@@ -34,8 +34,13 @@ export const MetricsMobileCarousel = () => {
 
   return (
     <div className="block md:hidden">
-      <Carousel setApi={setApi}>
-        <CarouselContent className="-ml-4 items-center justify-center">
+      <Carousel
+        setApi={setApi}
+        opts={{
+          align: "center",
+        }}
+      >
+        <CarouselContent className="mb-10 !ml-0 items-center justify-center">
           <CarouselItem className={cn("basis-full pl-4 max-sm:basis-60")}>
             <div className="rounded-2xl bg-white/10 p-4 shadow-2xl/10">
               <div className="bg-brand-dark-green mb-5 w-fit rounded-2xl p-3">
@@ -57,7 +62,7 @@ export const MetricsMobileCarousel = () => {
                     92<span className="text-[32px] max-sm:hidden">%</span>
                   </p>
                 </div>
-                <span className="text-brand-light-green hidden w-full max-w-24 text-[32px] font-bold max-sm:block">
+                <span className="text-brand-light-green hidden w-full max-w-16 text-[32px] font-bold max-sm:block">
                   %
                 </span>
               </div>
@@ -80,7 +85,7 @@ export const MetricsMobileCarousel = () => {
             </div>
           </CarouselItem>
         </CarouselContent>
-        <div className="mt-8 flex items-center justify-center gap-3">
+        <div className="mt-8 !hidden items-center justify-center gap-3">
           <div
             className={cn(
               "h-3 w-3 cursor-pointer rounded-full bg-white/50 hover:bg-white/100",
