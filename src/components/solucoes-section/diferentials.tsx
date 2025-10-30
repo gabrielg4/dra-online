@@ -197,19 +197,16 @@ export const Diferentials = ({
           <Swiper
             modules={[Grid, Pagination]}
             spaceBetween={16}
+            centeredSlides={true}
             slidesPerView={1}
             autoHeight={true}
-            grid={{
-              rows: 1,
-              fill: "row",
-            }}
             pagination={{
               clickable: true,
               el: ".swiper-pagination-cards-solucoes",
             }}
           >
             {differentials.map(({ icon: { alt, src }, title }, index) => (
-              <SwiperSlide key={index}>
+              <SwiperSlide key={index} className="">
                 <CardSolucaoDiferencial
                   cardClass="p-6 card-diferential"
                   image={{

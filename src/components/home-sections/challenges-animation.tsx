@@ -25,7 +25,7 @@ export function ChallengersAnimation() {
       scrollTrigger: {
         trigger: ".s-challenges-mobile",
         start: "top top",
-        end: isMobile ? "+=60%" : "+=120%", // Reduzido ainda mais (era +=80% e +=150%)
+        end: isMobile ? "+=100%" : "+=120%", // Reduzido ainda mais (era +=80% e +=150%)
         scrub: 1,
         pin: true,
         anticipatePin: 1,
@@ -58,7 +58,7 @@ export function ChallengersAnimation() {
       ".s-challenges-mobile h2",
       {
         y: isMobile ? "-80vh" : "-100vh", // Começa MUITO mais alto
-        scale: isMobile ? 0.8 : 1,
+        scale: isMobile ? 0.3 : 1,
         opacity: 0,
       },
       {

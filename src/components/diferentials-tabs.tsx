@@ -52,7 +52,7 @@ export const DiferentialsTabs = () => {
       <TabsList className="shadow-brand-main-green group flex h-auto w-full max-w-full flex-row flex-nowrap gap-1 overflow-x-auto !bg-transparent p-0 shadow-2xl/20 max-sm:flex-wrap sm:flex-row sm:!justify-start sm:gap-0 lg:justify-center">
         <TabsTrigger
           value="tab1"
-          className="tab-button text-brand-dark-gray data-[state=active]:bg-brand-main-green hover:bg-brand-main-green group-has-[:not([data-state=active]):hover]:data-[state=active]:text-brand-dark-gray max-sm:border-brand-light-green max-sm:text-brand-dark-green z-[9] shrink-0 rounded-2xl bg-white py-4 pr-6 pl-8 text-center text-[16px] font-semibold duration-300 ease-in-out hover:text-white data-[state=active]:text-white group-has-[:not([data-state=active]):hover]:data-[state=active]:bg-white max-[639px]:p-4 max-sm:w-full max-sm:max-w-fit max-sm:border max-sm:px-2 max-sm:py-1 max-sm:text-sm sm:text-xl"
+          className="tab-button tab-button-blur text-brand-dark-gray data-[state=active]:bg-brand-main-green hover:bg-brand-main-green group-has-[:not([data-state=active]):hover]:data-[state=active]:text-brand-dark-gray max-sm:border-brand-light-green max-sm:text-brand-dark-green z-[9] shrink-0 rounded-2xl bg-white py-4 pr-6 pl-8 text-center text-[16px] font-semibold duration-300 ease-in-out hover:text-white data-[state=active]:text-white group-has-[:not([data-state=active]):hover]:data-[state=active]:bg-white max-[639px]:p-4 max-sm:w-full max-sm:max-w-fit max-sm:border max-sm:px-2 max-sm:py-1 max-sm:text-sm sm:text-xl"
         >
           Entrevista <br className="max-sm:hidden" />
           Qualificada

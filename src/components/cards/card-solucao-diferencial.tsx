@@ -17,7 +17,7 @@ export const CardSolucaoDiferencial = ({
 }: CardSolucaoDiferencialProps) => {
   return (
     <div
-      className={`${cardClass} flex items-center gap-6 rounded-lg border border-white/20 bg-white/10 p-4 shadow-2xl/20 backdrop-blur-sm max-sm:gap-4 max-sm:p-4`}
+      className={`${cardClass} flex w-full items-center gap-6 rounded-lg border border-white/20 bg-white/10 p-4 shadow-2xl/20 backdrop-blur-sm max-sm:mx-auto max-sm:max-w-[350px] max-sm:gap-4 max-sm:p-4`}
     >
       <Image
         src={src}
@@ -26,7 +26,7 @@ export const CardSolucaoDiferencial = ({
         height={56}
         className="object-contain"
       />
-      <p className="text-[16px] leading-normal text-white lg:text-lg">
+      <p className="w-full text-[16px] leading-normal text-white lg:text-lg">
         {children}
       </p>
     </div>
