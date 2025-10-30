@@ -93,13 +93,13 @@ export const FAQ = () => {
         <TabsList className="faq-btn-wrapper border-brand-light-green h-auto w-fit flex-nowrap overflow-x-auto rounded-2xl border bg-transparent p-0 md:max-w-[698px]">
           <TabsTrigger
             value="pacientes"
-            className="data-[state=active]:bg-brand-main-green w-full rounded-none bg-transparent p-5 text-center text-lg font-semibold text-white md:min-w-[232px]"
+            className="data-[state=active]:bg-brand-main-green w-full rounded-none bg-transparent p-5 text-center text-lg font-semibold text-white max-sm:px-2 md:min-w-[232px]"
           >
             Pacientes
           </TabsTrigger>
           <TabsTrigger
             value="profisionais-de-saude"
-            className="data-[state=active]:bg-brand-main-green w-full rounded-l-none rounded-r-2xl bg-transparent p-5 text-center text-lg font-semibold text-white md:min-w-[232px]"
+            className="data-[state=active]:bg-brand-main-green w-full rounded-l-none rounded-r-2xl bg-transparent p-5 text-center text-lg font-semibold text-white max-sm:px-2 md:min-w-[232px]"
           >
             Profissionais da saúde
           </TabsTrigger>

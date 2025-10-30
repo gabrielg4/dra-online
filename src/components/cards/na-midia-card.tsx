@@ -13,7 +13,7 @@ interface NaMidiaCardProps {
 export const NaMidiaCard = ({ isActive, article }: NaMidiaCardProps) => {
   return (
     <div
-      className={`wheel-card border-brand-light-green h-[343px] w-full max-w-[290px] rounded-2xl border bg-white/10 backdrop-blur-[12px] max-sm:max-w-full`}
+      className={`wheel-card border-brand-light-green h-[343px] w-full max-w-[290px] rounded-2xl border bg-white/10 backdrop-blur-[12px] max-sm:mx-auto`}
     >
       <div
         className={cn(

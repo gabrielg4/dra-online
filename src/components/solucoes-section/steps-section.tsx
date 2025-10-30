@@ -46,18 +46,18 @@ export const StepsSection = () => {
   }, []);
 
   return (
-    <section className="steps-section bg-[url(/images/img-bg-step-section.svg)] bg-cover bg-center bg-no-repeat py-10 lg:py-14">
-      <div className="container">
-        <h2 className="mb-4 text-center text-[28px] leading-[110%] text-white md:text-[32px] lg:text-[40px]">
+    <section className="steps-section bg-[url(/images/img-bg-step-section.svg)] bg-cover bg-center bg-no-repeat py-10 max-sm:pb-2 lg:py-14">
+      <div className="container max-sm:pr-0">
+        <h2 className="mb-4 text-center text-[28px] leading-[110%] text-white max-sm:pr-4 md:text-[32px] lg:text-[40px]">
           Melhor que ler,
           <span className="text-brand-light-green font-bold"> é conhecer!</span>
         </h2>
-        <p className="mb-8 text-center text-lg text-white md:mb-10 lg:mb-14">
+        <p className="mb-8 text-center text-lg text-white max-sm:pr-4 md:mb-10 lg:mb-14">
           Veja como funciona nossa solução de gestão integrada do cuidado na
           prática.
         </p>
 
-        <div className="relative hidden items-center justify-center pt-32 md:flex md:pt-0">
+        <div className="relative hidden items-center justify-center pt-32 max-md:absolute md:flex md:pt-0">
           <video
             src="/videos/video-secao-solution-7.mp4"
             className="h-full w-full object-cover"
@@ -66,7 +66,7 @@ export const StepsSection = () => {
             loop
             playsInline
           ></video>
-          <div className="absolute top-1/2 left-1/2 h-[650px] w-full max-w-[730px] -translate-x-1/2 -translate-y-1/2 sm:h-[550px]">
+          <div className="absolute top-1/2 left-1/2 h-[650px] w-full max-w-[730px] -translate-x-1/2 -translate-y-1/2 max-md:hidden sm:h-[550px]">
             <StepCard
               stepNumber={1}
               content={
@@ -150,6 +150,17 @@ export const StepsSection = () => {
           </div>
         </div>
         <StepCardsCarousel />
+
+        <div className="pointer-events-none relative -mt-24 hidden h-[300px] w-full max-sm:block">
+          <video
+            src="/videos/video-secao-solution-7.mp4"
+            className="absolute top-0 hidden h-full w-full object-cover max-sm:block"
+            autoPlay
+            muted
+            loop
+            playsInline
+          ></video>
+        </div>
       </div>
     </section>
   );

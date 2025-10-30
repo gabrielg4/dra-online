@@ -91,10 +91,13 @@ export const WhatWeAreLookingFor = () => {
   }, []);
 
   return (
-    <section id="what-we-are-looking-for" className="relative pb-20">
+    <section
+      id="what-we-are-looking-for"
+      className="relative pb-20 max-sm:pb-10"
+    >
       <div className="overlay -bottom-4 z-10 to-65% max-sm:bottom-0"></div>
       <div className="container !px-0">
-        <div className="image-wrapper relative flex items-end justify-center gap-8 bg-cover bg-center pt-20 max-sm:pt-10">
+        <div className="image-wrapper relative flex items-end justify-center gap-8 bg-cover bg-center pt-20 max-sm:h-[330px] max-sm:pt-10">
           <div className="blur-bg-security absolute -top-40 left-1/2 -translate-x-1/2" />
           <Image
             src={"/images/img-phone-left-wwu.webp"}

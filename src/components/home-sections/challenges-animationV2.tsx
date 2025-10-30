@@ -85,7 +85,7 @@ export function ChallengersAnimationV2() {
           translateY: "50%",
           opacity: 1,
           duration: 15,
-          scale: !isMobile ? 1.5 : 1.1,
+          scale: !isMobile ? 1.5 : 1,
           ease: "power2.out",
           delay: 0.1,
         },

@@ -37,10 +37,10 @@ export const StepCardsCarousel = () => {
       opts={{
         align: "start",
       }}
-      className="block md:hidden"
+      className="block max-sm:z-20 md:hidden"
     >
       <CarouselContent>
-        <CarouselItem className="basis-1/2">
+        <CarouselItem className="basis-1/2 max-sm:basis-[45%]">
           <StepCard
             stepNumber={1}
             content={
@@ -53,7 +53,7 @@ export const StepCardsCarousel = () => {
             }
           />
         </CarouselItem>
-        <CarouselItem className="basis-1/2">
+        <CarouselItem className="basis-1/2 max-sm:basis-[45%]">
           <StepCard
             stepNumber={2}
             content={
@@ -65,7 +65,7 @@ export const StepCardsCarousel = () => {
             }
           />
         </CarouselItem>
-        <CarouselItem className="basis-1/2">
+        <CarouselItem className="basis-1/2 max-sm:basis-[45%]">
           <StepCard
             stepNumber={3}
             content={
@@ -77,7 +77,7 @@ export const StepCardsCarousel = () => {
             }
           />
         </CarouselItem>
-        <CarouselItem className="basis-1/2">
+        <CarouselItem className="basis-1/2 max-sm:basis-[45%]">
           <StepCard
             stepNumber={4}
             content={
@@ -89,7 +89,7 @@ export const StepCardsCarousel = () => {
             }
           />
         </CarouselItem>
-        <CarouselItem className="basis-1/2">
+        <CarouselItem className="basis-1/2 max-sm:basis-[45%]">
           <StepCard
             stepNumber={5}
             content={
@@ -100,7 +100,7 @@ export const StepCardsCarousel = () => {
             }
           />
         </CarouselItem>
-        <CarouselItem className="basis-1/2">
+        <CarouselItem className="basis-1/2 max-sm:basis-[45%]">
           <StepCard
             stepNumber={6}
             content={
@@ -111,7 +111,7 @@ export const StepCardsCarousel = () => {
             }
           />
         </CarouselItem>
-        <CarouselItem className="basis-1/2">
+        <CarouselItem className="basis-1/2 max-sm:basis-[45%]">
           <StepCard
             stepNumber={7}
             content={
@@ -123,7 +123,7 @@ export const StepCardsCarousel = () => {
           />
         </CarouselItem>
       </CarouselContent>
-      <div className="mt-8 flex items-center justify-center gap-3 lg:hidden">
+      <div className="mt-8 !hidden items-center justify-center gap-3">
         {Array.from({ length: 6 }).map((_, index) => (
           <div
             key={index}
