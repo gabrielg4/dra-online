@@ -126,6 +126,8 @@ export function ChallengersAnimationV2() {
             Sua empresa enfrenta
             <br className="inline-block" /> esses desafios?
           </h2>
+
+          {/* Teste */}
         </div>
 
         <div
