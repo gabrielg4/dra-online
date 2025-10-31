@@ -32,7 +32,7 @@ export const WorkWithUsSection = () => {
       <div className="from-brand-main-green/60 to-brand-light-green/60 absolute -top-32 -right-48 h-[340px] w-[550px] rounded-full bg-gradient-to-b blur-3xl" />
       <div
         id="form-curriculo-medico"
-        className="relative z-10 bg-[url(/images/img-work-with-us.webp)] bg-cover bg-no-repeat py-14 min-[1620px]:bg-top-left"
+        className="relative z-10 bg-[url(/images/img-work-with-us.webp)] bg-cover bg-no-repeat py-14 max-sm:bg-top min-[1620px]:bg-top-left"
       >
         <div className="mx-auto w-full">
           <div className="container flex items-center justify-center lg:justify-end">

@@ -21,11 +21,11 @@ export const SearchInput = () => {
         ref={inputRef}
         type="text"
         placeholder="O que você está procurando?"
-        className="border-white-20 h-12 rounded-full border bg-white/10 text-white shadow-2xl/30 placeholder:text-white"
+        className="border-white-20 h-12 rounded-full border bg-white/10 text-white shadow-2xl/30 placeholder:text-white max-sm:text-center max-sm:text-sm"
       />
       <Button
         onClick={handleSearch}
-        className="bg-brand-light-green text-brand-dark-green hover:bg-brand-light-green2 h-12 cursor-pointer rounded-full px-6 py-2 text-lg font-normal"
+        className="bg-brand-light-green text-brand-dark-green hover:bg-brand-light-green2 h-12 cursor-pointer rounded-full px-6 py-2 text-lg font-normal max-sm:px-3 max-sm:text-base"
       >
         Buscar
       </Button>

@@ -28,7 +28,7 @@ export const Hero = () => {
     });
   }, []);
   return (
-    <section className="relative overflow-hidden bg-[url(/images/img-bg-sobre-nos.svg)] bg-cover bg-center bg-no-repeat pt-48 pb-16 sm:pt-32 sm:pb-32 lg:pt-40">
+    <section className="hero-about-us relative overflow-hidden bg-[url(/images/img-bg-sobre-nos.svg)] bg-cover bg-center bg-no-repeat pt-48 pb-16 sm:pt-32 sm:pb-32 lg:pt-40">
       <div className="relative z-30 container">
         <div className="flex w-full max-w-[450px] flex-col items-center md:items-start lg:max-w-[510px]">
           <h1 className="about-title text-center text-[32px] leading-[110%] font-bold text-white md:text-start md:text-[40px] lg:text-[48px]">

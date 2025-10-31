@@ -22,7 +22,7 @@ export const FAQContainer = ({ faqItems }: FAQContainerProps) => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
   // Número de perguntas a mostrar inicialmente no mobile
-  const INITIAL_MOBILE_ITEMS = 3;
+  const INITIAL_MOBILE_ITEMS = 4;
 
   // Determina quantas perguntas mostrar
   // No mobile: controla pela quantidade; No desktop: mostra todas
@@ -80,7 +80,7 @@ export const FAQContainer = ({ faqItems }: FAQContainerProps) => {
 
         {/* Degradê com blur - apenas visível no mobile quando há mais itens */}
         {hasMoreItems && !showAll && (
-          <div className="pointer-events-none absolute right-0 bottom-0 left-0 h-60 w-full bg-gradient-to-t from-[#0A4D3C] via-[#0A4D3C]/10 to-transparent backdrop-blur-[2px]" />
+          <div className="background: linear-gradient(180deg, rgba(7, 95, 85, 0) 0%, #075f55 100%); -webkit-backdrop-filter: blur(2px) pointer-events-none absolute bottom-0 left-0 h-[100px] w-full backdrop-blur-[3px] transition-opacity duration-[0.5s] ease-[ease] content-['']" />
         )}
       </div>
 

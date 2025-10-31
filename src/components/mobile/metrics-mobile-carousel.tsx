@@ -37,10 +37,10 @@ export const MetricsMobileCarousel = () => {
       <Carousel
         setApi={setApi}
         opts={{
-          align: "center",
+          align: "start",
         }}
       >
-        <CarouselContent className="mb-10 !ml-0 items-center justify-center">
+        <CarouselContent className="mb-10 !ml-0 items-center">
           <CarouselItem className={cn("basis-full pl-4 max-sm:basis-60")}>
             <div className="rounded-2xl bg-white/10 p-4 shadow-2xl/10">
               <div className="bg-brand-dark-green mb-5 w-fit rounded-2xl p-3">
@@ -59,12 +59,9 @@ export const MetricsMobileCarousel = () => {
               <div className="flex items-center justify-between">
                 <div className="bg-brand-dark-green mb-5 w-fit rounded-2xl p-3">
                   <p className="text-brand-light-green text-[64px] leading-none font-bold">
-                    92<span className="text-[32px] max-sm:hidden">%</span>
+                    92<span className="text-[32px]">%</span>
                   </p>
                 </div>
-                <span className="text-brand-light-green hidden w-full max-w-16 text-[32px] font-bold max-sm:block">
-                  %
-                </span>
               </div>
               <p className="text-lg text-white">
                 de resolutividade nos atendimentos, com casos solucionados sem a

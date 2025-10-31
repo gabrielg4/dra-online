@@ -67,7 +67,7 @@ export const VerticalCarouselAboutUs = ({
       ref={scope}
       className="animation-columns absolute top-0 -right-24 z-10 grid w-full max-w-[500px] grid-cols-2 gap-4 overflow-hidden max-sm:-right-0 max-sm:max-w-[360px] lg:right-0 lg:max-w-[728px] lg:grid-cols-3 lg:gap-5"
     >
-      <div className="coluna coluna1 flex flex-col gap-8 will-change-transform">
+      <div className="coluna coluna1 flex flex-col gap-8 will-change-transform max-sm:gap-4">
         {videosColumn1.map((video, index) => (
           <div key={index} className="video-masked">
             <video
@@ -81,7 +81,7 @@ export const VerticalCarouselAboutUs = ({
         ))}
       </div>
 
-      <div className="coluna coluna2 flex flex-col gap-8 will-change-transform">
+      <div className="coluna coluna2 flex flex-col gap-8 will-change-transform max-sm:gap-4">
         {videosColumn2.map((video, index) => (
           <div key={index} className="video-masked">
             <video
@@ -95,7 +95,7 @@ export const VerticalCarouselAboutUs = ({
         ))}
       </div>
 
-      <div className="coluna coluna3 hidden flex-col gap-8 will-change-transform lg:flex">
+      <div className="coluna coluna3 hidden flex-col gap-8 will-change-transform max-sm:gap-4 lg:flex">
         {videosColumn3.map((video, index) => (
           <div key={index} className="video-masked">
             <video

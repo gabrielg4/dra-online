@@ -52,7 +52,7 @@ export const BlogGrid = ({ posts }: BlogGridProps) => {
             onClick={() => handleFilterByCategory(String(category.id))}
             key={category.id}
             className={cn(
-              "bg-brand-main-green hover:bg-brand-light-green border-brand-main-green hover:text-brand-dark-green cursor-pointer rounded-full border px-5 py-2 font-semibold text-white duration-300 hover:border-white",
+              "bg-brand-main-green hover:bg-brand-light-green border-brand-main-green hover:text-brand-dark-green cursor-pointer rounded-full border px-5 py-2 font-semibold text-white duration-300 hover:border-white max-sm:px-3",
               currentCategory === String(category.id) &&
                 "bg-brand-light-green text-brand-dark-green border border-white",
             )}

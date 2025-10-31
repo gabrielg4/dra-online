@@ -49,6 +49,12 @@ const faqItemsPacientes: { question: string; answer: string }[] = [
     answer:
       "A telemedicina é eficaz para muitas consultas, mas existem situações que podem exigir uma avaliação presencial, especialmente casos de urgência e emergências ou sempre que o seu Médico achar necessário.",
   },
+
+  {
+    question: "A telemedicina é reconhecida pelo Conselho Federal de Medicina?",
+    answer:
+      "Sim, a telemedicina é reconhecida e regulamentada pelo Conselho Federal de Medicina, através da Resolução CFM nº 2.314/2022 e pela Lei da telessaúde Nº 14.510, garantindo que as consultas a distância sejam tão válidas quanto as presenciais.",
+  },
 ];
 
 export const FAQ = () => {
@@ -90,7 +96,7 @@ export const FAQ = () => {
         <h2 className="title-section-faq text-center text-[24px] leading-[120%] font-normal text-white md:text-start md:text-[32px]">
           Ficou com <span className="font-semibold">alguma dúvida?</span>
         </h2>
-        <TabsList className="faq-btn-wrapper border-brand-light-green h-auto w-fit flex-nowrap overflow-x-auto rounded-2xl border bg-transparent p-0 md:max-w-[698px]">
+        {/* <TabsList className="faq-btn-wrapper border-brand-light-green h-auto w-fit flex-nowrap overflow-x-auto rounded-2xl border bg-transparent p-0 md:max-w-[698px]">
           <TabsTrigger
             value="pacientes"
             className="data-[state=active]:bg-brand-main-green w-full rounded-none bg-transparent p-5 text-center text-lg font-semibold text-white max-sm:px-2 md:min-w-[232px]"
@@ -103,7 +109,7 @@ export const FAQ = () => {
           >
             Profissionais da saúde
           </TabsTrigger>
-        </TabsList>
+        </TabsList> */}
       </div>
       <TabsContent value="pacientes">
         <FAQContainer faqItems={faqItemsPacientes} />

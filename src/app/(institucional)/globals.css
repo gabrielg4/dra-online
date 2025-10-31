@@ -483,3 +483,9 @@ header.scrolled::before {
     }
   }
 }
+
+.hero-about-us {
+  .video-masked {
+    @apply max-sm:h-80;
+  }
+}

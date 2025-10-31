@@ -262,7 +262,7 @@ export const SmartphoneSectionCards3 = ({
             </Swiper>
           </div>
         </div>
-        <div className="content-wrapper relative z-10 -mt-20 flex flex-col items-center justify-center px-4">
+        <div className="content-wrapper relative z-10 -mt-20 flex flex-col items-center justify-center px-4 max-sm:-mt-40">
           <h2 className="title-section-security mb-5 text-center leading-[110%] text-white max-sm:text-4xl sm:text-[32px] lg:text-[40px]">
             Melhor que ler, <br className="hidden max-sm:block" />
             <span className="text-brand-light-green font-bold">

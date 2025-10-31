@@ -31,7 +31,7 @@ export const HeroWorkWithUs = () => {
   return (
     <section
       id="hero-work-with-us"
-      className="relative w-full overflow-hidden bg-[url(/images/img-bg-trabalhe-conosco.svg)] bg-cover bg-center bg-no-repeat pt-40 pb-20 max-sm:pb-10 md:h-[655px]"
+      className="hero-about-us relative w-full overflow-hidden bg-[url(/images/img-bg-trabalhe-conosco.svg)] bg-cover bg-center bg-no-repeat pt-40 pb-20 max-sm:pb-10 md:h-[655px]"
     >
       <div className="relative z-30 container flex items-center justify-between">
         <div className="relative z-40 w-full md:w-2/3 lg:w-1/2">
@@ -50,7 +50,7 @@ export const HeroWorkWithUs = () => {
             como médico credenciado ou fazendo parte da equipe.
           </p>
 
-          <div className="buttons-work-with-us flex flex-col items-center gap-6 max-sm:items-stretch md:flex-row">
+          <div className="buttons-work-with-us flex flex-col items-center gap-6 md:flex-row">
             <CtaButton title="Enviar currículo" url="#form-curriculo" />
             <CtaButton
               title="Quero ser médico credenciado"
