@@ -22,7 +22,7 @@ export const OurHistory = () => {
       stagger: 0.05,
       scrollTrigger: {
         trigger: ".s-about-us",
-        start: "top 80%",
+        start: "top 70%",
         end: isMobile ? "top 50%" : "bottom 80%",
         scrub: true,
       },
@@ -35,7 +35,7 @@ export const OurHistory = () => {
       ease: "expo.out",
       scrollTrigger: {
         trigger: ".s-about-us",
-        start: "top 80%",
+        start: "top 60%",
       },
     });
   }, []);

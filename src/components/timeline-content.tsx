@@ -1,3 +1,4 @@
+// timeline-content.tsx
 "use client";
 import { cn } from "@/lib/utils";
 import React, { type ReactElement } from "react";
@@ -5,30 +6,83 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
   type CarouselApi,
 } from "./ui/carousel";
 import { useEffect, useState } from "react";
+
 interface TimelineContentProps {
+  yearIndex: number;
   isActive: boolean;
   historyData: {
     title: string;
     content: ReactElement;
     videoUrl: string;
   }[];
+  onNextYear: () => void;
+  onPreviousYear: () => void;
+  isFirstYear: boolean;
+  isLastYear: boolean;
+  onApiReady: (index: number, api: CarouselApi) => void;
 }
 
 export const TimelineContent = ({
+  yearIndex,
   isActive,
   historyData,
+  onNextYear,
+  onPreviousYear,
+  isFirstYear,
+  isLastYear,
+  onApiReady,
 }: TimelineContentProps) => {
   const [api, setApi] = useState<CarouselApi>();
+  const [currentSlide, setCurrentSlide] = useState(0);
+
   useEffect(() => {
     if (!api) {
       return;
     }
-  }, [api]);
+
+    // Registra a API no componente pai
+    onApiReady(yearIndex, api);
+
+    // Atualiza o slide atual quando o carrossel muda
+    setCurrentSlide(api.selectedScrollSnap());
+
+    api.on("select", () => {
+      setCurrentSlide(api.selectedScrollSnap());
+    });
+  }, [api, yearIndex, onApiReady]);
+
+  // Função customizada para o botão "próximo"
+  const handleNext = () => {
+    if (!api) return;
+
+    const isLastSlide = currentSlide === historyData.length - 1;
+
+    if (isLastSlide && !isLastYear) {
+      // Se está no último slide e não é o último ano, avança para o próximo ano
+      onNextYear();
+    } else if (!isLastSlide) {
+      // Se não é o último slide, apenas avança no carrossel
+      api.scrollNext();
+    }
+  };
+
+  // Função customizada para o botão "anterior"
+  const handlePrevious = () => {
+    if (!api) return;
+
+    const isFirstSlide = currentSlide === 0;
+
+    if (isFirstSlide && !isFirstYear) {
+      // Se está no primeiro slide e não é o primeiro ano, volta para o ano anterior
+      onPreviousYear();
+    } else if (!isFirstSlide) {
+      // Se não é o primeiro slide, apenas volta no carrossel
+      api.scrollPrev();
+    }
+  };
 
   return (
     <div className={cn(isActive && "hidden")}>
@@ -36,7 +90,7 @@ export const TimelineContent = ({
         setApi={setApi}
         opts={{
           align: "start",
-          loop: true,
+          loop: false,
         }}
       >
         <CarouselContent>
@@ -60,7 +114,7 @@ export const TimelineContent = ({
                   <div>
                     {historyData.length > 1 && (
                       <span className="text-brand-light-green2/80 text-[16px]">
-                        Parte {(index += 1)}
+                        Parte {index + 1}
                       </span>
                     )}
                     <h2 className="text-brand-light-green mb-5 text-2xl font-bold md:text-[28px] lg:mb-6">
@@ -69,12 +123,61 @@ export const TimelineContent = ({
                     {content}
                   </div>
 
-                  {historyData.length > 1 && (
-                    <div className="relative mt-6 flex items-center gap-3">
-                      <CarouselPrevious className="text-brand-dark-green bg-brand-light-green hover:bg-brand-main-green relative left-0 h-10 w-10 cursor-pointer border-0 duration-300 hover:text-white" />
-                      <CarouselNext className="text-brand-dark-green bg-brand-light-green hover:bg-brand-main-green relative right-0 h-10 w-10 cursor-pointer border-0 duration-300 hover:text-white" />
-                    </div>
-                  )}
+                  <div className="relative mt-6 flex items-center gap-3">
+                    {/* Botão anterior */}
+                    <button
+                      onClick={handlePrevious}
+                      disabled={isFirstYear && currentSlide === 0}
+                      className={cn(
+                        "text-brand-dark-green bg-brand-light-green hover:bg-brand-main-green flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border-0 duration-300 hover:text-white",
+                        isFirstYear &&
+                          currentSlide === 0 &&
+                          "cursor-not-allowed opacity-50",
+                      )}
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="m15 18-6-6 6-6" />
+                      </svg>
+                    </button>
+
+                    {/* Botão próximo */}
+                    <button
+                      onClick={handleNext}
+                      disabled={
+                        isLastYear && currentSlide === historyData.length - 1
+                      }
+                      className={cn(
+                        "text-brand-dark-green bg-brand-light-green hover:bg-brand-main-green flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border-0 duration-300 hover:text-white",
+                        isLastYear &&
+                          currentSlide === historyData.length - 1 &&
+                          "cursor-not-allowed opacity-50",
+                      )}
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="m9 18 6-6-6-6" />
+                      </svg>
+                    </button>
+                  </div>
                 </div>
               </div>
             </CarouselItem>

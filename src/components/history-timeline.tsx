@@ -1,10 +1,13 @@
+// history-timeline.tsx
 "use client";
 
 import { cn } from "@/lib/utils";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { TimelineContent } from "./timeline-content";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import type { CarouselApi } from "./ui/carousel";
+
 const historyData = {
   "2022": [
     {
@@ -125,8 +128,51 @@ const historyData = {
 export const HistoryTimeline = () => {
   const [activeTime, setActiveTime] = useState(0);
 
+  // Refs para armazenar as APIs dos carrosséis
+  const carouselApis = useRef<(CarouselApi | undefined)[]>([
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+  ]);
+
   const handleSelectTimelineItem = (value: number) => {
     setActiveTime(value);
+  };
+
+  // Função para navegar para o próximo ano
+  const handleNextYear = () => {
+    if (activeTime < 3) {
+      const nextYear = activeTime + 1;
+      setActiveTime(nextYear);
+
+      // Reseta o carrossel do próximo ano para o primeiro slide
+      setTimeout(() => {
+        carouselApis.current[nextYear]?.scrollTo(0);
+      }, 100);
+    }
+  };
+
+  // Função para navegar para o ano anterior
+  const handlePreviousYear = () => {
+    if (activeTime > 0) {
+      const previousYear = activeTime - 1;
+      setActiveTime(previousYear);
+
+      // Move o carrossel do ano anterior para o último slide
+      setTimeout(() => {
+        const api = carouselApis.current[previousYear];
+        if (api) {
+          const lastIndex = api.scrollSnapList().length - 1;
+          api.scrollTo(lastIndex);
+        }
+      }, 100);
+    }
+  };
+
+  // Função para registrar a API de cada carrossel
+  const registerCarouselApi = (index: number, api: CarouselApi) => {
+    carouselApis.current[index] = api;
   };
 
   useGSAP(() => {
@@ -188,14 +234,12 @@ export const HistoryTimeline = () => {
             width: "100%",
             duration: 0.4,
             ease: "power2.inOut",
-            // delay: index * 0.1,
           },
         );
         gsap.to(button, {
           borderColor: "#A6D05D",
           color: "#1A3A1A",
           duration: 0.4,
-          // delay: index * 0.1,
         });
       } else {
         // Botões futuros: volta ao estado inicial
@@ -238,7 +282,6 @@ export const HistoryTimeline = () => {
           width: "100%",
           duration: 0.4,
           ease: "power2.inOut",
-          // delay: index * 0.1 + 0.3,
         });
       } else {
         // Linhas futuras: vazias
@@ -296,20 +339,44 @@ export const HistoryTimeline = () => {
       </div>
       <div>
         <TimelineContent
+          yearIndex={0}
           historyData={historyData["2022"]}
-          isActive={activeTime !== 0 ? true : false}
+          isActive={activeTime !== 0}
+          onNextYear={handleNextYear}
+          onPreviousYear={handlePreviousYear}
+          isFirstYear={activeTime === 0}
+          isLastYear={activeTime === 3}
+          onApiReady={registerCarouselApi}
         />
         <TimelineContent
+          yearIndex={1}
           historyData={historyData["2023"]}
-          isActive={activeTime !== 1 ? true : false}
+          isActive={activeTime !== 1}
+          onNextYear={handleNextYear}
+          onPreviousYear={handlePreviousYear}
+          isFirstYear={activeTime === 0}
+          isLastYear={activeTime === 3}
+          onApiReady={registerCarouselApi}
         />
         <TimelineContent
+          yearIndex={2}
           historyData={historyData["2024"]}
-          isActive={activeTime !== 2 ? true : false}
+          isActive={activeTime !== 2}
+          onNextYear={handleNextYear}
+          onPreviousYear={handlePreviousYear}
+          isFirstYear={activeTime === 0}
+          isLastYear={activeTime === 3}
+          onApiReady={registerCarouselApi}
         />
         <TimelineContent
+          yearIndex={3}
           historyData={historyData["2025"]}
-          isActive={activeTime !== 3 ? true : false}
+          isActive={activeTime !== 3}
+          onNextYear={handleNextYear}
+          onPreviousYear={handlePreviousYear}
+          isFirstYear={activeTime === 0}
+          isLastYear={activeTime === 3}
+          onApiReady={registerCarouselApi}
         />
       </div>
     </div>
