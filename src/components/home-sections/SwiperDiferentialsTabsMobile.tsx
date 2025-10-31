@@ -142,7 +142,7 @@ export default function SwiperTabsMobile() {
             }
           }
         }}
-        className="swiper-cards-effect pb-12 [&_.swiper-slide:not(.swiper-slide-active)]:opacity-90"
+        className="swiper-cards-effect pb-12 [&_.swiper-slide:not(.swiper-slide-active)]:opacity-70 [&_.swiper-slide:not(.swiper-slide-active)]:blur-[4px]"
       >
         <SwiperSlide>
           <div className="bg-brand-main-green flex w-full flex-col items-center gap-5 rounded-2xl p-4">
