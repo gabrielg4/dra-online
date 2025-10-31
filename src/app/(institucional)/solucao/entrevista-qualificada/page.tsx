@@ -106,9 +106,9 @@ export default function EntrevistaQualificadaPage() {
         differentials={differentialsData}
         title={
           <>
-            Na saúde suplementar,
-            <br className="hidden lg:inline-block" />
+            Na saúde suplementar, <br className="hidden lg:inline-block" />
             <span className="text-brand-light-green">
+              {" "}
               cada detalhe faz diferença
             </span>
           </>

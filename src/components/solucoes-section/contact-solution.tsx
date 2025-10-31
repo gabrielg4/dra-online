@@ -51,7 +51,7 @@ export const ContactSolution = () => {
               Preencha o formulário <br className="hidden lg:inline-block" />e
               esteja sempre Online!
             </h2>
-            <p className="description-contact mb-5 text-center text-lg leading-normal font-normal text-white md:mb-10 md:text-start">
+            <p className="description-contact mb-5 text-center text-lg leading-normal font-normal text-white max-sm:text-base md:mb-10 md:text-start">
               Agende uma demonstração e descubra como simplificar a
               <br className="hidden lg:inline-block" /> telemedicina na sua
               empresa.

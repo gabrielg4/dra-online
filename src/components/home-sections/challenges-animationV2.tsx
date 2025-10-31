@@ -85,7 +85,7 @@ export function ChallengersAnimationV2() {
           translateY: "50%",
           opacity: 1,
           duration: 15,
-          scale: !isMobile ? 1.5 : 1,
+          scale: 1.1,
           ease: "power2.out",
           delay: 0.1,
         },
@@ -121,7 +121,7 @@ export function ChallengersAnimationV2() {
           <div className="blur-2 absolute -bottom-48 -left-96 z-0 scale-75 md:-left-48 md:scale-50" />
           <h2
             ref={titleRef}
-            className="title-section-challenges absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 text-center text-[32px] leading-[110%] font-bold text-white lg:text-[56px]"
+            className="title-section-challenges absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 text-center text-[32px] leading-[110%] font-bold text-white lg:text-6xl"
           >
             Sua empresa enfrenta
             <br className="inline-block" /> esses desafios?

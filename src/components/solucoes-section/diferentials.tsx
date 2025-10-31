@@ -59,7 +59,7 @@ export const Diferentials = ({
       stagger: 0.03,
       scrollTrigger: {
         trigger: ".diferential-section",
-        start: "top 50%",
+        start: "top 70%",
       },
     });
     gsap.from(".diferential-section .section-description ", {
@@ -70,7 +70,7 @@ export const Diferentials = ({
       delay: 0.3,
       scrollTrigger: {
         trigger: ".diferential-section",
-        start: "top 30%",
+        start: "top 60%",
       },
     });
     gsap.from(".card-diferential", {
@@ -81,7 +81,7 @@ export const Diferentials = ({
       scrollTrigger: {
         trigger: ".diferential-section",
         start,
-        end: "center 30%",
+        end: "center 60%",
         scrub: 1,
       },
     });

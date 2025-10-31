@@ -24,13 +24,13 @@ export const NaMidiaHero = () => {
     <section className="relative overflow-hidden bg-[url(/images/img-bg-midia.webp)] bg-cover bg-center bg-no-repeat pt-48 pb-16 sm:pt-32 sm:pb-32">
       <div className="relative z-30 container">
         <div className="flex w-full max-w-[450px] flex-col items-center lg:max-w-[510px]">
-          <h1 className="na-midia-hero-title text-center leading-tight text-white max-sm:text-6xl max-sm:leading-[110%]">
-            <span className="text-[72px] max-sm:text-6xl">
+          <h1 className="na-midia-hero-title text-center leading-tight text-white max-sm:text-5xl max-sm:leading-[110%]">
+            <span className="text-[72px] max-sm:text-5xl">
               <span className="font-bold">dr</span>
               <span className="text-brand-light-green leading-[100%]">.</span>
               online <br />
             </span>
-            <span className="-mt-8 inline-block text-[92px] font-bold max-sm:text-6xl">
+            <span className="-mt-8 inline-block text-[92px] font-bold max-sm:text-5xl">
               na Mídia
             </span>
           </h1>

@@ -37,7 +37,7 @@ export const StepCardsCarousel = () => {
       opts={{
         align: "start",
       }}
-      className="block max-sm:z-20 md:hidden"
+      className="relative z-[2] block max-sm:z-20 md:hidden"
     >
       <CarouselContent>
         <CarouselItem className="basis-1/2 max-sm:basis-[45%]">

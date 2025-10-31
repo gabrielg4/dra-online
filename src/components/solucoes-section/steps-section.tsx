@@ -6,6 +6,7 @@ import { SplitText } from "gsap/all";
 import { useMediaQuery } from "react-responsive";
 import { StepCard } from "../cards/step-card";
 import { StepCardsCarousel } from "./step-cards-carousel";
+import Image from "next/image";
 export const StepsSection = () => {
   const isTablet = useMediaQuery({
     minWidth: 768,
@@ -46,7 +47,22 @@ export const StepsSection = () => {
   }, []);
 
   return (
-    <section className="steps-section bg-[url(/images/img-bg-step-section.svg)] bg-cover bg-center bg-no-repeat py-10 max-sm:pb-2 lg:py-14">
+    <section className="steps-section relative bg-[url(/images/img-bg-step-section.svg)] bg-cover bg-center bg-no-repeat py-10 max-sm:pb-2 lg:py-14">
+      <Image
+        src={"/images/bg-steps-section-mobile-left.svg"}
+        height={100}
+        width={100}
+        alt="Imagem de fundo"
+        className="absolute top-0 left-0 z-[1] hidden h-full w-full max-w-[68px] object-contain max-sm:block"
+      />
+
+      <Image
+        src={"/images/bg-steps-section-mobile-right.svg"}
+        height={100}
+        width={100}
+        alt="Imagem de fundo"
+        className="absolute top-0 right-0 z-[1] hidden h-full w-full max-w-[68px] object-contain max-sm:block"
+      />
       <div className="container max-sm:pr-0">
         <h2 className="mb-4 text-center text-[28px] leading-[110%] text-white max-sm:pr-4 md:text-[32px] lg:text-[40px]">
           Melhor que ler,

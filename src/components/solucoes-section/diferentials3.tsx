@@ -53,7 +53,7 @@ export const Diferentials3 = ({
       stagger: 0.03,
       scrollTrigger: {
         trigger: ".integralmente-section",
-        start: "top 40%",
+        start: "top 70%",
       },
     });
     gsap.from(".integralmente-section .section-description ", {
@@ -64,7 +64,7 @@ export const Diferentials3 = ({
       delay: 0.3,
       scrollTrigger: {
         trigger: ".integralmente-section",
-        start: "top 30%",
+        start: "top 60%",
       },
     });
     gsap.from(".card-integralmente", {
@@ -75,7 +75,7 @@ export const Diferentials3 = ({
       scrollTrigger: {
         trigger: ".integralmente-section",
         start,
-        end: "center 30%",
+        end: "center 60%",
         scrub: 1,
       },
     });

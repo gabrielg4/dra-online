@@ -47,13 +47,13 @@ export const Hero = () => {
       <div className="mx-auto flex w-full max-w-[1280px] flex-col items-center justify-center px-4">
         <h1
           id="title"
-          className="mb-6 text-center text-[32px] leading-[110%] font-bold text-white max-sm:text-[26px] md:text-[40px] lg:text-[48px]"
+          className="mb-6 text-center text-[32px] leading-[110%] font-bold text-white md:text-[40px] lg:text-[48px]"
         >
           Somos a maior referência <br className="hidden md:inline-block" />
           de Saúde Digital no Brasil!
         </h1>
         <div className="relative mb-8 sm:mb-12">
-          <div className="image-detail from-brand-dark-green to-brand-dark-green/0 absolute -top-1.5 -right-[48px] flex w-[201px] justify-end rounded-full bg-gradient-to-l p-1 sm:-right-[54px]">
+          <div className="image-detail from-brand-dark-green to-brand-dark-green/0 absolute -top-1.5 -right-[48px] flex w-[201px] justify-end rounded-full bg-gradient-to-l p-1 max-sm:-right-2 sm:-right-5">
             <Image
               className=""
               src="/images/people.webp"
@@ -64,8 +64,9 @@ export const Hero = () => {
           </div>
           <p className="description relative z-10 text-center text-xl font-normal text-white">
             <span className="mr-10">Cuidamos da sua saúde</span>
+            <span className="pr-12 max-sm:inline-block"></span>
             <br />
-            <span className="mr-8">quando e onde você estiver.</span>
+            <span className="max-sm:pl-8">quando e onde você estiver.</span>
           </p>
         </div>
         <div className="cta-button">
