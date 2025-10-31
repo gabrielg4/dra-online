@@ -18,51 +18,51 @@ export default function diferentialTabSwiper02() {
           nextEl: ".swiper-next",
           prevEl: ".swiper-prev",
         }}
-        spaceBetween={24}
+        spaceBetween={8}
         slidesPerView={1}
         breakpoints={{
           640: { slidesPerView: 2 },
           1024: { slidesPerView: 3 },
         }}
       >
-        <SwiperSlide>
-          <div className="flex flex-row justify-start max-[640]:items-center md:flex-col">
+        <SwiperSlide className="!flex justify-center">
+          <div className="flex flex-row justify-center max-[640]:items-center md:flex-col">
             <Image
               src="/images/ic-shield-check.svg"
               alt="Ícone check"
               width={95}
               height={95}
             />
-            <p className="text-brand-dark-gray text-md font-semibold max-sm:text-white md:mt-2 md:ml-3 lg:text-lg">
+            <p className="text-brand-dark-gray font-semibold max-sm:text-white md:mt-2">
               Tecnologia responsiva que permite tempo de atendimento médio de
               até 6 min
             </p>
           </div>
         </SwiperSlide>
 
-        <SwiperSlide>
-          <div className="flex flex-row justify-start max-[640]:items-center md:flex-col">
+        <SwiperSlide className="!flex justify-center">
+          <div className="flex flex-row justify-center max-[640]:items-center md:flex-col">
             <Image
               src="/images/ic-shield-check.svg"
               alt="Ícone check"
               width={95}
               height={95}
             />
-            <p className="text-brand-dark-gray text-md font-semibold max-sm:text-white md:mt-2 md:ml-3 lg:text-lg">
+            <p className="text-brand-dark-gray font-semibold max-sm:text-white md:mt-2">
               NPS DE 93
             </p>
           </div>
         </SwiperSlide>
 
-        <SwiperSlide>
-          <div className="flex flex-row justify-start max-[640]:items-center md:flex-col">
+        <SwiperSlide className="!flex justify-center">
+          <div className="flex flex-row justify-center max-[640]:items-center md:flex-col">
             <Image
               src="/images/ic-shield-check.svg"
               alt="Ícone check"
               width={95}
               height={95}
             />
-            <p className="text-brand-dark-gray text-md font-semibold max-sm:text-white md:mt-2 md:ml-3 lg:text-lg">
+            <p className="text-brand-dark-gray font-semibold max-sm:text-white md:mt-2">
               O melhor custo-benefício do mercado
             </p>
           </div>

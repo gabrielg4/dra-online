@@ -73,16 +73,16 @@ export const StepsSection = () => {
           prática.
         </p>
 
-        <div className="relative hidden items-center justify-center pt-32 max-md:absolute md:flex md:pt-0">
+        <div className="relative hidden items-center justify-center pt-32 max-md:absolute md:flex md:h-[800px] md:pt-0">
           <video
             src="/videos/video-secao-solution-7.mp4"
-            className="h-full w-full object-cover"
+            className="mt-20 h-full w-full object-cover"
             autoPlay
             muted
             loop
             playsInline
           ></video>
-          <div className="absolute top-1/2 left-1/2 h-[650px] w-full max-w-[730px] -translate-x-1/2 -translate-y-1/2 max-md:hidden sm:h-[550px]">
+          <div className="absolute top-[60%] left-1/2 h-[650px] w-full max-w-[830px] -translate-x-1/2 -translate-y-1/2 max-md:hidden sm:h-[800px]">
             <StepCard
               stepNumber={1}
               content={
@@ -93,7 +93,7 @@ export const StepsSection = () => {
                   Whatsapp{" "}
                 </>
               }
-              classNames="absolute md:mt-10 top-2 lg:-top-20 left-1/2  -translate-x-1/2 w-full"
+              classNames="absolute md:mt-10 top-2 -top-27 left-1/2  -translate-x-1/2 w-full"
             />
             <StepCard
               stepNumber={2}
@@ -104,7 +104,7 @@ export const StepsSection = () => {
                   médico da família
                 </>
               }
-              classNames="absolute top-60 -right-32 sm:-right-52  sm:top-20 lg:!-right-64 lg:top-14 w-full"
+              classNames="absolute top-60 -right-32 sm:-right-78  sm:top-20 lg:!-right-82 lg:top-14 w-full "
             />
 
             <StepCard
@@ -116,7 +116,7 @@ export const StepsSection = () => {
                   nas linhas de cuidado
                 </>
               }
-              classNames="absolute -right-32 top-96 sm:-right-56 sm:top-56 lg:!-right-72 lg:top-56 w-full"
+              classNames="absolute -right-32 top-96 sm:-right-92 sm:top-56 lg:!-right-98 lg:top-56 w-full"
             />
 
             <StepCard
@@ -128,7 +128,7 @@ export const StepsSection = () => {
                   do paciente
                 </>
               }
-              classNames="absolute -right-40 lg:!-right-56 top-96 w-full"
+              classNames="absolute sm:-right-88 lg:-right-94 sm:top-104 lg:top-96 w-full"
             />
 
             <StepCard
@@ -139,7 +139,7 @@ export const StepsSection = () => {
                   evolução dos casos
                 </>
               }
-              classNames="absolute   left-20 top-20 lg:!left-4 lg:top-14"
+              classNames="absolute sm:left-4 top-20 lg:!left-4 lg:top-14"
             />
 
             <StepCard
@@ -150,7 +150,7 @@ export const StepsSection = () => {
                   contrareferência
                 </>
               }
-              classNames="absolute -left-52 lg:!-left-72 top-56 w-full"
+              classNames="absolute sm:-left-10 lg:!-left-20 top-56 w-full max-w-[200px]"
             />
 
             <StepCard
@@ -161,7 +161,7 @@ export const StepsSection = () => {
                   <br /> ativo
                 </>
               }
-              classNames="absolute -left-40 lg:!-left-56 top-96 w-full"
+              classNames="absolute sm:-left-8 lg:-left-16 top-96 w-full max-w-[200px]"
             />
           </div>
         </div>

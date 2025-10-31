@@ -90,7 +90,7 @@ export const WorkWithUsForm = () => {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="gradient-work-with-us-form border-brand-light-green flex flex-col items-center justify-center space-y-4 rounded-lg border p-10 backdrop-blur-2xl"
+        className="gradient-work-with-us-form border-brand-light-green flex flex-col items-center justify-center space-y-4 rounded-lg border p-10 backdrop-blur-2xl max-sm:p-5"
       >
         <FormField
           control={form.control}

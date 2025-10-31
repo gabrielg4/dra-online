@@ -199,7 +199,7 @@ export const HeroAnimation = () => {
               height={417}
             /> */}
             <div className="video-masked">
-              <video autoPlay muted loop playsInline>
+              <video autoPlay muted loop playsInline className="-scale-x-100">
                 <source src={"/videos/video28.mp4"} />
               </video>
             </div>

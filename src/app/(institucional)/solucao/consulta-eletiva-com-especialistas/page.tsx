@@ -133,7 +133,9 @@ export default function ConsultaEletivaComEspecialistaPage() {
           </>
         }
         description={
-          <>Transforme o acesso em cuidado. E o cuidado em resultado.</>
+          <>
+            Transforme o acesso em cuidado. <br />E o cuidado em resultado.
+          </>
         }
       />
       <Diferentials

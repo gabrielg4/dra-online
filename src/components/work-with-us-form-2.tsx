@@ -84,7 +84,7 @@ export const WorkWithUsForm2 = () => {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="space-y-4 rounded-lg bg-transparent p-6 max-[600px]:bg-white/10"
+        className="space-y-4 rounded-lg bg-transparent p-6 max-[600px]:bg-white/10 max-sm:p-5"
       >
         <FormField
           control={form.control}

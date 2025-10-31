@@ -31,8 +31,8 @@ export function ChallengersAnimationV2() {
     const challengesTl = gsap.timeline({
       scrollTrigger: {
         trigger: ".s-challenges",
-        start: `top ${!isMobile ? "100%" : "100%"}`,
-        end: "+=150%",
+        start: `top ${!isMobile ? "160%" : "160%"}`,
+        end: "+=250%",
         scrub: true,
         // markers: true,
         onUpdate: () => {
@@ -65,7 +65,7 @@ export function ChallengersAnimationV2() {
       .fromTo(
         titleContainer,
         {
-          yPercent: 50,
+          yPercent: -50,
         },
         {
           yPercent: 0,
@@ -76,7 +76,7 @@ export function ChallengersAnimationV2() {
       .fromTo(
         title,
         {
-          y: "0vh",
+          y: "-50vh",
           opacity: 0,
           scale: 0.6,
         },
@@ -123,7 +123,8 @@ export function ChallengersAnimationV2() {
             ref={titleRef}
             className="title-section-challenges absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 text-center text-[32px] leading-[110%] font-bold text-white lg:text-6xl"
           >
-            Sua empresa enfrenta
+            Sua empresa <br className="hidden max-sm:block" />
+            enfrenta
             <br className="inline-block" /> esses desafios?
           </h2>
 
@@ -136,18 +137,18 @@ export function ChallengersAnimationV2() {
         >
           <div className="absolute top-20 left-1/2 grid items-center justify-center gap-16 max-[640px]:w-full max-[640px]:-translate-x-1/2 max-sm:flex max-sm:flex-col max-sm:items-start max-sm:justify-start max-sm:px-4 lg:top-24 lg:left-[86px]">
             <ChallengeCard
-              videoUrl="/videos/video-animation-2.mp4"
+              videoUrl="/videos/video-animation-3.mp4"
               label="Longos tempos de espera para atendimento presencial"
             />
             <ChallengeCard
-              videoUrl="/videos/video-animation-4.mp4"
+              videoUrl="/videos/video-animation-2.mp4"
               label="Afastamentos recorrentes por problemas de saúde mental"
               className="max-sm:self-end max-sm:justify-self-end"
             />
           </div>
           <div className="absolute top-[790px] grid items-center justify-center gap-16 max-[640px]:left-1/2 max-[640px]:w-full max-[640px]:-translate-x-1/2 max-sm:flex max-sm:flex-col max-sm:items-start max-sm:justify-start max-sm:px-4 md:pt-80 lg:top-24 lg:right-[86px]">
             <ChallengeCard
-              videoUrl="/videos/video-animation-3.mp4"
+              videoUrl="/videos/video-animation-4.mp4"
               label="Dificuldade de acesso médico em regiões remotas"
             />
 

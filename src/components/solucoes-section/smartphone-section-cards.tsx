@@ -115,7 +115,7 @@ export const SmartphoneSectionCards = ({
   return (
     <section id="smartphones-section" className="relative pb-10 sm:pb-20">
       <div className="overlay -bottom-4 z-10 !to-75%"></div>
-      <div className="container !px-0">
+      <div className="container px-2">
         <div className="image-wrapper relative flex items-end justify-center gap-4 bg-[url('/images/bg-security.webp')] bg-cover bg-center pt-20 lg:pt-20">
           <div className="blur-bg-security absolute -top-40 left-1/2 -translate-x-1/2" />
           {/* <div className="to-brand-dark-green absolute -bottom-2 left-0 z-10 h-[400px] w-full bg-gradient-to-b from-transparent"></div> */}
@@ -148,8 +148,8 @@ export const SmartphoneSectionCards = ({
           />
         </div>
         <div className="content-wrapper relative z-10 -mt-20 flex flex-col items-center justify-center px-4">
-          <h2 className="title-section-security mb-5 text-center text-[24px] leading-[110%] text-white sm:text-[32px] lg:text-[40px]">
-            Melhor que ler,{" "}
+          <h2 className="title-section-security mb-5 text-center leading-[110%] text-white max-sm:text-4xl sm:text-[32px] lg:text-[40px]">
+            Melhor que ler, <br className="hidden max-sm:block" />
             <span className="text-brand-light-green font-bold">
               é conhecer!
             </span>

@@ -33,7 +33,7 @@ export default function diferentialTabSwiper03() {
               width={95}
               height={95}
             />
-            <p className="text-brand-dark-gray text-md font-semibold max-sm:text-white md:mt-2 md:ml-3 lg:text-lg">
+            <p className="text-brand-dark-gray font-semibold max-sm:text-white md:mt-2">
               Expansão de rede
               <br className="hidden lg:inline-block" /> sem altos custos
             </p>
@@ -48,7 +48,7 @@ export default function diferentialTabSwiper03() {
               width={95}
               height={95}
             />
-            <p className="text-brand-dark-gray text-md font-semibold max-sm:text-white md:mt-2 md:ml-3 lg:text-lg">
+            <p className="text-brand-dark-gray font-semibold max-sm:text-white md:mt-2">
               Qualidade
               <br className="hidden lg:inline-block" /> diagnóstica
             </p>
@@ -63,7 +63,7 @@ export default function diferentialTabSwiper03() {
               width={95}
               height={95}
             />
-            <p className="text-brand-dark-gray text-md font-semibold max-sm:text-white md:mt-2 md:ml-3 lg:text-lg">
+            <p className="text-brand-dark-gray font-semibold max-sm:text-white md:mt-2">
               Experiência
               <br className="hidden lg:inline-block" /> humanizada
             </p>

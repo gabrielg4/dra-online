@@ -18,14 +18,14 @@ export default function diferentialTabSwiper03() {
           nextEl: ".swiper-next",
           prevEl: ".swiper-prev",
         }}
-        spaceBetween={24}
+        spaceBetween={8}
         slidesPerView={1}
         breakpoints={{
           640: { slidesPerView: 2 },
           1024: { slidesPerView: 3 },
         }}
       >
-        <SwiperSlide>
+        <SwiperSlide className="!flex justify-start">
           <div className="flex flex-row justify-start max-[640px]:items-center md:flex-col">
             <Image
               src="/images/ic-shield-check.svg"
@@ -33,14 +33,14 @@ export default function diferentialTabSwiper03() {
               width={95}
               height={95}
             />
-            <p className="text-brand-dark-gray text-md font-semibold max-sm:text-white md:mt-2 md:ml-3 lg:text-lg">
+            <p className="text-brand-dark-gray font-semibold max-sm:text-white md:mt-2">
               Visão 360° do
               <br className="hidden lg:inline-block" /> paciente
             </p>
           </div>
         </SwiperSlide>
 
-        <SwiperSlide>
+        <SwiperSlide className="!flex justify-start">
           <div className="flex flex-row justify-start max-[640px]:items-center md:flex-col">
             <Image
               src="/images/ic-shield-check.svg"
@@ -48,14 +48,14 @@ export default function diferentialTabSwiper03() {
               width={95}
               height={95}
             />
-            <p className="text-brand-dark-gray text-md font-semibold max-sm:text-white md:mt-2 md:ml-3 lg:text-lg">
+            <p className="text-brand-dark-gray font-semibold max-sm:text-white md:mt-2">
               Uso racional dos
               <br className="hidden lg:inline-block" /> recursos
             </p>
           </div>
         </SwiperSlide>
 
-        <SwiperSlide>
+        <SwiperSlide className="!flex justify-start">
           <div className="flex flex-row justify-start max-[640px]:items-center md:flex-col">
             <Image
               src="/images/ic-shield-check.svg"
@@ -63,7 +63,7 @@ export default function diferentialTabSwiper03() {
               width={95}
               height={95}
             />
-            <p className="text-brand-dark-gray text-md font-semibold max-sm:text-white md:mt-2 md:ml-3 lg:text-lg">
+            <p className="text-brand-dark-gray font-semibold max-sm:text-white md:mt-2">
               Redução de custos
               <br className="hidden lg:inline-block" /> evitáveis
             </p>

@@ -277,7 +277,7 @@ export const HeroAnimationMobile = () => {
           className="card-06 absolute -top-32 -right-[115px] z-50 h-[196px] w-full max-w-[110px] duration-300 ease-linear"
         >
           <div className="video-masked">
-            <video autoPlay muted loop playsInline>
+            <video autoPlay muted loop playsInline className="-scale-x-100">
               <source src={"/videos/video28.mp4"} />
             </video>
           </div>

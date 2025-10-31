@@ -124,8 +124,8 @@ export default function SwiperTabsMobile() {
         }}
         cardsEffect={{
           slideShadows: true,
-          perSlideOffset: 30, // Cards ainda mais visíveis
-          perSlideRotate: 5, // Rotação mais pronunciada
+          perSlideOffset: 5, // Cards ainda mais visíveis
+          perSlideRotate: 0, // Rotação mais pronunciada
         }}
         onSwiper={setContentSwiper}
         onSlideChange={(swiper) => {
@@ -175,7 +175,7 @@ export default function SwiperTabsMobile() {
                   controls={false}
                   muted
                   loop
-                  className="h-[200px] w-full rounded-3xl object-cover md:h-[370px] lg:h-[477px]"
+                  className="pointer-events-none h-[200px] w-full rounded-3xl object-cover md:h-[370px] lg:h-[477px]"
                 ></video>
               </div>
 
@@ -227,7 +227,7 @@ export default function SwiperTabsMobile() {
                   controls={false}
                   muted
                   loop
-                  className="h-[200px] w-full rounded-3xl object-cover md:h-[370px] lg:h-[477px]"
+                  className="pointer-events-none h-[200px] w-full rounded-3xl object-cover md:h-[370px] lg:h-[477px]"
                 ></video>
               </div>
 
@@ -277,7 +277,7 @@ export default function SwiperTabsMobile() {
                   controls={false}
                   muted
                   loop
-                  className="h-[200px] w-full rounded-3xl object-cover md:h-[370px] lg:h-[477px]"
+                  className="pointer-events-none h-[200px] w-full rounded-3xl object-cover md:h-[370px] lg:h-[477px]"
                 ></video>
               </div>
 
@@ -330,7 +330,7 @@ export default function SwiperTabsMobile() {
                   controls={false}
                   muted
                   loop
-                  className="h-[200px] w-full rounded-3xl object-cover md:h-[370px] lg:h-[477px]"
+                  className="pointer-events-none h-[200px] w-full rounded-3xl object-cover md:h-[370px] lg:h-[477px]"
                 ></video>
               </div>
 
@@ -380,7 +380,7 @@ export default function SwiperTabsMobile() {
                   controls={false}
                   muted
                   loop
-                  className="h-[200px] w-full rounded-3xl object-cover md:h-[370px] lg:h-[477px]"
+                  className="pointer-events-none h-[200px] w-full rounded-3xl object-cover md:h-[370px] lg:h-[477px]"
                 ></video>
               </div>
 
@@ -432,7 +432,7 @@ export default function SwiperTabsMobile() {
                   controls={false}
                   muted
                   loop
-                  className="h-[200px] w-full rounded-3xl object-cover md:h-[370px] lg:h-[477px]"
+                  className="pointer-events-none h-[200px] w-full rounded-3xl object-cover md:h-[370px] lg:h-[477px]"
                 ></video>
               </div>
 

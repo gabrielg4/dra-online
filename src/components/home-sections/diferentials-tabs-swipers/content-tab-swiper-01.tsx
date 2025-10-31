@@ -18,7 +18,7 @@ export default function diferentialTabSwiper01() {
           nextEl: ".swiper-next",
           prevEl: ".swiper-prev",
         }}
-        spaceBetween={24}
+        spaceBetween={9}
         slidesPerView={1}
         breakpoints={{
           640: { slidesPerView: 2 },
@@ -33,7 +33,7 @@ export default function diferentialTabSwiper01() {
               width={95}
               height={95}
             />
-            <p className="text-brand-dark-gray text-md font-semibold max-sm:text-white md:mt-2 md:ml-3 lg:text-lg">
+            <p className="text-brand-dark-gray font-semibold max-sm:text-white md:mt-2">
               Conformidade
               <br className="hidden lg:inline-block" /> garantida
             </p>
@@ -48,7 +48,7 @@ export default function diferentialTabSwiper01() {
               width={95}
               height={95}
             />
-            <p className="text-brand-dark-gray text-md font-semibold max-sm:text-white md:mt-2 md:ml-3 lg:text-lg">
+            <p className="text-brand-dark-gray font-semibold max-sm:text-white md:mt-2">
               Decisões com
               <br className="hidden lg:inline-block" /> base em dados
             </p>
@@ -63,7 +63,7 @@ export default function diferentialTabSwiper01() {
               width={95}
               height={95}
             />
-            <p className="text-brand-dark-gray text-md font-semibold max-sm:text-white md:mt-2 md:ml-3 lg:text-lg">
+            <p className="text-brand-dark-gray md:mt-g font-semibold max-sm:text-white">
               Prevenção de
               <br className="hidden lg:inline-block" /> riscos assistenciais
             </p>

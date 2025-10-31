@@ -125,7 +125,7 @@ export const DiferentialsTabs = () => {
               <h3 className="text-brand-black mb-4 text-lg leading-[150%] font-bold max-sm:hidden max-sm:text-center max-sm:text-white lg:mb-6">
                 Mais segurança, menos riscos.
               </h3>
-              <p className="text-brand-dark-gray text-md mb-6 font-normal max-sm:text-center max-sm:text-white lg:mb-14 lg:text-lg">
+              <p className="text-brand-dark-gray text-md mb-6 font-normal max-sm:text-center max-sm:text-white lg:mb-8 lg:text-lg">
                 Na saúde suplementar, cada detalhe faz diferença. Transforma
                 dados em decisões assertivas, reduzindo riscos jurídicos,
                 desperdícios e garantindo conformidade regulatória.
@@ -142,7 +142,7 @@ export const DiferentialsTabs = () => {
                 </Link>
               </Button>
 
-              <div className="mt-6 flex w-full flex-col flex-nowrap justify-between gap-0 sm:gap-4 md:flex-row lg:mt-12">
+              <div className="mt-6 flex w-full flex-col flex-nowrap justify-between gap-0 sm:gap-4 md:flex-row lg:mt-8">
                 {/* swiper ficará aqui */}
                 <ContentTabSwiper01 />
               </div>
@@ -175,7 +175,7 @@ export const DiferentialsTabs = () => {
               <h3 className="text-brand-black mb-4 text-lg leading-[150%] font-bold max-sm:hidden max-sm:text-center max-sm:text-white lg:mb-6">
                 O cuidado certo, na hora que seu beneficiário mais precisa.
               </h3>
-              <p className="text-brand-dark-gray text-md mb-6 font-normal max-sm:text-center max-sm:text-white lg:mb-14 lg:text-lg">
+              <p className="text-brand-dark-gray text-md mb-6 font-normal max-sm:text-center max-sm:text-white lg:mb-8 lg:text-lg">
                 Imprevistos não têm hora marcada. Por isso, a Dr. Online garante
                 que o acesso a um médico nunca esteja fora de alcance. Nosso{" "}
                 <strong>Pronto Atendimento 24h</strong> conecta pacientes a
@@ -194,7 +194,7 @@ export const DiferentialsTabs = () => {
                 </Link>
               </Button>
 
-              <div className="mt-6 flex w-full flex-col flex-nowrap justify-between gap-0 sm:gap-4 md:flex-row lg:mt-12">
+              <div className="mt-6 flex w-full flex-col flex-nowrap justify-between gap-0 sm:gap-4 md:flex-row lg:mt-8">
                 <ContentTabSwiper02 />
               </div>
             </div>
@@ -226,7 +226,7 @@ export const DiferentialsTabs = () => {
               <h3 className="text-brand-black mb-4 text-lg leading-[150%] font-bold max-sm:hidden max-sm:text-center max-sm:text-white lg:mb-6">
                 Transforme o acesso em cuidado. E o cuidado em resultado.
               </h3>
-              <p className="text-brand-dark-gray text-md mb-6 font-normal max-sm:text-center max-sm:text-white lg:mb-14 lg:text-lg">
+              <p className="text-brand-dark-gray text-md mb-6 font-normal max-sm:text-center max-sm:text-white lg:mb-8 lg:text-lg">
                 Com apenas um clique garanta acesso rápido e qualificado há mais
                 de <strong>30 especialistas</strong>, sem comprometer custos,
                 estrutura ou qualidade.
@@ -276,7 +276,7 @@ export const DiferentialsTabs = () => {
                 Apoio imediato para quem precisa, resultados estratégicos para
                 quem cuida.
               </h3>
-              <p className="text-brand-dark-gray text-md mb-6 font-normal max-sm:text-center max-sm:text-white lg:mb-14 lg:text-lg">
+              <p className="text-brand-dark-gray text-md mb-6 font-normal max-sm:text-center max-sm:text-white lg:mb-8 lg:text-lg">
                 Oferecemos um ecossistema completo de{" "}
                 <strong>saúde mental digital</strong>, através do{" "}
                 <strong>Teleacolhimento Psicológico 24h</strong> e do{" "}
@@ -297,7 +297,7 @@ export const DiferentialsTabs = () => {
                 </Button>
               </div>
 
-              <div className="mt-6 flex w-full flex-col flex-nowrap justify-between gap-0 sm:gap-4 md:flex-row lg:mt-12">
+              <div className="mt-6 flex w-full flex-col flex-nowrap justify-between gap-0 sm:gap-4 md:flex-row lg:mt-8">
                 <ContentTabSwiper04 />
               </div>
             </div>
@@ -329,7 +329,7 @@ export const DiferentialsTabs = () => {
               <h3 className="text-brand-black mb-4 text-lg leading-[150%] font-bold max-sm:hidden max-sm:text-center max-sm:text-white lg:mb-6">
                 Mais que cuidado, gestão inteligente em saúde.
               </h3>
-              <p className="text-brand-dark-gray text-md mb-6 font-normal max-sm:text-center max-sm:text-white lg:mb-14 lg:text-lg">
+              <p className="text-brand-dark-gray text-md mb-6 font-normal max-sm:text-center max-sm:text-white lg:mb-8 lg:text-lg">
                 Combinamos tecnologia, protocolos clínicos e equipe altamente
                 qualificada para garantir resolutividade, continuidade e
                 personalização do atendimento.
@@ -346,7 +346,7 @@ export const DiferentialsTabs = () => {
                 </Link>
               </Button>
 
-              <div className="mt-6 flex w-full flex-col flex-nowrap justify-between gap-0 sm:gap-4 md:flex-row lg:mt-12">
+              <div className="mt-6 flex w-full flex-col flex-nowrap justify-between gap-0 sm:gap-4 md:flex-row lg:mt-8">
                 <ContentTabSwiper05 />
               </div>
             </div>
@@ -379,7 +379,7 @@ export const DiferentialsTabs = () => {
                 Uma nova forma de entregar saúde: acessível, segura, integrada e
                 altamente escalável.
               </h3>
-              <p className="text-brand-dark-gray text-md mb-6 font-normal max-sm:text-center max-sm:text-white lg:mb-14 lg:text-lg">
+              <p className="text-brand-dark-gray text-md mb-6 font-normal max-sm:text-center max-sm:text-white lg:mb-8 lg:text-lg">
                 Equipado com dispositivos médicos multiparamétricos e suporte de
                 enfermagem, possibilita consultas clínicas e especializadas com
                 alto nível de resolutividade e precisão diagnóstica, mesmo à
@@ -397,7 +397,7 @@ export const DiferentialsTabs = () => {
                 </Link>
               </Button>
 
-              <div className="mt-6 flex w-full flex-col flex-nowrap justify-between gap-0 sm:gap-4 md:flex-row lg:mt-12">
+              <div className="mt-6 flex w-full flex-col flex-nowrap justify-between gap-0 sm:gap-4 md:flex-row lg:mt-8">
                 <ContentTabSwiper06 />
               </div>
             </div>
