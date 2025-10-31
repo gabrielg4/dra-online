@@ -471,3 +471,15 @@ header.scrolled::before {
     @apply h-3 w-3 bg-white duration-300 ease-linear;
   }
 }
+
+.swiper-cards-effect {
+  .swiper-pagination {
+    @apply !relative !top-0 !mt-10;
+    .swiper-pagination-bullet {
+      @apply h-1 w-full max-w-8 rounded-[2px] bg-[#E1E2E1] opacity-100 duration-300 ease-linear;
+    }
+    .swiper-pagination-bullet-active {
+      @apply bg-brand-light-green;
+    }
+  }
+}

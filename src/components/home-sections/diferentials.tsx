@@ -4,6 +4,7 @@ import { DiferentialsTabs } from "../diferentials-tabs";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/all";
 import gsap from "gsap";
+import SwiperTabsMobile from "@/components/home-sections/SwiperDiferentialsTabsMobile";
 
 export const Diferentials = () => {
   useGSAP(() => {
@@ -43,6 +44,7 @@ export const Diferentials = () => {
         </h2>
 
         <DiferentialsTabs />
+        <SwiperTabsMobile />
       </div>
     </section>
   );

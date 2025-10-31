@@ -63,8 +63,9 @@ export const MetricsSection = () => {
               <span className="text-brand-light-green">O impacto da</span> dr.
               <span className="font-normal">online</span>
             </p>
-            <h2 className="title-section-metrics mb-0 text-center text-sm text-[32px] leading-[120%] font-medium text-white md:text-start lg:mb-6 lg:text-[40px]">
-              A diferença entre oferecer consulta e
+            <h2 className="title-section-metrics mb-0 text-center text-sm text-[32px] leading-[120%] font-medium text-white max-sm:text-[28px] md:text-start lg:mb-6 lg:text-[40px]">
+              A diferença entre <br className="hidden max-sm:block" />
+              oferecer consulta e
               <br className="hidden lg:inline-block" />
               <span className="inline-block font-semibold">
                 {" "}

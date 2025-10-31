@@ -47,7 +47,7 @@ export const DiferentialsTabs = () => {
   return (
     <Tabs
       defaultValue="tab1"
-      className="w-full items-center gap-14 p-0 md:justify-center"
+      className="w-full items-center gap-14 p-0 max-sm:!hidden md:justify-center"
     >
       <TabsList className="shadow-brand-main-green group flex h-auto w-full max-w-full flex-row flex-nowrap gap-1 overflow-x-auto !bg-transparent p-0 shadow-2xl/20 max-sm:flex-wrap sm:flex-row sm:!justify-start sm:gap-0 lg:justify-center">
         <TabsTrigger
