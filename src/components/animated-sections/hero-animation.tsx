@@ -125,7 +125,11 @@ export const HeroAnimation = () => {
             /> */}
             <div className="video-masked">
               <video autoPlay muted loop playsInline>
-                <source src={"/videos/video26.mp4"} />
+                <source
+                  src={
+                    "https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Home/Mi%CC%81dia1.mp4"
+                  }
+                />
               </video>
             </div>
             {/* <div className="mobile-fone-left "></div> */}
@@ -168,7 +172,11 @@ export const HeroAnimation = () => {
           /> */}
           <div className="video-masked !h-full !w-full">
             <video autoPlay muted loop playsInline className="">
-              <source src={"/videos/video27.mp4"} />
+              <source
+                src={
+                  "https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Home/Mi%CC%81dia2.mp4"
+                }
+              />
             </video>
           </div>
         </div>
@@ -200,7 +208,11 @@ export const HeroAnimation = () => {
             /> */}
             <div className="video-masked">
               <video autoPlay muted loop playsInline className="-scale-x-100">
-                <source src={"/videos/video28.mp4"} />
+                <source
+                  src={
+                    "https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Home/Mi%CC%81dia3.mp4"
+                  }
+                />
               </video>
             </div>
             <div className="absolute top-0 left-0 z-10 flex h-full w-full flex-col justify-end px-9 pb-6">

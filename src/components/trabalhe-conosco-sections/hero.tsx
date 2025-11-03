@@ -64,7 +64,10 @@ export const HeroWorkWithUs = () => {
       <VerticalCarouselAboutUs
         videosColumn1={["/videos/video7.mp4", "/videos/video9.mp4"]}
         videosColumn2={["/videos/video10.mp4", "/videos/video8.mp4"]}
-        videosColumn3={["/videos/video5.mp4", "/videos/video6.mp4"]}
+        videosColumn3={[
+          "https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Home/envato_video_gen_Oct_08_2025_17_12_32.mp4",
+          "/videos/video6.mp4",
+        ]}
       />
 
       <div className="absolute right-0 bottom-20 left-0 z-20 mx-auto hidden h-[150px] w-[260px] rounded-[268px] bg-[linear-gradient(180deg,_#1BA068_0%,_#A6D05D_100%)] blur-[50px] filter max-sm:block"></div>

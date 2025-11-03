@@ -125,7 +125,7 @@ export default function ConsultaEletivaComEspecialistaPage() {
   return (
     <>
       <Hero
-        classHeroVideo="/videos/video3.mp4"
+        classHeroVideo="https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Especialidades/1015.mp4"
         title={
           <>
             Consulta Eletiva <br />

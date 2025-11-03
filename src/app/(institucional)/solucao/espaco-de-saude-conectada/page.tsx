@@ -96,7 +96,7 @@ export default function EspacoDeSaudeConectadaPage() {
   return (
     <>
       <Hero
-        classHeroVideo="/videos/video-solucao-6.mp4"
+        classHeroVideo="https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Consulto%CC%81rio%20Digital/grok-video-cc035d66-22bc-49a0-8b5a-83fec035e9f8%20(1).mp4"
         title={
           <>
             Espaço de Saúde
@@ -131,7 +131,7 @@ export default function EspacoDeSaudeConectadaPage() {
             diagnóstica, mesmo à distância.
           </>
         }
-        videoUrl="/videos/video-secao-solucao-6.mp4"
+        videoUrl="https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Consulto%CC%81rio%20Digital/grok-video-cbacf6b2-91c0-49ef-bc00-2120f6083bcd.mp4"
       />
       <Impacts
         impacts={impactsData}

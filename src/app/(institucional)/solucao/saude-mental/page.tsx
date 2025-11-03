@@ -186,7 +186,7 @@ export default function SaudeMentalPage() {
   return (
     <>
       <Hero
-        classHeroVideo="/videos/video-solucao-5.mp4"
+        classHeroVideo="https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Saude%20Mental/grok-video-839cfd47-de63-4bfc-a796-68d082bc23a0.mp4"
         title={<>Saúde Mental</>}
         description={
           <>
@@ -216,7 +216,7 @@ export default function SaudeMentalPage() {
             adequado em qualquer dia e a qualquer hora.
           </>
         }
-        videoUrl="/videos/video-secao-solucao-5.mp4"
+        videoUrl="https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Saude%20Mental/envato_video_gen_Oct_01_2025_18_53_41.mp4"
       />
       <Impacts
         impacts={impactsData}
@@ -234,7 +234,7 @@ export default function SaudeMentalPage() {
       />
       <SmartphoneSectionCards
         leftPhoneImg="/images/img-phone-left-sol-5.webp"
-        middlePhoneVideo="/videos/video-middle-phone-solucao-5.mp4"
+        middlePhoneVideo="https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Saude%20Mental/psicologia.mp4"
         rightPhoneImg="/images/img-phone-right-sol-5.webp"
         subtitle="Veja como funciona nossa solução de saúde mental."
       />
@@ -256,7 +256,7 @@ export default function SaudeMentalPage() {
             resultados mensuráveis.
           </>
         }
-        videoUrl="/videos/video-secao-2-solucao-5.mp4"
+        videoUrl="https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Saude%20Mental/envato_video_gen_Oct_15_2025_14_39_48.mp4"
       />
       <Impacts2
         impacts={impactsData2}

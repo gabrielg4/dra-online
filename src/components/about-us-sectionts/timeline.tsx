@@ -25,7 +25,7 @@ export const TimeLine = () => {
     });
   }, []);
   return (
-    <section className="s-timeline pb-10 lg:pt-20 lg:pb-20">
+    <section className="s-timeline overflow-hidden pb-10 lg:pt-20 lg:pb-20">
       <div className="container">
         <h2 className="section-title mb-6 text-center text-[32px] leading-[110%] text-white md:mb-10 lg:mb-14 lg:text-[40px]">
           Conheça <strong className="font-bold">nossa trajetória</strong>

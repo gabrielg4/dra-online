@@ -110,7 +110,7 @@ export const DiferentialsTabs = () => {
                 className="absolute top-4 right-4"
               />
               <video
-                src="/videos/video1.mp4"
+                src="https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Home/Mi%CC%81dia4.mp4"
                 autoPlay
                 controls={false}
                 muted
@@ -160,7 +160,7 @@ export const DiferentialsTabs = () => {
                 className="absolute top-4 right-4"
               />
               <video
-                src="/videos/video2.mp4"
+                src="https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Home/Mi%CC%81dia5.mp4"
                 autoPlay
                 controls={false}
                 muted
@@ -211,7 +211,7 @@ export const DiferentialsTabs = () => {
                 className="absolute top-4 right-4"
               />
               <video
-                src="/videos/video3.mp4"
+                src="https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Especialidades/1015.mp4"
                 autoPlay
                 controls={false}
                 muted
@@ -260,7 +260,7 @@ export const DiferentialsTabs = () => {
                 className="absolute top-4 right-4"
               />
               <video
-                src="/videos/video4.mp4"
+                src="https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Home/grok-video-839cfd47-de63-4bfc-a796-68d082bc23a0.mp4"
                 autoPlay
                 controls={false}
                 muted
@@ -314,7 +314,7 @@ export const DiferentialsTabs = () => {
                 className="absolute top-4 right-4"
               />
               <video
-                src="/videos/video5.mp4"
+                src="https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Home/envato_video_gen_Oct_08_2025_17_12_32.mp4"
                 autoPlay
                 controls={false}
                 muted

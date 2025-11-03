@@ -134,7 +134,7 @@ export default function ProntoAtendimentoPage() {
             92% de resolutividade.
           </>
         }
-        videoUrl="/videos/video-secao-solucao-2.mp4"
+        videoUrl="https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Pronto%20Atendimento/Mi%CC%81dia4.mp4"
       />
       <Impacts
         impacts={impactsData}
@@ -153,8 +153,8 @@ export default function ProntoAtendimentoPage() {
         firstImage="/images/img-phone-1-sol-2.svg"
         secondImage="/images/img-phone-2-sol-2.svg"
         thirdImage="/images/img-phone-3-sol-2.svg"
-        firstVideo="/videos/video22.mp4"
-        secondVideo="/videos/video23.mp4"
+        firstVideo="https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Pronto%20Atendimento/Mi%CC%81dia5.mp4"
+        secondVideo="https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Pronto%20Atendimento/Mi%CC%81dia6.mp4"
         subtitle="Veja como funciona nossa solução de pronto atendimento 24hrs."
       />
       <ContactSolution />

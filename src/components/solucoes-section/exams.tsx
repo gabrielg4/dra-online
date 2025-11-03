@@ -6,10 +6,11 @@ import Image from "next/image";
 import React from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Grid, Pagination } from "swiper/modules";
+import { EffectCards, Pagination } from "swiper/modules";
 import "swiper/css/grid";
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/effect-cards";
 
 export const ExamsSection = () => {
   useGSAP(() => {
@@ -150,142 +151,148 @@ export const ExamsSection = () => {
           </div>
         </div>
 
-        <div className="hidden max-sm:block">
+        <div className="mt-14 hidden max-sm:block">
           <Swiper
-            modules={[Grid, Pagination]}
+            modules={[EffectCards, Pagination]}
+            effect="cards"
             spaceBetween={16}
-            grid={{ rows: 1, fill: "row" }}
             slidesPerView={1}
-            pagination={{
-              clickable: true,
-              el: ".swiper-pagination-grid-cards",
+            cardsEffect={{
+              slideShadows: false,
+              perSlideOffset: 2, // Cards ainda mais visíveis
+              perSlideRotate: 0, // Rotação mais pronunciada
             }}
+            className="[&_.swiper-slide:not(.swiper-slide-active)]:-translate-y-6 [&_.swiper-slide:not(.swiper-slide-active)_.card-exam-animated]:bg-[rgba(255,_255,_255,_0.10)]"
           >
             <SwiperSlide className="!flex justify-center">
-              <div className="card-exam-animated flex w-full max-w-80 items-center gap-6 rounded-2xl border border-white/20 bg-white/10 duration-300 hover:-translate-y-3">
+              <div className="card-exam-animated bg-brand-light-green flex w-full max-w-[345px] flex-col items-center gap-4 rounded-2xl p-4 duration-300">
                 <Image
-                  src="/images/ic-pulmao.svg"
+                  src="/images/icon-auscultura-pulmonar.svg"
                   alt="Ícone pulmão"
-                  width={80}
-                  height={80}
+                  width={38}
+                  height={38}
                   className="rounded-lg object-contain"
                 />
-                <p className="text-lg font-bold text-white">
+                <p className="text-brand-dark-green text-lg font-bold">
                   Ausculta pulmonar
                 </p>
               </div>
             </SwiperSlide>
             <SwiperSlide className="!flex justify-center">
-              <div className="card-exam-animated flex w-full max-w-80 items-center gap-6 rounded-2xl border border-white/20 bg-white/10 duration-300 hover:-translate-y-3">
+              <div className="card-exam-animated bg-brand-light-green flex w-full max-w-[345px] flex-col items-center gap-4 rounded-2xl p-4 duration-300">
                 <Image
-                  src="/images/ic-abdomen.svg"
+                  src="/images/icon-ausculta-abdominal.svg"
                   alt="Ícone abdomen"
-                  width={80}
-                  height={80}
+                  width={38}
+                  height={38}
                   className="rounded-lg object-contain"
                 />
-                <p className="text-lg font-bold text-white">
+                <p className="text-brand-dark-green text-lg font-bold">
                   Ausculta abdominal
                 </p>
               </div>
             </SwiperSlide>
             <SwiperSlide className="!flex justify-center">
-              <div className="card-exam-animated flex w-full max-w-80 items-center gap-6 rounded-2xl border border-white/20 bg-white/10 duration-300 hover:-translate-y-3">
+              <div className="card-exam-animated bg-brand-light-green flex w-full max-w-[345px] flex-col items-center gap-4 rounded-2xl p-4 duration-300">
                 <Image
-                  src="/images/ic-coracao.svg"
+                  src="/images/ausculta-cardiaca.svg"
                   alt="Ícone coração"
-                  width={80}
-                  height={80}
+                  width={38}
+                  height={38}
                   className="rounded-lg object-contain"
                 />
-                <p className="text-lg font-bold text-white">
+                <p className="text-brand-dark-green text-lg font-bold">
                   Ausculta cardíaca
                 </p>
               </div>
             </SwiperSlide>
             <SwiperSlide className="!flex justify-center">
-              <div className="card-exam-animated flex w-full max-w-80 items-center gap-6 rounded-2xl border border-white/20 bg-white/10 duration-300 hover:-translate-y-3">
+              <div className="card-exam-animated bg-brand-light-green flex w-full max-w-[345px] flex-col items-center gap-4 rounded-2xl p-4 duration-300">
                 <Image
-                  src="/images/ic-pressao.svg"
+                  src="/images/icon-afericao-pressao.svg"
                   alt="Ícone pressão"
-                  width={80}
-                  height={80}
+                  width={38}
+                  height={38}
                   className="rounded-lg object-contain"
                 />
-                <p className="text-lg font-bold text-white">
+                <p className="text-brand-dark-green text-lg font-bold">
                   Aferição da pressão
                 </p>
               </div>
             </SwiperSlide>
             <SwiperSlide className="!flex justify-center">
-              <div className="card-exam-animated flex w-full max-w-80 items-center gap-6 rounded-2xl border border-white/20 bg-white/10 duration-300 hover:-translate-y-3">
+              <div className="card-exam-animated bg-brand-light-green flex w-full max-w-[345px] flex-col items-center gap-4 rounded-2xl p-4 duration-300">
                 <Image
-                  src="/images/ic-search-2.svg"
+                  src="/images/icon-avaliacao-cutanea.svg"
                   alt="Ícone lupa"
-                  width={80}
-                  height={80}
+                  width={38}
+                  height={38}
                   className="rounded-lg object-contain"
                 />
-                <p className="text-lg font-bold text-white">
+                <p className="text-brand-dark-green text-lg font-bold">
                   Avaliação cutânea
                 </p>
               </div>
             </SwiperSlide>
             <SwiperSlide className="!flex justify-center">
-              <div className="card-exam-animated flex w-full max-w-80 items-center gap-6 rounded-2xl border border-white/20 bg-white/10 duration-300 hover:-translate-y-3">
+              <div className="card-exam-animated bg-brand-light-green flex w-full max-w-[345px] flex-col items-center gap-4 rounded-2xl p-4 duration-300">
                 <Image
-                  src="/images/ic-frequencia-cardiaca.svg"
+                  src="/images/icon-frequencia-cardiaca.svg"
                   alt="Ícone frequencia cardíaca"
-                  width={80}
-                  height={80}
+                  width={38}
+                  height={38}
                   className="rounded-lg object-contain"
                 />
-                <p className="text-lg font-bold text-white">
+                <p className="text-brand-dark-green text-lg font-bold">
                   Frequência cardíaca
                 </p>
               </div>
             </SwiperSlide>
             <SwiperSlide className="!flex justify-center">
-              <div className="card-exam-animated flex w-full max-w-80 items-center gap-6 rounded-2xl border border-white/20 bg-white/10 duration-300 hover:-translate-y-3">
+              <div className="card-exam-animated bg-brand-light-green flex w-full max-w-[345px] flex-col items-center gap-4 rounded-2xl p-4 duration-300">
                 <Image
-                  src="/images/ic-lips.svg"
+                  src="/images/icon-oroscopia.svg"
                   alt="Ícone lábios"
-                  width={80}
-                  height={80}
+                  width={38}
+                  height={38}
                   className="rounded-lg object-contain"
                 />
-                <p className="text-lg font-bold text-white">Oroscopia</p>
+                <p className="text-brand-dark-green text-lg font-bold">
+                  Oroscopia
+                </p>
               </div>
             </SwiperSlide>
             <SwiperSlide className="!flex justify-center">
-              <div className="card-exam-animated flex w-full max-w-80 items-center gap-6 rounded-2xl border border-white/20 bg-white/10 duration-300 hover:-translate-y-3">
+              <div className="card-exam-animated bg-brand-light-green flex w-full max-w-[345px] flex-col items-center gap-4 rounded-2xl p-4 duration-300">
                 <Image
-                  src="/images/ic-orelha.svg"
+                  src="/images/icon-otoscopia.svg"
                   alt="Ícone orelha"
-                  width={80}
-                  height={80}
+                  width={38}
+                  height={38}
                   className="rounded-lg object-contain"
                 />
-                <p className="text-lg font-bold text-white">Otoscopia</p>
+                <p className="text-brand-dark-green text-lg font-bold">
+                  Otoscopia
+                </p>
               </div>
             </SwiperSlide>
             <SwiperSlide className="!flex justify-center">
-              <div className="card-exam-animated flex w-full max-w-80 items-center gap-6 rounded-2xl border border-white/20 bg-white/10 duration-300 hover:-translate-y-3">
+              <div className="card-exam-animated bg-brand-light-green flex w-full max-w-[345px] flex-col items-center gap-4 rounded-2xl p-4 duration-300">
                 <Image
-                  src="/images/ic-termometro.svg"
+                  src="/images/icon-temp-corporal.svg"
                   alt="Ícone termometro"
-                  width={80}
-                  height={80}
+                  width={38}
+                  height={38}
                   className="rounded-lg object-contain"
                 />
-                <p className="text-lg font-bold text-white">
+                <p className="text-brand-dark-green text-lg font-bold">
                   Temperatura corporal
                 </p>
               </div>
             </SwiperSlide>
           </Swiper>
 
-          <div className="swiper-pagination-grid-cards swiper-pagination mt-8 flex items-center justify-center gap-3"></div>
+          {/* <div className="swiper-pagination-grid-cards swiper-pagination mt-8 flex items-center justify-center gap-3"></div> */}
         </div>
       </div>
     </section>

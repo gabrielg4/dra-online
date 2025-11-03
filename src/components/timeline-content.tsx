@@ -99,7 +99,11 @@ export const TimelineContent = ({
               key={index}
               className={cn("flex justify-center md:items-center")}
             >
-              <div className={"flex flex-col gap-5 lg:flex-row lg:gap-10"}>
+              <div
+                className={
+                  "flex flex-col gap-5 rounded-[24px] max-sm:w-full max-sm:bg-[rgba(255,_255,_255,_0.10)] max-sm:p-5 lg:flex-row lg:gap-10"
+                }
+              >
                 <div className="flex w-full items-center lg:w-1/2">
                   <video
                     src={videoUrl}
@@ -123,7 +127,27 @@ export const TimelineContent = ({
                     {content}
                   </div>
 
-                  <div className="relative mt-6 flex items-center gap-3">
+                  {/* Paginação - APENAS MOBILE quando há múltiplos slides */}
+                  {historyData.length > 1 && (
+                    <div className="mt-6 flex justify-center gap-2 md:hidden">
+                      {historyData.map((_, dotIndex) => (
+                        <button
+                          key={dotIndex}
+                          onClick={() => api?.scrollTo(dotIndex)}
+                          className={cn(
+                            "h-[4px] w-14 rounded-full transition-all duration-300",
+                            dotIndex === currentSlide
+                              ? "bg-brand-light-green w-14"
+                              : "bg-[#E1E2E1] hover:bg-white/60",
+                          )}
+                          aria-label={`Ir para slide ${dotIndex + 1}`}
+                        />
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Botões de navegação - APENAS DESKTOP */}
+                  <div className="relative mt-6 hidden items-center gap-3 md:flex">
                     {/* Botão anterior */}
                     <button
                       onClick={handlePrevious}
@@ -134,6 +158,7 @@ export const TimelineContent = ({
                           currentSlide === 0 &&
                           "cursor-not-allowed opacity-50",
                       )}
+                      aria-label="Anterior"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -162,6 +187,7 @@ export const TimelineContent = ({
                           currentSlide === historyData.length - 1 &&
                           "cursor-not-allowed opacity-50",
                       )}
+                      aria-label="Próximo"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"

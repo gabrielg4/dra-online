@@ -94,7 +94,7 @@ export default function EntrevistaQualificadaPage() {
   return (
     <>
       <Hero
-        classHeroVideo="/videos/video-solucao-1.mp4"
+        classHeroVideo="https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Entrevista%20Qualificada/grok-video-86fa0f46-4e1d-4b15-9fe6-428614fbeb20.mp4"
         title={
           <>
             Entrevista <br /> Qualificada{" "}
@@ -122,7 +122,7 @@ export default function EntrevistaQualificadaPage() {
             forma rápida, segura e personalizada.
           </>
         }
-        videoUrl="/videos/video-secao-solucao-1.mp4"
+        videoUrl="https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Entrevista%20Qualificada/Mi%CC%81dia2.mp4"
       />
       <Impacts
         impacts={impactsData}
@@ -139,7 +139,7 @@ export default function EntrevistaQualificadaPage() {
       />
       <SmartphoneSectionCards
         leftPhoneImg="/images/img-phone-left-sol-1.webp"
-        middlePhoneVideo="/videos/video-middle-phone-solucao-1.mp4"
+        middlePhoneVideo="https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Entrevista%20Qualificada/Mi%CC%81dia3.mp4"
         rightPhoneImg="/images/img-phone-right-sol-1.webp"
         subtitle="Veja como funciona nossa solução de entrevista qualificada."
       />

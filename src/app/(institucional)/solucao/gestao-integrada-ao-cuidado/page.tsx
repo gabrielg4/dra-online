@@ -92,7 +92,7 @@ export default function GestaoIntegradaPage() {
   return (
     <>
       <Hero
-        classHeroVideo="/videos/video-solucao-7.mp4"
+        classHeroVideo="https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Gesta%CC%83o%20Integrada/envato_video_gen_Oct_08_2025_17_12_32.mp4"
         title={
           <>
             Gestão Integrada <br />

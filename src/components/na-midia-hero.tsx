@@ -46,7 +46,10 @@ export const NaMidiaHero = () => {
       <VerticalCarouselAboutUs
         videosColumn1={["/videos/video18.mp4", "/videos/video19.mp4"]}
         videosColumn2={["/videos/video20.mp4", "/videos/video21.mp4"]}
-        videosColumn3={["/videos/video5.mp4", "/videos/video6.mp4"]}
+        videosColumn3={[
+          "https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Home/envato_video_gen_Oct_08_2025_17_12_32.mp4",
+          "/videos/video6.mp4",
+        ]}
       />
     </section>
   );

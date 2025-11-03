@@ -1,8 +1,8 @@
-// history-timeline.tsx
 "use client";
 
+import React from "react";
 import { cn } from "@/lib/utils";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { TimelineContent } from "./timeline-content";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -11,7 +11,8 @@ import type { CarouselApi } from "./ui/carousel";
 const historyData = {
   "2022": [
     {
-      videoUrl: "/videos/video-tl-4.mp4",
+      videoUrl:
+        "https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Sobre%20No%CC%81s%20/LINHA%20DO%20TEMPO/grok-video-7bd34633-1dfa-46cb-8584-392f5b153736.mp4",
       title: "Um desafio sem precedentes",
       content: (
         <>
@@ -42,7 +43,8 @@ const historyData = {
   ],
   "2023": [
     {
-      videoUrl: "/videos/video-tl-6.mp4",
+      videoUrl:
+        "https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Sobre%20No%CC%81s%20/LINHA%20DO%20TEMPO/grok-video-a652e640-3696-4d53-945b-91fb5f4e6592.mp4",
       title: "De telemedicina a ecossistema de saúde digital",
       content: (
         <>
@@ -74,7 +76,8 @@ const historyData = {
   ],
   "2024": [
     {
-      videoUrl: "/videos/video-tl-2.mp4",
+      videoUrl:
+        "https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Sobre%20No%CC%81s%20/LINHA%20DO%20TEMPO/envato_video_gen_Oct_22_2025_17_33_19.mp4",
       title: "Inovação em escala",
       content: (
         <>
@@ -89,7 +92,8 @@ const historyData = {
   ],
   "2025": [
     {
-      videoUrl: "/videos/video-tl-7.mp4",
+      videoUrl:
+        "https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Sobre%20No%CC%81s%20/LINHA%20DO%20TEMPO/grok-video-e701f89d-4a25-410c-a9fd-13ce8fa76688.mp4",
       title: "Um marco histórico",
       content: (
         <>
@@ -126,27 +130,89 @@ const historyData = {
 };
 
 export const HistoryTimeline = () => {
-  const [activeTime, setActiveTime] = useState(0);
+  // Extrai os anos dinamicamente do historyData
+  const years = Object.keys(historyData);
+  const totalYears = years.length;
+  const maxYearIndex = totalYears - 1;
 
-  // Refs para armazenar as APIs dos carrosséis
-  const carouselApis = useRef<(CarouselApi | undefined)[]>([
-    undefined,
-    undefined,
-    undefined,
-    undefined,
-  ]);
+  const [activeTime, setActiveTime] = useState(0);
+  const progressFillRef = useRef<HTMLDivElement>(null);
+  const progressIndicatorRef = useRef<HTMLDivElement>(null);
+  const progressBarRef = useRef<HTMLDivElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
+
+  // Refs para armazenar as APIs dos carrosséis (dinâmico)
+  const carouselApis = useRef<(CarouselApi | undefined)[]>(
+    new Array(totalYears).fill(undefined),
+  );
+
+  // Detecta se é mobile
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   const handleSelectTimelineItem = (value: number) => {
     setActiveTime(value);
   };
 
+  // Função para calcular o ano baseado na posição do clique/drag
+  const updateYearFromPosition = (clientX: number) => {
+    if (!progressBarRef.current) return;
+
+    const rect = progressBarRef.current.getBoundingClientRect();
+    const x = clientX - rect.left;
+    const percentage = Math.max(0, Math.min(1, x / rect.width));
+    const year = Math.round(percentage * maxYearIndex); // Dinâmico
+
+    setActiveTime(year);
+  };
+
+  // Handlers para mouse
+  const handleMouseDown = (e: React.MouseEvent) => {
+    setIsDragging(true);
+    updateYearFromPosition(e.clientX);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (isDragging) {
+      updateYearFromPosition(e.clientX);
+    }
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  // Handlers para touch
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setIsDragging(true);
+    updateYearFromPosition(e.touches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (isDragging) {
+      updateYearFromPosition(e.touches[0].clientX);
+    }
+  };
+
+  const handleTouchEnd = () => {
+    setIsDragging(false);
+  };
+
   // Função para navegar para o próximo ano
   const handleNextYear = () => {
-    if (activeTime < 3) {
+    if (activeTime < maxYearIndex) {
       const nextYear = activeTime + 1;
       setActiveTime(nextYear);
 
-      // Reseta o carrossel do próximo ano para o primeiro slide
       setTimeout(() => {
         carouselApis.current[nextYear]?.scrollTo(0);
       }, 100);
@@ -159,7 +225,6 @@ export const HistoryTimeline = () => {
       const previousYear = activeTime - 1;
       setActiveTime(previousYear);
 
-      // Move o carrossel do ano anterior para o último slide
       setTimeout(() => {
         const api = carouselApis.current[previousYear];
         if (api) {
@@ -181,7 +246,6 @@ export const HistoryTimeline = () => {
 
     // Anima os botões
     buttons.forEach((button, index) => {
-      // Cria ou pega o elemento de preenchimento
       let fill = button.querySelector(".button-fill") as HTMLElement;
       if (!fill) {
         fill = document.createElement("div");
@@ -200,7 +264,6 @@ export const HistoryTimeline = () => {
         button.style.overflow = "hidden";
         button.insertBefore(fill, button.firstChild);
 
-        // Garante que o texto fique acima do preenchimento
         const textContent = button.childNodes;
         textContent.forEach((node) => {
           if (node.nodeType === Node.TEXT_NODE) {
@@ -214,7 +277,6 @@ export const HistoryTimeline = () => {
       }
 
       if (index < activeTime) {
-        // Botões anteriores: 100% preenchido
         gsap.to(fill, {
           width: "100%",
           duration: 0.4,
@@ -222,11 +284,10 @@ export const HistoryTimeline = () => {
         });
         gsap.to(button, {
           borderColor: "#A6D05D",
-          color: "#1A3A1A",
+          color: "#fff",
           duration: 0.4,
         });
       } else if (index === activeTime) {
-        // Botão atual: preenche progressivamente de 0 a 100%
         gsap.fromTo(
           fill,
           { width: "0%" },
@@ -242,7 +303,6 @@ export const HistoryTimeline = () => {
           duration: 0.4,
         });
       } else {
-        // Botões futuros: volta ao estado inicial
         gsap.to(fill, {
           width: "0%",
           duration: 0.3,
@@ -258,7 +318,6 @@ export const HistoryTimeline = () => {
 
     // Anima as linhas
     lines.forEach((line, index) => {
-      // Cria ou pega o elemento de preenchimento da linha
       let lineFill = line.querySelector(".line-fill") as HTMLElement;
       if (!lineFill) {
         lineFill = document.createElement("div");
@@ -277,14 +336,12 @@ export const HistoryTimeline = () => {
       }
 
       if (index < activeTime) {
-        // Linhas anteriores: preenchidas
         gsap.to(lineFill, {
           width: "100%",
           duration: 0.4,
           ease: "power2.inOut",
         });
       } else {
-        // Linhas futuras: vazias
         gsap.to(lineFill, {
           width: "0%",
           duration: 0.3,
@@ -292,92 +349,101 @@ export const HistoryTimeline = () => {
         });
       }
     });
-  }, [activeTime]);
+
+    // Anima a barra de progresso (APENAS MOBILE) - Dinâmico
+    if (isMobile && progressFillRef.current && progressIndicatorRef.current) {
+      const percentage = (activeTime / maxYearIndex) * 100;
+
+      gsap.to(progressFillRef.current, {
+        width: `${percentage}%`,
+        duration: 0.3,
+        ease: "power2.out",
+      });
+
+      gsap.to(progressIndicatorRef.current, {
+        left: `${percentage}%`,
+        duration: 0.3,
+        ease: "power2.out",
+      });
+    }
+  }, [activeTime, isMobile, maxYearIndex]);
 
   return (
-    <div className="rounded-xl bg-white/10 p-5 md:p-10">
-      <div className="mb-8 flex items-center justify-between max-[640px]:grid max-[640px]:grid-cols-2 max-[640px]:gap-5 md:mb-14 md:justify-center">
-        <button
-          onClick={() => handleSelectTimelineItem(0)}
-          className="button-tl hover:border-brand-light-green hover:bg-brand-light-green hover:text-brand-dark-green cursor-pointer rounded-full border border-white px-4 py-2 text-[20px] leading-[130%] font-bold text-white duration-300"
-        >
-          2022
-        </button>
-        <div className="line-tl hidden h-[0.5px] w-14 bg-white md:block" />
-        <button
-          onClick={() => handleSelectTimelineItem(1)}
-          className="button-tl hover:border-brand-light-green hover:bg-brand-light-green hover:text-brand-dark-green cursor-pointer rounded-full border border-white px-4 py-2 text-[20px] leading-[130%] font-bold text-white duration-300"
-        >
-          2023
-        </button>
-        <div className="line-tl hidden h-[0.5px] w-14 bg-white md:block" />
-        <button
-          onClick={() => handleSelectTimelineItem(2)}
-          className="button-tl hover:border-brand-light-green hover:bg-brand-light-green hover:text-brand-dark-green cursor-pointer rounded-full border border-white px-4 py-2 text-[20px] leading-[130%] font-bold text-white duration-300"
-        >
-          2024
-        </button>
-        <div className="line-tl hidden h-[0.5px] w-14 bg-white md:block" />
-        <button
-          onClick={() => handleSelectTimelineItem(3)}
-          className="button-tl hover:border-brand-light-green hover:bg-brand-light-green hover:text-brand-dark-green cursor-pointer rounded-full border border-white px-4 py-2 text-[20px] leading-[130%] font-bold text-white duration-300"
-        >
-          2025
-        </button>
+    <div className="rounded-xl bg-white/10 p-0 max-sm:bg-transparent md:p-10">
+      <div className="relative mb-8 flex items-center justify-between max-sm:flex md:mb-14 md:justify-center">
+        {/* Linha contínua de fundo - APENAS MOBILE */}
+        <div className="absolute top-1/2 left-0 z-0 hidden h-[0.5px] w-full -translate-y-1/2 bg-white max-sm:block" />
+
+        {years.map((year, index) => (
+          <React.Fragment key={year}>
+            <button
+              onClick={() => handleSelectTimelineItem(index)}
+              className="button-tl hover:border-brand-light-green hover:bg-brand-light-green hover:text-brand-dark-green max-sm:bg-brand-dark-green relative z-10 cursor-pointer rounded-full border border-white px-4 py-2 text-[20px] leading-[130%] font-bold text-white duration-300 max-sm:p-3 max-sm:text-sm max-sm:!text-white"
+            >
+              {year}
+            </button>
+            {index < maxYearIndex && (
+              <div className="line-tl h-[0.5px] w-14 bg-white max-sm:hidden md:block" />
+            )}
+          </React.Fragment>
+        ))}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width={57}
           height={9}
           viewBox="0 0 57 9"
           className={cn(
-            "line-tl hidden fill-white transition-all duration-200 md:block",
-            activeTime >= 3 && "fill-[#A6D05D]",
+            "line-tl relative z-10 fill-white transition-all duration-200 max-sm:w-4 md:block",
+            activeTime >= maxYearIndex && "fill-[#A6D05D]",
           )}
         >
           <path d="M56.853 4.955a.5.5 0 0 0 0-.708l-3.181-3.182a.5.5 0 1 0-.707.708L55.793 4.6l-2.828 2.828a.5.5 0 1 0 .707.707l3.181-3.181ZM.5 4.6v.5h56v-1H.5v.5Z" />
         </svg>
       </div>
+
+      {/* Barra de progresso interativa - APENAS MOBILE */}
+      {isMobile && (
+        <div
+          ref={progressBarRef}
+          className="relative mb-8 h-8 w-full cursor-pointer md:hidden"
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseUp}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
+          <div className="absolute top-1/2 left-0 h-1 w-full -translate-y-1/2 overflow-hidden rounded-full bg-white/20">
+            <div
+              ref={progressFillRef}
+              className="absolute top-0 left-0 h-full w-0 rounded-full bg-[#A6D05D]"
+            />
+          </div>
+
+          <div
+            ref={progressIndicatorRef}
+            className="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 cursor-grab active:cursor-grabbing"
+          >
+            <div className="h-4 w-8 rounded-full bg-[#A6D05D] shadow-lg transition-transform hover:scale-110" />
+          </div>
+        </div>
+      )}
+
       <div>
-        <TimelineContent
-          yearIndex={0}
-          historyData={historyData["2022"]}
-          isActive={activeTime !== 0}
-          onNextYear={handleNextYear}
-          onPreviousYear={handlePreviousYear}
-          isFirstYear={activeTime === 0}
-          isLastYear={activeTime === 3}
-          onApiReady={registerCarouselApi}
-        />
-        <TimelineContent
-          yearIndex={1}
-          historyData={historyData["2023"]}
-          isActive={activeTime !== 1}
-          onNextYear={handleNextYear}
-          onPreviousYear={handlePreviousYear}
-          isFirstYear={activeTime === 0}
-          isLastYear={activeTime === 3}
-          onApiReady={registerCarouselApi}
-        />
-        <TimelineContent
-          yearIndex={2}
-          historyData={historyData["2024"]}
-          isActive={activeTime !== 2}
-          onNextYear={handleNextYear}
-          onPreviousYear={handlePreviousYear}
-          isFirstYear={activeTime === 0}
-          isLastYear={activeTime === 3}
-          onApiReady={registerCarouselApi}
-        />
-        <TimelineContent
-          yearIndex={3}
-          historyData={historyData["2025"]}
-          isActive={activeTime !== 3}
-          onNextYear={handleNextYear}
-          onPreviousYear={handlePreviousYear}
-          isFirstYear={activeTime === 0}
-          isLastYear={activeTime === 3}
-          onApiReady={registerCarouselApi}
-        />
+        {years.map((year, index) => (
+          <TimelineContent
+            key={year}
+            yearIndex={index}
+            historyData={historyData[year as keyof typeof historyData]}
+            isActive={activeTime !== index}
+            onNextYear={handleNextYear}
+            onPreviousYear={handlePreviousYear}
+            isFirstYear={activeTime === 0}
+            isLastYear={activeTime === maxYearIndex}
+            onApiReady={registerCarouselApi}
+          />
+        ))}
       </div>
     </div>
   );
