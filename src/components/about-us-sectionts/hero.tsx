@@ -50,10 +50,7 @@ export const Hero = () => {
       </div>
       <div className="to-brand-dark-green absolute -bottom-2 left-0 z-20 h-full w-full bg-gradient-to-b from-transparent to-90% sm:h-[500px] md:-bottom-1" />
       <VerticalCarouselAboutUs
-        videosColumn1={[
-          "https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Sobre%20No%CC%81s%20/grok-video-01fdbe80-86df-46c0-b6d2-f6e718dc15c9.mp4",
-          "/videos/video9.mp4",
-        ]}
+        videosColumn1={["/videos/video7.mp4", "/videos/video9.mp4"]}
         videosColumn2={["/videos/video10.mp4", "/videos/video8.mp4"]}
         videosColumn3={[
           "https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Home/envato_video_gen_Oct_08_2025_17_12_32.mp4",
