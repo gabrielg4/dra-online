@@ -62,11 +62,17 @@ export const HeroWorkWithUs = () => {
       <div className="to-brand-dark-green absolute -bottom-2 left-0 z-20 h-full w-full bg-gradient-to-b from-transparent max-[640px]:to-50% md:-bottom-1 lg:h-[500px]" />
       {/* <VideosTrabalheConosco /> */}
       <VerticalCarouselAboutUs
-        videosColumn1={["/videos/video7.mp4", "/videos/video9.mp4"]}
-        videosColumn2={["/videos/video10.mp4", "/videos/video8.mp4"]}
+        videosColumn1={[
+          "https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Trabalhe com a gente/Mídia2.mp4",
+          "https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Trabalhe com a gente/Mídia3.mp4",
+        ]}
+        videosColumn2={[
+          "https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Trabalhe com a gente/Mídia6.mp4",
+          "https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Trabalhe com a gente/Mídia7.mp4",
+        ]}
         videosColumn3={[
-          "https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Home/envato_video_gen_Oct_08_2025_17_12_32.mp4",
-          "/videos/video6.mp4",
+          "https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Trabalhe com a gente/grok-video-564b6191-b0f1-4247-b41b-7f401661d285 (1).mp4",
+          "https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Trabalhe com a gente/grok-video-e01e9164-c8a8-4962-a8c6-ebd80c6629c5.mp4",
         ]}
       />
 

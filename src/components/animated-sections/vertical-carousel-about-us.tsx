@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 
@@ -17,6 +17,19 @@ export const VerticalCarouselAboutUs = ({
 }: VerticalCarouselAboutUsProps) => {
   const scope = useRef<HTMLDivElement | null>(null);
 
+  // Garantir que todos os vídeos estejam mutados
+  useEffect(() => {
+    if (scope.current) {
+      const videos = scope.current.querySelectorAll("video");
+      videos.forEach((video) => {
+        video.muted = true;
+        video.volume = 0;
+        // Força o atributo muted no DOM
+        video.setAttribute("muted", "");
+      });
+    }
+  }, [videosColumn1, videosColumn2, videosColumn3]);
+
   useGSAP(
     () => {
       const columns = gsap.utils.toArray<HTMLElement>(
@@ -28,23 +41,28 @@ export const VerticalCarouselAboutUs = ({
         const clone = original.map((el) => el.cloneNode(true) as HTMLElement);
         clone.forEach((c) => col.appendChild(c));
 
+        // Garantir que vídeos clonados também estejam mutados
+        const clonedVideos = clone.flatMap((el) =>
+          Array.from(el.querySelectorAll("video")),
+        );
+        clonedVideos.forEach((video) => {
+          video.muted = true;
+          video.volume = 0;
+          video.setAttribute("muted", "");
+        });
+
         const singleHeight = original.reduce(
           (acc, el) => acc + el.offsetHeight + getGap(el),
           0,
         );
 
-        // velocidades por coluna; torne a segunda negativa para inverter
-        const speeds = [20, -35, 26]; // coluna 2 invertida
+        const speeds = [20, -35, 26];
         const speed = speeds[i % speeds.length];
-
-        // duração baseada em módulo da velocidade
         const duration = singleHeight / Math.abs(speed);
 
-        // ponto inicial: para sentido negativo (subindo), comece em -singleHeight para sincronizar
         gsap.set(col, { y: speed < 0 ? -singleHeight : 0 });
 
         gsap.to(col, {
-          // destino depende do sentido: descendo vai a -singleHeight, subindo vai a 0
           y: speed < 0 ? 0 : -singleHeight,
           duration,
           ease: "none",
