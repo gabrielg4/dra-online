@@ -131,10 +131,10 @@ export default function ConsultaEletivaComEspecialistaPage() {
         title={
           <>
             <span className="text-brand-light-green">
-              Saúde completa precisa{" "}
+              Mais que um agendamento.{" "}
             </span>
-            <br className="hidden lg:inline-block" />
-            de acesso especializado
+            <br className="block" />
+            Uma estratégia assistencial
           </>
         }
         description={

@@ -9,7 +9,9 @@ const differentialsData = [
   {
     title: (
       <>
-        <strong>Conformidade garantida</strong> com a ANS e órgãos reguladores.
+        <strong>Porta de entrada estruturada:</strong> até 90% das demandas
+        clínicas resolvidas na APS, evitando sobrecarga de pronto-socorros e
+        especialistas.
       </>
     ),
     icon: {
@@ -20,8 +22,9 @@ const differentialsData = [
   {
     title: (
       <>
-        <strong>Decisões baseadas em dados confiáveis,</strong> reduzindo
-        contestações jurídicas.
+        <strong>Fluxo integrado: </strong> encaminhamento digital com critérios
+        clínicos definidos, contrarreferência estruturada e visão 360° do
+        paciente.
       </>
     ),
     icon: {
@@ -32,8 +35,8 @@ const differentialsData = [
   {
     title: (
       <>
-        <strong>Prevenção de riscos assistenciais,</strong> antecipando
-        condições clínicas.
+        <strong>Dashboard inteligente:</strong> indicadores assistenciais e
+        operacionais em tempo real, orientando decisões estratégicas.
       </>
     ),
     icon: {
@@ -58,6 +61,20 @@ const differentialsData = [
       <>
         <strong>Melhor experiência para o beneficiário,</strong> que recebe
         acolhimento desde o primeiro contato.
+      </>
+    ),
+    icon: {
+      alt: "ícone escudo com um check no meio",
+      src: "/images/ic-handshake.svg",
+    },
+  },
+
+  {
+    title: (
+      <>
+        <strong>Quadruple Aim da saúde: </strong> melhores desfechos,
+        experiência do paciente, redução de custos e satisfação do profissional
+        de saúde.
       </>
     ),
     icon: {
@@ -111,7 +128,7 @@ export default function GestaoIntegradaPage() {
         title={
           <>
             Na saúde suplementar,
-            <br className="hidden lg:inline-block" />
+            <br className="inline-block" />
             <span className="text-brand-light-green">
               {" "}
               cada detalhe faz diferença

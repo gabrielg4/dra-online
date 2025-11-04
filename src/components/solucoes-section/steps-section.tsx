@@ -63,12 +63,13 @@ export const StepsSection = () => {
         alt="Imagem de fundo"
         className="absolute top-0 right-0 z-[1] hidden h-full w-full max-w-[68px] object-contain max-sm:block"
       />
-      <div className="container max-sm:pr-0">
-        <h2 className="mb-4 text-center text-[28px] leading-[110%] text-white max-sm:pr-4 md:text-[32px] lg:text-[40px]">
+      <div className="container max-sm:px-0">
+        <h2 className="mb-4 text-center text-[28px] leading-[110%] text-white md:text-[32px] lg:text-[40px]">
           Melhor que ler,
+          <br className="hidden max-sm:block" />
           <span className="text-brand-light-green font-bold"> é conhecer!</span>
         </h2>
-        <p className="mb-8 text-center text-lg text-white max-sm:pr-4 md:mb-10 lg:mb-14">
+        <p className="mb-8 text-center text-lg text-white max-sm:px-4 md:mb-10 lg:mb-14">
           Veja como funciona nossa solução de gestão integrada do cuidado na
           prática.
         </p>

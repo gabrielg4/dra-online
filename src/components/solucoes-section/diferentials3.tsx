@@ -98,7 +98,7 @@ export const Diferentials3 = ({
               alt=""
               width={839}
               height={695}
-              className="absolute -bottom-5 -left-[108px] h-[450px] w-full object-contain max-sm:-left-20 max-sm:h-[480px] max-sm:object-cover md:-left-20 lg:-bottom-28 lg:!-left-40 lg:h-[630px] lg:w-auto"
+              className="absolute -bottom-5 -left-[108px] h-[450px] w-full object-contain max-sm:-left-20 max-sm:object-cover md:-left-20 lg:-bottom-28 lg:!-left-40 lg:h-[630px] lg:w-auto"
             />
           </div>
         </div>

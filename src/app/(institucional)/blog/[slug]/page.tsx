@@ -111,7 +111,7 @@ export default async function Blogpage({
           </div>
         </div>
       </section>
-      <section className="bg-white py-14">
+      <section className="content-blogpost bg-white py-14">
         <div className="container">
           <RichText
             className="text-brand-dark-gray text-lg leading-[150%]"

@@ -32,17 +32,17 @@ export const NaMidiaGrid = ({
   return (
     <>
       <div className="grid grid-cols-1 items-start gap-8 md:grid-cols-3">
-        <div className="grid items-start gap-8 md:pt-20">
+        <div className="grid items-start gap-8 max-sm:gap-4 md:pt-20">
           {column1.map((article) => (
             <NaMidiaCard2 key={article.id} data={article} />
           ))}
         </div>
-        <div className="grid items-start gap-8 md:pb-20">
+        <div className="grid items-start gap-8 max-sm:gap-4 md:pb-20">
           {column2.map((article) => (
             <NaMidiaCard2 key={article.id} data={article} />
           ))}
         </div>
-        <div className="grid items-start gap-8 md:pt-20">
+        <div className="grid items-start gap-8 max-sm:gap-4 md:pt-20">
           {column3.map((article) => (
             <NaMidiaCard2 key={article.id} data={article} />
           ))}

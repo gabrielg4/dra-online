@@ -68,7 +68,7 @@ export const Beneficios = () => {
             </span>
             proximidade e autonomia
           </h2>
-          <div className="relative hidden h-[400px] w-full rounded-lg md:block">
+          <div className="relative hidden h-[480px] w-full rounded-lg md:block">
             <div className="video-blur absolute top-0 left-0 h-full w-full" />
             <video
               src="/videos/video16.mp4"

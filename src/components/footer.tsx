@@ -265,7 +265,8 @@ export const Footer = () => {
             </p>
 
             <Link
-              href="/politicas-de-privacidade"
+              href="/dr-online-politica-privacidade.pdf"
+              target="_blank"
               className="text-brand-light-green hover:text-brand-light-green2 font-semibold duration-300"
             >
               Política de privacidade

@@ -1,5 +1,5 @@
 "use client";
-import React, { type ReactElement } from "react";
+import React, { useState, type ReactElement } from "react";
 import { CardSolucaoDiferencial } from "../cards/card-solucao-diferencial";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/all";
@@ -9,10 +9,13 @@ import Image from "next/image";
 import { SpecialtiesCarousel } from "../specialties-carousel";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Grid, Pagination } from "swiper/modules";
+import { EffectCards, Navigation } from "swiper/modules";
+import type { Swiper as SwiperType } from "swiper";
 import "swiper/css/grid";
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
+import "swiper/css/effect-cards";
 
 interface DiferentialsSolutionProps {
   noImage?: boolean;
@@ -35,6 +38,15 @@ export const Diferentials = ({
   differentials,
   noImage,
 }: DiferentialsSolutionProps) => {
+  const [isBeginning, setIsBeginning] = useState(true);
+  const [isEnd, setIsEnd] = useState(false);
+  const [showAll, setShowAll] = useState(false);
+
+  const handleSlideChange = (swiper: SwiperType) => {
+    setIsBeginning(swiper.isBeginning);
+    setIsEnd(swiper.isEnd);
+  };
+
   const isTablet = useMediaQuery({
     minWidth: 768,
     maxWidth: 1023,
@@ -44,7 +56,21 @@ export const Diferentials = ({
     maxWidth: 767,
   });
 
+  const isMobile = useMediaQuery({ maxWidth: 767 });
+
   const start = `top ${isTablet ? "40%" : isSmartphone ? "30%" : "50%"}`;
+
+  // Número de cards a mostrar inicialmente no mobile
+  const INITIAL_MOBILE_ITEMS = 3;
+
+  // Determina quantos cards mostrar
+  const cardsToShow =
+    isMobile && !showAll
+      ? differentials.slice(0, INITIAL_MOBILE_ITEMS)
+      : differentials;
+
+  // Verifica se há mais cards para mostrar (apenas relevante no mobile)
+  const hasMoreCards = isMobile && differentials.length > INITIAL_MOBILE_ITEMS;
 
   useGSAP(() => {
     const titleSplit = new SplitText(".diferential-section h2", {
@@ -86,6 +112,7 @@ export const Diferentials = ({
       },
     });
   }, []);
+
   return (
     <section className="diferential-section bg-[url(/images/img-bg-secao-pattern.webp)] bg-contain bg-center bg-no-repeat py-10 max-sm:pb-4 md:bg-cover lg:py-20">
       <div className="container flex flex-col items-stretch gap-8 md:flex-row md:gap-14">
@@ -161,69 +188,63 @@ export const Diferentials = ({
             </div>
           )}
         </div>
-        <div className="cards-diferentials flex w-full flex-col gap-8 max-sm:hidden md:w-1/2">
-          {differentials.map(({ icon: { alt, src }, title }, index) => (
-            <CardSolucaoDiferencial
-              cardClass="p-6 card-diferential"
-              key={index}
-              image={{
-                alt,
-                src,
-              }}
-            >
-              {title}
-            </CardSolucaoDiferencial>
-          ))}
-          {noImage && (
-            <div className="relative block h-[337px] w-full rounded-lg max-sm:max-w-[356px] md:hidden">
-              <div className="video-blur absolute top-0 left-0 z-20 h-full w-full" />
-              <video
-                src={videoUrl}
-                className="h-full w-full rounded-2xl object-cover"
-                autoPlay
-                muted
-                loop
-                playsInline
-              ></video>
-              <Image
-                src="/images/img-pattern-video-solucao.svg"
-                alt=""
-                width={580}
-                height={337}
-                className="absolute top-0 left-0 z-10 object-contain"
-              />
-            </div>
-          )}
-        </div>
 
-        <div className="hidden max-sm:block">
-          <Swiper
-            modules={[Grid, Pagination]}
-            spaceBetween={16}
-            centeredSlides={true}
-            slidesPerView={1}
-            autoHeight={true}
-            pagination={{
-              clickable: true,
-              el: ".swiper-pagination-cards-solucoes",
-            }}
-          >
-            {differentials.map(({ icon: { alt, src }, title }, index) => (
-              <SwiperSlide key={index} className="">
-                <CardSolucaoDiferencial
-                  cardClass="p-6 card-diferential"
-                  image={{
-                    alt,
-                    src,
-                  }}
-                >
-                  {title}
-                </CardSolucaoDiferencial>
-              </SwiperSlide>
+        <div className="relative flex w-full flex-col md:w-1/2">
+          <div className="cards-diferentials flex w-full flex-col gap-8">
+            {cardsToShow.map(({ icon: { alt, src }, title }, index) => (
+              <CardSolucaoDiferencial
+                cardClass="p-6 card-diferential"
+                key={index}
+                image={{
+                  alt,
+                  src,
+                }}
+              >
+                {title}
+              </CardSolucaoDiferencial>
             ))}
-          </Swiper>
+            {noImage && (
+              <div className="relative block h-[337px] w-full rounded-lg max-sm:hidden max-sm:max-w-[356px]">
+                <div className="video-blur absolute top-0 left-0 z-20 h-full w-full" />
+                <video
+                  src={videoUrl}
+                  className="h-full w-full rounded-2xl object-cover"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                ></video>
+                <Image
+                  src="/images/img-pattern-video-solucao.svg"
+                  alt=""
+                  width={580}
+                  height={337}
+                  className="absolute top-0 left-0 z-10 object-contain"
+                />
+              </div>
+            )}
+          </div>
 
-          <div className="swiper-pagination-cards-solucoes swiper-pagination mt-8 flex items-center justify-center gap-3 lg:hidden"></div>
+          {/* Degradê com blur - apenas visível no mobile quando há mais cards */}
+          {hasMoreCards && !showAll && (
+            <div
+              className="pointer-events-none absolute bottom-0 left-0 h-[200px] w-full backdrop-blur-[3px] transition-opacity duration-[0.5s] ease-[ease] max-sm:block md:hidden"
+              style={{
+                background:
+                  "linear-gradient(180deg, rgba(7, 95, 85, 0) 0%, #075f55 100%)",
+              }}
+            />
+          )}
+
+          {/* Botão "Ver mais" - apenas visível no mobile e quando há mais cards */}
+          {hasMoreCards && (
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="bg-brand-light-green text-brand-dark-green hover:bg-brand-main-green relative z-10 mx-auto mt-4 rounded-full px-6 py-3 text-base font-semibold transition-all duration-300 hover:text-white max-sm:block md:hidden"
+            >
+              {showAll ? "Ver menos diferenciais" : "Ver mais diferenciais"}
+            </button>
+          )}
         </div>
       </div>
     </section>

@@ -46,9 +46,8 @@ export const HeroWorkWithUs = () => {
             </span>
           </h1>
           <p className="description mt-4 mb-5 text-center text-xl font-normal text-white max-sm:mb-8 md:mt-6 md:mb-10 md:text-start lg:mb-14">
-            Subtítulo sessão: Aqui você pode fazer a diferença na vida de
-            milhares de pessoas. Seja como médico credenciado ou fazendo parte
-            da equipe.
+            Aqui você pode fazer a diferença na vida de milhares de pessoas.
+            Seja como médico credenciado ou fazendo parte da equipe.
           </p>
 
           <div className="buttons-work-with-us flex flex-col items-center gap-6 md:flex-row">

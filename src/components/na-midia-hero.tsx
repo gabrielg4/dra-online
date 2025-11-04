@@ -21,7 +21,7 @@ export const NaMidiaHero = () => {
     });
   }, []);
   return (
-    <section className="relative overflow-hidden bg-[url(/images/img-bg-midia.webp)] bg-cover bg-center bg-no-repeat pt-48 pb-16 sm:pt-40 sm:pb-32">
+    <section className="hero-about-us relative overflow-hidden bg-[url(/images/img-bg-midia.webp)] bg-cover bg-center bg-no-repeat pt-48 pb-16 sm:pt-40 sm:pb-32">
       <div className="relative z-30 container">
         <div className="flex w-full max-w-[450px] flex-col items-center lg:max-w-[510px]">
           <h1 className="na-midia-hero-title text-center leading-tight text-white max-sm:text-5xl max-sm:leading-[110%]">

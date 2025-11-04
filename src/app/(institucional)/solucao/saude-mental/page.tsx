@@ -262,8 +262,12 @@ export default function SaudeMentalPage() {
         impacts={impactsData2}
         title={
           <>
-            Como grandes empresas têm usado o{" "}
-            <span className="text-brand-light-green">Integralmente</span>
+            <span className="">O impacto da</span>{" "}
+            <span className="font-bold text-white">
+              dr
+              <span className="text-brand-light-green">.</span>
+            </span>{" "}
+            online
           </>
         }
       />
