@@ -29,7 +29,7 @@ export const Hero = () => {
   }, []);
   return (
     <section className="hero-about-us relative overflow-hidden bg-[url(/images/img-bg-sobre-nos.svg)] bg-cover bg-center bg-no-repeat pt-48 pb-16 sm:pt-32 sm:pb-32 lg:pt-40">
-      <div className="relative z-30 container">
+      <div className="relative z-30 container max-sm:z-[60]">
         <div className="flex w-full max-w-[450px] flex-col items-center md:items-start lg:max-w-[510px]">
           <h1 className="about-title text-center text-[32px] leading-[110%] font-bold text-white md:text-start md:text-[40px] lg:text-[48px]">
             <span className="text-brand-light-green">
@@ -39,16 +39,16 @@ export const Hero = () => {
             em valor real
           </h1>
           <p className="about-description mt-6 mb-10 text-center text-lg leading-normal font-normal text-white md:text-start md:text-xl">
-            A <strong>dr.</strong>online é um ecossistema que combina tecnologia
-            de ponta, cuidado humanizado e padrões rigorosos de segurança para
-            oferecer às operadoras, empresas e pessoas uma experiência completa
-            em saúde, acessível, confiável e resolutiva.
+            A <strong>dr.</strong> online é um ecossistema que combina
+            tecnologia de ponta, cuidado humanizado e padrões rigorosos de
+            segurança para oferecer às operadoras, empresas e pessoas uma
+            experiência completa em saúde, acessível, confiável e resolutiva.
           </p>
 
           <CtaButton url="#nossa-historia" title="Conheça" />
         </div>
       </div>
-      <div className="to-brand-dark-green absolute -bottom-2 left-0 z-20 h-full w-full bg-gradient-to-b from-transparent to-90% sm:h-[500px] md:-bottom-1" />
+      <div className="to-brand-dark-green absolute -bottom-2 left-0 z-20 h-full w-full bg-gradient-to-b from-transparent to-90% max-sm:top-0 max-sm:z-50 max-sm:h-full sm:h-[500px] md:-bottom-1" />
       <VerticalCarouselAboutUs
         videosColumn1={[
           "https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Sobre Nós /grok-video-01fdbe80-86df-46c0-b6d2-f6e718dc15c9.mp4",

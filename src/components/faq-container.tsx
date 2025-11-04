@@ -22,7 +22,7 @@ export const FAQContainer = ({ faqItems }: FAQContainerProps) => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
   // Número de perguntas a mostrar inicialmente no mobile
-  const INITIAL_MOBILE_ITEMS = 4;
+  const INITIAL_MOBILE_ITEMS = 3;
 
   // Determina quantas perguntas mostrar
   // No mobile: controla pela quantidade; No desktop: mostra todas

@@ -33,7 +33,8 @@ export const Footer = () => {
               />
               <div className="mt-10 flex items-center gap-4">
                 <Link
-                  href="/"
+                  href="https://www.instagram.com/dronline24h"
+                  target="_blank"
                   className="bg-brand-light-green hover:bg-brand-light-green2 text-brand-dark-green flex h-10 w-10 items-center justify-center rounded-full duration-300"
                 >
                   <svg
@@ -47,7 +48,8 @@ export const Footer = () => {
                   </svg>
                 </Link>
                 <Link
-                  href="/"
+                  href=""
+                  target="_blank"
                   className="bg-brand-light-green hover:bg-brand-light-green2 text-brand-dark-green flex h-10 w-10 items-center justify-center rounded-full duration-300"
                 >
                   <svg
@@ -64,7 +66,8 @@ export const Footer = () => {
                   </svg>
                 </Link>
                 <Link
-                  href="/"
+                  href="https://www.youtube.com/@dronline24h"
+                  target="_blank"
                   className="bg-brand-light-green hover:bg-brand-light-green2 text-brand-dark-green flex h-10 w-10 items-center justify-center rounded-full duration-300"
                 >
                   <svg
@@ -118,7 +121,7 @@ export const Footer = () => {
                       href="/sobre-nos"
                       className="text-md font-normal text-white hover:underline"
                     >
-                      Sobre
+                      Sobre nós
                     </Link>
                   </li>
                   <li>
@@ -180,7 +183,7 @@ export const Footer = () => {
                 </ul>
               </div>
 
-              <div className="w-[calc(50%-16px)] md:w-auto">
+              <div className="!hidden w-[calc(50%-16px)] md:w-auto">
                 <p className="mb-2 text-lg font-semibold text-white">FAQ</p>
                 <ul className="flex flex-col gap-2">
                   <li>
@@ -236,7 +239,8 @@ export const Footer = () => {
                 </ul>
 
                 <Link
-                  href="tel:+5561999399769"
+                  href="https://grupofapes.com.br/"
+                  target="_blank"
                   className="mb-2 text-lg font-semibold text-white hover:underline"
                 >
                   Grupo FAPES

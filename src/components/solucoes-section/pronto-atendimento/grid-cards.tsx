@@ -51,7 +51,7 @@ export const GridCards = () => {
             className="h-[100px] w-[100px] object-contain md:h-[120px] md:w-[120px]"
           />
           <p className="text-center text-sm font-bold text-white sm:text-lg">
-            Tempo de atendimento médio de no máximo 6 minutos
+            Tempo de espera médio de no máximo 6 minutos
           </p>
         </div>
         <div className="card-carousel flex h-full w-full max-w-64 flex-col items-center gap-4">
@@ -116,7 +116,7 @@ export const GridCards = () => {
                 className="h-[100px] w-[100px] object-contain md:h-[120px] md:w-[120px]"
               />
               <p className="text-center text-sm font-bold text-white sm:text-lg">
-                Tempo de atendimento médio de no máximo 6 minutos
+                Tempo de espera médio de no máximo 6 minutos
               </p>
             </div>
           </SwiperSlide>

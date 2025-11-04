@@ -23,8 +23,8 @@ const differentialsData = [
   {
     title: (
       <>
-        <strong>Apoio estruturado em ESG e compliance trabalhista,</strong>{" "}
-        fortalecendo a responsabilidade corporativa.
+        <strong>Apoio estruturado em ESG e compliance,</strong> fortalecendo a
+        responsabilidade corporativa.
       </>
     ),
     icon: {
@@ -242,7 +242,6 @@ export default function SaudeMentalPage() {
         differentials={differentialsData2}
         title={
           <>
-            Conheça o{" "}
             <span className="text-brand-light-green">Integralmente</span>
           </>
         }
@@ -253,7 +252,8 @@ export default function SaudeMentalPage() {
             às melhores práticas internacionais. Desde a triagem inicial até o
             acompanhamento contínuo, oferecemos planos terapêuticos
             individualizados que garantem previsibilidade, resolutividade e
-            resultados mensuráveis.
+            resultados mensuráveis. Saúde mental exige mais que acolhimento,
+            exige estrutura técnica e continuidade
           </>
         }
         videoUrl="https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Saude%20Mental/envato_video_gen_Oct_15_2025_14_39_48.mp4"

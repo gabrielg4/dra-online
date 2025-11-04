@@ -20,10 +20,15 @@ export const WheelCarousel = ({ articles }: WheelCarouselProps) => {
   const isMinTablet = useMediaQuery({
     minWidth: 768,
   });
+  const isMobile = useMediaQuery({
+    maxWidth: 767,
+  });
+
   const curvedCarouselRef = useRef<HTMLDivElement | null>(null);
   const draggableRef = useRef<Draggable | null>(null);
 
-  const STEP = 9;
+  // Diminui o STEP no mobile para cards menos rotacionados
+  const STEP = isMobile ? 7 : 9; // Mudado de 15 para 6 no mobile
   const MAX_INDEX = articles.length - 1;
 
   // Calcula o índice da mediana (como sempre é ímpar, é o item do meio)
@@ -67,22 +72,20 @@ export const WheelCarousel = ({ articles }: WheelCarouselProps) => {
     const [instance] = Draggable.create(curvedCarouselRef.current, {
       type: "rotation",
       inertia: true,
-      minimumMovement: 5, // Reduz sensibilidade a movimentos muito pequenos
-      throwProps: true, // Habilita propriedades de arremesso suaves
-      overshootTolerance: 0, // Evita ultrapassar os limites
-      throwResistance: 2000, // Controla a desaceleração (quanto maior, mais rápido para)
-      edgeResistance: 0.65, // Resistência nas bordas (0 = sem resistência, 1 = máxima)
+      minimumMovement: 5,
+      throwProps: true,
+      overshootTolerance: 0,
+      throwResistance: 2000,
+      edgeResistance: 0.65,
       bounds: { minRotation, maxRotation },
       snap: {
         rotation: (value) => {
-          // Calcula qual card está mais próximo do centro
           const offset = INITIAL_ROTATION - value;
           const idx = Math.round(offset / STEP);
           return INITIAL_ROTATION - clamp(idx, 0, MAX_INDEX) * STEP;
         },
       },
       onDrag: function () {
-        // Atualiza o índice ativo durante o drag para feedback visual suave
         const rot = this.rotation as number;
         const offset = INITIAL_ROTATION - rot;
         const idx = clamp(Math.round(offset / STEP), 0, MAX_INDEX);
@@ -127,7 +130,10 @@ export const WheelCarousel = ({ articles }: WheelCarouselProps) => {
       instance?.kill();
       draggableRef.current = null;
     };
-  }, [MAX_INDEX, MEDIAN_INDEX, INITIAL_ROTATION]);
+  }, [MAX_INDEX, MEDIAN_INDEX, INITIAL_ROTATION, STEP, isMobile]);
+
+  // Define o raio da curvatura baseado no dispositivo
+  const curveRadius = isMobile ? "2900px" : "2500px";
 
   return (
     <section className="relative flex h-auto w-full items-center justify-center pt-10 pb-14 max-sm:pb-4 sm:pt-20 sm:pb-20 md:h-screen">
@@ -143,14 +149,20 @@ export const WheelCarousel = ({ articles }: WheelCarouselProps) => {
       <div className="relative h-[500px] w-full max-w-[600px]">
         <div
           ref={curvedCarouselRef}
-          className="carousel absolute top-0 left-1/2 origin-[50%_2500px] -translate-x-1/2 will-change-transform"
+          className="carousel absolute top-0 left-1/2 -translate-x-1/2 will-change-transform"
+          style={{
+            transformOrigin: `50% ${curveRadius}`,
+          }}
         >
           {articles.map((article, i) => (
             <div
               key={i}
               data-wheel-card
-              className="absolute top-0 left-1/2 h-full w-[290px] origin-[50%_2500px] -translate-x-1/2 max-sm:w-[340px]"
-              style={{ transform: `rotate(${(i - MEDIAN_INDEX) * STEP}deg)` }}
+              className="absolute top-0 left-1/2 h-full w-[290px] -translate-x-1/2 max-sm:w-[280px]"
+              style={{
+                transform: `rotate(${(i - MEDIAN_INDEX) * STEP}deg)`,
+                transformOrigin: `50% ${curveRadius}`,
+              }}
             >
               <NaMidiaCard article={article} isActive={i === activeIndex} />
             </div>

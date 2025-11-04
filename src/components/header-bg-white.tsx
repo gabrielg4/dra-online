@@ -43,11 +43,11 @@ export const HeaderBgWhite = () => {
             />
           </Link>
           <NavigationV2 textColor="#282F3B" />
-          <div className="flex w-fit items-center gap-2">
+          <div className="hidden w-fit items-center gap-2 max-md:flex">
             <Button
               variant={"outline"}
               className={cn(
-                "group border-brand-main-green hover:bg-brand-main-green hidden rounded-full bg-transparent px-6 py-2 duration-300 md:flex",
+                "group border-brand-main-green hover:bg-brand-main-green !hidden rounded-full bg-transparent px-6 py-2 duration-300 md:flex",
               )}
             >
               <Link

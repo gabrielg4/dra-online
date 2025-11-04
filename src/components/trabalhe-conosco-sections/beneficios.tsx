@@ -109,8 +109,8 @@ export const Beneficios = () => {
             }}
           >
             <strong>
-              Plataforma médica própria fácil de usar, intuitiva, com
-              prontuário, prescrição e teleconsulta integrados
+              Plataforma médica fácil de usar, intuitiva, com prontuário,
+              prescrição e teleconsulta integrados
             </strong>
           </CardSolucaoDiferencial>
 

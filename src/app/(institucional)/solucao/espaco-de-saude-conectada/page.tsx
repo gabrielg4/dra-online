@@ -105,8 +105,8 @@ export default function EspacoDeSaudeConectadaPage() {
         }
         description={
           <>
-            Telemedicina e dispositivos médicos <br />
-            inteligentes para realização de exames.
+            inovação que transforma qualquer espaço em um ponto de cuidado de
+            alta qualidade.
           </>
         }
       />
@@ -118,7 +118,7 @@ export default function EspacoDeSaudeConectadaPage() {
               Uma nova forma de <br className="hidden lg:inline-block" />
               entregar saúde{" "}
             </span>
-            acessível, segura, integrada e altamente escalável
+            {/* acessível, segura, integrada e altamente escalável */}
           </>
         }
         description={

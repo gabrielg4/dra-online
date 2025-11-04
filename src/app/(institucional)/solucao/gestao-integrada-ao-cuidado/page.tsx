@@ -79,7 +79,7 @@ const impactsData = [
   },
   {
     title: "Para a Operadora",
-    description: "Eficiência e consequente redução de custos.",
+    description: "Eficiência e consequentemente redução de custos.",
     isColumn: false,
     icon: {
       src: "/images/ic-hospital.svg",
@@ -120,11 +120,12 @@ export default function GestaoIntegradaPage() {
         }
         description={
           <>
-            A Entrevista Qualificada da dr.online transforma dados em decisões
-            assertivas, reduzindo riscos jurídicos, desperdícios e garantindo
-            conformidade regulatória. Conduzida por uma equipe multidisciplinar,
-            ela valida informações clínicas, comportamentais e documentais de
-            forma rápida, segura e personalizada.
+            Acreditamos que saúde de qualidade começa na coordenação inteligente
+            do cuidado. Por isso, desenvolvemos um modelo completo de atenção
+            baseado nos princípios da atenção primaria em saúde (APS) e Saúde
+            Baseada em Valor (VBHC), que combina tecnologia, protocolos clínicos
+            e equipe altamente qualificada para garantir resolutividade,
+            continuidade e personalização do atendimento.
           </>
         }
       />

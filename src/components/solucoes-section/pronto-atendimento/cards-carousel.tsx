@@ -94,7 +94,7 @@ export const CardsCarousel = () => {
                   className="h-[100px] w-[100px] object-contain md:h-[120px] md:w-[120px]"
                 />
                 <p className="text-center text-lg font-bold text-white">
-                  Tempo de atendimento médio de no máximo 6 minutos
+                  Tempo de espera médio de no máximo 6 minutos
                 </p>
               </div>
             </CarouselItem>

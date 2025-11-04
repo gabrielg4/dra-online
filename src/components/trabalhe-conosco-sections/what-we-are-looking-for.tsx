@@ -125,7 +125,7 @@ export const WhatWeAreLookingFor = () => {
             height={470}
           />
         </div>
-        <div className="content-wrapper relative z-20 -mt-20 flex flex-col items-center justify-center px-4">
+        <div className="content-wrapper relative z-20 -mt-20 flex flex-col items-center justify-center px-7">
           <h2 className="title-section-security mb-5 text-center text-[24px] leading-[110%] text-white sm:text-[32px] lg:text-[40px]">
             <span className="text-brand-light-green font-bold">
               Trabalhe com
@@ -141,7 +141,7 @@ export const WhatWeAreLookingFor = () => {
             marketing, operações, comercial e muito mais.
           </p>
           <div className="cta-button-security">
-            <CtaButton title="Saiba mais" url="#form-curriculo" />
+            <CtaButton title="Envie seu currículo" url="#form-curriculo" />
           </div>
         </div>
       </div>

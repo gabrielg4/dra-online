@@ -9,14 +9,14 @@ export const baseTestimonials: Pick<
     nome: "Luciano Bento",
     especialidade: "Superintendente Unimed CNU",
     depoimento:
-      "A parceria entre a Unimed Nacional e a Dr. Online fortalece a estratégia de cuidado ao ampliar o acesso à saúde com tecnologia, resolutividade e acolhimento. O modelo tem garantido agilidade nos atendimentos, redução de custos e um cuidado mais humano, melhorando a experiência dos beneficiários.",
+      "A parceria entre a Unimed Nacional e a dr. online fortalece a estratégia de cuidado ao ampliar o acesso à saúde com tecnologia, resolutividade e acolhimento. O modelo tem garantido agilidade nos atendimentos, redução de custos e um cuidado mais humano, melhorando a experiência dos beneficiários.",
   },
   {
     foto: { url: "/images/img-eli-melo.webp" } as Media,
     nome: "Eli Melo Jr.",
     especialidade: "Presidente da Postal Saúde",
     depoimento:
-      "A parceria entre a Postal Saúde e a Dr. Online moderniza e humaniza o cuidado, ampliando o acesso à saúde via telemedicina com agilidade e segurança. Essa integração fortalece nossa rede e garante um cuidado acessível, resolutivo e conectado ao futuro da saúde.",
+      "A parceria entre a Postal Saúde e a dr. online moderniza e humaniza o cuidado, ampliando o acesso à saúde via telemedicina com agilidade e segurança. Essa integração fortalece nossa rede e garante um cuidado acessível, resolutivo e conectado ao futuro da saúde.",
   },
   {
     foto: { url: "/images/img-caio-cesar.webp" } as Media,
@@ -30,6 +30,6 @@ export const baseTestimonials: Pick<
     nome: "Renata Alamino",
     especialidade: "Coordenadora de Vendas da Unimed Sorocaba",
     depoimento:
-      "A Dr. Online é uma solução inteligente que trouxe mais agilidade, assertividade e segurança ao processo de contratação de planos de saúde. Destaca-se pelo profissionalismo, expertise técnica e integração com as plataformas da Operadora, garantindo rastreabilidade e produtividade nas operações.",
+      "A dr. online é uma solução inteligente que trouxe mais agilidade, assertividade e segurança ao processo de contratação de planos de saúde. Destaca-se pelo profissionalismo, expertise técnica e integração com as plataformas da Operadora, garantindo rastreabilidade e produtividade nas operações.",
   },
 ];

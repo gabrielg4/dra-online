@@ -43,7 +43,7 @@ export const HeroAnimationMobile = () => {
         card1.current,
         {
           x: 0,
-          y: -60,
+          y: 0,
           opacity: 0,
         },
         0,
@@ -62,7 +62,7 @@ export const HeroAnimationMobile = () => {
         card2.current,
         {
           x: -120,
-          y: -120,
+          y: -70,
         },
         0,
       )
@@ -71,7 +71,7 @@ export const HeroAnimationMobile = () => {
         card2.current,
         {
           x: 0,
-          y: -140,
+          y: -70,
         },
         0,
       )
@@ -102,7 +102,7 @@ export const HeroAnimationMobile = () => {
       .to(
         card4.current,
         {
-          y: 110,
+          y: 80,
         },
         0,
       )
@@ -111,14 +111,14 @@ export const HeroAnimationMobile = () => {
         card5.current,
         {
           x: 0,
-          y: 0,
+          y: -20,
         },
         0,
       )
       .to(
         card5.current,
         {
-          y: -35,
+          y: -30,
         },
         0,
       )
@@ -143,7 +143,7 @@ export const HeroAnimationMobile = () => {
         card6.current,
         {
           x: 0,
-          y: 0,
+          y: 30,
         },
         0,
       )
@@ -151,7 +151,7 @@ export const HeroAnimationMobile = () => {
         card6.current,
         {
           x: -115,
-          y: 200,
+          y: 264,
         },
         0,
       )
@@ -170,7 +170,7 @@ export const HeroAnimationMobile = () => {
         card7.current,
         {
           x: 0,
-          y: 310,
+          y: 250,
           opacity: 1,
         },
         0,
@@ -199,7 +199,7 @@ export const HeroAnimationMobile = () => {
   }, []);
 
   return (
-    <div className="relative mt-20 block h-[740px] w-full md:hidden">
+    <div className="cards-hero-mobile-animation relative mt-20 block h-[740px] w-full md:hidden">
       {/* CARDS */}
       <div ref={sectionRef} className="flex w-[800px] justify-center gap-4">
         <div
@@ -207,13 +207,9 @@ export const HeroAnimationMobile = () => {
           className="card-01 bg-brand-main-green absolute top-0 right-0 left-0 mx-auto w-full max-w-[103px] rounded-lg p-[10px] duration-300 ease-linear"
         >
           <p className="text-brand-dark-green text-[10px] font-bold">
-            Integração Total
+            Implantação agil
             <span className="text-brand-light-green block">
-              Prescrição Digital
-            </span>
-            Dashboards Inteligentes
-            <span className="text-brand-light-green block">
-              Compliance e Segurança da informação
+              escalável e com ROI comprovado.
             </span>
           </p>
         </div>
@@ -223,7 +219,13 @@ export const HeroAnimationMobile = () => {
           className="card-02 absolute top-0 left-0 z-20 w-[110px] -translate-y-24 duration-300 ease-linear"
         >
           <div className="video-masked">
-            <video autoPlay muted loop playsInline>
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="!h-[300px] !object-right"
+            >
               <source
                 src={
                   "https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Home/Mi%CC%81dia2.mp4"
@@ -237,20 +239,26 @@ export const HeroAnimationMobile = () => {
           ref={card3}
           className="card-03 bg-brand-main-green absolute top-4 left-0 z-30 h-[200px] w-full max-w-[105px] rounded-xl p-3 duration-300 ease-linear"
         >
-          <p className="text-brand-dark-green text-sm font-bold">
-            Tecnologia{" "}
-            <span className="block text-white">
-              própria, segura e escalável
-            </span>
+          <p className="text-[10px] font-bold text-white">
+            <span className="text-brand-dark-green">
+              Segurança, rastreabilidade e confiabilidade
+            </span>{" "}
+            para decisões estratégicas
           </p>
         </div>
 
         <div
           ref={card4}
-          className="card-04 absolute -top-28 right-0 left-0 z-50 mx-auto h-[180px] w-full max-w-[110px] duration-300 ease-linear"
+          className="card-04 absolute -top-20 right-0 left-0 z-50 mx-auto h-[180px] w-full max-w-[110px] duration-300 ease-linear"
         >
           <div className="video-masked">
-            <video autoPlay muted loop playsInline>
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="!h-[300px] !object-center"
+            >
               <source
                 src={
                   "https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Home/Mi%CC%81dia1.mp4"
@@ -258,7 +266,7 @@ export const HeroAnimationMobile = () => {
               />
             </video>
           </div>
-          <div className="absolute right-0 -bottom-20 left-0 z-10 flex w-full flex-col justify-end px-3">
+          <div className="absolute right-0 bottom-0 left-0 z-10 flex w-full flex-col justify-end px-3">
             <p className="text-sm leading-[130%] font-bold text-white">
               Modelo assistencial
               <br />
@@ -271,12 +279,13 @@ export const HeroAnimationMobile = () => {
           ref={card5}
           className="card-05 bg-brand-light-green absolute right-0 z-10 h-[200px] w-full max-w-[110px] rounded-xl p-2 duration-300 ease-linear"
         >
-          <p className="text-xs font-bold text-white">
-            <span className="text-brand-dark-green">
-              Implantação <br />
-              ágil,
-            </span>{" "}
-            escalável <br />e com ROI comprovado.
+          <p className="text-brand-dark-green text-[11px] font-bold">
+            Integração Total
+            <span className="block text-white">Prescrição Digital</span>
+            Dashboards Inteligentes
+            <span className="text-brand-light-green block">
+              Compliance e Segurança da informação
+            </span>
           </p>
         </div>
 
@@ -285,7 +294,13 @@ export const HeroAnimationMobile = () => {
           className="card-06 absolute -top-32 -right-[115px] z-50 h-[196px] w-full max-w-[110px] duration-300 ease-linear"
         >
           <div className="video-masked">
-            <video autoPlay muted loop playsInline className="-scale-x-100">
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="h-[300px] -scale-x-100 !object-top"
+            >
               <source
                 src={
                   "https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Home/Mi%CC%81dia3.mp4"
@@ -293,7 +308,7 @@ export const HeroAnimationMobile = () => {
               />
             </video>
           </div>
-          <div className="absolute -bottom-20 left-0 z-10 flex w-full px-2">
+          <div className="absolute bottom-0 left-0 z-10 flex w-full px-2">
             <p className="text-sm font-bold text-white">
               <span className="text-brand-light-green text-base">
                 White Label
@@ -304,13 +319,13 @@ export const HeroAnimationMobile = () => {
 
         <div
           ref={card7}
-          className="card-07 bg-brand-light-green absolute right-0 left-0 z-10 mx-auto h-fit w-full max-w-[110px] rounded-xl p-2 duration-300 ease-linear"
+          className="card-07 bg-brand-light-green absolute right-0 left-0 z-10 mx-auto h-fit w-full max-w-[110px] rounded-xl p-2 pb-9 duration-300 ease-linear"
         >
-          <p className="text-xs font-bold text-white">
-            <span className="text-brand-dark-green">
-              Segurança, rastreabilidade e confiabilidade
-            </span>{" "}
-            para decisões estratégicas
+          <p className="text-brand-dark-green text-sm font-bold">
+            Tecnologia{" "}
+            <span className="inline-block text-white">
+              própria, segura e escalável
+            </span>
           </p>
         </div>
       </div>

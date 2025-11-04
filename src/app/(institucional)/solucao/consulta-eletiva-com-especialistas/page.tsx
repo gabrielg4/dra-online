@@ -67,19 +67,6 @@ const differentialsData = [
       src: "/images/ic-lightbulb.svg",
     },
   },
-  {
-    title: (
-      <>
-        <strong>
-          Redução de sinistralidade e otimização de custos assistenciais.
-        </strong>
-      </>
-    ),
-    icon: {
-      alt: "ícone gráfico de linha descendo",
-      src: "/images/ic-line-chart-desc.svg",
-    },
-  },
 ];
 
 const impactsData = [

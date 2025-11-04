@@ -64,11 +64,11 @@ export const Header = ({ startWithBlur, hasBgWhite }: HeaderProps) => {
           ) : (
             <NavigationV2 />
           )}
-          <div className="flex w-fit items-center gap-2">
+          <div className="hidden w-fit items-center gap-2 max-md:flex">
             <Button
               variant={"outline"}
               className={cn(
-                "group hidden rounded-full border-white bg-transparent px-6 py-2 duration-300 hover:bg-white md:flex",
+                "group !hidden rounded-full border-white bg-transparent px-6 py-2 duration-300 hover:bg-white md:flex",
                 hasBgWhite &&
                   "border-brand-main-green hover:bg-brand-main-green",
               )}

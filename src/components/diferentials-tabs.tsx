@@ -176,8 +176,9 @@ export const DiferentialsTabs = () => {
                 O cuidado certo, na hora que seu beneficiário mais precisa.
               </h3>
               <p className="text-brand-dark-gray text-md mb-6 font-normal max-sm:text-center max-sm:text-white lg:mb-8 lg:text-lg">
-                Imprevistos não têm hora marcada. Por isso, a Dr. Online garante
-                que o acesso a um médico nunca esteja fora de alcance. Nosso{" "}
+                Imprevistos não têm hora marcada. Por isso, a{" "}
+                <strong>dr.</strong> 0nline garante que o acesso a um médico
+                nunca esteja fora de alcance. Nosso{" "}
                 <strong>Pronto Atendimento 24h</strong> conecta pacientes a
                 clínicos e pediatras em poucos minutos, sem filas, sem
                 burocracia e com <strong>mais de 92% de resolutividade.</strong>
@@ -278,10 +279,9 @@ export const DiferentialsTabs = () => {
               </h3>
               <p className="text-brand-dark-gray text-md mb-6 font-normal max-sm:text-center max-sm:text-white lg:mb-8 lg:text-lg">
                 Oferecemos um ecossistema completo de{" "}
-                <strong>saúde mental digital</strong>, através do{" "}
-                <strong>Teleacolhimento Psicológico 24h</strong> e do{" "}
-                <strong>Integralmente</strong>, que conectam ciência, tecnologia
-                e cuidado humano para gerar impacto real.
+                <strong>saúde mental digital</strong> que conecta ciência e
+                tecnologia e <strong>cuidado humano</strong> para gerar impacto
+                real
               </p>
               <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
                 <Button
@@ -376,14 +376,15 @@ export const DiferentialsTabs = () => {
                 Espaço de Saúde Conectada
               </p>
               <h3 className="text-brand-black mb-4 text-lg leading-[150%] font-bold max-sm:hidden max-sm:text-center max-sm:text-white lg:mb-6">
-                Uma nova forma de entregar saúde: acessível, segura, integrada e
-                altamente escalável.
+                Inovação que transforma qualquer espaço em um ponto de cuidado
+                de alta qualidade
               </h3>
               <p className="text-brand-dark-gray text-md mb-6 font-normal max-sm:text-center max-sm:text-white lg:mb-8 lg:text-lg">
-                Equipado com dispositivos médicos multiparamétricos e suporte de
-                enfermagem, possibilita consultas clínicas e especializadas com
-                alto nível de resolutividade e precisão diagnóstica, mesmo à
-                distância.
+                Mais do que uma inovação tecnológica, o Espaço de Saúde
+                representa uma nova forma de entregar cuidado: acessível,
+                seguro, integrado e altamente escalável. Possibilita consultas
+                clínicas e especializadas com alto nível de resolutividade e
+                precisão diagnóstica, mesmo à distância.
               </p>
               <Button
                 variant="outline"

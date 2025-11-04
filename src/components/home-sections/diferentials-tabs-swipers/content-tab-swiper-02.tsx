@@ -34,8 +34,7 @@ export default function diferentialTabSwiper02() {
               height={95}
             />
             <p className="text-brand-dark-gray font-semibold max-sm:text-white md:mt-2">
-              Tecnologia responsiva que permite tempo de atendimento médio de
-              até 6 min
+              Tecnologia responsiva direto do seu app ou site.
             </p>
           </div>
         </SwiperSlide>
@@ -63,7 +62,8 @@ export default function diferentialTabSwiper02() {
               height={95}
             />
             <p className="text-brand-dark-gray font-semibold max-sm:text-white md:mt-2">
-              O melhor custo-benefício do mercado
+              NPS de 93 por mais <br />
+              de 2 anos
             </p>
           </div>
         </SwiperSlide>

@@ -53,7 +53,7 @@ export const MobileMenu = () => {
                     href="/sobre-nos"
                     className="hover:text-brand-light-green text-lg font-semibold text-white duration-200"
                   >
-                    Sobre
+                    Sobre nós
                   </Link>
                 </li>
                 <li>
@@ -102,8 +102,7 @@ export const MobileMenu = () => {
                                 Consultas Online com Especialista
                               </p>
                               <p className="text-sm text-white">
-                                Inovação que transforma um espaço em ponto de
-                                cuidado de alta qualidade.
+                                Mais que um agendamento. Uma estratégia
                               </p>
                             </div>
                           </Link>
@@ -260,7 +259,7 @@ export const MobileMenu = () => {
               </ul>
               <Button
                 variant={"outline"}
-                className="group flex rounded-full border-white bg-transparent px-6 py-2 duration-300 hover:bg-white"
+                className="group !hidden rounded-full border-white bg-transparent px-6 py-2 duration-300 hover:bg-white"
               >
                 <Link
                   href="/"

@@ -114,10 +114,9 @@ export default function ProntoAtendimentoPage() {
         differentials={differentialsData}
         title={
           <>
-            Mais que uma solução de <br className="hidden lg:inline-block" />
-            urgência.{" "}
+            Mais que um agendamento <br className="hidden lg:inline-block" />
             <span className="text-brand-light-green">
-              Uma estratégia de gestão em saúde
+              Uma estratégia assistencial
             </span>
           </>
         }

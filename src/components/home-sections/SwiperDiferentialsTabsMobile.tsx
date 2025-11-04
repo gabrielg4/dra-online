@@ -406,14 +406,15 @@ export default function SwiperTabsMobile() {
                 Espaço de Saúde Conectada
               </p>
               <h3 className="mb-4 text-center text-base text-white">
-                Uma nova forma de entregar saúde: acessível, segura, integrada e
-                altamente escalável.
+                Inovação que transforma qualquer espaço em um ponto de cuidado
+                de alta qualidade
               </h3>
               <p className="text-center text-sm text-white">
-                Equipado com dispositivos médicos multiparamétricos e suporte de
-                enfermagem, possibilita consultas clínicas e especializadas com
-                alto nível de resolutividade e precisão diagnóstica, mesmo à
-                distância.
+                Mais do que uma inovação tecnológica, o Espaço de Saúde
+                representa uma nova forma de entregar cuidado: acessível,
+                seguro, integrado e altamente escalável. Possibilita consultas
+                clínicas e especializadas com alto nível de resolutividade e
+                precisão diagnóstica, mesmo à distância.
               </p>
             </div>
 

@@ -47,11 +47,11 @@ export const ContactSolution = () => {
       <div className="relative z-10 container flex flex-col items-center justify-between gap-6 md:flex-row md:gap-10">
         <div className="relative flex w-full flex-col-reverse items-center md:w-1/2 md:flex-col md:items-start lg:w-auto">
           <div>
-            <h2 className="title-contact-section mb-3 text-center text-[32px] leading-[110%] font-bold text-white max-sm:text-3xl md:text-start lg:text-[40px]">
+            <h2 className="title-contact-section mb-3 text-center text-[32px] leading-[110%] font-bold text-white max-sm:text-2xl md:text-start lg:text-[40px]">
               Preencha o formulário <br className="hidden lg:inline-block" />e
               esteja sempre Online!
             </h2>
-            <p className="description-contact mb-5 text-center text-lg leading-normal font-normal text-white max-sm:text-base md:mb-10 md:text-start">
+            <p className="description-contact mb-5 text-center text-lg leading-normal font-normal text-white max-sm:text-base max-sm:text-lg md:mb-10 md:text-start">
               Agende uma demonstração e descubra como simplificar a
               <br className="hidden lg:inline-block" /> telemedicina na sua
               empresa.

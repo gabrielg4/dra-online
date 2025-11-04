@@ -34,7 +34,7 @@ export default function diferentialTabSwiper03() {
               height={95}
             />
             <p className="text-brand-dark-gray font-semibold max-sm:text-white md:mt-2">
-              Garantia de acesso a especialistas em todo o país
+              Garantia de acesso a especialistas em todo o Brasil
             </p>
           </div>
         </SwiperSlide>

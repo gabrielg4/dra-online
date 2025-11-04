@@ -19,8 +19,9 @@ const historyData = {
           <p className="text-lg text-white">
             A pandemia da COVID-19 mudou o mundo. Em meio ao medo, ao isolamento
             e às incertezas, surgiu uma necessidade urgente: garantir acesso à
-            saúde com segurança e agilidade. Foi nesse cenário que nasceu a Dr.
-            Online: como uma resposta rápida, inovadora e visionária para
+            saúde com segurança e agilidade. Foi nesse cenário que nasceu a{" "}
+            <strong>dr.</strong>
+            online: como uma resposta rápida, inovadora e visionária para
             conectar pessoas e profissionais de saúde à distância.
           </p>
         </>
@@ -32,8 +33,9 @@ const historyData = {
       content: (
         <>
           <p className="text-lg text-white">
-            A telemedicina deixou de ser tendência e se tornou realidade. A Dr.
-            Online assumiu papel de destaque, levando médicos e especialistas
+            A telemedicina deixou de ser tendência e se tornou realidade. A{" "}
+            <strong>dr.</strong>
+            online assumiu papel de destaque, levando médicos e especialistas
             para dentro das casas dos pacientes, com atendimento seguro,
             resolutivo e humanizado.
           </p>
@@ -49,12 +51,12 @@ const historyData = {
       content: (
         <>
           <p className="text-lg text-white">
-            A Dr. Online cresceu, evoluiu e deixou de ser apenas uma solução de
-            telemedicina. Tornou-se um{" "}
+            A <strong>dr.</strong> online cresceu, evoluiu e deixou de ser
+            apenas uma solução de telemedicina. Tornou-se um{" "}
             <strong>ecossistema completo de saúde</strong> digital, oferecendo
             não só pronto atendimento médico, mas também saúde mental, consultas
             eletivas, coordenação do cuidado e inovação em modelos como o{" "}
-            <strong>Consultório Digital</strong>.
+            <strong>Espaço Saúde</strong>.
           </p>
         </>
       ),
@@ -65,10 +67,12 @@ const historyData = {
       content: (
         <>
           <p className="text-lg text-white">
-            Alcançamos mais de <strong>3 milhões de vidas expostas</strong> aos
-            nossos produtos, consolidando nossa presença no mercado e{" "}
-            <strong> ampliando o acesso à saúde</strong>
-            digital em todo o Brasil.
+            Inauguramos nosso novo escritório em São Paulo e ampliamos nossa
+            sede em Brasília. Alcançamos mais de{" "}
+            <strong>3 milhões de vidas expostas</strong> aos nossos produtos,
+            consolidando nossa presença no mercado e{" "}
+            <strong>ampliando o acesso à saúde </strong> digital em todo o
+            Brasil
           </p>
         </>
       ),
@@ -82,9 +86,10 @@ const historyData = {
       content: (
         <>
           <p className="text-lg text-white">
-            <strong>Digitais</strong>, aproximando ainda mais a tecnologia de
-            quem mais precisa e expandindo a rede de cuidado com qualidade e
-            segurança.
+            Chegamos a <strong>mais de 7 milhões de vidas atendidas</strong> e
+            inauguramos <strong>mais de 35 Consultórios Digitais</strong>,
+            aproximando ainda mais a tecnologia de quem mais precisa e
+            expandindo a rede de cuidado com qualidade e segurança.
           </p>
         </>
       ),
@@ -99,7 +104,7 @@ const historyData = {
         <>
           <p className="text-lg text-white">
             Batemos a marca de <strong>10 milhões de vidas alcançadas</strong>.
-            Esse crescimento reafirma nossa posição como{" "}
+            Esse crescimento reafirmou e reforçou nossa posição como{" "}
             <strong>referência nacional em saúde digital</strong> e reforça o
             propósito que nos move desde o início: tornar o cuidado em saúde
             mais humano, acessível e inteligente.
@@ -113,7 +118,7 @@ const historyData = {
       content: (
         <>
           <p className="text-lg text-white">
-            Hoje, a Dr. Online é parceira estratégica de{" "}
+            Hoje, a <strong>dr.</strong> online é parceira estratégica de{" "}
             <strong>
               operadoras, empresas e milhões de pessoas em todo o país
             </strong>

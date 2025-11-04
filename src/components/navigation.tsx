@@ -16,7 +16,7 @@ export const NavigationV2 = ({ textColor = "text-white" }: NavigationProps) => {
             href="/sobre-nos"
             className={`text-md hover:text-brand-light-green font-semibold ${textColor} duration-200`}
           >
-            Sobre
+            Sobre nós
           </Link>
         </li>
         <li className="group">
@@ -72,8 +72,7 @@ export const NavigationV2 = ({ textColor = "text-white" }: NavigationProps) => {
                           Consultas Online com Especialista
                         </p>
                         <p className="text-sm text-white">
-                          Inovação que transforma um espaço em ponto de cuidado
-                          de alta qualidade.
+                          Mais que um agendamento. Uma estratégia
                         </p>
                       </div>
                     </Link>

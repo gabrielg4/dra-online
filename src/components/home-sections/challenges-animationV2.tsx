@@ -31,10 +31,9 @@ export function ChallengersAnimationV2() {
     const challengesTl = gsap.timeline({
       scrollTrigger: {
         trigger: ".s-challenges",
-        start: `top ${!isMobile ? "160%" : "160%"}`,
-        end: "+=250%",
-        scrub: true,
-        // markers: true,
+        start: `top ${!isMobile ? "200%" : "180%"}`,
+        end: "+=300%",
+        scrub: 4,
         onUpdate: () => {
           cards.forEach((card) => {
             const cardRect = card.getBoundingClientRect();
@@ -94,14 +93,14 @@ export function ChallengersAnimationV2() {
       .fromTo(
         cardsContainer,
         {
-          y: viewportHeight * 1,
+          y: viewportHeight * 0.9,
         },
         {
-          y: yHeight - 100,
+          y: yHeight - 0,
           duration: 4,
           ease: "none",
         },
-        "-=8", // Começa praticamente junto com o título
+        "-=10", // Começa praticamente junto com o título
       );
 
     return () => {
@@ -111,7 +110,7 @@ export function ChallengersAnimationV2() {
 
   return (
     <section
-      className={`s-challenges relative h-[110vh] w-full max-sm:h-screen`}
+      className={`s-challenges relative h-[90vh] w-full overflow-hidden max-sm:h-screen`}
     >
       <div className="sticky top-0 z-50 h-screen w-full overflow-hidden bg-[url(/images/img-bg-problemas.webp)] bg-cover bg-top">
         <div
@@ -137,11 +136,11 @@ export function ChallengersAnimationV2() {
         >
           <div className="absolute top-20 left-1/2 grid items-center justify-center gap-16 max-[640px]:w-full max-[640px]:-translate-x-1/2 max-sm:flex max-sm:flex-col max-sm:items-start max-sm:justify-start max-sm:px-4 lg:top-24 lg:left-[86px]">
             <ChallengeCard
-              videoUrl="/videos/video-animation-3.mp4"
+              videoUrl="/videos/video-animation-2.mp4"
               label="Longos tempos de espera para atendimento presencial"
             />
             <ChallengeCard
-              videoUrl="/videos/video-animation-2.mp4"
+              videoUrl="/videos/video-animation-3.mp4"
               label="Afastamentos recorrentes por problemas de saúde mental"
               className="max-sm:self-end max-sm:justify-self-end"
             />
