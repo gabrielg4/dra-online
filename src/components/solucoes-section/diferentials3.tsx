@@ -102,7 +102,7 @@ export const Diferentials3 = ({
             />
           </div>
         </div>
-        <div className="cards-integralmente flex w-full flex-col gap-8 max-sm:hidden md:w-1/2">
+        <div className="cards-integralmente relative z-10 flex w-full flex-col gap-8 max-sm:hidden md:w-1/2">
           {differentials.map(({ icon: { alt, src }, title }, index) => (
             <CardSolucaoDiferencial
               key={index}
@@ -164,7 +164,7 @@ export const Diferentials3 = ({
           <div className="swiper-pagination-cards-solucoes swiper-pagination mt-8 flex items-center justify-center gap-3 lg:hidden"></div>
         </div>
       </div>
-      <div className="to-brand-dark-green absolute -bottom-1 z-20 hidden h-52 w-full bg-gradient-to-b from-transparent leading-0 min-[1500px]:to-75% md:block" />
+      <div className="to-brand-dark-green absolute -bottom-1 z-[2] hidden h-52 w-full bg-gradient-to-b from-transparent leading-0 min-[1500px]:to-75% md:block" />
     </section>
   );
 };

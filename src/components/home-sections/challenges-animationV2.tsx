@@ -31,9 +31,9 @@ export function ChallengersAnimationV2() {
     const challengesTl = gsap.timeline({
       scrollTrigger: {
         trigger: ".s-challenges",
-        start: `top ${!isMobile ? "200%" : "210%"}`,
+        start: `top ${!isMobile ? "200%" : "230%"}`,
         end: `${!isMobile ? "+=300%" : "+=380%"}`,
-        scrub: 4,
+        scrub: 5,
         onUpdate: () => {
           cards.forEach((card) => {
             const cardRect = card.getBoundingClientRect();
@@ -110,7 +110,7 @@ export function ChallengersAnimationV2() {
 
   return (
     <section
-      className={`s-challenges relative h-[90vh] w-full overflow-hidden max-sm:h-[70vh]`}
+      className={`s-challenges relative h-[90vh] w-full overflow-hidden max-sm:h-[600px]`}
     >
       <div className="sticky top-0 z-50 h-screen w-full overflow-hidden bg-[url(/images/img-bg-problemas.webp)] bg-cover bg-top">
         <div
@@ -126,8 +126,6 @@ export function ChallengersAnimationV2() {
             enfrenta
             <br className="inline-block" /> esses desafios?
           </h2>
-
-          {/* Teste */}
         </div>
 
         <div

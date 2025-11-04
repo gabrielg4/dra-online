@@ -48,24 +48,6 @@ export const Footer = () => {
                   </svg>
                 </Link>
                 <Link
-                  href=""
-                  target="_blank"
-                  className="bg-brand-light-green hover:bg-brand-light-green2 text-brand-dark-green flex h-10 w-10 items-center justify-center rounded-full duration-300"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="25"
-                    fill="none"
-                    viewBox="0 0 24 25"
-                  >
-                    <path
-                      fill="#075F55"
-                      d="M15.12 5.467H17v-3.18a26.11 26.11 0 0 0-2.74-.14c-2.72 0-4.58 1.66-4.58 4.7v2.62H6.61v3.56h3.07v9.12h3.68v-9.12h3.06l.46-3.56h-3.52v-2.27c0-1.05.28-1.73 1.76-1.73Z"
-                    />
-                  </svg>
-                </Link>
-                <Link
                   href="https://www.youtube.com/@dronline24h"
                   target="_blank"
                   className="bg-brand-light-green hover:bg-brand-light-green2 text-brand-dark-green flex h-10 w-10 items-center justify-center rounded-full duration-300"
@@ -84,7 +66,8 @@ export const Footer = () => {
                   </svg>
                 </Link>
                 <Link
-                  href="/"
+                  href="https://api.whatsapp.com/send/?phone=5561999399769&text&type=phone_number&app_absent=0"
+                  target="_blank"
                   className="bg-brand-light-green hover:bg-brand-light-green2 text-brand-dark-green flex h-10 w-10 items-center justify-center rounded-full duration-300"
                 >
                   <svg

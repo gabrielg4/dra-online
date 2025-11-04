@@ -28,7 +28,7 @@ export const CompaniesLogos = () => {
     <section id="companies" className="pb-10 md:pb-14">
       <div className="container">
         <h2 className="title-section mb-10 text-center text-[32px] font-medium text-white max-sm:text-[23px] md:text-[40px]">
-          <span className="text-brand-light-green font-bold max-sm:text-4xl">
+          <span className="text-brand-light-green font-bold max-sm:block max-sm:text-4xl">
             +60 operadoras
           </span>{" "}
           oferecem saúde digital <br className="hidden max-sm:block" />

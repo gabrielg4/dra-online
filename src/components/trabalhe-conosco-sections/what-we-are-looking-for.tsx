@@ -93,7 +93,7 @@ export const WhatWeAreLookingFor = () => {
   return (
     <section
       id="what-we-are-looking-for"
-      className="relative pb-20 max-sm:pb-10"
+      className="relative pb-20 max-sm:pt-10 max-sm:pb-10"
     >
       <div className="overlay -bottom-4 z-10 to-65% max-sm:bottom-0"></div>
       <div className="container !px-0">
@@ -133,7 +133,7 @@ export const WhatWeAreLookingFor = () => {
             tecnologia,
             <br /> inovação e impacto
           </h2>
-          <p className="security-content mb-8 text-center text-lg font-normal text-white">
+          <p className="security-content mb-8 text-center text-lg font-normal text-white max-sm:text-base">
             Além da nossa rede médica, também buscamos profissionais apaixonados
             por saúde, <br className="hidden md:inline-block" /> tecnologia e
             inovação para atuar em diversas áreas da empresa: atendimento,

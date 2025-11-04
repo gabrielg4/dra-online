@@ -29,7 +29,7 @@ const differentialsData = [
     ),
     icon: {
       alt: "ícone gráfico de linhas",
-      src: "/images/ic-chart.svg",
+      src: "/images/ic-fluxo-integrado.svg",
     },
   },
   {
@@ -41,7 +41,7 @@ const differentialsData = [
     ),
     icon: {
       alt: "ícone escudo com um check no meio",
-      src: "/images/ic-heart.svg",
+      src: "/images/ic-chart.svg",
     },
   },
   {
@@ -53,7 +53,7 @@ const differentialsData = [
     ),
     icon: {
       alt: "ícone escudo com um check no meio",
-      src: "/images/ic-gear.svg",
+      src: "/images/icon-eficiencia-operacional.svg",
     },
   },
   {
@@ -79,7 +79,7 @@ const differentialsData = [
     ),
     icon: {
       alt: "ícone escudo com um check no meio",
-      src: "/images/ic-handshake.svg",
+      src: "/images/ic-heart.svg",
     },
   },
 ];
