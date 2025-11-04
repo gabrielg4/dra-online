@@ -8,8 +8,6 @@ import { useMediaQuery } from "react-responsive";
 import Image from "next/image";
 import { SpecialtiesCarousel } from "../specialties-carousel";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCards, Navigation } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
 import "swiper/css/grid";
 import "swiper/css";

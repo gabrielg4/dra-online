@@ -1,5 +1,5 @@
 "use client";
-import React, { type ReactElement } from "react";
+import React, { useState, type ReactElement } from "react";
 import { CardSolucaoDiferencial } from "../cards/card-solucao-diferencial";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/all";
@@ -30,6 +30,10 @@ export const Diferentials3 = ({
   title,
   differentials,
 }: DiferentialsSolutionProps) => {
+  const [showAll, setShowAll] = useState(false); // State para controlar a exibição dos diferenciais
+  const [isBeginning, setIsBeginning] = useState(true);
+  const [isEnd, setIsEnd] = useState(false);
+
   const isTablet = useMediaQuery({
     minWidth: 768,
     maxWidth: 1023,
@@ -40,6 +44,20 @@ export const Diferentials3 = ({
   });
 
   const start = `top ${isTablet ? "40%" : isSmartphone ? "80%" : "50%"}`;
+
+  // Número de cards a mostrar inicialmente no mobile
+  const INITIAL_MOBILE_ITEMS = 3;
+
+  // Determina quantos cards mostrar
+  const cardsToShow =
+    !showAll && isSmartphone
+      ? differentials.slice(0, INITIAL_MOBILE_ITEMS)
+      : differentials;
+
+  // Verifica se há mais cards para mostrar (apenas relevante no mobile)
+  const hasMoreCards =
+    isSmartphone && differentials.length > INITIAL_MOBILE_ITEMS;
+
   useGSAP(() => {
     const titleSplit = new SplitText(".integralmente-section h2", {
       type: "chars, words",
@@ -102,8 +120,8 @@ export const Diferentials3 = ({
             />
           </div>
         </div>
-        <div className="cards-integralmente relative z-10 flex w-full flex-col gap-8 max-sm:hidden md:w-1/2">
-          {differentials.map(({ icon: { alt, src }, title }, index) => (
+        <div className="cards-integralmente relative z-10 flex w-full flex-col gap-8 md:w-1/2">
+          {cardsToShow.map(({ icon: { alt, src }, title }, index) => (
             <CardSolucaoDiferencial
               key={index}
               image={{
@@ -116,54 +134,29 @@ export const Diferentials3 = ({
             </CardSolucaoDiferencial>
           ))}
         </div>
-
-        <div className="hidden w-full max-w-[350px] max-sm:block">
-          <Swiper
-            modules={[Grid, Pagination]}
-            spaceBetween={16}
-            slidesPerView={1}
-            grid={{
-              rows: 2,
-              fill: "row",
-            }}
-            pagination={{
-              clickable: true,
-              el: ".swiper-pagination-cards-solucoes",
-            }}
-            breakpoints={{
-              0: {
-                slidesPerView: 1,
-                autoHeight: true,
-                grid: {
-                  rows: 1,
-                },
-              },
-              991: {
-                slidesPerView: 2,
-                grid: {
-                  rows: 2,
-                },
-              },
-            }}
-          >
-            {differentials.map(({ icon: { alt, src }, title }, index) => (
-              <SwiperSlide key={index}>
-                <CardSolucaoDiferencial
-                  cardClass="p-6 card-diferential"
-                  image={{
-                    alt,
-                    src,
-                  }}
-                >
-                  {title}
-                </CardSolucaoDiferencial>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-
-          <div className="swiper-pagination-cards-solucoes swiper-pagination mt-8 flex items-center justify-center gap-3 lg:hidden"></div>
-        </div>
       </div>
+
+      {/* Degradê com blur - apenas visível no mobile quando há mais cards */}
+      {hasMoreCards && !showAll && (
+        <div
+          className="pointer-events-none absolute bottom-0 left-0 z-10 h-[250px] w-full backdrop-blur-[3px] transition-opacity duration-[0.5s] ease-[ease] max-sm:block md:hidden"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(7, 95, 85, 0) 0%, #075f55 100%)",
+          }}
+        />
+      )}
+
+      {/* Botão "Ver mais" - apenas visível no mobile e quando há mais cards */}
+      {hasMoreCards && (
+        <button
+          onClick={() => setShowAll(!showAll)}
+          className="bg-brand-light-green text-brand-dark-green hover:bg-brand-main-green relative z-10 mx-auto mt-4 rounded-full px-6 py-3 text-base font-semibold transition-all duration-300 hover:text-white max-sm:block md:hidden"
+        >
+          {showAll ? "Ver menos diferenciais" : "Ver mais diferenciais"}
+        </button>
+      )}
+
       <div className="to-brand-dark-green absolute -bottom-1 z-[2] hidden h-52 w-full bg-gradient-to-b from-transparent leading-0 min-[1500px]:to-75% md:block" />
     </section>
   );
