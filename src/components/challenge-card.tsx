@@ -29,6 +29,8 @@ export const ChallengeCard = ({
           playsInline
           loop
           className="mx-auto mb-4 h-[200px] w-[360px] rounded-2xl object-cover md:mb-6 md:h-[280px]"
+          preload="auto"
+          controlsList="nodownload nofullscreen noremoteplayback" // Remover controles extras
         >
           <source src={videoUrl} type="video/mp4" />
         </video>

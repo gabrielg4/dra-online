@@ -116,6 +116,9 @@ export const DiferentialsTabs = () => {
                 muted
                 loop
                 className="h-[300px] w-full rounded-lg object-cover md:h-[370px] lg:h-[477px]"
+                preload="auto"
+                playsInline
+                controlsList="nodownload nofullscreen noremoteplayback"
               ></video>
             </div>
             <div className="w-full px-4 max-sm:max-w-full max-sm:px-0 sm:px-0 sm:py-8 md:w-1/2">
@@ -166,6 +169,9 @@ export const DiferentialsTabs = () => {
                 muted
                 loop
                 className="h-[300px] w-full rounded-lg object-cover md:h-[370px] lg:h-[477px]"
+                preload="auto"
+                playsInline
+                controlsList="nodownload nofullscreen noremoteplayback"
               ></video>
             </div>
             <div className="w-full px-4 max-sm:max-w-full max-sm:px-0 sm:px-0 sm:py-8 md:w-1/2">
@@ -218,6 +224,9 @@ export const DiferentialsTabs = () => {
                 muted
                 loop
                 className="h-[300px] w-full rounded-lg object-cover md:h-[370px] lg:h-[477px]"
+                preload="auto"
+                playsInline
+                controlsList="nodownload nofullscreen noremoteplayback"
               ></video>
             </div>
             <div className="w-full px-4 max-sm:max-w-full max-sm:px-0 sm:px-0 sm:py-8 md:w-1/2">
@@ -267,6 +276,9 @@ export const DiferentialsTabs = () => {
                 muted
                 loop
                 className="h-[300px] w-full rounded-lg object-cover md:h-[370px] lg:h-[477px]"
+                preload="auto"
+                playsInline
+                controlsList="nodownload nofullscreen noremoteplayback"
               ></video>
             </div>
             <div className="w-full px-4 max-sm:max-w-full max-sm:px-0 sm:px-0 sm:py-8 md:w-1/2">
@@ -320,6 +332,9 @@ export const DiferentialsTabs = () => {
                 muted
                 loop
                 className="h-[300px] w-full rounded-lg object-cover md:h-[370px] lg:h-[477px]"
+                preload="auto"
+                playsInline
+                controlsList="nodownload nofullscreen noremoteplayback"
               ></video>
             </div>
             <div className="w-full px-4 max-sm:max-w-full max-sm:px-0 sm:px-0 sm:py-8 md:w-1/2">
@@ -369,6 +384,9 @@ export const DiferentialsTabs = () => {
                 muted
                 loop
                 className="h-[300px] w-full rounded-lg object-cover md:h-[370px] lg:h-[477px]"
+                preload="auto"
+                playsInline
+                controlsList="nodownload nofullscreen noremoteplayback"
               ></video>
             </div>
             <div className="w-full px-4 max-sm:max-w-full max-sm:px-0 sm:px-0 sm:py-8 md:w-1/2">

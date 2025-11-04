@@ -176,6 +176,9 @@ export default function SwiperTabsMobile() {
                   muted
                   loop
                   className="pointer-events-none h-[200px] w-full rounded-3xl object-cover md:h-[370px] lg:h-[477px]"
+                  preload="auto"
+                  playsInline
+                  controlsList="nodownload nofullscreen noremoteplayback"
                 ></video>
               </div>
 
@@ -228,6 +231,9 @@ export default function SwiperTabsMobile() {
                   muted
                   loop
                   className="pointer-events-none h-[200px] w-full rounded-3xl object-cover md:h-[370px] lg:h-[477px]"
+                  preload="auto"
+                  playsInline
+                  controlsList="nodownload nofullscreen noremoteplayback"
                 ></video>
               </div>
 
@@ -278,6 +284,9 @@ export default function SwiperTabsMobile() {
                   muted
                   loop
                   className="pointer-events-none h-[200px] w-full rounded-3xl object-cover md:h-[370px] lg:h-[477px]"
+                  preload="auto"
+                  playsInline
+                  controlsList="nodownload nofullscreen noremoteplayback"
                 ></video>
               </div>
 
@@ -331,6 +340,9 @@ export default function SwiperTabsMobile() {
                   muted
                   loop
                   className="pointer-events-none h-[200px] w-full rounded-3xl object-cover md:h-[370px] lg:h-[477px]"
+                  preload="auto"
+                  playsInline
+                  controlsList="nodownload nofullscreen noremoteplayback"
                 ></video>
               </div>
 
@@ -381,6 +393,9 @@ export default function SwiperTabsMobile() {
                   muted
                   loop
                   className="pointer-events-none h-[200px] w-full rounded-3xl object-cover md:h-[370px] lg:h-[477px]"
+                  preload="auto"
+                  playsInline
+                  controlsList="nodownload nofullscreen noremoteplayback"
                 ></video>
               </div>
 
@@ -434,6 +449,9 @@ export default function SwiperTabsMobile() {
                   muted
                   loop
                   className="pointer-events-none h-[200px] w-full rounded-3xl object-cover md:h-[370px] lg:h-[477px]"
+                  preload="auto"
+                  playsInline
+                  controlsList="nodownload nofullscreen noremoteplayback"
                 ></video>
               </div>
 
