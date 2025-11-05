@@ -202,7 +202,7 @@ export const Diferentials = ({
               </CardSolucaoDiferencial>
             ))}
             {noImage && (
-              <div className="relative block h-[337px] w-full rounded-lg max-sm:hidden max-sm:max-w-[356px]">
+              <div className="relative hidden h-[337px] w-full rounded-lg max-sm:hidden max-sm:max-w-[356px]">
                 <div className="video-blur absolute top-0 left-0 z-20 h-full w-full" />
                 <video
                   src={videoUrl}
