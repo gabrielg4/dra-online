@@ -32,7 +32,7 @@ export function ChallengersAnimationV2() {
       scrollTrigger: {
         trigger: ".s-challenges",
         start: `top ${!isMobile ? "200%" : "230%"}`,
-        end: `${!isMobile ? "+=300%" : "+=380%"}`,
+        end: `${!isMobile ? "+=230%" : "+=300%"}`,
         scrub: 5,
         onUpdate: () => {
           cards.forEach((card) => {
@@ -97,7 +97,7 @@ export function ChallengersAnimationV2() {
         },
         {
           y: yHeight - 0,
-          duration: 4,
+          duration: 10,
           ease: "none",
         },
         "-=10", // Começa praticamente junto com o título

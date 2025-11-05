@@ -117,8 +117,8 @@ export const SmartphoneSectionCards3 = ({
       className="overflow-hidden pb-20 max-sm:pb-10"
     >
       <div className="container !px-0">
-        <div className="image-wrapper relative overflow-hidden bg-[url('/images/bg-security.webp')] bg-cover bg-center pt-20 max-sm:py-10 lg:pt-40">
-          <div className="to-brand-dark-green absolute -bottom-2 left-0 z-10 h-[400px] w-full bg-gradient-to-b from-transparent max-sm:opacity-20"></div>
+        <div className="image-wrapper relative bg-[url('/images/bg-security.webp')] bg-cover bg-center pt-20 max-sm:py-12 lg:pt-40">
+          <div className="to-brand-dark-green absolute -bottom-2 left-0 z-10 h-[400px] w-full bg-gradient-to-b from-transparent max-sm:hidden"></div>
           <div className="flex w-full flex-wrap items-center justify-center gap-4 max-sm:gap-2 md:flex-nowrap">
             <Image
               src={firstImage}
@@ -160,107 +160,6 @@ export const SmartphoneSectionCards3 = ({
               height={400}
             />
           </div>
-
-          {/* <div className="mobile-area-images hidden w-full overflow-hidden [&_.swiper_.swiper-wrapper]:![transition-timing-function:linear]">
-            <Swiper
-              modules={[Autoplay]}
-              slidesPerView={3}
-              spaceBetween={12}
-              loop={true}
-              speed={4000}
-              autoplay={{
-                delay: 0,
-                disableOnInteraction: false,
-              }}
-              className="[&_.swiper-wrapper]:![transition-timing-function:linear]"
-            >
-              <SwiperSlide className="!flex justify-center">
-                <Image
-                  src={firstImage}
-                  alt=""
-                  className={`h-full w-[150px] object-contain md:w-[202px]`}
-                  width={202}
-                  height={326}
-                />
-              </SwiperSlide>
-
-              <SwiperSlide className="!flex justify-center">
-                <Image
-                  src={secondImage}
-                  alt=""
-                  className={`h-full w-[130px] object-contain md:w-[208px]`}
-                  width={238}
-                  height={391}
-                />
-              </SwiperSlide>
-
-              <SwiperSlide className="!flex justify-center">
-                <Image
-                  src={thirdImage}
-                  alt=""
-                  className={`h-full w-[130px] object-contain md:w-[230px]`}
-                  width={230}
-                  height={447}
-                />
-              </SwiperSlide>
-
-              <SwiperSlide className="!flex justify-center">
-                <div className="h-[220px] w-[130px] rounded-xl border-[7px] border-white/20 md:h-[544px] md:!w-[290px] md:rounded-3xl md:border-[9px]">
-                  <video
-                    src={firstVideo}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    className="h-full w-full rounded-lg object-cover md:rounded-2xl"
-                  ></video>
-                </div>
-              </SwiperSlide>
-
-              <SwiperSlide className="!flex justify-center">
-                <Image
-                  src={firstImage}
-                  alt=""
-                  className={`h-full w-[150px] object-contain md:w-[202px]`}
-                  width={202}
-                  height={326}
-                />
-              </SwiperSlide>
-
-              <SwiperSlide className="!flex justify-center">
-                <Image
-                  src={secondImage}
-                  alt=""
-                  className={`h-full w-[130px] object-contain md:w-[208px]`}
-                  width={238}
-                  height={391}
-                />
-              </SwiperSlide>
-
-              <SwiperSlide className="!flex justify-center">
-                <Image
-                  src={thirdImage}
-                  alt=""
-                  className={`h-full w-[130px] object-contain md:w-[230px]`}
-                  width={230}
-                  height={447}
-                />
-              </SwiperSlide>
-
-              <SwiperSlide className="!flex justify-center">
-                <div className="h-[220px] w-[130px] rounded-xl border-[7px] border-white/20 md:h-[544px] md:!w-[290px] md:rounded-3xl md:border-[9px]">
-                  <video
-                    src={firstVideo}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    className="h-full w-full rounded-lg object-cover md:rounded-2xl"
-                  ></video>
-                </div>
-              </SwiperSlide>
-            </Swiper>
-          </div> */}
         </div>
         <div className="content-wrapper relative z-10 -mt-20 flex flex-col items-center justify-center px-4 max-sm:-mt-10">
           <h2 className="title-section-security mb-5 text-center leading-[110%] text-white max-sm:text-4xl sm:text-[32px] lg:text-[40px]">
