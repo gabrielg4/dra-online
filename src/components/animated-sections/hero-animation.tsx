@@ -124,7 +124,14 @@ export const HeroAnimation = () => {
               height={417}
             /> */}
             <div className="video-masked">
-              <video autoPlay muted loop playsInline>
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="auto"
+                controlsList="nodownload nofullscreen noremoteplayback"
+              >
                 <source
                   src={
                     "https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Home/Mi%CC%81dia1.mp4"
@@ -171,7 +178,14 @@ export const HeroAnimation = () => {
             height={417}
           /> */}
           <div className="video-masked !h-full !w-full">
-            <video autoPlay muted loop playsInline className="">
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
+              controlsList="nodownload nofullscreen noremoteplayback"
+            >
               <source
                 src={
                   "https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Home/Mi%CC%81dia2.mp4"
@@ -207,7 +221,15 @@ export const HeroAnimation = () => {
               height={417}
             /> */}
             <div className="video-masked">
-              <video autoPlay muted loop playsInline className="-scale-x-100">
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="-scale-x-100"
+                preload="auto"
+                controlsList="nodownload nofullscreen noremoteplayback"
+              >
                 <source
                   src={
                     "https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Home/Mi%CC%81dia3.mp4"

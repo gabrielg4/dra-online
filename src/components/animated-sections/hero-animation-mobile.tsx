@@ -225,6 +225,8 @@ export const HeroAnimationMobile = () => {
               loop
               playsInline
               className="!h-[300px] !object-right"
+              preload="auto"
+              controlsList="nodownload nofullscreen noremoteplayback"
             >
               <source
                 src={
@@ -258,6 +260,8 @@ export const HeroAnimationMobile = () => {
               loop
               playsInline
               className="!h-[300px] !object-center"
+              preload="auto"
+              controlsList="nodownload nofullscreen noremoteplayback"
             >
               <source
                 src={
@@ -300,6 +304,8 @@ export const HeroAnimationMobile = () => {
               loop
               playsInline
               className="h-[300px] -scale-x-100 !object-top"
+              preload="auto"
+              controlsList="nodownload nofullscreen noremoteplayback"
             >
               <source
                 src={

@@ -42,7 +42,7 @@ export const NaMidiaHero = () => {
           <CtaButton url="#noticias" title="Ver notícias" />
         </div>
       </div>
-      <div className="to-brand-dark-green absolute -bottom-2 left-0 z-20 h-full w-full bg-gradient-to-b from-transparent sm:h-[500px]" />
+      <div className="to-brand-dark-green absolute -bottom-2 left-0 z-20 h-full w-full bg-gradient-to-b from-transparent max-sm:to-60% sm:h-[500px]" />
       <VerticalCarouselAboutUs
         videosColumn1={[
           "https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/dr%20online%20na%20mi%CC%81dia/1007.mp4",
