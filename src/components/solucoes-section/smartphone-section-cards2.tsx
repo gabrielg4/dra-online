@@ -6,10 +6,10 @@ import gsap from "gsap";
 import { CtaButton } from "../cta-button";
 import { useMediaQuery } from "react-responsive";
 
-import "swiper/css";
-import "swiper/css/autoplay";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
+// import "swiper/css";
+// import "swiper/css/autoplay";
+// import { Swiper, SwiperSlide } from "swiper/react";
+// import { Autoplay } from "swiper/modules";
 
 interface SmartphoneSectionCardsProps {
   firstImage: string;
@@ -118,32 +118,32 @@ export const SmartphoneSectionCards2 = ({
     >
       <div className="container !px-0">
         <div className="image-wrapper relative overflow-hidden bg-[url('/images/bg-security.webp')] bg-cover bg-center pt-20 max-sm:pt-10 lg:pt-40">
-          <div className="to-brand-dark-green absolute -bottom-2 left-0 z-10 h-[400px] w-full bg-gradient-to-b from-transparent"></div>
+          <div className="to-brand-dark-green absolute -bottom-2 left-0 z-10 h-[400px] w-full bg-gradient-to-b from-transparent max-sm:opacity-50"></div>
 
-          <div className="flex flex-wrap items-center justify-center gap-4 max-sm:!hidden md:flex-nowrap">
+          <div className="flex w-full flex-wrap items-center justify-center gap-4 max-sm:gap-2 md:flex-nowrap">
             <Image
               src={firstImage}
               alt=""
-              className={`mobile-phone-image h-full w-[130px] object-contain md:w-[230px]`}
+              className={`mobile-phone-image h-full w-[130px] object-contain max-sm:max-w-18 md:w-[230px]`}
               width={230}
               height={400}
             />
             <Image
               src={secondImage}
               alt=""
-              className={`mobile-phone-image h-full w-[140px] object-contain md:w-[230px]`}
+              className={`mobile-phone-image h-full w-[140px] object-contain max-sm:max-w-18 md:w-[230px]`}
               width={230}
               height={400}
             />
             <Image
               src={thirdImage}
               alt=""
-              className={`mobile-phone-image h-full w-[140px] object-contain md:w-[230px]`}
+              className={`mobile-phone-image h-full w-[140px] object-contain max-sm:max-w-18 md:w-[230px]`}
               width={230}
               height={400}
             />
 
-            <div className="mobile-phone-image h-[260px] w-[140px] rounded-xl border-[7px] border-white/20 md:h-[544px] md:!w-[290px] md:rounded-3xl md:border-[9px]">
+            <div className="mobile-phone-image h-[260px] w-[140px] rounded-xl border-[7px] border-white/20 max-sm:h-[160px] max-sm:max-w-22 md:h-[544px] md:!w-[290px] md:rounded-3xl md:border-[9px]">
               <video
                 src={firstVideo}
                 autoPlay
@@ -154,7 +154,7 @@ export const SmartphoneSectionCards2 = ({
               ></video>
             </div>
 
-            <div className="mobile-phone-image absolute top-80 right-5 h-[150px] w-[100px] rounded-3xl border-[7px] border-white/20 shadow-2xl/10 md:top-56 md:h-[230px] md:!w-[180px] md:border-[9px]">
+            <div className="mobile-phone-image absolute top-80 right-5 h-[150px] w-[100px] rounded-3xl border-[7px] border-white/20 shadow-2xl/10 max-sm:top-8 max-sm:hidden max-sm:h-20 max-sm:max-w-20 max-sm:rounded-b-lg md:top-56 md:h-[230px] md:!w-[180px] md:border-[9px]">
               <video
                 src={secondVideo}
                 autoPlay
@@ -166,7 +166,7 @@ export const SmartphoneSectionCards2 = ({
             </div>
           </div>
 
-          <div className="mobile-area-images hidden w-full overflow-hidden max-sm:block [&_.swiper_.swiper-wrapper]:![transition-timing-function:linear]">
+          {/* <div className="mobile-area-images hidden w-full overflow-hidden max-sm:block [&_.swiper_.swiper-wrapper]:![transition-timing-function:linear]">
             <Swiper
               modules={[Autoplay]}
               slidesPerView={3}
@@ -231,9 +231,9 @@ export const SmartphoneSectionCards2 = ({
                 </div>
               </SwiperSlide>
             </Swiper>
-          </div>
+          </div> */}
         </div>
-        <div className="content-wrapper relative z-10 -mt-20 flex flex-col items-center justify-center px-4 max-sm:-mt-40">
+        <div className="content-wrapper relative z-10 -mt-20 flex flex-col items-center justify-center px-4 max-sm:-mt-6">
           <h2 className="title-section-security mb-5 text-center leading-[110%] text-white max-sm:text-4xl sm:text-[32px] lg:text-[40px]">
             Melhor que ler, <br className="hidden max-sm:block" />
             <span className="text-brand-light-green font-bold">
