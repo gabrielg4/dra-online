@@ -118,7 +118,7 @@ export const SmartphoneSectionCards3 = ({
     >
       <div className="container !px-0">
         <div className="image-wrapper relative overflow-hidden bg-[url('/images/bg-security.webp')] bg-cover bg-center pt-20 max-sm:py-10 lg:pt-40">
-          <div className="to-brand-dark-green absolute -bottom-2 left-0 z-10 h-[400px] w-full bg-gradient-to-b from-transparent max-sm:opacity-50"></div>
+          <div className="to-brand-dark-green absolute -bottom-2 left-0 z-10 h-[400px] w-full bg-gradient-to-b from-transparent max-sm:opacity-20"></div>
           <div className="flex w-full flex-wrap items-center justify-center gap-4 max-sm:gap-2 md:flex-nowrap">
             <Image
               src={firstImage}
@@ -142,7 +142,7 @@ export const SmartphoneSectionCards3 = ({
               height={447}
             />
 
-            <div className="mobile-phone-image h-[220px] w-[130px] rounded-xl border-[7px] border-white/20 max-sm:h-[160px] max-sm:max-w-22 md:h-[544px] md:!w-[290px] md:rounded-3xl md:border-[9px]">
+            <div className="mobile-phone-image h-[220px] w-[130px] rounded-xl border-[7px] border-white/20 max-sm:h-[160px] max-sm:max-w-22 max-sm:border-3 md:h-[544px] md:!w-[290px] md:rounded-3xl md:border-[9px]">
               <video
                 src={firstVideo}
                 autoPlay
