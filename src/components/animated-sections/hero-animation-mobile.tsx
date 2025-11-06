@@ -223,6 +223,7 @@ export const HeroAnimationMobile = () => {
               autoPlay
               muted
               loop
+              controls={false}
               playsInline
               className="!h-[300px] !object-right"
               preload="auto"
@@ -258,6 +259,7 @@ export const HeroAnimationMobile = () => {
               autoPlay
               muted
               loop
+              controls={false}
               playsInline
               className="!h-[300px] !object-center"
               preload="auto"
@@ -303,6 +305,7 @@ export const HeroAnimationMobile = () => {
               muted
               loop
               playsInline
+              controls={false}
               className="h-[300px] -scale-x-100 !object-top"
               preload="auto"
               controlsList="nodownload nofullscreen noremoteplayback"

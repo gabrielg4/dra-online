@@ -27,6 +27,7 @@ export const ChallengeCard = ({
           autoPlay
           muted
           playsInline
+          controls={false}
           loop
           className="mx-auto mb-4 h-[200px] w-[360px] rounded-2xl object-cover md:mb-6 md:h-[280px]"
           preload="auto"

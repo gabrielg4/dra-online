@@ -128,6 +128,7 @@ export const HeroAnimation = () => {
                 autoPlay
                 muted
                 loop
+                controls={false}
                 playsInline
                 preload="auto"
                 controlsList="nodownload nofullscreen noremoteplayback"
@@ -182,6 +183,7 @@ export const HeroAnimation = () => {
               autoPlay
               muted
               loop
+              controls={false}
               playsInline
               preload="auto"
               controlsList="nodownload nofullscreen noremoteplayback"
@@ -226,6 +228,7 @@ export const HeroAnimation = () => {
                 muted
                 loop
                 playsInline
+                controls={false}
                 className="-scale-x-100"
                 preload="auto"
                 controlsList="nodownload nofullscreen noremoteplayback"
