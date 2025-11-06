@@ -1,5 +1,5 @@
 "use client";
-import React, { type ReactElement } from "react";
+import React, { type ReactElement, useState } from "react";
 import { CardSolucaoDiferencial } from "../cards/card-solucao-diferencial";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/all";
@@ -29,6 +29,8 @@ export const Diferentials2 = ({
   differentials,
   noImage,
 }: DiferentialsSolutionProps) => {
+  const [showAll, setShowAll] = useState(false); // State para controlar a exibição dos diferenciais
+
   const isTablet = useMediaQuery({
     minWidth: 768,
     maxWidth: 1023,
@@ -39,6 +41,20 @@ export const Diferentials2 = ({
   });
 
   const start = `top ${isTablet ? "40%" : isSmartphone ? "30%" : "50%"}`;
+
+  // Número de cards a mostrar inicialmente no mobile
+  const INITIAL_MOBILE_ITEMS = 3;
+
+  // Determina quantos cards mostrar
+  const cardsToShow =
+    !showAll && isSmartphone
+      ? differentials.slice(0, INITIAL_MOBILE_ITEMS)
+      : differentials;
+
+  // Verifica se há mais cards para mostrar (apenas relevante no mobile)
+  const hasMoreCards =
+    isSmartphone && differentials.length > INITIAL_MOBILE_ITEMS;
+
   useGSAP(() => {
     const titleSplit = new SplitText(".integralmente-section h2", {
       type: "chars, words",
@@ -81,7 +97,7 @@ export const Diferentials2 = ({
   }, []);
 
   return (
-    <section className="integralmente-section bg-[url(/images/img-bg-secao-pattern.webp)] bg-cover bg-bottom bg-no-repeat py-14 sm:bg-center lg:py-20">
+    <section className="integralmente-section bg-[url(/images/img-bg-secao-pattern.webp)] bg-cover bg-bottom bg-no-repeat py-14 max-sm:bg-none sm:bg-center lg:py-20">
       <div className="container flex flex-col items-stretch gap-8 md:flex-row md:gap-14">
         <div className="flex h-full w-full flex-col justify-between md:w-1/2">
           <div>
@@ -146,8 +162,10 @@ export const Diferentials2 = ({
             </div>
           )}
         </div>
-        <div className="cards-integralmente flex w-full flex-col gap-8 md:w-1/2">
-          {differentials.map(({ icon: { alt, src }, title }, index) => (
+
+        {/* Cards e "Ver mais" */}
+        <div className="cards-integralmente relative flex w-full flex-col gap-8 md:w-1/2">
+          {cardsToShow.map(({ icon: { alt, src }, title }, index) => (
             <CardSolucaoDiferencial
               key={index}
               image={{
@@ -159,18 +177,26 @@ export const Diferentials2 = ({
               {title}
             </CardSolucaoDiferencial>
           ))}
-          {noImage && (
-            <div className="relative block h-[337px] w-full rounded-lg md:hidden">
-              <div className="video-blur absolute top-0 left-0 h-full w-full" />
-              <video
-                src={videoUrl}
-                className="h-full w-full rounded-2xl object-cover"
-                autoPlay
-                muted
-                loop
-                playsInline
-              ></video>
-            </div>
+
+          {/* Degradê com blur - apenas visível no mobile quando há mais cards */}
+          {hasMoreCards && !showAll && (
+            <div
+              className="pointer-events-none absolute bottom-0 left-0 z-10 h-[250px] w-full backdrop-blur-[3px] transition-opacity duration-[0.5s] ease-[ease] max-sm:block md:hidden"
+              style={{
+                background:
+                  "linear-gradient(180deg, rgba(7, 95, 85, 0) 0%, #075f55 100%)",
+              }}
+            />
+          )}
+
+          {/* Botão "Ver mais" - apenas visível no mobile e quando há mais cards */}
+          {hasMoreCards && (
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="bg-brand-light-green text-brand-dark-green hover:bg-brand-main-green relative z-10 mx-auto mt-4 rounded-full px-6 py-3 text-base font-semibold transition-all duration-300 hover:text-white max-sm:block md:hidden"
+            >
+              {showAll ? "Ver menos diferenciais" : "Ver mais diferenciais"}
+            </button>
           )}
         </div>
       </div>

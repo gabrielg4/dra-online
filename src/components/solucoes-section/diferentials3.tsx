@@ -7,12 +7,6 @@ import gsap from "gsap";
 import { useMediaQuery } from "react-responsive";
 import Image from "next/image";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Grid, Pagination } from "swiper/modules";
-import "swiper/css/grid";
-import "swiper/css";
-import "swiper/css/pagination";
-
 interface DiferentialsSolutionProps {
   title: ReactElement;
   description: ReactElement;
