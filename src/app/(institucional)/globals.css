@@ -526,4 +526,10 @@ section {
   h6 {
     @apply text-base;
   }
+
+  ul {
+    li {
+      @apply ml-6 list-disc;
+    }
+  }
 }
