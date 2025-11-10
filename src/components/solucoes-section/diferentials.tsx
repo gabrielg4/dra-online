@@ -8,7 +8,6 @@ import { useMediaQuery } from "react-responsive";
 import Image from "next/image";
 import { SpecialtiesCarousel } from "../specialties-carousel";
 
-import type { Swiper as SwiperType } from "swiper";
 import "swiper/css/grid";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -36,14 +35,7 @@ export const Diferentials = ({
   differentials,
   noImage,
 }: DiferentialsSolutionProps) => {
-  const [isBeginning, setIsBeginning] = useState(true);
-  const [isEnd, setIsEnd] = useState(false);
   const [showAll, setShowAll] = useState(false);
-
-  const handleSlideChange = (swiper: SwiperType) => {
-    setIsBeginning(swiper.isBeginning);
-    setIsEnd(swiper.isEnd);
-  };
 
   const isTablet = useMediaQuery({
     minWidth: 768,

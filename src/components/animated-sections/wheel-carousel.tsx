@@ -109,7 +109,7 @@ export const WheelCarousel = ({ articles }: WheelCarouselProps) => {
 
     // Inicializa com o item da mediana centralizado (rotação 0 no container)
     gsap.set(curvedCarouselRef.current, { rotation: 0 });
-    isMinTablet &&
+    if (isMinTablet)
       gsap.from(".wheel-card", {
         opacity: 0,
         scale: 0.8,

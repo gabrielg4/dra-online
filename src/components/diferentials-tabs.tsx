@@ -1,6 +1,5 @@
 "use client";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { useEffect } from "react";
 import Image from "next/image";
 import { Button } from "./ui/button";
 import Link from "next/link";

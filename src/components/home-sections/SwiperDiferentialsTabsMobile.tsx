@@ -14,7 +14,7 @@ import { Button } from "@/components/ui/button";
 export default function SwiperTabsMobile() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [contentSwiper, setContentSwiper] = useState<SwiperType | null>(null);
-  const [tabsSwiper, setTabsSwiper] = useState<SwiperType | null>(null);
+  const [tabsSwiper] = useState<SwiperType | null>(null);
 
   // Simplifique o handleSlideClick:
   const handleSlideClicks = (index: number) => {

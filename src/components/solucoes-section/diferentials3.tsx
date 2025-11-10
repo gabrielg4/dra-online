@@ -25,8 +25,6 @@ export const Diferentials3 = ({
   differentials,
 }: DiferentialsSolutionProps) => {
   const [showAll, setShowAll] = useState(false); // State para controlar a exibição dos diferenciais
-  const [isBeginning, setIsBeginning] = useState(true);
-  const [isEnd, setIsEnd] = useState(false);
 
   const isTablet = useMediaQuery({
     minWidth: 768,

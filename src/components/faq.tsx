@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsContent } from "@/components/ui/tabs";
 import { FAQContainer } from "./faq-container";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
