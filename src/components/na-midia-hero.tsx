@@ -3,23 +3,23 @@
 import React from "react";
 import { VerticalCarouselAboutUs } from "./animated-sections/vertical-carousel-about-us";
 import { CtaButton } from "./cta-button";
-import { useGSAP } from "@gsap/react";
-import { SplitText } from "gsap/all";
-import gsap from "gsap";
+// import { useGSAP } from "@gsap/react";
+// import { SplitText } from "gsap/all";
+// import gsap from "gsap";
 
 export const NaMidiaHero = () => {
-  useGSAP(() => {
-    const titleSplit = new SplitText(".na-midia-hero-title", {
-      type: "chars, words",
-    });
-    gsap.from(titleSplit.chars, {
-      yPercent: 100,
-      opacity: 0,
-      duration: 1.2,
-      ease: "expo.out",
-      stagger: 0.05,
-    });
-  }, []);
+  // useGSAP(() => {
+  //   const titleSplit = new SplitText(".na-midia-hero-title", {
+  //     type: "chars, words",
+  //   });
+  //   gsap.from(titleSplit.chars, {
+  //     yPercent: 100,
+  //     opacity: 0,
+  //     duration: 1.2,
+  //     ease: "expo.out",
+  //     stagger: 0.05,
+  //   });
+  // }, []);
   return (
     <section className="hero-about-us relative overflow-hidden bg-[url(/images/img-bg-midia.webp)] bg-cover bg-center bg-no-repeat pt-48 pb-16 sm:pt-40 sm:pb-32">
       <div className="relative z-30 container">

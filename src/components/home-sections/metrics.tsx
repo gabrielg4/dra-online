@@ -2,42 +2,42 @@
 import React from "react";
 import { CtaButton } from "../cta-button";
 import { useGSAP } from "@gsap/react";
-import { SplitText } from "gsap/all";
+// import { SplitText } from "gsap/all";
 import gsap from "gsap";
 import { MetricsContainer } from "../animated-sections/metrics-container";
 import { MetricsMobileCarousel } from "../mobile/metrics-mobile-carousel";
 
 export const MetricsSection = () => {
   useGSAP(() => {
-    const titleSplit = new SplitText(".title-section-metrics", {
-      type: "lines",
-    });
-    const subtitleSplit = new SplitText(".subtitle-metrics", {
-      type: "chars, words",
-    });
+    // const titleSplit = new SplitText(".title-section-metrics", {
+    //   type: "lines",
+    // });
+    // const subtitleSplit = new SplitText(".subtitle-metrics", {
+    //   type: "chars, words",
+    // });
 
-    gsap.from(titleSplit.lines, {
-      yPercent: 100,
-      opacity: 0,
-      duration: 1,
-      ease: "expo.out",
-      stagger: 0.05,
-      scrollTrigger: {
-        trigger: "#metrics",
-        start: "top 70%",
-      },
-    });
-    gsap.from(subtitleSplit.chars, {
-      yPercent: 100,
-      opacity: 0,
-      duration: 0.4,
-      ease: "expo.out",
-      stagger: 0.03,
-      scrollTrigger: {
-        trigger: "#metrics",
-        start: "top 70%",
-      },
-    });
+    // gsap.from(titleSplit.lines, {
+    //   yPercent: 100,
+    //   opacity: 0,
+    //   duration: 1,
+    //   ease: "expo.out",
+    //   stagger: 0.05,
+    //   scrollTrigger: {
+    //     trigger: "#metrics",
+    //     start: "top 70%",
+    //   },
+    // });
+    // gsap.from(subtitleSplit.chars, {
+    //   yPercent: 100,
+    //   opacity: 0,
+    //   duration: 0.4,
+    //   ease: "expo.out",
+    //   stagger: 0.03,
+    //   scrollTrigger: {
+    //     trigger: "#metrics",
+    //     start: "top 70%",
+    //   },
+    // });
 
     gsap.from(".cta-button-metrics", {
       xPercent: -100,
@@ -74,7 +74,7 @@ export const MetricsSection = () => {
             </h2>
           </div>
           <div className="cta-button-metrics hidden w-fit md:block">
-            <CtaButton title="Fale com o nosso time" url="/get-in-touch" />
+            <CtaButton title="Fale com o nosso time" url="#get-in-touch" />
           </div>
         </div>
         <div className="w-full lg:max-w-[calc(100%-373px)]">

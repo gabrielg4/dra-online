@@ -2,7 +2,7 @@
 import React, { type ReactElement } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { SplitText } from "gsap/all";
+// import { SplitText } from "gsap/all";
 import { useMediaQuery } from "react-responsive";
 import { CardSolucaoImpacto } from "../cards/card-solucao-impacto";
 import { cn } from "@/lib/utils";
@@ -37,21 +37,21 @@ export const Impacts2 = ({
   const start = `top ${isTablet ? "80%" : isSmartphone ? "50%" : "50%"}`;
 
   useGSAP(() => {
-    const titleSplit = new SplitText(".impacts-section2 h2", {
-      type: "chars, words",
-    });
+    // const titleSplit = new SplitText(".impacts-section2 h2", {
+    //   type: "chars, words",
+    // });
 
-    gsap.from(titleSplit.chars, {
-      yPercent: 100,
-      opacity: 0,
-      duration: 1,
-      ease: "expo.out",
-      stagger: 0.03,
-      scrollTrigger: {
-        trigger: ".impacts-section2",
-        start,
-      },
-    });
+    // gsap.from(titleSplit.chars, {
+    //   yPercent: 100,
+    //   opacity: 0,
+    //   duration: 1,
+    //   ease: "expo.out",
+    //   stagger: 0.03,
+    //   scrollTrigger: {
+    //     trigger: ".impacts-section2",
+    //     start,
+    //   },
+    // });
     gsap.from(".impacts-section2 .section-subtitle ", {
       y: -100,
       opacity: 0,

@@ -16,7 +16,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "./ui/textarea";
 import { ArrowUpRight } from "lucide-react";
 import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
+// import gsap from "gsap";
 
 const formSchema = z.object({
   name: z.string().trim().min(1, "Campo obrigatório"),
@@ -37,18 +37,18 @@ export const ContactForm = () => {
   });
 
   useGSAP(() => {
-    const inputs = gsap.utils.toArray(".input-contact");
-    gsap.from(inputs, {
-      xPercent: 100,
-      opacity: 0,
-      duration: 1,
-      ease: "expo.out",
-      stagger: 0.7,
-      scrollTrigger: {
-        trigger: "#get-in-touch",
-        start: "top 80%",
-      },
-    });
+    // const inputs = gsap.utils.toArray(".input-contact");
+    // gsap.from(inputs, {
+    //   xPercent: 100,
+    //   opacity: 0,
+    //   duration: 1,
+    //   ease: "expo.out",
+    //   stagger: 0.7,
+    //   scrollTrigger: {
+    //     trigger: "#get-in-touch",
+    //     start: "top 80%",
+    //   },
+    // });
   }, []);
 
   function onSubmit(values: z.infer<typeof formSchema>) {

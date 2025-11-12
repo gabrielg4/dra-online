@@ -2,7 +2,7 @@
 import React from "react";
 import { CardSolucaoDiferencial } from "../cards/card-solucao-diferencial";
 import { useGSAP } from "@gsap/react";
-import { SplitText } from "gsap/all";
+// import { SplitText } from "gsap/all";
 import gsap from "gsap";
 import { useMediaQuery } from "react-responsive";
 
@@ -19,32 +19,32 @@ export const Beneficios = () => {
   const start = `top ${isTablet ? "40%" : isSmartphone ? "30%" : "50%"}`;
 
   useGSAP(() => {
-    const titleSplit = new SplitText(".diferential-section h2", {
-      type: "chars, words",
-    });
+    // const titleSplit = new SplitText(".diferential-section h2", {
+    //   type: "chars, words",
+    // });
 
-    gsap.from(titleSplit.chars, {
-      yPercent: 100,
-      opacity: 0,
-      duration: 1,
-      ease: "expo.out",
-      stagger: 0.05,
-      scrollTrigger: {
-        trigger: ".diferential-section",
-        start: "top 30%",
-      },
-    });
-    gsap.from(".diferential-section .section-description ", {
-      x: -100,
-      opacity: 0,
-      duration: 2,
-      ease: "expo.out",
-      delay: 0,
-      scrollTrigger: {
-        trigger: ".diferential-section",
-        start: "top 30%",
-      },
-    });
+    // gsap.from(titleSplit.chars, {
+    //   yPercent: 100,
+    //   opacity: 0,
+    //   duration: 1,
+    //   ease: "expo.out",
+    //   stagger: 0.05,
+    //   scrollTrigger: {
+    //     trigger: ".diferential-section",
+    //     start: "top 30%",
+    //   },
+    // });
+    // gsap.from(".diferential-section .section-description ", {
+    //   x: -100,
+    //   opacity: 0,
+    //   duration: 2,
+    //   ease: "expo.out",
+    //   delay: 0,
+    //   scrollTrigger: {
+    //     trigger: ".diferential-section",
+    //     start: "top 30%",
+    //   },
+    // });
     gsap.from(".card-diferential", {
       x: 100,
       opacity: 0,
@@ -65,7 +65,7 @@ export const Beneficios = () => {
           <h2 className="mb-6 text-[32px] leading-[120%] text-white lg:text-[40px]">
             <span className="text-brand-light-green font-bold">
               Cuidar com tecnologia,
-            </span>
+            </span>{" "}
             proximidade e autonomia
           </h2>
           <div className="relative hidden h-[480px] w-full rounded-lg md:block">

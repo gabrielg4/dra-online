@@ -6,7 +6,7 @@ import { SecurityCards } from "../animated-sections/security-cards";
 import Image from "next/image";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { SplitText } from "gsap/all";
+// import { SplitText } from "gsap/all";
 import { useMediaQuery } from "react-responsive";
 
 export const SecurityInformation = () => {
@@ -14,22 +14,22 @@ export const SecurityInformation = () => {
     maxWidth: 640,
   });
   useGSAP(() => {
-    const titleSplit = new SplitText(".title-section-security", {
-      type: "chars, words",
-    });
-    gsap.from(titleSplit.chars, {
-      yPercent: 100,
-      opacity: 0,
-      duration: 2,
-      ease: "expo.out",
-      stagger: 0.05,
-      scrollTrigger: {
-        trigger: "#security-information",
-        start: `${isMobile ? "top 70%" : "center 80%"}`,
-        end: "top top",
-        scrub: 3,
-      },
-    });
+    // const titleSplit = new SplitText(".title-section-security", {
+    //   type: "chars, words",
+    // });
+    // gsap.from(titleSplit.chars, {
+    //   yPercent: 100,
+    //   opacity: 0,
+    //   duration: 2,
+    //   ease: "expo.out",
+    //   stagger: 0.05,
+    //   scrollTrigger: {
+    //     trigger: "#security-information",
+    //     start: `${isMobile ? "top 70%" : "center 80%"}`,
+    //     end: "top top",
+    //     scrub: 3,
+    //   },
+    // });
 
     gsap.from(".security-content", {
       yPercent: 100,

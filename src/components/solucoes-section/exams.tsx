@@ -1,7 +1,7 @@
 "use client";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { SplitText } from "gsap/all";
+// import { SplitText } from "gsap/all";
 import Image from "next/image";
 import React, { useState } from "react";
 
@@ -90,21 +90,21 @@ export const ExamsSection = () => {
   };
 
   useGSAP(() => {
-    const titleSplit = new SplitText("#exams h2", {
-      type: "chars, words",
-    });
+    // const titleSplit = new SplitText("#exams h2", {
+    //   type: "chars, words",
+    // });
 
-    gsap.from(titleSplit.chars, {
-      yPercent: 100,
-      opacity: 0,
-      duration: 1,
-      ease: "expo.out",
-      stagger: 0.03,
-      scrollTrigger: {
-        trigger: "#exams",
-        start: "top 70%",
-      },
-    });
+    // gsap.from(titleSplit.chars, {
+    //   yPercent: 100,
+    //   opacity: 0,
+    //   duration: 1,
+    //   ease: "expo.out",
+    //   stagger: 0.03,
+    //   scrollTrigger: {
+    //     trigger: "#exams",
+    //     start: "top 70%",
+    //   },
+    // });
 
     gsap.from(".card-exams-container", {
       yPercent: 100,

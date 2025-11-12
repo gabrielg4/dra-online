@@ -1,9 +1,9 @@
 "use client";
 import React, { type ReactElement } from "react";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { SplitText } from "gsap/all";
-import { useMediaQuery } from "react-responsive";
+// import { useGSAP } from "@gsap/react";
+// import gsap from "gsap";
+// import { SplitText } from "gsap/all";
+// import { useMediaQuery } from "react-responsive";
 import { CardSolucaoImpacto } from "../cards/card-solucao-impacto";
 import { cn } from "@/lib/utils";
 
@@ -26,43 +26,43 @@ export const Impacts = ({
   impacts,
   customClassNames,
 }: ImpactsSectionProps) => {
-  const isTablet = useMediaQuery({
-    minWidth: 768,
-    maxWidth: 1023,
-  });
-  const isSmartphone = useMediaQuery({
-    maxWidth: 767,
-  });
+  // const isTablet = useMediaQuery({
+  //   minWidth: 768,
+  //   maxWidth: 1023,
+  // });
+  // const isSmartphone = useMediaQuery({
+  //   maxWidth: 767,
+  // });
 
-  const start = `top ${isTablet ? "80%" : isSmartphone ? "80%" : "50%"}`;
+  // const start = `top ${isTablet ? "80%" : isSmartphone ? "80%" : "50%"}`;
 
-  useGSAP(() => {
-    const titleSplit = new SplitText(".impacts-section h2", {
-      type: "chars, words",
-    });
+  // useGSAP(() => {
+  //   const titleSplit = new SplitText(".impacts-section h2", {
+  //     type: "chars, words",
+  //   });
 
-    gsap.from(titleSplit.chars, {
-      yPercent: 100,
-      opacity: 0,
-      duration: 1,
-      ease: "expo.out",
-      stagger: 0.03,
-      scrollTrigger: {
-        trigger: ".impacts-section",
-        start,
-      },
-    });
-    gsap.from(".impacts-section .section-subtitle ", {
-      y: -100,
-      opacity: 0,
-      duration: 1,
-      ease: "expo.out",
-      scrollTrigger: {
-        trigger: ".impacts-section",
-        start,
-      },
-    });
-  }, []);
+  //   gsap.from(titleSplit.chars, {
+  //     yPercent: 100,
+  //     opacity: 0,
+  //     duration: 1,
+  //     ease: "expo.out",
+  //     stagger: 0.03,
+  //     scrollTrigger: {
+  //       trigger: ".impacts-section",
+  //       start,
+  //     },
+  //   });
+  //   gsap.from(".impacts-section .section-subtitle ", {
+  //     y: -100,
+  //     opacity: 0,
+  //     duration: 1,
+  //     ease: "expo.out",
+  //     scrollTrigger: {
+  //       trigger: ".impacts-section",
+  //       start,
+  //     },
+  //   });
+  // }, []);
 
   return (
     <section className="impacts-section py-10 lg:py-14">

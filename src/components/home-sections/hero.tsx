@@ -6,26 +6,26 @@ import { HeroAnimation } from "../animated-sections/hero-animation";
 import { HeroAnimationMobile } from "../animated-sections/hero-animation-mobile";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { SplitText } from "gsap/all";
+// import { SplitText } from "gsap/all";
 export const Hero = () => {
   useGSAP(() => {
-    const descriptionSplit = new SplitText(".description", { type: "lines" });
-    const titleSplit = new SplitText("#title", { type: "chars, words" });
+    // const descriptionSplit = new SplitText(".description", { type: "lines" });
+    // const titleSplit = new SplitText("#title", { type: "chars, words" });
 
-    gsap.from(titleSplit.chars, {
-      yPercent: 100,
-      opacity: 0,
-      duration: 1,
-      ease: "expo.out",
-      stagger: 0.05,
-    });
-    gsap.from(descriptionSplit.lines, {
-      yPercent: 100,
-      opacity: 0,
-      duration: 1.8,
-      ease: "expo.out",
-      stagger: 0.2,
-    });
+    // gsap.from(titleSplit.chars, {
+    //   yPercent: 100,
+    //   opacity: 0,
+    //   duration: 1,
+    //   ease: "expo.out",
+    //   stagger: 0.05,
+    // });
+    // gsap.from(descriptionSplit.lines, {
+    //   yPercent: 100,
+    //   opacity: 0,
+    //   duration: 1.8,
+    //   ease: "expo.out",
+    //   stagger: 0.2,
+    // });
 
     gsap.from(".cta-button", {
       yPercent: 100,

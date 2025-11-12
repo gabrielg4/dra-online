@@ -1,12 +1,12 @@
 "use client";
 import React, { useEffect, useState, type ReactNode } from "react";
 import { TestimonialsCarousel } from "@/components/testimonials-carousel";
-import { useGSAP } from "@gsap/react";
-import { SplitText } from "gsap/all";
-import gsap from "gsap";
+// import { useGSAP } from "@gsap/react";
+// import { SplitText } from "gsap/all";
+// import gsap from "gsap";
 import type { Depoimento } from "../../payload-types";
 import { baseTestimonials } from "@/utils/base-testimonials";
-import { useMediaQuery } from "react-responsive";
+// import { useMediaQuery } from "react-responsive";
 
 interface TestimonialsSectionProps {
   children: ReactNode;
@@ -17,39 +17,39 @@ export const TestimonialsSection = ({
   children,
   hasBlur = false,
 }: TestimonialsSectionProps) => {
-  const isMobile = useMediaQuery({
-    maxWidth: 640,
-  });
+  // const isMobile = useMediaQuery({
+  //   maxWidth: 640,
+  // });
   const [testimonials, setTestimonials] = useState<Depoimento[]>(
     baseTestimonials as Depoimento[],
   );
-  useGSAP(() => {
-    const titleSplit = new SplitText(".testimonials-section h2", {
-      type: "chars, words",
-    });
+  // useGSAP(() => {
+  //   const titleSplit = new SplitText(".testimonials-section h2", {
+  //     type: "chars, words",
+  //   });
 
-    gsap.from(titleSplit.chars, {
-      yPercent: 100,
-      opacity: 0,
-      duration: 1,
-      ease: "expo.out",
-      stagger: 0.03,
-      scrollTrigger: {
-        trigger: ".testimonials-section",
-        start: `top ${isMobile ? "70%" : "30%"}`,
-      },
-    });
-    gsap.from(".testimonials-section .section-subtitle ", {
-      x: -100,
-      opacity: 0,
-      duration: 1,
-      ease: "expo.out",
-      scrollTrigger: {
-        trigger: ".testimonials-section",
-        start: "top 30%",
-      },
-    });
-  }, []);
+  //   gsap.from(titleSplit.chars, {
+  //     yPercent: 100,
+  //     opacity: 0,
+  //     duration: 1,
+  //     ease: "expo.out",
+  //     stagger: 0.03,
+  //     scrollTrigger: {
+  //       trigger: ".testimonials-section",
+  //       start: `top ${isMobile ? "70%" : "30%"}`,
+  //     },
+  //   });
+  //   gsap.from(".testimonials-section .section-subtitle ", {
+  //     x: -100,
+  //     opacity: 0,
+  //     duration: 1,
+  //     ease: "expo.out",
+  //     scrollTrigger: {
+  //       trigger: ".testimonials-section",
+  //       start: "top 30%",
+  //     },
+  //   });
+  // }, []);
 
   useEffect(() => {
     fetch("/api/depoimentos", {

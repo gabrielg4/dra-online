@@ -2,28 +2,28 @@
 
 import Image from "next/image";
 import React from "react";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { SplitText } from "gsap/all";
+// import { useGSAP } from "@gsap/react";
+// import gsap from "gsap";
+// import { SplitText } from "gsap/all";
 import { WorkWithUsForm2 } from "../work-with-us-form-2";
 
 export const WorkWithUsSection2 = () => {
-  useGSAP(() => {
-    const titleSplit = new SplitText(".title-contact-section", {
-      type: "chars, words",
-    });
-    gsap.from(titleSplit.chars, {
-      yPercent: 100,
-      opacity: 0,
-      duration: 1,
-      ease: "expo.out",
-      stagger: 0.05,
-      scrollTrigger: {
-        trigger: "#form-curriculo",
-        start: "top 80%",
-      },
-    });
-  }, []);
+  // useGSAP(() => {
+  //   const titleSplit = new SplitText(".title-contact-section", {
+  //     type: "chars, words",
+  //   });
+  //   gsap.from(titleSplit.chars, {
+  //     yPercent: 100,
+  //     opacity: 0,
+  //     duration: 1,
+  //     ease: "expo.out",
+  //     stagger: 0.05,
+  //     scrollTrigger: {
+  //       trigger: "#form-curriculo",
+  //       start: "top 80%",
+  //     },
+  //   });
+  // }, []);
 
   return (
     <section

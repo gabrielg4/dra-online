@@ -2,7 +2,7 @@
 import React, { type ReactElement } from "react";
 import { CardSolucaoDiferencial } from "../cards/card-solucao-diferencial";
 import { useGSAP } from "@gsap/react";
-import { SplitText } from "gsap/all";
+// import { SplitText } from "gsap/all";
 import gsap from "gsap";
 import { useMediaQuery } from "react-responsive";
 import { SpecialtiesCarousel } from "../specialties-carousel";
@@ -40,21 +40,21 @@ export const DiferentialsV2 = ({
   const start = `top ${isTablet ? "40%" : isSmartphone ? "30%" : "50%"}`;
 
   useGSAP(() => {
-    const titleSplit = new SplitText(".diferential-section h2", {
-      type: "chars, words",
-    });
+    // const titleSplit = new SplitText(".diferential-section h2", {
+    //   type: "chars, words",
+    // });
 
-    gsap.from(titleSplit.chars, {
-      yPercent: 100,
-      opacity: 0,
-      duration: 1,
-      ease: "expo.out",
-      stagger: 0.05,
-      scrollTrigger: {
-        trigger: ".diferential-section",
-        start: "top 30%",
-      },
-    });
+    // gsap.from(titleSplit.chars, {
+    //   yPercent: 100,
+    //   opacity: 0,
+    //   duration: 1,
+    //   ease: "expo.out",
+    //   stagger: 0.05,
+    //   scrollTrigger: {
+    //     trigger: ".diferential-section",
+    //     start: "top 30%",
+    //   },
+    // });
     gsap.from(".diferential-section .section-description ", {
       x: -100,
       opacity: 0,

@@ -3,40 +3,40 @@
 import Image from "next/image";
 import React from "react";
 import { ContactForm } from "../contact-form";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { SplitText } from "gsap/all";
+// import { useGSAP } from "@gsap/react";
+// import gsap from "gsap";
+// import { SplitText } from "gsap/all";
 
 export const ContactSolution = () => {
-  useGSAP(() => {
-    const titleSplit = new SplitText(".title-contact-section", {
-      type: "chars, words",
-    });
+  // useGSAP(() => {
+  //   const titleSplit = new SplitText(".title-contact-section", {
+  //     type: "chars, words",
+  //   });
 
-    gsap.from(titleSplit.chars, {
-      yPercent: 100,
-      opacity: 0,
-      duration: 0.8,
-      ease: "expo.out",
-      stagger: 0.03,
-      scrollTrigger: {
-        trigger: "#contato",
-        start: "top 80%",
-      },
-    });
+  //   gsap.from(titleSplit.chars, {
+  //     yPercent: 100,
+  //     opacity: 0,
+  //     duration: 0.8,
+  //     ease: "expo.out",
+  //     stagger: 0.03,
+  //     scrollTrigger: {
+  //       trigger: "#contato",
+  //       start: "top 80%",
+  //     },
+  //   });
 
-    gsap.from(".description-contact", {
-      xPercent: -100,
-      opacity: 0,
-      duration: 1,
-      ease: "expo.out",
-      stagger: 0.05,
-      scrollTrigger: {
-        trigger: "#contato",
-        start: "top 80%",
-      },
-    });
-  }, []);
+  //   gsap.from(".description-contact", {
+  //     xPercent: -100,
+  //     opacity: 0,
+  //     duration: 1,
+  //     ease: "expo.out",
+  //     stagger: 0.05,
+  //     scrollTrigger: {
+  //       trigger: "#contato",
+  //       start: "top 80%",
+  //     },
+  //   });
+  // }, []);
 
   return (
     <section

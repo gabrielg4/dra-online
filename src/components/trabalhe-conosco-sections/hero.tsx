@@ -3,30 +3,28 @@ import React from "react";
 // import { VideosTrabalheConosco } from "../videos-trabalhe-conosco";
 import { CtaButton } from "../cta-button";
 import { useGSAP } from "@gsap/react";
-import { SplitText } from "gsap/all";
-import gsap from "gsap";
+// import { SplitText } from "gsap/all";
+// import gsap from "gsap";
 import { VerticalCarouselAboutUs } from "../animated-sections/vertical-carousel-about-us";
 
 export const HeroWorkWithUs = () => {
   useGSAP(() => {
-    const titleSplit = new SplitText("#hero-work-with-us h1", {
-      type: "chars, words",
-    });
-
-    gsap.from(titleSplit.chars, {
-      yPercent: 100,
-      opacity: 0,
-      duration: 0.5,
-      ease: "expo.out",
-      stagger: 0.05,
-    });
-
-    gsap.from("#hero-work-with-us .description", {
-      yPercent: 100,
-      opacity: 0,
-      duration: 3,
-      ease: "expo.out",
-    });
+    // const titleSplit = new SplitText("#hero-work-with-us h1", {
+    //   type: "chars, words",
+    // });
+    // gsap.from(titleSplit.chars, {
+    //   yPercent: 100,
+    //   opacity: 0,
+    //   duration: 0.5,
+    //   ease: "expo.out",
+    //   stagger: 0.05,
+    // });
+    // gsap.from("#hero-work-with-us .description", {
+    //   yPercent: 100,
+    //   opacity: 0,
+    //   duration: 3,
+    //   ease: "expo.out",
+    // });
   }, []);
   return (
     <section

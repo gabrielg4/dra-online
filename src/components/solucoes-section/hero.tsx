@@ -1,9 +1,9 @@
 "use client";
 import React, { type ReactElement } from "react";
 import { CtaButton } from "../cta-button";
-import { useGSAP } from "@gsap/react";
-import { SplitText } from "gsap/all";
-import gsap from "gsap";
+// import { useGSAP } from "@gsap/react";
+// import { SplitText } from "gsap/all";
+// import gsap from "gsap";
 import Image from "next/image";
 
 interface HeroSolutionProps {
@@ -17,25 +17,25 @@ export const Hero = ({
   title,
   classHeroVideo,
 }: HeroSolutionProps) => {
-  useGSAP(() => {
-    const titleSplit = new SplitText(".title-hero", {
-      type: "chars, words",
-    });
-    gsap.from(titleSplit.chars, {
-      yPercent: 100,
-      opacity: 0,
-      duration: 1,
-      ease: "expo.out",
-      stagger: 0.05,
-    });
+  // useGSAP(() => {
+  //   const titleSplit = new SplitText(".title-hero", {
+  //     type: "chars, words",
+  //   });
+  //   gsap.from(titleSplit.chars, {
+  //     yPercent: 100,
+  //     opacity: 0,
+  //     duration: 1,
+  //     ease: "expo.out",
+  //     stagger: 0.05,
+  //   });
 
-    gsap.from(".solution-hero p", {
-      x: -100,
-      opacity: 0,
-      duration: 2,
-      ease: "expo.out",
-    });
-  }, []);
+  //   gsap.from(".solution-hero p", {
+  //     x: -100,
+  //     opacity: 0,
+  //     duration: 2,
+  //     ease: "expo.out",
+  //   });
+  // }, []);
 
   return (
     <section

@@ -4,25 +4,25 @@ import Image from "next/image";
 import React from "react";
 import { ContactForm } from "../contact-form";
 import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { SplitText } from "gsap/all";
+// import gsap from "gsap";
+// import { SplitText } from "gsap/all";
 
 export const GetInTouch2 = () => {
   useGSAP(() => {
-    const titleSplit = new SplitText(".title-contact-section", {
-      type: "chars, words",
-    });
-    gsap.from(titleSplit.chars, {
-      yPercent: 100,
-      opacity: 0,
-      duration: 1,
-      ease: "expo.out",
-      stagger: 0.05,
-      scrollTrigger: {
-        trigger: "#get-in-touch",
-        start: "top 80%",
-      },
-    });
+    // const titleSplit = new SplitText(".title-contact-section", {
+    //   type: "chars, words",
+    // });
+    // gsap.from(titleSplit.chars, {
+    //   yPercent: 100,
+    //   opacity: 0,
+    //   duration: 1,
+    //   ease: "expo.out",
+    //   stagger: 0.05,
+    //   scrollTrigger: {
+    //     trigger: "#get-in-touch",
+    //     start: "top 80%",
+    //   },
+    // });
   }, []);
 
   return (

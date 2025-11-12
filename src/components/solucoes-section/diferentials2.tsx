@@ -2,7 +2,7 @@
 import React, { type ReactElement, useState } from "react";
 import { CardSolucaoDiferencial } from "../cards/card-solucao-diferencial";
 import { useGSAP } from "@gsap/react";
-import { SplitText } from "gsap/all";
+// import { SplitText } from "gsap/all";
 import gsap from "gsap";
 import { useMediaQuery } from "react-responsive";
 import Image from "next/image";
@@ -56,32 +56,32 @@ export const Diferentials2 = ({
     isSmartphone && differentials.length > INITIAL_MOBILE_ITEMS;
 
   useGSAP(() => {
-    const titleSplit = new SplitText(".integralmente-section h2", {
-      type: "chars, words",
-    });
+    // const titleSplit = new SplitText(".integralmente-section h2", {
+    //   type: "chars, words",
+    // });
 
-    gsap.from(titleSplit.chars, {
-      yPercent: 100,
-      opacity: 0,
-      duration: 0.8,
-      ease: "expo.out",
-      stagger: 0.03,
-      scrollTrigger: {
-        trigger: ".integralmente-section",
-        start: "top 40%",
-      },
-    });
-    gsap.from(".integralmente-section .section-description ", {
-      x: -100,
-      opacity: 0,
-      duration: 1,
-      ease: "expo.out",
-      delay: 0.3,
-      scrollTrigger: {
-        trigger: ".integralmente-section",
-        start: "top 30%",
-      },
-    });
+    // gsap.from(titleSplit.chars, {
+    //   yPercent: 100,
+    //   opacity: 0,
+    //   duration: 0.8,
+    //   ease: "expo.out",
+    //   stagger: 0.03,
+    //   scrollTrigger: {
+    //     trigger: ".integralmente-section",
+    //     start: "top 40%",
+    //   },
+    // });
+    // gsap.from(".integralmente-section .section-description ", {
+    //   x: -100,
+    //   opacity: 0,
+    //   duration: 1,
+    //   ease: "expo.out",
+    //   delay: 0.3,
+    //   scrollTrigger: {
+    //     trigger: ".integralmente-section",
+    //     start: "top 30%",
+    //   },
+    // });
     gsap.from(".card-integralmente", {
       x: 100,
       opacity: 0,

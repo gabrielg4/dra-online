@@ -4,7 +4,7 @@ import React from "react";
 import { BlogCarousel } from "../blog-carousel";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { SplitText } from "gsap/all";
+// import { SplitText } from "gsap/all";
 import type { Blog as BlogCMS } from "../../../payload-types";
 
 interface BlogProps {
@@ -13,39 +13,39 @@ interface BlogProps {
 
 export const Blog = ({ featuredPosts }: BlogProps) => {
   useGSAP(() => {
-    const titleSplit = new SplitText(".title-section-blog", {
-      type: "chars, words",
-    });
+    // const titleSplit = new SplitText(".title-section-blog", {
+    //   type: "chars, words",
+    // });
 
-    gsap.from(titleSplit.chars, {
-      yPercent: 100,
-      opacity: 0,
-      duration: 1,
-      ease: "expo.out",
-      stagger: 0.05,
-      scrollTrigger: {
-        trigger: "#blog",
-        start: "top 90%",
-        end: "top top",
-        scrub: 3,
-        // markers: true,
-      },
-    });
+    // gsap.from(titleSplit.chars, {
+    //   yPercent: 100,
+    //   opacity: 0,
+    //   duration: 1,
+    //   ease: "expo.out",
+    //   stagger: 0.05,
+    //   scrollTrigger: {
+    //     trigger: "#blog",
+    //     start: "top 90%",
+    //     end: "top top",
+    //     scrub: 3,
+    //     // markers: true,
+    //   },
+    // });
 
-    const subtitleSplit = new SplitText(".subtitle-blog", {
-      type: "chars, words",
-    });
-    gsap.from(subtitleSplit.chars, {
-      yPercent: 100,
-      opacity: 0,
-      duration: 1.3,
-      ease: "expo.out",
-      stagger: 0.06,
-      scrollTrigger: {
-        trigger: "#blog",
-        start: "top 90%",
-      },
-    });
+    // const subtitleSplit = new SplitText(".subtitle-blog", {
+    //   type: "chars, words",
+    // });
+    // gsap.from(subtitleSplit.chars, {
+    //   yPercent: 100,
+    //   opacity: 0,
+    //   duration: 1.3,
+    //   ease: "expo.out",
+    //   stagger: 0.06,
+    //   scrollTrigger: {
+    //     trigger: "#blog",
+    //     start: "top 90%",
+    //   },
+    // });
     gsap.from(".blog-wrapper", {
       scale: 0,
       opacity: 0,

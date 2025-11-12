@@ -9,6 +9,7 @@ interface NaMidiaGridProps {
   column1: NaMidia[];
   column2: NaMidia[];
   column3: NaMidia[];
+  currentPage: number;
 }
 
 export const NaMidiaGrid = ({
@@ -16,8 +17,10 @@ export const NaMidiaGrid = ({
   column1,
   column2,
   column3,
+  currentPage,
 }: NaMidiaGridProps) => {
   const router = useRouter();
+
   const backToTop = () => {
     window.scrollTo({
       top: 0,
@@ -26,7 +29,13 @@ export const NaMidiaGrid = ({
   };
 
   const handleNextPage = () => {
-    router.push(`/noticias?proxima_pagina=${nextPage}`);
+    router.push(`/noticias?proxima_pagina=${currentPage + 1}`);
+  };
+
+  const handlePreviousPage = () => {
+    if (currentPage > 1) {
+      router.push(`/noticias?proxima_pagina=${currentPage - 1}`);
+    }
   };
 
   return (
@@ -48,19 +57,34 @@ export const NaMidiaGrid = ({
           ))}
         </div>
       </div>
+
       <div className="mt-10 flex flex-col items-center justify-center gap-6 sm:flex-row">
-        {nextPage && nextPage > 0 && (
+        {currentPage > 1 && (
           <button
-            onClick={handleNextPage}
+            onClick={handlePreviousPage}
             className="group bg-brand-light-green text-brand-dark-green flex cursor-pointer items-center gap-1 rounded-full px-4 py-2 text-[16px] leading-[150%] font-medium duration-300"
           >
-            Ver mais
+            Anterior
             <ArrowUpRight
               strokeWidth={1.5}
               className="size-6 duration-300 group-hover:rotate-45"
             />
           </button>
         )}
+
+        {nextPage && nextPage > 0 && (
+          <button
+            onClick={handleNextPage}
+            className="group bg-brand-light-green text-brand-dark-green flex cursor-pointer items-center gap-1 rounded-full px-4 py-2 text-[16px] leading-[150%] font-medium duration-300"
+          >
+            Próximo
+            <ArrowUpRight
+              strokeWidth={1.5}
+              className="size-6 duration-300 group-hover:rotate-45"
+            />
+          </button>
+        )}
+
         <button
           onClick={backToTop}
           className="group border-brand-light-green text-brand-light-green flex cursor-pointer items-center gap-1 rounded-full border px-4 py-2 text-[16px] leading-[150%] font-medium duration-300"

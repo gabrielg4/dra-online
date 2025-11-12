@@ -4,29 +4,30 @@ import { VerticalCarouselAboutUs } from "../animated-sections/vertical-carousel-
 import { CtaButton } from "../cta-button";
 
 import React from "react";
-import { SplitText } from "gsap/all";
-import gsap from "gsap";
+// import { SplitText } from "gsap/all";
+// import gsap from "gsap";
 
 export const Hero = () => {
   useGSAP(() => {
-    const titleSplit = new SplitText(".about-title", {
-      type: "chars, words",
-    });
-    gsap.from(titleSplit.chars, {
-      yPercent: 100,
-      opacity: 0,
-      duration: 0.8,
-      ease: "expo.out",
-      stagger: 0.05,
-    });
-
-    gsap.from(".about-description", {
-      x: -100,
-      opacity: 0,
-      duration: 2,
-      ease: "expo.out",
-    });
+    // const titleSplit = new SplitText(".about-title", {
+    //   type: "chars, words",
+    // });
+    // Ajustando a animação do título
+    // gsap.from(titleSplit.chars, {
+    //   yPercent: 100,
+    //   opacity: 0,
+    //   duration: 1.2,
+    //   ease: "power2.out",
+    //   stagger: 0.08,
+    // });
+    // gsap.from(".about-description", {
+    //   x: -100,
+    //   opacity: 0,
+    //   duration: 1.5,
+    //   ease: "power2.out",
+    // });
   }, []);
+
   return (
     <section className="hero-about-us relative overflow-hidden bg-[url(/images/img-bg-sobre-nos.svg)] bg-cover bg-center bg-no-repeat pt-56 pb-16 sm:pt-32 sm:pb-32 lg:pt-40">
       <div className="relative z-30 container max-sm:z-[60]">
@@ -52,7 +53,7 @@ export const Hero = () => {
       <VerticalCarouselAboutUs
         videosColumn1={[
           "https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Sobre Nós /grok-video-01fdbe80-86df-46c0-b6d2-f6e718dc15c9.mp4",
-          "https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Sobre Nós /grok-video-41e22a37-5c9e-4583-9993-8a970062a392.mp4",
+          "https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Trabalhe%20com%20a%20gente/grok-video-515adf19-13b8-435c-80e6-9f22b3e1dc37%20(1).mp4",
         ]}
         videosColumn2={["/videos/video10.mp4", "/videos/video8.mp4"]}
         videosColumn3={[

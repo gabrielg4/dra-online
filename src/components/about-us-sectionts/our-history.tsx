@@ -15,65 +15,65 @@ export const OurHistory = () => {
   });
 
   useGSAP(() => {
-    const titleElement = document.querySelector(".s-about-us h2");
-    const paragraphs = document.querySelectorAll(".s-about-us p");
+    // const titleElement = document.querySelector(".s-about-us h2");
+    // const paragraphs = document.querySelectorAll(".s-about-us p");
     const imageContainer = document.querySelector(
       ".s-about-us .image-container",
     );
 
-    if (!titleElement || !paragraphs.length) return;
+    // if (!titleElement || !paragraphs.length) return;
 
     // Split do título
-    const titleSplit = new SplitText(titleElement, {
-      type: "chars, words",
-    });
+    // const titleSplit = new SplitText(titleElement, {
+    //   type: "chars, words",
+    // });
 
     // Definir estado inicial visível antes de animar
-    gsap.set(titleSplit.chars, { yPercent: 0, opacity: 1 });
-    gsap.set(paragraphs, { x: 0, opacity: 1 });
+    // gsap.set(titleSplit.chars, { yPercent: 0, opacity: 1 });
+    // gsap.set(paragraphs, { x: 0, opacity: 1 });
     gsap.set(imageContainer, { opacity: 1, scale: 1 });
 
     // Animação do título
-    gsap.fromTo(
-      titleSplit.chars,
-      {
-        yPercent: 100,
-        opacity: 0,
-      },
-      {
-        yPercent: 0,
-        opacity: 1,
-        duration: 0.6,
-        ease: "power3.out",
-        stagger: 0.02,
-        scrollTrigger: {
-          trigger: ".s-about-us",
-          start: isMobile ? "top 85%" : "top 75%",
-          toggleActions: "play none none reverse",
-        },
-      },
-    );
+    // gsap.fromTo(
+    //   titleSplit.chars,
+    //   {
+    //     yPercent: 100,
+    //     opacity: 0,
+    //   },
+    //   {
+    //     yPercent: 0,
+    //     opacity: 1,
+    //     duration: 0.3,
+    //     ease: "power3.out",
+    //     stagger: 0.05,
+    //     scrollTrigger: {
+    //       trigger: ".s-about-us",
+    //       start: isMobile ? "top 85%" : "top 75%",
+    //       toggleActions: "play none none reverse",
+    //     },
+    //   },
+    // );
 
     // Animação dos parágrafos
-    gsap.fromTo(
-      paragraphs,
-      {
-        x: -50,
-        opacity: 0,
-      },
-      {
-        x: 0,
-        opacity: 1,
-        duration: 0.8,
-        ease: "power3.out",
-        stagger: 0.15,
-        scrollTrigger: {
-          trigger: ".s-about-us",
-          start: isMobile ? "top 80%" : "top 70%",
-          toggleActions: "play none none reverse",
-        },
-      },
-    );
+    // gsap.fromTo(
+    //   paragraphs,
+    //   {
+    //     x: -50,
+    //     opacity: 0,
+    //   },
+    //   {
+    //     x: 0,
+    //     opacity: 1,
+    //     duration: 0.8,
+    //     ease: "power3.out",
+    //     stagger: 0.15,
+    //     scrollTrigger: {
+    //       trigger: ".s-about-us",
+    //       start: isMobile ? "top 80%" : "top 70%",
+    //       toggleActions: "play none none reverse",
+    //     },
+    //   },
+    // );
 
     // Animação da imagem
     if (imageContainer) {
@@ -98,10 +98,10 @@ export const OurHistory = () => {
     }
 
     // Cleanup
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-      if (titleSplit.revert) titleSplit.revert();
-    };
+    // return () => {
+    //   ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    //   if (titleSplit.revert) titleSplit.revert();
+    // };
   }, [isMobile]);
 
   return (

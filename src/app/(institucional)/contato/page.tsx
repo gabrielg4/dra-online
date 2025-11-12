@@ -74,8 +74,10 @@ function ContactPage() {
 
           <div className="grid grid-cols-1 gap-6 sm:gap-10 md:grid-cols-2 md:gap-14">
             <Link
-              href=""
-              target="_target"
+              href={
+                "https://api.whatsapp.com/send/?phone=5561999399769&text&type=phone_number&app_absent=0"
+              }
+              target="_blank"
               className="group bg-brand-light-green relative flex items-center gap-8 rounded-2xl p-6 shadow-2xl/20"
             >
               <Image
@@ -97,7 +99,7 @@ function ContactPage() {
               />
             </Link>
             <Link
-              href=""
+              href={"/trabalhe-conosco"}
               target="_target"
               className="group bg-brand-light-green relative flex items-center gap-8 rounded-2xl p-6 shadow-2xl/20"
             >

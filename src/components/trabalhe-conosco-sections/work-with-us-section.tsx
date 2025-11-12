@@ -2,26 +2,25 @@
 import React from "react";
 import { WorkWithUsForm } from "../work-with-us-form";
 import { useGSAP } from "@gsap/react";
-import { SplitText } from "gsap/all";
-import gsap from "gsap";
+// import { SplitText } from "gsap/all";
+// import gsap from "gsap";
 
 export const WorkWithUsSection = () => {
   useGSAP(() => {
-    const titleSplit = new SplitText("#vagas-medicos h2", {
-      type: "chars, words",
-    });
-
-    gsap.from(titleSplit.chars, {
-      yPercent: 100,
-      opacity: 0,
-      duration: 1,
-      ease: "expo.out",
-      stagger: 0.05,
-      scrollTrigger: {
-        trigger: "#vagas-medicos",
-        start: "top 50%",
-      },
-    });
+    // const titleSplit = new SplitText("#vagas-medicos h2", {
+    //   type: "chars, words",
+    // });
+    // gsap.from(titleSplit.chars, {
+    //   yPercent: 100,
+    //   opacity: 0,
+    //   duration: 1,
+    //   ease: "expo.out",
+    //   stagger: 0.05,
+    //   scrollTrigger: {
+    //     trigger: "#vagas-medicos",
+    //     start: "top 50%",
+    //   },
+    // });
   }, []);
 
   return (

@@ -1,29 +1,29 @@
 "use client";
 import React from "react";
 import { HistoryTimeline } from "../history-timeline";
-import { useGSAP } from "@gsap/react";
-import { SplitText } from "gsap/all";
-import gsap from "gsap";
+// import { useGSAP } from "@gsap/react";
+// import { SplitText } from "gsap/all";
+// import gsap from "gsap";
 
 export const TimeLine = () => {
-  useGSAP(() => {
-    const titleSplit = new SplitText(".s-timeline h2.section-title", {
-      type: "chars, words",
-    });
-    gsap.from(titleSplit.chars, {
-      yPercent: 100,
-      opacity: 0,
-      duration: 1,
-      ease: "expo.out",
-      stagger: 0.5,
-      scrollTrigger: {
-        trigger: ".s-timeline",
-        start: "top 90%",
-        end: "center 80%",
-        scrub: true,
-      },
-    });
-  }, []);
+  // useGSAP(() => {
+  //   const titleSplit = new SplitText(".s-timeline h2.section-title", {
+  //     type: "chars, words",
+  //   });
+  //   gsap.from(titleSplit.chars, {
+  //     yPercent: 100,
+  //     opacity: 0,
+  //     duration: 1,
+  //     ease: "expo.out",
+  //     stagger: 0.5,
+  //     scrollTrigger: {
+  //       trigger: ".s-timeline",
+  //       start: "top 90%",
+  //       end: "center 80%",
+  //       scrub: true,
+  //     },
+  //   });
+  // }, []);
   return (
     <section className="s-timeline overflow-hidden pb-10 lg:pt-20 lg:pb-20">
       <div className="container">

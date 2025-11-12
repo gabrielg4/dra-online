@@ -99,7 +99,7 @@ export default function ProntoAtendimentoPage() {
         classHeroVideo="/videos/video-solucao-2.mp4"
         title={
           <>
-            Pronto <br /> Atendimento{" "}
+            Pronto <br /> Atendimento 24h{" "}
           </>
         }
         description={

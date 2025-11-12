@@ -1,8 +1,8 @@
 "use client";
 import { useGSAP } from "@gsap/react";
 import { WheelCarousel } from "../animated-sections/wheel-carousel";
-import gsap from "gsap";
-import { SplitText } from "gsap/all";
+// import gsap from "gsap";
+// import { SplitText } from "gsap/all";
 import type { NaMidia } from "../../../payload-types";
 
 interface MidiaProps {
@@ -11,23 +11,23 @@ interface MidiaProps {
 
 export const Midia = ({ articles }: MidiaProps) => {
   useGSAP(() => {
-    const titleSplit = new SplitText(".title-section-midia", {
-      type: "chars, words",
-    });
-    gsap.from(titleSplit.chars, {
-      yPercent: 100,
-      opacity: 0,
-      duration: 1,
-      ease: "expo.out",
-      stagger: 0.05,
-      scrollTrigger: {
-        trigger: "#midia",
-        start: "top 90%",
-        end: "top top",
-        scrub: 3,
-        // markers: true,
-      },
-    });
+    // const titleSplit = new SplitText(".title-section-midia", {
+    //   type: "chars, words",
+    // });
+    // gsap.from(titleSplit.chars, {
+    //   yPercent: 100,
+    //   opacity: 0,
+    //   duration: 1,
+    //   ease: "expo.out",
+    //   stagger: 0.05,
+    //   scrollTrigger: {
+    //     trigger: "#midia",
+    //     start: "top 90%",
+    //     end: "top top",
+    //     scrub: 3,
+    //     // markers: true,
+    //   },
+    // });
   }, []);
 
   return (

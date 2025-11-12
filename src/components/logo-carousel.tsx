@@ -5,7 +5,7 @@ import React from "react";
 
 export const LogoCarousel = () => {
   // Duplicar logos suficientes vezes para garantir loop suave
-  const duplicatedLogos = [...customerLogos, ...customerLogos];
+  const duplicatedLogos = [...customerLogos];
 
   return (
     <div className="relative overflow-hidden">

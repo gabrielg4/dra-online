@@ -2,7 +2,7 @@
 import React, { useState, type ReactElement } from "react";
 import { CardSolucaoDiferencial } from "../cards/card-solucao-diferencial";
 import { useGSAP } from "@gsap/react";
-import { SplitText } from "gsap/all";
+// import { SplitText } from "gsap/all";
 import gsap from "gsap";
 import { useMediaQuery } from "react-responsive";
 import Image from "next/image";
@@ -51,32 +51,32 @@ export const Diferentials3 = ({
     isSmartphone && differentials.length > INITIAL_MOBILE_ITEMS;
 
   useGSAP(() => {
-    const titleSplit = new SplitText(".integralmente-section h2", {
-      type: "chars, words",
-    });
+    // const titleSplit = new SplitText(".integralmente-section h2", {
+    //   type: "chars, words",
+    // });
 
-    gsap.from(titleSplit.chars, {
-      yPercent: 100,
-      opacity: 0,
-      duration: 1,
-      ease: "expo.out",
-      stagger: 0.03,
-      scrollTrigger: {
-        trigger: ".integralmente-section",
-        start: "top 70%",
-      },
-    });
-    gsap.from(".integralmente-section .section-description ", {
-      x: -100,
-      opacity: 0,
-      duration: 1,
-      ease: "expo.out",
-      delay: 0.3,
-      scrollTrigger: {
-        trigger: ".integralmente-section",
-        start: "top 60%",
-      },
-    });
+    // gsap.from(titleSplit.chars, {
+    //   yPercent: 100,
+    //   opacity: 0,
+    //   duration: 1,
+    //   ease: "expo.out",
+    //   stagger: 0.03,
+    //   scrollTrigger: {
+    //     trigger: ".integralmente-section",
+    //     start: "top 70%",
+    //   },
+    // });
+    // gsap.from(".integralmente-section .section-description ", {
+    //   x: -100,
+    //   opacity: 0,
+    //   duration: 1,
+    //   ease: "expo.out",
+    //   delay: 0.3,
+    //   scrollTrigger: {
+    //     trigger: ".integralmente-section",
+    //     start: "top 60%",
+    //   },
+    // });
     gsap.from(".card-integralmente", {
       x: 100,
       opacity: 0,
@@ -108,7 +108,7 @@ export const Diferentials3 = ({
               alt=""
               width={839}
               height={695}
-              className="absolute -bottom-5 -left-[108px] h-[450px] w-full object-contain max-sm:-left-20 max-sm:object-cover md:-left-20 lg:-bottom-28 lg:!-left-40 lg:h-[630px] lg:w-auto"
+              className="absolute -bottom-5 -left-[108px] h-[450px] w-full object-cover max-sm:-left-20 max-sm:object-cover md:-left-20 lg:-bottom-28 lg:!-left-40 lg:h-[630px] lg:w-auto"
             />
           </div>
         </div>

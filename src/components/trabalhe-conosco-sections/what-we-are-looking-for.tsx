@@ -4,41 +4,41 @@ import { CtaButton } from "../cta-button";
 import Image from "next/image";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { SplitText } from "gsap/all";
+// import { SplitText } from "gsap/all";
 
 export const WhatWeAreLookingFor = () => {
   useGSAP(() => {
-    const titleSplit = new SplitText(".title-section-security", {
-      type: "chars, words",
-    });
-    gsap.from(titleSplit.chars, {
-      yPercent: 100,
-      opacity: 0,
-      duration: 2,
-      ease: "expo.out",
-      stagger: 0.05,
-      scrollTrigger: {
-        trigger: "#what-we-are-looking-for",
-        start: "center 80%",
-        end: "top top",
-        scrub: 3,
-        // markers: true,
-      },
-    });
+    // const titleSplit = new SplitText(".title-section-security", {
+    //   type: "chars, words",
+    // });
+    // gsap.from(titleSplit.chars, {
+    //   yPercent: 100,
+    //   opacity: 0,
+    //   duration: 2,
+    //   ease: "expo.out",
+    //   stagger: 0.05,
+    //   scrollTrigger: {
+    //     trigger: "#what-we-are-looking-for",
+    //     start: "center 80%",
+    //     end: "top top",
+    //     scrub: 3,
+    //     // markers: true,
+    //   },
+    // });
 
-    gsap.from(".security-content", {
-      yPercent: 100,
-      opacity: 0,
-      duration: 1,
-      ease: "expo.out",
-      scrollTrigger: {
-        trigger: "#what-we-are-looking-for",
-        start: "center 70%",
-        end: "bottom bottom",
-        scrub: 3,
-        // markers: true,
-      },
-    });
+    // gsap.from(".security-content", {
+    //   yPercent: 100,
+    //   opacity: 0,
+    //   duration: 1,
+    //   ease: "expo.out",
+    //   scrollTrigger: {
+    //     trigger: "#what-we-are-looking-for",
+    //     start: "center 70%",
+    //     end: "bottom bottom",
+    //     scrub: 3,
+    //     // markers: true,
+    //   },
+    // });
 
     gsap.from(".mobile-fone-middle", {
       yPercent: 100,

@@ -1,30 +1,30 @@
 "use client";
 import React from "react";
 import { DiferentialsTabs } from "../diferentials-tabs";
-import { useGSAP } from "@gsap/react";
-import { SplitText } from "gsap/all";
-import gsap from "gsap";
+// import { useGSAP } from "@gsap/react";
+// import { SplitText } from "gsap/all";
+// import gsap from "gsap";
 import SwiperTabsMobile from "@/components/home-sections/SwiperDiferentialsTabsMobile";
 
 export const Diferentials = () => {
-  useGSAP(() => {
-    const titleSplit = new SplitText(".title-section-diferentials", {
-      type: "chars, words",
-    });
+  // useGSAP(() => {
+  //   const titleSplit = new SplitText(".title-section-diferentials", {
+  //     type: "chars, words",
+  //   });
 
-    gsap.from(titleSplit.chars, {
-      yPercent: 100,
-      opacity: 0,
-      duration: 0.7,
-      ease: "expo.out",
-      stagger: 0.03,
-      scrollTrigger: {
-        trigger: "#diferentials",
-        start: "top 70%",
-        // markers: true,
-      },
-    });
-  }, []);
+  //   gsap.from(titleSplit.chars, {
+  //     yPercent: 100,
+  //     opacity: 0,
+  //     duration: 0.7,
+  //     ease: "expo.out",
+  //     stagger: 0.03,
+  //     scrollTrigger: {
+  //       trigger: "#diferentials",
+  //       start: "top 70%",
+  //       // markers: true,
+  //     },
+  //   });
+  // }, []);
 
   return (
     <section

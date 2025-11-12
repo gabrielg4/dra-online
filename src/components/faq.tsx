@@ -4,7 +4,7 @@ import { Tabs, TabsContent } from "@/components/ui/tabs";
 import { FAQContainer } from "./faq-container";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { SplitText } from "gsap/all";
+// import { SplitText } from "gsap/all";
 const faqItemsProfissionaisSaude: { question: string; answer: string }[] = [
   {
     question: "A telemedicina é reconhecida pelo Conselho Federal de Medicina?",
@@ -55,23 +55,23 @@ const faqItemsPacientes: { question: string; answer: string }[] = [
 
 export const FAQ = () => {
   useGSAP(() => {
-    const titleSplit = new SplitText(".title-section-faq", {
-      type: "chars, words",
-    });
-    gsap.from(titleSplit.chars, {
-      yPercent: 100,
-      opacity: 0,
-      duration: 1,
-      ease: "expo.out",
-      stagger: 0.05,
-      scrollTrigger: {
-        trigger: "#faq",
-        start: "top 80%",
-        end: "top 10%",
-        scrub: 3,
-        // markers: true,
-      },
-    });
+    // const titleSplit = new SplitText(".title-section-faq", {
+    //   type: "chars, words",
+    // });
+    // gsap.from(titleSplit.chars, {
+    //   yPercent: 100,
+    //   opacity: 0,
+    //   duration: 1,
+    //   ease: "expo.out",
+    //   stagger: 0.05,
+    //   scrollTrigger: {
+    //     trigger: "#faq",
+    //     start: "top 80%",
+    //     end: "top 10%",
+    //     scrub: 3,
+    //     // markers: true,
+    //   },
+    // });
 
     gsap.from(".faq-btn-wrapper", {
       xPercent: 100,

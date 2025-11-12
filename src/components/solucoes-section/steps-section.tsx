@@ -2,7 +2,7 @@
 import React from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { SplitText } from "gsap/all";
+// import { SplitText } from "gsap/all";
 import { useMediaQuery } from "react-responsive";
 import { StepCard } from "../cards/step-card";
 import { StepCardsCarousel } from "./step-cards-carousel";
@@ -19,21 +19,21 @@ export const StepsSection = () => {
   const start = `top ${isTablet ? "80%" : isSmartphone ? "50%" : "30%"}`;
 
   useGSAP(() => {
-    const titleSplit = new SplitText(".steps-section h2", {
-      type: "chars, words",
-    });
+    // const titleSplit = new SplitText(".steps-section h2", {
+    //   type: "chars, words",
+    // });
 
-    gsap.from(titleSplit.chars, {
-      yPercent: 100,
-      opacity: 0,
-      duration: 1,
-      ease: "expo.out",
-      stagger: 0.03,
-      scrollTrigger: {
-        trigger: ".steps-section",
-        start,
-      },
-    });
+    // gsap.from(titleSplit.chars, {
+    //   yPercent: 100,
+    //   opacity: 0,
+    //   duration: 1,
+    //   ease: "expo.out",
+    //   stagger: 0.03,
+    //   scrollTrigger: {
+    //     trigger: ".steps-section",
+    //     start,
+    //   },
+    // });
     gsap.from(".steps-section .section-subtitle ", {
       y: -100,
       opacity: 0,

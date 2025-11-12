@@ -118,7 +118,7 @@ export const TimelineContent = ({
                   <div>
                     {historyData.length > 1 && (
                       <span className="text-brand-light-green2/80 text-[16px]">
-                        Parte {index + 1}
+                        202{yearIndex + 2}
                       </span>
                     )}
                     <h2 className="text-brand-light-green mb-5 text-2xl font-bold md:text-[28px] lg:mb-6">

@@ -10,16 +10,21 @@ export default async function NoticiasPage({
 }: {
   searchParams: Promise<{ proxima_pagina?: string }>;
 }) {
-  const { proxima_pagina = 1 } = (await searchParams) || {};
+  const { proxima_pagina = "1" } = (await searchParams) || {};
+  const currentPage = Number(proxima_pagina);
+
+  // Conecta-se ao Payload CMS
   const payload = await getPayload({ config });
 
+  // Carrega artigos com um número incremental de itens (6 itens a mais a cada página)
   const articles = await payload.find({
     collection: "na-midia",
     depth: 3,
-    limit: Number(9 * Number(proxima_pagina) || 1),
+    limit: 6 * currentPage, // Carrega 6 itens por vez, e aumenta com cada próxima página
     pagination: true,
   });
 
+  // Distribuindo os artigos nas 3 colunas
   const columns: NaMidia[][] = [[], [], []];
   articles.docs.forEach((article: NaMidia, index) => {
     columns[index % 3].push(article);
@@ -41,6 +46,7 @@ export default async function NoticiasPage({
             column1={columns[0]}
             column2={columns[1]}
             column3={columns[2]}
+            currentPage={currentPage}
           />
         </div>
       </section>

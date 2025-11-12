@@ -1,28 +1,28 @@
 "use client";
-import { useGSAP } from "@gsap/react";
+// import { useGSAP } from "@gsap/react";
 import { ValuesCarousel } from "../values-carousel";
-import { SplitText } from "gsap/all";
-import gsap from "gsap";
+// import { SplitText } from "gsap/all";
+// import gsap from "gsap";
 
 export const CompanyValues = () => {
-  useGSAP(() => {
-    const titleSplit = new SplitText(".s-values h2", {
-      type: "chars, words",
-    });
-    gsap.from(titleSplit.chars, {
-      yPercent: 100,
-      opacity: 0,
-      duration: 1,
-      ease: "expo.out",
-      stagger: 0.5,
-      scrollTrigger: {
-        trigger: ".s-values",
-        start: "top 80%",
-        end: "center 60%",
-        scrub: true,
-      },
-    });
-  }, []);
+  // useGSAP(() => {
+  //   const titleSplit = new SplitText(".s-values h2", {
+  //     type: "chars, words",
+  //   });
+  //   gsap.from(titleSplit.chars, {
+  //     yPercent: 100,
+  //     opacity: 0,
+  //     duration: 1,
+  //     ease: "expo.out",
+  //     stagger: 0.5,
+  //     scrollTrigger: {
+  //       trigger: ".s-values",
+  //       start: "top 80%",
+  //       end: "center 60%",
+  //       scrub: true,
+  //     },
+  //   });
+  // }, []);
   return (
     <section className="s-values py-10 lg:py-20">
       <div className="container flex flex-col items-center lg:flex-row">
