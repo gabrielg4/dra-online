@@ -1,9 +1,5 @@
 export const customerLogos = [
-    "/images/customers-logos/logo-1.svg",
-  "/images/customers-logos/logo-2.svg",
-  "/images/customers-logos/logo-3.svg",
-  "/images/customers-logos/logo-4.svg",
-  "/images/customers-logos/logo-5.svg",
+
   "/images/customers-logos/logo-6.svg",
   "/images/customers-logos/logo-7.svg",
   "/images/customers-logos/logo-8.svg",
@@ -57,5 +53,10 @@ export const customerLogos = [
   "/images/customers-logos/logo-56.svg",
   "/images/customers-logos/logo-57.svg",
   "/images/customers-logos/logo-58.svg",
+    "/images/customers-logos/Logo-1.svg",
+  "/images/customers-logos/Logo-2.svg",
+  "/images/customers-logos/Logo-3.svg",
+  "/images/customers-logos/Logo-4.svg",
+  "/images/customers-logos/Logo-5.svg",
 
 ];
