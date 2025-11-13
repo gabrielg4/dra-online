@@ -267,7 +267,7 @@ export const HeroAnimation = () => {
                   start: "top 40%",
                   end: "top: 40%",
                 }}
-                from={0}
+                from={10}
                 to={10}
                 duration={2}
               />
@@ -290,7 +290,7 @@ export const HeroAnimation = () => {
                   start: "top 40%",
                   end: "top: 40%",
                 }}
-                from={0}
+                from={1}
                 to={1}
                 duration={2}
               />
@@ -313,7 +313,7 @@ export const HeroAnimation = () => {
                   start: "top 40%",
                   end: "top: 40%",
                 }}
-                from={0}
+                from={80}
                 to={80}
                 duration={2}
               />
@@ -336,7 +336,7 @@ export const HeroAnimation = () => {
                   start: "top 40%",
                   end: "top: 40%",
                 }}
-                from={0}
+                from={35}
                 to={35}
                 duration={2}
               />

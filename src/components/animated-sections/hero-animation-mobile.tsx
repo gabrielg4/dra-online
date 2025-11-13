@@ -272,13 +272,6 @@ export const HeroAnimationMobile = () => {
               />
             </video>
           </div>
-          <div className="absolute right-0 bottom-0 left-0 z-10 flex w-full flex-col justify-end px-3">
-            <p className="text-sm leading-[130%] font-bold text-white">
-              Modelo assistencial
-              <br />
-              <span className="text-brand-light-green">100% digital</span>
-            </p>
-          </div>
         </div>
 
         <div
@@ -316,13 +309,6 @@ export const HeroAnimationMobile = () => {
                 }
               />
             </video>
-          </div>
-          <div className="absolute bottom-0 left-0 z-10 flex w-full px-2">
-            <p className="text-sm font-bold text-white">
-              <span className="text-brand-light-green text-base">
-                White Label
-              </span>
-            </p>
           </div>
         </div>
 

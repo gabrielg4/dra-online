@@ -535,8 +535,28 @@ section {
 }
 
 .s-problems {
+  .card-problem {
+    @apply absolute h-[400px] w-full max-w-[312px] rounded-2xl bg-white/10 py-6 pr-4 pl-6 shadow-lg backdrop-blur-2xl max-sm:h-[350px];
+
+    &:nth-child(1) {
+      @apply left-0;
+    }
+    &:nth-child(2) {
+      @apply left-[22%];
+    }
+    &:nth-child(3) {
+      @apply left-[42%];
+    }
+    &:nth-child(4) {
+      @apply right-0;
+    }
+
+    &:hover {
+      @apply z-10;
+    }
+  }
   .swiper-pagination {
-    @apply !relative !top-0 !mt-10 hidden max-lg:block;
+    @apply !relative !top-0 !mt-3 hidden max-lg:block;
     .swiper-pagination-bullet {
       @apply h-1 w-full max-w-8 rounded-[2px] bg-[#E1E2E1] opacity-100 duration-300 ease-linear;
     }
