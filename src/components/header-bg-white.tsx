@@ -30,7 +30,7 @@ export const HeaderBgWhite = () => {
       <div className="container">
         <header
           className={cn(
-            "border-brand-main-green flex w-full items-center justify-center gap-5 rounded-full border px-6 py-4 duration-500 md:py-4",
+            "border-brand-main-green flex w-full items-center justify-center gap-5 rounded-full border px-6 py-4 duration-500 max-sm:justify-between md:py-4",
             headerScrolled && "bg-white",
           )}
         >

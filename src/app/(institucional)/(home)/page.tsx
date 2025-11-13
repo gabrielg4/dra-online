@@ -4,13 +4,13 @@ import config from "@payload-config";
 import { Hero } from "@/components/home-sections/hero";
 import { CompaniesLogos } from "@/components/home-sections/companies-logos";
 import { Diferentials } from "@/components/home-sections/diferentials";
+import CompanyProblems from "@/components/home-sections/CompanyProblems";
 import { MetricsSection } from "@/components/home-sections/metrics";
 import { SecurityInformation } from "@/components/home-sections/security-information";
 import { Midia } from "@/components/home-sections/midia";
 import { Blog } from "@/components/home-sections/blog";
 import { FrequentlyQuestions } from "@/components/home-sections/frequently-questions";
 import { GetInTouch } from "@/components/home-sections/get-in-touch";
-import { ChallengersAnimationV2 } from "@/components/home-sections/challenges-animationV2";
 
 export default async function Home() {
   const payload = await getPayload({ config });
@@ -35,7 +35,7 @@ export default async function Home() {
     <>
       <Hero />
       <CompaniesLogos />
-      <ChallengersAnimationV2 />
+      <CompanyProblems />
       <Diferentials />
       <MetricsSection />
       <SecurityInformation />
