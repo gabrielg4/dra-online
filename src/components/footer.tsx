@@ -105,7 +105,7 @@ export const Footer = () => {
                 </Link>
               </div>
             </div>
-            <div className="flex w-full max-w-[650px] flex-row flex-wrap items-start justify-between gap-6 md:gap-12">
+            <div className="flex w-full max-w-[650px] flex-row flex-wrap items-start justify-between gap-10 max-sm:gap-6">
               <div className="w-[calc(50%-16px)] md:w-auto">
                 <p className="mb-2 text-lg font-semibold text-white">
                   Institucional
@@ -133,6 +133,14 @@ export const Footer = () => {
                       className="text-md font-normal text-white hover:underline"
                     >
                       Seja um credenciado
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/direitos-deveres"
+                      className="text-md font-normal text-white hover:underline"
+                    >
+                      Direitos e Deveres dos Pacientes
                     </Link>
                   </li>
                 </ul>

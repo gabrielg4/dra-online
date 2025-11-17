@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import ScrollToTop from "@/components/ScrollToTop";
 
 import "./globals.css";
 import { Footer } from "@/components/footer";
@@ -9,6 +8,7 @@ import gsap from "gsap";
 import { ScrollTrigger, SplitText } from "gsap/all";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { useGSAP } from "@gsap/react";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const mainFont = localFont({
   src: [
