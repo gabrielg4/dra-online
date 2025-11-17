@@ -149,9 +149,9 @@ export default function ProntoAtendimentoPage() {
         }
       />
       <SmartphoneSectionCards2
-        firstImage="/images/img-phone-1-sol-2.svg"
-        secondImage="/images/img-phone-2-sol-2.svg"
-        thirdImage="/images/img-phone-3-sol-2.svg"
+        firstImage="/images/img-phone-1-sol-2.png"
+        secondImage="/images/img-phone-2-sol-2.png"
+        thirdImage="/images/img-phone-3-sol-2.png"
         firstVideo="https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Pronto%20Atendimento/Mi%CC%81dia5.mp4"
         secondVideo="https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Pronto%20Atendimento/Mi%CC%81dia6.mp4"
         subtitle="Veja como funciona nossa solução de pronto atendimento 24hrs."

@@ -165,10 +165,10 @@ export default function ConsultaEletivaComEspecialistaPage() {
         }
       />
       <SmartphoneSectionCards3
-        firstImage="/images/img-phone-1-sol-4.svg"
-        secondImage="/images/img-phone-2-sol-4.svg"
-        thirdImage="/images/img-phone-3-sol-4.svg"
-        fourthImage="/images/img-phone-4-sol-4.svg"
+        firstImage="/images/img-phone-4-sol-4.png"
+        secondImage="/images/img-phone-2-sol-4.png"
+        thirdImage="/images/img-phone-3-sol-4.png"
+        fourthImage="/images/img-phone-4-sol-5.png"
         firstVideo="/videos/video24.mp4"
         subtitle="Veja como funciona nossa solução de consulta online."
       />

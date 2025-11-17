@@ -39,7 +39,7 @@ export const Hero = ({
 
   return (
     <section
-      className={`solution-hero h-[600px] bg-[url(/images/bg-hero-solucao.svg)] bg-cover bg-bottom-left bg-no-repeat max-sm:h-[500px]`}
+      className={`solution-hero h-[600px] bg-[url(/images/bg-hero-solucao.svg)] bg-cover bg-bottom-left bg-no-repeat max-sm:h-[500px] max-sm:overflow-hidden`}
     >
       <div className="relative mx-auto h-full w-full max-w-[1600px]">
         <div className="relative h-full w-full">

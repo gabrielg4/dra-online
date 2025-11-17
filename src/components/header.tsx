@@ -42,7 +42,7 @@ export const Header = ({ startWithBlur, hasBgWhite }: HeaderProps) => {
       <div className="container">
         <header
           className={cn(
-            "border-brand-light-green relative flex w-full items-center justify-center gap-6 rounded-full border px-6 py-4 duration-500 max-sm:justify-between md:py-4",
+            "border-brand-light-green relative flex w-full items-center justify-between gap-6 rounded-full border px-6 py-4 duration-500 max-sm:justify-between md:py-4",
             headerScrolled && "scrolled",
             startWithBlur && "scrolled",
             hasBgWhite && "bg-white",

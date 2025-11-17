@@ -186,29 +186,7 @@ export const Footer = () => {
                 </ul>
               </div>
 
-              <div className="!hidden w-[calc(50%-16px)] md:w-auto">
-                <p className="mb-2 text-lg font-semibold text-white">FAQ</p>
-                <ul className="flex flex-col gap-2">
-                  <li>
-                    <Link
-                      href="/#faq"
-                      className="text-md font-normal text-white hover:underline"
-                    >
-                      Pacientes
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/#faq"
-                      className="text-md font-normal text-white hover:underline"
-                    >
-                      Profissionais da saúde
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="w-[calc(50%-16px)] md:w-auto">
+              <div className="w-[calc(50%-16px)] max-sm:-mt-28 md:w-auto">
                 <p className="mb-2 text-lg font-semibold text-white">
                   Conteúdos
                 </p>

@@ -48,7 +48,7 @@ export default function diferentialTabSwiper02() {
               height={95}
             />
             <p className="text-brand-dark-gray font-semibold max-sm:text-white md:mt-2">
-              NPS DE 93
+              Tempo de espera de no máx 6 min.
             </p>
           </div>
         </SwiperSlide>

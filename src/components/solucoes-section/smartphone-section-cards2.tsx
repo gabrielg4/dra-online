@@ -6,11 +6,6 @@ import gsap from "gsap";
 import { CtaButton } from "../cta-button";
 import { useMediaQuery } from "react-responsive";
 
-// import "swiper/css";
-// import "swiper/css/autoplay";
-// import { Swiper, SwiperSlide } from "swiper/react";
-// import { Autoplay } from "swiper/modules";
-
 interface SmartphoneSectionCardsProps {
   firstImage: string;
   secondImage: string;

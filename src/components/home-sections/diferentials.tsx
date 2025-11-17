@@ -31,7 +31,7 @@ export const Diferentials = () => {
       id="diferentials"
       className="has-bg-white overflow-hidden bg-white bg-[url('/images/bg-diferenciais.webp')] bg-cover bg-center py-14 max-sm:pt-10"
     >
-      <div className="container">
+      <div className="container max-sm:px-4">
         <h2 className="title-section-diferentials text-brand-dark-green mb-8 text-center text-[22px] leading-[120%] font-medium sm:text-[32px] md:mb-14">
           Com a <strong className="font-semibold">dr</strong>
           <span className="text-brand-light-green">.</span>online, você encontra

@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Grid, Pagination, EffectCards } from "swiper/modules";
+import { Pagination, EffectCards } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -26,94 +26,73 @@ export default function SwiperTabsMobile() {
 
   return (
     <div className="hidden max-sm:block">
-      <Swiper
-        modules={[Grid, Pagination]}
-        slidesPerView="auto"
-        spaceBetween={8}
-        grid={{
-          rows: 2,
-          fill: "row",
-        }}
-        className="mb-14 !overflow-visible"
-      >
-        <SwiperSlide className="!h-auto !w-auto">
-          <button
-            onClick={() => handleSlideClicks(0)}
-            className={`rounded-2xl border px-3 py-1 text-center text-sm font-semibold whitespace-nowrap duration-300 ease-in-out ${
-              activeIndex === 0
-                ? "border-[#1BA068] bg-[#1BA068] text-white"
-                : "border-brand-light-green text-brand-dark-green bg-white hover:border-[#1BA068] hover:bg-[#1BA068] hover:text-white"
-            }`}
-          >
-            Entrevista Qualificada
-          </button>
-        </SwiperSlide>
+      <div className="mb-10 flex flex-wrap justify-center gap-2">
+        <button
+          onClick={() => handleSlideClicks(0)}
+          className={`rounded-2xl border px-2 py-1 text-center text-[11px] font-semibold whitespace-nowrap duration-300 ease-in-out ${
+            activeIndex === 0
+              ? "border-[#1BA068] bg-[#1BA068] text-white"
+              : "border-brand-light-green text-brand-dark-green bg-white hover:border-[#1BA068] hover:bg-[#1BA068] hover:text-white"
+          }`}
+        >
+          Entrevista Qualificada
+        </button>
 
-        <SwiperSlide className="!h-auto !w-auto">
-          <button
-            onClick={() => handleSlideClicks(1)}
-            className={`rounded-2xl border px-3 py-1 text-center text-sm font-semibold whitespace-nowrap duration-300 ease-in-out ${
-              activeIndex === 1
-                ? "border-[#1BA068] bg-[#1BA068] text-white"
-                : "border-brand-light-green text-brand-dark-green bg-white hover:border-[#1BA068] hover:bg-[#1BA068] hover:text-white"
-            }`}
-          >
-            Pronto Atendimento 24h
-          </button>
-        </SwiperSlide>
+        <button
+          onClick={() => handleSlideClicks(5)}
+          className={`rounded-2xl border px-2 py-1 text-center text-[11px] font-semibold whitespace-nowrap duration-300 ease-in-out ${
+            activeIndex === 5
+              ? "border-[#1BA068] bg-[#1BA068] text-white"
+              : "border-brand-light-green text-brand-dark-green bg-white hover:border-[#1BA068] hover:bg-[#1BA068] hover:text-white"
+          }`}
+        >
+          Espaço de Saúde Conectada
+        </button>
 
-        <SwiperSlide className="!h-auto !w-auto">
-          <button
-            onClick={() => handleSlideClicks(2)}
-            className={`rounded-2xl border px-3 py-1 text-center text-sm font-semibold whitespace-nowrap duration-300 ease-in-out ${
-              activeIndex === 2
-                ? "border-[#1BA068] bg-[#1BA068] text-white"
-                : "border-brand-light-green text-brand-dark-green bg-white hover:border-[#1BA068] hover:bg-[#1BA068] hover:text-white"
-            }`}
-          >
-            Consultas Eletivas com Especialistas
-          </button>
-        </SwiperSlide>
+        <button
+          onClick={() => handleSlideClicks(2)}
+          className={`rounded-2xl border px-2 py-1 text-center text-[11px] font-semibold whitespace-nowrap duration-300 ease-in-out ${
+            activeIndex === 2
+              ? "border-[#1BA068] bg-[#1BA068] text-white"
+              : "border-brand-light-green text-brand-dark-green bg-white hover:border-[#1BA068] hover:bg-[#1BA068] hover:text-white"
+          }`}
+        >
+          Consultas Eletivas com Especialistas
+        </button>
 
-        <SwiperSlide className="!h-auto !w-auto">
-          <button
-            onClick={() => handleSlideClicks(3)}
-            className={`rounded-2xl border px-3 py-1 text-center text-sm font-semibold whitespace-nowrap duration-300 ease-in-out ${
-              activeIndex === 3
-                ? "border-[#1BA068] bg-[#1BA068] text-white"
-                : "border-brand-light-green text-brand-dark-green bg-white hover:border-[#1BA068] hover:bg-[#1BA068] hover:text-white"
-            }`}
-          >
-            Saúde Mental
-          </button>
-        </SwiperSlide>
+        <button
+          onClick={() => handleSlideClicks(3)}
+          className={`rounded-2xl border px-2 py-1 text-center text-[11px] font-semibold whitespace-nowrap duration-300 ease-in-out ${
+            activeIndex === 3
+              ? "border-[#1BA068] bg-[#1BA068] text-white"
+              : "border-brand-light-green text-brand-dark-green bg-white hover:border-[#1BA068] hover:bg-[#1BA068] hover:text-white"
+          }`}
+        >
+          Saúde Mental
+        </button>
 
-        <SwiperSlide className="!h-auto !w-auto">
-          <button
-            onClick={() => handleSlideClicks(4)}
-            className={`rounded-2xl border px-3 py-1 text-center text-sm font-semibold whitespace-nowrap duration-300 ease-in-out ${
-              activeIndex === 4
-                ? "border-[#1BA068] bg-[#1BA068] text-white"
-                : "border-brand-light-green text-brand-dark-green bg-white hover:border-[#1BA068] hover:bg-[#1BA068] hover:text-white"
-            }`}
-          >
-            Gestão Integrada do Cuidado
-          </button>
-        </SwiperSlide>
+        <button
+          onClick={() => handleSlideClicks(4)}
+          className={`rounded-2xl border px-2 py-1 text-center text-[11px] font-semibold whitespace-nowrap duration-300 ease-in-out ${
+            activeIndex === 4
+              ? "border-[#1BA068] bg-[#1BA068] text-white"
+              : "border-brand-light-green text-brand-dark-green bg-white hover:border-[#1BA068] hover:bg-[#1BA068] hover:text-white"
+          }`}
+        >
+          Gestão Integrada do Cuidado
+        </button>
 
-        <SwiperSlide className="!h-auto !w-auto">
-          <button
-            onClick={() => handleSlideClicks(5)}
-            className={`rounded-2xl border px-3 py-1 text-center text-sm font-semibold whitespace-nowrap duration-300 ease-in-out ${
-              activeIndex === 5
-                ? "border-[#1BA068] bg-[#1BA068] text-white"
-                : "border-brand-light-green text-brand-dark-green bg-white hover:border-[#1BA068] hover:bg-[#1BA068] hover:text-white"
-            }`}
-          >
-            Espaço de Saúde Conectada
-          </button>
-        </SwiperSlide>
-      </Swiper>
+        <button
+          onClick={() => handleSlideClicks(1)}
+          className={`rounded-2xl border px-2 py-1 text-center text-[11px] font-semibold whitespace-nowrap duration-300 ease-in-out ${
+            activeIndex === 1
+              ? "border-[#1BA068] bg-[#1BA068] text-white"
+              : "border-brand-light-green text-brand-dark-green bg-white hover:border-[#1BA068] hover:bg-[#1BA068] hover:text-white"
+          }`}
+        >
+          Pronto Atendimento 24h
+        </button>
+      </div>
 
       <Swiper
         modules={[EffectCards, Pagination]}

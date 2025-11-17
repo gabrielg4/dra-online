@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import ScrollToTop from "@/components/ScrollToTop";
 
 import "./globals.css";
 import { Footer } from "@/components/footer";
@@ -56,6 +57,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br" className="overflow-x-hidden overflow-y-auto">
       <body className={`${mainFont.variable} bg-brand-dark-green antialiased`}>
+        <ScrollToTop />
         <SmoothScrolling>
           <main className="bg-brand-dark-green">{children}</main>
         </SmoothScrolling>
