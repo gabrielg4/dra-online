@@ -102,7 +102,7 @@ export const HeroAnimationMobile = () => {
       .to(
         card4.current,
         {
-          y: 80,
+          y: 85,
         },
         0,
       )
@@ -206,11 +206,9 @@ export const HeroAnimationMobile = () => {
           ref={card1}
           className="card-01 bg-brand-main-green absolute top-0 right-0 left-0 mx-auto w-full max-w-[103px] rounded-lg p-[10px] duration-300 ease-linear"
         >
-          <p className="text-brand-dark-green text-[10px] font-bold">
-            Implantação agil
-            <span className="text-brand-light-green block">
-              escalável e com ROI comprovado.
-            </span>
+          <p className="text-[12px] font-bold text-white">
+            Modelo assistencial
+            <span className="text-brand-light-green block">100% digital</span>
           </p>
         </div>
 
@@ -243,10 +241,15 @@ export const HeroAnimationMobile = () => {
           className="card-03 bg-brand-main-green absolute top-4 left-0 z-30 h-[200px] w-full max-w-[105px] rounded-xl p-3 duration-300 ease-linear"
         >
           <p className="text-[10px] font-bold text-white">
-            <span className="text-brand-dark-green">
+            <span className="text-white">
               Segurança, rastreabilidade e confiabilidade
             </span>{" "}
             para decisões estratégicas
+            <br />
+            <br />
+            <span className="text-brand-light-green">
+              Implantação ágil, escalável e com ROI comprovado
+            </span>
           </p>
         </div>
 
@@ -278,13 +281,11 @@ export const HeroAnimationMobile = () => {
           ref={card5}
           className="card-05 bg-brand-light-green absolute right-0 z-10 h-[200px] w-full max-w-[110px] rounded-xl p-2 duration-300 ease-linear"
         >
-          <p className="text-brand-dark-green text-[11px] font-bold">
-            Integração Total
-            <span className="block text-white">Prescrição Digital</span>
-            Dashboards Inteligentes
-            <span className="text-brand-light-green block">
-              Compliance e Segurança da informação
-            </span>
+          <p className="text-brand-dark-green text-[12px] font-bold">
+            Tecnologia própria, segura e escalável.
+            <span className="my-2 block">Integração total</span>
+            <span className="mb-2 block">Prescrição digital</span>
+            <span className="block">Dashboards inteligentes</span>
           </p>
         </div>
 
@@ -314,12 +315,12 @@ export const HeroAnimationMobile = () => {
 
         <div
           ref={card7}
-          className="card-07 bg-brand-light-green absolute right-0 left-0 z-10 mx-auto h-fit w-full max-w-[110px] rounded-xl p-2 pb-9 duration-300 ease-linear"
+          className="card-07 bg-brand-light-green absolute right-0 left-0 z-10 mx-auto h-fit w-full max-w-[110px] rounded-xl p-2 duration-300 ease-linear"
         >
-          <p className="text-brand-dark-green text-sm font-bold">
-            Tecnologia{" "}
-            <span className="inline-block text-white">
-              própria, segura e escalável
+          <p className="text-[12px] font-bold text-white">
+            White label
+            <span className="text-brand-dark-green inline-block">
+              A tecnologia é nossa. O protagonismo <br />é todo da sua marca.
             </span>
           </p>
         </div>

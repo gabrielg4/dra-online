@@ -26,10 +26,10 @@ export default function SwiperTabsMobile() {
 
   return (
     <div className="hidden max-sm:block">
-      <div className="mb-10 flex flex-wrap justify-center gap-2">
+      <div className="mb-10 grid grid-cols-2 items-center justify-center gap-2">
         <button
           onClick={() => handleSlideClicks(0)}
-          className={`rounded-2xl border px-2 py-1 text-center text-[11px] font-semibold whitespace-nowrap duration-300 ease-in-out ${
+          className={`w-full rounded-2xl border px-2 py-1 text-center text-[11px] font-semibold whitespace-nowrap duration-300 ease-in-out ${
             activeIndex === 0
               ? "border-[#1BA068] bg-[#1BA068] text-white"
               : "border-brand-light-green text-brand-dark-green bg-white hover:border-[#1BA068] hover:bg-[#1BA068] hover:text-white"
@@ -40,7 +40,7 @@ export default function SwiperTabsMobile() {
 
         <button
           onClick={() => handleSlideClicks(5)}
-          className={`rounded-2xl border px-2 py-1 text-center text-[11px] font-semibold whitespace-nowrap duration-300 ease-in-out ${
+          className={`w-full rounded-2xl border px-2 py-1 text-center text-[11px] font-semibold whitespace-nowrap duration-300 ease-in-out ${
             activeIndex === 5
               ? "border-[#1BA068] bg-[#1BA068] text-white"
               : "border-brand-light-green text-brand-dark-green bg-white hover:border-[#1BA068] hover:bg-[#1BA068] hover:text-white"
@@ -51,7 +51,7 @@ export default function SwiperTabsMobile() {
 
         <button
           onClick={() => handleSlideClicks(2)}
-          className={`rounded-2xl border px-2 py-1 text-center text-[11px] font-semibold whitespace-nowrap duration-300 ease-in-out ${
+          className={`w-[205px] rounded-2xl border px-2 py-1 text-center text-[11px] font-semibold whitespace-nowrap duration-300 ease-in-out ${
             activeIndex === 2
               ? "border-[#1BA068] bg-[#1BA068] text-white"
               : "border-brand-light-green text-brand-dark-green bg-white hover:border-[#1BA068] hover:bg-[#1BA068] hover:text-white"
@@ -62,7 +62,7 @@ export default function SwiperTabsMobile() {
 
         <button
           onClick={() => handleSlideClicks(3)}
-          className={`rounded-2xl border px-2 py-1 text-center text-[11px] font-semibold whitespace-nowrap duration-300 ease-in-out ${
+          className={`ml-9 w-full max-w-[130px] rounded-2xl border px-2 py-1 text-center text-[11px] font-semibold duration-300 ease-in-out ${
             activeIndex === 3
               ? "border-[#1BA068] bg-[#1BA068] text-white"
               : "border-brand-light-green text-brand-dark-green bg-white hover:border-[#1BA068] hover:bg-[#1BA068] hover:text-white"
@@ -73,7 +73,7 @@ export default function SwiperTabsMobile() {
 
         <button
           onClick={() => handleSlideClicks(4)}
-          className={`rounded-2xl border px-2 py-1 text-center text-[11px] font-semibold whitespace-nowrap duration-300 ease-in-out ${
+          className={`w-full rounded-2xl border px-2 py-1 text-center text-[11px] font-semibold whitespace-nowrap duration-300 ease-in-out ${
             activeIndex === 4
               ? "border-[#1BA068] bg-[#1BA068] text-white"
               : "border-brand-light-green text-brand-dark-green bg-white hover:border-[#1BA068] hover:bg-[#1BA068] hover:text-white"
@@ -84,7 +84,7 @@ export default function SwiperTabsMobile() {
 
         <button
           onClick={() => handleSlideClicks(1)}
-          className={`rounded-2xl border px-2 py-1 text-center text-[11px] font-semibold whitespace-nowrap duration-300 ease-in-out ${
+          className={`w-full rounded-2xl border px-2 py-1 text-center text-[11px] font-semibold whitespace-nowrap duration-300 ease-in-out ${
             activeIndex === 1
               ? "border-[#1BA068] bg-[#1BA068] text-white"
               : "border-brand-light-green text-brand-dark-green bg-white hover:border-[#1BA068] hover:bg-[#1BA068] hover:text-white"

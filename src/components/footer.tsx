@@ -3,8 +3,32 @@ import Image from "next/image";
 import React from "react";
 import Link from "next/link";
 import { ArrowUp } from "lucide-react";
+import { useState, useEffect } from "react";
 
 export const Footer = () => {
+  const [showButton, setShowButton] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      const scrollTop = window.scrollY;
+
+      const distanceFromBottom = documentHeight - (scrollTop + windowHeight);
+
+      if (distanceFromBottom < 500) {
+        setShowButton(true);
+      } else {
+        setShowButton(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const backToTop = () => {
     window.scrollTo({
       top: 0,
@@ -16,7 +40,11 @@ export const Footer = () => {
     <>
       <button
         onClick={backToTop}
-        className="bg-brand-light-green group fixed right-10 bottom-28 z-50 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full"
+        className={`bg-brand-light-green group fixed right-10 bottom-10 z-50 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full transition-all duration-300 ${
+          showButton
+            ? "translate-y-0 opacity-100"
+            : "pointer-events-none translate-y-10 opacity-0"
+        }`}
       >
         <ArrowUp className="text-brand-dark-green size-6 duration-300 group-hover:text-white" />
       </button>
@@ -24,7 +52,7 @@ export const Footer = () => {
       <Link
         href="https://api.whatsapp.com/send/?phone=5561999399769&text&type=phone_number&app_absent=0"
         target="_blank"
-        className="bg-brand-light-green hover:bg-brand-light-green2 text-brand-dark-green fixed right-7 bottom-8 z-50 flex h-16 w-16 items-center justify-center rounded-full duration-300"
+        className="bg-brand-light-green hover:bg-brand-light-green2 text-brand-dark-green fixed right-7 bottom-24 z-50 flex h-16 w-16 items-center justify-center rounded-full duration-300"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
