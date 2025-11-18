@@ -64,7 +64,7 @@ export const Header = ({ startWithBlur, hasBgWhite }: HeaderProps) => {
           ) : (
             <NavigationV2 />
           )}
-          <div className="hidden w-fit items-center gap-2 max-md:flex">
+          <div className="hidden w-fit items-center gap-2 max-lg:flex">
             <Button
               variant={"outline"}
               className={cn(
