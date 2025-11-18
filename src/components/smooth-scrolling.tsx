@@ -1,4 +1,3 @@
-// components/smooth-scrolling.tsx
 "use client";
 import { useEffect, type ReactNode } from "react";
 import Lenis from "lenis";
@@ -19,11 +18,6 @@ export const SmoothScrolling = ({ children }: SmoothScrollingProps) => {
       smoothWheel: true,
     });
 
-    // Expõe o Lenis globalmente para outros componentes acessarem
-    if (typeof window !== "undefined") {
-      (window as any).lenis = lenis;
-    }
-
     lenis.on("scroll", ScrollTrigger.update);
 
     const tickerFunction = (time: number) => {
@@ -31,17 +25,14 @@ export const SmoothScrolling = ({ children }: SmoothScrollingProps) => {
     };
 
     gsap.ticker.add(tickerFunction);
+
     gsap.ticker.lagSmoothing(0);
 
     return () => {
       lenis.destroy();
       gsap.ticker.remove(tickerFunction);
-      // Limpa a referência global
-      if (typeof window !== "undefined") {
-        (window as any).lenis = null;
-      }
     };
   }, []);
 
-  return <>{children}</>;
+  return children;
 };

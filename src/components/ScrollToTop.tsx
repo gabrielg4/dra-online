@@ -11,7 +11,7 @@ export default function ScrollToTop() {
     // Aguarda um pouco para garantir que o Lenis foi inicializado
     const scrollToTop = () => {
       if (typeof window !== "undefined") {
-        const lenis = (window as any).lenis;
+        const lenis = window.lenis;
 
         if (lenis) {
           // Usa o método scrollTo do Lenis com immediate

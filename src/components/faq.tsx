@@ -72,18 +72,17 @@ export const FAQ = () => {
     //     // markers: true,
     //   },
     // });
-
-    gsap.from(".faq-btn-wrapper", {
-      xPercent: 100,
-      opacity: 0,
-      ease: "expo.out",
-      scrollTrigger: {
-        trigger: "#faq",
-        start: "top 80%",
-        end: "top 10%",
-        scrub: 2,
-      },
-    });
+    // gsap.from(".faq-btn-wrapper", {
+    //   xPercent: 100,
+    //   opacity: 0,
+    //   ease: "expo.out",
+    //   scrollTrigger: {
+    //     trigger: "#faq",
+    //     start: "top 80%",
+    //     end: "top 10%",
+    //     scrub: 2,
+    //   },
+    // });
   }, []);
 
   return (
