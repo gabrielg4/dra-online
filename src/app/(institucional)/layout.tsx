@@ -8,7 +8,6 @@ import gsap from "gsap";
 import { ScrollTrigger, SplitText } from "gsap/all";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { useGSAP } from "@gsap/react";
-import ScrollToTop from "@/components/ScrollToTop";
 
 const mainFont = localFont({
   src: [
@@ -57,7 +56,6 @@ export default function RootLayout({
   return (
     <html lang="pt-br" className="overflow-x-hidden overflow-y-auto">
       <body className={`${mainFont.variable} bg-brand-dark-green antialiased`}>
-        <ScrollToTop />
         <SmoothScrolling>
           <main className="bg-brand-dark-green">{children}</main>
         </SmoothScrolling>
