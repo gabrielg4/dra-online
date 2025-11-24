@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, useMemo } from "react";
 import gsap from "gsap";
 import { Draggable } from "gsap/Draggable";
 import { NaMidiaCard } from "@/components/cards/na-midia-card";
@@ -24,17 +24,43 @@ export const WheelCarousel = ({ articles }: WheelCarouselProps) => {
     maxWidth: 767,
   });
 
+  // Reordena os artigos para que o destaque fique no meio
+  const sortedArticles = useMemo(() => {
+    const destacadoIndex = articles.findIndex((article) => article.destaque);
+
+    // Se não encontrar destaque, retorna o array original
+    if (destacadoIndex === -1) {
+      return articles;
+    }
+
+    // Calcula a posição central
+    const middlePosition = Math.floor(articles.length / 2);
+
+    // Se o destaque já está no meio, retorna o array original
+    if (destacadoIndex === middlePosition) {
+      return articles;
+    }
+
+    // Cria novo array reordenado
+    const newOrder = [...articles];
+
+    // Remove o card em destaque da posição original
+    const [destacado] = newOrder.splice(destacadoIndex, 1);
+
+    // Insere na posição central
+    newOrder.splice(middlePosition, 0, destacado);
+
+    return newOrder;
+  }, [articles]);
+
   const curvedCarouselRef = useRef<HTMLDivElement | null>(null);
   const draggableRef = useRef<Draggable | null>(null);
 
-  // Diminui o STEP no mobile para cards menos rotacionados
-  const STEP = isMobile ? 7 : 9; // Mudado de 15 para 6 no mobile
-  const MAX_INDEX = articles.length - 1;
+  const STEP = isMobile ? 7 : 9;
+  const MAX_INDEX = sortedArticles.length - 1;
 
-  // Calcula o índice da mediana (como sempre é ímpar, é o item do meio)
-  const MEDIAN_INDEX = Math.floor(articles.length / 2);
-
-  // Calcula a rotação inicial para que o item da mediana fique centralizado
+  // Agora o card em destaque sempre estará na posição central do array
+  const MEDIAN_INDEX = Math.floor(sortedArticles.length / 2);
   const INITIAL_ROTATION = MEDIAN_INDEX * STEP;
 
   const [activeIndex, setActiveIndex] = useState(MEDIAN_INDEX);
@@ -44,7 +70,6 @@ export const WheelCarousel = ({ articles }: WheelCarouselProps) => {
 
   const goTo = (nextIndex: number) => {
     const idx = clamp(nextIndex, 0, MAX_INDEX);
-    // A rotação necessária para colocar o card no centro
     const rotation = INITIAL_ROTATION - idx * STEP;
 
     gsap.to(curvedCarouselRef.current, {
@@ -65,10 +90,9 @@ export const WheelCarousel = ({ articles }: WheelCarouselProps) => {
   useGSAP(() => {
     if (!curvedCarouselRef.current) return;
 
-    const maxRotation = INITIAL_ROTATION; // rotação para o primeiro card
-    const minRotation = INITIAL_ROTATION - MAX_INDEX * STEP; // rotação para o último card
+    const maxRotation = INITIAL_ROTATION;
+    const minRotation = INITIAL_ROTATION - MAX_INDEX * STEP;
 
-    // Draggable para controle manual com configurações otimizadas para suavidade
     const [instance] = Draggable.create(curvedCarouselRef.current, {
       type: "rotation",
       inertia: true,
@@ -107,8 +131,8 @@ export const WheelCarousel = ({ articles }: WheelCarouselProps) => {
 
     draggableRef.current = instance;
 
-    // Inicializa com o item da mediana centralizado (rotação 0 no container)
     gsap.set(curvedCarouselRef.current, { rotation: 0 });
+
     if (isMinTablet)
       gsap.from(".wheel-card", {
         opacity: 0,
@@ -121,7 +145,6 @@ export const WheelCarousel = ({ articles }: WheelCarouselProps) => {
           trigger: "#midia",
           start: "center 100%",
           end: "top top",
-          // markers: true,
           scrub: 1,
         },
       });
@@ -130,9 +153,8 @@ export const WheelCarousel = ({ articles }: WheelCarouselProps) => {
       instance?.kill();
       draggableRef.current = null;
     };
-  }, [MAX_INDEX, MEDIAN_INDEX, INITIAL_ROTATION, STEP, isMobile]);
+  }, [MAX_INDEX, MEDIAN_INDEX, INITIAL_ROTATION, STEP, isMobile, isMinTablet]);
 
-  // Define o raio da curvatura baseado no dispositivo
   const curveRadius = isMobile ? "2900px" : "2500px";
 
   return (
@@ -154,9 +176,9 @@ export const WheelCarousel = ({ articles }: WheelCarouselProps) => {
             transformOrigin: `50% ${curveRadius}`,
           }}
         >
-          {articles.map((article, i) => (
+          {sortedArticles.map((article, i) => (
             <div
-              key={i}
+              key={article.id}
               data-wheel-card
               className="absolute top-0 left-1/2 h-full w-[290px] -translate-x-1/2 max-sm:w-[280px]"
               style={{

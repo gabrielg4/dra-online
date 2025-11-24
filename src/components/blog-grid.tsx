@@ -17,17 +17,44 @@ export const BlogGrid = ({ posts }: BlogGridProps) => {
   const [currentCategory, setCurrentCategory] = useState("");
   const [isLoadingCategories, setIsLoadingCategories] = useState(false);
   const router = useRouter();
+
   useEffect(() => {
     setIsLoadingCategories(true);
-    fetch("/api/categorias")
-      .then((res) => res.json())
-      .then((data) => setCategories(data.docs))
+
+    // Busca TODOS os posts (sem filtro) para extrair as categorias em uso
+    Promise.all([
+      fetch("/api/categorias").then((res) => res.json()),
+      fetch("/api/blog?limit=1000").then((res) => res.json()), // Busca todos os posts
+    ])
+      .then(([categoriesData, allPostsData]) => {
+        // Extrai os IDs únicos de categorias que existem nos posts
+        const categoriesInUse = new Set<number>();
+
+        allPostsData.docs.forEach((post: Blog) => {
+          if (post.categoria) {
+            // Se categoria for um objeto populado
+            if (typeof post.categoria === "object" && "id" in post.categoria) {
+              categoriesInUse.add(post.categoria.id);
+            }
+            // Se categoria for apenas o ID
+            else if (typeof post.categoria === "number") {
+              categoriesInUse.add(post.categoria);
+            }
+          }
+        });
+
+        // Filtra apenas as categorias que têm posts associados
+        const categoriesWithPosts = categoriesData.docs.filter(
+          (category: Categoria) => categoriesInUse.has(category.id),
+        );
+
+        setCategories(categoriesWithPosts);
+      })
       .finally(() => setIsLoadingCategories(false));
-  }, []);
+  }, []); // Agora só executa uma vez ao montar o componente
 
   const handleFilterByCategory = (categoryId: string) => {
     setCurrentCategory(categoryId);
-
     router.push(`/blog?categoria=${categoryId}`);
   };
 

@@ -221,6 +221,10 @@ export interface NaMidia {
   logo: number | Media;
   titulo: string;
   link_artigo: string;
+  /**
+   * Este card será exibido no centro do carrossel. Apenas um card pode estar em destaque por vez.
+   */
+  destaque?: boolean | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -444,6 +448,7 @@ export interface NaMidiaSelect<T extends boolean = true> {
   logo?: T;
   titulo?: T;
   link_artigo?: T;
+  destaque?: T;
   updatedAt?: T;
   createdAt?: T;
 }

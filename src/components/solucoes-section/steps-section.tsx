@@ -166,9 +166,8 @@ export const StepsSection = () => {
             />
           </div>
         </div>
-        <StepCardsCarousel />
 
-        <div className="pointer-events-none relative -mt-16 hidden h-[300px] w-full max-sm:block">
+        <div className="pointer-events-none relative hidden h-[300px] w-full max-sm:block">
           <video
             src="https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Gesta%CC%83o%20Integrada/asd.mp4"
             className="absolute top-0 hidden h-full w-full object-cover max-sm:block"
@@ -178,6 +177,8 @@ export const StepsSection = () => {
             playsInline
           ></video>
         </div>
+
+        <StepCardsCarousel />
       </div>
     </section>
   );
