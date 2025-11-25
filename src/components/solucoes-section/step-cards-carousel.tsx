@@ -6,54 +6,80 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
+import { ArrowLeft, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { StepCard } from "../cards/step-card";
 
-export const StepCardsCarousel = () => {
+interface StepCardsCarouselProps {
+  onSlideChange?: (slideIndex: number) => void;
+  onApiReady?: (api: CarouselApi) => void;
+}
+
+export const StepCardsCarousel = ({
+  onSlideChange,
+  onApiReady,
+}: StepCardsCarouselProps) => {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
+
   useEffect(() => {
     if (!api) {
       return;
     }
 
     setCurrent(api.selectedScrollSnap());
+    onSlideChange?.(api.selectedScrollSnap());
+    onApiReady?.(api); // Passa a API para o componente pai
 
     api.on("select", () => {
-      setCurrent(api.selectedScrollSnap());
+      const newIndex = api.selectedScrollSnap();
+      setCurrent(newIndex);
+      onSlideChange?.(newIndex);
     });
-  }, [api]);
+  }, [api, onSlideChange, onApiReady]);
 
   const handleGoToSlide = ({ slide }: { slide: number }) => {
     if (!api) {
       return;
     }
-    // setCurrent(slide)
     api.scrollTo(slide);
   };
+
+  const scrollPrev = () => {
+    if (api) {
+      api.scrollPrev();
+    }
+  };
+
+  const scrollNext = () => {
+    if (api) {
+      api.scrollNext();
+    }
+  };
+
   return (
     <Carousel
       setApi={setApi}
       opts={{
         align: "start",
+        loop: true,
       }}
       className="relative z-[2] block max-sm:z-20 md:hidden"
     >
       <CarouselContent>
-        <CarouselItem className="basis-1/2 max-sm:basis-[45%]">
+        <CarouselItem className="basis-1/2 max-sm:basis-full">
           <StepCard
             stepNumber={1}
             content={
               <>
-                {" "}
                 Captação pelo
                 <br />
-                Whatsapp{" "}
+                Whatsapp
               </>
             }
           />
         </CarouselItem>
-        <CarouselItem className="basis-1/2 max-sm:basis-[45%]">
+        <CarouselItem className="basis-1/2 max-sm:basis-full">
           <StepCard
             stepNumber={2}
             content={
@@ -65,7 +91,7 @@ export const StepCardsCarousel = () => {
             }
           />
         </CarouselItem>
-        <CarouselItem className="basis-1/2 max-sm:basis-[45%]">
+        <CarouselItem className="basis-1/2 max-sm:basis-full">
           <StepCard
             stepNumber={3}
             content={
@@ -77,7 +103,7 @@ export const StepCardsCarousel = () => {
             }
           />
         </CarouselItem>
-        <CarouselItem className="basis-1/2 max-sm:basis-[45%]">
+        <CarouselItem className="basis-1/2 max-sm:basis-full">
           <StepCard
             stepNumber={4}
             content={
@@ -89,7 +115,7 @@ export const StepCardsCarousel = () => {
             }
           />
         </CarouselItem>
-        <CarouselItem className="basis-1/2 max-sm:basis-[45%]">
+        <CarouselItem className="basis-1/2 max-sm:basis-full">
           <StepCard
             stepNumber={5}
             content={
@@ -100,7 +126,7 @@ export const StepCardsCarousel = () => {
             }
           />
         </CarouselItem>
-        <CarouselItem className="basis-1/2 max-sm:basis-[45%]">
+        <CarouselItem className="basis-1/2 max-sm:basis-full">
           <StepCard
             stepNumber={6}
             content={
@@ -111,7 +137,7 @@ export const StepCardsCarousel = () => {
             }
           />
         </CarouselItem>
-        <CarouselItem className="basis-1/2 max-sm:basis-[45%]">
+        <CarouselItem className="basis-1/2 max-sm:basis-full">
           <StepCard
             stepNumber={7}
             content={
@@ -123,18 +149,23 @@ export const StepCardsCarousel = () => {
           />
         </CarouselItem>
       </CarouselContent>
-      <div className="mt-8 !hidden items-center justify-center gap-3">
-        {Array.from({ length: 6 }).map((_, index) => (
-          <div
-            key={index}
-            className={cn(
-              "hover:bg-brand-light-green h-3 w-3 cursor-pointer rounded-full bg-white/30",
-              current === index && "bg-brand-light-green",
-            )}
-            onClick={() => handleGoToSlide({ slide: index })}
-          />
-        ))}
-      </div>
+
+      {/* Custom Navigation Arrows */}
+      <button
+        onClick={scrollPrev}
+        className="absolute top-2/3 left-14 z-30 -translate-y-1/2 text-white transition-colors hover:text-white/70"
+        aria-label="Previous slide"
+      >
+        <ArrowLeft className="h-8 w-8" strokeWidth={2} />
+      </button>
+
+      <button
+        onClick={scrollNext}
+        className="absolute top-2/3 right-14 z-30 -translate-y-1/2 text-white transition-colors hover:text-white/70"
+        aria-label="Next slide"
+      >
+        <ArrowRight className="h-8 w-8" strokeWidth={2} />
+      </button>
     </Carousel>
   );
 };

@@ -99,8 +99,8 @@ export default function EspacoDeSaudeConectadaPage() {
         classHeroVideo="https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Consulto%CC%81rio%20Digital/grok-video-cc035d66-22bc-49a0-8b5a-83fec035e9f8%20(1).mp4"
         title={
           <>
-            Espaço de Saúde
-            <br /> Conectada
+            Espaço Digital <br />
+            de Saúde
           </>
         }
         description={

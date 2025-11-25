@@ -21,37 +21,51 @@ export const BlogGrid = ({ posts }: BlogGridProps) => {
   useEffect(() => {
     setIsLoadingCategories(true);
 
-    // Busca TODOS os posts (sem filtro) para extrair as categorias em uso
-    Promise.all([
-      fetch("/api/categorias").then((res) => res.json()),
-      fetch("/api/blog?limit=1000").then((res) => res.json()), // Busca todos os posts
-    ])
-      .then(([categoriesData, allPostsData]) => {
-        // Extrai os IDs únicos de categorias que existem nos posts
-        const categoriesInUse = new Set<number>();
+    // Busca todas as categorias da API
+    fetch("/api/categorias")
+      .then((res) => res.json())
+      .then((categoriesData) => {
+        if (!categoriesData?.docs) {
+          console.error("Dados inválidos de categorias:", categoriesData);
+          return;
+        }
 
-        allPostsData.docs.forEach((post: Blog) => {
-          if (post.categoria) {
-            // Se categoria for um objeto populado
-            if (typeof post.categoria === "object" && "id" in post.categoria) {
-              categoriesInUse.add(post.categoria.id);
+        // Usa os posts que já vêm como prop para extrair as categorias em uso
+        if (posts?.docs) {
+          const categoriesInUse = new Set<number>();
+
+          posts.docs.forEach((post: Blog) => {
+            if (post.categoria) {
+              // Se categoria for um objeto populado
+              if (
+                typeof post.categoria === "object" &&
+                "id" in post.categoria
+              ) {
+                categoriesInUse.add(post.categoria.id);
+              }
+              // Se categoria for apenas o ID
+              else if (typeof post.categoria === "number") {
+                categoriesInUse.add(post.categoria);
+              }
             }
-            // Se categoria for apenas o ID
-            else if (typeof post.categoria === "number") {
-              categoriesInUse.add(post.categoria);
-            }
-          }
-        });
+          });
 
-        // Filtra apenas as categorias que têm posts associados
-        const categoriesWithPosts = categoriesData.docs.filter(
-          (category: Categoria) => categoriesInUse.has(category.id),
-        );
+          // Filtra apenas as categorias que têm posts associados
+          const categoriesWithPosts = categoriesData.docs.filter(
+            (category: Categoria) => categoriesInUse.has(category.id),
+          );
 
-        setCategories(categoriesWithPosts);
+          setCategories(categoriesWithPosts);
+        } else {
+          // Se não há posts na prop, mostra todas as categorias
+          setCategories(categoriesData.docs);
+        }
+      })
+      .catch((error) => {
+        console.error("Erro ao buscar categorias:", error);
       })
       .finally(() => setIsLoadingCategories(false));
-  }, []); // Agora só executa uma vez ao montar o componente
+  }, [posts]);
 
   const handleFilterByCategory = (categoryId: string) => {
     setCurrentCategory(categoryId);

@@ -142,7 +142,7 @@ export const Diferentials2 = ({
               </p>
             </div>
           ) : (
-            <div className="relative hidden h-[337px] w-full rounded-lg md:mt-28 md:block">
+            <div className="relative hidden h-[337px] w-full rounded-lg md:mt-10 md:block">
               <div className="video-blur absolute top-0 left-0 h-full w-full" />
               <video
                 src={videoUrl}
