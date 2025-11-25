@@ -93,8 +93,8 @@ export const DiferentialsTabs = () => {
           value="tab6"
           className="tab-button tab-button-blur text-brand-dark-gray data-[state=active]:bg-brand-main-green hover:bg-brand-main-green group-has-[:not([data-state=active]):hover]:data-[state=active]:text-brand-dark-gray max-sm:border-brand-light-green max-sm:text-brand-dark-green z-[4] shrink-0 rounded-2xl bg-white py-4 pr-6 pl-8 text-center text-[16px] font-semibold duration-300 ease-in-out hover:text-white data-[state=active]:text-white group-has-[:not([data-state=active]):hover]:data-[state=active]:bg-white max-[639px]:p-4 max-sm:w-full max-sm:max-w-fit max-sm:border max-sm:px-2 max-sm:py-1 max-sm:text-sm sm:-ml-6 sm:text-xl"
         >
-          Espaço de Saúde
-          <br className="max-sm:hidden" /> Conectada
+          Espaço Digital
+          <br className="max-sm:hidden" /> de Saúde
         </TabsTrigger>
       </TabsList>
       <div className="stack-area w-full max-sm:relative max-sm:min-h-[780px] sm:min-h-0">
@@ -390,7 +390,7 @@ export const DiferentialsTabs = () => {
             </div>
             <div className="w-full px-4 max-sm:max-w-full max-sm:px-0 sm:px-0 sm:py-8 md:w-1/2">
               <p className="text-brand-main-green mb-3 text-[28px] leading-[130%] font-bold max-sm:text-center max-sm:text-[22px] max-sm:text-white">
-                Espaço de Saúde Conectada
+                Espaço Digital de Saúde
               </p>
               <h3 className="text-brand-black mb-4 text-lg leading-[150%] font-bold max-sm:hidden max-sm:text-center max-sm:text-white lg:mb-6">
                 Inovação que transforma qualquer espaço em um ponto de cuidado
@@ -408,7 +408,7 @@ export const DiferentialsTabs = () => {
                 className="border-brand-main-green group hover:bg-brand-main-green rounded-full p-0 duration-300 max-sm:mx-auto max-sm:table max-sm:border-white max-sm:bg-transparent"
               >
                 <Link
-                  href="/solucao/espaco-de-saude-conectada"
+                  href="/solucao/espaco-digital-de-saude"
                   className="text-brand-main-green text-md px-4 py-3 font-medium duration-300 hover:text-white max-sm:text-white"
                 >
                   Conheça mais

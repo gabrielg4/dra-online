@@ -213,10 +213,10 @@ export const Footer = () => {
                   </li>
                   <li>
                     <Link
-                      href="/solucao/espaco-de-saude-conectada"
+                      href="/solucao/espaco-digital-de-saude"
                       className="text-md font-normal text-white hover:underline"
                     >
-                      Espaço de Saúde Conectada
+                      Espaço Digital de Saúde
                     </Link>
                   </li>
                 </ul>

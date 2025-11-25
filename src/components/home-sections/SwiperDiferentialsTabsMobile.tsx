@@ -46,7 +46,7 @@ export default function SwiperTabsMobile() {
               : "border-brand-light-green text-brand-dark-green bg-white hover:border-[#1BA068] hover:bg-[#1BA068] hover:text-white"
           }`}
         >
-          Espaço de Saúde Conectada
+          Espaço Digital de Saúde
         </button>
 
         <button
@@ -397,7 +397,7 @@ export default function SwiperTabsMobile() {
           <div className="bg-brand-light-green flex w-full flex-col items-center gap-5 rounded-2xl p-4">
             <div className="w-full max-w-full">
               <p className="text-center text-[22px] leading-[130%] font-bold text-white">
-                Espaço de Saúde Conectada
+                Espaço Digital de Saúde
               </p>
               <h3 className="mb-4 text-center text-base text-white">
                 Inovação que transforma qualquer espaço em um ponto de cuidado

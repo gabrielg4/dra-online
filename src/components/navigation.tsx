@@ -137,18 +137,18 @@ export const NavigationV2 = ({ textColor = "text-white" }: NavigationProps) => {
                     </Link>
 
                     <Link
-                      href="/solucao/espaco-de-saude-conectada"
+                      href="/solucao/espaco-digital-de-saude"
                       className="group/nav-link flex items-start"
                     >
                       <Image
                         src="/images/ic-consultorio-digital.svg"
-                        alt="ícone - Espaço de Saúde Conectada"
+                        alt="ícone - Espaço Digital de Saúde"
                         width={32}
                         height={32}
                       />
                       <div className="ml-2 max-w-[255px]">
                         <p className="text-md group-hover/nav-link:text-brand-light-green font-semibold text-white duration-300">
-                          Espaço de Saúde Conectada
+                          Espaço Digital de Saúde
                         </p>
                         <p className="text-sm text-white">
                           Inovação que transforma um espaço em ponto de cuidado

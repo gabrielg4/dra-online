@@ -123,12 +123,11 @@ export default function EspacoDeSaudeConectadaPage() {
         }
         description={
           <>
-            Nosso Espaço de Saúde Conectada é uma solução híbrida que une o
-            melhor da estrutura física com os recursos avançados da
-            telemedicina. Equipado com dispositivos médicos multiparamétricos e
-            suporte de enfermagem, possibilita consultas clínicas e
-            especializadas com alto nível de resolutividade e precisão
-            diagnóstica, mesmo à distância.
+            Nosso Espaço Digital de Saúde é uma solução híbrida que une o melhor
+            da estrutura física com os recursos avançados da telemedicina.
+            Equipado com dispositivos médicos multiparamétricos e suporte de
+            enfermagem, possibilita consultas clínicas e especializadas com alto
+            nível de resolutividade e precisão diagnóstica, mesmo à distância.
           </>
         }
         videoUrl="https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Consulto%CC%81rio%20Digital/grok-video-cbacf6b2-91c0-49ef-bc00-2120f6083bcd.mp4"
