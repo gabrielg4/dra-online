@@ -18,28 +18,30 @@ export const NaMidia: CollectionConfig = {
   },
   hooks: {
     beforeChange: [
-      async ({ data, req, operation, originalDoc }) => {
+      async ({ data, req }) => {
         // Se estiver marcando este card como destaque
         if (data.destaque === true) {
           try {
             // Busca todos os cards da coleção
             const todosOsCards = await req.payload.find({
-              collection: 'na-midia',
+              collection: "na-midia",
               limit: 1000, // Ajuste conforme necessário
             });
 
             // Filtra apenas os que estão marcados como destaque e não são o atual
             const outrosDestaques = todosOsCards.docs.filter(
-              (doc) => doc.destaque === true && doc.id !== data.id
+              (doc) => doc.destaque === true && doc.id !== data.id,
             );
 
             // Desmarca todos os outros
             if (outrosDestaques.length > 0) {
-              console.log(`Desmarcando ${outrosDestaques.length} card(s) em destaque...`);
-              
+              console.log(
+                `Desmarcando ${outrosDestaques.length} card(s) em destaque...`,
+              );
+
               for (const doc of outrosDestaques) {
                 await req.payload.update({
-                  collection: 'na-midia',
+                  collection: "na-midia",
                   id: doc.id,
                   data: {
                     destaque: false,
@@ -49,7 +51,7 @@ export const NaMidia: CollectionConfig = {
               }
             }
           } catch (error) {
-            console.error('Erro ao desmarcar outros destaques:', error);
+            console.error("Erro ao desmarcar outros destaques:", error);
           }
         }
 
@@ -78,13 +80,14 @@ export const NaMidia: CollectionConfig = {
       required: true,
     },
     {
-      name: 'destaque',
-      type: 'checkbox',
-      label: 'Card em Destaque',
+      name: "destaque",
+      type: "checkbox",
+      label: "Card em Destaque",
       defaultValue: false,
       admin: {
-        description: 'Este card será exibido no centro do carrossel. Apenas um card pode estar em destaque por vez.',
-        position: 'sidebar',
+        description:
+          "Este card será exibido no centro do carrossel. Apenas um card pode estar em destaque por vez.",
+        position: "sidebar",
       },
     },
   ],

@@ -5,8 +5,7 @@ import {
   CarouselItem,
   type CarouselApi,
 } from "@/components/ui/carousel";
-import { cn } from "@/lib/utils";
-import { ArrowLeft, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { StepCard } from "../cards/step-card";
 
@@ -20,30 +19,21 @@ export const StepCardsCarousel = ({
   onApiReady,
 }: StepCardsCarouselProps) => {
   const [api, setApi] = useState<CarouselApi>();
-  const [current, setCurrent] = useState(0);
 
   useEffect(() => {
     if (!api) {
       return;
     }
 
-    setCurrent(api.selectedScrollSnap());
     onSlideChange?.(api.selectedScrollSnap());
     onApiReady?.(api); // Passa a API para o componente pai
 
     api.on("select", () => {
       const newIndex = api.selectedScrollSnap();
-      setCurrent(newIndex);
+
       onSlideChange?.(newIndex);
     });
   }, [api, onSlideChange, onApiReady]);
-
-  const handleGoToSlide = ({ slide }: { slide: number }) => {
-    if (!api) {
-      return;
-    }
-    api.scrollTo(slide);
-  };
 
   const scrollPrev = () => {
     if (api) {
