@@ -52,7 +52,64 @@ export const TimelineContent = ({
     api.on("select", () => {
       setCurrentSlide(api.selectedScrollSnap());
     });
-  }, [api, yearIndex, onApiReady]);
+
+    // Detectar tentativas de scroll além dos limites
+    const emblaRoot = api.rootNode();
+    let startX = 0;
+    let isDragging = false;
+
+    const handlePointerDown = (e: PointerEvent) => {
+      startX = e.clientX;
+      isDragging = true;
+    };
+
+    const handlePointerUp = (e: PointerEvent) => {
+      if (!isDragging) return;
+
+      const endX = e.clientX;
+      const diff = startX - endX;
+      const threshold = 100; // Mínimo de pixels para considerar um swipe
+
+      const isAtLastSlide = currentSlide === historyData.length - 1;
+      const isAtFirstSlide = currentSlide === 0;
+
+      // Swipe para a esquerda (próximo) no último slide
+      if (diff > threshold && isAtLastSlide && !isLastYear) {
+        onNextYear();
+      }
+
+      // Swipe para a direita (anterior) no primeiro slide
+      if (diff < -threshold && isAtFirstSlide && !isFirstYear) {
+        onPreviousYear();
+      }
+
+      isDragging = false;
+    };
+
+    const handlePointerCancel = () => {
+      isDragging = false;
+    };
+
+    emblaRoot.addEventListener("pointerdown", handlePointerDown);
+    emblaRoot.addEventListener("pointerup", handlePointerUp);
+    emblaRoot.addEventListener("pointercancel", handlePointerCancel);
+
+    return () => {
+      emblaRoot.removeEventListener("pointerdown", handlePointerDown);
+      emblaRoot.removeEventListener("pointerup", handlePointerUp);
+      emblaRoot.removeEventListener("pointercancel", handlePointerCancel);
+    };
+  }, [
+    api,
+    yearIndex,
+    onApiReady,
+    currentSlide,
+    historyData.length,
+    isLastYear,
+    isFirstYear,
+    onNextYear,
+    onPreviousYear,
+  ]);
 
   // Função customizada para o botão "próximo"
   const handleNext = () => {

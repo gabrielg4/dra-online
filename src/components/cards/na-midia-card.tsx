@@ -25,9 +25,9 @@ export const NaMidiaCard = ({ isActive, article }: NaMidiaCardProps) => {
           src={(article.logo as Media).url!}
           alt={(article.logo as Media).alt}
           width={100}
-          height={28}
+          height={36}
           className={cn(
-            "h-fit w-fit object-contain brightness-0 invert",
+            "h-[36] w-full max-w-fit object-contain brightness-0 invert",
             isActive && "brightness-100 invert-0",
           )}
         />
