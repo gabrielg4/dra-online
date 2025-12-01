@@ -61,20 +61,20 @@ export const WorkWithUsForm2 = () => {
     },
   });
 
-  useGSAP(() => {
-    const inputs = gsap.utils.toArray("#work-with-us-2 .input-work-with-us");
-    gsap.from(inputs, {
-      xPercent: 100,
-      opacity: 0,
-      duration: 1,
-      ease: "expo.out",
-      stagger: 0.7,
-      scrollTrigger: {
-        trigger: "#work-with-us-2",
-        start: "top 80%",
-      },
-    });
-  }, []);
+  // useGSAP(() => {
+  //   const inputs = gsap.utils.toArray("#work-with-us-2 .input-work-with-us");
+  //   gsap.from(inputs, {
+  //     xPercent: 100,
+  //     opacity: 0,
+  //     duration: 1,
+  //     ease: "expo.out",
+  //     stagger: 0.7,
+  //     scrollTrigger: {
+  //       trigger: "#work-with-us-2",
+  //       start: "top 80%",
+  //     },
+  //   });
+  // }, []);
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);

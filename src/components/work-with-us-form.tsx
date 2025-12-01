@@ -21,8 +21,6 @@ import {
 } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
 import { ArrowUpRight } from "lucide-react";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
 import { Label } from "./ui/label";
 
 const ACCEPTED_TYPES = [
@@ -66,21 +64,6 @@ export const WorkWithUsForm = () => {
       state: "",
     },
   });
-
-  useGSAP(() => {
-    const inputs = gsap.utils.toArray(".input-contact");
-    gsap.from(inputs, {
-      xPercent: 100,
-      opacity: 0,
-      duration: 1,
-      ease: "expo.out",
-      stagger: 0.7,
-      scrollTrigger: {
-        trigger: "#get-in-touch",
-        start: "top 80%",
-      },
-    });
-  }, []);
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
@@ -234,7 +217,7 @@ export const WorkWithUsForm = () => {
             <FormItem className="input-contact w-full">
               <FormControl>
                 <Label
-                  htmlFor="curriculum"
+                  htmlFor="curriculum-doctor"
                   className="border-b-brand-white flex h-auto w-full cursor-pointer items-center justify-between gap-4 rounded-none border-0 border-b px-1 !py-3 !text-[16px] leading-normal shadow-none"
                 >
                   <>
