@@ -31,6 +31,7 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "dev.dronline24h.com.br",
+        pathname: "/dronline/**",
       },
 
       {

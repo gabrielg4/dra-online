@@ -3,6 +3,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -20,8 +21,9 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Loader2 } from "lucide-react";
 import { Label } from "./ui/label";
+import { toast } from "sonner";
 
 const ACCEPTED_TYPES = [
   "application/pdf",
@@ -34,9 +36,8 @@ const MAX_SIZE = MAX_SIZE_MB * 1024 * 1024;
 
 const formSchema = z.object({
   name: z.string().trim().min(1, "Campo obrigatório"),
-  email: z.email("E-mail inválido"),
+  email: z.string().email("E-mail inválido"),
   phone: z.string().trim().min(1, "Campo obrigatório"),
-  especialidade: z.string().min(1, "Campo obrigatório"),
   crm: z.string().trim().min(1, "Campo obrigatório"),
   state: z.string().trim().min(1, "Campo obrigatório"),
   city: z.string().trim().min(1, "Campo obrigatório"),
@@ -51,6 +52,8 @@ const formSchema = z.object({
 });
 
 export const WorkWithUsForm = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -60,13 +63,74 @@ export const WorkWithUsForm = () => {
       city: "",
       crm: "",
       "curriculum-doctor": undefined,
-      especialidade: "",
       state: "",
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    setIsSubmitting(true);
+
+    try {
+      // Converter o arquivo para base64
+      const file = values["curriculum-doctor"];
+      const base64File = await fileToBase64(file);
+
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          type: "career", // ← Tipo para trabalhe conosco
+          name: values.name,
+          email: values.email,
+          phone: values.phone,
+          crm: values.crm,
+          state: values.state,
+          city: values.city,
+          attachment: {
+            filename: file.name,
+            content: base64File,
+            contentType: file.type,
+          },
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Erro ao enviar candidatura");
+      }
+
+      toast.success(
+        "Candidatura enviada com sucesso! Em breve entraremos em contato.",
+      );
+      form.reset();
+    } catch (error) {
+      console.error("Erro ao enviar formulário:", error);
+      toast.error(
+        error instanceof Error
+          ? error.message
+          : "Erro ao enviar candidatura. Tente novamente.",
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
+  }
+
+  // Função para converter arquivo para base64
+  function fileToBase64(file: File): Promise<string> {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+        const base64String = reader.result as string;
+        // Remove o prefixo "data:...;base64,"
+        const base64 = base64String.split(",")[1];
+        resolve(base64);
+      };
+      reader.onerror = (error) => reject(error);
+    });
   }
 
   return (
@@ -84,7 +148,8 @@ export const WorkWithUsForm = () => {
                 <Input
                   placeholder="Nome"
                   {...field}
-                  className="h-auto w-full rounded-none border-0 border-b border-b-white px-1 !py-3 !text-[16px] font-normal text-white shadow-none placeholder:text-white"
+                  disabled={isSubmitting}
+                  className="h-auto w-full rounded-none border-0 border-b border-b-white px-1 !py-3 !text-[16px] font-normal text-white shadow-none placeholder:text-white disabled:opacity-50"
                 />
               </FormControl>
               <FormMessage />
@@ -99,8 +164,10 @@ export const WorkWithUsForm = () => {
               <FormControl>
                 <Input
                   placeholder="E-mail"
+                  type="email"
                   {...field}
-                  className="h-auto w-full rounded-none border-0 border-b border-b-white px-1 !py-3 !text-[16px] font-normal text-white shadow-none placeholder:text-white"
+                  disabled={isSubmitting}
+                  className="h-auto w-full rounded-none border-0 border-b border-b-white px-1 !py-3 !text-[16px] font-normal text-white shadow-none placeholder:text-white disabled:opacity-50"
                 />
               </FormControl>
               <FormMessage />
@@ -116,7 +183,8 @@ export const WorkWithUsForm = () => {
                 <Input
                   placeholder="Telefone/WhatsApp"
                   {...field}
-                  className="h-auto w-full rounded-none border-0 border-b border-b-white px-1 !py-3 !text-[16px] font-normal text-white shadow-none placeholder:text-white"
+                  disabled={isSubmitting}
+                  className="h-auto w-full rounded-none border-0 border-b border-b-white px-1 !py-3 !text-[16px] font-normal text-white shadow-none placeholder:text-white disabled:opacity-50"
                 />
               </FormControl>
               <FormMessage />
@@ -132,7 +200,8 @@ export const WorkWithUsForm = () => {
                 <Input
                   placeholder="CRM / Conselho"
                   {...field}
-                  className="h-auto w-full rounded-none border-0 border-b border-b-white px-1 !py-3 !text-[16px] font-normal text-white shadow-none placeholder:text-white"
+                  disabled={isSubmitting}
+                  className="h-auto w-full rounded-none border-0 border-b border-b-white px-1 !py-3 !text-[16px] font-normal text-white shadow-none placeholder:text-white disabled:opacity-50"
                 />
               </FormControl>
               <FormMessage />
@@ -150,8 +219,9 @@ export const WorkWithUsForm = () => {
                     onValueChange={field.onChange}
                     value={field.value}
                     defaultValue={field.value}
+                    disabled={isSubmitting}
                   >
-                    <SelectTrigger className="!w-full rounded-none border-0 border-b border-b-white px-1 !py-3 !text-[16px] font-normal text-white shadow-none data-[placeholder]:text-white [&_svg]:!text-white">
+                    <SelectTrigger className="!w-full rounded-none border-0 border-b border-b-white px-1 !py-3 !text-[16px] font-normal text-white shadow-none disabled:opacity-50 data-[placeholder]:text-white [&_svg]:!text-white">
                       <SelectValue
                         placeholder="Estado"
                         className="!w-full text-white"
@@ -202,7 +272,8 @@ export const WorkWithUsForm = () => {
                   <Input
                     placeholder="Cidade"
                     {...field}
-                    className="w-full rounded-none border-0 border-b border-b-white px-1 !py-3 !text-[16px] font-normal text-white shadow-none placeholder:text-white"
+                    disabled={isSubmitting}
+                    className="w-full rounded-none border-0 border-b border-b-white px-1 !py-3 !text-[16px] font-normal text-white shadow-none placeholder:text-white disabled:opacity-50"
                   />
                 </FormControl>
                 <FormMessage />
@@ -218,7 +289,7 @@ export const WorkWithUsForm = () => {
               <FormControl>
                 <Label
                   htmlFor="curriculum-doctor"
-                  className="border-b-brand-white flex h-auto w-full cursor-pointer items-center justify-between gap-4 rounded-none border-0 border-b px-1 !py-3 !text-[16px] leading-normal shadow-none"
+                  className={`border-b-brand-white flex h-auto w-full cursor-pointer items-center justify-between gap-4 rounded-none border-0 border-b px-1 !py-3 !text-[16px] leading-normal shadow-none ${isSubmitting ? "cursor-not-allowed opacity-50" : ""}`}
                 >
                   <>
                     <p className="text-[16px] leading-normal font-light text-white">
@@ -243,6 +314,7 @@ export const WorkWithUsForm = () => {
                       id="curriculum-doctor"
                       type="file"
                       accept=".pdf,.doc,.docx,application/pdf,application/msword"
+                      disabled={isSubmitting}
                       onChange={(e) => {
                         const file = e.target.files?.[0];
                         field.onChange(file ?? null);
@@ -264,10 +336,20 @@ export const WorkWithUsForm = () => {
         />
         <Button
           type="submit"
-          className="bg-brand-light-green hover:bg-brand-light-green2 group text-brand-dark-green mt-5 h-auto w-fit cursor-pointer rounded-full !px-6 !py-3 !text-[16px] font-medium"
+          disabled={isSubmitting}
+          className="bg-brand-light-green hover:bg-brand-light-green2 group text-brand-dark-green mt-5 h-auto w-fit cursor-pointer rounded-full !px-6 !py-3 !text-[16px] font-medium disabled:cursor-not-allowed disabled:opacity-50"
         >
-          Enviar
-          <ArrowUpRight className="size-6 duration-300 group-hover:rotate-45" />
+          {isSubmitting ? (
+            <>
+              <Loader2 className="mr-2 size-4 animate-spin" />
+              Enviando...
+            </>
+          ) : (
+            <>
+              Enviar
+              <ArrowUpRight className="size-6 duration-300 group-hover:rotate-45" />
+            </>
+          )}
         </Button>
       </form>
     </Form>

@@ -3,6 +3,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -14,18 +15,20 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "./ui/textarea";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Loader2 } from "lucide-react";
 import { useGSAP } from "@gsap/react";
-// import gsap from "gsap";
+import { toast } from "sonner";
 
 const formSchema = z.object({
   name: z.string().trim().min(1, "Campo obrigatório"),
-  email: z.email("E-mail inválido"),
+  email: z.string().email("E-mail inválido"),
   phone: z.string().trim().min(1, "Campo obrigatório"),
   message: z.string(),
 });
 
 export const ContactForm = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -51,8 +54,39 @@ export const ContactForm = () => {
     // });
   }, []);
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Erro ao enviar mensagem");
+      }
+
+      // Sucesso
+      toast.success(
+        "Mensagem enviada com sucesso! Em breve entraremos em contato.",
+      );
+      form.reset();
+    } catch (error) {
+      console.error("Erro ao enviar formulário:", error);
+      toast.error(
+        error instanceof Error
+          ? error.message
+          : "Erro ao enviar mensagem. Tente novamente.",
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -70,7 +104,8 @@ export const ContactForm = () => {
                 <Input
                   placeholder="Nome"
                   {...field}
-                  className="border-b-brand-light-green h-auto rounded-none border-0 border-b px-1 !py-3 !text-[16px] font-normal text-white placeholder:text-white"
+                  disabled={isSubmitting}
+                  className="border-b-brand-light-green h-auto rounded-none border-0 border-b px-1 !py-3 !text-[16px] font-normal text-white placeholder:text-white disabled:opacity-50"
                 />
               </FormControl>
               <FormMessage />
@@ -85,8 +120,10 @@ export const ContactForm = () => {
               <FormControl>
                 <Input
                   placeholder="E-mail"
+                  type="email"
                   {...field}
-                  className="border-b-brand-light-green h-auto rounded-none border-0 border-b px-1 !py-3 !text-[16px] font-normal text-white placeholder:text-white"
+                  disabled={isSubmitting}
+                  className="border-b-brand-light-green h-auto rounded-none border-0 border-b px-1 !py-3 !text-[16px] font-normal text-white placeholder:text-white disabled:opacity-50"
                 />
               </FormControl>
               <FormMessage />
@@ -102,7 +139,8 @@ export const ContactForm = () => {
                 <Input
                   placeholder="Telefone/WhatsApp"
                   {...field}
-                  className="border-b-brand-light-green h-auto rounded-none border-0 border-b px-1 !py-3 !text-[16px] font-normal text-white placeholder:text-white"
+                  disabled={isSubmitting}
+                  className="border-b-brand-light-green h-auto rounded-none border-0 border-b px-1 !py-3 !text-[16px] font-normal text-white placeholder:text-white disabled:opacity-50"
                 />
               </FormControl>
               <FormMessage />
@@ -118,7 +156,8 @@ export const ContactForm = () => {
                 <Textarea
                   placeholder="Deixe sua mensagem"
                   {...field}
-                  className="border-b-brand-light-green h-[100px] rounded-none border-0 border-b px-1 !py-3 !text-[16px] font-normal text-white placeholder:text-white"
+                  disabled={isSubmitting}
+                  className="border-b-brand-light-green h-[100px] rounded-none border-0 border-b px-1 !py-3 !text-[16px] font-normal text-white placeholder:text-white disabled:opacity-50"
                 />
               </FormControl>
               <FormMessage />
@@ -127,10 +166,20 @@ export const ContactForm = () => {
         />
         <Button
           type="submit"
-          className="bg-brand-light-green hover:bg-brand-light-green2 group text-brand-dark-green mt-2 h-auto w-full cursor-pointer rounded-full px-6 !py-3 !text-[16px] font-medium"
+          disabled={isSubmitting}
+          className="bg-brand-light-green hover:bg-brand-light-green2 group text-brand-dark-green mt-2 h-auto w-full cursor-pointer rounded-full px-6 !py-3 !text-[16px] font-medium disabled:cursor-not-allowed disabled:opacity-50"
         >
-          Falar com o nosso time
-          <ArrowUpRight className="size-4 duration-300 group-hover:rotate-45" />
+          {isSubmitting ? (
+            <>
+              <Loader2 className="mr-2 size-4 animate-spin" />
+              Enviando...
+            </>
+          ) : (
+            <>
+              Falar com o nosso time
+              <ArrowUpRight className="size-4 duration-300 group-hover:rotate-45" />
+            </>
+          )}
         </Button>
       </form>
     </Form>

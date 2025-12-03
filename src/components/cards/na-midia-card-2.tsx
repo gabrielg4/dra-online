@@ -23,7 +23,7 @@ export const NaMidiaCard2 = ({ data }: NaMidiaCard2Props) => {
           alt={(data.logo as Media).alt}
           width={100}
           height={28}
-          className="h-fit w-fit object-contain brightness-0 invert"
+          className="h-[36px] w-fit object-contain brightness-0 invert"
         />
       </div>
       <div

@@ -8,6 +8,7 @@ import gsap from "gsap";
 import { ScrollTrigger, SplitText } from "gsap/all";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { useGSAP } from "@gsap/react";
+import { Toaster } from "sonner";
 
 const mainFont = localFont({
   src: [
@@ -60,6 +61,8 @@ export default function RootLayout({
           <main className="bg-brand-dark-green">{children}</main>
         </SmoothScrolling>
         <Footer />
+
+        <Toaster position="top-right" richColors />
       </body>
     </html>
   );
