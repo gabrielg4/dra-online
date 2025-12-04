@@ -6,8 +6,13 @@ import React from "react";
 // import gsap from "gsap";
 // import { SplitText } from "gsap/all";
 import { WorkWithUsForm2 } from "../work-with-us-form-2";
+import type { Vagas } from "../../../payload-types";
 
-export const WorkWithUsSection2 = () => {
+interface WorkWithUsSection2Props {
+  vacancies: Vagas[];
+}
+
+export const WorkWithUsSection2 = ({ vacancies }: WorkWithUsSection2Props) => {
   // useGSAP(() => {
   //   const titleSplit = new SplitText(".title-contact-section", {
   //     type: "chars, words",
@@ -55,7 +60,7 @@ export const WorkWithUsSection2 = () => {
           />
         </div>
         <div className="border-l-brand-light-green relative w-full md:w-1/2 md:border-l md:pl-10 lg:max-w-[543px]">
-          <WorkWithUsForm2 />
+          <WorkWithUsForm2 vacancies={vacancies} />
         </div>
       </div>
     </section>

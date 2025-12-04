@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { useState } from "react";
+import type { Vagas } from "../../payload-types";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -15,8 +16,6 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { ArrowUpRight, Loader2 } from "lucide-react";
-// import { useGSAP } from "@gsap/react";
-// import gsap from "gsap";
 import {
   Select,
   SelectContent,
@@ -36,23 +35,37 @@ const ACCEPTED_TYPES = [
 const MAX_SIZE_MB = 2;
 const MAX_SIZE = MAX_SIZE_MB * 1024 * 1024;
 
-const formSchema = z.object({
-  name: z.string().trim().min(1, "Campo obrigatório"),
-  email: z.string().email("E-mail inválido"),
-  phone: z.string().trim().min(1, "Campo obrigatório"),
-  vacancie: z.string().min(1, "Campo obrigatório"),
-  curriculum: z
-    .instanceof(File, { message: "Envie um arquivo" })
-    .refine((f) => f.size > 0, "Arquivo obrigatório")
-    .refine(
-      (f) => ACCEPTED_TYPES.includes(f.type as (typeof ACCEPTED_TYPES)[number]),
-      "Apenas PDF, DOC ou DOCX",
-    )
-    .refine((f) => f.size <= MAX_SIZE, `Máx. ${MAX_SIZE_MB}MB`),
-});
+// Função que cria o schema baseado na disponibilidade de vagas
+const createFormSchema = (hasVacancies: boolean) =>
+  z.object({
+    name: z.string().trim().min(1, "Campo obrigatório"),
+    email: z.string().email("E-mail inválido"),
+    phone: z.string().trim().min(1, "Campo obrigatório"),
+    vacancie: hasVacancies
+      ? z.string().min(1, "Selecione uma vaga") // ← Obrigatório se tiver vagas
+      : z.string().optional(), // ← Opcional se não tiver vagas
+    curriculum: z
+      .instanceof(File, { message: "Envie um arquivo" })
+      .refine((f) => f.size > 0, "Arquivo obrigatório")
+      .refine(
+        (f) =>
+          ACCEPTED_TYPES.includes(f.type as (typeof ACCEPTED_TYPES)[number]),
+        "Apenas PDF, DOC ou DOCX",
+      )
+      .refine((f) => f.size <= MAX_SIZE, `Máx. ${MAX_SIZE_MB}MB`),
+  });
 
-export const WorkWithUsForm2 = () => {
+export const WorkWithUsForm2 = ({ vacancies }: { vacancies: Vagas[] }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Verifica se há vagas disponíveis
+  const hasVacancies =
+    vacancies &&
+    vacancies.length > 0 &&
+    vacancies.some((v) => v.nome_vaga && v.nome_vaga.trim() !== "");
+
+  // Cria o schema com validação condicional
+  const formSchema = createFormSchema(hasVacancies);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -64,21 +77,6 @@ export const WorkWithUsForm2 = () => {
       curriculum: undefined,
     },
   });
-
-  // useGSAP(() => {
-  //   const inputs = gsap.utils.toArray("#work-with-us-2 .input-work-with-us");
-  //   gsap.from(inputs, {
-  //     xPercent: 100,
-  //     opacity: 0,
-  //     duration: 1,
-  //     ease: "expo.out",
-  //     stagger: 0.7,
-  //     scrollTrigger: {
-  //       trigger: "#work-with-us-2",
-  //       start: "top 80%",
-  //     },
-  //   });
-  // }, []);
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true);
@@ -94,11 +92,12 @@ export const WorkWithUsForm2 = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          type: "job", // ← Tipo para vagas gerais
+          type: "job",
           name: values.name,
           email: values.email,
           phone: values.phone,
-          vacancie: values.vacancie,
+          vacancie:
+            values.vacancie || "Banco de talentos (sem vaga específica)",
           attachment: {
             filename: file.name,
             content: base64File,
@@ -136,7 +135,6 @@ export const WorkWithUsForm2 = () => {
       reader.readAsDataURL(file);
       reader.onload = () => {
         const base64String = reader.result as string;
-        // Remove o prefixo "data:...;base64,"
         const base64 = base64String.split(",")[1];
         resolve(base64);
       };
@@ -202,35 +200,51 @@ export const WorkWithUsForm2 = () => {
             </FormItem>
           )}
         />
-        <FormField
-          control={form.control}
-          name="vacancie"
-          render={({ field }) => (
-            <FormItem className="input-work-with-us w-full">
-              <FormControl>
-                <Select
-                  onValueChange={field.onChange}
-                  value={field.value}
-                  defaultValue={field.value}
-                  disabled={isSubmitting}
-                >
-                  <SelectTrigger className="border-b-brand-light-green h-auto !w-full rounded-none border-0 border-b px-1 !py-2 !text-[16px] font-normal text-white shadow-none placeholder:text-white disabled:opacity-50 data-[placeholder]:text-white [&_svg]:!text-white">
-                    <SelectValue
-                      placeholder="Vaga pretendida"
-                      className="!w-full text-white"
-                    />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="Vaga 1">Vaga 1</SelectItem>
-                    <SelectItem value="Vaga 2">Vaga 2</SelectItem>
-                    <SelectItem value="Vaga 3">Vaga 3</SelectItem>
-                  </SelectContent>
-                </Select>
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+
+        {/* Só mostra o campo de vaga se tiver vagas */}
+        {hasVacancies && (
+          <FormField
+            control={form.control}
+            name="vacancie"
+            render={({ field }) => (
+              <FormItem className="input-work-with-us w-full">
+                <FormControl>
+                  <Select
+                    onValueChange={field.onChange}
+                    value={field.value}
+                    defaultValue={field.value}
+                    disabled={isSubmitting}
+                  >
+                    <SelectTrigger className="border-b-brand-light-green h-auto !w-full rounded-none border-0 border-b px-1 !py-2 !text-[16px] font-normal text-white shadow-none placeholder:text-white disabled:opacity-50 data-[placeholder]:text-white [&_svg]:!text-white">
+                      <SelectValue
+                        placeholder="Vaga pretendida"
+                        className="!w-full text-white"
+                      />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {vacancies
+                        .filter(
+                          (vacancie) =>
+                            vacancie.nome_vaga &&
+                            vacancie.nome_vaga.trim() !== "",
+                        )
+                        .map((vacancie) => (
+                          <SelectItem
+                            key={vacancie.id}
+                            value={vacancie.nome_vaga}
+                          >
+                            {vacancie.nome_vaga}
+                          </SelectItem>
+                        ))}
+                    </SelectContent>
+                  </Select>
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        )}
+
         <FormField
           control={form.control}
           name="curriculum"

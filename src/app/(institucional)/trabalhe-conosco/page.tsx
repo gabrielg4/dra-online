@@ -22,7 +22,7 @@ export default async function TrabalheConoscoPage() {
       <WorkWithUsSection />
       <WhatWeAreLookingFor />
       {vagas.totalDocs > 0 && <OpenVacancies vacancies={vagas.docs} />}
-      <WorkWithUsSection2 />
+      <WorkWithUsSection2 vacancies={vagas.docs} />
     </>
   );
 }
