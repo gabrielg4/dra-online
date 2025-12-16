@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 import "./globals.css";
 import { Footer } from "@/components/footer";
@@ -42,6 +43,9 @@ const mainFont = localFont({
 });
 
 export const metadata: Metadata = {
+  verification: {
+    google: "FHsuDxI67m37N6s5dH5nJ-_B0Djz1a6ZsVSaaSkmm80",
+  },
   title: "Plataforma de Saúde Digital Inovadora | dr.online",
   description:
     "Leve saúde digital para sua empresa de forma rápida com a dr.online. Atendimento digital com especialistas, 24h por dia, em uma plataforma segura.",
@@ -62,6 +66,7 @@ export default function RootLayout({
         </SmoothScrolling>
         <Footer />
 
+        <GoogleAnalytics />
         <Toaster position="top-right" richColors />
       </body>
     </html>
