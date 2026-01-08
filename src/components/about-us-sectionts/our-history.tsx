@@ -3,7 +3,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger, SplitText } from "gsap/all";
 import Image from "next/image";
-import React from "react";
+import React, { useRef } from "react";
 import { useMediaQuery } from "react-responsive";
 
 // Registrar plugins
@@ -13,6 +13,7 @@ export const OurHistory = () => {
   const isMobile = useMediaQuery({
     maxWidth: 640,
   });
+  const sectionRef = useRef<HTMLDivElement | null>(null);
 
   useGSAP(() => {
     // const titleElement = document.querySelector(".s-about-us h2");
@@ -31,7 +32,9 @@ export const OurHistory = () => {
     // Definir estado inicial visível antes de animar
     // gsap.set(titleSplit.chars, { yPercent: 0, opacity: 1 });
     // gsap.set(paragraphs, { x: 0, opacity: 1 });
-    gsap.set(imageContainer, { opacity: 1, scale: 1 });
+
+
+    // gsap.set(imageContainer, { opacity: 1, scale: 1 });
 
     // Animação do título
     // gsap.fromTo(
@@ -102,10 +105,11 @@ export const OurHistory = () => {
     //   ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     //   if (titleSplit.revert) titleSplit.revert();
     // };
-  }, [isMobile]);
+  }, { scope: sectionRef, dependencies: [isMobile] });
 
   return (
     <section
+      ref={sectionRef}
       id="nossa-historia"
       className="s-about-us bg-[url(/images/img-bg-secao-sobre.webp)] bg-cover bg-no-repeat py-10 lg:py-20"
     >

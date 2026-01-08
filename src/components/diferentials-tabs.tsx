@@ -12,8 +12,11 @@ import ContentTabSwiper03 from "@/components/home-sections/diferentials-tabs-swi
 import ContentTabSwiper04 from "@/components/home-sections/diferentials-tabs-swipers/content-tab-swiper-04";
 import ContentTabSwiper05 from "@/components/home-sections/diferentials-tabs-swipers/content-tab-swiper-05";
 import ContentTabSwiper06 from "@/components/home-sections/diferentials-tabs-swipers/content-tab-swiper-06";
+import { useSafeAutoplay } from "@/hooks/use-safe-auto-play";
+import { VideoWithFallback } from "@/components/video-with-fallback";
 
 export const DiferentialsTabs = () => {
+  const videoRef = useSafeAutoplay();
   const isMobile = useMediaQuery({
     maxWidth: 640,
   });
@@ -108,17 +111,14 @@ export const DiferentialsTabs = () => {
                 height={48}
                 className="absolute top-4 right-4"
               />
-              <video
-                src="https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Home/Mi%CC%81dia4.mp4"
-                autoPlay
-                controls={false}
-                muted
-                loop
+              <VideoWithFallback
+                src={
+                  "https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Home/Mi%CC%81dia4.mp4"
+                }
+                fallbackImage={"/images/img-entrevista-qualificada.webp"}
+                fallbackVideo={"/videos/video1.mp4"}
                 className="h-[300px] w-full rounded-lg object-cover md:h-[370px] lg:h-[477px]"
-                preload="auto"
-                playsInline
-                controlsList="nodownload nofullscreen noremoteplayback"
-              ></video>
+              />
             </div>
             <div className="w-full px-4 max-sm:max-w-full max-sm:px-0 sm:px-0 sm:py-8 md:w-1/2">
               <p className="text-brand-main-green mb-3 text-[28px] leading-[130%] font-bold max-sm:text-center max-sm:text-[22px] max-sm:text-white">
@@ -161,17 +161,14 @@ export const DiferentialsTabs = () => {
                 height={48}
                 className="absolute top-4 right-4"
               />
-              <video
-                src="https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Home/Mi%CC%81dia5.mp4"
-                autoPlay
-                controls={false}
-                muted
-                loop
+              <VideoWithFallback
+                src={
+                  "https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Home/Mi%CC%81dia5.mp4"
+                }
+                fallbackImage={"/images/img-pronto-atendimento.webp"}
+                fallbackVideo={"/videos/video2.mp4"}
                 className="h-[300px] w-full rounded-lg object-cover md:h-[370px] lg:h-[477px]"
-                preload="auto"
-                playsInline
-                controlsList="nodownload nofullscreen noremoteplayback"
-              ></video>
+              />
             </div>
             <div className="w-full px-4 max-sm:max-w-full max-sm:px-0 sm:px-0 sm:py-8 md:w-1/2">
               <p className="text-brand-main-green mb-3 text-[28px] leading-[130%] font-bold max-sm:text-center max-sm:text-[22px] max-sm:text-white">
@@ -216,17 +213,14 @@ export const DiferentialsTabs = () => {
                 height={48}
                 className="absolute top-4 right-4"
               />
-              <video
-                src="https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Especialidades/1015.mp4"
-                autoPlay
-                controls={false}
-                muted
-                loop
+              <VideoWithFallback
+                src={
+                  "https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Especialidades/1015.mp4"
+                }
+                fallbackImage={"/images/img-consultas-eletivas.webp"}
+                fallbackVideo={"/videos/video3.mp4"}
                 className="h-[300px] w-full rounded-lg object-cover md:h-[370px] lg:h-[477px]"
-                preload="auto"
-                playsInline
-                controlsList="nodownload nofullscreen noremoteplayback"
-              ></video>
+              />
             </div>
             <div className="w-full px-4 max-sm:max-w-full max-sm:px-0 sm:px-0 sm:py-8 md:w-1/2">
               <p className="text-brand-main-green mb-3 text-[28px] leading-[130%] font-bold max-sm:text-center max-sm:text-[22px] max-sm:text-white">
@@ -268,17 +262,14 @@ export const DiferentialsTabs = () => {
                 height={48}
                 className="absolute top-4 right-4"
               />
-              <video
-                src="https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Home/grok-video-839cfd47-de63-4bfc-a796-68d082bc23a0.mp4"
-                autoPlay
-                controls={false}
-                muted
-                loop
+              <VideoWithFallback
+                src={
+                  "https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Home/grok-video-839cfd47-de63-4bfc-a796-68d082bc23a0.mp4"
+                }
+                fallbackImage={"/images/img-saude-mental.webp"}
+                fallbackVideo={"/videos/video4.mp4"}
                 className="h-[300px] w-full rounded-lg object-cover md:h-[370px] lg:h-[477px]"
-                preload="auto"
-                playsInline
-                controlsList="nodownload nofullscreen noremoteplayback"
-              ></video>
+              />
             </div>
             <div className="w-full px-4 max-sm:max-w-full max-sm:px-0 sm:px-0 sm:py-8 md:w-1/2">
               <p className="text-brand-main-green mb-3 text-[28px] leading-[130%] font-bold max-sm:text-center max-sm:text-[22px] max-sm:text-white">
@@ -324,17 +315,14 @@ export const DiferentialsTabs = () => {
                 height={48}
                 className="absolute top-4 right-4"
               />
-              <video
-                src="https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Home/envato_video_gen_Oct_08_2025_17_12_32.mp4"
-                autoPlay
-                controls={false}
-                muted
-                loop
+              <VideoWithFallback
+                src={
+                  "https://assets-dronline.s3.us-east-1.amazonaws.com/site-dronline/Home/envato_video_gen_Oct_08_2025_17_12_32.mp4"
+                }
+                fallbackImage={"/images/img-gestao-integrada.webp"}
+                fallbackVideo={"/videos/video5.mp4"}
                 className="h-[300px] w-full rounded-lg object-cover md:h-[370px] lg:h-[477px]"
-                preload="auto"
-                playsInline
-                controlsList="nodownload nofullscreen noremoteplayback"
-              ></video>
+              />
             </div>
             <div className="w-full px-4 max-sm:max-w-full max-sm:px-0 sm:px-0 sm:py-8 md:w-1/2">
               <p className="text-brand-main-green mb-3 text-[28px] leading-[130%] font-bold max-sm:text-center max-sm:text-[22px] max-sm:text-white">
@@ -376,17 +364,12 @@ export const DiferentialsTabs = () => {
                 height={48}
                 className="absolute top-4 right-4"
               />
-              <video
-                src="/videos/video6.mp4"
-                autoPlay
-                controls={false}
-                muted
-                loop
+              <VideoWithFallback
+                src={"/videos/video6.mp4"}
+                fallbackImage={"/images/img-saude-mental.webp"}
+                fallbackVideo={"/videos/video6.mp4"}
                 className="h-[300px] w-full rounded-lg object-cover md:h-[370px] lg:h-[477px]"
-                preload="auto"
-                playsInline
-                controlsList="nodownload nofullscreen noremoteplayback"
-              ></video>
+              />
             </div>
             <div className="w-full px-4 max-sm:max-w-full max-sm:px-0 sm:px-0 sm:py-8 md:w-1/2">
               <p className="text-brand-main-green mb-3 text-[28px] leading-[130%] font-bold max-sm:text-center max-sm:text-[22px] max-sm:text-white">
